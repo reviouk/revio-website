@@ -73,7 +73,7 @@
       ]
     },
     { label: 'AI Consultancy', href: 'ai-consultancy.html', match: ['ai-consultancy.html'] },
-    { label: 'LeadSignal', href: 'leadsignal.html', match: ['leadsignal.html'] },
+    { label: 'LeadSignal', href: 'leadsignal.html', match: ['leadsignal.html'], dot: true },
     {
       label: 'About', href: 'about.html',
       match: ['about.html', 'work.html', 'testimonials.html', 'guides.html'],
@@ -125,11 +125,12 @@
   function desktopNav(page) {
     return NAV.map(function (item) {
       var isCurrent = item.match.indexOf(page) !== -1;
+      var dot = item.dot ? '<span class="nav-dot" aria-hidden="true"></span>' : '';
       if (!item.children) {
         return '<div class="nav-item">' +
           '<a class="nav-top" href="' + item.href + '"' +
           (isCurrent ? ' aria-current="page"' : '') +
-          '>' + item.label + '</a></div>';
+          '>' + dot + item.label + '</a></div>';
       }
       var panelId = 'nav-panel-' + item.label.toLowerCase().replace(/[^a-z]/g, '');
       var links = item.children.map(function (child) {
@@ -154,7 +155,7 @@
       if (!item.children) {
         return '<a href="' + item.href + '"' +
           (isCurrent ? ' aria-current="page"' : '') +
-          '>' + item.label + '</a>';
+          '>' + (item.dot ? '<span class="nav-dot" aria-hidden="true"></span>' : '') + item.label + '</a>';
       }
       var subId = 'm-sub-' + item.label.toLowerCase().replace(/[^a-z]/g, '');
       var links = item.children.map(function (child) {

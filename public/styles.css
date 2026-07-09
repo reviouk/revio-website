@@ -179,8 +179,23 @@ strong { font-weight: 700; }
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: transparent;
-  padding: 14px 20px 0;
+  padding: 14px 20px 6px;
 }
+/* Pulsing dot (LeadSignal nav item) */
+.nav-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--purple); margin-right: 8px; vertical-align: middle;
+  position: relative; top: -1px;
+}
+.nav-dot::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background: var(--purple); animation: navDotPulse 1.8s ease-out infinite;
+}
+@keyframes navDotPulse {
+  0% { transform: scale(1); opacity: .55; }
+  70%,100% { transform: scale(2.8); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .nav-dot::after { animation: none; } }
 .nav-in {
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; gap: 18px;
@@ -374,8 +389,8 @@ strong { font-weight: 700; }
 .hero .kicker { color: var(--hero-kicker); }
 .hero .sub { color: var(--hero-sub); font-size: 18.5px; margin: 20px 0 32px; max-width: 46ch; }
 .hero .micro { color: var(--muted); }
-.hero .btn-ghost, .page-hero .btn-ghost { color: var(--ink); border-color: var(--line); }
-.hero .btn-ghost:hover, .page-hero .btn-ghost:hover { background: rgba(109,40,217,.06); border-color: var(--purple); color: var(--purple); }
+.hero .btn-ghost, .page-hero .btn-ghost { color: var(--purple); border-color: var(--purple); background: rgba(109,40,217,.07); }
+.hero .btn-ghost:hover, .page-hero .btn-ghost:hover { background: rgba(109,40,217,.14); border-color: var(--purple); color: var(--purple); }
 .hero .checks li::before, .page-hero .checks li::before { background: rgba(18,201,139,.16); color: #0e8a68; }
 
 /* Animated hero media — 3 images that cross-fade & slide */
