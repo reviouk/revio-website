@@ -9,7 +9,10 @@
 
   var MEETING_URL = 'https://revio.agency/meeting/';
   var QUOTE_URL = 'https://revio.agency/start-growing/';
-  var LOGO_LIGHT = 'https://revio.agency/wp-content/uploads/2024/09/reviomenulogo.75x.png';
+  /* Pure-white Revio wordmark. In the header it's inverted to dark via CSS
+     (--logo-filter) on the light theme, and left white on dark theme; in the
+     dark footer it stays white. */
+  var LOGO_LIGHT = 'https://leadsignal.revio.agency/revio-logo-white.png';
   var LOGO_WHITE = 'https://revio.agency/wp-content/uploads/2022/06/LogoWhite-e1654540193495.png';
 
   /* Inline line-icons for the dropdown mega-menus (mirrors the
@@ -153,6 +156,40 @@
     }).join('');
   }
 
+  function themeToggleHTML(extraClass) {
+    return '<button class="theme-toggle' + (extraClass ? ' ' + extraClass : '') + '" type="button" ' +
+      'data-theme-toggle aria-label="Switch colour theme">' +
+      '<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>' +
+      '<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>' +
+      '</button>';
+  }
+
+  function initTheme() {
+    var root = document.documentElement;
+    function current() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
+    function apply(t) {
+      root.setAttribute('data-theme', t);
+      document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+        b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+      });
+    }
+    /* Head script may have set this already; fall back to stored/system pref. */
+    var stored;
+    try { stored = localStorage.getItem('revio-theme'); } catch (e) {}
+    if (!root.getAttribute('data-theme')) {
+      apply(stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    } else {
+      apply(current());
+    }
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try { localStorage.setItem('revio-theme', next); } catch (e) {}
+      });
+    });
+  }
+
   function headerHTML() {
     var page = currentPage();
     return '' +
@@ -165,6 +202,7 @@
           '<nav class="nav-links" aria-label="Main navigation">' + desktopNav(page) + '</nav>' +
           '<a class="btn btn-ghost-dark btn-sm nav-quote" href="' + QUOTE_URL + '">Request a Quote</a>' +
           '<a class="btn btn-mint btn-sm nav-book" href="' + MEETING_URL + '">Book a Meeting</a>' +
+          themeToggleHTML() +
           '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">' +
             '<svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>' +
             '<svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
@@ -174,6 +212,7 @@
           mobileNav(page) +
           '<a class="btn btn-ghost-dark" href="' + QUOTE_URL + '">Request a Quote</a>' +
           '<a class="btn btn-mint" href="' + MEETING_URL + '">Book a Meeting</a>' +
+          '<div class="mobile-theme"><span>Dark mode</span>' + themeToggleHTML('mobile-theme-btn') + '</div>' +
         '</nav>' +
       '</header>';
   }
@@ -253,6 +292,8 @@
     var footerMount = document.getElementById('site-footer');
     if (headerMount) headerMount.outerHTML = headerHTML();
     if (footerMount) footerMount.outerHTML = footerHTML();
+
+    initTheme();
 
     /* Desktop dropdowns: click/tap toggles, hover + focus-within
        handled by CSS. Escape and outside-click close. */
