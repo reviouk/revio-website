@@ -208,6 +208,15 @@ strong { font-weight: 700; }
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
+/* Dark theme: light-violet nav pill (keep contents legible on it) */
+:root[data-theme="dark"] .nav-in { background: #c4a6f8; border-color: rgba(20, 10, 45, .16); }
+:root[data-theme="dark"] .site-header .brand img { filter: invert(1); }
+:root[data-theme="dark"] .site-header .nav-top { color: #1b1230; }
+:root[data-theme="dark"] .site-header .nav-top:hover,
+:root[data-theme="dark"] .site-header .nav-top.is-active { color: #3b1a7a; background: rgba(20, 10, 45, .08); }
+:root[data-theme="dark"] .site-header .nav-toggle,
+:root[data-theme="dark"] .site-header .theme-toggle { color: #3b1a7a; background: rgba(255, 255, 255, .4); border-color: rgba(20, 10, 45, .16); }
+:root[data-theme="dark"] .site-header .nav-quote.btn-ghost-dark { color: #3b1a7a; border-color: rgba(20, 10, 45, .22); background: rgba(255, 255, 255, .35); }
 .brand {
   display: inline-flex; align-items: center;
   min-height: 44px;
@@ -489,16 +498,16 @@ strong { font-weight: 700; }
 .lt-score { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: var(--purple); }
 .lt-info { font-size: 13px; }
 .lt-info span { color: var(--muted); font-size: 12px; }
-.lt-row { opacity: 0; animation: ltRowIn 7s ease-in-out infinite; }
-.lt-row:nth-of-type(2) { animation-delay: .1s; }
-.lt-row:nth-of-type(3) { animation-delay: .45s; }
-.lt-row:nth-of-type(4) { animation-delay: .8s; }
-.lt-row:nth-of-type(5) { animation-delay: 1.15s; }
+.lt-row { opacity: 0; animation: ltRowIn 4s ease-in-out infinite; }
+.lt-row:nth-of-type(2) { animation-delay: 0s; }
+.lt-row:nth-of-type(3) { animation-delay: .22s; }
+.lt-row:nth-of-type(4) { animation-delay: .44s; }
+.lt-row:nth-of-type(5) { animation-delay: .66s; }
 @keyframes ltRowIn {
   0%   { opacity: 0; transform: translateY(-16px) scale(.98); }
-  7%   { opacity: 1; transform: translateY(0) scale(1); }
-  88%  { opacity: 1; transform: translateY(0) scale(1); }
-  97%,100% { opacity: 0; transform: translateY(10px); }
+  14%  { opacity: 1; transform: translateY(0) scale(1); }
+  78%  { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(12px); }
 }
 @media (prefers-reduced-motion: reduce) { .lt-row { opacity: 1; animation: none; } }
 @media (prefers-reduced-motion: reduce) {
