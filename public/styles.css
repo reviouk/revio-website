@@ -209,7 +209,7 @@ strong { font-weight: 700; }
   backdrop-filter: blur(12px);
 }
 /* Dark theme: light-violet nav pill (keep contents legible on it) */
-:root[data-theme="dark"] .nav-in { background: #fbeef4; border-color: rgba(20, 10, 45, .12); }
+:root[data-theme="dark"] .nav-in { background: #ffffff; border-color: rgba(20, 10, 45, .12); }
 :root[data-theme="dark"] .site-header .brand img { filter: invert(1); }
 :root[data-theme="dark"] .site-header .nav-top { color: #1b1230; }
 :root[data-theme="dark"] .site-header .nav-top:hover,
