@@ -449,6 +449,58 @@ strong { font-weight: 700; }
 .mk-row .val { color: var(--muted); font-weight: 700; font-family: var(--font-head); }
 .mk-area { margin-top: auto; width: 100%; }
 .mk-area svg { width: 100%; height: auto; display: block; }
+
+/* In-slide entrance animations, timed to each slide's 15s window
+   (slide 1 @0s, slide 2 @5s, slide 3 @10s) */
+.mk-bars > div { transform-origin: bottom; transform: scaleY(0); animation: barGrow 15s cubic-bezier(.34,1.1,.4,1) infinite; }
+.mk-bars > div:nth-child(1) { animation-delay: 0s; }
+.mk-bars > div:nth-child(2) { animation-delay: .1s; }
+.mk-bars > div:nth-child(3) { animation-delay: .2s; }
+.mk-bars > div:nth-child(4) { animation-delay: .3s; }
+@keyframes barGrow { 0%,4% { transform: scaleY(0); } 14% { transform: scaleY(1); } 100% { transform: scaleY(1); } }
+
+.mk-track > i { transform-origin: left; transform: scaleX(0); animation: trackFill 15s cubic-bezier(.4,0,.2,1) infinite; }
+.mk-row:nth-child(1) .mk-track > i { animation-delay: 5s; }
+.mk-row:nth-child(2) .mk-track > i { animation-delay: 5.12s; }
+.mk-row:nth-child(3) .mk-track > i { animation-delay: 5.24s; }
+@keyframes trackFill { 0%,4% { transform: scaleX(0); } 14% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+
+.mk-area .ln { stroke-dasharray: 340; stroke-dashoffset: 340; animation: lineDraw 15s ease-out infinite; animation-delay: 10s; }
+.mk-area .ar { opacity: 0; animation: areaFade 15s ease infinite; animation-delay: 10s; }
+@keyframes lineDraw { 0%,4% { stroke-dashoffset: 340; } 20% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
+@keyframes areaFade { 0%,8% { opacity: 0; } 24% { opacity: 1; } 100% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-bars > div { transform: none; animation: none; }
+  .mk-track > i { transform: none; animation: none; }
+  .mk-area .ln { stroke-dashoffset: 0; animation: none; }
+  .mk-area .ar { opacity: 1; animation: none; }
+}
+
+/* Lead-table mockup (LeadSignal hero) — rows drop in like a live feed */
+.lead-table { background: var(--panel); }
+.lt-head, .lt-row { display: grid; grid-template-columns: 60px 44px 1fr; gap: 10px; padding: 12px 18px; align-items: center; border-bottom: 1px solid var(--line); }
+.lt-head { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.lt-row:last-child { border-bottom: 0; }
+.lt-tier { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; text-align: center; font-family: var(--font-head); }
+.lt-tier.hot  { background: rgba(255,76,115,.14); color: #e0325c; }
+.lt-tier.warm { background: rgba(201,138,16,.14); color: #b07d10; }
+.lt-tier.nurt { background: rgba(74,84,214,.12); color: #4a54d6; }
+.lt-score { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: var(--purple); }
+.lt-info { font-size: 13px; }
+.lt-info span { color: var(--muted); font-size: 12px; }
+.lt-row { opacity: 0; animation: ltRowIn 7s ease-in-out infinite; }
+.lt-row:nth-of-type(2) { animation-delay: .1s; }
+.lt-row:nth-of-type(3) { animation-delay: .45s; }
+.lt-row:nth-of-type(4) { animation-delay: .8s; }
+.lt-row:nth-of-type(5) { animation-delay: 1.15s; }
+@keyframes ltRowIn {
+  0%   { opacity: 0; transform: translateY(-16px) scale(.98); }
+  7%   { opacity: 1; transform: translateY(0) scale(1); }
+  88%  { opacity: 1; transform: translateY(0) scale(1); }
+  97%,100% { opacity: 0; transform: translateY(10px); }
+}
+@media (prefers-reduced-motion: reduce) { .lt-row { opacity: 1; animation: none; } }
 @media (prefers-reduced-motion: reduce) {
   .hero-slide { animation: none; opacity: 0; transform: none; }
   .hero-slide:first-child { opacity: 1; }
