@@ -7,8 +7,8 @@
 (function () {
   'use strict';
 
-  var MEETING_URL = 'meeting.html';
-  var QUOTE_URL = 'request-a-quote.html';
+  var MEETING_URL = '/book-a-meeting-freelancer/';
+  var QUOTE_URL = '/start-growing/';
   /* Pure-white Revio wordmark. The nav bar and footer are both dark, so
      it renders white in place on each. */
   var LOGO_LIGHT = 'https://leadsignal.revio.agency/revio-logo-white.png';
@@ -51,40 +51,40 @@
      Each dropdown child carries an icon + one-line description
      so the panel renders as revio.agency's icon menu. */
   var NAV = [
-    { label: 'LeadSignal', href: 'leadsignal.html', match: ['leadsignal.html'], dot: true },
+    { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], dot: true },
     {
-      label: 'Services', href: 'services.html',
-      match: ['services.html', 'lead-generation.html', 'paid-search-social.html', 'sales-enablement.html'],
+      label: 'Services', href: '/services/',
+      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/sales-enablement/'],
       children: [
-        { href: 'lead-generation.html', label: 'Inbound Lead Generation', iconImg: ICON_IMG.lead, desc: 'SEO &amp; content that fills the funnel' },
-        { href: 'paid-search-social.html', label: 'Paid Search &amp; Social', iconImg: ICON_IMG.paid, desc: 'PPC &amp; paid social that converts' },
-        { href: 'sales-enablement.html', label: 'Sales Enablement', iconImg: ICON_IMG.sales, desc: 'RevOps &amp; automation to close faster' }
+        { href: '/lead-generation/', label: 'Inbound Lead Generation', iconImg: ICON_IMG.lead, desc: 'SEO &amp; content that fills the funnel' },
+        { href: '/paid-search-social/', label: 'Paid Search &amp; Social', iconImg: ICON_IMG.paid, desc: 'PPC &amp; paid social that converts' },
+        { href: '/sales-enablement/', label: 'Sales Enablement', iconImg: ICON_IMG.sales, desc: 'RevOps &amp; automation to close faster' }
       ]
     },
     {
-      label: 'HubSpot', href: 'hubspot.html', wide: true,
-      match: ['hubspot.html', 'hubspot-consultancy.html', 'hubspot-audit.html', 'hubspot-support.html', 'hubspot-implementation.html'],
+      label: 'HubSpot', href: '/hubspot-agency/', wide: true,
+      match: ['/hubspot-agency/', '/hubspot-consultancy/', '/hubspot-audit/', '/hubspot-support-packages/', '/hubspot-sales-hub-implementation/', '/hubspot-marketing-hub-implementation/', '/hubspot-service-hub/'],
       children: [
-        { href: 'hubspot-consultancy.html', label: 'HubSpot Consultancy', iconImg: ICON_IMG.hubspot, desc: 'Strategy from a Solutions Partner' },
-        { href: 'hubspot-audit.html', label: 'HubSpot Audit', iconImg: ICON_IMG.hubspot, desc: 'Free health check of your portal' },
-        { href: 'hubspot-support.html', label: 'HubSpot Support Packages', iconImg: ICON_IMG.hubspot, desc: 'Ongoing admin &amp; dev retainers' },
-        { href: 'hubspot-implementation.html', label: 'Sales Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Set up Sales Hub around your process' },
-        { href: 'hubspot-implementation.html', label: 'Marketing Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Launch campaigns &amp; automation' },
-        { href: 'hubspot-implementation.html', label: 'Service Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Tickets, knowledge base &amp; CSAT' }
+        { href: '/hubspot-consultancy/', label: 'HubSpot Consultancy', iconImg: ICON_IMG.hubspot, desc: 'Strategy from a Solutions Partner' },
+        { href: '/hubspot-audit/', label: 'HubSpot Audit', iconImg: ICON_IMG.hubspot, desc: 'Free health check of your portal' },
+        { href: '/hubspot-support-packages/', label: 'HubSpot Support Packages', iconImg: ICON_IMG.hubspot, desc: 'Ongoing admin &amp; dev retainers' },
+        { href: '/hubspot-sales-hub-implementation/', label: 'Sales Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Set up Sales Hub around your process' },
+        { href: '/hubspot-marketing-hub-implementation/', label: 'Marketing Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Launch campaigns &amp; automation' },
+        { href: '/hubspot-service-hub/', label: 'Service Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Tickets, knowledge base &amp; CSAT' }
       ]
     },
-    { label: 'AI Consultancy', href: 'ai-consultancy.html', match: ['ai-consultancy.html'] },
+    { label: 'AI Consultancy', href: '/ai-enablement/', match: ['/ai-enablement/'] },
     {
-      label: 'About', href: 'about.html',
-      match: ['about.html', 'work.html', 'testimonials.html', 'guides.html'],
+      label: 'About', href: '/about/',
+      match: ['/about/', '/work/', '/testimonials/', '/guides/'],
       children: [
-        { href: 'testimonials.html', label: 'Testimonials', icon: ICON.testi, desc: 'What our clients say' },
-        { href: 'work.html', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
-        { href: 'about.html', label: 'Why Revio?', icon: ICON.why, desc: 'Who we are &amp; how we work' },
-        { href: 'guides.html', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' }
+        { href: '/testimonials/', label: 'Testimonials', icon: ICON.testi, desc: 'What our clients say' },
+        { href: '/work/', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
+        { href: '/about/', label: 'Why Revio?', icon: ICON.why, desc: 'Who we are &amp; how we work' },
+        { href: '/guides/', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' }
       ]
     },
-    { label: 'Pricing', href: 'pricing.html', match: ['pricing.html'] }
+    { label: 'Pricing', href: '/pricing/', match: ['/pricing/'] }
   ];
 
   var CHEV = '<svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>';
@@ -117,9 +117,9 @@
   }
 
   function currentPage() {
-    var path = window.location.pathname;
-    var file = path.substring(path.lastIndexOf('/') + 1);
-    return file === '' ? 'index.html' : file;
+    var p = window.location.pathname.replace(/index\.html$/, '');
+    if (p.charAt(p.length - 1) !== '/') p += '/';
+    return p;
   }
 
   function desktopNav(page) {
@@ -213,7 +213,7 @@
     return '' +
       '<header class="site-header">' +
         '<div class="nav-in">' +
-          '<a class="brand" href="index.html" aria-label="Revio — home">' +
+          '<a class="brand" href="/" aria-label="Revio — home">' +
             '<img src="' + LOGO_LIGHT + '" alt="Revio">' +
           '</a>' +
           '<span class="nav-sp"></span>' +
@@ -242,7 +242,7 @@
         '<div class="wrap">' +
           '<div class="footer-main">' +
             '<div>' +
-              '<a class="brand" href="index.html" aria-label="Revio — home">' +
+              '<a class="brand" href="/" aria-label="Revio — home">' +
                 '<img src="' + LOGO_WHITE + '" alt="Revio">' +
               '</a>' +
               '<p class="footer-blurb">UK inbound growth agency and HubSpot Solutions Partner. More traffic, better leads, faster deals.</p>' +
@@ -256,41 +256,41 @@
             '<div class="footer-col">' +
               '<h4>Services</h4>' +
               '<ul>' +
-                '<li><a href="lead-generation.html">Inbound Lead Generation</a></li>' +
-                '<li><a href="paid-search-social.html">Paid Search &amp; Social</a></li>' +
-                '<li><a href="sales-enablement.html">Sales Enablement &amp; RevOps</a></li>' +
-                '<li><a href="ai-consultancy.html">AI Enablement</a></li>' +
-                '<li><a href="leadsignal.html">LeadSignal Platform</a></li>' +
+                '<li><a href="/lead-generation/">Inbound Lead Generation</a></li>' +
+                '<li><a href="/paid-search-social/">Paid Search &amp; Social</a></li>' +
+                '<li><a href="/sales-enablement/">Sales Enablement &amp; RevOps</a></li>' +
+                '<li><a href="/ai-enablement/">AI Enablement</a></li>' +
+                '<li><a href="/lead-signal/">LeadSignal Platform</a></li>' +
               '</ul>' +
             '</div>' +
             '<div class="footer-col">' +
               '<h4>HubSpot</h4>' +
               '<ul>' +
-                '<li><a href="hubspot.html">HubSpot Overview</a></li>' +
-                '<li><a href="hubspot-consultancy.html">Consultancy</a></li>' +
-                '<li><a href="hubspot-implementation.html">Implementation</a></li>' +
-                '<li><a href="hubspot-audit.html">Free Audit</a></li>' +
-                '<li><a href="hubspot-support.html">Support Packages</a></li>' +
+                '<li><a href="/hubspot-agency/">HubSpot Overview</a></li>' +
+                '<li><a href="/hubspot-consultancy/">Consultancy</a></li>' +
+                '<li><a href="/hubspot-sales-hub-implementation/">Implementation</a></li>' +
+                '<li><a href="/hubspot-audit/">Free Audit</a></li>' +
+                '<li><a href="/hubspot-support-packages/">Support Packages</a></li>' +
               '</ul>' +
             '</div>' +
             '<div class="footer-col">' +
               '<h4>Company</h4>' +
               '<ul>' +
-                '<li><a href="about.html">About Revio</a></li>' +
-                '<li><a href="work.html">Our Work</a></li>' +
-                '<li><a href="testimonials.html">Testimonials</a></li>' +
-                '<li><a href="guides.html">Guides</a></li>' +
-                '<li><a href="pricing.html">Pricing</a></li>' +
-                '<li><a href="contact.html">Contact</a></li>' +
-                '<li><a href="request-a-quote.html">Request a Quote</a></li>' +
+                '<li><a href="/about/">About Revio</a></li>' +
+                '<li><a href="/work/">Our Work</a></li>' +
+                '<li><a href="/testimonials/">Testimonials</a></li>' +
+                '<li><a href="/guides/">Guides</a></li>' +
+                '<li><a href="/pricing/">Pricing</a></li>' +
+                '<li><a href="/book-a-call/">Contact</a></li>' +
+                '<li><a href="/start-growing/">Request a Quote</a></li>' +
               '</ul>' +
             '</div>' +
           '</div>' +
           '<div class="footer-bottom">' +
             '<span>&copy; ' + year + ' Revio. All rights reserved.</span>' +
             '<span class="sp"></span>' +
-            '<a href="privacy.html">Privacy Policy</a>' +
-            '<a href="terms.html">Terms of Service</a>' +
+            '<a href="/privacy/">Privacy Policy</a>' +
+            '<a href="/terms/">Terms of Service</a>' +
           '</div>' +
         '</div>' +
       '</footer>';
