@@ -178,6 +178,22 @@ strong { font-weight: 700; }
 }
 .nav-dropdown a:hover { color: var(--purple); background: var(--wash); }
 .nav-dropdown a[aria-current="page"] { color: var(--purple); font-weight: 700; background: var(--wash); }
+
+/* Icon mega-menu (mirrors revio.agency's dropdown) */
+.nav-mega { min-width: 320px; padding: 10px; }
+.nav-mega a { align-items: flex-start; gap: 12px; padding: 10px 12px; }
+.nav-ic-wrap {
+  flex: none; width: 38px; height: 38px; border-radius: 10px;
+  display: grid; place-items: center;
+  background: var(--wash); color: var(--purple);
+  transition: background .15s, color .15s, transform .15s;
+}
+.nav-mega a:hover .nav-ic-wrap { background: var(--purple); color: #fff; transform: translateY(-1px); }
+.nav-ic { width: 20px; height: 20px; }
+.nav-txt { display: flex; flex-direction: column; gap: 2px; white-space: normal; }
+.nav-lbl { font-weight: 700; font-size: 14.5px; line-height: 1.2; }
+.nav-desc { font-weight: 500; font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+.nav-mega a:hover .nav-desc { color: var(--ink); }
 .nav-quote { margin-left: 10px; }
 .nav-book { margin-left: 2px; }
 .nav-toggle {
@@ -226,7 +242,11 @@ strong { font-weight: 700; }
 .m-group-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
 .m-sub { display: none; padding: 2px 0 6px 14px; border-left: 2px solid var(--line); margin-left: 12px; }
 .m-group-btn[aria-expanded="true"] + .m-sub { display: block; }
-.m-sub a { min-height: 44px; font-size: 15.5px; }
+.m-sub a { min-height: 44px; font-size: 15.5px; gap: 11px; align-items: center; }
+.m-sub .nav-ic-wrap { width: 34px; height: 34px; border-radius: 9px; }
+.m-sub .nav-ic { width: 18px; height: 18px; }
+.m-sub .nav-lbl { font-size: 15px; }
+.m-sub .nav-desc { font-size: 12px; }
 
 /* ---------- Heroes ---------- */
 .hero {

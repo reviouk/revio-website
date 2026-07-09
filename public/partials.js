@@ -12,27 +12,51 @@
   var LOGO_LIGHT = 'https://revio.agency/wp-content/uploads/2024/09/reviomenulogo.75x.png';
   var LOGO_WHITE = 'https://revio.agency/wp-content/uploads/2022/06/LogoWhite-e1654540193495.png';
 
+  /* Inline line-icons for the dropdown mega-menus (mirrors the
+     icon menu on revio.agency). Stroke uses currentColor so each
+     row tints on hover. */
+  function ic(paths) {
+    return '<svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      paths + '</svg>';
+  }
+  var ICON = {
+    lead:    ic('<path d="M3 4h18"/><path d="M6 4v6a6 6 0 0 0 12 0V4"/><path d="M12 16v4"/><path d="M9 20h6"/>'),
+    paid:    ic('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>'),
+    sales:   ic('<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>'),
+    consult: ic('<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'),
+    audit:   ic('<rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>'),
+    support: ic('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M5.6 5.6l3.3 3.3M15.1 15.1l3.3 3.3M18.4 5.6l-3.3 3.3M8.9 15.1l-3.3 3.3"/>'),
+    build:   ic('<path d="M12 2l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/>'),
+    why:     ic('<path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/>'),
+    work:    ic('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>'),
+    testi:   ic('<path d="M8 9h8M8 13h5"/><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/>'),
+    guides:  ic('<path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 1 2 2z"/>')
+  };
+
   /* Main navigation — mirrors revio.agency's live menu.
      `match` lists page filenames that light the top-level item
-     up as current (sub-pages roll up to their parent). */
+     up as current (sub-pages roll up to their parent).
+     Each dropdown child carries an icon + one-line description
+     so the panel renders as revio.agency's icon menu. */
   var NAV = [
     {
       label: 'Services', href: 'services.html',
       match: ['services.html', 'lead-generation.html', 'paid-search-social.html', 'sales-enablement.html'],
       children: [
-        { href: 'lead-generation.html', label: 'Lead Generation' },
-        { href: 'paid-search-social.html', label: 'Paid Search &amp; Social' },
-        { href: 'sales-enablement.html', label: 'Sales Enablement' }
+        { href: 'lead-generation.html', label: 'Inbound Lead Generation', icon: ICON.lead, desc: 'SEO &amp; content that fills the funnel' },
+        { href: 'paid-search-social.html', label: 'Paid Search &amp; Social', icon: ICON.paid, desc: 'PPC &amp; paid social that converts' },
+        { href: 'sales-enablement.html', label: 'Sales Enablement', icon: ICON.sales, desc: 'RevOps &amp; automation to close faster' }
       ]
     },
     {
       label: 'HubSpot', href: 'hubspot.html',
       match: ['hubspot.html', 'hubspot-consultancy.html', 'hubspot-audit.html', 'hubspot-support.html', 'hubspot-implementation.html'],
       children: [
-        { href: 'hubspot-consultancy.html', label: 'HubSpot Consultancy' },
-        { href: 'hubspot-audit.html', label: 'HubSpot Audit' },
-        { href: 'hubspot-support.html', label: 'Support Packages' },
-        { href: 'hubspot-implementation.html', label: 'Hub Implementation' }
+        { href: 'hubspot-consultancy.html', label: 'HubSpot Consultancy', icon: ICON.consult, desc: 'Strategy from a Solutions Partner' },
+        { href: 'hubspot-audit.html', label: 'HubSpot Audit', icon: ICON.audit, desc: 'Free health check of your portal' },
+        { href: 'hubspot-support.html', label: 'Support Packages', icon: ICON.support, desc: 'Ongoing admin &amp; dev retainers' },
+        { href: 'hubspot-implementation.html', label: 'Hub Implementation', icon: ICON.build, desc: 'Sales, Marketing &amp; Service Hub setup' }
       ]
     },
     { label: 'AI', href: 'ai-consultancy.html', match: ['ai-consultancy.html'] },
@@ -41,16 +65,26 @@
       label: 'About', href: 'about.html',
       match: ['about.html', 'work.html', 'testimonials.html', 'guides.html'],
       children: [
-        { href: 'about.html', label: 'Why Revio' },
-        { href: 'work.html', label: 'Our Work' },
-        { href: 'testimonials.html', label: 'Testimonials' },
-        { href: 'guides.html', label: 'Guides' }
+        { href: 'about.html', label: 'Why Revio', icon: ICON.why, desc: 'Who we are &amp; how we work' },
+        { href: 'work.html', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
+        { href: 'testimonials.html', label: 'Testimonials', icon: ICON.testi, desc: 'What our clients say' },
+        { href: 'guides.html', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' }
       ]
     },
     { label: 'Pricing', href: 'pricing.html', match: ['pricing.html'] }
   ];
 
   var CHEV = '<svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>';
+
+  /* Render one dropdown child as an icon row (icon + label + desc). */
+  function childRow(child, page) {
+    return '<a href="' + child.href + '"' +
+      (child.href === page ? ' aria-current="page"' : '') + '>' +
+      (child.icon ? '<span class="nav-ic-wrap">' + child.icon + '</span>' : '') +
+      '<span class="nav-txt"><span class="nav-lbl">' + child.label + '</span>' +
+      (child.desc ? '<span class="nav-desc">' + child.desc + '</span>' : '') +
+      '</span></a>';
+  }
 
   /* "Overview" row for a dropdown — skipped when the parent page
      already appears among the children (e.g. About → Why Revio). */
@@ -79,16 +113,14 @@
       }
       var panelId = 'nav-panel-' + item.label.toLowerCase().replace(/[^a-z]/g, '');
       var links = item.children.map(function (child) {
-        return '<a href="' + child.href + '"' +
-          (child.href === page ? ' aria-current="page"' : '') +
-          '>' + child.label + '</a>';
+        return childRow(child, page);
       }).join('');
       return '<div class="nav-item">' +
         '<button class="nav-top' + (isCurrent ? ' is-active' : '') + '" type="button" ' +
           'aria-expanded="false" aria-haspopup="true" aria-controls="' + panelId + '">' +
           item.label + CHEV +
         '</button>' +
-        '<div class="nav-dropdown" id="' + panelId + '">' +
+        '<div class="nav-dropdown nav-mega" id="' + panelId + '">' +
           overviewLink(item, page) +
           links +
         '</div>' +
@@ -106,9 +138,7 @@
       }
       var subId = 'm-sub-' + item.label.toLowerCase().replace(/[^a-z]/g, '');
       var links = item.children.map(function (child) {
-        return '<a href="' + child.href + '"' +
-          (child.href === page ? ' aria-current="page"' : '') +
-          '>' + child.label + '</a>';
+        return childRow(child, page);
       }).join('');
       return '<div class="m-group">' +
         '<button class="m-group-btn' + (isCurrent ? ' is-active' : '') + '" type="button" ' +
