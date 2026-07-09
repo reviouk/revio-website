@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Revio — Talk to a Growth Consultant</title>
+  <meta name="description" content="Contact Revio: email grow@revio.agency, call +44 7590 977397, or visit us at Imperial Place, 4 Maxwell Rd, Borehamwood, WD6 1JN. Book a meeting directly online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Contact</span>
+      <h1>Let's talk about your growth.</h1>
+      <p class="sub">The fastest route is booking a meeting directly — or send us a message and we'll come back within one working day.</p>
+      <div class="cta-row">
+        <a class="btn btn-mint" href="https://revio.agency/meeting/">Book a Meeting</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap split" style="align-items:start">
+      <div class="reveal">
+        <span class="kicker">Send a message</span>
+        <h2>Tell us where you want to be.</h2>
+        <p class="lede mt-md">Submitting this form opens an email to <strong>grow@revio.agency</strong> in your mail app, pre-filled with your message.</p>
+        <form id="contact-form" class="form-grid mt-lg" novalidate>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-company">Company</label>
+            <input id="cf-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field full">
+            <label for="cf-email">Work email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field full">
+            <label for="cf-topic">What can we help with?</label>
+            <select id="cf-topic" name="topic">
+              <option>Inbound lead generation</option>
+              <option>Paid search &amp; social</option>
+              <option>Sales enablement / RevOps</option>
+              <option>HubSpot — implementation, audit or support</option>
+              <option>AI enablement</option>
+              <option>LeadSignal platform</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="cf-message">Your message</label>
+            <textarea id="cf-message" name="message" required></textarea>
+            <span class="hint">A sentence or two on your goals is plenty — we'll bring the questions.</span>
+          </div>
+          <div class="field full">
+            <button class="btn btn-purple" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+      <div class="reveal">
+        <div class="panel-visual">
+          <span class="kicker">Direct contact</span>
+          <div class="footer-contact" style="margin-top:12px">
+            <a href="mailto:grow@revio.agency" style="color:var(--purple)">grow@revio.agency</a>
+            <a href="tel:+447590977397" style="color:var(--purple)">+44 7590 977397</a>
+            <span class="addr" style="color:var(--muted)">Imperial Place, 4 Maxwell Rd,<br>Borehamwood, WD6 1JN,<br>United Kingdom</span>
+          </div>
+        </div>
+        <div class="panel-visual" style="margin-top:18px">
+          <span class="kicker">Prefer to talk now?</span>
+          <p style="color:var(--muted);font-size:14.5px;margin-top:10px">Skip the inbox — grab a 30-minute slot with our Digital Growth Director. No pitch, just an honest look at your funnel.</p>
+          <div class="cta-row" style="margin-top:18px">
+            <a class="btn btn-mint" href="https://revio.agency/meeting/">Book a Meeting</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="partials.js"></script>
+<script>
+(function () {
+  'use strict';
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var subject = 'Website enquiry — ' + (v('cf-topic') || 'General');
+    var body =
+      'Name: ' + v('cf-name') + '\n' +
+      'Company: ' + v('cf-company') + '\n' +
+      'Email: ' + v('cf-email') + '\n' +
+      'Topic: ' + v('cf-topic') + '\n\n' +
+      v('cf-message');
+    window.location.href = 'mailto:grow@revio.agency' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+    setTimeout(function () { window.location.href = 'thankyou.html'; }, 600);
+  });
+})();
+</script>
+</body>
+</html>
