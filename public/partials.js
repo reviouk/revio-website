@@ -193,7 +193,7 @@
     }
     /* Head script may have set this already; fall back to stored/system pref. */
     var stored;
-    try { stored = localStorage.getItem('revio-theme'); } catch (e) {}
+    try { stored = localStorage.getItem('revio-theme-v2'); } catch (e) {}
     if (!root.getAttribute('data-theme')) {
       apply(stored || 'light');
     } else {
@@ -203,7 +203,7 @@
       btn.addEventListener('click', function () {
         var next = current() === 'dark' ? 'light' : 'dark';
         apply(next);
-        try { localStorage.setItem('revio-theme', next); } catch (e) {}
+        try { localStorage.setItem('revio-theme-v2', next); } catch (e) {}
       });
     });
   }
