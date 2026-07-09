@@ -179,7 +179,7 @@ strong { font-weight: 700; }
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: transparent;
-  padding: 14px 20px 6px;
+  padding: 14px 20px 14px;
 }
 /* Pulsing dot (LeadSignal nav item) */
 .nav-dot {
@@ -200,7 +200,7 @@ strong { font-weight: 700; }
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; gap: 18px;
   padding: 0 14px 0 22px;
-  min-height: 64px;
+  min-height: 54px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 16px;
