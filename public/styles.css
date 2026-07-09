@@ -592,7 +592,7 @@ a.card:focus-visible { outline-offset: 0; }
 .section-deep .stat .l { color: rgba(255,255,255,.65); }
 
 /* Logo strip (real client logos) */
-.logo-strip { background: var(--wash); border-block: 1px solid var(--line); padding: 40px 0; }
+.logo-strip { background: #fff; border-block: 1px solid var(--line); padding: 40px 0; }
 .logo-strip .label {
   text-align: center;
   font-family: var(--font-head);
@@ -628,8 +628,6 @@ a.card:focus-visible { outline-offset: 0; }
   transition: opacity .2s ease, filter .2s ease;
 }
 .logo-track img:hover { opacity: 1; filter: none; }
-:root[data-theme="dark"] .logo-track img { mix-blend-mode: screen; filter: grayscale(1) invert(1); opacity: .72; }
-:root[data-theme="dark"] .logo-track img:hover { filter: invert(1); opacity: 1; }
 @keyframes logoScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
 
