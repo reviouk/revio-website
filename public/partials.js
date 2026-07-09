@@ -8,7 +8,7 @@
   'use strict';
 
   var MEETING_URL = 'meeting.html';
-  var QUOTE_URL = 'https://revio.agency/start-growing/';
+  var QUOTE_URL = 'request-a-quote.html';
   /* Pure-white Revio wordmark. The nav bar and footer are both dark, so
      it renders white in place on each. */
   var LOGO_LIGHT = 'https://leadsignal.revio.agency/revio-logo-white.png';

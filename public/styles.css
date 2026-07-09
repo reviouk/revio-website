@@ -34,6 +34,11 @@
 
   --panel-grad: linear-gradient(150deg, #6d28d9 0%, #4c1d95 100%);
   --panel-grad-alt: linear-gradient(150deg, #4c1d95 0%, #7c3aed 100%);
+  /* Light, airy hero like leadsignal.revio.agency (white → soft lavender) */
+  --hero-grad: linear-gradient(160deg, #ffffff 0%, #efe7ff 100%);
+  --hero-ink: var(--ink);
+  --hero-sub: var(--muted);
+  --hero-kicker: var(--purple);
 
   --shadow-soft: 0 20px 40px rgba(80, 3, 177, .08);
   --shadow-lift: 0 24px 50px rgba(80, 3, 177, .14);
@@ -69,6 +74,7 @@
 
   --panel-grad: linear-gradient(150deg, #5a2eb0 0%, #2f1268 100%);
   --panel-grad-alt: linear-gradient(150deg, #2f1268 0%, #6d28d9 100%);
+  --hero-grad: linear-gradient(160deg, #241250 0%, #140a2b 100%);
 
   --shadow-soft: 0 20px 40px rgba(0, 0, 0, .40);
   --shadow-lift: 0 24px 50px rgba(0, 0, 0, .50);
@@ -130,7 +136,7 @@ section.tight { padding: 64px 0; }
 .center .lede { margin-left: auto; margin-right: auto; }
 .mt-lg { margin-top: 44px; }
 .mt-md { margin-top: 28px; }
-em.mint { font-style: normal; color: var(--mint); }
+em.mint { font-style: normal; color: var(--purple); }
 strong { font-weight: 700; }
 
 /* ---------- Buttons ---------- */
@@ -145,8 +151,12 @@ strong { font-weight: 700; }
   transition: transform .15s ease, box-shadow .2s ease, background .2s, border-color .2s, color .2s;
 }
 .btn:active { transform: translateY(0); }
-.btn-mint { background: var(--mint); color: var(--deep); }
-.btn-mint:hover { transform: translateY(-2px); box-shadow: var(--glow-mint); }
+/* Primary CTA — violet, LeadSignal style (green kept only as a micro accent) */
+.btn-mint { background: var(--purple); color: #fff; }
+.btn-mint:hover { transform: translateY(-2px); box-shadow: var(--glow-purple); }
+/* On the dark violet accent bands, flip the primary to a white button */
+.cta-band .btn-mint, .section-deep .btn-mint { background: #fff; color: var(--purple); }
+.cta-band .btn-mint:hover, .section-deep .btn-mint:hover { box-shadow: 0 14px 34px rgba(0,0,0,.22); }
 .btn-purple { background: var(--purple); color: #fff; }
 .btn-purple:hover { transform: translateY(-2px); box-shadow: var(--glow-purple); }
 .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
@@ -167,27 +177,33 @@ strong { font-weight: 700; }
 .arrow-link:hover::after { transform: translateX(4px); }
 
 /* ---------- Header ---------- */
+/* Floating white rounded nav pill (revio.agency style) */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(20, 11, 44, .92);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  background: transparent;
+  padding: 14px 20px 0;
 }
 .nav-in {
-  max-width: 1240px; margin: 0 auto;
-  display: flex; align-items: center; gap: 20px;
-  padding: 0 24px;
-  min-height: var(--header-h);
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; gap: 18px;
+  padding: 0 14px 0 22px;
+  min-height: 64px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(20, 10, 45, .12);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 .brand {
   display: inline-flex; align-items: center;
   min-height: 44px;
 }
 .brand img { display: block; height: auto; width: auto; max-height: 28px; }
-/* Revio wordmark ships as a white PNG — the nav bar is dark, so it
-   stays white here and in the dark footer. */
-.site-header .brand img { filter: none; }
+/* Revio wordmark ships as a white PNG; invert it to read dark on the
+   white nav pill (light theme), leave white in dark theme and in the
+   dark footer. */
+.site-header .brand img { filter: var(--logo-filter); }
 .site-footer .brand img { max-height: 30px; filter: none; }
 .nav-sp { flex: 1; }
 .nav-links { display: flex; align-items: center; gap: 2px; }
@@ -301,23 +317,7 @@ strong { font-weight: 700; }
 .m-sub .nav-lbl { font-size: 15px; }
 .m-sub .nav-desc { font-size: 12px; }
 
-/* ---------- Dark nav bar + white dropdowns (revio.agency style) ---------- */
-.site-header .nav-top { color: rgba(255, 255, 255, .82); }
-.site-header .nav-top:hover { color: #fff; background: rgba(255, 255, 255, .10); }
-.site-header .nav-top[aria-current="page"],
-.site-header .nav-top.is-active { color: #fff; background: rgba(255, 255, 255, .12); }
-.site-header .theme-toggle,
-.site-header .nav-toggle {
-  background: rgba(255, 255, 255, .06); color: #fff; border-color: rgba(255, 255, 255, .18);
-}
-.site-header .theme-toggle:hover,
-.site-header .nav-toggle:hover {
-  background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .32);
-}
-.site-header .nav-quote.btn-ghost-dark { color: #fff; border-color: rgba(255, 255, 255, .28); }
-.site-header .nav-quote.btn-ghost-dark:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
-
-/* Dropdown mega-menu: always on a white background */
+/* ---------- Nav pill dropdowns (white mega-menus) ---------- */
 .nav-dropdown { background: #fff; border-color: #e8e2f3; box-shadow: 0 24px 50px rgba(20, 10, 45, .28); }
 .nav-dropdown a { color: #1b1230; }
 .nav-dropdown a:hover,
@@ -340,22 +340,22 @@ strong { font-weight: 700; }
 .nav-ic-img { width: 22px; height: 22px; object-fit: contain; }
 .m-sub .nav-ic-img { width: 20px; height: 20px; }
 
-/* ---------- Heroes ---------- */
+/* ---------- Heroes (light, LeadSignal-style) ---------- */
 .hero {
-  background: var(--panel-grad);
-  color: #fff;
+  background: var(--hero-grad);
+  color: var(--hero-ink);
   position: relative; overflow: hidden;
 }
 .hero::before {
   content: ''; position: absolute; top: -180px; right: -140px;
   width: 560px; height: 560px; border-radius: 50%;
-  background: rgba(66,224,185,.10); filter: blur(12px);
+  background: rgba(124,58,237,.10); filter: blur(14px);
   pointer-events: none;
 }
 .hero::after {
   content: ''; position: absolute; bottom: -180px; left: -140px;
   width: 480px; height: 480px; border-radius: 50%;
-  background: rgba(80,3,177,.24); filter: blur(24px);
+  background: rgba(109,40,217,.08); filter: blur(24px);
   pointer-events: none;
 }
 .hero > .wrap { position: relative; z-index: 1; }
@@ -363,38 +363,43 @@ strong { font-weight: 700; }
 .hero-single { max-width: 760px; padding: 96px 0 100px; }
 .badge {
   display: inline-block;
-  background: rgba(66,224,185,.12);
-  border: 1px solid rgba(66,224,185,.35);
-  color: var(--mint);
+  background: rgba(109,40,217,.08);
+  border: 1px solid rgba(109,40,217,.28);
+  color: var(--purple);
   font-family: var(--font-head);
   font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
   padding: 7px 16px; border-radius: 999px;
   margin-bottom: 22px;
 }
-.hero .sub { color: rgba(255,255,255,.74); font-size: 18.5px; margin: 20px 0 32px; max-width: 46ch; }
+.hero .kicker { color: var(--hero-kicker); }
+.hero .sub { color: var(--hero-sub); font-size: 18.5px; margin: 20px 0 32px; max-width: 46ch; }
+.hero .micro { color: var(--muted); }
+.hero .btn-ghost, .page-hero .btn-ghost { color: var(--ink); border-color: var(--line); }
+.hero .btn-ghost:hover, .page-hero .btn-ghost:hover { background: rgba(109,40,217,.06); border-color: var(--purple); color: var(--purple); }
+.hero .checks li::before, .page-hero .checks li::before { background: rgba(18,201,139,.16); color: #0e8a68; }
 
 /* Interior page hero */
 .page-hero {
-  background: var(--panel-grad);
-  color: #fff;
+  background: var(--hero-grad);
+  color: var(--hero-ink);
   position: relative; overflow: hidden;
 }
 .page-hero::before {
   content: ''; position: absolute; top: -200px; right: -120px;
   width: 480px; height: 480px; border-radius: 50%;
-  background: rgba(66,224,185,.10); filter: blur(14px);
+  background: rgba(124,58,237,.10); filter: blur(14px);
   pointer-events: none;
 }
 .page-hero::after {
   content: ''; position: absolute; bottom: -220px; left: -100px;
   width: 420px; height: 420px; border-radius: 50%;
-  background: rgba(80,3,177,.25); filter: blur(24px);
+  background: rgba(109,40,217,.08); filter: blur(24px);
   pointer-events: none;
 }
 .page-hero .wrap { position: relative; z-index: 1; padding-top: 78px; padding-bottom: 82px; max-width: 900px; }
-.page-hero .kicker { color: var(--mint); }
+.page-hero .kicker { color: var(--hero-kicker); }
 .page-hero h1 { font-size: clamp(32px, 4.4vw, 52px); }
-.page-hero .sub { color: rgba(255,255,255,.74); font-size: 18px; margin: 18px 0 0; max-width: 58ch; }
+.page-hero .sub { color: var(--hero-sub); font-size: 18px; margin: 18px 0 0; max-width: 58ch; }
 .page-hero .cta-row { margin-top: 30px; }
 
 /* ---------- Cards & grids ---------- */
