@@ -7,11 +7,10 @@
 (function () {
   'use strict';
 
-  var MEETING_URL = 'https://revio.agency/meeting/';
+  var MEETING_URL = 'meeting.html';
   var QUOTE_URL = 'https://revio.agency/start-growing/';
-  /* Pure-white Revio wordmark. In the header it's inverted to dark via CSS
-     (--logo-filter) on the light theme, and left white on dark theme; in the
-     dark footer it stays white. */
+  /* Pure-white Revio wordmark. The nav bar and footer are both dark, so
+     it renders white in place on each. */
   var LOGO_LIGHT = 'https://leadsignal.revio.agency/revio-logo-white.png';
   var LOGO_WHITE = 'https://revio.agency/wp-content/uploads/2022/06/LogoWhite-e1654540193495.png';
 
@@ -37,6 +36,15 @@
     guides:  ic('<path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 1 2 2z"/>')
   };
 
+  /* Real menu icon artwork from revio.agency (used as <img> so the
+     HubSpot sprocket and service icons match the live site exactly). */
+  var ICON_IMG = {
+    lead:    'https://revio.agency/wp-content/uploads/2021/01/lead-gen.svg',
+    paid:    'https://revio.agency/wp-content/uploads/2021/01/paid-1.svg',
+    sales:   'https://revio.agency/wp-content/uploads/2021/01/sales-enablement.svg',
+    hubspot: 'https://revio.agency/wp-content/uploads/2021/01/hubspot.svg'
+  };
+
   /* Main navigation — mirrors revio.agency's live menu.
      `match` lists page filenames that light the top-level item
      up as current (sub-pages roll up to their parent).
@@ -47,30 +55,32 @@
       label: 'Services', href: 'services.html',
       match: ['services.html', 'lead-generation.html', 'paid-search-social.html', 'sales-enablement.html'],
       children: [
-        { href: 'lead-generation.html', label: 'Inbound Lead Generation', icon: ICON.lead, desc: 'SEO &amp; content that fills the funnel' },
-        { href: 'paid-search-social.html', label: 'Paid Search &amp; Social', icon: ICON.paid, desc: 'PPC &amp; paid social that converts' },
-        { href: 'sales-enablement.html', label: 'Sales Enablement', icon: ICON.sales, desc: 'RevOps &amp; automation to close faster' }
+        { href: 'lead-generation.html', label: 'Inbound Lead Generation', iconImg: ICON_IMG.lead, desc: 'SEO &amp; content that fills the funnel' },
+        { href: 'paid-search-social.html', label: 'Paid Search &amp; Social', iconImg: ICON_IMG.paid, desc: 'PPC &amp; paid social that converts' },
+        { href: 'sales-enablement.html', label: 'Sales Enablement', iconImg: ICON_IMG.sales, desc: 'RevOps &amp; automation to close faster' }
       ]
     },
     {
-      label: 'HubSpot', href: 'hubspot.html',
+      label: 'HubSpot', href: 'hubspot.html', wide: true,
       match: ['hubspot.html', 'hubspot-consultancy.html', 'hubspot-audit.html', 'hubspot-support.html', 'hubspot-implementation.html'],
       children: [
-        { href: 'hubspot-consultancy.html', label: 'HubSpot Consultancy', icon: ICON.consult, desc: 'Strategy from a Solutions Partner' },
-        { href: 'hubspot-audit.html', label: 'HubSpot Audit', icon: ICON.audit, desc: 'Free health check of your portal' },
-        { href: 'hubspot-support.html', label: 'Support Packages', icon: ICON.support, desc: 'Ongoing admin &amp; dev retainers' },
-        { href: 'hubspot-implementation.html', label: 'Hub Implementation', icon: ICON.build, desc: 'Sales, Marketing &amp; Service Hub setup' }
+        { href: 'hubspot-consultancy.html', label: 'HubSpot Consultancy', iconImg: ICON_IMG.hubspot, desc: 'Strategy from a Solutions Partner' },
+        { href: 'hubspot-audit.html', label: 'HubSpot Audit', iconImg: ICON_IMG.hubspot, desc: 'Free health check of your portal' },
+        { href: 'hubspot-support.html', label: 'HubSpot Support Packages', iconImg: ICON_IMG.hubspot, desc: 'Ongoing admin &amp; dev retainers' },
+        { href: 'hubspot-implementation.html', label: 'Sales Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Set up Sales Hub around your process' },
+        { href: 'hubspot-implementation.html', label: 'Marketing Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Launch campaigns &amp; automation' },
+        { href: 'hubspot-implementation.html', label: 'Service Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Tickets, knowledge base &amp; CSAT' }
       ]
     },
-    { label: 'AI', href: 'ai-consultancy.html', match: ['ai-consultancy.html'] },
+    { label: 'AI Consultancy', href: 'ai-consultancy.html', match: ['ai-consultancy.html'] },
     { label: 'LeadSignal', href: 'leadsignal.html', match: ['leadsignal.html'] },
     {
       label: 'About', href: 'about.html',
       match: ['about.html', 'work.html', 'testimonials.html', 'guides.html'],
       children: [
-        { href: 'about.html', label: 'Why Revio', icon: ICON.why, desc: 'Who we are &amp; how we work' },
-        { href: 'work.html', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
         { href: 'testimonials.html', label: 'Testimonials', icon: ICON.testi, desc: 'What our clients say' },
+        { href: 'work.html', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
+        { href: 'about.html', label: 'Why Revio?', icon: ICON.why, desc: 'Who we are &amp; how we work' },
         { href: 'guides.html', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' }
       ]
     },
@@ -81,9 +91,16 @@
 
   /* Render one dropdown child as an icon row (icon + label + desc). */
   function childRow(child, page) {
+    var iconHTML = '';
+    if (child.iconImg) {
+      iconHTML = '<span class="nav-ic-wrap nav-ic-wrap-img">' +
+        '<img class="nav-ic-img" src="' + child.iconImg + '" alt="" loading="lazy"></span>';
+    } else if (child.icon) {
+      iconHTML = '<span class="nav-ic-wrap">' + child.icon + '</span>';
+    }
     return '<a href="' + child.href + '"' +
       (child.href === page ? ' aria-current="page"' : '') + '>' +
-      (child.icon ? '<span class="nav-ic-wrap">' + child.icon + '</span>' : '') +
+      iconHTML +
       '<span class="nav-txt"><span class="nav-lbl">' + child.label + '</span>' +
       (child.desc ? '<span class="nav-desc">' + child.desc + '</span>' : '') +
       '</span></a>';
@@ -123,7 +140,7 @@
           'aria-expanded="false" aria-haspopup="true" aria-controls="' + panelId + '">' +
           item.label + CHEV +
         '</button>' +
-        '<div class="nav-dropdown nav-mega" id="' + panelId + '">' +
+        '<div class="nav-dropdown nav-mega' + (item.wide ? ' nav-mega-wide' : '') + '" id="' + panelId + '">' +
           overviewLink(item, page) +
           links +
         '</div>' +

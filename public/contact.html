@@ -22,7 +22,7 @@
       <h1>Let's talk about your growth.</h1>
       <p class="sub">The fastest route is booking a meeting directly — or send us a message and we'll come back within one working day.</p>
       <div class="cta-row">
-        <a class="btn btn-mint" href="https://revio.agency/meeting/">Book a Meeting</a>
+        <a class="btn btn-mint" href="meeting.html">Book a Meeting</a>
       </div>
     </div>
   </div>
@@ -32,41 +32,10 @@
       <div class="reveal">
         <span class="kicker">Send a message</span>
         <h2>Tell us where you want to be.</h2>
-        <p class="lede mt-md">Submitting this form opens an email to <strong>grow@revio.agency</strong> in your mail app, pre-filled with your message.</p>
-        <form id="contact-form" class="form-grid mt-lg" novalidate>
-          <div class="field">
-            <label for="cf-name">Your name</label>
-            <input id="cf-name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="cf-company">Company</label>
-            <input id="cf-company" name="company" type="text" autocomplete="organization">
-          </div>
-          <div class="field full">
-            <label for="cf-email">Work email</label>
-            <input id="cf-email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field full">
-            <label for="cf-topic">What can we help with?</label>
-            <select id="cf-topic" name="topic">
-              <option>Inbound lead generation</option>
-              <option>Paid search &amp; social</option>
-              <option>Sales enablement / RevOps</option>
-              <option>HubSpot — implementation, audit or support</option>
-              <option>AI enablement</option>
-              <option>LeadSignal platform</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="cf-message">Your message</label>
-            <textarea id="cf-message" name="message" required></textarea>
-            <span class="hint">A sentence or two on your goals is plenty — we'll bring the questions.</span>
-          </div>
-          <div class="field full">
-            <button class="btn btn-purple" type="submit">Send message</button>
-          </div>
-        </form>
+        <p class="lede mt-md">A sentence or two on your goals is plenty — we'll bring the questions and come back within one working day.</p>
+        <div class="hs-form-frame mt-lg">
+          <div id="hs-contact-form"></div>
+        </div>
       </div>
       <div class="reveal">
         <div class="panel-visual">
@@ -81,7 +50,7 @@
           <span class="kicker">Prefer to talk now?</span>
           <p style="color:var(--muted);font-size:14.5px;margin-top:10px">Skip the inbox — grab a 30-minute slot with our Digital Growth Director. No pitch, just an honest look at your funnel.</p>
           <div class="cta-row" style="margin-top:18px">
-            <a class="btn btn-mint" href="https://revio.agency/meeting/">Book a Meeting</a>
+            <a class="btn btn-mint" href="meeting.html">Book a Meeting</a>
           </div>
         </div>
       </div>
@@ -92,28 +61,15 @@
 
 <div id="site-footer"></div>
 <script src="partials.js"></script>
+<!-- HubSpot contact form -->
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
 <script>
-(function () {
-  'use strict';
-  var form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
-    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
-    var subject = 'Website enquiry — ' + (v('cf-topic') || 'General');
-    var body =
-      'Name: ' + v('cf-name') + '\n' +
-      'Company: ' + v('cf-company') + '\n' +
-      'Email: ' + v('cf-email') + '\n' +
-      'Topic: ' + v('cf-topic') + '\n\n' +
-      v('cf-message');
-    window.location.href = 'mailto:grow@revio.agency' +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-    setTimeout(function () { window.location.href = 'thankyou.html'; }, 600);
+  if (window.hbspt) hbspt.forms.create({
+    portalId: "4601842",
+    formId: "ca36cbc7-df73-4f45-ac0d-708377746e4b",
+    region: "na1",
+    target: "#hs-contact-form"
   });
-})();
 </script>
 </body>
 </html>
