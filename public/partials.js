@@ -54,15 +54,16 @@
     { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], dot: true },
     {
       label: 'Services', href: '/services/',
-      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/sales-enablement/'],
+      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/sales-enablement/', '/gohighlevel-crm-implementation/'],
       children: [
         { href: '/lead-generation/', label: 'Inbound Lead Generation', iconImg: ICON_IMG.lead, desc: 'SEO &amp; content that fills the funnel' },
         { href: '/paid-search-social/', label: 'Paid Search &amp; Social', iconImg: ICON_IMG.paid, desc: 'PPC &amp; paid social that converts' },
-        { href: '/sales-enablement/', label: 'Sales Enablement', iconImg: ICON_IMG.sales, desc: 'RevOps &amp; automation to close faster' }
+        { href: '/sales-enablement/', label: 'Sales Enablement', iconImg: ICON_IMG.sales, desc: 'RevOps &amp; automation to close faster' },
+        { href: '/gohighlevel-crm-implementation/', label: 'GoHighLevel CRM Implementation', icon: ICON.build, desc: 'Set up, automate &amp; migrate GoHighLevel' }
       ]
     },
     {
-      label: 'HubSpot', href: '/hubspot-agency/', wide: true,
+      label: 'HubSpot', href: '/hubspot-agency/', wide: true, iconImg: ICON_IMG.hubspot,
       match: ['/hubspot-agency/', '/hubspot-consultancy/', '/hubspot-audit/', '/hubspot-support-packages/', '/hubspot-sales-hub-implementation/', '/hubspot-marketing-hub-implementation/', '/hubspot-service-hub/'],
       children: [
         { href: '/hubspot-consultancy/', label: 'HubSpot Consultancy', iconImg: ICON_IMG.hubspot, desc: 'Strategy from a Solutions Partner' },
@@ -111,9 +112,12 @@
   function overviewLink(item, page) {
     var dupe = item.children.some(function (c) { return c.href === item.href; });
     if (dupe) return '';
+    var icon = item.iconImg
+      ? '<span class="nav-ic-wrap nav-ic-wrap-img"><img class="nav-ic-img" src="' + item.iconImg + '" alt="" loading="lazy"></span>'
+      : '';
     return '<a href="' + item.href + '"' +
       (item.href === page ? ' aria-current="page"' : '') +
-      '>' + item.label + ' Overview</a>';
+      '>' + icon + '<span class="nav-txt"><span class="nav-lbl">' + item.label + ' Overview</span></span></a>';
   }
 
   function currentPage() {
@@ -251,7 +255,12 @@
                 '<a href="tel:+447590977397">+44 7590 977397</a>' +
                 '<span class="addr">Imperial Place, 4 Maxwell Rd,<br>Borehamwood, WD6 1JN, UK</span>' +
               '</div>' +
-              '<span class="footer-badge">HubSpot Solutions Partner</span>' +
+              '<div class="footer-hubspot">' +
+                '<svg class="hs-mark" viewBox="0 0 24 24" fill="#fff" aria-label="HubSpot" role="img">' +
+                  '<path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.978v-.067A2.2 2.2 0 0 0 17.238.845h-.067a2.2 2.2 0 0 0-2.193 2.194v.067a2.196 2.196 0 0 0 1.252 1.973l.013.006v2.852a6.22 6.22 0 0 0-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 1 0 3.3 6.024l-.014-.007 7.696 5.99a6.176 6.176 0 0 0-1.038 3.446c0 1.343.425 2.588 1.147 3.606l-.013-.019-2.342 2.343a1.968 1.968 0 0 0-.58-.095h-.002a2.033 2.033 0 1 0 2.033 2.033v-.002a1.978 1.978 0 0 0-.095-.58l.005.016 2.317-2.317a6.223 6.223 0 1 0 4.982-11.163l-.056-.017zm-1.755 9.353a3.195 3.195 0 1 1 .001-6.39 3.195 3.195 0 0 1-.001 6.39z"/>' +
+                '</svg>' +
+                '<span>HubSpot<br><b>Solutions Partner</b></span>' +
+              '</div>' +
             '</div>' +
             '<div class="footer-col">' +
               '<h4>Services</h4>' +
