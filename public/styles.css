@@ -886,6 +886,27 @@ a.card:focus-visible { outline-offset: 0; }
   margin-top: 18px;
 }
 
+/* ---------- Blog posts & index ---------- */
+.post-meta { color: var(--hero-sub); font-size: 14px; font-family: var(--font-head); font-weight: 600; margin-top: 14px; }
+.post .prose { max-width: 760px; }
+.prose > h2:first-child, .prose > h3:first-child { margin-top: 0; }
+.prose img { max-width: 100%; height: auto; border-radius: 14px; margin: 26px 0; border: 1px solid var(--line); }
+.prose figure { margin: 26px 0; }
+.prose figcaption { font-size: 13px; color: var(--muted); text-align: center; margin-top: 8px; }
+.prose blockquote { border-left: 3px solid var(--purple); padding: 4px 0 4px 20px; margin: 24px 0; font-family: var(--font-head); font-size: 19px; line-height: 1.5; color: var(--ink); }
+.prose code { background: var(--wash); padding: 2px 6px; border-radius: 6px; font-size: .9em; }
+.prose pre { background: var(--wash); border: 1px solid var(--line); padding: 16px; border-radius: 12px; overflow-x: auto; margin: 22px 0; }
+.prose pre code { background: none; padding: 0; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+
+.post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.post-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r-md); padding: 24px 26px; display: flex; flex-direction: column; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.post-card:hover { transform: translateY(-4px); border-color: var(--card-hover-border); box-shadow: var(--shadow-soft); }
+.post-card .date { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--purple-2); }
+.post-card h3 { margin: 10px 0 8px; font-size: 16.5px; line-height: 1.32; }
+.post-card p { color: var(--muted); font-size: 13.5px; flex: 1; }
+.post-card .arrow-link { margin-top: 12px; }
+
 /* ---------- Reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
 .reveal.in { opacity: 1; transform: none; }

@@ -77,12 +77,13 @@
     { label: 'AI Consultancy', href: '/ai-enablement/', match: ['/ai-enablement/'] },
     {
       label: 'About', href: '/about/',
-      match: ['/about/', '/work/', '/testimonials/', '/guides/'],
+      match: ['/about/', '/work/', '/testimonials/', '/guides/', '/resources/'],
       children: [
         { href: '/testimonials/', label: 'Testimonials', icon: ICON.testi, desc: 'What our clients say' },
         { href: '/work/', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
         { href: '/about/', label: 'Why Revio?', icon: ICON.why, desc: 'Who we are &amp; how we work' },
-        { href: '/guides/', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' }
+        { href: '/guides/', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' },
+        { href: '/resources/', label: 'Insights &amp; News', icon: ICON.testi, desc: 'Articles, guides &amp; updates' }
       ]
     },
     { label: 'Pricing', href: '/pricing/', match: ['/pricing/'] }

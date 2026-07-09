@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HubSpot Salesforce Integration Issues, Limitations, Problems and How to Solve Them | REVIO</title>
+  <link rel="canonical" href="https://revio.agency/hubspot-salesforce-integration-issues-problems-and-how-to-solve/">
+  <meta name="description" content="Common HubSpot to Salesforce integration issues around picklists, duplicates, campaigns and multi-currency deals, with practical fixes for each.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <article class="post">
+    <div class="page-hero">
+      <div class="wrap-narrow">
+        <span class="kicker">Insights &amp; News</span>
+        <h1>HubSpot Salesforce Integration Issues, Limitations, Problems and How to Solve Them</h1>
+        <p class="post-meta">23 March 2023</p>
+      </div>
+    </div>
+    <section>
+      <div class="wrap-narrow prose reveal">
+<h2>Introduction</h2>
+<p>A healthy relationship and communication between sales and marketing teams is crucial for success in inbound sales &amp; marketing. There can sometimes be debate on the quality and volume of leads that marketing are serving up to the sales team. This can impact the business development and growth of the business.</p>
+
+<p>There are a number of CRM platforms to choose from and sometimes sales and marketing use the same CRM platform. When they don't, problems can arise in terms of data reporting, processes and maintaining a single source of truth in terms of data quality. Often marketing teams utilise HubSpot for the inbound marketing but sales teams, especially in certain territories like the US, prefer Salesforce. The go-to app is the HubSpot to Salesforce integration software (developed by the HubSpot development team), which is required to keep data and processes in sync between the two platforms.</p>
+
+<p>The lead generation and marketing campaigns maybe be healthy, but the consistency of data and single source of truth can sometimes be skewed, and that can be down to data issue problems between integrated platforms.</p>
+
+<p>HubSpot is a CRM that is known for its quick deployment and scalability. However, it is important to exercise caution when integrating it with other systems &mdash; it needs to be planned carefully or it can result in a confusing mesh of complex property associations, data duplicates, and syncs.</p>
+
+<p>During the integration process of these platforms, it's likely that you'll be collaborating with both a HubSpot expert and a Salesforce expert, either internal or external consultants. While they may be knowledgeable about their respective CRMs, there is a potential risk of them not having sufficient expertise in the other system.</p>
+
+<p>Before enabling the HubSpot Salesforce integration, there are a few points to be aware of to avoid problems later on.</p>
+
+<p>If you are using the HubSpot &gt; Salesforce integrated app on HubSpot to sync your data from HubSpot to Salesforce and vice versa, over time you may come across certain challenges and synchronisation issues with data. This may include data duplication or simply data not being pushed or pulled from one platform to the other. Situations arise where the synchronisation logic cannot move, merge, reconcile or manipulate the data properties and values the way it should to maintain data integrity.</p>
+
+<p>This article highlights best practice setup and some of the issues you can face, as well as potential solutions.</p>
+
+<h2>Picklists</h2>
+<p>Picklists are one of the configuration sync settings you need to get right, which involves mapping the country property in HubSpot to the correct Salesforce country values. Along with country is 'State'. If you are using the state field in your HubSpot forms, these states need to match the states in Salesforce.</p>
+
+<p>It's important that the internal values for state match the internal values in Salesforce. For example, the internal value in HubSpot for 'Australian Capital Territory' is 'Australian Capital Territory', whereas in Salesforce it is denoted as 'ACT'.</p>
+
+<h3>HubSpot Sync Settings for Matching State and Country Fields</h3>
+<p>There are two main settings to configure here. First, set if you are using picklists in Salesforce. Second, set the behaviour of HubSpot. If picklists are enabled in the first option, then decide if you want to 'match default Salesforce state/country values when syncing' or just push the HubSpot value to Salesforce.</p>
+
+<p>If you have the country picklists enabled in Salesforce, then select 'The picklist is enabled in Salesforce'. If the picklist has been customised, then select 'enabled and customised'.</p>
+
+<p>Next, set the rules for how data syncs from Salesforce to HubSpot.</p>
+
+<h3>Some Common Problems with Country Picklists</h3>
+<ol>
+<li>If the country picklist in HubSpot has been modified, this will prevent the state and country syncing to the picklist in Salesforce.</li>
+<li>If the Salesforce picklist has been customised, ensure you select the customised picklist option dropdown.</li>
+</ol>
+
+<p><strong>Both the "State/Region" and "Country" properties in HubSpot must be completely standardised, or else the sync will break.</strong></p>
+
+<h3>These Are the Guidelines</h3>
+<p>When syncing State and Country values from HubSpot to Salesforce while state and country picklist settings are enabled in Salesforce, there are a couple of ground-level expectations that we need to understand:</p>
+<ol>
+<li>The internal value of the Country option in HubSpot must match an existing Integration Value of a Country option in your State and Country/Territory picklist settings in Salesforce.</li>
+<li>The State value must exist as an "Available State/Province" option under the record's Country value AND the internal value of the State option in HubSpot must match an existing Integration Value of a State option in Salesforce.</li>
+</ol>
+
+<h2>Checking HubSpot &gt; Salesforce Data Synchronisation Health</h2>
+<p>To check synchronisation errors, there is a Salesforce dashboard in HubSpot detailing picklist errors, custom code issues, duplicates and field mapping issues.</p>
+
+<h2>Merging Duplicate Company Issue &mdash; After Enabling the HubSpot to Salesforce Sync Integration</h2>
+<p>It's advised to <strong>disable</strong> the setting in HubSpot to <strong>automatically create and associate companies with contacts</strong> in HubSpot.</p>
+
+<p>As a marketing consultant, you know that syncing your HubSpot and Salesforce accounts can be a real headache. One of the most common issues that arise is the inability to merge duplicate companies through HubSpot once the sync is in place. It's an aggravating issue that can really slow down your workflow and put a damper on your productivity.</p>
+
+<p>The problem is that to merge duplicate companies once the integration is in place, you have to completely uninstall the integration, merge the duplicate companies, and then re-connect the integration afterward. This can be a huge hassle and cause serious problems that require additional troubleshooting to fix. You also have to re-establish contact, company, and deal field mapping when you reinstall the integration, which can be quite time-consuming.</p>
+
+<p>However, continuing without the ability to merge duplicate companies will only exacerbate the situation. Your HubSpot account companies database will be filled with duplicates, which could cause more serious problems in the long run. There is a solution that gets inside this data problem. <a href="https://www.insycle.com/">Insycle</a> allows you to merge duplicate companies even after the integration is in place, and you can identify duplicate companies using exact-match or similar-match.</p>
+
+<h2>HubSpot and Salesforce Management &mdash; General Property Mappings and Values</h2>
+<p>Some other problems you may encounter are making changes to picklist values. If sales decide to add a dropdown value to a Salesforce property, and that property is mapped to a HubSpot property, then subsequently the HubSpot property also needs updating with the same value, otherwise the sync will stop working. This can have a knock-on effect on HubSpot workflows or Salesforce flows and could mean that certain tasks or notification emails aren't sent on time.</p>
+
+<p>It's advisable to set up a change request system when using two platforms to help manage and control the changes. At least schedule joint sales and marketing meetings to talk about changes in advance, and ensure that only the relevant people can make these changes in the first place with the correct permissions. Too many HubSpot super admins can cause havoc.</p>
+
+<h2>Campaigns, Segmentation</h2>
+<p>The distinction in terminology extends to the notion of campaigns, which has markedly different meanings in each platform. In HubSpot, a campaign refers to a grouping of assets, and reports can be generated to identify which contacts engaged with specific campaigns. On the other hand, Salesforce views campaigns as lists of contacts, and reports can be utilised to track who engaged with an asset, and to generate segments or propel campaigns using the data. It's important to note that Salesforce campaigns cannot be automatically incorporated into HubSpot, and must be added manually prior to launching the campaign.</p>
+
+<p>In order to effectively cultivate your leads, it is crucial to divide your contacts into segments. However, the HubSpot Salesforce integration does not allow for the transfer of segments between the two platforms. Therefore, to segment your lists in both HubSpot and Salesforce, you must create the segments separately in each platform.</p>
+
+<h2>Use Case: Lead Source / Contact Source Reporting in Salesforce</h2>
+<p>Your sales team operates within Salesforce and are adding leads into Salesforce, and as part of their sales email outreach efforts, they are directing leads to a webpage hosted on HubSpot or utilising HubSpot forms. However, you want to create reports in Salesforce based on multiple touch points.</p>
+
+<h3>Solution: Create Custom Fields for Original Source, Map and Sync Through to Salesforce</h3>
+<ol>
+<li>Create a property in Salesforce called 'Original Source', and create a mapping from HubSpot 'Original Source' to Salesforce 'Original Source'.</li>
+<li>Create a property in Salesforce called 'Original Source Drill Down 1', and create a mapping from HubSpot 'Original Source' to Salesforce 'Original Source Drill Down 1'.</li>
+<li>Create a property in Salesforce called 'Original Source Drill Down 2', and create a mapping from HubSpot 'Original Source' to Salesforce 'Original Source Drill Down 2'.</li>
+</ol>
+
+<p><em>Ensure to make these properties non-writable, so once it's set it stays at its original value.</em></p>
+
+<p>As the 'Original source drill down 1' values generally consist of the name of the platform where the contact came from (e.g. SALESFORCE) or sometimes contain a URL, you would need to run a Salesforce 'Flow' to map the values to a source name that you can report on in Salesforce. This can be powerful for reporting accurately in Salesforce.</p>
+
+<p>As the 'Original source drill down 2' values generally contain numbers, you would need to run a Salesforce 'Flow' to map the values to a source name that you can report on in Salesforce. For example, a contact imported into HubSpot from Zoominfo would have a value of say '21'. Simply create a flow that maps the value '21' to 'Zoominfo', or alternatively create a custom property called "source of origin" and a workflow in HubSpot to translate the numbers and sync this field to Salesforce for reporting. Then map this property to Salesforce and sync across from HubSpot.</p>
+
+<h2>Use Case: Multi-Currency Deals Issue</h2>
+<p>Your sales staff span various regions, and you have established a multi-currency configuration in Salesforce. Nevertheless, when this information is synchronised to HubSpot, the figures on the deal object are wrong.</p>
+
+<h3>The Multi-Currency Fix</h3>
+<p>HubSpot has multi-currency as does Salesforce, but the two don't dovetail nicely when moving across. The common field for both systems is the amount field and this will be automatically synced across. The solution is to set up a workflow in Salesforce to normalise the amount into your chosen currency and then sync that with the amount property in HubSpot.</p>
+
+<h3>Solution</h3>
+<p>In Salesforce the selected base locale determines the currency that appears. For example, if the base locale is German &ndash; German, then the currency is EUR. The base currency, defined in the administration module, reflects the system currency. If a base locale isn't configured, then English becomes the base locale with the US dollar as the currency.</p>
+
+<p>To solve this issue all you have to do is make sure that Amount in the base currency is the field that is synced and not the alternative currency. Once you have this field aligned in sync, ensure that the system that you want to have primacy (normally the system you use for your financial reporting) is set to be the preferred field (i.e. always prefer HubSpot).</p>
+
+<h2>HubSpot Salesforce Migration &mdash; Sales Processes</h2>
+<p>If your sales team have been using HubSpot Sales Hub and your organisation is looking to move the company's sales function to Salesforce, then there are factors to consider before implementing. If there are HubSpot workflow automations tied to your sales process, if you are to move these automations to Salesforce, then you would need to migrate them to Salesforce 'Flow'. Salesforce isn't quite as user friendly as HubSpot, so you need to ensure that as well as getting your mappings and directional flows correct, you will require an experienced Salesforce consultant to enable this for you.</p>
+
+<p>Our free CRM comparison guide template provides a step-by-step process that you can follow to simplify your life. We will guide you through it and assist you in selecting the best CRM for your needs. As a <a href="https://revio.agency/hubspot-consultancy/">HubSpot agency</a> that has successfully onboarded more than 65 clients, our HubSpot consultants possess the experience and expertise necessary to assist your business.</p>
+
+<h2>HubSpot Duplicate Contacts &amp; Companies Issues &amp; How to Untangle Them</h2>
+
+<h3>Why HubSpot Duplicate Contacts and Companies Can Hurt Your Marketing Team and Affect Your Efficiency</h3>
+<p>Your sales and marketing teams rely on clean, marketable, and addressable databases so they can keep email bounce rates low, track progress with companies and contacts, and build campaign lists. Ultimately, duplicate data, whether it be contacts or companies, can ruin your go-to-market efforts and hurt the customer experience, as well as cause data integrity issues with third-party integrations. So why does it matter?</p>
+
+<ul>
+<li><strong>Emailing contacts multiple times.</strong> At least, you could be emailing contacts twice without knowing it from different email nurture campaigns, with different content.</li>
+<li><strong>Skewed engagement metrics.</strong> Sending email should usually be based on the contact, which is related to the one email address. Communicating via two different email addresses can result in one email never being opened or clicked, therefore muddying the waters when it comes to engagement metrics and lead scoring.</li>
+<li><strong>Sending emails to the wrong segments.</strong> Savvy email marketers segment out email sends based on attributes, data, or subscription status of various contacts. Having duplicates means you could be sending the wrong email to the wrong contact.</li>
+<li><strong>It makes attribution fuzzy.</strong> Remember, contacts are the heart of HubSpot. Sales professionals build relationships with contacts. Contacts are the ones that fill out forms; and those same contacts come from channels, marketing campaigns, and business development. Ultimately, that has to translate to deals, and source attribution of those deals (whether that be based on channel, campaign, or department) is critical for improving and optimising your marketing over time.</li>
+<li><strong>A messy, unmanageable account.</strong> Remember that a CRM is designed for multiple humans to interact with it over time; that's where probability comes into play &mdash; over time, with multiple information sources, forms, and users, it's common to see accounts with incorrect records and inaccurate data.</li>
+</ul>
+
+<p>Our <a href="https://revio.agency/hubspot-consultancy/">certified HubSpot agency</a> and consultancy helps companies unleash the growth potential of HubSpot CRM. Connect with our HubSpot specialists and leverage our expertise gained from onboarding more than 100 HubSpot clients using Sales Hub, Marketing Hub, and Service Hub.</p>
+
+<h3>How Do Duplicates Occur?</h3>
+<h4>Duplicate Companies</h4>
+<p>We often have clients and or prospects that have multiple domains. This causes a common duplication issue in HubSpot. Since HubSpot only uses the domain to de-duplicate, we are forever merging companies. Often clients have .CA, .COM, .EU etc. An alternative way to check for duplication is required besides the domain.</p>
+
+<h4>Duplicate Contacts</h4>
+<p>Contacts are the problem in HubSpot because people just have different email addresses. There are often situations where someone uses a personal, free email address and on other downloads, they may use a work address attached to their company domain. What happens here is that there are two contacts created in your CRM. This can lead to doubling up with two sales people following each contact up separately. One contact maybe a qualified lead and the other at a different lifecycle stage. When you have duplicates, it can cause problems with both the relationships you're building and your campaigns.</p>
+
+<p>Typos, misspellings, and internal domains from different departments or locations of the same company are all reasons that cause HubSpot to create a company automatically.</p>
+
+<h3>Solutions, Configuration &amp; De-duplication Tools</h3>
+<p>HubSpot comes with its own inbuilt de-duplication tool but there are situations that arise where duplicates are created unnecessarily, and an improved de-dupe tool would be beneficial.</p>
+
+<h4>Parent/Child Company Associations</h4>
+<p>In most cases, if a company has multiple domain variations it means they have branches/franchises. To handle this, HubSpot offers the option of having parent/child company associations. This will allow you to correctly associate the right people to the right company domain while still keeping it all organised under the brand domain.</p>
+
+<h4>Does This Work with the SFDC Integration?</h4>
+<p>No. If you associate two companies in a parent-child relationship in HubSpot, that relationship will not sync to Salesforce. It is also not possible to sync that relationship from Salesforce.</p>
+
+<h4>Block Free Emails in HubSpot</h4>
+<p>Not allowing people to submit a form using a free email address can reduce the number of duplicates getting created in your CRM by forcing visitors to just use their business email. You can block free email addresses by editing the email property on any HubSpot form you use. The platform makes it easy to do so by providing a check box that lets you block all free email providers. However, blocking free email addresses won't be an effective solution for all companies. If you have a large number of qualified leads who use free email addresses, then the cons of this can outweigh the benefits.</p>
+
+<h4>Adjust HubSpot Form Settings</h4>
+<p>If you're seeing multiple contacts getting compressed into one contact record due to cookies on a shared computer, you might try enabling "add link to reset form" to allow visitors to reset the form. Alternatively, you can prevent the issue from continuing to occur by adjusting the HubSpot form settings in order to not "pre-populate contact fields with known values."</p>
+
+<p>This is a particularly good precaution to take if you know there is a high shared computer usage amongst your personas, for example, if your target audience works in academia.</p>
+
+<p>The downside of doing that is that it will interfere with your ability to do progressive profiling. So, if you can narrow down where the duplicate contacts are coming from to just a few pages, it's best to just adjust the settings on those pages instead of site wide.</p>
+
+<h4>For HubSpot &gt; Salesforce Integration: Create Consistent Company Records and Hierarchies Across Both Integrated CRMs</h4>
+<ul>
+<li>Eliminate irrelevant company records.</li>
+<li>Identify child and parent companies.</li>
+<li>Tag parent and child companies.</li>
+<li>Deduplicate companies.</li>
+<li>Replicate templates for cross-platform deduplication.</li>
+<li>Associate child companies to parent companies.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section-wash">
+      <div class="wrap reveal">
+        <div class="cta-band">
+          <h2>Grow your pipeline with Revio.</h2>
+          <p>Tell us your growth target and we'll show you exactly how we'd get there — channels, timeline and the numbers we'd hold ourselves to.</p>
+          <div class="cta-row">
+            <a class="btn btn-mint" href="/start-growing/">Request a Quote</a>
+            <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Book a Meeting</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<div id="site-footer"></div>
+<script src="/partials.js"></script>
+</body>
+</html>

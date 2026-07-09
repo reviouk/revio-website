@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Super Charge WordPress for Speed &amp; Fast Page Load | REVIO</title>
+  <link rel="canonical" href="https://revio.agency/how-to-super-charge-wordpress-for-speed-and-fast-page-load-times/">
+  <meta name="description" content="13 practical ways to speed up a WordPress site &mdash; caching, image optimisation, GZip, CDNs, lightweight themes and more, with real before/after results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <article class="post">
+    <div class="page-hero">
+      <div class="wrap-narrow">
+        <span class="kicker">Insights &amp; News</span>
+        <h1>How to Super Charge WordPress for Speed &amp; Fast Page Load</h1>
+        <p class="post-meta">17 September 2014</p>
+      </div>
+    </div>
+    <section>
+      <div class="wrap-narrow prose reveal">
+        <h2>Why WordPress Can Be Slow</h2>
+        <p>WordPress often requires more server resources and database queries compared to static HTML sites. The platform stores information in databases, and modern themes frequently incorporate jQuery and AJAX components that consume significant resources.</p>
+
+        <h2>Why Site Speed Matters</h2>
+        <ol>
+          <li>Visitors lose trust and abandon slow sites.</li>
+          <li>Google incorporates page load time into ranking algorithms and AdWords scoring.</li>
+          <li>Poor performance can damage brand reputation.</li>
+        </ol>
+        <p>The industry standard suggests anything exceeding 2 seconds is problematic for user experience.</p>
+
+        <h2>Primary Speed Factors</h2>
+        <ul>
+          <li>Internet connection quality</li>
+          <li>Web hosting and server resources</li>
+          <li>WordPress theme selection</li>
+          <li>PHP script execution</li>
+          <li>Plugin quantity and quality</li>
+          <li>Image dimensions and file sizes</li>
+          <li>External JavaScript usage</li>
+          <li>CSS file count and size</li>
+          <li>DNS lookup quantity</li>
+        </ul>
+
+        <h2>Optimisation Strategies</h2>
+        <h3>1. Run Speed Testing Tools</h3>
+        <p>Use Pingdom's Website Speed Test or similar tools to identify problematic files. Sort by load time and see which files or scripts are taking a long time to load.</p>
+
+        <h3>2. Identify Slow Plugins</h3>
+        <p>The P3 Profiler plugin reveals which plugins degrade performance. Social-sharing plugins commonly cause slowdowns and can be replaced with embedded code.</p>
+
+        <h3>3. Combine External JavaScript Files</h3>
+        <p>Merge JavaScript files, though this risks complications during theme updates. We came across one WordPress site that had over 33 JavaScript files &mdash; this is too many.</p>
+
+        <h3>4. Enable GZip Compression</h3>
+        <p>GZip automatically compresses files, reducing bandwidth and accelerating loading. Check compression status at checkgzipcompression.com, then add compression directives to .htaccess:</p>
+        <blockquote>
+          <p>AddOutputFilterByType DEFLATE text/plain<br>
+          AddOutputFilterByType DEFLATE text/html<br>
+          AddOutputFilterByType DEFLATE text/xml<br>
+          AddOutputFilterByType DEFLATE text/css<br>
+          AddOutputFilterByType DEFLATE application/xml<br>
+          AddOutputFilterByType DEFLATE application/xhtml+xml<br>
+          AddOutputFilterByType DEFLATE application/rss+xml<br>
+          AddOutputFilterByType DEFLATE application/javascript<br>
+          AddOutputFilterByType DEFLATE application/x-javascript</p>
+        </blockquote>
+        <p>Alternatively, enable GZip through the W3 Total Cache plugin settings.</p>
+
+        <h3>5. Choose Quality Web Hosting</h3>
+        <p>Shared hosting can work for WordPress sites. We recommend WP Engine for optimised performance.</p>
+
+        <h3>6. Select a Lightweight Theme</h3>
+        <p>Theme selection represents the most critical decision. Avoid feature-heavy themes that bundle numerous functionalities. We recommend the Thesis framework, and suggest developers consider the Twenty Ten/Twenty Eleven default themes as fast foundations.</p>
+
+        <h3>7. Implement WordPress Caching</h3>
+        <p>W3 Total Cache is recommended as the optimal caching solution. Installation and configuration are straightforward, and it significantly improves WordPress performance.</p>
+
+        <h3>8. Utilise a Content Delivery Network</h3>
+        <p>CDNs serve static files from geographically distributed servers, circumventing browser limitations on parallel downloads from a single host. MaxCDN integrates with W3 Total Cache for enhanced speed improvements.</p>
+
+        <h3>9. Optimise Images</h3>
+        <p>Compress images for web use, keeping slider images under 100KB each. Monitor large background images, portfolio images, and lightbox files. Use CSS sprites for background images. The WP-SmushIt plugin automatically optimises images.</p>
+
+        <h3>10. Optimise Homepage Performance</h3>
+        <ul>
+          <li>Minimise widgets and plugins</li>
+          <li>Limit post displays</li>
+          <li>Show post excerpts instead of full content</li>
+          <li>Remove inactive plugins</li>
+        </ul>
+
+        <h3>11. Add Expires Headers</h3>
+        <p>Expires headers inform browsers when static resources require refreshing, reducing re-fetches for returning visitors. Modify .htaccess with:</p>
+        <blockquote>
+          <p>ExpiresActive On<br>
+          ExpiresByType image/jpg A2592000<br>
+          ExpiresByType image/jpeg A2592000<br>
+          ExpiresByType image/gif A2592000<br>
+          ExpiresByType image/png A2592000</p>
+        </blockquote>
+
+        <h3>12. Replace PHP with Static HTML</h3>
+        <p>Converting dynamic PHP references to static HTML reduces CPU processing and database queries. This requires developer expertise.</p>
+
+        <h3>13. Optimise the WordPress Database</h3>
+        <p>WP-Optimize removes spam, unapproved comments, trash posts, trackbacks, and pingbacks, optimising database performance.</p>
+
+        <h2>Real-World Example</h2>
+        <p>A client using a logo slider plugin discovered the configuration was requesting non-existent images when the navigation arrows were disabled. Resolving this simple issue resulted in shaving 2.44 seconds from the page load time.</p>
+
+        <h2>Performance Results</h2>
+        <p>We tested three optimisation stages with corresponding load time improvements, concluding with our own StartaDesign blog achieving 1.17-second load times &mdash; faster than 86% of all websites.</p>
+      </div>
+    </section>
+    <section class="section-wash">
+      <div class="wrap reveal">
+        <div class="cta-band">
+          <h2>Grow your pipeline with Revio.</h2>
+          <p>Tell us your growth target and we'll show you exactly how we'd get there — channels, timeline and the numbers we'd hold ourselves to.</p>
+          <div class="cta-row">
+            <a class="btn btn-mint" href="/start-growing/">Request a Quote</a>
+            <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Book a Meeting</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<div id="site-footer"></div>
+<script src="/partials.js"></script>
+</body>
+</html>

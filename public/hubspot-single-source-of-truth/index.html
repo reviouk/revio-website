@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build a Single Source of Truth with HubSpot (Even on Starter) | REVIO</title>
+  <link rel="canonical" href="https://revio.agency/hubspot-single-source-of-truth/">
+  <meta name="description" content="A six-step guide to making HubSpot the single source of truth for your business — mapping data, connecting tools with Zapier, and killing the spreadsheets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <article class="post">
+    <div class="page-hero">
+      <div class="wrap-narrow">
+        <span class="kicker">Insights &amp; News</span>
+        <h1>How to Build a Single Source of Truth with HubSpot (Even on Starter)</h1>
+        <p class="post-meta">30 March 2026</p>
+      </div>
+    </div>
+    <section>
+      <div class="wrap-narrow prose reveal">
+<h2>The Problem: Multiple Versions of the Truth</h2>
+<p>Here's a scenario that plays out in businesses every single day. The marketing manager reports that 200 leads came in last month. The sales director says the pipeline shows only 80 opportunities. The finance team's spreadsheet has a completely different set of numbers. The CEO asks a simple question — "How are we doing?" — and gets three different answers depending on who they ask.</p>
+<p>This isn't a people problem. It's a systems problem. When customer data, deal information, and activity records live across multiple disconnected tools — a CRM here, a spreadsheet there, an inbox somewhere else, an accounting system in the corner — nobody has the full picture. Each team works from their own version of reality, and those versions inevitably diverge.</p>
+<p>The consequences are serious. Sales reps waste time asking marketing for information that should be at their fingertips. Marketing creates campaigns based on assumptions rather than facts. Finance chases invoices for deals that were already cancelled. Customer service has no context when a client calls with a problem. And leadership makes strategic decisions based on whichever number happens to land on their desk first.</p>
+<p>The frustrating part is that most of these businesses already have a CRM. They have HubSpot. But having a CRM and actually using it as your single source of truth are two very different things.</p>
+<h2>What "Single Source of Truth" Actually Means</h2>
+<p>A single source of truth doesn't mean every piece of data in your business lives in one tool. That's neither practical nor desirable. Your accounting software should handle accounting. Your project management tool should manage projects. Your email platform should handle transactional emails.</p>
+<p>What single source of truth means is this: there is one agreed place where you go to answer questions about your customers, leads, deals, and pipeline. For most small to mid-sized businesses, that place should be HubSpot. It becomes the hub — the central record that connects to everything else, giving you a complete, reliable view without replacing every specialist tool you use.</p>
+<p>Think of it like a spoke-and-wheel model. HubSpot sits at the centre. Your other tools connect to it, sending relevant data in and pulling relevant data out. No matter where information originates, it ends up in HubSpot, linked to the right contact, company, or deal. When someone asks "What's happening with Acme Ltd?", you open HubSpot and see everything — every email, every call, every form submission, every deal, every note — in one timeline.</p>
+<h2>Step 1: Audit What Lives Where Currently</h2>
+<p>Before you can build a single source of truth, you need to understand where your data currently lives. This step is often skipped, but it's essential — you can't fix what you haven't mapped.</p>
+<p>Sit down with representatives from each team (sales, marketing, operations, finance, customer service) and ask these questions:</p>
+<ul>
+<li>Where do you keep track of leads and prospects?</li>
+<li>Where do you record conversations with clients?</li>
+<li>Where do you track deal progress and pipeline?</li>
+<li>What spreadsheets do you maintain, and what do they track?</li>
+<li>What tools do you log into daily?</li>
+<li>When you need to find information about a customer, where do you look first?</li>
+<li>What information do you wish you had easier access to?</li>
+</ul>
+<p>Document every answer. You'll likely find data scattered across HubSpot, Gmail or Outlook, Excel or Google Sheets, accounting software (Xero, QuickBooks), project management tools (Asana, Monday, Trello), messaging platforms (Slack, Teams), personal notebooks, and people's memories.</p>
+<p>Create a simple spreadsheet listing every data source, what it contains, who uses it, and how current it is. This is your data landscape map, and it's the foundation for everything that follows.</p>
+<h2>Step 2: Decide What Belongs in HubSpot vs Other Tools</h2>
+<p>Not everything should go into HubSpot. The goal is to identify which data needs to be centrally visible (because it relates to customers, leads, or revenue) and which can stay in specialist tools.</p>
+<ul>
+<li>Contact details (name, email, phone, company): HubSpot — core CRM data, the foundation of your customer view.</li>
+<li>Email conversations with leads/clients: HubSpot via connected inbox — must be visible to any team member working with that contact.</li>
+<li>Deal/opportunity tracking: HubSpot — pipeline visibility is essential for forecasting and management.</li>
+<li>Meeting notes and call logs: HubSpot — activity history must be centralised so nothing falls through the cracks.</li>
+<li>Marketing campaign performance: HubSpot plus ad platforms — HubSpot for lead-level data, ad platforms for impression/click data.</li>
+<li>Invoicing and accounting: Xero or QuickBooks — specialist software handles this better; sync key data (invoice status, amounts) to HubSpot via Zapier.</li>
+<li>Project delivery and task management: Asana, Monday or Trello — purpose-built for this; sync project status to HubSpot deals.</li>
+<li>Contracts and proposals: PandaDoc or DocuSign — specialist tools with HubSpot integrations that log activity to the contact timeline.</li>
+<li>Support tickets: HubSpot — customer issues must be visible alongside sales and marketing activity.</li>
+<li>Internal team communication: Slack or Teams — internal comms don't need to be in the CRM, keep these separate.</li>
+</ul>
+<p>The guiding principle is simple: if it relates to a customer, lead, or deal, it should either live in HubSpot or be synced there. If it's purely internal or operational, it can stay in its specialist tool.</p>
+<h2>Step 3: Map Your Data Flows with Zapier or Make</h2>
+<p>Once you know what belongs where, you need to connect everything. On HubSpot Starter, you don't have access to programmable automation within HubSpot itself, but Zapier and Make provide everything you need to create seamless data flows between your tools.</p>
+<p>Data flowing into HubSpot:</p>
+<ul>
+<li>Website forms: HubSpot forms automatically create and update contacts. Use these wherever possible instead of third-party form tools.</li>
+<li>Email: connect your inbox (Gmail or Outlook) to HubSpot so that email conversations are automatically logged against contact records.</li>
+<li>Calendar: connect Google Calendar or Outlook Calendar so meetings appear on contact timelines.</li>
+<li>Accounting data: use a Zapier integration to sync invoice status and payment data from Xero or QuickBooks to custom properties on HubSpot deals or contacts. For example, when an invoice is marked as paid in Xero, update the corresponding deal property in HubSpot.</li>
+<li>New enquiries from other channels: if leads come in via LinkedIn messages, Facebook, or phone, use Zapier to create contacts in HubSpot from these sources automatically.</li>
+</ul>
+<p>Data flowing out of HubSpot:</p>
+<ul>
+<li>Project creation: when a deal is marked as "Closed Won" in HubSpot, use Zapier to create a new project in Asana or Monday, pre-populated with client details from the deal record.</li>
+<li>Invoice generation: when a deal closes, trigger an invoice draft in Xero with the deal amount and client details.</li>
+<li>Notifications: send Slack or Teams messages when key events happen — new deal created, deal stage changed, new form submission from a high-value company.</li>
+<li>Spreadsheet backup: if stakeholders insist on spreadsheet access, use Zapier to automatically update a Google Sheet when deal data changes, rather than manually maintaining it.</li>
+</ul>
+<p>Map each flow on paper or a whiteboard first. Draw HubSpot in the centre, your other tools around it, and arrows showing what data moves where and what triggers the movement. This visual map becomes your integration blueprint.</p>
+<h2>Step 4: Eliminate the Spreadsheets</h2>
+<p>Spreadsheets are the biggest enemy of a single source of truth. They're where data goes to become outdated, duplicated, and disconnected. Every spreadsheet that tracks customer or deal information is a version of truth that will inevitably conflict with your CRM.</p>
+<p>The pipeline tracker: a spreadsheet listing deals, stages, values, and expected close dates. Replace it with HubSpot's deal pipeline. Create custom deal stages that match your sales process, add custom properties for any information the spreadsheet tracked that HubSpot doesn't have by default, and build a saved view that shows the same information. If leadership wants a spreadsheet version, use Zapier to auto-populate one from HubSpot data — but make HubSpot the master.</p>
+<p>The lead tracker: a spreadsheet where marketing logs new leads and their details. Replace it with a HubSpot contact view filtered by lifecycle stage = Lead and create date = this month. Add columns for source, company, and status. Save the view and share it with the team.</p>
+<p>The client list: a spreadsheet of current clients with contract details, renewal dates, and account managers. Replace it with a HubSpot company view filtered by lifecycle stage = Customer. Add custom properties for contract value, renewal date, and account manager. Build a dashboard that shows upcoming renewals.</p>
+<p>The activity tracker: a spreadsheet where sales reps log their calls, emails, and meetings. Replace it entirely with HubSpot's activity logging. Connected email tracks conversations automatically. The meetings tool logs meetings. Reps just need to log calls and notes directly in HubSpot.</p>
+<p>Overcoming team resistance: people love their spreadsheets. They're familiar, flexible, and feel safe. The key to getting buy-in is showing, not telling. Build the HubSpot replacement alongside the spreadsheet for two weeks. Let people see that the HubSpot version is always up to date, easier to filter, and accessible to everyone. Then retire the spreadsheet. Don't ask permission — just make the HubSpot version so much better that nobody misses the old way.</p>
+<h2>Step 5: Set the Rules</h2>
+<p>A single source of truth only works if everyone follows the same rules. Without standards, your beautifully organised CRM will drift back into chaos within months.</p>
+<p>Data entry standards: document exactly how data should be entered. Which fields are required when creating a new contact? How should company names be formatted? What lifecycle stage should a new lead start at? When should a deal be created? Write these rules down in a simple, one-page reference guide.</p>
+<p>Required fields: in HubSpot, make critical properties required on forms. For manually created records, establish a team norm — "If it doesn't have a company name, job title, and lead source, it's not a complete record." While HubSpot Starter doesn't enforce required fields on manual entry, you can build a saved list of "incomplete records" and review it weekly.</p>
+<p>Update protocols: define when records should be updated. After every call? After every email? When a deal stage changes? The simpler the rule, the more likely it is to be followed. We recommend: "Update the contact record after every meaningful interaction. If you spoke to them, log it. If their situation changed, update it."</p>
+<p>Team buy-in strategies: rules without buy-in are just words on a page. Involve your team in creating the standards — people follow rules they helped write. Explain the "why" behind each rule. Show them how clean data makes their own jobs easier (less time searching, fewer awkward "sorry, my colleague already called you" moments). Celebrate wins — "Because our data was clean, we identified 15 upsell opportunities this month that we would have missed."</p>
+<h2>Step 6: Build the Master Dashboard</h2>
+<p>The final step is building a dashboard that proves the value of your single source of truth. This is the dashboard that leadership opens every Monday morning to understand the health of the business.</p>
+<p>On HubSpot Starter, you can build dashboards with up to 10 reports. Here's exactly what to include:</p>
+<ul>
+<li>New contacts this month (by source) — shows where leads are coming from</li>
+<li>Deal pipeline (by stage) — shows current pipeline health</li>
+<li>Deals closed this month (value and count) — shows revenue performance</li>
+<li>Deals created vs closed (trend over last 6 months) — shows pipeline momentum</li>
+<li>Contacts by lifecycle stage — shows the shape of your funnel</li>
+<li>Tasks due this week — shows upcoming activity</li>
+<li>Recent activity feed — shows what's happening right now</li>
+<li>Email performance (open rate, click rate) — shows marketing engagement</li>
+</ul>
+<p>Build this dashboard by going to Reports &gt; Dashboards &gt; Create Dashboard. Add reports one by one, choosing from HubSpot's report library or creating custom reports. Arrange them in a logical order — top-level numbers at the top, detail views below.</p>
+<p>Share the dashboard with your entire team. When everyone looks at the same dashboard, built from the same data, you've achieved a genuine single source of truth.</p>
+<h2>The Payoff: What Changes When You Have a Single Source of Truth</h2>
+<p>When you've completed these six steps, the transformation is tangible. Sales reps open HubSpot and see everything they need — every interaction, every piece of context, every next step — without asking anyone or checking other tools. Marketing can segment precisely, personalise effectively, and report accurately on what's actually driving revenue. Leadership gets reliable answers to their questions in seconds, not days.</p>
+<p>Meetings get shorter because everyone's looking at the same data. Handoffs between teams become seamless because the full context travels with the record. Forecasting improves because pipeline data is complete and current. Onboarding new team members takes days instead of weeks because everything they need to know about any customer is in one place.</p>
+<p>Most importantly, trust increases. When the data is reliable, people use the CRM properly. When people use the CRM properly, the data stays reliable. It's a virtuous cycle that starts with the decision to build a single source of truth.</p>
+<h2>Common Pitfalls and How to Avoid Them</h2>
+<ul>
+<li>Trying to do everything at once: don't attempt to connect every tool, migrate every spreadsheet, and train every team member in one week. Start with the highest-impact integration (usually email and calendar connection) and build from there.</li>
+<li>Making it too complicated: if your data entry rules run to five pages, nobody will follow them. Keep it simple. One page of rules, clearly written, easily accessible.</li>
+<li>Not assigning ownership: someone needs to be responsible for data quality. Without a data champion who reviews records, enforces standards, and maintains integrations, the system will degrade over time.</li>
+<li>Ignoring the cultural change: this isn't just a technology project. It requires people to change how they work. Invest time in training, give people reasons to care, and be patient. Old habits take time to break.</li>
+<li>Building integrations without testing: every Zapier or Make integration should be tested thoroughly before going live. Send test data through, check that it arrives correctly in HubSpot, and verify that it links to the right records. A broken integration is worse than no integration.</li>
+</ul>
+      </div>
+    </section>
+    <section class="section-wash">
+      <div class="wrap reveal">
+        <div class="cta-band">
+          <h2>Grow your pipeline with Revio.</h2>
+          <p>Tell us your growth target and we'll show you exactly how we'd get there — channels, timeline and the numbers we'd hold ourselves to.</p>
+          <div class="cta-row">
+            <a class="btn btn-mint" href="/start-growing/">Request a Quote</a>
+            <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Book a Meeting</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<div id="site-footer"></div>
+<script src="/partials.js"></script>
+</body>
+</html>

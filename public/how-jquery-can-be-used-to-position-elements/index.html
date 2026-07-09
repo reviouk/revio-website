@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Jquery Can be Used to Add and Position Elements | REVIO</title>
+  <link rel="canonical" href="https://revio.agency/how-jquery-can-be-used-to-position-elements/">
+  <meta name="description" content="A practical example of using jQuery to add and position a button element in the DOM without editing restricted HTML source pages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <article class="post">
+    <div class="page-hero">
+      <div class="wrap-narrow">
+        <span class="kicker">Insights &amp; News</span>
+        <h1>How Jquery Can be Used to Add and Position Elements</h1>
+        <p class="post-meta">30 August 2016</p>
+      </div>
+    </div>
+    <section>
+      <div class="wrap-narrow prose reveal">
+<p>Sometimes HTML and CSS is not the fastest way to achieve your aim. Take for example a site I was working on last week, where I was restricted in modifying the source html pages, and manipulating elements with absolute CSS positioning was going to be a headache for mobile responsive views.</p>
+<p><strong>The objective:</strong> I wanted to add a button to a specific position on the page to view all categories within an eCommerce site.</p>
+<p>With jquery you can navigate the DOM and elements within the DOM (Domain Object Model), and add, append data to a page easily.</p>
+<p><strong>The solution:</strong> The following jquery finds the class element .homePageCategories .listWrapper within the page, and adds the html code for the button directly after it.</p>
+<blockquote>
+<p>$( ".homePageCategories .listWrapper" ).after( "&lt;a class='allcategoriesbtn' href='/test/c/15/all-categories' title='Show products in category All Categories'&gt;All Categories&lt;/a&gt;" );</p>
+</blockquote>
+<img src="https://revio.agency/wp-content/uploads/2016/08/jquery-example.jpg" alt="jquery-example">
+<p>The image above shows the 'All Categories' button positioned after the div.listWrapper element (which is highlighted). View the inspect element window for a view of the html/CSS, where you can see the two classes referenced; .homePageCategories and .listWrapper</p>
+<p>There are many more jquery commands that can be used like append, find, before&hellip;plus many more.</p>
+<p>If you are looking for a short, informative free course on Jquery, take a look at <a href="http://try.jquery.com/levels/1/challenges/1">codeschool's jquery course</a> here.</p>
+      </div>
+    </section>
+    <section class="section-wash">
+      <div class="wrap reveal">
+        <div class="cta-band">
+          <h2>Grow your pipeline with Revio.</h2>
+          <p>Tell us your growth target and we'll show you exactly how we'd get there — channels, timeline and the numbers we'd hold ourselves to.</p>
+          <div class="cta-row">
+            <a class="btn btn-mint" href="/start-growing/">Request a Quote</a>
+            <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Book a Meeting</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<div id="site-footer"></div>
+<script src="/partials.js"></script>
+</body>
+</html>
