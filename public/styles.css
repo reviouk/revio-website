@@ -184,7 +184,7 @@ strong { font-weight: 700; }
 /* Pulsing dot (LeadSignal nav item) */
 .nav-dot {
   display: inline-block; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--purple); margin-right: 8px; vertical-align: middle;
+  background: var(--purple); margin-right: 4px; vertical-align: middle;
   position: relative; top: -1px;
 }
 .nav-dot::after {
@@ -562,6 +562,11 @@ strong { font-weight: 700; }
   margin-bottom: 16px;
 }
 .card .icon svg { width: 22px; height: 22px; }
+.team-photo {
+  width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
+  margin-bottom: 16px; border: 3px solid var(--wash);
+  box-shadow: 0 8px 20px rgba(20,10,45,.14);
+}
 .card .arrow-link { margin-top: 14px; }
 a.card { display: block; }
 a.card:focus-visible { outline-offset: 0; }
