@@ -194,7 +194,7 @@
     var stored;
     try { stored = localStorage.getItem('revio-theme'); } catch (e) {}
     if (!root.getAttribute('data-theme')) {
-      apply(stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      apply(stored || 'light');
     } else {
       apply(current());
     }
