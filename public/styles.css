@@ -221,7 +221,7 @@ strong { font-weight: 700; }
   display: inline-flex; align-items: center;
   min-height: 44px;
 }
-.brand img { display: block; height: auto; width: auto; max-height: 28px; }
+.brand img { display: block; height: auto; width: auto; max-height: 34px; }
 /* Revio wordmark ships as a white PNG; invert it to read dark on the
    white nav pill (light theme), leave white in dark theme and in the
    dark footer. */
@@ -942,6 +942,21 @@ a.card:focus-visible { outline-offset: 0; }
 @media (max-width: 980px) {
   .nav-links { display: none; }
   .nav-toggle { display: inline-flex; }
+  /* Full-width, flat white top bar on mobile (no floating pill, no side gutter) */
+  .site-header { padding: 0; }
+  .nav-in {
+    max-width: none; margin: 0;
+    border-radius: 0;
+    border-left: 0; border-right: 0; border-top: 0;
+    border-bottom: 1px solid var(--line);
+    box-shadow: none;
+    background: #ffffff;
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    padding: 0 16px;
+    min-height: 62px;
+  }
+  :root[data-theme="dark"] .nav-in { background: #ffffff; }
+  .brand img { max-height: 40px; }
   .hero-home { grid-template-columns: 1fr; gap: 44px; padding: 64px 0 68px; }
   .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1fr; gap: 36px; }
