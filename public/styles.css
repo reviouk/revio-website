@@ -574,6 +574,7 @@ strong { font-weight: 700; }
   box-shadow: 0 8px 20px rgba(20,10,45,.14);
 }
 .card .arrow-link { margin-top: 14px; }
+.card .btn-sm { margin-top: 16px; }
 a.card { display: block; }
 a.card:focus-visible { outline-offset: 0; }
 
