@@ -683,6 +683,11 @@ a.card:focus-visible { outline-offset: 0; }
 
 /* Split feature rows */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+/* Contact page: form on the right at desktop, but first (on top) once stacked */
+@media (max-width: 980px) {
+  .contact-split .contact-form-col { order: 1; }
+  .contact-split .contact-info-col { order: 2; }
+}
 .split .panel-visual {
   background: var(--panel); border: 1px solid var(--line);
   border-radius: var(--r-lg); padding: 30px;
