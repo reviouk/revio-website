@@ -562,6 +562,12 @@ strong { font-weight: 700; }
   margin-bottom: 16px;
 }
 .card .icon svg { width: 22px; height: 22px; }
+.card .icon-img {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--panel-grad);
+  box-shadow: 0 8px 20px rgba(80,3,177,.18);
+}
+.card .icon-img img { width: 30px; height: 30px; object-fit: contain; }
 .team-photo {
   width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
   margin-bottom: 16px; border: 3px solid var(--wash);
