@@ -226,8 +226,7 @@
           '<a class="btn btn-ghost-dark btn-sm nav-quote" href="' + QUOTE_URL + '">Request a Quote</a>' +
           '<a class="btn btn-mint btn-sm nav-book" href="' + MEETING_URL + '">Book a Meeting</a>' +
           '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">' +
-            '<svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>' +
-            '<svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+            '<span class="nb-line nb-l1"></span><span class="nb-line nb-l2"></span><span class="nb-line nb-l3"></span>' +
           '</button>' +
         '</div>' +
         '<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">' +
@@ -350,15 +349,22 @@
     var toggle = document.querySelector('.nav-toggle');
     var menu = document.getElementById('mobile-menu');
     if (toggle && menu) {
-      toggle.addEventListener('click', function () {
-        var open = menu.classList.toggle('open');
+      var setOpen = function (open) {
+        menu.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      toggle.addEventListener('click', function () {
+        setOpen(!menu.classList.contains('open'));
       });
       menu.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A') {
-          menu.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('open')) {
+          setOpen(false);
+          toggle.focus();
         }
       });
       /* Mobile accordion groups */
