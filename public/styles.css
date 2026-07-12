@@ -984,6 +984,7 @@ a.card:focus-visible { outline-offset: 0; }
   .brand img { max-height: 34px; }
   .hero-hubspot { display: flex; justify-content: center; width: 100%; }
   .logo-strip { display: none; }
+  .nav-book { padding: 8px 14px; font-size: 13px; }
   .hero-home { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; padding-bottom: 68px; }
   .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1fr; gap: 36px; }
