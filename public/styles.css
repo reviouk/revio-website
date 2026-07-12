@@ -981,10 +981,10 @@ a.card:focus-visible { outline-offset: 0; }
     min-height: 62px;
   }
   :root[data-theme="dark"] .nav-in { background: #ffffff; }
-  .brand img { max-height: 34px; }
+  .brand img { max-height: 27px; }
   .hero-hubspot { display: flex; justify-content: center; width: 100%; }
   .logo-strip { display: none; }
-  .nav-book { padding: 8px 14px; font-size: 13px; }
+  .nav-book { padding: 6px 11px; font-size: 11.5px; min-height: 0; }
   .hero-home { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; padding-bottom: 68px; }
   .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1fr; gap: 36px; }
