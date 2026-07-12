@@ -407,8 +407,8 @@ body.menu-open { overflow: hidden; }
   pointer-events: none;
 }
 .hero > .wrap { position: relative; z-index: 1; }
-.hero-home { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 92px 0 96px; }
-.hero-single { max-width: 760px; padding: 96px 0 100px; }
+.hero-home { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-top: 92px; padding-bottom: 96px; }
+.hero-single { max-width: 760px; padding-top: 96px; padding-bottom: 100px; }
 .badge {
   display: inline-block;
   background: rgba(109,40,217,.08);
@@ -983,7 +983,7 @@ a.card:focus-visible { outline-offset: 0; }
   :root[data-theme="dark"] .nav-in { background: #ffffff; }
   .brand img { max-height: 34px; }
   .hero-hubspot { display: flex; justify-content: center; width: 100%; }
-  .hero-home { grid-template-columns: 1fr; gap: 44px; padding: 64px 0 68px; }
+  .hero-home { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; padding-bottom: 68px; }
   .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1fr; gap: 36px; }
   .stats { grid-template-columns: repeat(3, 1fr); }
