@@ -11,7 +11,7 @@
   var QUOTE_URL = '/start-growing/';
   /* Pure-white Revio wordmark. The nav bar and footer are both dark, so
      it renders white in place on each. */
-  var LOGO_LIGHT = 'https://leadsignal.revio.agency/revio-logo-white.png';
+  var LOGO_LIGHT = 'https://lead-signal.ai/revio-logo-white.png';
   var LOGO_WHITE = 'https://revio.agency/wp-content/uploads/2022/06/LogoWhite-e1654540193495.png';
 
   /* Inline line-icons for the dropdown mega-menus (mirrors the

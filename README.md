@@ -42,4 +42,4 @@ static site with the publish directory set to `public`.
 
 Primary CTAs point to the live absolute URLs:
 `https://revio.agency/start-growing/` and `https://revio.agency/meeting/`.
-LeadSignal's "See the platform" links to `https://leadsignal.revio.agency`.
+LeadSignal's "See the platform" links to `https://lead-signal.ai`.

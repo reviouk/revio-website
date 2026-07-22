@@ -9,7 +9,7 @@
 @font-face { font-family: 'Satoshi'; src: url('https://revio.agency/wp-content/uploads/2024/09/Satoshi-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
 
 /* ---------- Tokens ----------
-   Palette mirrors leadsignal.revio.agency: violet #6d28d9 primary,
+   Palette mirrors lead-signal.ai: violet #6d28d9 primary,
    deep #4c1d95, soft-black ink #1b1230, warm-grey muted #6c6386,
    green + amber accents. Light theme default; dark theme overrides
    below via :root[data-theme="dark"].
@@ -34,7 +34,7 @@
 
   --panel-grad: linear-gradient(150deg, #cc28d9 0%, #1d6e95 100%);
   --panel-grad-alt: linear-gradient(150deg, #1d6e95 0%, #cc28d9 100%);
-  /* Light, airy hero like leadsignal.revio.agency (white → soft lavender) */
+  /* Light, airy hero like lead-signal.ai (white → soft lavender) */
   --hero-grad: linear-gradient(160deg, #ffffff 0%, #efe7ff 100%);
   --hero-ink: var(--ink);
   --hero-sub: var(--muted);
