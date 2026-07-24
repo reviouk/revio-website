@@ -51,7 +51,7 @@
      Each dropdown child carries an icon + one-line description
      so the panel renders as revio.agency's icon menu. */
   var NAV = [
-    { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], dot: true },
+    { label: 'LeadSignal', href: 'https://lead-signal.ai/', match: ['/lead-signal/'], dot: true },
     {
       label: 'Services', href: '/services/',
       match: ['/services/', '/lead-generation/', '/paid-search-social/', '/sales-enablement/', '/gohighlevel-crm-implementation/'],
