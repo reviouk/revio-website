@@ -112,7 +112,7 @@ h3 { font-size: 19px; font-weight: 700; }
 :focus-visible { outline: 3px solid var(--purple-2); outline-offset: 3px; border-radius: 4px; }
 ::selection { background: var(--mint); color: var(--deep); }
 
-.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
 .wrap-narrow { max-width: 820px; margin: 0 auto; padding: 0 24px; }
 
 section { padding: 88px 0; }
