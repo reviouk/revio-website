@@ -558,7 +558,8 @@ body.menu-open { overflow: hidden; }
   background: rgba(109,40,217,.08); filter: blur(24px);
   pointer-events: none;
 }
-.page-hero .wrap { position: relative; z-index: 1; padding-top: 78px; padding-bottom: 82px; max-width: 900px; }
+.page-hero .wrap, .page-hero .wrap-narrow { position: relative; z-index: 1; padding-top: 78px; padding-bottom: 82px; }
+.page-hero .wrap { max-width: 900px; }
 .page-hero .kicker { color: var(--hero-kicker); }
 .page-hero h1 { font-size: clamp(32px, 4.4vw, 52px); }
 .page-hero .sub { color: var(--hero-sub); font-size: 18px; margin: 18px 0 0; max-width: 58ch; }
@@ -1011,5 +1012,5 @@ a.card:focus-visible { outline-offset: 0; }
   .cta-row .btn { flex: 1 1 100%; }
   .cta-band { padding: 52px 26px; border-radius: var(--r-lg); }
   .footer-main { grid-template-columns: 1fr; gap: 34px; padding: 52px 0 40px; }
-  .page-hero .wrap { padding-top: 58px; padding-bottom: 62px; }
+  .page-hero .wrap, .page-hero .wrap-narrow { padding-top: 58px; padding-bottom: 62px; }
 }
