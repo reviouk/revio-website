@@ -11,8 +11,8 @@
   var QUOTE_URL = '/start-growing/';
   /* Pure-white Revio wordmark. The nav bar and footer are both dark, so
      it renders white in place on each. */
-  var LOGO_LIGHT = 'https://lead-signal.ai/revio-logo-white.png';
-  var LOGO_WHITE = 'https://revio.agency/wp-content/uploads/2022/06/LogoWhite-e1654540193495.png';
+  var LOGO_LIGHT = '/assets/revio-logo-white.png';
+  var LOGO_WHITE = '/assets/revio-logo-white.png';
 
   /* Inline line-icons for the dropdown mega-menus (mirrors the
      icon menu on revio.agency). Stroke uses currentColor so each
@@ -33,16 +33,8 @@
     why:     ic('<path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/>'),
     work:    ic('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>'),
     testi:   ic('<path d="M8 9h8M8 13h5"/><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/>'),
-    guides:  ic('<path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 1 2 2z"/>')
-  };
-
-  /* Real menu icon artwork from revio.agency (used as <img> so the
-     HubSpot sprocket and service icons match the live site exactly). */
-  var ICON_IMG = {
-    lead:    'https://revio.agency/wp-content/uploads/2021/01/lead-gen.svg',
-    paid:    'https://revio.agency/wp-content/uploads/2021/01/paid-1.svg',
-    sales:   'https://revio.agency/wp-content/uploads/2021/01/sales-enablement.svg',
-    hubspot: 'https://revio.agency/wp-content/uploads/2021/01/hubspot.svg'
+    guides:  ic('<path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 1 2 2z"/>'),
+    hubspot: ic('<circle cx="12" cy="13" r="3.5"/><path d="M12 9.5V4.5"/><path d="M15 11.2l4.3-2.5"/><path d="M14.6 15.6l3.2 3.2"/><circle cx="12" cy="3.8" r="0.4"/><circle cx="19.9" cy="8.3" r="0.4"/><circle cx="18.3" cy="19.3" r="0.4"/>')
   };
 
   /* Main navigation — mirrors revio.agency's live menu.
@@ -56,22 +48,22 @@
       label: 'Services', href: '/services/',
       match: ['/services/', '/lead-generation/', '/paid-search-social/', '/sales-enablement/', '/gohighlevel-crm-implementation/'],
       children: [
-        { href: '/lead-generation/', label: 'Inbound Lead Generation', iconImg: ICON_IMG.lead, desc: 'SEO &amp; content that fills the funnel' },
-        { href: '/paid-search-social/', label: 'Paid Search &amp; Social', iconImg: ICON_IMG.paid, desc: 'PPC &amp; paid social that converts' },
-        { href: '/sales-enablement/', label: 'Sales Enablement', iconImg: ICON_IMG.sales, desc: 'RevOps &amp; automation to close faster' },
+        { href: '/lead-generation/', label: 'Inbound Lead Generation', icon: ICON.lead, desc: 'SEO &amp; content that fills the funnel' },
+        { href: '/paid-search-social/', label: 'Paid Search &amp; Social', icon: ICON.paid, desc: 'PPC &amp; paid social that converts' },
+        { href: '/sales-enablement/', label: 'Sales Enablement', icon: ICON.sales, desc: 'RevOps &amp; automation to close faster' },
         { href: '/gohighlevel-crm-implementation/', label: 'GoHighLevel CRM Implementation', icon: ICON.build, desc: 'Set up, automate &amp; migrate GoHighLevel' }
       ]
     },
     {
-      label: 'HubSpot', href: '/hubspot-agency/', wide: true, iconImg: ICON_IMG.hubspot,
+      label: 'HubSpot', href: '/hubspot-agency/', wide: true, icon: ICON.hubspot,
       match: ['/hubspot-agency/', '/hubspot-consultancy/', '/hubspot-audit/', '/hubspot-support-packages/', '/hubspot-sales-hub-implementation/', '/hubspot-marketing-hub-implementation/', '/hubspot-service-hub/'],
       children: [
-        { href: '/hubspot-consultancy/', label: 'HubSpot Consultancy', iconImg: ICON_IMG.hubspot, desc: 'Strategy from a Solutions Partner' },
-        { href: '/hubspot-audit/', label: 'HubSpot Audit', iconImg: ICON_IMG.hubspot, desc: 'Free health check of your portal' },
-        { href: '/hubspot-support-packages/', label: 'HubSpot Support Packages', iconImg: ICON_IMG.hubspot, desc: 'Ongoing admin &amp; dev retainers' },
-        { href: '/hubspot-sales-hub-implementation/', label: 'Sales Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Set up Sales Hub around your process' },
-        { href: '/hubspot-marketing-hub-implementation/', label: 'Marketing Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Launch campaigns &amp; automation' },
-        { href: '/hubspot-service-hub/', label: 'Service Hub Implementation', iconImg: ICON_IMG.hubspot, desc: 'Tickets, knowledge base &amp; CSAT' }
+        { href: '/hubspot-consultancy/', label: 'HubSpot Consultancy', icon: ICON.hubspot, desc: 'Strategy from a Solutions Partner' },
+        { href: '/hubspot-audit/', label: 'HubSpot Audit', icon: ICON.hubspot, desc: 'Free health check of your portal' },
+        { href: '/hubspot-support-packages/', label: 'HubSpot Support Packages', icon: ICON.hubspot, desc: 'Ongoing admin &amp; dev retainers' },
+        { href: '/hubspot-sales-hub-implementation/', label: 'Sales Hub Implementation', icon: ICON.hubspot, desc: 'Set up Sales Hub around your process' },
+        { href: '/hubspot-marketing-hub-implementation/', label: 'Marketing Hub Implementation', icon: ICON.hubspot, desc: 'Launch campaigns &amp; automation' },
+        { href: '/hubspot-service-hub/', label: 'Service Hub Implementation', icon: ICON.hubspot, desc: 'Tickets, knowledge base &amp; CSAT' }
       ]
     },
     { label: 'AI Consultancy', href: '/ai-enablement/', match: ['/ai-enablement/'] },
@@ -115,7 +107,7 @@
     if (dupe) return '';
     var icon = item.iconImg
       ? '<span class="nav-ic-wrap nav-ic-wrap-img"><img class="nav-ic-img" src="' + item.iconImg + '" alt="" loading="lazy"></span>'
-      : '';
+      : (item.icon ? '<span class="nav-ic-wrap">' + item.icon + '</span>' : '');
     return '<a href="' + item.href + '"' +
       (item.href === page ? ' aria-current="page"' : '') +
       '>' + icon + '<span class="nav-txt"><span class="nav-lbl">' + item.label + ' Overview</span></span></a>';
