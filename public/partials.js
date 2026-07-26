@@ -376,6 +376,13 @@
       });
     }
 
+    /* Scheduled posts — cards carrying data-publish stay hidden until their
+       publish date, so the blog drip-feeds one article a day. */
+    document.querySelectorAll('[data-publish]').forEach(function (el) {
+      var d = new Date(el.getAttribute('data-publish') + 'T00:00:00');
+      if (!isNaN(d) && d.getTime() > Date.now()) el.remove();
+    });
+
     /* Scroll-reveal */
     var revealEls = document.querySelectorAll('.reveal');
     if (revealEls.length && 'IntersectionObserver' in window &&
