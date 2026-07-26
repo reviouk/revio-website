@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="628" viewBox="0 0 1200 628" role="img" aria-label="Bing Ads attribution in HubSpot">
+  <defs>
+    <radialGradient id="glow" cx="80%" cy="15%" r="90%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".38"/>
+      <stop offset="55%" stop-color="#1b1230" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#171021"/>
+      <stop offset="100%" stop-color="#100b18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="628" fill="url(#bg)"/>
+  <rect width="1200" height="628" fill="url(#glow)"/>
+  <g stroke="#ffffff" stroke-opacity=".05">
+    <line x1="0" y1="0" x2="0" y2="628"/><line x1="120" y1="0" x2="120" y2="628"/><line x1="240" y1="0" x2="240" y2="628"/><line x1="360" y1="0" x2="360" y2="628"/><line x1="480" y1="0" x2="480" y2="628"/><line x1="600" y1="0" x2="600" y2="628"/><line x1="720" y1="0" x2="720" y2="628"/><line x1="840" y1="0" x2="840" y2="628"/><line x1="960" y1="0" x2="960" y2="628"/><line x1="1080" y1="0" x2="1080" y2="628"/><line x1="1200" y1="0" x2="1200" y2="628"/>
+    <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="120" x2="1200" y2="120"/><line x1="0" y1="240" x2="1200" y2="240"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="480" x2="1200" y2="480"/><line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+  <circle cx="990" cy="140" r="26" fill="none" stroke="#8b5cf6" stroke-opacity=".85" stroke-width="3"/>
+  <circle cx="990" cy="140" r="52" fill="none" stroke="#8b5cf6" stroke-opacity=".4" stroke-width="2"/>
+  <circle cx="990" cy="140" r="82" fill="none" stroke="#8b5cf6" stroke-opacity=".16" stroke-width="2"/>
+  <circle cx="990" cy="140" r="9" fill="#8b5cf6"/>
+  <text x="90" y="150" font-family="Consolas, 'IBM Plex Mono', monospace" font-size="20" letter-spacing="4" fill="#8b5cf6" font-weight="700">ATTRIBUTION</text>
+  <text font-family="Segoe UI, Inter, Arial, sans-serif" font-size="58" font-weight="800" fill="#faf8fe" letter-spacing="-1"><tspan x="90" y="266">Bing Ads attribution</tspan><tspan x="90" y="334">in HubSpot</tspan></text>
+  <text x="90" y="560" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#faf8fe">REVI<tspan fill="#8b5cf6">O</tspan></text>
+  <text x="200" y="560" font-family="Consolas, monospace" font-size="16" fill="#8a7fa8">revio.agency · marketing, HubSpot &amp; RevOps</text>
+</svg>
