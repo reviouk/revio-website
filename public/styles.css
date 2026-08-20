@@ -862,8 +862,8 @@ a.card:focus-visible { outline-offset: 0; }
 }
 .hs-form-frame .hs-button:hover { transform: translateY(-2px); box-shadow: var(--glow-purple); }
 .hs-form-frame .hs-error-msg, .hs-form-frame .hs-error-msgs label { color: var(--pink); font-weight: 500; }
-.meetings-iframe-container { min-height: 680px; }
-.meetings-iframe-container iframe { width: 100%; min-height: 680px; border: 0; }
+.meetings-iframe-container { min-height: 760px; }
+.meetings-iframe-container iframe { width: 100%; min-height: 760px; border: 0; background: transparent; }
 
 /* ---------- Prose (legal pages) ---------- */
 .prose h2 { font-size: 24px; margin: 40px 0 12px; }
