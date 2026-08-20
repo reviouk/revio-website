@@ -914,10 +914,6 @@ a.card:focus-visible { outline-offset: 0; }
 .footer-bottom .sp { flex: 1; }
 .footer-bottom a { display: inline-flex; align-items: center; min-height: 36px; color: rgba(255,255,255,.6); }
 .footer-bottom a:hover { color: var(--mint); }
-.hero-hubspot { display: inline-flex; align-items: center; gap: 11px; margin-top: 22px; }
-.hero-hubspot .hs-mark { height: 32px; width: 32px; flex: none; }
-.hero-hubspot span { font-family: var(--font-head); font-weight: 500; font-size: 11px; line-height: 1.35; color: var(--muted); }
-.hero-hubspot span b { display: block; color: var(--ink); font-weight: 700; font-size: 13.5px; letter-spacing: .2px; }
 .footer-hubspot { display: inline-flex; align-items: center; gap: 12px; margin-top: 20px; }
 .footer-hubspot .hs-mark { height: 30px; width: 30px; flex: none; }
 .footer-hubspot span { font-family: var(--font-head); font-weight: 500; font-size: 11.5px; line-height: 1.35; color: rgba(255,255,255,.55); }
@@ -995,7 +991,6 @@ a.card:focus-visible { outline-offset: 0; }
   }
   :root[data-theme="dark"] .nav-in { background: #ffffff; }
   .brand img { max-height: 27px; }
-  .hero-hubspot { display: flex; justify-content: center; width: 100%; }
   .logo-strip { display: none; }
   .nav-book { padding: 6px 11px; font-size: 11.5px; min-height: 0; }
   .hero-home { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; padding-bottom: 68px; }
