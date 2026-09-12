@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="/styles.css">
   <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <style>
+    /* Step cards carry an icon alongside the number */
+    .card .step-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .card .step-head .icon{margin-bottom:0;width:40px;height:40px;border-radius:11px}
+    .card .step-head .icon svg{width:21px;height:21px}
+    .card .step-head .step-n{margin-bottom:0}
     /* Hero sits on the page box, left aligned, not a narrower centred column */
     .page-hero .wrap{max-width:1320px}
     .page-hero h1{max-width:20ch}
@@ -107,10 +112,10 @@
     <div class="wrap">
       <div class="reveal"><span class="kicker">How it runs</span><h2>Two weeks, four steps.</h2></div>
       <div class="grid-4 mt-lg">
-        <div class="card reveal"><div class="step-n">1</div><h3>Kick-off</h3><p>An hour. What the business does, where the time goes, what is already frustrating people.</p></div>
-        <div class="card reveal"><div class="step-n">2</div><h3>We go and look</h3><p>Your CRM, your inbox volumes, your handoffs. We work from what is actually happening, not from a questionnaire.</p></div>
-        <div class="card reveal"><div class="step-n">3</div><h3>Interviews</h3><p>Two or three short conversations with the people doing the work. This is where the real answers come from.</p></div>
-        <div class="card reveal"><div class="step-n">4</div><h3>Document and session</h3><p>You get the written audit, then we sit down and decide what happens next.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 4h10a1.5 1.5 0 0 1 1.5 1.5v7A1.5 1.5 0 0 1 18.5 14H14l-3.2 2.6V14H8.5A1.5 1.5 0 0 1 7 12.5v-7A1.5 1.5 0 0 1 8.5 4z"/><path d="M4 9v8.5A1.5 1.5 0 0 0 5.5 19H9"/></svg></div><div class="step-n">1</div></div><h3>Kick-off</h3><p>An hour. What the business does, where the time goes, what is already frustrating people.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4.5 4.5"/><path d="M8.4 11.6v-2M10.5 11.6V8M12.6 11.6v-3"/></svg></div><div class="step-n">2</div></div><h3>We go and look</h3><p>Your CRM, your inbox volumes, your handoffs. We work from what is actually happening, not from a questionnaire.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3.6 18.4c.5-2.7 2.7-4.4 5.4-4.4s4.9 1.7 5.4 4.4"/><path d="M16.5 6.2a3 3 0 0 1 0 5.6"/><path d="M18 14.4c1.4.7 2.3 2 2.6 4"/></svg></div><div class="step-n">3</div></div><h3>Interviews</h3><p>Two or three short conversations with the people doing the work. This is where the real answers come from.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h7.5L18 8v12.5H6z"/><path d="M13.5 3.5V8H18"/><path d="M9 12h6M9 15.5h4"/></svg></div><div class="step-n">4</div></div><h3>Document and session</h3><p>You get the written audit, then we sit down and decide what happens next.</p></div>
       </div>
     </div>
   </section>

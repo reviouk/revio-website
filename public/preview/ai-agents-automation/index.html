@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="/styles.css">
   <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <style>
+    /* Step cards carry an icon alongside the number */
+    .card .step-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .card .step-head .icon{margin-bottom:0;width:40px;height:40px;border-radius:11px}
+    .card .step-head .icon svg{width:21px;height:21px}
+    .card .step-head .step-n{margin-bottom:0}
     /* Hero sits on the page box, left aligned, not a narrower centred column */
     .page-hero .wrap{max-width:1320px}
     .page-hero h1{max-width:20ch}
@@ -101,10 +106,10 @@
       <div class="reveal"><span class="kicker">How we work</span><h2>Small, live, then bigger.</h2>
       <p class="lede mt-md">The first thing we build is chosen to prove the case in weeks, on one real process, with a number attached. Nobody signs off a programme of work on a promise.</p></div>
       <div class="grid-4 mt-lg">
-        <div class="card reveal"><div class="step-n">1</div><h3>Pick one process</h3><p>Out of the audit, or out of a conversation if you already know what hurts.</p></div>
-        <div class="card reveal"><div class="step-n">2</div><h3>Build it</h3><p>Two to four weeks for most things. You see it working on your own data, not on a demo account.</p></div>
-        <div class="card reveal"><div class="step-n">3</div><h3>Run it supervised</h3><p>It drafts, your team approves, and it learns from the edits until the output stops needing changing.</p></div>
-        <div class="card reveal"><div class="step-n">4</div><h3>Let it off the lead</h3><p>Only then does it act on its own, with the guardrails and the monitoring already in place.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h7M4 12h4M4 18h9"/><circle cx="16.5" cy="8" r="3.5"/><path d="m14.9 8 1.1 1.1 2.2-2.3"/></svg></div><div class="step-n">1</div></div><h3>Pick one process</h3><p>Out of the audit, or out of a conversation if you already know what hurts.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.8 4.6a4 4 0 0 0 5.1 5.2l-8.3 8.3a2.4 2.4 0 0 1-3.4-3.4z"/><path d="m6.5 17.5-1.7 1.7"/></svg></div><div class="step-n">2</div></div><h3>Build it</h3><p>Two to four weeks for most things. You see it working on your own data, not on a demo account.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.3-5.5 9-5.5S21 12 21 12s-3.3 5.5-9 5.5S3 12 3 12z"/><circle cx="12" cy="12" r="2.2"/></svg></div><div class="step-n">3</div></div><h3>Run it supervised</h3><p>It drafts, your team approves, and it learns from the edits until the output stops needing changing.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c3-8.5 7.9-12.5 14-13-.4 6.1-4.4 11-13 14"/><path d="M9.5 14.5 5 19"/><path d="M12.5 5.5c-3.5.3-5.7 2-6.4 5"/></svg></div><div class="step-n">4</div></div><h3>Let it off the lead</h3><p>Only then does it act on its own, with the guardrails and the monitoring already in place.</p></div>
       </div>
       <p class="micro mt-md">This is exactly how Autopilot works inside LeadSignal, because it is the only approach we have found that people actually trust.</p>
     </div>
