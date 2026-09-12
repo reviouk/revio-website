@@ -3,14 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Enablement &amp; Consultancy | REVIO</title>
-  <link rel="canonical" href="https://revio.agency/ai-enablement/">
-  <meta name="description" content="Revolutionise your marketing and sales with AI-powered solutions. AI discovery, chatbots, automated lead generation, AI content, customer insights and team training from Revio.">
+  <title>AI Enablement &amp; Training | REVIO</title>
+  <meta name="description" content="Getting your team to actually use AI. A programme rather than a workshop, measured on adoption at 30, 60 and 90 days.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <style>
+    /* Step cards carry an icon alongside the number */
+    .card .step-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .card .step-head .icon{margin-bottom:0;width:40px;height:40px;border-radius:11px}
+    .card .step-head .icon svg{width:21px;height:21px}
+    .card .step-head .step-n{margin-bottom:0}
+    /* Hero sits on the page box, left aligned, not a narrower centred column */
+    .page-hero .wrap{max-width:1320px}
+    .page-hero h1{max-width:20ch}
+    .page-hero .sub{max-width:62ch}
+    .previewbar{background:#1a1148;color:#fff;font-size:13px;padding:9px 20px;text-align:center;
+      font-family:var(--font-head,system-ui);letter-spacing:.2px}
+    .previewbar b{color:#74e8cb}
+    .previewbar a{color:#74e8cb}
+    .todo{background:rgba(255,176,32,.13);border:1px dashed rgba(255,176,32,.6);
+      border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.55}
+    .todo b{display:block;margin-bottom:3px;letter-spacing:.3px;text-transform:uppercase;
+      font-size:11px;color:#b07a00}
+    [data-theme=dark] .todo b{color:#ffc766}
+    .rungs{display:flex;flex-direction:column;gap:0}
+    .rung{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 0;
+      border-top:1px solid var(--line,#e4dff1)}
+    .rung:first-child{border-top:0}
+    .rung h3{margin:0}
+    .rung .fee{font-weight:700;white-space:nowrap;font-size:20px;color:var(--mint,#0e8f74)}
+    .rung p{grid-column:1/-1;margin:2px 0 0;opacity:.78;font-size:15px}
+    @media(max-width:560px){.rung{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 <div id="site-header"></div>
@@ -19,100 +46,92 @@
 
   <div class="page-hero">
     <div class="wrap">
-      <span class="badge">AI enablement</span>
-      <h1>Revolutionise your marketing and sales with <em class="mint">AI-powered</em> solutions.</h1>
-      <p class="sub">10X your productivity and generate sales faster. We find where AI genuinely saves time and money in your business — then build it, deploy it and train your team on it.</p>
+      <span class="badge">AI enablement &amp; training</span>
+      <h1>You already pay for the tools. <em class="mint">Now get the team using them.</em></h1>
+      <p class="sub">Most companies buy AI licences and watch a fifth of the team touch them. We fix the adoption problem, in your workflows, with your own work as the material.</p>
       <div class="cta-row">
-        <a class="btn btn-mint" href="/book-a-meeting-freelancer/">Book an AI discovery call</a>
-        <a class="btn btn-ghost" href="/lead-signal/">See LeadSignal, our AI product</a>
+        <a class="btn btn-mint" href="/book-a-meeting-freelancer/">Talk about your team</a>
+        <a class="btn btn-ghost" href="/ai-opportunity-audit/">Start with the audit</a>
       </div>
-      <p class="micro">We build and run AI in production — including our own platform, LeadSignal.</p>
+      <p class="micro">&pound;1,200 a day for sessions &middot; programmes from &pound;950 a month</p>
     </div>
   </div>
 
   <section>
+    <div class="wrap wrap-narrow reveal">
+      <span class="kicker">Why programmes, not workshops</span>
+      <h2>A one-day course is mostly forgotten within a month.</h2>
+      <p class="lede mt-md">Roughly nine tenths of what people learn in a one-off training day is gone in thirty days. Everyone in the industry knows this, and most still sell the training day.</p>
+      <p class="mt-md" style="opacity:.78">Adoption happens when somebody keeps showing up: when the awkward question gets answered in week three, when a real task gets rebuilt in front of the person who does it, when the team can see who is actually using it. That is a programme, and it is why we price it monthly.</p>
+    </div>
+  </section>
+
+  <section class="section-wash">
     <div class="wrap">
-      <div class="reveal">
-        <span class="kicker">AI services</span>
-        <h2>Practical AI, not hype.</h2>
-        <p class="lede mt-md">Every engagement starts with your processes and your numbers — then we apply AI where it moves them.</p>
+      <div class="reveal"><span class="kicker">The programme</span><h2>Four phases, then it keeps going.</h2></div>
+      <div class="grid-4 mt-lg">
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s6-5.1 6-9.4A6 6 0 0 0 6 10.6C6 14.9 12 20 12 20z"/><circle cx="12" cy="10.4" r="2.2"/></svg></div><div class="step-n">1</div></div><h3>Where you actually are</h3><p>Two weeks. What is licensed, what is used, who the quiet enthusiasts are and what people are already doing in secret.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.2 3.4 3.9.9-2.6 3 .3 4-3.8-1.6L8.2 15l.3-4-2.6-3 3.9-.9z"/><path d="M8.5 19.5h7"/></svg></div><div class="step-n">2</div></div><h3>Get the leadership straight</h3><p>Half a day with the people who set the tone. Adoption dies when the boss does not use it.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5h6.5a2 2 0 0 1 1.5.7 2 2 0 0 1 1.5-.7H20"/><path d="M4 6.5V18h6.5a2 2 0 0 1 1.5.7 2 2 0 0 1 1.5-.7H20V6.5"/><path d="M12 7.2V18.7"/></svg></div><div class="step-n">3</div></div><h3>Train on real work</h3><p>Your documents, your emails, your reports. Never a generic exercise about writing a haiku.</p></div>
+        <div class="card reveal"><div class="step-head"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a7.5 7.5 0 0 1 12.6-3.3L20 8.5"/><path d="M20 4.5v4h-4"/><path d="M19.5 15a7.5 7.5 0 0 1-12.6 3.3L4 15.5"/><path d="M4 19.5v-4h4"/></svg></div><div class="step-n">4</div></div><h3>Rebuild the workflows</h3><p>Short sessions per team, taking one task each and doing it a better way, permanently.</p></div>
       </div>
-      <div class="grid-3 mt-lg">
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
-          <h3>AI Enablement Discovery</h3>
-          <p>We analyse your business processes and identify where AI can improve efficiency and cut cost — delivered as a prioritised action plan with expected ROI.</p>
+      <p class="mt-md reveal" style="opacity:.78">Running this for one department rather than the whole company? The marketing version has its own page: <a href="/ai-enablement/marketing/">AI enablement for marketing teams</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="reveal"><span class="kicker">What it costs</span><h2>Two ways to buy it.</h2></div>
+      <div class="grid-2 mt-lg">
+        <div class="price-card reveal">
+          <span class="tier-name">Sessions</span>
+          <div class="amount">&pound;1,200<small> a day</small></div>
+          <p class="desc">For a team that needs a start, or a leadership group that needs to see it properly once.</p>
+          <ul class="checks">
+            <li>Half day &pound;700, full day &pound;1,200</li>
+            <li>Built around your own work</li>
+            <li>Recorded, so the people who missed it can catch up</li>
+            <li>A written follow-up with the prompts and set-ups used</li>
+          </ul>
+          <a class="btn btn-ghost-dark" href="/book-a-meeting-freelancer/">Book a session</a>
         </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 20l1.8-4.9A7.5 7.5 0 1 1 20 11.5z"/><path d="M8.6 11.6l2.1 2.1 4.4-4.4"/></svg></div>
-          <h3>Chatbots &amp; Conversational AI</h3>
-          <p>Dynamic, on-brand assistants for customer service and lead generation — qualifying, answering and booking around the clock.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16a8 8 0 1 1 15 0"/><path d="M12 13.5 15.5 9"/><circle cx="12" cy="13.8" r="1.1"/></svg></div>
-          <h3>Automated Lead Generation</h3>
-          <p>AI-driven systems — including our LeadSignal platform — that generate, score and prioritise a consistent flow of quality leads.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 13.7 8.3 18.5 10 13.7 11.7 12 16.5 10.3 11.7 5.5 10 10.3 8.3z"/><path d="M19 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></div>
-          <h3>AI Content Generation</h3>
-          <p>Generative AI woven into your content workflow — text, images, audio and video — with brand voice and human editorial control built in.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8.5M16 16v-6.5"/></svg></div>
-          <h3>AI-Driven Customer Insights</h3>
-          <p>Advanced analytics on your customer data to sharpen targeting, personalise campaigns and make decisions on evidence, not instinct.</p>
-        </div>
-        <div class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-5.5"/></svg></div>
-          <h3>AI Tools Training</h3>
-          <p>Hands-on training that upskills your team on the AI tools that matter for their roles — prompts, workflows and guardrails included.</p>
+        <div class="price-card featured reveal">
+          <span class="flag">Recommended</span>
+          <span class="tier-name">Adoption programme</span>
+          <div class="amount">from &pound;950<small> a month</small></div>
+          <p class="desc">The one that actually changes how the company works. Rolling monthly, no lock-in.</p>
+          <ul class="checks">
+            <li>Monthly sessions plus a clinic people can bring problems to</li>
+            <li>Workflow rebuilds, one team at a time</li>
+            <li>Adoption measured at 30, 60 and 90 days</li>
+            <li>A named person your team can message</li>
+            <li>Cancel any month</li>
+          </ul>
+          <a class="btn btn-purple" href="/book-a-meeting-freelancer/">Talk it through</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section-wash">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="kicker">The payoff</span>
-        <h2>Unlock the power of AI tools across your funnel.</h2>
-        <p class="lede mt-md">Applied well, AI compounds every other investment you've made in marketing and sales:</p>
-        <ul class="checks">
-          <li><strong>Boosted engagement</strong> — always-on, personalised conversations</li>
-          <li><strong>Automated tasks</strong> — hours back for the work only humans can do</li>
-          <li><strong>Data-informed decisions</strong> — insight instead of instinct</li>
-          <li><strong>Faster growth &amp; better retention</strong> — the numbers that matter</li>
-        </ul>
-      </div>
-      <div class="panel-visual reveal">
-        <span class="kicker">How an engagement runs</span>
-        <ul class="checks">
-          <li><strong>1. Discovery.</strong> We map your operations and score AI opportunities by impact and effort.</li>
-          <li><strong>2. Action plan.</strong> A concrete roadmap — tools, integrations, costs and expected savings.</li>
-          <li><strong>3. Build &amp; deploy.</strong> We implement, integrate with your stack (HubSpot included), and test.</li>
-          <li><strong>4. Train &amp; iterate.</strong> Your team upskilled, results measured, roadmap updated.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-deep tight">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="kicker">Proof we practise it</span>
-        <h2>We didn't just adopt AI. We built a product with it.</h2>
-        <p class="lede mt-md">LeadSignal — our AI lead-intelligence platform — reads every DM conversation, scores each lead 0–100 and books calls on autopilot. It's the clearest proof of how we think about applied AI: measurable, integrated, in production.</p>
-        <div class="cta-row" style="margin-top:26px">
-          <a class="btn btn-mint" href="https://lead-signal.ai/">Explore LeadSignal</a>
+    <div class="wrap">
+      <div class="reveal"><span class="kicker">What gets measured</span><h2>Adoption, not attendance.</h2>
+      <p class="lede mt-md">Anyone can report that eighteen people came to a session. These are the numbers we report instead.</p></div>
+      <div class="grid-3 mt-lg">
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M7 16V9M12 16V5M17 16v-4"/></svg></div>
+          <h3>Weekly active users</h3>
+          <p>How many people used it in the last seven days, by team, tracked from the start so the line means something.</p>
         </div>
-      </div>
-      <div class="reveal" aria-hidden="true">
-        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:28px">
-          <div style="font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mint)">LeadSignal · live</div>
-          <div style="font-family:var(--font-head);font-size:30px;font-weight:700;color:#fff;margin-top:10px;letter-spacing:-.8px">Lead scored 94 · HOT</div>
-          <p style="color:rgba(255,255,255,.65);font-size:14px;margin-top:8px">"Asked about pricing. Competition in 14 weeks — offer the call now."</p>
-          <div style="margin-top:18px;font-size:13px;color:rgba(255,255,255,.55)">call booked ✓ attributed to <b style="color:var(--mint)">meta_ads</b></div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.4l2.8 1.6"/></svg></div>
+          <h3>Hours given back</h3>
+          <p>Measured on named tasks that were timed before we started, not estimated afterwards.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg></div>
+          <h3>Workflows actually changed</h3>
+          <p>The count of real processes now done a different way, which is the only one that survives contact with a finance director.</p>
         </div>
       </div>
     </div>
@@ -121,11 +140,11 @@
   <section>
     <div class="wrap reveal">
       <div class="cta-band">
-        <h2>Find your first AI win.</h2>
-        <p>Book a discovery call — we'll identify the one process in your business where AI would pay for itself fastest.</p>
+        <h2>Your team is already using AI. Probably badly, and probably in secret.</h2>
+        <p>Better to find out what they are doing and make it official.</p>
         <div class="cta-row">
-          <a class="btn btn-mint" href="/book-a-meeting-freelancer/">Book a Meeting</a>
-          <a class="btn btn-ghost" href="/start-growing/">Start Growing</a>
+          <a class="btn btn-mint" href="/ai-opportunity-audit/">Book an AI Opportunity Audit</a>
+          <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Talk to us first</a>
         </div>
       </div>
     </div>

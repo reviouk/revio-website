@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Growth Systems | REVIO</title>
+  <meta name="description" content="Finding leads, nurturing them and producing the assets that feed them &mdash; built as one connected system on products you own. We charge for the requirements, the data and the wiring. Never for your licences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <style>
+    /* Step cards carry an icon alongside the number */
+    .card .step-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .card .step-head .icon{margin-bottom:0;width:40px;height:40px;border-radius:11px}
+    .card .step-head .icon svg{width:21px;height:21px}
+    .card .step-head .step-n{margin-bottom:0}
+    /* Hero sits on the page box, left aligned, not a narrower centred column */
+    .page-hero .wrap{max-width:1320px}
+    .page-hero h1{max-width:20ch}
+    .page-hero .sub{max-width:62ch}
+    .previewbar{background:#1a1148;color:#fff;font-size:13px;padding:9px 20px;text-align:center;
+      font-family:var(--font-head,system-ui);letter-spacing:.2px}
+    .previewbar b{color:#74e8cb}
+    .previewbar a{color:#74e8cb}
+    .todo{background:rgba(255,176,32,.13);border:1px dashed rgba(255,176,32,.6);
+      border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.55}
+    .todo b{display:block;margin-bottom:3px;letter-spacing:.3px;text-transform:uppercase;
+      font-size:11px;color:#b07a00}
+    [data-theme=dark] .todo b{color:#ffc766}
+    /* The fee ladder. Each rung is one invoice line, priced in the open. */
+    .rungs{display:flex;flex-direction:column;gap:0}
+    .rung{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 0;
+      border-top:1px solid var(--line,#e4dff1)}
+    .rung:first-child{border-top:0}
+    .rung h3{margin:0}
+    .rung .fee{font-weight:700;white-space:nowrap;font-size:20px;color:var(--mint,#0e8f74)}
+    .rung p{grid-column:1/-1;margin:2px 0 0;opacity:.78;font-size:15px}
+    /* The licence rung costs nothing from us, so it is deliberately not mint. */
+    .rung.rung-pass .fee{color:var(--muted,#6c6386);font-weight:600;font-size:17px}
+    @media(max-width:560px){.rung{grid-template-columns:1fr}}
+    /* The published stack. Naming the products is the point, so it gets room. */
+    .stack{display:flex;flex-wrap:wrap;gap:10px}
+    .stack span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line,#e8e2f3);
+      background:var(--panel,#fff);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600}
+    .stack span i{width:7px;height:7px;border-radius:50%;background:var(--mint,#12c98b);font-style:normal}
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="badge">AI growth systems</span>
+      <h1>You do not need six more subscriptions. <em class="mint">You need them wired together</em>.</h1>
+      <p class="sub">Finding the right people, chasing them until they answer, and producing the assets that give them a reason to. Assembled from products you buy yourself, wired together so it behaves as one machine and reports to one number in your CRM.</p>
+      <div class="cta-row">
+        <a class="btn btn-mint" href="/ai-opportunity-audit/">Start with the audit</a>
+        <a class="btn btn-ghost" href="#cost">See what it costs</a>
+      </div>
+      <p class="micro">You own every account, every domain and every list. We never take a cut of a subscription.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap wrap-narrow reveal">
+      <span class="kicker">The honest version</span>
+      <h2>The tools are commodities. The wiring is the work.</h2>
+      <p class="lede mt-md">Anyone can buy Apollo. Almost nobody can make sourcing, enrichment, sending, your CRM and your content engine behave as one system that a sales director can read a number off on a Monday morning.</p>
+      <p class="mt-md" style="opacity:.78">And almost nobody keeps it working. These systems do not fail on day one. They fail in month seven, when a field name changes, a sync quietly stops and nobody notices for three weeks. That is the bit we are actually selling.</p>
+    </div>
+  </section>
+
+  <section class="section-wash">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">What it does</span>
+        <h2>Three jobs, one machine.</h2>
+        <p class="lede mt-md">Named after the job, not the technology &mdash; the same way we name everything else.</p>
+      </div>
+      <div class="grid-3 mt-lg">
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M11 8.4v5.2M8.4 11h5.2"/></svg></div>
+          <h3>Find</h3>
+          <p>Who you actually sell to, written down properly for once. Then sourcing and enrichment against that definition, triggered by signals rather than scraped in bulk, and deduped against your CRM before a single record lands.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.4l2.8 1.6"/></svg></div>
+          <h3>Nurture</h3>
+          <p>Sequences that stop the moment someone replies, replies that get handled rather than queued, and routing that puts the right person in front of them. Most systems start conversations. This one is built to finish them.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h11v13H4z"/><path d="M7 9h5M7 12h5M7 15h3"/><path d="M18 8.5h2v10h-2"/></svg></div>
+          <h3>Create</h3>
+          <p>The assets that feed the other two. Landing pages, ad variants, video, and the written content that gets you quoted by the AI search engines your buyers now ask first. Produced at a pace a person cannot match, checked by one who can.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow reveal">
+      <span class="kicker">A word on tools</span>
+      <h2>We publish the stack.</h2>
+      <p class="lede mt-md">There is a whole industry whose AI service is a markup on a subscription, and whose stack is a secret because that is where the margin hides. Ours is on the page. You buy the licences in your own name.</p>
+      <div class="stack mt-md">
+        <span><i></i>Apollo</span>
+        <span><i></i>Clay</span>
+        <span><i></i>HubSpot</span>
+        <span><i></i>LeadSignal</span>
+        <span><i></i>Your existing stack first</span>
+      </div>
+      <p class="mt-md" style="opacity:.75">The list changes when something better turns up, and we will tell you when it does. What does not change is that the accounts are yours and the invoices come to you directly.</p>
+      <div class="todo mt-md"><b>To confirm before this ships</b>Fix the real product list. Apollo, Clay and HubSpot are placeholders for whatever the standard build actually uses &mdash; and only name products Revio is genuinely happy to be judged on.</div>
+    </div>
+  </section>
+
+  <section class="section-wash" id="cost">
+    <div class="wrap wrap-narrow">
+      <div class="reveal">
+        <span class="kicker">What it costs</span>
+        <h2>You are paying for requirements, data and wiring.</h2>
+        <p class="lede mt-md">Not for software. Every line below is work done by people, priced in the open, and the licences sit outside it where you can see them.</p>
+      </div>
+
+      <div class="rungs mt-lg reveal">
+        <div class="rung">
+          <h3>Requirements and scope</h3>
+          <div class="fee">&pound;1,500</div>
+          <p>Our standard AI Opportunity Audit, doing double duty. What a lead actually is in your business, where the current process leaks, and what the system has to do before anybody builds it.</p>
+        </div>
+        <div class="rung">
+          <h3>Data configuration</h3>
+          <div class="fee">Quoted after we look</div>
+          <p>Dedupe rules, field mapping, ownership and attribution, and a decision about the records you already have. We quote this once we have been inside your CRM. Anyone who fixes this price on a first call has not looked at your data.</p>
+        </div>
+        <div class="rung">
+          <h3>Build and integration</h3>
+          <div class="fee">From &pound;4,500</div>
+          <p>Fixed price, fixed date. The connections between the products, the scoring, the guardrails, the handbacks, and the monitoring that tells you when a seam has come apart.</p>
+        </div>
+        <div class="rung">
+          <h3>Run</h3>
+          <div class="fee">Monthly</div>
+          <p>Keeping it connected as the products underneath it change, plus the ongoing work the system needs to stay effective &mdash; list refresh, copy iteration, deliverability, and the numbers reviewed with you rather than emailed at you.</p>
+        </div>
+        <div class="rung rung-pass">
+          <h3>Tool licences</h3>
+          <div class="fee">Paid by you, direct</div>
+          <p>Never on our invoice. Bought in your name, on your card, cancellable by you without asking us. This row costs us the margin most agencies live on, which is rather the point.</p>
+        </div>
+      </div>
+
+      <div class="todo mt-md"><b>To confirm before this ships</b>Data configuration needs a stated typical range and Run needs a floor &mdash; &ldquo;quoted after we look&rdquo; and &ldquo;monthly&rdquo; with no number will lose enquiries from people who are simply trying to work out whether they can afford this at all.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow reveal">
+      <span class="kicker">The unglamorous invoice line</span>
+      <h2>Most of this happens before anything clever runs.</h2>
+      <p class="lede mt-md">Agreeing what a lead actually is. Mapping the fields. Deciding what happens to the forty thousand records nobody has touched since 2019.</p>
+      <p class="mt-md" style="opacity:.78">It is the least exciting thing on the quote and the one that decides whether the system works. Projects that skip it do not fail loudly &mdash; they just quietly stop being used, and six months later somebody cancels the subscriptions and says AI did not work for them. Cleaning up CRMs is what we have done for a decade, which is why we are willing to put a price on it instead of hiding it inside the build.</p>
+    </div>
+  </section>
+
+  <section class="section-wash">
+    <div class="wrap">
+      <div class="reveal"><span class="kicker">Why us</span><h2>Three things the stack-assemblers cannot say.</h2></div>
+      <div class="grid-3 mt-lg">
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7.4 10 10M17 7.4 14 10M17 16.6 14 14"/></svg></div>
+          <h3>It reports to revenue</h3>
+          <p>Most outbound services hand you a list and a dashboard of their own. Ours lands in your CRM deduped, attributed and scored, so the conversation is about pipeline rather than about open rates. We are a HubSpot Solutions Partner and this is the part everyone else gets wrong.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/></svg></div>
+          <h3>We finish the conversation</h3>
+          <p>A sequencing tool stops the second someone replies. LeadSignal, which we built and run ourselves, picks the reply up, qualifies it in your voice and books the meeting. Nobody assembling a stack out of other people&rsquo;s products can offer that, because the conversational layer is ours.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.8 4.6a4 4 0 0 0 5.1 5.2l-8.3 8.3a2.4 2.4 0 0 1-3.4-3.4z"/><path d="m6.5 17.5-1.7 1.7"/></svg></div>
+          <h3>Custom goes where it earns it</h3>
+          <p>Off-the-shelf sources and sends, because building that yourself is vanity. Custom goes into the glue, the scoring, the guardrails and the handback rules &mdash; the parts no product does, and the parts that make the difference between a system you trust and one you watch nervously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap wrap-narrow reveal">
+      <span class="kicker">No lock-in</span>
+      <h2>You could sack us on Friday and it would still run on Monday.</h2>
+      <p class="lede mt-md">Because the accounts are in your name and the configuration is documented, leaving us is genuinely possible. Most agencies in this market rely on it not being.</p>
+      <p class="mt-md" style="opacity:.78">We would rather earn the retainer every month than hold the logins. It is also the only version of this that survives a finance director reading the contract.</p>
+    </div>
+  </section>
+
+  <section class="section-wash">
+    <div class="wrap wrap-narrow">
+      <div class="reveal"><span class="kicker">Straight answers</span><h2>Questions people ask before booking.</h2></div>
+      <div class="mt-lg" style="display:flex;flex-direction:column;gap:22px">
+        <div class="reveal"><h3>Why pay you when I could buy the tools myself?</h3><p style="opacity:.78">You could, and some people should. What you are buying is the definition of who to target, the data work that makes the targeting real, the connections between the products, and somebody whose job it is to notice when one of them breaks. The software is the cheap part. It is also the part that does nothing on its own.</p></div>
+        <div class="reveal"><h3>Is this cold outreach, and is it legal here?</h3><p style="opacity:.78">Business-to-business outreach to corporate addresses is lawful in the UK on a legitimate interest basis, with a clear opt-out on every message and a record of why each person was contacted. We build that in rather than bolt it on. We do not do consumer cold email, and we will say no if that is what is being asked for.</p></div>
+        <div class="reveal"><h3>What about our sending domains?</h3><p style="opacity:.78">Separate domains for outbound, warmed properly, with authentication set up correctly so your main domain is never the one that gets burned. This is part of the build, not an afterthought, and it is the single most common reason these systems stop working.</p></div>
+        <div class="reveal"><h3>Do we have to be on HubSpot?</h3><p style="opacity:.78">No. We know it best and it makes the data configuration faster and cheaper, but the system is built around your process rather than your CRM vendor.</p></div>
+        <div class="reveal"><h3>How long before it is running?</h3><p style="opacity:.78">Two weeks for requirements, then typically four to six for the first working version, depending on what the data work turns up. You see it running on your own records rather than on a demo account, supervised first, before it is allowed to act on its own.</p></div>
+        <div class="reveal"><h3>Do you run this on yourselves?</h3><p style="opacity:.78">Yes. It is how we fill our own pipeline, and LeadSignal exists because we needed the conversational half of it and could not buy one we trusted.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <h2>Start where everything else starts.</h2>
+        <p>Two weeks, &pound;1,500, and a written answer on whether this is worth building for you at all.</p>
+        <div class="cta-row">
+          <a class="btn btn-mint" href="/ai-opportunity-audit/">Book an AI Opportunity Audit</a>
+          <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Talk to us first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="/partials.js"></script>
+</body>
+</html>

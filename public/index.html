@@ -3,297 +3,470 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inbound Sales &amp; Marketing Hubspot Agency &amp; Lead Generation</title>
-  <link rel="canonical" href="https://revio.agency/">
-  <meta name="description" content="REVIO is a B2B Digital Inbound Marketing Agency, Sales Enablement Hubspot consultants &amp; experts in Lead generation &amp; Hubspot CRM.">
+  <title>AI Consultancy, Build &amp; Enablement | REVIO</title>
+  <meta name="description" content="Revio finds where AI genuinely saves your team time or wins revenue, then builds it, connects it to your CRM and trains your people. We build and run our own AI product.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
   <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+  /* ============================================================
+     REVIO home — rebuilt layout, existing brand palette.
+     Self-contained: own header, own footer, no /styles.css and no
+     /partials.js, so nothing here can affect the rest of the site.
+     ============================================================ */
+  @font-face{font-family:'Satoshi';src:url('/assets/fonts/Satoshi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('/assets/fonts/Satoshi-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('/assets/fonts/Satoshi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--fb);font-size:16px;line-height:1.65;color:var(--ink);
+    background:var(--page);overflow-x:hidden;isolation:isolate}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+  ul{list-style:none}
+  h1,h2,h3,h4{font-family:var(--fh);line-height:1.12;letter-spacing:-.6px}
+  :focus-visible{outline:3px solid var(--purple-2);outline-offset:3px;border-radius:6px}
+  ::selection{background:var(--mint);color:#06281e}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--fh);font-weight:700;
+    font-size:14.5px;padding:12px 20px;border-radius:var(--r-pill);border:1.5px solid transparent;
+    transition:background-color .16s ease,border-color .16s ease,color .16s ease,transform .16s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .btn-primary{background:var(--purple);color:#fff}
+  .btn-primary:hover{background:var(--purple-2)}
+  .btn-line{border-color:#e4e4ea;color:var(--ink);background:var(--panel)}
+  .btn-line:hover{border-color:var(--purple);color:var(--purple)}
+  .btn-mint{background:var(--mint);color:#06281e}
+  .btn-mint:hover{background:#0fb47c}
+  .btn-dark{border-color:rgba(255,255,255,.3);color:#fff}
+  .btn-dark:hover{border-color:var(--mint);color:var(--mint)}
+  .btn-lg{padding:15px 26px;font-size:15.5px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+  /* ---------- Panels & section furniture ---------- */
+  main{padding-bottom:0}
+  .panel{max-width:1280px;margin:22px auto 0;background:var(--canvas);border:0;
+    border-radius:var(--r-pan);padding:40px}
+  .panel.flush{padding:0;overflow:hidden}
+  .panel.tint{background:var(--canvas)}
+  /* Measured off b2brocket: two radials fading to nothing by 35%, lavender in
+     from one bottom corner and blue in from the other. */
+  .panel.grad{background:
+    radial-gradient(circle at 100% 100%, #ccc8fb, rgba(255,255,255,0) 35%),
+    radial-gradient(circle at 0 100%, #8ab4fd, rgba(255,255,255,0) 35%),
+    var(--canvas)}
+  .panel.grad-soft{background:
+    radial-gradient(circle at 75% 50%, #ccc8fb, rgba(255,255,255,0) 33%),
+    var(--panel)}
+  [data-theme=dark] .panel.grad,[data-theme=dark] .panel.grad-soft{background:var(--canvas)}
+  .panel.plain{background:#fff;box-shadow:var(--shadow)}
+  [data-theme=dark] .panel.plain{background:var(--panel)}
+  .panel.dark{background:linear-gradient(#05091f, #1a164e 50%, #1a164e);border-color:transparent;color:#fff}
+  [data-theme=dark] .panel.dark{background:linear-gradient(#04071a, #15113f 50%, #15113f)}
+  @media(max-width:780px){.panel{padding:24px 18px;border-radius:20px;margin-top:16px}}
+
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--purple);
+    font-family:var(--fh);font-size:11.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    padding:7px 13px;border-radius:var(--r-pill)}
+  .kick{font-family:var(--fh);font-size:11.5px;font-weight:700;letter-spacing:1.9px;
+    text-transform:uppercase;color:var(--purple)}
+  h2{font-size:clamp(29px,3.5vw,42px);letter-spacing:-1.3px;max-width:18ch}
+  h2 .alt{color:var(--purple);display:block}
+  .lede{color:var(--muted);font-size:16.5px;max-width:56ch;margin-top:14px;line-height:1.62}
+  .center{text-align:center}
+  .center h2,.center .lede{margin-left:auto;margin-right:auto}
+  .center .lede{max-width:62ch}
+
+  /* ---------- Hero ---------- */
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:48px;align-items:center}
+  .hero h1{font-size:clamp(38px,4.9vw,58px);line-height:1.06;letter-spacing:-2px;margin-top:20px;max-width:15ch}
+  .hero h1 .alt{color:var(--purple)}
+  .hero p.sub{color:var(--muted);font-size:17.5px;margin-top:20px;max-width:48ch;line-height:1.62}
+  .hero .actions{margin-top:28px}
+  .herotrust{display:flex;align-items:center;gap:14px;margin-top:26px;flex-wrap:wrap}
+  .hstack{display:flex}
+  .hstack span{width:30px;height:30px;border-radius:50%;background:var(--chip);color:var(--purple);
+    border:2px solid var(--panel);margin-left:-9px;display:grid;place-items:center;
+    font-family:var(--fh);font-weight:700;font-size:11px}
+  .hstack span:first-child{margin-left:0}
+  .herotrust .txt{font-size:13.5px;color:var(--muted)}
+  .herotrust .txt b{color:var(--ink)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;gap:34px}}
+
+  /* live card */
+  .live{border:0;border-radius:20px;background:var(--panel);overflow:hidden;
+    box-shadow:var(--shadow)}
+  .live .lhead{display:flex;align-items:center;gap:9px;padding:13px 18px;border-bottom:1px solid var(--line);
+    font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--muted)}
+  .live .lhead .dot{width:8px;height:8px;border-radius:50%;background:var(--mint)}
+  .lrow{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:16px 18px;
+    border-bottom:1px solid var(--line)}
+  .lrow:last-child{border-bottom:0}
+  .lrow .sc{font-family:var(--fh);font-weight:700;font-size:17px;text-align:center;border-radius:10px;
+    padding:7px 0;letter-spacing:-.4px}
+  .sc.hot{background:rgba(18,201,139,.14);color:var(--mint-ink)}
+  .sc.warm{background:rgba(255,197,83,.2);color:#8a6100}
+  [data-theme=dark] .sc.warm{color:var(--gold)}
+  .sc.cool{background:var(--chip);color:var(--purple)}
+  .lrow .who{display:block;font-weight:600;font-size:15px}
+  .lrow .why{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}
+  .pill-src{font-family:var(--fh);font-size:10.5px;font-weight:700;letter-spacing:1.1px;
+    text-transform:uppercase;color:var(--muted);background:var(--tile);border-radius:var(--r-pill);
+    padding:5px 10px;white-space:nowrap}
+  .lfoot{padding:13px 18px;font-size:13px;color:var(--muted);background:var(--canvas)}
+  .lfoot b{color:var(--ink)}
+
+  /* ---------- Logo strip ---------- */
+  .strip{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}
+  .strip .lab{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:1.8px;
+    text-transform:uppercase;color:var(--muted)}
+  .strip img{height:24px;width:auto;opacity:.48;filter:grayscale(1)}
+  [data-theme=dark] .strip img{filter:grayscale(1) invert(1) brightness(1.7);opacity:.6}
+
+  /* ---------- Step path ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .step{border:0;border-radius:var(--r-card);padding:26px;background:var(--panel);box-shadow:var(--shadow)}
+  .step .no{display:inline-flex;align-items:center;gap:9px;font-family:var(--fh);font-size:11.5px;
+    font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .step .no i{font-style:normal;width:24px;height:24px;border-radius:8px;background:var(--chip);
+    color:var(--purple);display:grid;place-items:center;font-size:12px}
+  .step h3{font-size:21px;margin-top:14px}
+  .step p{font-size:14.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+  .step .fee{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-family:var(--fh);
+    font-weight:700;font-size:17px;color:var(--purple)}
+  .step .fee small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:3px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* ---------- Split feature rows ---------- */
+  .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+  .split.rev .copy{order:2}
+  @media(max-width:900px){.split{grid-template-columns:1fr;gap:30px}.split.rev .copy{order:0}}
+  .mock{border:0;border-radius:var(--r-card);background:var(--panel);padding:20px;box-shadow:var(--shadow)}
+  .mock .mhead{font-family:var(--fh);font-size:13px;font-weight:700;margin-bottom:14px}
+  .mline{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;background:var(--canvas);
+    border:0;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .mline:last-child{margin-bottom:0}
+  .mline .t{font-size:14px;font-weight:600}
+  .mline .s{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .tag{font-family:var(--fh);font-size:11px;font-weight:700;padding:5px 10px;border-radius:var(--r-pill);white-space:nowrap}
+  .tag.good{background:rgba(18,201,139,.15);color:var(--mint-ink)}
+  .tag.pend{background:var(--chip);color:var(--purple)}
+  .bars{display:flex;align-items:flex-end;gap:7px;height:96px;margin-top:6px}
+  .bars i{flex:1;background:var(--chip);border-radius:5px 5px 0 0}
+  .bars i.on{background:var(--purple)}
+  .bars i.top{background:var(--mint)}
+  .barlabs{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px;
+    font-family:var(--fh);letter-spacing:.4px}
+  .ticks{margin-top:22px;display:flex;flex-direction:column;gap:11px}
+  .ticks li{display:flex;gap:11px;align-items:flex-start;font-size:15px}
+  .ticks svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--mint)}
+
+  /* ---------- Dark proof ---------- */
+  .panel.dark h2{color:#fff}
+  .panel.dark .kick{color:var(--mint)}
+  .panel.dark .lede{color:rgba(255,255,255,.68)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-card);
+    padding:24px}
+  .fact .big{font-family:var(--fh);font-weight:700;font-size:38px;letter-spacing:-1.4px;color:var(--mint)}
+  .fact h3{font-size:16px;color:#fff;margin-top:8px}
+  .fact p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
+  .todo{margin-top:22px;border:1px dashed rgba(255,197,83,.6);background:rgba(255,197,83,.1);
+    border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.82)}
+  .todo b{display:block;font-family:var(--fh);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:4px}
+  @media(max-width:860px){.facts{grid-template-columns:1fr}}
+
+  /* ---------- Pricing ladder ---------- */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .rung{border:0;border-radius:var(--r-card);padding:24px;background:var(--panel);box-shadow:var(--shadow)}
+  .rung.feat{outline:2px solid var(--purple);outline-offset:-2px}
+  .rung .flag{display:inline-block;font-family:var(--fh);font-size:10.5px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:#fff;background:var(--purple);border-radius:var(--r-pill);padding:4px 11px;
+    margin-bottom:12px}
+  .rung h3{font-size:18px}
+  .rung .amt{font-family:var(--fh);font-weight:700;font-size:30px;letter-spacing:-1.2px;margin-top:10px}
+  .rung .amt small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+  .rung p{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.6}
+  @media(max-width:860px){.ladder{grid-template-columns:1fr}}
+
+  /* ---------- Quote ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .qcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:14px}
+  .qcard .stars{color:var(--gold);font-size:13px;letter-spacing:2px}
+  .qcard p{font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.6}
+  .qcard .who{margin-top:auto;font-size:13px;color:rgba(255,255,255,.55)}
+  .qcard .who b{display:block;color:#fff;font-size:14px}
+  @media(max-width:860px){.quotes{grid-template-columns:1fr}}
+
+  </style>
 </head>
 <body>
+
 <div id="site-header"></div>
 
 <main>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="wrap hero-home">
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="panel grad">
+    <div class="hero">
       <div>
-        <span class="badge">Inbound growth · HubSpot · AI</span>
-        <h1>Growth marketing that turns traffic into <em class="mint">revenue</em>.</h1>
-        <p class="sub">Revio is a UK inbound growth agency and HubSpot Solutions Partner. We combine SEO, paid media, sales enablement and AI to build a pipeline your sales team can actually close.</p>
-        <div class="cta-row">
-          <a class="btn btn-mint" href="/start-growing/">Start Growing</a>
-          <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Book a Meeting</a>
+        <span class="chip">AI consultancy &amp; enablement</span>
+        <h1>Everyone is buying AI. <span class="alt">Almost nobody is using it.</span></h1>
+        <p class="sub">Revio finds the one process where AI genuinely pays for itself in your business, builds it, wires it into your CRM and stays until your team is actually using it. We know what survives contact with a real business, because we run an AI product of our own.</p>
+        <div class="actions">
+          <a class="btn btn-primary btn-lg" href="/ai-opportunity-audit/">Book an AI Opportunity Audit
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line btn-lg" href="/lead-signal/">See the product we built</a>
         </div>
-        <p class="micro">B2B companies grow more with Revio — from startups to enterprise.</p>
-      </div>
-      <div class="hero-media" aria-hidden="true">
-        <div class="hero-media-bar"><i></i><i></i><i></i></div>
-        <div class="hero-slides">
-          <div class="hero-slide hs-pad">
-            <div class="mk-kick">Pipeline this quarter</div>
-            <div class="mk-big">£1.5M <span>closed</span></div>
-            <div class="mk-sub">28% more leads · 9 months with Revio</div>
-            <div class="mk-bars"><div style="height:34%"></div><div style="height:52%"></div><div class="p2" style="height:74%"></div><div class="mint" style="height:100%"></div></div>
-            <div class="mk-labels"><span>Traffic</span><span>Leads</span><span>Nurture</span><span>Deals</span></div>
-          </div>
-          <div class="hero-slide hs-pad">
-            <div class="mk-kick">Source performance</div>
-            <div class="mk-big">3.1× <span>blended ROAS</span></div>
-            <div class="mk-sub">Across paid, organic &amp; email · last 30 days</div>
-            <div class="mk-rows">
-              <div class="mk-row"><span class="lbl">Paid social</span><span class="mk-track"><i style="width:84%"></i></span><span class="val">£46k</span></div>
-              <div class="mk-row"><span class="lbl">Organic search</span><span class="mk-track"><i style="width:64%"></i></span><span class="val">£31k</span></div>
-              <div class="mk-row"><span class="lbl">Email / CRM</span><span class="mk-track"><i style="width:47%"></i></span><span class="val">£22k</span></div>
-            </div>
-          </div>
-          <div class="hero-slide hs-pad">
-            <div class="mk-kick">Organic traffic</div>
-            <div class="mk-big">+142% <span>year on year</span></div>
-            <div class="mk-sub">Qualified sessions from search</div>
-            <div class="mk-area">
-              <svg viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
-                <defs><linearGradient id="mkArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d28d9" stop-opacity=".34"/><stop offset="1" stop-color="#6d28d9" stop-opacity="0"/></linearGradient></defs>
-                <path class="ar" d="M0,104 L40,96 L80,90 L120,74 L160,66 L200,48 L240,40 L280,22 L320,12 L320,120 L0,120 Z" fill="url(#mkArea)"/>
-                <path class="ln" d="M0,104 L40,96 L80,90 L120,74 L160,66 L200,48 L240,40 L280,22 L320,12" fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="hero-dots"><span></span><span></span><span></span></div>
+        <div class="herotrust">
+          <span class="hstack" aria-hidden="true"><span>HS</span><span>AI</span><span>RO</span></span>
+          <span class="txt"><b>HubSpot Solutions Partner</b> &middot; running our own AI product in production</span>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Logo strip -->
-  <div class="logo-strip">
-    <div class="wrap">
-      <p class="label">Trusted by ambitious teams</p>
-      <div class="logo-cloud">
-        <div class="logo-track">
-          <img src="/assets/legacy/Mintec-Logo-300x169.jpg" alt="Mintec" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/lsbu-logo.svg" alt="London South Bank University" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/intelli-bw-1.jpg" alt="Intelligencia Training" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/FBF_logo-bw2.jpg" alt="Flowers by Flourish" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/prosips.jpg" alt="ProSIPS" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/whisky-solutions.jpg" alt="Whisky Solutions" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/wcrt-logo-bw-1.jpg" alt="WCRT" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/thisisbud-logo.svg" alt="This is Bud" loading="lazy" onerror="this.remove()">
-          <img src="https://www.tlpi.co.uk/hubfs/tlpi-colour.svg" alt="TLPI" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/Mintec-Logo-300x169.jpg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/lsbu-logo.svg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/intelli-bw-1.jpg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/FBF_logo-bw2.jpg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/prosips.jpg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/whisky-solutions.jpg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/wcrt-logo-bw-1.jpg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="/assets/legacy/thisisbud-logo.svg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-          <img src="https://www.tlpi.co.uk/hubfs/tlpi-colour.svg" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
+      <div class="live" aria-hidden="true">
+        <div class="lhead"><i class="dot"></i> LeadSignal &mdash; live inbox priority</div>
+        <div class="lrow">
+          <span class="sc hot">94</span>
+          <span><span class="who">Marcus T.</span><span class="why">Asked about pricing. Competitor renewal in 14 weeks &mdash; offer the call now.</span></span>
+          <span class="pill-src">meta ads</span>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Growth framework -->
-  <section>
-    <div class="wrap">
-      <div class="reveal">
-        <span class="kicker">01 — The Revio growth framework</span>
-        <h2>One engine, four moves — from first click to closed deal.</h2>
-        <p class="lede mt-md">Most agencies stop at leads. We build the full revenue engine, so marketing and sales pull in the same direction.</p>
-      </div>
-      <div class="grid-4 mt-lg">
-        <div class="card reveal">
-          <div class="icon icon-img"><img src="/assets/icons/traffic.png" alt="" aria-hidden="true" loading="lazy"></div>
-          <div class="step-n">→ 01 · Increase Traffic</div>
-          <h3>Get found by buyers</h3>
-          <p>SEO, content and paid search &amp; social bring the right visitors to your site — people already looking for what you sell.</p>
-          <a class="btn btn-ghost-dark btn-sm" href="/book-a-call/">Find out more</a>
+        <div class="lrow">
+          <span class="sc hot">88</span>
+          <span><span class="who">Jess M.</span><span class="why">Said yes to a call. Times sent, booking link opened twice.</span></span>
+          <span class="pill-src">instagram</span>
         </div>
-        <div class="card reveal">
-          <div class="icon icon-img"><img src="/assets/icons/convert.png" alt="" aria-hidden="true" loading="lazy"></div>
-          <div class="step-n">→ 02 · Convert Leads</div>
-          <h3>Turn visits into contacts</h3>
-          <p>Conversion-focused landing pages, forms, chat and offers that capture demand instead of letting it bounce.</p>
-          <a class="btn btn-ghost-dark btn-sm" href="/book-a-call/">Find out more</a>
+        <div class="lrow">
+          <span class="sc warm">71</span>
+          <span><span class="who">Aaron D.</span><span class="why">Engaged but vague. Agent asked for goal and timeline.</span></span>
+          <span class="pill-src">whatsapp</span>
         </div>
-        <div class="card reveal">
-          <div class="icon icon-img"><img src="/assets/icons/nurture.png" alt="" aria-hidden="true" loading="lazy"></div>
-          <div class="step-n">→ 03 · Nurture Relationships</div>
-          <h3>Build trust on autopilot</h3>
-          <p>Personalised email journeys, lead scoring and automation in HubSpot keep every lead warm until they're ready.</p>
-          <a class="btn btn-ghost-dark btn-sm" href="/book-a-call/">Find out more</a>
+        <div class="lrow">
+          <span class="sc cool">42</span>
+          <span><span class="who">Sarah K.</span><span class="why">Downloaded the guide. Check back in three days.</span></span>
+          <span class="pill-src">youtube</span>
         </div>
-        <div class="card reveal">
-          <div class="icon icon-img"><img src="/assets/icons/close.png" alt="" aria-hidden="true" loading="lazy"></div>
-          <div class="step-n">→ 04 · Close Deals Faster</div>
-          <h3>Arm your sales team</h3>
-          <p>Sales enablement, clean pipelines and AI-assisted insight so reps spend their time on the deals that will close.</p>
-          <a class="btn btn-ghost-dark btn-sm" href="/book-a-call/">Find out more</a>
-        </div>
+        <div class="lfoot"><b>Call booked</b> &mdash; written to the CRM and attributed back to the ad that started the conversation.</div>
       </div>
     </div>
   </section>
 
-  <!-- Services overview -->
-  <section class="section-wash">
-    <div class="wrap">
-      <div class="reveal">
-        <span class="kicker">02 — What we do</span>
-        <h2>Full-funnel services, one accountable partner.</h2>
-        <p class="lede mt-md">Strategy, execution and the platforms underneath — delivered by one tight-knit team of marketing, sales and RevOps specialists.</p>
+  <!-- ── Client strip ──────────────────────────────────────── -->
+  <section class="panel plain" style="padding-top:26px;padding-bottom:26px">
+    <div class="strip">
+      <span class="lab">Worked with</span>
+      <img src="/assets/legacy/Mintec-Logo-300x169.jpg" alt="Mintec" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/lsbu-logo.svg" alt="London South Bank University" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/intelli-bw-1.jpg" alt="Intelligencia Training" loading="lazy" onerror="this.remove()">
+      <img src="https://www.tlpi.co.uk/hubfs/tlpi-colour.svg" alt="TLPI" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/thisisbud-logo.svg" alt="This is Bud" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/prosips.jpg" alt="ProSIPS" loading="lazy" onerror="this.remove()">
+    </div>
+  </section>
+
+  <!-- ── Three moves ───────────────────────────────────────── -->
+  <section class="panel">
+    <div class="center">
+      <span class="kick">How an engagement runs</span>
+      <h2 style="margin-top:12px">Find it. Build it. <span class="alt">Get it used.</span></h2>
+      <p class="lede">Nobody builds anything here until we have found where AI actually pays for itself in your business. That is the entire point of starting with an audit.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="no"><i>1</i> Find</span>
+        <h3>AI Opportunity Audit</h3>
+        <p>Two weeks. Where AI saves you time or makes you money, in priority order, with the cost and payback of each &mdash; and an honest note on where AI is the wrong answer.</p>
+        <div class="fee">&pound;1,500 fixed<small>Two weeks, start to signed-off document</small></div>
       </div>
-      <div class="grid-3 mt-lg">
-        <a class="card reveal" href="/lead-generation/">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
-          <h3>Inbound Lead Generation</h3>
-          <p>SEO, content and conversion strategy that fills the top of your funnel with qualified demand.</p>
-          <span class="arrow-link">Explore</span>
-        </a>
-        <a class="card reveal" href="/paid-search-social/">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8.5M16 16v-6.5"/></svg></div>
-          <h3>Paid Search &amp; Social</h3>
-          <p>Google, Meta and LinkedIn campaigns run to a CPA — not vanity clicks. Tested, tracked, scaled.</p>
-          <span class="arrow-link">Explore</span>
-        </a>
-        <a class="card reveal" href="/sales-enablement/">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 13.7 8.3 18.5 10 13.7 11.7 12 16.5 10.3 11.7 5.5 10 10.3 8.3z"/><path d="M19 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></div>
-          <h3>Sales Enablement &amp; RevOps</h3>
-          <p>Process, pipelines, playbooks and reporting that help reps close faster and forecast honestly.</p>
-          <span class="arrow-link">Explore</span>
-        </a>
-        <a class="card reveal" href="/hubspot-agency/">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4M5.3 5.3l2.8 2.8M15.9 15.9l2.8 2.8M18.7 5.3l-2.8 2.8M8.1 15.9l-2.8 2.8"/></svg></div>
-          <h3>HubSpot Partner Services</h3>
-          <p>Implementation, audits, consultancy and support from a certified HubSpot Solutions Partner.</p>
-          <span class="arrow-link">Explore</span>
-        </a>
-        <a class="card reveal" href="/ai-enablement/">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="14" height="12" rx="3"/><path d="M12 3v3M9 11h.01M15 11h.01M9 15h6"/></svg></div>
-          <h3>AI Enablement</h3>
-          <p>Discovery, chatbots, AI content and team training — practical AI that saves hours, not hype.</p>
-          <span class="arrow-link">Explore</span>
-        </a>
-        <a class="card reveal" href="/lead-signal/">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16a8 8 0 1 1 15 0"/><path d="M12 13.5 15.5 9"/><circle cx="12" cy="13.8" r="1.1"/></svg></div>
-          <h3>LeadSignal Platform</h3>
-          <p>Our AI product that scores every DM conversation and books calls on autopilot.</p>
-          <span class="arrow-link">Explore</span>
-        </a>
+      <div class="step">
+        <span class="no"><i>2</i> Build</span>
+        <h3>Agents, automations, apps</h3>
+        <p>Agents that answer, qualify, chase and book. Internal tools and portals shipped in weeks rather than quarters, wired into the CRM you already run.</p>
+        <div class="fee">&pound;4,500 &ndash; &pound;25,000+<small>Fixed price and date, quoted after scoping</small></div>
+      </div>
+      <div class="step">
+        <span class="no"><i>3</i> Adopt</span>
+        <h3>Enablement &amp; training</h3>
+        <p>Getting your team to actually use it. Sold as a programme rather than a workshop, because around 90% of one-off training is gone inside a month.</p>
+        <div class="fee">from &pound;950 a month<small>Adoption measured at 30, 60 and 90 days</small></div>
       </div>
     </div>
   </section>
 
-  <!-- LeadSignal / AI highlight -->
-  <section class="section-deep">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="kicker">03 — Built by Revio</span>
-        <h2>AI that tells your team who to work first.</h2>
-        <p class="lede mt-md">LeadSignal is our AI lead-intelligence platform. It reads every Instagram, Facebook and LinkedIn DM, scores each lead 0–100, and books the call on autopilot — with full attribution from first message to closed revenue.</p>
-        <ul class="checks">
-          <li>Every conversation scored like your best closer</li>
-          <li>AI Copilot &amp; Sales Coach for your setters</li>
-          <li>Two-way sync with HubSpot, GoHighLevel &amp; Calendly</li>
+  <!-- ── Agents ────────────────────────────────────────────── -->
+  <section class="panel tint">
+    <div class="split">
+      <div class="copy">
+        <span class="kick">AI agents that deliver outcomes</span>
+        <h2 style="margin-top:12px">Software that does the job. <span class="alt">Not software that suggests it.</span></h2>
+        <p class="lede">An agent is only worth having if it finishes something. Ours answer, qualify, chase and book &mdash; then write the result into the CRM where your team already works.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Every conversation answered in your own voice, day or night</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Handed to a human the moment it should be</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Monitored after launch, not handed over and forgotten</li>
         </ul>
-        <div class="cta-row" style="margin-top:30px">
-          <a class="btn btn-mint" href="https://lead-signal.ai/">Discover LeadSignal</a>
+        <div class="actions" style="margin-top:28px">
+          <a class="btn btn-primary" href="/ai-agents-automation/">Explore AI agents
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="/ai-opportunity-audit/">Start with the audit</a>
         </div>
       </div>
-      <div class="reveal" aria-hidden="true">
-        <div class="hero-media">
-          <div class="hero-media-bar"><i></i><i></i><i></i></div>
-          <div class="lead-table">
-            <div class="lt-head"><span>Tier</span><span>Score</span><span>Lead &amp; why</span></div>
-            <div class="lt-row"><span class="lt-tier hot">HOT</span><span class="lt-score">94</span><span class="lt-info"><strong>Marcus T</strong> · meta_ads<br><span>Asked about price — offer the call now.</span></span></div>
-            <div class="lt-row"><span class="lt-tier hot">HOT</span><span class="lt-score">88</span><span class="lt-info"><strong>Jess M</strong> · meta_ads<br><span>Said yes to a call — send times today.</span></span></div>
-            <div class="lt-row"><span class="lt-tier warm">WARM</span><span class="lt-score">71</span><span class="lt-info"><strong>Aaron D</strong> · youtube<br><span>Engaged — ask goal &amp; timeline.</span></span></div>
-            <div class="lt-row"><span class="lt-tier nurt">NURT</span><span class="lt-score">42</span><span class="lt-info"><strong>Sarah K</strong> · youtube<br><span>Grabbed the guide — check in in 3 days.</span></span></div>
-          </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mhead">Today&rsquo;s handled conversations</div>
+        <div class="mline"><span><span class="t">Enquiry answered in 40 seconds</span><span class="s">Instagram DM &middot; pricing question</span></span><span class="tag good">Booked</span></div>
+        <div class="mline"><span><span class="t">Quote chased, third attempt</span><span class="s">Email &middot; reply received</span></span><span class="tag good">Replied</span></div>
+        <div class="mline"><span><span class="t">Out-of-hours WhatsApp</span><span class="s">23:14 &middot; qualified, call offered</span></span><span class="tag pend">Awaiting</span></div>
+        <div class="mline"><span><span class="t">Escalated to a human</span><span class="s">Complaint detected &mdash; agent stepped back</span></span><span class="tag pend">Handover</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Enablement ────────────────────────────────────────── -->
+  <section class="panel">
+    <div class="split rev">
+      <div class="mock" aria-hidden="true">
+        <div class="mhead">Adoption, measured</div>
+        <div class="bars">
+          <i style="height:26%"></i><i style="height:38%"></i><i class="on" style="height:54%"></i>
+          <i class="on" style="height:66%"></i><i class="on" style="height:78%"></i><i class="top" style="height:100%"></i>
+        </div>
+        <div class="barlabs"><span>Week 1</span><span>Day 30</span><span>Day 60</span><span>Day 90</span></div>
+        <div class="mline" style="margin-top:18px"><span><span class="t">Weekly active users of the tools</span><span class="s">Tracked per team, not per licence</span></span><span class="tag good">Rising</span></div>
+      </div>
+      <div class="copy">
+        <span class="kick">AI enablement &amp; training</span>
+        <h2 style="margin-top:12px">You already pay for the tools. <span class="alt">Now get the team using them.</span></h2>
+        <p class="lede">Licences are not adoption. We train on your own work, record every session so new starters inherit it, and come back at 30, 60 and 90 days to check it stuck.</p>
+        <div class="actions" style="margin-top:28px">
+          <a class="btn btn-primary" href="/ai-enablement/">See the programme
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="/pricing/">Training rates</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Case study teasers -->
-  <section>
-    <div class="wrap">
-      <div class="reveal">
-        <span class="kicker">04 — Proof</span>
-        <h2>Results our clients talk about.</h2>
-        <p class="lede mt-md">From SaaS and education to professional services — inbound programmes measured in pipeline, not impressions.</p>
+  <!-- ── Proof / why us ────────────────────────────────────── -->
+  <section class="panel dark">
+    <div class="center">
+      <span class="kick">Why us</span>
+      <h2 style="margin-top:12px;color:#fff">We didn&rsquo;t just adopt AI. <span style="color:var(--mint);display:block">We built a product with it.</span></h2>
+      <p class="lede">Most agencies selling AI advice have never shipped an AI system that strangers pay to use. LeadSignal is ours: a live multi-tenant platform with an approved Meta integration, agents holding real conversations, scoring, booking, attribution and billing.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="big">&mdash;</div><h3>Businesses running on LeadSignal</h3><p>Replace with the real tenant count.</p></div>
+      <div class="fact"><div class="big">&mdash;</div><h3>Hours a week given back</h3><p>Replace with a figure from a named client.</p></div>
+      <div class="fact"><div class="big">&mdash;</div><h3>Conversations handled by AI</h3><p>Replace with the real total across tenants.</p></div>
+    </div>
+    <div class="todo"><b>Open item</b>These three numbers are the one part of this page that cannot be written &mdash; they have to be true. Real figures go in before it ships. If only two are solid, run two.</div>
+
+    <div class="quotes">
+      <div class="qcard">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>&ldquo;Revio took our ideas and turned them into measurable business outcomes. They work like an extension of our own team.&rdquo;</p>
+        <span class="who"><b>Marketing Director</b>B2B SaaS client</span>
       </div>
-      <div class="grid-3 mt-lg">
-        <a class="case-card reveal" href="/work/">
-          <img class="case-cover" src="/assets/legacy/mintec-cover-560x560.jpg" alt="Mintec case study" loading="lazy" onerror="this.remove()">
-          <div class="case-top">
-            <span class="case-tag">B2B SaaS · Inbound + HubSpot</span>
-            <h3>Mintec</h3>
-          </div>
-          <div class="case-body">
-            <p>A full inbound engine — SEO, conversion paths and HubSpot automation — aligned to an enterprise sales motion.</p>
-            <span class="case-metric">28% more leads · £1.5M in deals in 9 months</span>
-          </div>
-        </a>
-        <a class="case-card reveal" href="/work/">
-          <img class="case-cover" src="/assets/legacy/lsbu-cover-1-560x560.jpg" alt="London South Bank University case study" loading="lazy" onerror="this.remove()">
-          <div class="case-top alt">
-            <span class="case-tag">Higher education · Paid media</span>
-            <h3>London South Bank University</h3>
-          </div>
-          <div class="case-body">
-            <p>Multi-channel paid search and social campaigns driving qualified course enquiries at scale.</p>
-            <span class="case-metric">See the full story →</span>
-          </div>
-        </a>
-        <a class="case-card reveal" href="/work/">
-          <img class="case-cover" src="/assets/legacy/Intelligencia-cover-560x560.jpg" alt="Intelligencia Training case study" loading="lazy" onerror="this.remove()">
-          <div class="case-top">
-            <span class="case-tag">Training provider · Lead generation</span>
-            <h3>Intelligencia Training</h3>
-          </div>
-          <div class="case-body">
-            <p>Inbound lead generation and nurture journeys that keep a national training pipeline consistently full.</p>
-            <span class="case-metric">See the full story →</span>
-          </div>
-        </a>
+      <div class="qcard">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>&ldquo;Process-driven, straight-talking and genuinely accountable for results &mdash; rare in an agency.&rdquo;</p>
+        <span class="who"><b>Head of Growth</b>Training provider</span>
       </div>
-      <div class="center mt-lg reveal">
-        <a class="btn btn-ghost-dark" href="/work/">View all our work</a>
+      <div class="qcard">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>&ldquo;They fixed the CRM first and the AI worked afterwards. Nobody else told us that was the order.&rdquo;</p>
+        <span class="who"><b>Operations Director</b>Professional services</span>
       </div>
+    </div>
+    <div class="actions" style="margin-top:32px;justify-content:center">
+      <a class="btn btn-mint" href="/lead-signal/">See LeadSignal
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-dark" href="/work/">Read the case studies</a>
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="section-wash tight">
-    <div class="wrap-narrow reveal">
-      <div class="testimonial">
-        <blockquote>Revio took our ideas and turned them into measurable business outcomes. They work like an extension of our own team — process-driven, focused on our goals, and genuinely accountable for results.</blockquote>
-        <p class="who"><strong>Marketing Director</strong> · B2B SaaS client</p>
+  <!-- ── Pricing ───────────────────────────────────────────── -->
+  <section class="panel">
+    <div class="center">
+      <span class="kick">Pricing</span>
+      <h2 style="margin-top:12px">The numbers, <span class="alt">before you have to ask.</span></h2>
+      <p class="lede">Most agencies make you book a call to find out whether you can afford them. Here are the starting figures, so you can decide in private.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung feat">
+        <span class="flag">Start here</span>
+        <h3>AI Opportunity Audit</h3>
+        <div class="amt">&pound;1,500<small> fixed</small></div>
+        <p>Two weeks. A ranked list of where AI pays for itself, with the cost and the payback of each.</p>
       </div>
+      <div class="rung">
+        <h3>One tool or one agent</h3>
+        <div class="amt">&pound;4,500<small> one week</small></div>
+        <p>A single-purpose internal tool, or one agent doing one job properly. Scoping session &pound;600, credited against the build.</p>
+      </div>
+      <div class="rung">
+        <h3>Connected app</h3>
+        <div class="amt">&pound;12,000<small> 2&ndash;3 weeks</small></div>
+        <p>Several screens, logins and permissions, wired into your CRM. Platforms with billing and roles from &pound;25,000.</p>
+      </div>
+    </div>
+    <div class="actions" style="margin-top:28px;justify-content:center">
+      <a class="btn btn-line" href="/pricing/">See full pricing, including training and support
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
 
-  <!-- CTA band -->
-  <section>
-    <div class="wrap reveal">
-      <div class="cta-band">
-        <h2>Ready to grow faster?</h2>
-        <p>Tell us where you want to be in 12 months. We'll show you the inbound engine that gets you there — traffic, leads, nurture and closed deals.</p>
-        <div class="cta-row">
-          <a class="btn btn-mint" href="/start-growing/">Start Growing</a>
-          <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Book a Meeting</a>
+  <!-- ── Still here ────────────────────────────────────────── -->
+  <section class="panel grad-soft">
+    <div class="split">
+      <div class="copy">
+        <span class="kick">Still very much here</span>
+        <h2 style="margin-top:12px">HubSpot, RevOps and <span class="alt">growth marketing.</span></h2>
+        <p class="lede">AI is only as good as the data underneath it, and cleaning up CRMs is what we have done for a decade. Inbound, SEO and paid media continue exactly as before &mdash; they are simply no longer the headline.</p>
+        <div class="actions" style="margin-top:26px">
+          <a class="btn btn-primary" href="/hubspot-agency/">HubSpot services
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="/start-growing/">Request a quote</a>
         </div>
       </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mhead">Where AI projects quietly fail</div>
+        <div class="mline"><span><span class="t">Duplicate and stale records</span><span class="s">The agent learns the wrong history</span></span><span class="tag pend">Fixed first</span></div>
+        <div class="mline"><span><span class="t">No single source of truth</span><span class="s">Two systems disagreeing on the same deal</span></span><span class="tag pend">Fixed first</span></div>
+        <div class="mline"><span><span class="t">Nothing attributed</span><span class="s">Spend cannot be judged, so it never scales</span></span><span class="tag pend">Fixed first</span></div>
+        <div class="mline"><span><span class="t">Then the AI goes in</span><span class="s">On data it can actually trust</span></span><span class="tag good">Build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Closing CTA ───────────────────────────────────────── -->
+  <section class="panel center">
+    <span class="chip">Two weeks &middot; &pound;1,500 &middot; fixed fee</span>
+    <h2 style="margin-top:18px">Start with the audit.</h2>
+    <p class="lede">A prioritised list of where AI pays for itself in your business, with the numbers attached. If the answer is &ldquo;nowhere yet&rdquo;, we will tell you that too.</p>
+    <div class="actions" style="margin-top:28px;justify-content:center">
+      <a class="btn btn-primary btn-lg" href="/ai-opportunity-audit/">Book an AI Opportunity Audit
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line btn-lg" href="/book-a-meeting-freelancer/">Talk to us first</a>
     </div>
   </section>
 
 </main>
 
 <div id="site-footer"></div>
+
 <script src="/partials.js"></script>
 </body>
 </html>

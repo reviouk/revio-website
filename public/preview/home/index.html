@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Consultancy, Build &amp; Enablement | REVIO</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Revio finds where AI genuinely saves your team time or wins revenue, then builds it, connects it to your CRM and trains your people. We build and run our own AI product.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <style>
+  /* ============================================================
+     REVIO home — rebuilt layout, existing brand palette.
+     Self-contained: own header, own footer, no /styles.css and no
+     /partials.js, so nothing here can affect the rest of the site.
+     ============================================================ */
+  @font-face{font-family:'Satoshi';src:url('/assets/fonts/Satoshi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('/assets/fonts/Satoshi-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('/assets/fonts/Satoshi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+
+  :root{
+    /* Measured off b2brocket.ai: two purples, #5862FF leading and #6355EA
+       behind it, on white with a lavender wash for the tinted sections. */
+    --purple:#5862ff; --purple-2:#6355ea; --deep:#3b34a8;
+    --mint:#12c98b; --mint-ink:#0b7f57; --gold:#ffc553;
+    --ink:#0b081c; --muted:#5f6479; --line:#f1f1f1;
+    --page:#ffffff; --panel:#ffffff; --wash:#f2f1fb; --canvas:#f2f1fb;
+    --chip:#e7e6fb; --tile:#f2f1fb;
+    /* Their shadows exactly: a 10px halo at 5%, 8% on the header. */
+    --shadow:0 0 10px rgba(0,0,0,.05);
+    --shadow-nav:0 0 10px rgba(0,0,0,.08);
+    --r-pan:20px; --r-card:12px; --r-pill:999px;
+    --fh:'Satoshi','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --fb:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --logo-filter:invert(1);
+  }
+  :root[data-theme="dark"]{
+    --purple:#8b92ff; --purple-2:#a29bf5; --deep:#2a2470;
+    --mint:#1fd6a0; --mint-ink:#1fd6a0;
+    --ink:#f4f4fb; --muted:#a3a7bd; --line:rgba(255,255,255,.12);
+    --page:#0b081c; --panel:#151235; --wash:#12102c; --canvas:#12102c;
+    --chip:rgba(88,98,255,.2); --tile:rgba(255,255,255,.05);
+    --shadow:0 0 14px rgba(0,0,0,.45);
+    --shadow-nav:0 0 14px rgba(0,0,0,.5);
+    --logo-filter:none;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--fb);font-size:16px;line-height:1.65;color:var(--ink);
+    background:var(--page);overflow-x:hidden;isolation:isolate}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+  ul{list-style:none}
+  h1,h2,h3,h4{font-family:var(--fh);line-height:1.12;letter-spacing:-.6px}
+  :focus-visible{outline:3px solid var(--purple-2);outline-offset:3px;border-radius:6px}
+  ::selection{background:var(--mint);color:#06281e}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Preview bar ---------- */
+  .previewbar{background:var(--ink);color:#fff;font-size:13px;padding:9px 20px;text-align:center;
+    font-family:var(--fh);letter-spacing:.2px;position:relative;z-index:80}
+  [data-theme=dark] .previewbar{background:#241250}
+  .previewbar b,.previewbar a{color:var(--mint)}
+
+  /* ---------- Logo lockup (tile mark + wordmark) ---------- */
+  .brand{display:flex;align-items:center;gap:9px}
+  .brand .mark{width:34px;height:34px;border-radius:10px;background:var(--purple);
+    display:grid;place-items:center;flex:none}
+  .brand .mark svg{width:21px;height:21px}
+  .brand .word{height:17px;width:auto;filter:var(--logo-filter)}
+  .brand .tag{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--muted);display:block;margin-top:3px}
+
+  /* ---------- Floating pill header ---------- */
+  .topwrap{position:sticky;top:0;z-index:60;padding:14px 20px 0}
+  .topbar{max-width:1600px;margin:0 auto;background:var(--panel);border:0;
+    border-radius:20px;box-shadow:var(--shadow-nav);
+    display:flex;align-items:center;gap:8px;padding:10px 12px 10px 16px;position:relative}
+  .topbar .sp{flex:1}
+  .mainnav{display:flex;align-items:center;gap:4px}
+  .navitem{position:static}
+  .navtop{display:inline-flex;align-items:center;gap:5px;font-family:var(--fh);font-size:15px;
+    font-weight:600;padding:10px 16px;border-radius:9px;color:var(--ink);
+    transition:background-color .16s ease,color .16s ease}
+  .navitem:hover>.navtop,.navtop:focus-visible{background:var(--tile);color:var(--purple)}
+  .navtop .chev{width:11px;height:11px;stroke:currentColor;stroke-width:2.4;fill:none;
+    transition:transform .18s ease;opacity:.75}
+  .navitem:hover .chev{transform:rotate(180deg)}
+  .navtop .live{width:7px;height:7px;border-radius:50%;background:var(--mint);margin-right:1px}
+  .navlogin{font-size:14.5px;font-weight:600;font-family:var(--fh);padding:9px 12px;color:var(--muted)}
+  .navlogin:hover{color:var(--ink)}
+  .themebtn{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);
+    display:grid;place-items:center;color:var(--muted);transition:color .16s ease,border-color .16s ease}
+  .themebtn:hover{color:var(--purple);border-color:var(--purple)}
+  .themebtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;
+    stroke-linecap:round;stroke-linejoin:round}
+  [data-theme=dark] .themebtn .sun{display:block}
+  [data-theme=dark] .themebtn .moon{display:none}
+  .themebtn .sun{display:none}
+
+  /* mega panel */
+  .mega{position:absolute;left:0;right:0;top:calc(100% + 10px);background:var(--panel);
+    border:0;border-radius:20px;box-shadow:var(--shadow-nav);padding:22px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .18s ease,transform .18s ease,visibility .18s}
+  .mega::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px}
+  .navitem:hover .mega,.navitem:focus-within .mega{opacity:1;visibility:visible;transform:none}
+  .mega-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .mcard{border:0;border-radius:var(--r-card);padding:20px;background:var(--canvas);
+    display:flex;flex-direction:column;transition:box-shadow .16s ease}
+  .mcard:hover{box-shadow:0 0 10px rgba(88,98,255,.25)}
+  .mcard .mi{width:36px;height:36px;border-radius:10px;background:var(--chip);display:grid;
+    place-items:center;color:var(--purple)}
+  .mcard .mi svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;
+    stroke-linecap:round;stroke-linejoin:round}
+  .mcard h4{font-size:16px;margin-top:12px}
+  .mcard p{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:7px}
+  .mcard .flab{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--muted);margin-top:16px}
+  .mcard ul{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+  .mcard li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px}
+  .mcard li svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--mint)}
+  .mcard .more{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--purple);color:#fff;border-radius:10px;padding:10px;font-family:var(--fh);
+    font-weight:700;font-size:13.5px;transition:background-color .16s ease}
+  .mcard:hover .more{background:var(--purple-2)}
+  /* Secondary links under a card panel, so a three-card layout can still
+     reach the pages that did not earn a card. */
+  .mega-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;
+    padding-top:16px;border-top:1px solid var(--line)}
+  .mega-links a{font-size:13.5px;color:var(--muted);font-weight:500}
+  .mega-links a:hover{color:var(--purple)}
+  .mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 22px}
+  .mrow{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px;border-radius:12px;
+    transition:background-color .16s ease}
+  .mrow:hover{background:var(--tile)}
+  .mrow .mi{width:34px;height:34px;border-radius:9px;background:var(--chip);display:grid;
+    place-items:center;color:var(--purple)}
+  .mrow .mi svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;
+    stroke-linecap:round;stroke-linejoin:round}
+  .mrow b{font-family:var(--fh);font-size:14.5px;display:block}
+  .mrow span{font-size:13px;color:var(--muted);line-height:1.5;display:block;margin-top:2px}
+
+  /* burger */
+  .burger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);
+    place-items:center;gap:4px}
+  .burger i{display:block;width:16px;height:2px;background:var(--ink);border-radius:2px}
+  .drawer{display:none;margin:10px auto 0;max-width:1600px;background:var(--panel);
+    border:0;border-radius:20px;box-shadow:var(--shadow-nav);padding:14px}
+  .drawer.open{display:block}
+  .drawer a{display:block;padding:11px 10px;font-family:var(--fh);font-weight:600;
+    border-bottom:1px solid var(--line)}
+  .drawer a:last-of-type{border-bottom:0}
+  .drawer .btn{margin-top:10px;justify-content:center;display:flex}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--fh);font-weight:700;
+    font-size:14.5px;padding:12px 20px;border-radius:var(--r-pill);border:1.5px solid transparent;
+    transition:background-color .16s ease,border-color .16s ease,color .16s ease,transform .16s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .btn-primary{background:var(--purple);color:#fff}
+  .btn-primary:hover{background:var(--purple-2)}
+  .btn-line{border-color:#e4e4ea;color:var(--ink);background:var(--panel)}
+  .btn-line:hover{border-color:var(--purple);color:var(--purple)}
+  .btn-mint{background:var(--mint);color:#06281e}
+  .btn-mint:hover{background:#0fb47c}
+  .btn-dark{border-color:rgba(255,255,255,.3);color:#fff}
+  .btn-dark:hover{border-color:var(--mint);color:var(--mint)}
+  .btn-lg{padding:15px 26px;font-size:15.5px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+  /* ---------- Panels & section furniture ---------- */
+  main{padding-bottom:0}
+  .panel{max-width:1280px;margin:22px auto 0;background:var(--canvas);border:0;
+    border-radius:var(--r-pan);padding:40px}
+  .panel.flush{padding:0;overflow:hidden}
+  .panel.tint{background:var(--canvas)}
+  /* Measured off b2brocket: two radials fading to nothing by 35%, lavender in
+     from one bottom corner and blue in from the other. */
+  .panel.grad{background:
+    radial-gradient(circle at 100% 100%, #ccc8fb, rgba(255,255,255,0) 35%),
+    radial-gradient(circle at 0 100%, #8ab4fd, rgba(255,255,255,0) 35%),
+    var(--canvas)}
+  .panel.grad-soft{background:
+    radial-gradient(circle at 75% 50%, #ccc8fb, rgba(255,255,255,0) 33%),
+    var(--panel)}
+  [data-theme=dark] .panel.grad,[data-theme=dark] .panel.grad-soft{background:var(--canvas)}
+  .panel.plain{background:#fff;box-shadow:var(--shadow)}
+  [data-theme=dark] .panel.plain{background:var(--panel)}
+  .panel.dark{background:linear-gradient(#05091f, #1a164e 50%, #1a164e);border-color:transparent;color:#fff}
+  [data-theme=dark] .panel.dark{background:linear-gradient(#04071a, #15113f 50%, #15113f)}
+  @media(max-width:780px){.panel{padding:24px 18px;border-radius:20px;margin-top:16px}}
+
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--purple);
+    font-family:var(--fh);font-size:11.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    padding:7px 13px;border-radius:var(--r-pill)}
+  .kick{font-family:var(--fh);font-size:11.5px;font-weight:700;letter-spacing:1.9px;
+    text-transform:uppercase;color:var(--purple)}
+  h2{font-size:clamp(29px,3.5vw,42px);letter-spacing:-1.3px;max-width:18ch}
+  h2 .alt{color:var(--purple);display:block}
+  .lede{color:var(--muted);font-size:16.5px;max-width:56ch;margin-top:14px;line-height:1.62}
+  .center{text-align:center}
+  .center h2,.center .lede{margin-left:auto;margin-right:auto}
+  .center .lede{max-width:62ch}
+
+  /* ---------- Hero ---------- */
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:48px;align-items:center}
+  .hero h1{font-size:clamp(38px,4.9vw,58px);line-height:1.06;letter-spacing:-2px;margin-top:20px;max-width:15ch}
+  .hero h1 .alt{color:var(--purple)}
+  .hero p.sub{color:var(--muted);font-size:17.5px;margin-top:20px;max-width:48ch;line-height:1.62}
+  .hero .actions{margin-top:28px}
+  .herotrust{display:flex;align-items:center;gap:14px;margin-top:26px;flex-wrap:wrap}
+  .hstack{display:flex}
+  .hstack span{width:30px;height:30px;border-radius:50%;background:var(--chip);color:var(--purple);
+    border:2px solid var(--panel);margin-left:-9px;display:grid;place-items:center;
+    font-family:var(--fh);font-weight:700;font-size:11px}
+  .hstack span:first-child{margin-left:0}
+  .herotrust .txt{font-size:13.5px;color:var(--muted)}
+  .herotrust .txt b{color:var(--ink)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;gap:34px}}
+
+  /* live card */
+  .live{border:0;border-radius:20px;background:var(--panel);overflow:hidden;
+    box-shadow:var(--shadow)}
+  .live .lhead{display:flex;align-items:center;gap:9px;padding:13px 18px;border-bottom:1px solid var(--line);
+    font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--muted)}
+  .live .lhead .dot{width:8px;height:8px;border-radius:50%;background:var(--mint)}
+  .lrow{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:16px 18px;
+    border-bottom:1px solid var(--line)}
+  .lrow:last-child{border-bottom:0}
+  .lrow .sc{font-family:var(--fh);font-weight:700;font-size:17px;text-align:center;border-radius:10px;
+    padding:7px 0;letter-spacing:-.4px}
+  .sc.hot{background:rgba(18,201,139,.14);color:var(--mint-ink)}
+  .sc.warm{background:rgba(255,197,83,.2);color:#8a6100}
+  [data-theme=dark] .sc.warm{color:var(--gold)}
+  .sc.cool{background:var(--chip);color:var(--purple)}
+  .lrow .who{display:block;font-weight:600;font-size:15px}
+  .lrow .why{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}
+  .pill-src{font-family:var(--fh);font-size:10.5px;font-weight:700;letter-spacing:1.1px;
+    text-transform:uppercase;color:var(--muted);background:var(--tile);border-radius:var(--r-pill);
+    padding:5px 10px;white-space:nowrap}
+  .lfoot{padding:13px 18px;font-size:13px;color:var(--muted);background:var(--canvas)}
+  .lfoot b{color:var(--ink)}
+
+  /* ---------- Logo strip ---------- */
+  .strip{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}
+  .strip .lab{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:1.8px;
+    text-transform:uppercase;color:var(--muted)}
+  .strip img{height:24px;width:auto;opacity:.48;filter:grayscale(1)}
+  [data-theme=dark] .strip img{filter:grayscale(1) invert(1) brightness(1.7);opacity:.6}
+
+  /* ---------- Step path ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .step{border:0;border-radius:var(--r-card);padding:26px;background:var(--panel);box-shadow:var(--shadow)}
+  .step .no{display:inline-flex;align-items:center;gap:9px;font-family:var(--fh);font-size:11.5px;
+    font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .step .no i{font-style:normal;width:24px;height:24px;border-radius:8px;background:var(--chip);
+    color:var(--purple);display:grid;place-items:center;font-size:12px}
+  .step h3{font-size:21px;margin-top:14px}
+  .step p{font-size:14.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+  .step .fee{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-family:var(--fh);
+    font-weight:700;font-size:17px;color:var(--purple)}
+  .step .fee small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:3px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* ---------- Split feature rows ---------- */
+  .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+  .split.rev .copy{order:2}
+  @media(max-width:900px){.split{grid-template-columns:1fr;gap:30px}.split.rev .copy{order:0}}
+  .mock{border:0;border-radius:var(--r-card);background:var(--panel);padding:20px;box-shadow:var(--shadow)}
+  .mock .mhead{font-family:var(--fh);font-size:13px;font-weight:700;margin-bottom:14px}
+  .mline{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;background:var(--canvas);
+    border:0;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .mline:last-child{margin-bottom:0}
+  .mline .t{font-size:14px;font-weight:600}
+  .mline .s{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .tag{font-family:var(--fh);font-size:11px;font-weight:700;padding:5px 10px;border-radius:var(--r-pill);white-space:nowrap}
+  .tag.good{background:rgba(18,201,139,.15);color:var(--mint-ink)}
+  .tag.pend{background:var(--chip);color:var(--purple)}
+  .bars{display:flex;align-items:flex-end;gap:7px;height:96px;margin-top:6px}
+  .bars i{flex:1;background:var(--chip);border-radius:5px 5px 0 0}
+  .bars i.on{background:var(--purple)}
+  .bars i.top{background:var(--mint)}
+  .barlabs{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px;
+    font-family:var(--fh);letter-spacing:.4px}
+  .ticks{margin-top:22px;display:flex;flex-direction:column;gap:11px}
+  .ticks li{display:flex;gap:11px;align-items:flex-start;font-size:15px}
+  .ticks svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--mint)}
+
+  /* ---------- Dark proof ---------- */
+  .panel.dark h2{color:#fff}
+  .panel.dark .kick{color:var(--mint)}
+  .panel.dark .lede{color:rgba(255,255,255,.68)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-card);
+    padding:24px}
+  .fact .big{font-family:var(--fh);font-weight:700;font-size:38px;letter-spacing:-1.4px;color:var(--mint)}
+  .fact h3{font-size:16px;color:#fff;margin-top:8px}
+  .fact p{font-size:13px;color:rgba(255,255,255,.5);margin-top:6px}
+  .todo{margin-top:22px;border:1px dashed rgba(255,197,83,.6);background:rgba(255,197,83,.1);
+    border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.82)}
+  .todo b{display:block;font-family:var(--fh);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);margin-bottom:4px}
+  @media(max-width:860px){.facts{grid-template-columns:1fr}}
+
+  /* ---------- Pricing ladder ---------- */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .rung{border:0;border-radius:var(--r-card);padding:24px;background:var(--panel);box-shadow:var(--shadow)}
+  .rung.feat{outline:2px solid var(--purple);outline-offset:-2px}
+  .rung .flag{display:inline-block;font-family:var(--fh);font-size:10.5px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:#fff;background:var(--purple);border-radius:var(--r-pill);padding:4px 11px;
+    margin-bottom:12px}
+  .rung h3{font-size:18px}
+  .rung .amt{font-family:var(--fh);font-weight:700;font-size:30px;letter-spacing:-1.2px;margin-top:10px}
+  .rung .amt small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+  .rung p{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.6}
+  @media(max-width:860px){.ladder{grid-template-columns:1fr}}
+
+  /* ---------- Quote ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+  .qcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:14px}
+  .qcard .stars{color:var(--gold);font-size:13px;letter-spacing:2px}
+  .qcard p{font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.6}
+  .qcard .who{margin-top:auto;font-size:13px;color:rgba(255,255,255,.55)}
+  .qcard .who b{display:block;color:#fff;font-size:14px}
+  @media(max-width:860px){.quotes{grid-template-columns:1fr}}
+
+  /* ---------- Footer ----------
+     b2brocket's layout, measured: a #0A0A0C block inset 20px with a 40px
+     radius, a 1280 container padded 42px/28px, and one grid of five columns —
+     a wide brand column then four link columns. The wordmark sits under it
+     oversized and faded, clipped by the block's own bottom edge. */
+  .foot{position:relative;margin:22px 20px 20px;color:#fff;
+    background:linear-gradient(155deg,#14102e 0%,#2a2470 34%,#3b34a8 64%,#5862ff 100%);
+    border-radius:40px;padding:28px 0 0;overflow:hidden;isolation:isolate}
+  .foot .fwrap{max-width:1280px;margin:0 auto;padding:42px 28px}
+  .fgrid{display:grid;grid-template-columns:minmax(0,430px) repeat(4,minmax(0,179px));
+    gap:28px;align-items:start}
+  .fbrand .brand{margin-bottom:18px}
+  .foot .brand .word{filter:none}
+  .fblurb{color:rgba(255,255,255,.58);font-size:13.5px;line-height:1.65;max-width:34ch}
+  .fcontact{margin-top:16px;display:flex;flex-direction:column;gap:4px;font-size:13.5px;
+    color:rgba(255,255,255,.72)}
+  .fcontact a:hover{color:#fff}
+  .flabel{font-family:var(--fh);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;
+    color:rgba(255,255,255,.45);margin-top:20px}
+  .fmail{display:block;margin-top:6px;font-size:15px;font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:10px;max-width:280px}
+  .fsocial{display:flex;gap:10px;margin-top:14px}
+  .fsocial a{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+    background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);
+    transition:background-color .16s ease,color .16s ease}
+  .fsocial a:hover{background:rgba(255,255,255,.9);color:#2a2470}
+  .fsocial svg{width:15px;height:15px;fill:currentColor}
+  .fbadges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .fbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);
+    border-radius:999px;padding:5px 11px;font-size:11.5px;color:rgba(255,255,255,.8)}
+  .fbadge i{width:6px;height:6px;border-radius:50%;background:#cfd2ff;font-style:normal}
+  .foot h4{font-family:var(--fh);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;
+    color:rgba(255,255,255,.45);font-weight:700}
+  .foot ul{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .foot ul a{font-size:13.5px;color:rgba(255,255,255,.72)}
+  .foot ul a:hover{color:#fff}
+  .fbot{max-width:1280px;margin:0 auto;padding:18px 28px 26px;
+    border-top:1px solid rgba(255,255,255,.12);
+    display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:rgba(255,255,255,.45)}
+  .fbot .sp{flex:1}
+  .fbot a:hover{color:#fff}
+  /* The oversized wordmark: one line, clipped by the footer, sized off the
+     viewport so it always reaches both edges. */
+  .fmark{font-family:var(--fh);font-weight:700;font-size:clamp(64px,13.5vw,210px);
+    line-height:.78;letter-spacing:-.02em;text-align:center;color:#fff;opacity:.055;
+    margin:6px 0 -.22em;pointer-events:none;user-select:none}
+  @media(max-width:1000px){.fgrid{grid-template-columns:1fr 1fr 1fr}}
+  @media(max-width:680px){
+    .foot{margin:16px 12px 12px;border-radius:28px;padding:20px 0 0}
+    .foot .fwrap{padding:26px 20px}
+    .fgrid{grid-template-columns:1fr 1fr;gap:24px}
+    .fbrand{grid-column:1/-1}
+    .fbot{padding:16px 20px 22px}
+  }
+
+  /* ---------- Responsive nav ---------- */
+  @media(max-width:1080px){
+    .mainnav,.navlogin{display:none}
+    .burger{display:grid}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+
+<div class="previewbar"><b>PREVIEW</b> &mdash; home page rebuilt on a b2brocket-style layout with Revio colours. Not linked from the live site. Compare with <a href="/">the live home page</a>.</div>
+
+<!-- ── Floating pill header ──────────────────────────────── -->
+<div class="topwrap">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Revio — home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" role="img">
+          <defs><mask id="revioMarkNav" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+            <rect width="32" height="32" fill="#000"/>
+            <circle cx="14" cy="18" r="12.8" fill="#fff"/>
+            <path d="M5.2 19.8 10.8 14.4 14.9 18.7 27.6 5.6" fill="none" stroke="#000" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20.6 2.2 31 1.1 29.9 11.5z" fill="#000" stroke="#000" stroke-width="3.4" stroke-linejoin="round"/>
+          </mask></defs>
+          <circle cx="14" cy="18" r="12.8" fill="#fff" mask="url(#revioMarkNav)"/>
+          <path d="M21.4 11.8 26.9 6.3" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M22.8 3.4 29.6 2.7 28.9 9.5z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>
+        <img class="word" src="/assets/revio-logo-white.png" alt="Revio">
+        <span class="tag">AI &amp; HubSpot</span>
+      </span>
+    </a>
+
+    <span class="sp"></span>
+
+    <nav class="mainnav" aria-label="Main">
+      <div class="navitem">
+        <a class="navtop" href="/services/">AI Services
+          <svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="mega">
+          <div class="mega-cards">
+            <a class="mcard" href="/preview/ai-opportunity-audit/">
+              <span class="mi"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+              <h4>AI Opportunity Audit</h4>
+              <p>Two weeks to find where AI actually pays for itself in your business &mdash; before anyone builds a thing.</p>
+              <span class="flab">What you get</span>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Ranked list with cost and payback</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Yours to keep, whoever builds it</li>
+              </ul>
+              <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a class="mcard" href="/preview/ai-agents-automation/">
+              <span class="mi"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4"/><circle cx="9" cy="13" r="1.1"/><circle cx="15" cy="13" r="1.1"/></svg></span>
+              <h4>AI Agents &amp; Automation</h4>
+              <p>Agents that answer, qualify, chase and book. Workflows wired into the tools you already pay for.</p>
+              <span class="flab">Popular builds</span>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Inbound DM &amp; email agents</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>CRM data &amp; handover automation</li>
+              </ul>
+              <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a class="mcard" href="/preview/ai-app-development/">
+              <span class="mi"><svg viewBox="0 0 24 24"><path d="m9 8-5 4 5 4"/><path d="m15 8 5 4-5 4"/></svg></span>
+              <h4>AI Web &amp; App Development</h4>
+              <p>Internal tools, portals and customer-facing apps, shipped in weeks rather than quarters.</p>
+              <span class="flab">How it works</span>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Fixed price, fixed date</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>You own the code</li>
+              </ul>
+              <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navitem">
+        <a class="navtop" href="/hubspot-agency/">HubSpot
+          <svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+                <div class="mega">
+          <div class="mega-cards">
+            <a class="mcard" href="/hubspot-consultancy/">
+              <span class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/></svg></span>
+              <h4>Consultancy &amp; Audit</h4>
+              <p>Where the portal is costing you money, and what to do about it. From a Solutions Partner who has done this for a decade.</p>
+              <span class="flab">Start here</span>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Free portal health check</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Strategy, not a feature tour</li>
+              </ul>
+              <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a class="mcard" href="/hubspot-sales-hub-implementation/">
+              <span class="mi"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/></svg></span>
+              <h4>Hub Implementation</h4>
+              <p>Sales, Marketing and Service Hub set up around the way your team actually sells, rather than the way the demo did.</p>
+              <span class="flab">What we set up</span>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Sales &amp; Marketing Hub</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Service Hub, tickets &amp; CSAT</li>
+              </ul>
+              <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <a class="mcard" href="/sales-enablement/">
+              <span class="mi"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/><path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></svg></span>
+              <h4>RevOps, Data &amp; Support</h4>
+              <p>Clean pipelines, honest attribution and someone on the end of the phone. The groundwork every AI build depends on.</p>
+              <span class="flab">Ongoing</span>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Data hygiene &amp; migrations</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Admin &amp; dev retainers</li>
+              </ul>
+              <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </div>
+          <div class="mega-links">
+            <a href="/hubspot-audit/">Free HubSpot Audit</a>
+            <a href="/hubspot-support-packages/">Support Packages</a>
+            <a href="/hubspot-marketing-hub-implementation/">Marketing Hub</a>
+            <a href="/hubspot-service-hub/">Service Hub</a>
+            <a href="/hubspot-integrations/">Integrations</a>
+            <a href="/hubspot-agency/">Everything HubSpot</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navitem">
+        <a class="navtop" href="/about/">Company
+          <svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="mega">
+          <div class="mega-grid">
+            <a class="mrow" href="/about/"><span class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 19a7 7 0 0 1 14 0"/></svg></span><span><b>Why Revio</b><span>Who we are and how we work</span></span></a>
+            <a class="mrow" href="/work/"><span class="mi"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M9 7V5h6v2"/></svg></span><span><b>Our Work</b><span>Case studies and results</span></span></a>
+            <a class="mrow" href="/testimonials/"><span class="mi"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="m8 12 3 3 6-7"/></svg></span><span><b>Testimonials</b><span>What clients actually say</span></span></a>
+            <a class="mrow" href="/guides/"><span class="mi"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/></svg></span><span><b>Free Guides</b><span>Playbooks and resources</span></span></a>
+            <a class="mrow" href="/resources/"><span class="mi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7"/></svg></span><span><b>Insights &amp; News</b><span>Articles, guides and updates</span></span></a>
+            <a class="mrow" href="/book-a-meeting-freelancer/"><span class="mi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/></svg></span><span><b>Book a Meeting</b><span>Talk to us before you commit</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navitem"><a class="navtop" href="/preview/pricing/">Pricing</a></div>
+      <div class="navitem"><a class="navtop" href="/lead-signal/"><span class="live"></span>LeadSignal</a></div>
+    </nav>
+
+    <a class="navlogin" href="/book-a-meeting-freelancer/">Talk to us</a>
+    <button class="themebtn" type="button" id="themebtn" aria-label="Switch colour theme">
+      <svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5"/></svg>
+      <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+    </button>
+    <a class="btn btn-primary" href="/preview/ai-opportunity-audit/">Book an audit
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false">
+      <i></i><i></i><i></i>
+    </button>
+  </header>
+
+  <nav class="drawer" id="drawer" aria-label="Mobile">
+    <a href="/preview/ai-opportunity-audit/">AI Opportunity Audit</a>
+    <a href="/preview/ai-agents-automation/">AI Agents &amp; Automation</a>
+    <a href="/preview/ai-enablement/">AI Enablement &amp; Training</a>
+    <a href="/preview/ai-app-development/">AI Web &amp; App Development</a>
+    <a href="/hubspot-agency/">HubSpot &amp; RevOps</a>
+    <a href="/lead-signal/">LeadSignal</a>
+    <a href="/preview/pricing/">Pricing</a>
+    <a href="/about/">Company</a>
+    <a class="btn btn-primary" href="/preview/ai-opportunity-audit/">Book an audit</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="panel grad">
+    <div class="hero">
+      <div>
+        <span class="chip">AI consultancy &amp; enablement</span>
+        <h1>Everyone is buying AI. <span class="alt">Almost nobody is using it.</span></h1>
+        <p class="sub">Revio finds the one process where AI genuinely pays for itself in your business, builds it, wires it into your CRM and stays until your team is actually using it. We know what survives contact with a real business, because we run an AI product of our own.</p>
+        <div class="actions">
+          <a class="btn btn-primary btn-lg" href="/preview/ai-opportunity-audit/">Book an AI Opportunity Audit
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line btn-lg" href="/lead-signal/">See the product we built</a>
+        </div>
+        <div class="herotrust">
+          <span class="hstack" aria-hidden="true"><span>HS</span><span>AI</span><span>RO</span></span>
+          <span class="txt"><b>HubSpot Solutions Partner</b> &middot; running our own AI product in production</span>
+        </div>
+      </div>
+
+      <div class="live" aria-hidden="true">
+        <div class="lhead"><i class="dot"></i> LeadSignal &mdash; live inbox priority</div>
+        <div class="lrow">
+          <span class="sc hot">94</span>
+          <span><span class="who">Marcus T.</span><span class="why">Asked about pricing. Competitor renewal in 14 weeks &mdash; offer the call now.</span></span>
+          <span class="pill-src">meta ads</span>
+        </div>
+        <div class="lrow">
+          <span class="sc hot">88</span>
+          <span><span class="who">Jess M.</span><span class="why">Said yes to a call. Times sent, booking link opened twice.</span></span>
+          <span class="pill-src">instagram</span>
+        </div>
+        <div class="lrow">
+          <span class="sc warm">71</span>
+          <span><span class="who">Aaron D.</span><span class="why">Engaged but vague. Agent asked for goal and timeline.</span></span>
+          <span class="pill-src">whatsapp</span>
+        </div>
+        <div class="lrow">
+          <span class="sc cool">42</span>
+          <span><span class="who">Sarah K.</span><span class="why">Downloaded the guide. Check back in three days.</span></span>
+          <span class="pill-src">youtube</span>
+        </div>
+        <div class="lfoot"><b>Call booked</b> &mdash; written to the CRM and attributed back to the ad that started the conversation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Client strip ──────────────────────────────────────── -->
+  <section class="panel plain" style="padding-top:26px;padding-bottom:26px">
+    <div class="strip">
+      <span class="lab">Worked with</span>
+      <img src="/assets/legacy/Mintec-Logo-300x169.jpg" alt="Mintec" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/lsbu-logo.svg" alt="London South Bank University" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/intelli-bw-1.jpg" alt="Intelligencia Training" loading="lazy" onerror="this.remove()">
+      <img src="https://www.tlpi.co.uk/hubfs/tlpi-colour.svg" alt="TLPI" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/thisisbud-logo.svg" alt="This is Bud" loading="lazy" onerror="this.remove()">
+      <img src="/assets/legacy/prosips.jpg" alt="ProSIPS" loading="lazy" onerror="this.remove()">
+    </div>
+  </section>
+
+  <!-- ── Three moves ───────────────────────────────────────── -->
+  <section class="panel">
+    <div class="center">
+      <span class="kick">How an engagement runs</span>
+      <h2 style="margin-top:12px">Find it. Build it. <span class="alt">Get it used.</span></h2>
+      <p class="lede">Nobody builds anything here until we have found where AI actually pays for itself in your business. That is the entire point of starting with an audit.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="no"><i>1</i> Find</span>
+        <h3>AI Opportunity Audit</h3>
+        <p>Two weeks. Where AI saves you time or makes you money, in priority order, with the cost and payback of each &mdash; and an honest note on where AI is the wrong answer.</p>
+        <div class="fee">&pound;1,500 fixed<small>Two weeks, start to signed-off document</small></div>
+      </div>
+      <div class="step">
+        <span class="no"><i>2</i> Build</span>
+        <h3>Agents, automations, apps</h3>
+        <p>Agents that answer, qualify, chase and book. Internal tools and portals shipped in weeks rather than quarters, wired into the CRM you already run.</p>
+        <div class="fee">&pound;4,500 &ndash; &pound;25,000+<small>Fixed price and date, quoted after scoping</small></div>
+      </div>
+      <div class="step">
+        <span class="no"><i>3</i> Adopt</span>
+        <h3>Enablement &amp; training</h3>
+        <p>Getting your team to actually use it. Sold as a programme rather than a workshop, because around 90% of one-off training is gone inside a month.</p>
+        <div class="fee">from &pound;950 a month<small>Adoption measured at 30, 60 and 90 days</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Agents ────────────────────────────────────────────── -->
+  <section class="panel tint">
+    <div class="split">
+      <div class="copy">
+        <span class="kick">AI agents that deliver outcomes</span>
+        <h2 style="margin-top:12px">Software that does the job. <span class="alt">Not software that suggests it.</span></h2>
+        <p class="lede">An agent is only worth having if it finishes something. Ours answer, qualify, chase and book &mdash; then write the result into the CRM where your team already works.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Every conversation answered in your own voice, day or night</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Handed to a human the moment it should be</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>Monitored after launch, not handed over and forgotten</li>
+        </ul>
+        <div class="actions" style="margin-top:28px">
+          <a class="btn btn-primary" href="/preview/ai-agents-automation/">Explore AI agents
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="/preview/ai-opportunity-audit/">Start with the audit</a>
+        </div>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mhead">Today&rsquo;s handled conversations</div>
+        <div class="mline"><span><span class="t">Enquiry answered in 40 seconds</span><span class="s">Instagram DM &middot; pricing question</span></span><span class="tag good">Booked</span></div>
+        <div class="mline"><span><span class="t">Quote chased, third attempt</span><span class="s">Email &middot; reply received</span></span><span class="tag good">Replied</span></div>
+        <div class="mline"><span><span class="t">Out-of-hours WhatsApp</span><span class="s">23:14 &middot; qualified, call offered</span></span><span class="tag pend">Awaiting</span></div>
+        <div class="mline"><span><span class="t">Escalated to a human</span><span class="s">Complaint detected &mdash; agent stepped back</span></span><span class="tag pend">Handover</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Enablement ────────────────────────────────────────── -->
+  <section class="panel">
+    <div class="split rev">
+      <div class="mock" aria-hidden="true">
+        <div class="mhead">Adoption, measured</div>
+        <div class="bars">
+          <i style="height:26%"></i><i style="height:38%"></i><i class="on" style="height:54%"></i>
+          <i class="on" style="height:66%"></i><i class="on" style="height:78%"></i><i class="top" style="height:100%"></i>
+        </div>
+        <div class="barlabs"><span>Week 1</span><span>Day 30</span><span>Day 60</span><span>Day 90</span></div>
+        <div class="mline" style="margin-top:18px"><span><span class="t">Weekly active users of the tools</span><span class="s">Tracked per team, not per licence</span></span><span class="tag good">Rising</span></div>
+      </div>
+      <div class="copy">
+        <span class="kick">AI enablement &amp; training</span>
+        <h2 style="margin-top:12px">You already pay for the tools. <span class="alt">Now get the team using them.</span></h2>
+        <p class="lede">Licences are not adoption. We train on your own work, record every session so new starters inherit it, and come back at 30, 60 and 90 days to check it stuck.</p>
+        <div class="actions" style="margin-top:28px">
+          <a class="btn btn-primary" href="/preview/ai-enablement/">See the programme
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="/preview/pricing/">Training rates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Proof / why us ────────────────────────────────────── -->
+  <section class="panel dark">
+    <div class="center">
+      <span class="kick">Why us</span>
+      <h2 style="margin-top:12px;color:#fff">We didn&rsquo;t just adopt AI. <span style="color:var(--mint);display:block">We built a product with it.</span></h2>
+      <p class="lede">Most agencies selling AI advice have never shipped an AI system that strangers pay to use. LeadSignal is ours: a live multi-tenant platform with an approved Meta integration, agents holding real conversations, scoring, booking, attribution and billing.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="big">&mdash;</div><h3>Businesses running on LeadSignal</h3><p>Replace with the real tenant count.</p></div>
+      <div class="fact"><div class="big">&mdash;</div><h3>Hours a week given back</h3><p>Replace with a figure from a named client.</p></div>
+      <div class="fact"><div class="big">&mdash;</div><h3>Conversations handled by AI</h3><p>Replace with the real total across tenants.</p></div>
+    </div>
+    <div class="todo"><b>Open item</b>These three numbers are the one part of this page that cannot be written &mdash; they have to be true. Real figures go in before it ships. If only two are solid, run two.</div>
+
+    <div class="quotes">
+      <div class="qcard">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>&ldquo;Revio took our ideas and turned them into measurable business outcomes. They work like an extension of our own team.&rdquo;</p>
+        <span class="who"><b>Marketing Director</b>B2B SaaS client</span>
+      </div>
+      <div class="qcard">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>&ldquo;Process-driven, straight-talking and genuinely accountable for results &mdash; rare in an agency.&rdquo;</p>
+        <span class="who"><b>Head of Growth</b>Training provider</span>
+      </div>
+      <div class="qcard">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p>&ldquo;They fixed the CRM first and the AI worked afterwards. Nobody else told us that was the order.&rdquo;</p>
+        <span class="who"><b>Operations Director</b>Professional services</span>
+      </div>
+    </div>
+    <div class="actions" style="margin-top:32px;justify-content:center">
+      <a class="btn btn-mint" href="/lead-signal/">See LeadSignal
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-dark" href="/work/">Read the case studies</a>
+    </div>
+  </section>
+
+  <!-- ── Pricing ───────────────────────────────────────────── -->
+  <section class="panel">
+    <div class="center">
+      <span class="kick">Pricing</span>
+      <h2 style="margin-top:12px">The numbers, <span class="alt">before you have to ask.</span></h2>
+      <p class="lede">Most agencies make you book a call to find out whether you can afford them. Here are the starting figures, so you can decide in private.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung feat">
+        <span class="flag">Start here</span>
+        <h3>AI Opportunity Audit</h3>
+        <div class="amt">&pound;1,500<small> fixed</small></div>
+        <p>Two weeks. A ranked list of where AI pays for itself, with the cost and the payback of each.</p>
+      </div>
+      <div class="rung">
+        <h3>One tool or one agent</h3>
+        <div class="amt">&pound;4,500<small> one week</small></div>
+        <p>A single-purpose internal tool, or one agent doing one job properly. Scoping session &pound;600, credited against the build.</p>
+      </div>
+      <div class="rung">
+        <h3>Connected app</h3>
+        <div class="amt">&pound;12,000<small> 2&ndash;3 weeks</small></div>
+        <p>Several screens, logins and permissions, wired into your CRM. Platforms with billing and roles from &pound;25,000.</p>
+      </div>
+    </div>
+    <div class="actions" style="margin-top:28px;justify-content:center">
+      <a class="btn btn-line" href="/preview/pricing/">See full pricing, including training and support
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ── Still here ────────────────────────────────────────── -->
+  <section class="panel grad-soft">
+    <div class="split">
+      <div class="copy">
+        <span class="kick">Still very much here</span>
+        <h2 style="margin-top:12px">HubSpot, RevOps and <span class="alt">growth marketing.</span></h2>
+        <p class="lede">AI is only as good as the data underneath it, and cleaning up CRMs is what we have done for a decade. Inbound, SEO and paid media continue exactly as before &mdash; they are simply no longer the headline.</p>
+        <div class="actions" style="margin-top:26px">
+          <a class="btn btn-primary" href="/hubspot-agency/">HubSpot services
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="/start-growing/">Request a quote</a>
+        </div>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mhead">Where AI projects quietly fail</div>
+        <div class="mline"><span><span class="t">Duplicate and stale records</span><span class="s">The agent learns the wrong history</span></span><span class="tag pend">Fixed first</span></div>
+        <div class="mline"><span><span class="t">No single source of truth</span><span class="s">Two systems disagreeing on the same deal</span></span><span class="tag pend">Fixed first</span></div>
+        <div class="mline"><span><span class="t">Nothing attributed</span><span class="s">Spend cannot be judged, so it never scales</span></span><span class="tag pend">Fixed first</span></div>
+        <div class="mline"><span><span class="t">Then the AI goes in</span><span class="s">On data it can actually trust</span></span><span class="tag good">Build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Closing CTA ───────────────────────────────────────── -->
+  <section class="panel center">
+    <span class="chip">Two weeks &middot; &pound;1,500 &middot; fixed fee</span>
+    <h2 style="margin-top:18px">Start with the audit.</h2>
+    <p class="lede">A prioritised list of where AI pays for itself in your business, with the numbers attached. If the answer is &ldquo;nowhere yet&rdquo;, we will tell you that too.</p>
+    <div class="actions" style="margin-top:28px;justify-content:center">
+      <a class="btn btn-primary btn-lg" href="/preview/ai-opportunity-audit/">Book an AI Opportunity Audit
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line btn-lg" href="/book-a-meeting-freelancer/">Talk to us first</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="fwrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="brand" href="/" aria-label="Revio — home">
+          <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img">
+          <defs><mask id="revioMarkFoot" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+            <rect width="32" height="32" fill="#000"/>
+            <circle cx="14" cy="18" r="12.8" fill="#fff"/>
+            <path d="M5.2 19.8 10.8 14.4 14.9 18.7 27.6 5.6" fill="none" stroke="#000" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20.6 2.2 31 1.1 29.9 11.5z" fill="#000" stroke="#000" stroke-width="3.4" stroke-linejoin="round"/>
+          </mask></defs>
+          <circle cx="14" cy="18" r="12.8" fill="#fff" mask="url(#revioMarkFoot)"/>
+          <path d="M21.4 11.8 26.9 6.3" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M22.8 3.4 29.6 2.7 28.9 9.5z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        </span>
+          <img class="word" src="/assets/revio-logo-white.png" alt="Revio">
+        </a>
+        <p class="fblurb">AI consultancy, build and enablement, on top of a decade of HubSpot and RevOps work. We build and run our own AI product.</p>
+        <div class="fcontact">
+          <span>Imperial Place, 4 Maxwell Rd,</span>
+          <span>Borehamwood, WD6 1JN, United Kingdom</span>
+          <a href="tel:+447590977397">+44 7590 977397</a>
+        </div>
+        <div class="flabel">Ask or email us</div>
+        <a class="fmail" href="mailto:grow@revio.agency">grow@revio.agency</a>
+        <div class="fsocial">
+          <a href="https://www.linkedin.com/company/revio-agency/" target="_blank" rel="noopener" aria-label="Revio on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21h-4z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Revio on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2zm0 10.9a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6zm8.4-11.16a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0z"/></svg></a>
+          <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Revio on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.8L21.8 21h-6.2l-4.9-6.4L5.1 21H2l7.3-8.3L2.5 3h6.4l4.4 5.8zM16.4 19.2h1.7L7.7 4.7H5.9z"/></svg></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Revio on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2C2 8.78 2 12 2 12s0 3.22.4 4.8a2.5 2.5 0 0 0 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77C22 15.22 22 12 22 12s0-3.22-.4-4.8zM10 15.1V8.9l5.2 3.1z"/></svg></a>
+        </div>
+        <div class="fbadges">
+          <span class="fbadge"><i></i>HubSpot Solutions Partner</span>
+          <span class="fbadge"><i></i>Meta approved integration</span>
+        </div>
+      </div>
+
+      <div>
+        <h4>AI Services</h4>
+        <ul>
+          <li><a href="/preview/ai-opportunity-audit/">Opportunity Audit</a></li>
+          <li><a href="/preview/ai-agents-automation/">Agents &amp; Automation</a></li>
+          <li><a href="/preview/ai-enablement/">Enablement &amp; Training</a></li>
+          <li><a href="/preview/ai-app-development/">Web &amp; App Development</a></li>
+          <li><a href="/lead-signal/">LeadSignal</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>HubSpot</h4>
+        <ul>
+          <li><a href="/hubspot-agency/">Overview</a></li>
+          <li><a href="/hubspot-consultancy/">Consultancy</a></li>
+          <li><a href="/hubspot-sales-hub-implementation/">Implementation</a></li>
+          <li><a href="/hubspot-audit/">Free Audit</a></li>
+          <li><a href="/hubspot-support-packages/">Support Packages</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Growth</h4>
+        <ul>
+          <li><a href="/lead-generation/">Lead Generation</a></li>
+          <li><a href="/paid-search-social/">Paid Search &amp; Social</a></li>
+          <li><a href="/sales-enablement/">Sales Enablement</a></li>
+          <li><a href="/work/">Our Work</a></li>
+          <li><a href="/preview/pricing/">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Revio</a></li>
+          <li><a href="/testimonials/">Testimonials</a></li>
+          <li><a href="/guides/">Free Guides</a></li>
+          <li><a href="/resources/">Insights &amp; News</a></li>
+          <li><a href="/book-a-meeting-freelancer/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="fbot">
+    <span>&copy; <span id="yr">2026</span> Revio. All rights reserved.</span>
+    <span class="sp"></span>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Service</a>
+    <a href="/dpa/">DPA</a>
+  </div>
+
+  <div class="fmark" aria-hidden="true">REVIO</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.getElementById('themebtn').addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('revio-theme-v2',next);}catch(e){}
+  });
+  var burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+  burger.addEventListener('click',function(){
+    var open=drawer.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+</script>
+</body>
+</html>

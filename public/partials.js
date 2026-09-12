@@ -1,117 +1,166 @@
 /* ============================================================
-   REVIO — shared header + footer partials
-   Injects identical nav/footer on every page, handles the
-   desktop dropdowns, mobile accordion drawer, active nav
-   state, and scroll-reveal animations.
+   REVIO — shared header + footer partials (2026 shell)
+
+   Injects the floating pill header and the gradient footer into
+   every page via the <div id="site-header"> / <div id="site-footer">
+   mount points, and handles the dropdowns, the mobile drawer, the
+   theme toggle, scheduled blog posts and scroll-reveal.
+
+   The dropdown panels come in two shapes:
+     cards — three rich cards (icon, blurb, two proof points, CTA),
+             used by AI Services and HubSpot
+     rows  — a three-column grid of icon rows, used by Company
+   A `links` array renders a secondary row underneath a card panel so
+   pages that did not earn a card are still reachable.
    ============================================================ */
 (function () {
   'use strict';
 
   var MEETING_URL = '/book-a-meeting-freelancer/';
-  var QUOTE_URL = '/start-growing/';
-  /* Pure-white Revio wordmark. The nav bar and footer are both dark, so
-     it renders white in place on each. */
-  var LOGO_LIGHT = '/assets/revio-logo-white.png';
-  var LOGO_WHITE = '/assets/revio-logo-white.png';
+  var AUDIT_URL = '/ai-opportunity-audit/';
+  var LOGO = '/assets/revio-logo-white.png';
 
-  /* Inline line-icons for the dropdown mega-menus (mirrors the
-     icon menu on revio.agency). Stroke uses currentColor so each
-     row tints on hover. */
+  /* ---------- icon helpers ---------- */
   function ic(paths) {
-    return '<svg class="nav-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
-      'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      paths + '</svg>';
+    return '<svg viewBox="0 0 24 24">' + paths + '</svg>';
   }
+  var TICK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
+    'stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg>';
+  var GO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
+    'stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px">' +
+    '<path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
   var ICON = {
-    lead:    ic('<path d="M3 4h18"/><path d="M6 4v6a6 6 0 0 0 12 0V4"/><path d="M12 16v4"/><path d="M9 20h6"/>'),
-    paid:    ic('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>'),
-    sales:   ic('<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>'),
-    consult: ic('<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'),
-    audit:   ic('<rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>'),
-    support: ic('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M5.6 5.6l3.3 3.3M15.1 15.1l3.3 3.3M18.4 5.6l-3.3 3.3M8.9 15.1l-3.3 3.3"/>'),
-    build:   ic('<path d="M12 2l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/>'),
-    why:     ic('<path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/>'),
-    work:    ic('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>'),
-    testi:   ic('<path d="M8 9h8M8 13h5"/><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/>'),
-    guides:  ic('<path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 1 2 2z"/>'),
-    hubspot: ic('<circle cx="12" cy="13" r="3.5"/><path d="M12 9.5V4.5"/><path d="M15 11.2l4.3-2.5"/><path d="M14.6 15.6l3.2 3.2"/><circle cx="12" cy="3.8" r="0.4"/><circle cx="19.9" cy="8.3" r="0.4"/><circle cx="18.3" cy="19.3" r="0.4"/>')
+    audit:   ic('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'),
+    agents:  ic('<rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4"/>' +
+                '<circle cx="9" cy="13" r="1.1"/><circle cx="15" cy="13" r="1.1"/>'),
+    apps:    ic('<path d="m9 8-5 4 5 4"/><path d="m15 8 5 4-5 4"/>'),
+    growth:  ic('<path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>'),
+    consult: ic('<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/>'),
+    build:   ic('<path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/>'),
+    data:    ic('<ellipse cx="12" cy="6" rx="7.5" ry="3"/>' +
+                '<path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/>' +
+                '<path d="M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/>'),
+    why:     ic('<circle cx="12" cy="8" r="3.4"/><path d="M5 19a7 7 0 0 1 14 0"/>'),
+    work:    ic('<rect x="3" y="7" width="18" height="13" rx="3"/><path d="M9 7V5h6v2"/>'),
+    testi:   ic('<path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="m8 12 3 3 6-7"/>'),
+    guides:  ic('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/>'),
+    news:    ic('<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7"/>'),
+    book:    ic('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/>')
   };
 
-  /* Main navigation — mirrors revio.agency's live menu.
-     `match` lists page filenames that light the top-level item
-     up as current (sub-pages roll up to their parent).
-     Each dropdown child carries an icon + one-line description
-     so the panel renders as revio.agency's icon menu. */
-  var NAV = [
-    { label: 'LeadSignal', href: 'https://lead-signal.ai/', match: ['/lead-signal/'], dot: true },
-    {
-      label: 'Services', href: '/services/',
-      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/sales-enablement/', '/gohighlevel-crm-implementation/'],
-      children: [
-        { href: '/lead-generation/', label: 'Inbound Lead Generation', icon: ICON.lead, desc: 'SEO &amp; content that fills the funnel' },
-        { href: '/paid-search-social/', label: 'Paid Search &amp; Social', icon: ICON.paid, desc: 'PPC &amp; paid social that converts' },
-        { href: '/sales-enablement/', label: 'Sales Enablement', icon: ICON.sales, desc: 'RevOps &amp; automation to close faster' },
-        { href: '/gohighlevel-crm-implementation/', label: 'GoHighLevel CRM Implementation', icon: ICON.build, desc: 'Set up, automate &amp; migrate GoHighLevel' }
-      ]
-    },
-    {
-      label: 'HubSpot', href: '/hubspot-agency/', wide: true, icon: ICON.hubspot,
-      match: ['/hubspot-agency/', '/hubspot-consultancy/', '/hubspot-audit/', '/hubspot-support-packages/', '/hubspot-sales-hub-implementation/', '/hubspot-marketing-hub-implementation/', '/hubspot-service-hub/'],
-      children: [
-        { href: '/hubspot-consultancy/', label: 'HubSpot Consultancy', icon: ICON.hubspot, desc: 'Strategy from a Solutions Partner' },
-        { href: '/hubspot-audit/', label: 'HubSpot Audit', icon: ICON.hubspot, desc: 'Free health check of your portal' },
-        { href: '/hubspot-support-packages/', label: 'HubSpot Support Packages', icon: ICON.hubspot, desc: 'Ongoing admin &amp; dev retainers' },
-        { href: '/hubspot-sales-hub-implementation/', label: 'Sales Hub Implementation', icon: ICON.hubspot, desc: 'Set up Sales Hub around your process' },
-        { href: '/hubspot-marketing-hub-implementation/', label: 'Marketing Hub Implementation', icon: ICON.hubspot, desc: 'Launch campaigns &amp; automation' },
-        { href: '/hubspot-service-hub/', label: 'Service Hub Implementation', icon: ICON.hubspot, desc: 'Tickets, knowledge base &amp; CSAT' }
-      ]
-    },
-    { label: 'AI Consultancy', href: '/ai-enablement/', match: ['/ai-enablement/'] },
-    {
-      label: 'About', href: '/about/',
-      match: ['/about/', '/work/', '/testimonials/', '/guides/', '/resources/'],
-      children: [
-        { href: '/testimonials/', label: 'Testimonials', icon: ICON.testi, desc: 'What our clients say' },
-        { href: '/work/', label: 'Our Work', icon: ICON.work, desc: 'Case studies &amp; results' },
-        { href: '/about/', label: 'Why Revio?', icon: ICON.why, desc: 'Who we are &amp; how we work' },
-        { href: '/guides/', label: 'Free Guides', icon: ICON.guides, desc: 'Playbooks &amp; resources' },
-        { href: '/resources/', label: 'Insights &amp; News', icon: ICON.testi, desc: 'Articles, guides &amp; updates' }
-      ]
-    },
-    { label: 'Pricing', href: '/pricing/', match: ['/pricing/'] }
-  ];
+  /* ---------- the brand mark ----------
+     The O from the wordmark: a solid disc with the chart wave knocked out of
+     it and the arrow breaking out of the top right through a notch. The mask
+     channel is cut wider than the visible arrow, which is what leaves the gap
+     between disc and arrow in the original artwork. */
+  function markSVG(uid) {
+    return '<svg viewBox="0 0 32 32" role="img">' +
+      '<defs><mask id="' + uid + '" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">' +
+      '<rect width="32" height="32" fill="#000"/>' +
+      '<circle cx="14" cy="18" r="12.8" fill="#fff"/>' +
+      '<path d="M5.2 19.8 10.8 14.4 14.9 18.7 27.6 5.6" fill="none" stroke="#000" ' +
+      'stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M20.6 2.2 31 1.1 29.9 11.5z" fill="#000" stroke="#000" stroke-width="3.4" ' +
+      'stroke-linejoin="round"/></mask></defs>' +
+      '<circle cx="14" cy="18" r="12.8" fill="#fff" mask="url(#' + uid + ')"/>' +
+      '<path d="M21.4 11.8 26.9 6.3" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>' +
+      '<path d="M22.8 3.4 29.6 2.7 28.9 9.5z" fill="#fff" stroke="#fff" stroke-width="1.6" ' +
+      'stroke-linejoin="round"/></svg>';
+  }
 
-  var CHEV = '<svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>';
-
-  /* Render one dropdown child as an icon row (icon + label + desc). */
-  function childRow(child, page) {
-    var iconHTML = '';
-    if (child.iconImg) {
-      iconHTML = '<span class="nav-ic-wrap nav-ic-wrap-img">' +
-        '<img class="nav-ic-img" src="' + child.iconImg + '" alt="" loading="lazy"></span>';
-    } else if (child.icon) {
-      iconHTML = '<span class="nav-ic-wrap">' + child.icon + '</span>';
-    }
-    return '<a href="' + child.href + '"' +
-      (child.href === page ? ' aria-current="page"' : '') + '>' +
-      iconHTML +
-      '<span class="nav-txt"><span class="nav-lbl">' + child.label + '</span>' +
-      (child.desc ? '<span class="nav-desc">' + child.desc + '</span>' : '') +
+  function brand(uid, withTag) {
+    return '<a class="brand" href="/" aria-label="Revio — home">' +
+      '<span class="mark" aria-hidden="true">' + markSVG(uid) + '</span>' +
+      '<span><img class="word" src="' + LOGO + '" alt="Revio">' +
+      (withTag ? '<span class="tag">AI &amp; HubSpot</span>' : '') +
       '</span></a>';
   }
 
-  /* "Overview" row for a dropdown — skipped when the parent page
-     already appears among the children (e.g. About → Why Revio). */
-  function overviewLink(item, page) {
-    var dupe = item.children.some(function (c) { return c.href === item.href; });
-    if (dupe) return '';
-    var icon = item.iconImg
-      ? '<span class="nav-ic-wrap nav-ic-wrap-img"><img class="nav-ic-img" src="' + item.iconImg + '" alt="" loading="lazy"></span>'
-      : (item.icon ? '<span class="nav-ic-wrap">' + item.icon + '</span>' : '');
-    return '<a href="' + item.href + '"' +
-      (item.href === page ? ' aria-current="page"' : '') +
-      '>' + icon + '<span class="nav-txt"><span class="nav-lbl">' + item.label + ' Overview</span></span></a>';
-  }
+  /* ---------- navigation ---------- */
+  var NAV = [
+    {
+      label: 'AI Services', href: '/ai-services/', shape: 'cards',
+      match: ['/ai-services/', '/ai-opportunity-audit/', '/ai-agents-automation/',
+              '/ai-enablement/', '/ai-app-development/', '/ai-growth-systems/'],
+      cards: [
+        { href: '/ai-opportunity-audit/', icon: ICON.audit, title: 'AI Opportunity Audit',
+          blurb: 'Two weeks to find where AI actually pays for itself in your business — before anyone builds a thing.',
+          label: 'What you get',
+          items: ['Ranked list with cost and payback', 'Yours to keep, whoever builds it'] },
+        { href: '/ai-agents-automation/', icon: ICON.agents, title: 'AI Agents &amp; Automation',
+          blurb: 'Agents that answer, qualify, chase and book. Workflows wired into the tools you already pay for.',
+          label: 'Popular builds',
+          items: ['Inbound DM &amp; email agents', 'CRM data &amp; handover automation'] },
+        { href: '/ai-app-development/', icon: ICON.apps, title: 'AI Web &amp; App Development',
+          blurb: 'Internal tools, portals and customer-facing apps, shipped in weeks rather than quarters.',
+          label: 'How it works',
+          items: ['Fixed price, fixed date', 'You own the code'] }
+      ],
+      links: [
+        { href: '/ai-enablement/', label: 'Enablement &amp; Training' },
+        { href: '/ai-growth-systems/', label: 'AI Growth Systems' },
+        { href: '/lead-signal/', label: 'LeadSignal, our own product' }
+      ]
+    },
+    {
+      label: 'HubSpot', href: '/hubspot-agency/', shape: 'cards',
+      match: ['/hubspot-agency/', '/hubspot-consultancy/', '/hubspot-audit/',
+              '/hubspot-support-packages/', '/hubspot-sales-hub-implementation/',
+              '/hubspot-marketing-hub-implementation/', '/hubspot-service-hub/',
+              '/hubspot-integrations/', '/sales-enablement/'],
+      cards: [
+        { href: '/hubspot-consultancy/', icon: ICON.consult, title: 'Consultancy &amp; Audit',
+          blurb: 'Where the portal is costing you money, and what to do about it. From a Solutions Partner who has done this for a decade.',
+          label: 'Start here',
+          items: ['Free portal health check', 'Strategy, not a feature tour'] },
+        { href: '/hubspot-sales-hub-implementation/', icon: ICON.build, title: 'Hub Implementation',
+          blurb: 'Sales, Marketing and Service Hub set up around the way your team actually sells, rather than the way the demo did.',
+          label: 'What we set up',
+          items: ['Sales &amp; Marketing Hub', 'Service Hub, tickets &amp; CSAT'] },
+        { href: '/sales-enablement/', icon: ICON.data, title: 'RevOps, Data &amp; Support',
+          blurb: 'Clean pipelines, honest attribution and someone on the end of the phone. The groundwork every AI build depends on.',
+          label: 'Ongoing',
+          items: ['Data hygiene &amp; migrations', 'Admin &amp; dev retainers'] }
+      ],
+      links: [
+        { href: '/hubspot-audit/', label: 'Free HubSpot Audit' },
+        { href: '/hubspot-support-packages/', label: 'Support Packages' },
+        { href: '/hubspot-marketing-hub-implementation/', label: 'Marketing Hub' },
+        { href: '/hubspot-service-hub/', label: 'Service Hub' },
+        { href: '/hubspot-agency/', label: 'Everything HubSpot' }
+      ]
+    },
+    {
+      label: 'Growth', href: '/services/', shape: 'rows',
+      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/work/'],
+      rows: [
+        { href: '/ai-growth-systems/', icon: ICON.growth, title: 'AI Growth Systems',
+          desc: 'Find, nurture and create, wired as one' },
+        { href: '/lead-generation/', icon: ICON.audit, title: 'Lead Generation',
+          desc: 'SEO and content that fills the funnel' },
+        { href: '/paid-search-social/', icon: ICON.work, title: 'Paid Search &amp; Social',
+          desc: 'PPC and paid social that converts' },
+        { href: '/work/', icon: ICON.work, title: 'Our Work',
+          desc: 'Case studies and results' }
+      ]
+    },
+    {
+      label: 'Company', href: '/about/', shape: 'rows',
+      match: ['/about/', '/testimonials/', '/guides/', '/resources/'],
+      rows: [
+        { href: '/about/', icon: ICON.why, title: 'Why Revio', desc: 'Who we are and how we work' },
+        { href: '/testimonials/', icon: ICON.testi, title: 'Testimonials', desc: 'What clients actually say' },
+        { href: '/guides/', icon: ICON.guides, title: 'Free Guides', desc: 'Playbooks and resources' },
+        { href: '/resources/', icon: ICON.news, title: 'Insights &amp; News', desc: 'Articles, guides and updates' },
+        { href: MEETING_URL, icon: ICON.book, title: 'Book a Meeting', desc: 'Talk to us before you commit' }
+      ]
+    },
+    { label: 'Pricing', href: '/pricing/', match: ['/pricing/'] },
+    { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], live: true }
+  ];
+
+  var CHEV = '<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
 
   function currentPage() {
     var p = window.location.pathname.replace(/index\.html$/, '');
@@ -119,252 +168,204 @@
     return p;
   }
 
-  function desktopNav(page) {
-    return NAV.map(function (item) {
-      var isCurrent = item.match.indexOf(page) !== -1;
-      var dot = item.dot ? '<span class="nav-dot" aria-hidden="true"></span>' : '';
-      if (!item.children) {
-        return '<div class="nav-item">' +
-          '<a class="nav-top" href="' + item.href + '"' +
-          (isCurrent ? ' aria-current="page"' : '') +
-          '>' + dot + item.label + '</a></div>';
+  function isCurrent(item, page) {
+    return (item.match || []).some(function (m) { return m === page; });
+  }
+
+  function cardHTML(c) {
+    return '<a class="mcard" href="' + c.href + '">' +
+      '<span class="mi">' + c.icon + '</span>' +
+      '<h4>' + c.title + '</h4><p>' + c.blurb + '</p>' +
+      '<span class="flab">' + c.label + '</span><ul>' +
+      c.items.map(function (i) { return '<li>' + TICK + i + '</li>'; }).join('') +
+      '</ul><span class="more">Learn more ' + GO + '</span></a>';
+  }
+
+  function rowHTML(r) {
+    return '<a class="mrow" href="' + r.href + '"><span class="mi">' + r.icon + '</span>' +
+      '<span><b>' + r.title + '</b><span>' + r.desc + '</span></span></a>';
+  }
+
+  function megaHTML(item) {
+    if (item.shape === 'cards') {
+      return '<div class="mega"><div class="mega-cards">' +
+        item.cards.map(cardHTML).join('') + '</div>' +
+        (item.links ? '<div class="mega-links">' + item.links.map(function (l) {
+          return '<a href="' + l.href + '">' + l.label + '</a>';
+        }).join('') + '</div>' : '') + '</div>';
+    }
+    return '<div class="mega"><div class="mega-grid">' +
+      item.rows.map(rowHTML).join('') + '</div></div>';
+  }
+
+  function headerHTML(page) {
+    var items = NAV.map(function (item) {
+      var cur = isCurrent(item, page) ? ' aria-current="page"' : '';
+      var dot = item.live ? '<span class="live"></span>' : '';
+      if (!item.cards && !item.rows) {
+        return '<div class="navitem"><a class="navtop" href="' + item.href + '"' + cur + '>' +
+          dot + item.label + '</a></div>';
       }
-      var panelId = 'nav-panel-' + item.label.toLowerCase().replace(/[^a-z]/g, '');
-      var links = item.children.map(function (child) {
-        return childRow(child, page);
-      }).join('');
-      return '<div class="nav-item">' +
-        '<button class="nav-top' + (isCurrent ? ' is-active' : '') + '" type="button" ' +
-          'aria-expanded="false" aria-haspopup="true" aria-controls="' + panelId + '">' +
-          item.label + CHEV +
-        '</button>' +
-        '<div class="nav-dropdown nav-mega' + (item.wide ? ' nav-mega-wide' : '') + '" id="' + panelId + '">' +
-          overviewLink(item, page) +
-          links +
-        '</div>' +
-      '</div>';
+      return '<div class="navitem"><a class="navtop" href="' + item.href + '"' + cur + '>' +
+        dot + item.label + CHEV + '</a>' + megaHTML(item) + '</div>';
     }).join('');
-  }
 
-  function mobileNav(page) {
-    return NAV.map(function (item) {
-      var isCurrent = item.match.indexOf(page) !== -1;
-      if (!item.children) {
-        return '<a href="' + item.href + '"' +
-          (isCurrent ? ' aria-current="page"' : '') +
-          '>' + (item.dot ? '<span class="nav-dot" aria-hidden="true"></span>' : '') + item.label + '</a>';
-      }
-      var subId = 'm-sub-' + item.label.toLowerCase().replace(/[^a-z]/g, '');
-      var links = item.children.map(function (child) {
-        return childRow(child, page);
-      }).join('');
-      return '<div class="m-group">' +
-        '<button class="m-group-btn' + (isCurrent ? ' is-active' : '') + '" type="button" ' +
-          'aria-expanded="' + (isCurrent ? 'true' : 'false') + '" aria-controls="' + subId + '">' +
-          item.label + CHEV +
-        '</button>' +
-        '<div class="m-sub" id="' + subId + '">' +
-          overviewLink(item, page) +
-          links +
-        '</div>' +
-      '</div>';
-    }).join('');
-  }
-
-  function themeToggleHTML(extraClass) {
-    return '<button class="theme-toggle' + (extraClass ? ' ' + extraClass : '') + '" type="button" ' +
-      'data-theme-toggle aria-label="Switch colour theme">' +
-      '<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>' +
-      '<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>' +
-      '</button>';
-  }
-
-  function initTheme() {
-    var root = document.documentElement;
-    function current() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
-    function apply(t) {
-      root.setAttribute('data-theme', t);
-      document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-        b.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+    var drawerLinks = [];
+    NAV.forEach(function (item) {
+      drawerLinks.push('<a href="' + item.href + '">' + item.label + '</a>');
+      (item.cards || []).forEach(function (c) {
+        drawerLinks.push('<a class="sub" href="' + c.href + '">' + c.title + '</a>');
       });
-    }
-    /* Head script may have set this already; fall back to stored/system pref. */
-    var stored;
-    try { stored = localStorage.getItem('revio-theme-v2'); } catch (e) {}
-    if (!root.getAttribute('data-theme')) {
-      apply(stored || 'light');
-    } else {
-      apply(current());
-    }
-    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var next = current() === 'dark' ? 'light' : 'dark';
-        apply(next);
-        try { localStorage.setItem('revio-theme-v2', next); } catch (e) {}
+      (item.rows || []).forEach(function (r) {
+        drawerLinks.push('<a class="sub" href="' + r.href + '">' + r.title + '</a>');
       });
     });
+
+    return '<div class="topwrap">' +
+      '<header class="topbar">' + brand('revioMarkNav', true) +
+      '<span class="sp"></span>' +
+      '<nav class="mainnav" aria-label="Main">' + items + '</nav>' +
+      '<a class="navlogin" href="' + MEETING_URL + '">Talk to us</a>' +
+      '<button class="themebtn" type="button" data-theme-toggle aria-label="Switch colour theme">' +
+      '<svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5"/></svg>' +
+      '<svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>' +
+      '</button>' +
+      '<a class="btn btn-primary" href="' + AUDIT_URL + '">Book an audit' +
+      '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' +
+      '<button class="burger" type="button" id="revio-burger" aria-label="Open menu" aria-expanded="false">' +
+      '<i></i><i></i><i></i></button>' +
+      '</header>' +
+      '<nav class="drawer" id="revio-drawer" aria-label="Mobile">' + drawerLinks.join('') +
+      '<a class="btn btn-primary" href="' + AUDIT_URL + '">Book an audit</a></nav>' +
+      '</div>';
   }
 
-  function headerHTML() {
-    var page = currentPage();
-    return '' +
-      '<header class="site-header">' +
-        '<div class="nav-in">' +
-          '<a class="brand" href="/" aria-label="Revio — home">' +
-            '<img src="' + LOGO_LIGHT + '" alt="Revio">' +
-          '</a>' +
-          '<span class="nav-sp"></span>' +
-          '<nav class="nav-links" aria-label="Main navigation">' + desktopNav(page) + '</nav>' +
-          '<a class="btn btn-ghost-dark btn-sm nav-quote" href="' + QUOTE_URL + '">Request a Quote</a>' +
-          '<a class="btn btn-mint btn-sm nav-book" href="' + MEETING_URL + '">Book a Meeting</a>' +
-          '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">' +
-            '<span class="nb-line nb-l1"></span><span class="nb-line nb-l2"></span><span class="nb-line nb-l3"></span>' +
-          '</button>' +
-        '</div>' +
-        '<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">' +
-          mobileNav(page) +
-          '<a class="btn btn-ghost-dark" href="' + QUOTE_URL + '">Request a Quote</a>' +
-          '<a class="btn btn-mint" href="' + MEETING_URL + '">Book a Meeting</a>' +
-          '<div class="mobile-theme"><span>Dark mode</span>' + themeToggleHTML('mobile-theme-btn') + '</div>' +
-        '</nav>' +
-      '</header>';
-  }
+  /* ---------- footer ---------- */
+  var FOOT_COLS = [
+    { h: 'AI Services', links: [
+      ['/ai-opportunity-audit/', 'Opportunity Audit'],
+      ['/ai-agents-automation/', 'Agents &amp; Automation'],
+      ['/ai-enablement/', 'Enablement &amp; Training'],
+      ['/ai-app-development/', 'Web &amp; App Development'],
+      ['/ai-growth-systems/', 'AI Growth Systems']
+    ] },
+    { h: 'HubSpot', links: [
+      ['/hubspot-agency/', 'Overview'],
+      ['/hubspot-consultancy/', 'Consultancy'],
+      ['/hubspot-sales-hub-implementation/', 'Implementation'],
+      ['/hubspot-audit/', 'Free Audit'],
+      ['/hubspot-support-packages/', 'Support Packages']
+    ] },
+    { h: 'Growth', links: [
+      ['/lead-generation/', 'Lead Generation'],
+      ['/paid-search-social/', 'Paid Search &amp; Social'],
+      ['/sales-enablement/', 'Sales Enablement'],
+      ['/work/', 'Our Work'],
+      ['/pricing/', 'Pricing']
+    ] },
+    { h: 'Company', links: [
+      ['/about/', 'About Revio'],
+      ['/testimonials/', 'Testimonials'],
+      ['/guides/', 'Free Guides'],
+      ['/resources/', 'Insights &amp; News'],
+      [MEETING_URL, 'Contact']
+    ] }
+  ];
+
+  var SOCIAL = [
+    ['https://www.linkedin.com/company/revio-agency/', 'LinkedIn',
+     '<path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21h-4z"/>'],
+    ['https://www.instagram.com/', 'Instagram',
+     '<path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2zm0 10.9a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6zm8.4-11.16a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0z"/>'],
+    ['https://x.com/', 'X',
+     '<path d="M17.5 3h3.1l-6.8 7.8L21.8 21h-6.2l-4.9-6.4L5.1 21H2l7.3-8.3L2.5 3h6.4l4.4 5.8zM16.4 19.2h1.7L7.7 4.7H5.9z"/>'],
+    ['https://www.youtube.com/', 'YouTube',
+     '<path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2C2 8.78 2 12 2 12s0 3.22.4 4.8a2.5 2.5 0 0 0 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77C22 15.22 22 12 22 12s0-3.22-.4-4.8zM10 15.1V8.9l5.2 3.1z"/>']
+  ];
 
   function footerHTML() {
-    var year = new Date().getFullYear();
-    return '' +
-      '<footer class="site-footer">' +
-        '<div class="wrap">' +
-          '<div class="footer-main">' +
-            '<div>' +
-              '<a class="brand" href="/" aria-label="Revio — home">' +
-                '<img src="' + LOGO_WHITE + '" alt="Revio">' +
-              '</a>' +
-              '<p class="footer-blurb">UK inbound growth agency and HubSpot Solutions Partner. More traffic, better leads, faster deals.</p>' +
-              '<div class="footer-contact">' +
-                '<a href="mailto:grow@revio.agency">grow@revio.agency</a>' +
-                '<a href="tel:+447590977397">+44 7590 977397</a>' +
-                '<span class="addr">Imperial Place, 4 Maxwell Rd,<br>Borehamwood, WD6 1JN, UK</span>' +
-              '</div>' +
-              '<div class="footer-hubspot">' +
-                '<svg class="hs-mark" viewBox="0 0 24 24" fill="#fff" aria-label="HubSpot" role="img">' +
-                  '<path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.978v-.067A2.2 2.2 0 0 0 17.238.845h-.067a2.2 2.2 0 0 0-2.193 2.194v.067a2.196 2.196 0 0 0 1.252 1.973l.013.006v2.852a6.22 6.22 0 0 0-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 1 0 3.3 6.024l-.014-.007 7.696 5.99a6.176 6.176 0 0 0-1.038 3.446c0 1.343.425 2.588 1.147 3.606l-.013-.019-2.342 2.343a1.968 1.968 0 0 0-.58-.095h-.002a2.033 2.033 0 1 0 2.033 2.033v-.002a1.978 1.978 0 0 0-.095-.58l.005.016 2.317-2.317a6.223 6.223 0 1 0 4.982-11.163l-.056-.017zm-1.755 9.353a3.195 3.195 0 1 1 .001-6.39 3.195 3.195 0 0 1-.001 6.39z"/>' +
-                '</svg>' +
-                '<span>HubSpot<br><b>Solutions Partner</b></span>' +
-              '</div>' +
-            '</div>' +
-            '<div class="footer-col">' +
-              '<h4>Services</h4>' +
-              '<ul>' +
-                '<li><a href="/lead-generation/">Inbound Lead Generation</a></li>' +
-                '<li><a href="/paid-search-social/">Paid Search &amp; Social</a></li>' +
-                '<li><a href="/sales-enablement/">Sales Enablement &amp; RevOps</a></li>' +
-                '<li><a href="/ai-enablement/">AI Enablement</a></li>' +
-                '<li><a href="/lead-signal/">LeadSignal Platform</a></li>' +
-              '</ul>' +
-            '</div>' +
-            '<div class="footer-col">' +
-              '<h4>HubSpot</h4>' +
-              '<ul>' +
-                '<li><a href="/hubspot-agency/">HubSpot Overview</a></li>' +
-                '<li><a href="/hubspot-consultancy/">Consultancy</a></li>' +
-                '<li><a href="/hubspot-sales-hub-implementation/">Implementation</a></li>' +
-                '<li><a href="/hubspot-audit/">Free Audit</a></li>' +
-                '<li><a href="/hubspot-support-packages/">Support Packages</a></li>' +
-              '</ul>' +
-            '</div>' +
-            '<div class="footer-col">' +
-              '<h4>Company</h4>' +
-              '<ul>' +
-                '<li><a href="/about/">About Revio</a></li>' +
-                '<li><a href="/work/">Our Work</a></li>' +
-                '<li><a href="/testimonials/">Testimonials</a></li>' +
-                '<li><a href="/guides/">Guides</a></li>' +
-                '<li><a href="/pricing/">Pricing</a></li>' +
-                '<li><a href="/book-a-call/">Contact</a></li>' +
-                '<li><a href="/start-growing/">Request a Quote</a></li>' +
-              '</ul>' +
-            '</div>' +
-          '</div>' +
-          '<div class="footer-bottom">' +
-            '<span>&copy; ' + year + ' Revio. All rights reserved.</span>' +
-            '<span class="sp"></span>' +
-            '<a href="/privacy/">Privacy Policy</a>' +
-            '<a href="/terms/">Terms of Service</a>' +
-          '</div>' +
-        '</div>' +
-      '</footer>';
+    var cols = FOOT_COLS.map(function (c) {
+      return '<div><h4>' + c.h + '</h4><ul>' + c.links.map(function (l) {
+        return '<li><a href="' + l[0] + '">' + l[1] + '</a></li>';
+      }).join('') + '</ul></div>';
+    }).join('');
+
+    var social = SOCIAL.map(function (s) {
+      return '<a href="' + s[0] + '" target="_blank" rel="noopener" aria-label="Revio on ' +
+        s[1] + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + s[2] + '</svg></a>';
+    }).join('');
+
+    return '<footer class="foot"><div class="fwrap"><div class="fgrid">' +
+      '<div class="fbrand">' + brand('revioMarkFoot', false) +
+      '<p class="fblurb">AI consultancy, build and enablement, on top of a decade of HubSpot ' +
+      'and RevOps work. We build and run our own AI product.</p>' +
+      '<div class="fcontact"><span>Imperial Place, 4 Maxwell Rd,</span>' +
+      '<span>Borehamwood, WD6 1JN, United Kingdom</span>' +
+      '<a href="tel:+447590977397">+44 7590 977397</a></div>' +
+      '<div class="flabel">Ask or email us</div>' +
+      '<a class="fmail" href="mailto:grow@revio.agency">grow@revio.agency</a>' +
+      '<div class="fsocial">' + social + '</div>' +
+      '<div class="fbadges"><span class="fbadge"><i></i>HubSpot Solutions Partner</span>' +
+      '<span class="fbadge"><i></i>Meta approved integration</span></div></div>' +
+      cols + '</div></div>' +
+      '<div class="fbot"><span>&copy; <span id="revio-yr">2026</span> Revio. All rights reserved.</span>' +
+      '<span class="sp"></span><a href="/privacy/">Privacy Policy</a>' +
+      '<a href="/terms/">Terms of Service</a></div>' +
+      '<div class="fmark" aria-hidden="true">REVIO</div></footer>';
   }
 
-  function closeAllDropdowns(except) {
-    document.querySelectorAll('.nav-item.open').forEach(function (el) {
-      if (el === except) return;
-      el.classList.remove('open');
-      var btn = el.querySelector('.nav-top[aria-expanded]');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
+  /* ---------- theme ---------- */
+  function initTheme() {
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem('revio-theme-v2');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) { /* private mode */ }
+
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('revio-theme-v2', next); } catch (e) { /* ignore */ }
+      });
     });
   }
 
+  /* ---------- mount ---------- */
   function mount() {
-    var headerMount = document.getElementById('site-header');
-    var footerMount = document.getElementById('site-footer');
-    if (headerMount) headerMount.outerHTML = headerHTML();
-    if (footerMount) footerMount.outerHTML = footerHTML();
+    var page = currentPage();
+
+    var h = document.getElementById('site-header');
+    if (h) h.innerHTML = headerHTML(page);
+
+    var f = document.getElementById('site-footer');
+    if (f) f.innerHTML = footerHTML();
+
+    var yr = document.getElementById('revio-yr');
+    if (yr) yr.textContent = new Date().getFullYear();
 
     initTheme();
 
-    /* Desktop dropdowns: click/tap toggles, hover + focus-within
-       handled by CSS. Escape and outside-click close. */
-    document.querySelectorAll('.nav-item > button.nav-top').forEach(function (btn) {
-      var item = btn.parentNode;
-      btn.addEventListener('click', function () {
-        var open = item.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        closeAllDropdowns(item);
+    var burger = document.getElementById('revio-burger');
+    var drawer = document.getElementById('revio-drawer');
+    if (burger && drawer) {
+      burger.addEventListener('click', function () {
+        var open = drawer.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       });
-    });
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.nav-item')) closeAllDropdowns(null);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        var open = document.querySelector('.nav-item.open');
-        closeAllDropdowns(null);
-        if (open) {
-          var btn = open.querySelector('.nav-top');
-          if (btn) btn.focus();
+      drawer.addEventListener('click', function (e) {
+        if (e.target.closest('a')) {
+          drawer.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
         }
-      }
-    });
-
-    /* Mobile menu toggle */
-    var toggle = document.querySelector('.nav-toggle');
-    var menu = document.getElementById('mobile-menu');
-    if (toggle && menu) {
-      var setOpen = function (open) {
-        menu.classList.toggle('open', open);
-        document.body.classList.toggle('menu-open', open);
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      };
-      toggle.addEventListener('click', function () {
-        setOpen(!menu.classList.contains('open'));
-      });
-      menu.addEventListener('click', function (e) {
-        if (e.target.closest('a')) setOpen(false);
       });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && menu.classList.contains('open')) {
-          setOpen(false);
-          toggle.focus();
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          drawer.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+          burger.focus();
         }
-      });
-      /* Mobile accordion groups */
-      menu.querySelectorAll('.m-group-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var open = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
       });
     }
 
