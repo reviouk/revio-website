@@ -132,7 +132,7 @@
     },
     {
       label: 'Growth', href: '/services/', shape: 'rows',
-      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/work/'],
+      match: ['/services/', '/lead-generation/', '/paid-search-social/'],
       rows: [
         { href: '/ai-growth-systems/', icon: ICON.growth, title: 'AI Growth Systems',
           desc: 'Find, nurture and create, wired as one' },
@@ -140,15 +140,16 @@
           desc: 'SEO and content that fills the funnel' },
         { href: '/paid-search-social/', icon: ICON.work, title: 'Paid Search &amp; Social',
           desc: 'PPC and paid social that converts' },
-        { href: '/work/', icon: ICON.work, title: 'Our Work',
-          desc: 'Case studies and results' }
+        { href: '/sales-enablement/', icon: ICON.data, title: 'Sales Enablement',
+          desc: 'RevOps and automation to close faster' }
       ]
     },
     {
       label: 'Company', href: '/about/', shape: 'rows',
-      match: ['/about/', '/testimonials/', '/guides/', '/resources/'],
+      match: ['/about/', '/work/', '/testimonials/', '/guides/', '/resources/'],
       rows: [
         { href: '/about/', icon: ICON.why, title: 'Why Revio', desc: 'Who we are and how we work' },
+        { href: '/work/', icon: ICON.work, title: 'Our Work', desc: 'Case studies and results' },
         { href: '/testimonials/', icon: ICON.testi, title: 'Testimonials', desc: 'What clients actually say' },
         { href: '/guides/', icon: ICON.guides, title: 'Free Guides', desc: 'Playbooks and resources' },
         { href: '/resources/', icon: ICON.news, title: 'Insights &amp; News', desc: 'Articles, guides and updates' },
@@ -256,14 +257,15 @@
       ['/hubspot-support-packages/', 'Support Packages']
     ] },
     { h: 'Growth', links: [
+      ['/ai-growth-systems/', 'AI Growth Systems'],
       ['/lead-generation/', 'Lead Generation'],
       ['/paid-search-social/', 'Paid Search &amp; Social'],
       ['/sales-enablement/', 'Sales Enablement'],
-      ['/work/', 'Our Work'],
       ['/pricing/', 'Pricing']
     ] },
     { h: 'Company', links: [
       ['/about/', 'About Revio'],
+      ['/work/', 'Our Work'],
       ['/testimonials/', 'Testimonials'],
       ['/guides/', 'Free Guides'],
       ['/resources/', 'Insights &amp; News'],

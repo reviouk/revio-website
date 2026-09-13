@@ -31,6 +31,9 @@
   --panel: #ffffff;
   --wash: #f2f1fb;
   --canvas: #f2f1fb;
+  /* The same colour at zero alpha. Gradients must fade to THIS, not to
+     transparent white, or they haze grey over a tinted panel. */
+  --canvas-0: rgba(242, 241, 251, 0);
   --chip: #e7e6fb;
   --tile: #f2f1fb;
   --ink: #0b081c;
@@ -84,6 +87,7 @@
   --panel: #151235;
   --wash: #12102c;
   --canvas: #12102c;
+  --canvas-0: rgba(18, 16, 44, 0);
   --chip: rgba(88, 98, 255, .2);
   --tile: rgba(255, 255, 255, .05);
   --ink: #f4f4fb;

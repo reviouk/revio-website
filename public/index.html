@@ -61,11 +61,11 @@
   /* Measured off b2brocket: two radials fading to nothing by 35%, lavender in
      from one bottom corner and blue in from the other. */
   .panel.grad{background:
-    radial-gradient(circle at 100% 100%, #ccc8fb, rgba(255,255,255,0) 35%),
-    radial-gradient(circle at 0 100%, #8ab4fd, rgba(255,255,255,0) 35%),
+    radial-gradient(circle at 100% 100%, #cfcbfb, var(--canvas-0) 38%),
+    radial-gradient(circle at 0 100%, #bcc3fb, var(--canvas-0) 38%),
     var(--canvas)}
   .panel.grad-soft{background:
-    radial-gradient(circle at 75% 50%, #ccc8fb, rgba(255,255,255,0) 33%),
+    radial-gradient(circle at 75% 50%, #cfcbfb, var(--canvas-0) 36%),
     var(--panel)}
   [data-theme=dark] .panel.grad,[data-theme=dark] .panel.grad-soft{background:var(--canvas)}
   .panel.plain{background:#fff;box-shadow:var(--shadow)}
@@ -127,10 +127,10 @@
   .lfoot b{color:var(--ink)}
 
   /* ---------- Logo strip ---------- */
-  .strip{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}
+  .strip{display:flex;align-items:center;gap:38px;flex-wrap:wrap;justify-content:center}
   .strip .lab{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:1.8px;
     text-transform:uppercase;color:var(--muted)}
-  .strip img{height:24px;width:auto;opacity:.48;filter:grayscale(1)}
+  .strip img{height:42px;width:auto;opacity:.62;filter:grayscale(1)}
   [data-theme=dark] .strip img{filter:grayscale(1) invert(1) brightness(1.7);opacity:.6}
 
   /* ---------- Step path ---------- */
@@ -156,8 +156,11 @@
   .mline{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;background:var(--canvas);
     border:0;border-radius:12px;padding:12px 14px;margin-bottom:10px}
   .mline:last-child{margin-bottom:0}
-  .mline .t{font-size:14px;font-weight:600}
-  .mline .s{font-size:12.5px;color:var(--muted);margin-top:1px}
+  /* Both were inline, so the label and its caption ran together as one string
+     ("...of the toolsTracked per team..."). The caption is a second line: the
+     margin-top was always there waiting for a block to apply it to. */
+  .mline .t{font-size:14px;font-weight:600;display:block}
+  .mline .s{font-size:12.5px;color:var(--muted);margin-top:3px;display:block;line-height:1.4}
   .tag{font-family:var(--fh);font-size:11px;font-weight:700;padding:5px 10px;border-radius:var(--r-pill);white-space:nowrap}
   .tag.good{background:rgba(18,201,139,.15);color:var(--mint-ink)}
   .tag.pend{background:var(--chip);color:var(--purple)}
@@ -279,8 +282,9 @@
   <!-- ── Three moves ───────────────────────────────────────── -->
   <section class="panel">
     <div class="center">
-      <span class="kick">How an engagement runs</span>
-      <h2 style="margin-top:12px">Find it. Build it. <span class="alt">Get it used.</span></h2>
+      <span class="kick">How we work</span>
+      <h2 style="margin-top:12px">Find it. Build it.
+        <span class="alt">Make it stick.</span></h2>
       <p class="lede">Nobody builds anything here until we have found where AI actually pays for itself in your business. That is the entire point of starting with an audit.</p>
     </div>
     <div class="steps">
