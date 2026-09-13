@@ -1041,15 +1041,11 @@ a.card:focus-visible { outline-offset: 0; }
 /* ---------- Logo lockup (tile mark + wordmark) ---------- */
 .brand { display: flex; align-items: center; gap: 9px; }
 .brand .mark {
-  width: 34px; height: 34px; border-radius: 10px; background: var(--purple);
+  width: 38px; height: 38px; border-radius: 11px; background: var(--purple);
   display: grid; place-items: center; flex: none;
 }
-.brand .mark svg { width: 21px; height: 21px; }
-.brand .word { height: 17px; width: auto; filter: var(--logo-filter); }
-.brand .tag {
-  font-family: var(--fh); font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--muted); display: block; margin-top: 3px;
-}
+.brand .mark svg { width: 24px; height: 24px; }
+.brand .word { height: 24px; width: auto; filter: var(--logo-filter); }
 
 /* ---------- Floating pill header ---------- */
 .topwrap { position: sticky; top: 0; z-index: 60; padding: 14px 20px 0; }

@@ -69,12 +69,11 @@
       'stroke-linejoin="round"/></svg>';
   }
 
-  function brand(uid, withTag) {
+  function brand(uid) {
     return '<a class="brand" href="/" aria-label="Revio — home">' +
       '<span class="mark" aria-hidden="true">' + markSVG(uid) + '</span>' +
-      '<span><img class="word" src="' + LOGO + '" alt="Revio">' +
-      (withTag ? '<span class="tag">AI &amp; HubSpot</span>' : '') +
-      '</span></a>';
+      '<img class="word" src="' + LOGO + '" alt="Revio">' +
+      '</a>';
   }
 
   /* ---------- navigation ---------- */
@@ -222,7 +221,7 @@
     });
 
     return '<div class="topwrap">' +
-      '<header class="topbar">' + brand('revioMarkNav', true) +
+      '<header class="topbar">' + brand('revioMarkNav') +
       '<span class="sp"></span>' +
       '<nav class="mainnav" aria-label="Main">' + items + '</nav>' +
       '<a class="navlogin" href="' + MEETING_URL + '">Talk to us</a>' +
@@ -296,7 +295,7 @@
     }).join('');
 
     return '<footer class="foot"><div class="fwrap"><div class="fgrid">' +
-      '<div class="fbrand">' + brand('revioMarkFoot', false) +
+      '<div class="fbrand">' + brand('revioMarkFoot') +
       '<p class="fblurb">AI consultancy, build and enablement, on top of a decade of HubSpot ' +
       'and RevOps work. We build and run our own AI product.</p>' +
       '<div class="fcontact"><span>Imperial Place, 4 Maxwell Rd,</span>' +
