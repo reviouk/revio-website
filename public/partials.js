@@ -37,6 +37,8 @@
     apps:    ic('<path d="m9 8-5 4 5 4"/><path d="m15 8 5 4-5 4"/>'),
     growth:  ic('<path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>'),
     consult: ic('<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/>'),
+    /* HubSpot's sprocket, so the HubSpot panel is recognisably theirs. */
+    hubspot: ic('<circle cx="12" cy="13.2" r="3.4"/><path d="M12 9.8V5.2"/>' + '<path d="M15.1 11.4 19 9.1"/><path d="m14.5 15.7 3.1 3.1"/>' + '<circle cx="12" cy="4" r="1.5"/><circle cx="20" cy="8.4" r="1.5"/>' + '<circle cx="18.6" cy="19.7" r="1.5"/>'),
     build:   ic('<path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/>'),
     data:    ic('<ellipse cx="12" cy="6" rx="7.5" ry="3"/>' +
                 '<path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6"/>' +
@@ -109,15 +111,15 @@
               '/hubspot-marketing-hub-implementation/', '/hubspot-service-hub/',
               '/hubspot-integrations/', '/sales-enablement/'],
       cards: [
-        { href: '/hubspot-consultancy/', icon: ICON.consult, title: 'Consultancy &amp; Audit',
+        { href: '/hubspot-consultancy/', icon: ICON.hubspot, title: 'Consultancy &amp; Audit',
           blurb: 'Where the portal is costing you money, and what to do about it. From a Solutions Partner who has done this for a decade.',
           label: 'Start here',
           items: ['Free portal health check', 'Strategy, not a feature tour'] },
-        { href: '/hubspot-sales-hub-implementation/', icon: ICON.build, title: 'Hub Implementation',
+        { href: '/hubspot-sales-hub-implementation/', icon: ICON.hubspot, title: 'Hub Implementation',
           blurb: 'Sales, Marketing and Service Hub set up around the way your team actually sells, rather than the way the demo did.',
           label: 'What we set up',
           items: ['Sales &amp; Marketing Hub', 'Service Hub, tickets &amp; CSAT'] },
-        { href: '/sales-enablement/', icon: ICON.data, title: 'RevOps, Data &amp; Support',
+        { href: '/sales-enablement/', icon: ICON.hubspot, title: 'RevOps, Data &amp; Support',
           blurb: 'Clean pipelines, honest attribution and someone on the end of the phone. The groundwork every AI build depends on.',
           label: 'Ongoing',
           items: ['Data hygiene &amp; migrations', 'Admin &amp; dev retainers'] }
@@ -131,17 +133,25 @@
       ]
     },
     {
-      label: 'Growth', href: '/services/', shape: 'rows',
+      label: 'Growth', href: '/services/', shape: 'cards',
       match: ['/services/', '/lead-generation/', '/paid-search-social/'],
-      rows: [
+      cards: [
         { href: '/ai-growth-systems/', icon: ICON.growth, title: 'AI Growth Systems',
-          desc: 'Find, nurture and create, wired as one' },
+          blurb: 'Finding the right people, chasing them until they answer, and making the assets that give them a reason to.',
+          label: 'How it is priced',
+          items: ['Setup, then monthly', 'You own every licence'] },
         { href: '/lead-generation/', icon: ICON.audit, title: 'Lead Generation',
-          desc: 'SEO and content that fills the funnel' },
+          blurb: 'SEO and content that fills the funnel with people who were already looking for what you sell.',
+          label: 'What it covers',
+          items: ['Search and content strategy', 'Landing pages that convert'] },
         { href: '/paid-search-social/', icon: ICON.work, title: 'Paid Search &amp; Social',
-          desc: 'PPC and paid social that converts' },
-        { href: '/sales-enablement/', icon: ICON.data, title: 'Sales Enablement',
-          desc: 'RevOps and automation to close faster' }
+          blurb: 'Google and Meta run against pipeline rather than clicks, with the spend answerable to revenue.',
+          label: 'What it covers',
+          items: ['Search, social and retargeting', 'Attribution back to closed deals'] }
+      ],
+      links: [
+        { href: '/sales-enablement/', label: 'Sales Enablement' },
+        { href: '/services/', label: 'Everything we do' }
       ]
     },
     {
@@ -236,7 +246,9 @@
       '<i></i><i></i><i></i></button>' +
       '</header>' +
       '<nav class="drawer" id="revio-drawer" aria-label="Mobile">' + drawerLinks.join('') +
-      '<a class="btn btn-primary" href="' + AUDIT_URL + '">Book an audit</a></nav>' +
+      '<a class="btn btn-primary" href="' + AUDIT_URL + '">Book an audit</a>' +
+      '<button class="drawer-theme" type="button" data-theme-toggle>Switch light / dark</button>' +
+      '</nav>' +
       '</div>';
   }
 

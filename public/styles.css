@@ -1183,6 +1183,12 @@ a.card:focus-visible { outline-offset: 0; }
 .drawer a.sub { padding-left: 24px; font-weight: 500; font-size: 14px; color: var(--muted); }
 .drawer a:last-of-type { border-bottom: 0; }
 .drawer .btn { margin-top: 10px; justify-content: center; display: flex; }
+.drawer-theme {
+  display: block; width: 100%; margin-top: 8px; padding: 11px 10px;
+  font-family: var(--fh); font-weight: 600; font-size: 14px; color: var(--muted);
+  text-align: center; border-radius: 9px; border: 1px solid var(--line);
+}
+.drawer-theme:hover { color: var(--purple); border-color: var(--purple); }
 
 /* ---------- Footer ----------
    A near-black-to-purple block inset from the page with a 40px radius, one
@@ -1256,6 +1262,16 @@ a.card:focus-visible { outline-offset: 0; }
 @media (max-width: 1000px) { .fgrid { grid-template-columns: 1fr 1fr 1fr; } }
 @media (max-width: 680px) {
   .topwrap { padding: 10px 12px 0; }
+  /* Brand, one action, the menu. The theme switcher moved to the drawer:
+     four items needed ~397px on a 390px phone and pushed the burger off. */
+  .topbar { gap: 6px; padding: 8px 8px 8px 12px; }
+  .topbar .themebtn { display: none; }
+  .topbar .btn-primary { padding: 10px 13px; font-size: 13.5px; }
+  .topbar .btn-primary svg { display: none; }
+  .brand .mark { width: 34px; height: 34px; }
+  .brand .mark svg { width: 21px; height: 21px; }
+  .brand .word { height: 20px; }
+  .drawer a.sub { padding-left: 20px; }
   .foot { margin: 16px 12px 12px; border-radius: 28px; padding: 20px 0 0; }
   .foot .fwrap { padding: 26px 20px; }
   .fgrid { grid-template-columns: 1fr 1fr; gap: 24px; }

@@ -191,6 +191,10 @@
   @media(max-width:860px){.facts{grid-template-columns:1fr}}
 
   /* ---------- Pricing ladder ---------- */
+  .rung .ri{width:38px;height:38px;border-radius:11px;background:var(--chip);
+    display:grid;place-items:center;color:var(--purple);margin-bottom:12px}
+  .rung .ri svg{width:20px;height:20px}
+  .rung.feat .ri{background:rgba(255,255,255,.16);color:#fff}
   .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
   .rung{border:0;border-radius:var(--r-card);padding:24px;background:var(--panel);box-shadow:var(--shadow)}
   .rung.feat{outline:2px solid var(--purple);outline-offset:-2px}
@@ -292,7 +296,7 @@
         <span class="no"><i>1</i> Find</span>
         <h3>AI Opportunity Audit</h3>
         <p>Two weeks. Where AI saves you time or makes you money, in priority order, with the cost and payback of each &mdash; and an honest note on where AI is the wrong answer.</p>
-        <div class="fee">&pound;1,500 fixed<small>Two weeks, start to signed-off document</small></div>
+        <div class="fee">From &pound;1,500<small>Two weeks, start to signed-off document</small></div>
       </div>
       <div class="step">
         <span class="no"><i>2</i> Build</span>
@@ -410,16 +414,19 @@
     <div class="ladder">
       <div class="rung feat">
         <span class="flag">Start here</span>
+        <span class="ri" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8.4 11.6V9.8M11 11.6V7.8M13.6 11.6v-2.6"/></svg></span>
         <h3>AI Opportunity Audit</h3>
-        <div class="amt">&pound;1,500<small> fixed</small></div>
+        <div class="amt">From &pound;1,500</div>
         <p>Two weeks. A ranked list of where AI pays for itself, with the cost and the payback of each.</p>
       </div>
       <div class="rung">
+        <span class="ri" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></span>
         <h3>One tool or one agent</h3>
         <div class="amt">&pound;4,500<small> one week</small></div>
         <p>A single-purpose internal tool, or one agent doing one job properly. Scoping session &pound;600, credited against the build.</p>
       </div>
       <div class="rung">
+        <span class="ri" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2.5"/><path d="M3 8.5h18"/><circle cx="6" cy="6.2" r=".6"/><path d="M8 20.5h8"/></svg></span>
         <h3>Connected app</h3>
         <div class="amt">&pound;12,000<small> 2&ndash;3 weeks</small></div>
         <p>Several screens, logins and permissions, wired into your CRM. Platforms with billing and roles from &pound;25,000.</p>
@@ -456,7 +463,7 @@
 
   <!-- ── Closing CTA ───────────────────────────────────────── -->
   <section class="panel center">
-    <span class="chip">Two weeks &middot; &pound;1,500 &middot; fixed fee</span>
+    <span class="chip">Two weeks &middot; from &pound;1,500</span>
     <h2 style="margin-top:18px">Start with the audit.</h2>
     <p class="lede">A prioritised list of where AI pays for itself in your business, with the numbers attached. If the answer is &ldquo;nowhere yet&rdquo;, we will tell you that too.</p>
     <div class="actions" style="margin-top:28px;justify-content:center">
