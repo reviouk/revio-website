@@ -60,9 +60,12 @@
   .panel.tint{background:var(--canvas)}
   /* Measured off b2brocket: two radials fading to nothing by 35%, lavender in
      from one bottom corner and blue in from the other. */
+  /* b2brocket's two corners: lavender in from the right, blue in from the left.
+     Both fade to --canvas-0 -- the panel colour at zero alpha -- rather than to
+     transparent white, which is what used to haze them grey. */
   .panel.grad{background:
-    radial-gradient(circle at 100% 100%, #cfcbfb, var(--canvas-0) 38%),
-    radial-gradient(circle at 0 100%, #bcc3fb, var(--canvas-0) 38%),
+    radial-gradient(circle at 100% 100%, #cfcbfb, var(--canvas-0) 40%),
+    radial-gradient(circle at 0 100%, #99befe, var(--canvas-0) 42%),
     var(--canvas)}
   .panel.grad-soft{background:
     radial-gradient(circle at 75% 50%, #cfcbfb, var(--canvas-0) 36%),
