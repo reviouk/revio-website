@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | REVIO</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="That page is not here. The most useful places on revio.agency, and a search that will find the rest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <style>
+    .page-hero .wrap{max-width:1320px}
+    .page-hero h1{max-width:18ch}
+    .page-hero .sub{max-width:56ch}
+    /* The number is decoration, so it is quiet and the useful links are not. */
+    .code{font-size:13px;font-weight:800;letter-spacing:2.4px;color:var(--mint,#0e8f74);
+      text-transform:uppercase;margin-bottom:10px}
+    .go{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .go a{display:block;background:var(--panel,#fff);border:1px solid var(--line,#e8e2f3);
+      border-radius:14px;padding:18px 20px;text-decoration:none;color:inherit}
+    .go a:hover{border-color:var(--purple,#382294)}
+    .go a b{display:block;font-size:16px;margin-bottom:3px}
+    .go a span{font-size:14px;opacity:.75}
+    @media(max-width:820px){.go{grid-template-columns:1fr}}
+    .find{display:flex;gap:10px;flex-wrap:wrap}
+    .find input{flex:1;min-width:220px;font:inherit;padding:12px 15px;border-radius:11px;
+      border:1px solid var(--line,#e8e2f3);background:var(--panel,#fff);color:inherit}
+    .find input:focus{outline:2px solid var(--purple,#382294);outline-offset:-1px}
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="code">Error 404</div>
+      <h1>That page is not here <em class="mint">any more</em>.</h1>
+      <p class="sub">Either it moved in the redesign, or the link that sent you here was wrong. Both are our problem rather than yours, so here is everything worth going to instead.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="go reveal">
+        <a href="/ai-opportunity-audit/"><b>AI Opportunity Audit</b><span>Two weeks, and a written answer on where AI actually pays for itself in your business.</span></a>
+        <a href="/ai-growth-systems/"><b>AI Growth Systems</b><span>Finding leads, nurturing them, and producing the assets that feed them.</span></a>
+        <a href="/hubspot-agency/"><b>HubSpot</b><span>Implementation, consultancy, audits and support, on whichever hubs you run.</span></a>
+        <a href="/work/"><b>Our work</b><span>What we have built, including the AI platform we built for ourselves.</span></a>
+        <a href="/resources/"><b>Insights and news</b><span>The blog. Most of the pages that moved were these.</span></a>
+        <a href="/book-a-meeting-freelancer/"><b>Talk to us</b><span>Fifteen minutes with a consultant. No pitch, and no obligation afterwards.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-wash">
+    <div class="wrap wrap-narrow reveal">
+      <span class="kicker">Or find it</span>
+      <h2>Search the site.</h2>
+      <p class="lede mt-md">If you came here from a bookmark or an old link, the page has probably just changed address.</p>
+      <form class="find mt-md" id="find" role="search">
+        <input id="q" type="search" name="q" aria-label="Search revio.agency"
+               placeholder="HubSpot integrations, lead scoring, AI audit&hellip;">
+        <button class="btn btn-mint" type="submit">Search</button>
+      </form>
+      <p class="mt-md tiny" style="opacity:.7">Still stuck? Email
+        <a href="mailto:grow@revio.agency" style="color:var(--purple);font-weight:600">grow@revio.agency</a>
+        with the link that brought you here and we will fix it.</p>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="/partials.js"></script>
+<script>
+  /* No site search of our own, so this hands the query to Google scoped to the
+     domain -- which indexes us better than anything we would build here. */
+  document.getElementById('find').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var q = document.getElementById('q').value.trim();
+    if (!q) return;
+    window.location.href = 'https://www.google.com/search?q=' +
+      encodeURIComponent('site:revio.agency ' + q);
+  });
+</script>
+</body>
+</html>

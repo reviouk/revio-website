@@ -165,7 +165,11 @@
       ]
     },
     { label: 'Pricing', href: '/pricing/', match: ['/pricing/'] },
-    { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], live: true }
+    { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], live: true },
+    /* Clients only, so it is a plain menu label rather than a button competing
+       with the calls to action. /client-login/ is the stable address: the
+       portal itself can move without this link changing. */
+    { label: 'Login', href: '/client-login/', match: ['/client-login/'] }
   ];
 
   var CHEV = '<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
@@ -279,7 +283,8 @@
       ['/work/', 'Our Work'],
       ['/testimonials/', 'Testimonials'],
       ['/resources/', 'Insights &amp; News'],
-      [MEETING_URL, 'Contact']
+      [MEETING_URL, 'Contact'],
+      ['/client-login/', 'Client login']
     ] }
   ];
 
