@@ -20,6 +20,18 @@
     .page-hero .wrap{max-width:1320px}
     .page-hero h1{max-width:20ch}
     .page-hero .sub{max-width:62ch}
+    /* The form is the primary action, so it sits beside the headline rather
+       than below the fold. Single column on narrow, copy first. */
+    .hero-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);
+      gap:44px;align-items:start}
+    .hero-split .sub{max-width:52ch}
+    .hero-form{background:var(--panel,#fff);border:1px solid var(--line,#e8e2f3);
+      border-radius:16px;padding:22px;box-shadow:var(--shadow-soft)}
+    .hero-form .hs-form-frame{margin:0}
+    @media(max-width:960px){
+      .hero-split{grid-template-columns:1fr;gap:28px}
+      .hero-form{max-width:520px}
+    }
     .previewbar{background:#1a1148;color:#fff;font-size:13px;padding:9px 20px;text-align:center;
       font-family:var(--font-head,system-ui);letter-spacing:.2px}
     .previewbar b{color:#74e8cb}
@@ -45,14 +57,19 @@
 <main>
 
   <div class="page-hero">
-    <div class="wrap">
-      <span class="badge">Two weeks &middot; &pound;1,500</span>
-      <h1>Before you build anything, <em class="mint">find out what is worth building</em>.</h1>
-      <p class="sub">Most AI projects fail because somebody picked the tool before they picked the problem. Two weeks, a fixed fee, and a prioritised list of what to do first, what it costs and what it pays back.</p>
-      <div class="cta-row">
-        <a class="btn btn-mint" href="/book-a-meeting-freelancer/">Book the audit</a>
-        <a class="btn btn-ghost" href="#inside">See what you get</a>
+    <div class="wrap hero-split">
+      <div>
+        <span class="badge">Two weeks &middot; &pound;1,500</span>
+        <h1>Before you build anything, <em class="mint">find out what is worth building</em>.</h1>
+        <p class="sub">Most AI projects fail because somebody picked the tool before they picked the problem. Two weeks, a fixed fee, and a prioritised list of what to do first, what it costs and what it pays back.</p>
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="#inside">See what you get</a>
+          <a class="btn btn-ghost" href="/book-a-meeting-freelancer/">Rather talk first?</a>
+        </div>
       </div>
+      <aside class="hero-form reveal" aria-label="Book your AI Opportunity Audit">
+        <script src="https://lead-signal.ai/form.js" data-key="bd83c819f9992708161f85f2" data-form="a1c7e5d2-9b34-4f60-8e71-3d2f6a8c40b5" async></script>
+      </aside>
     </div>
   </div>
 

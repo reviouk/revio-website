@@ -225,7 +225,7 @@
       '<header class="topbar">' + brand('revioMarkNav') +
       '<span class="sp"></span>' +
       '<nav class="mainnav" aria-label="Main">' + items + '</nav>' +
-      '<a class="navlogin" href="' + MEETING_URL + '">Talk to us</a>' +
+      '<a class="btn btn-mint navtalk" href="' + MEETING_URL + '">Talk to us</a>' +
       '<button class="themebtn" type="button" data-theme-toggle aria-label="Switch colour theme">' +
       '<svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5"/></svg>' +
       '<svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>' +

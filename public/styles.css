@@ -1078,11 +1078,12 @@ a.card:focus-visible { outline-offset: 0; }
 }
 .navitem:hover .chev { transform: rotate(180deg); }
 .navtop .live { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); margin-right: 1px; }
-.navlogin {
-  font-size: 14.5px; font-weight: 600; font-family: var(--fh);
-  padding: 9px 12px; color: var(--muted);
-}
-.navlogin:hover { color: var(--ink); }
+/* Talk to us: the same button as Book an audit, in mint rather than purple, so
+   the two header actions read as a pair with the softer one on the left. The
+   global .btn-mint lifts and glows on hover; in the header both buttons should
+   behave the same way as each other, so it just deepens. */
+.topbar .navtalk { padding: 12px 20px; font-size: 14.5px; }
+.topbar .navtalk:hover { transform: none; box-shadow: none; background: #0fb47c; }
 .themebtn {
   width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line);
   display: grid; place-items: center; color: var(--muted);
@@ -1249,7 +1250,7 @@ a.card:focus-visible { outline-offset: 0; }
 
 /* ---------- Shell responsive ---------- */
 @media (max-width: 1180px) {
-  .mainnav, .navlogin { display: none; }
+  .mainnav, .navtalk { display: none; }
   .burger { display: grid; }
 }
 @media (max-width: 1000px) { .fgrid { grid-template-columns: 1fr 1fr 1fr; } }
