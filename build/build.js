@@ -99,7 +99,12 @@ function sitemap() {
     return;
   }
   const only = flag('--only');
-  const files = fs.readdirSync(CONTENT).filter((f) => f.endsWith('.js'))
+  const listContent = (dir, rel) => fs.readdirSync(dir).flatMap((f) => {
+    const full = path.join(dir, f);
+    if (fs.statSync(full).isDirectory()) return listContent(full, rel + f + '/');
+    return f.endsWith('.js') ? [rel + f] : [];
+  });
+  const files = listContent(CONTENT, '')
     .filter((f) => !only || only.split(',').includes(f.replace(/\.js$/, '')));
   let bad = 0;
   for (const f of files) {
