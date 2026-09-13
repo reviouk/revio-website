@@ -891,6 +891,18 @@ a.card:focus-visible { outline-offset: 0; }
 .meetings-iframe-container { min-height: 760px; }
 .meetings-iframe-container iframe { width: 100%; min-height: 760px; border: 0; background: transparent; }
 
+/* On a phone the embed had three padded boxes around it and a fixed height,
+   so the booking page scrolled inside its own frame. It brings its own card,
+   so here it loses ours and takes the width. */
+@media (max-width: 680px) {
+  .hs-form-frame { padding: 16px; border-radius: var(--r-md); }
+  .hs-form-frame:has(.meetings-iframe-container) {
+    padding: 0; border: 0; background: none; box-shadow: none;
+  }
+  .meetings-iframe-container,
+  .meetings-iframe-container iframe { min-height: 1180px; }
+}
+
 /* ---------- Prose (legal pages) ---------- */
 .prose h2 { font-size: 24px; margin: 40px 0 12px; }
 .prose h3 { font-size: 18px; margin: 26px 0 8px; }
