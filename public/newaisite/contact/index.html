@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact | REVIO (draft)</title>
+<meta name="description" content="Tell us what is slow. A reply within a working day, a thirty-minute call, then a written proposal with scope, price and date.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/newaisite/draft.css">
+</head>
+<body>
+<div id="nav"></div>
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="g2" style="gap:44px;align-items:start">
+        <div>
+          <span class="kick">Contact</span>
+          <h1>Tell us what is slow.</h1>
+          <p class="lede mt">You do not need a brief, a budget or a shortlist. A description of the thing that takes too long is enough to have a useful conversation.</p>
+          <div class="steps mt2">
+            <div class="step"><div><h3>We reply within one working day</h3><p>A person, not an autoresponder with a calendar link in it.</p></div></div>
+            <div class="step"><div><h3>A thirty-minute call</h3><p>What you do, where the time goes, and whether there is anything here worth building. If there is not, we will say so on that call.</p></div></div>
+            <div class="step"><div><h3>A written proposal</h3><p>Scope, price and date, in writing, so you can compare it with somebody else's.</p></div></div>
+          </div>
+          <p class="micro">Or email <a href="mailto:grow@revio.agency" style="color:var(--purple);font-weight:600">grow@revio.agency</a> directly.</p>
+        </div>
+
+        <div class="card">
+          <h3>Start a conversation</h3>
+          <form id="cf" style="margin-top:14px" novalidate>
+            <label style="display:block;font-size:13.5px;font-weight:600;margin:12px 0 5px" for="cname">Your name</label>
+            <input id="cname" required style="width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--page);color:inherit">
+            <label style="display:block;font-size:13.5px;font-weight:600;margin:12px 0 5px" for="cemail">Email</label>
+            <input id="cemail" type="email" required style="width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--page);color:inherit">
+            <label style="display:block;font-size:13.5px;font-weight:600;margin:12px 0 5px" for="ccomp">Company</label>
+            <input id="ccomp" style="width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--page);color:inherit">
+            <label style="display:block;font-size:13.5px;font-weight:600;margin:12px 0 5px" for="cmsg">What is slow?</label>
+            <textarea id="cmsg" rows="4" style="width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--page);color:inherit"></textarea>
+            <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:18px">Send it</button>
+          </form>
+          <div class="todo">
+            <b>Draft note</b>This form is not wired up. On the live site it should post into the delivery dashboard's
+            <code>POST /api/intake</code> &mdash; the field names there already match these questions exactly, so nothing
+            needs retyping. That is phase 3 of the dashboard, and the plan says to do it after the template editor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="wash"><div class="narrow"><div class="rv"><span class="kick">Straight answers</span><h2>Before you write.</h2></div><div class="faq mt2 rv"><details><summary>What happens after I send this?</summary><p>A person reads it and replies within a working day, usually with two or three times for a call rather than a link to a calendar.</p></details><details><summary>Do I need to know what I want built?</summary><p>No. Most useful first conversations start with a description of a process that takes too long, not with a specification.</p></details><details><summary>Will you tell us if you are the wrong firm?</summary><p>Yes, and reasonably often. A three-month programme with a steering group is not what we are good at, and a business that has not decided what it sells is not ready for any of this.</p></details></div></div></section><section class="wash"><div class="wrap rv"><div class="band"><h2>Or start with the audit.</h2><p>If you would rather buy something small and definite than have a conversation, that is a perfectly good way in.</p><div class="row"><a class="btn" href="/newaisite/ai-audit/">Book the AI Opportunity Audit</a></div></div></div></section>
+</main>
+<div id="foot"></div>
+<script src="/newaisite/parts.js"></script>
+</body>
+</html>
