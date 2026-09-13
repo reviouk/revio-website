@@ -264,7 +264,8 @@
       ['/hubspot-consultancy/', 'Consultancy'],
       ['/hubspot-sales-hub-implementation/', 'Implementation'],
       ['/hubspot-audit/', 'Free Audit'],
-      ['/hubspot-support-packages/', 'Support Packages']
+      ['/hubspot-support-packages/', 'Support Packages'],
+      ['/freelance-hubspot-consultant-london/', 'Freelance Consultant']
     ] },
     { h: 'Growth', links: [
       ['/ai-growth-systems/', 'AI Growth Systems'],
