@@ -16,7 +16,7 @@
 (function () {
   'use strict';
 
-  var MEETING_URL = '/book-a-meeting-freelancer/';
+  var MEETING_URL = '/book-a-meeting/';   /* Microsoft Bookings, rob@revio.agency (Teams) */
   var AUDIT_URL = '/ai-opportunity-audit/';
   var LOGO = '/assets/revio-logo-white.png';
 
@@ -81,26 +81,58 @@
   var NAV = [
     {
       label: 'AI Services', href: '/ai-services/', shape: 'cards',
-      match: ['/ai-services/', '/ai-opportunity-audit/', '/ai-agents-automation/',
-              '/ai-enablement/', '/ai-app-development/', '/ai-growth-systems/'],
+      match: ['/ai-services/', '/ai-opportunity-audit/', '/embedded-ai-lead/', '/ai-implementation/',
+              '/ai-strategy/', '/ai-agents-automation/', '/ai-workflow-automation/', '/ai-chatbot/',
+              '/voice-ai/', '/claude-implementation/', '/chatgpt-implementation/',
+              '/microsoft-copilot-implementation/', '/ai-enablement/', '/private-ai/',
+              '/ai-governance-compliance/', '/ai-app-rescue/', '/ai-app-diagnostic-audit/',
+              '/legacy-modernisation/', '/funded-ai-projects/', '/ai-for-smes/',
+              '/enterprise-ai-consultancy/', '/ai-consultancy-london/', '/ai-app-development/'],
       cards: [
         { href: '/ai-opportunity-audit/', icon: ICON.audit, title: 'AI Opportunity Audit',
-          blurb: 'Two weeks to find where AI actually pays for itself in your business — before anyone builds a thing.',
-          label: 'What you get',
-          items: ['Ranked list with cost and payback', 'Yours to keep, whoever builds it'] },
-        { href: '/ai-agents-automation/', icon: ICON.agents, title: 'AI Agents &amp; Automation',
-          blurb: 'Agents that answer, qualify, chase and book. Workflows wired into the tools you already pay for.',
-          label: 'Popular builds',
-          items: ['Inbound DM &amp; email agents', 'CRM data &amp; handover automation'] },
-        { href: '/ai-app-development/', icon: ICON.apps, title: 'AI Web &amp; App Development',
-          blurb: 'Internal tools, portals and customer-facing apps, shipped in weeks rather than quarters.',
-          label: 'How it works',
-          items: ['Fixed price, fixed date', 'You own the code'] }
+          blurb: 'Two weeks to find where AI actually pays for itself in your business, before anyone builds a thing.',
+          label: 'Start here',
+          items: ['Ranked list with cost and payback', 'From &pound;1,500, credited against a build'] },
+        { href: '/embedded-ai-lead/', icon: ICON.why, title: 'Embedded AI Lead',
+          blurb: 'A senior AI lead inside your team one to three days a week. One backlog, the work delivered, your people trained.',
+          label: 'The retained service',
+          items: ['From &pound;3,500 a month', 'Quarterly review, no lock-in'] },
+        { href: '/ai-implementation/', icon: ICON.build, title: 'AI Build &amp; Implementation',
+          blurb: 'A defined system built to a fixed price and date, wired into the CRM you already run, supervised before it acts alone.',
+          label: 'Fixed price',
+          items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] }
       ],
       links: [
-        { href: '/ai-enablement/', label: 'Enablement &amp; Training' },
-        { href: '/ai-growth-systems/', label: 'AI Growth Systems' },
-        { href: '/lead-signal/', label: 'LeadSignal, our own product' }
+        { href: '/ai-agents-automation/', label: 'Agents &amp; automation' },
+        { href: '/ai-workflow-automation/', label: 'Workflow automation' },
+        { href: '/ai-chatbot/', label: 'AI chatbots' },
+        { href: '/voice-ai/', label: 'Voice AI' },
+        { href: '/claude-implementation/', label: 'Claude' },
+        { href: '/chatgpt-implementation/', label: 'ChatGPT' },
+        { href: '/microsoft-copilot-implementation/', label: 'Copilot' },
+        { href: '/ai-enablement/', label: 'Training' },
+        { href: '/private-ai/', label: 'Private AI' },
+        { href: '/ai-governance-compliance/', label: 'Governance' },
+        { href: '/ai-app-rescue/', label: 'App rescue' },
+        { href: '/legacy-modernisation/', label: 'Legacy modernisation' },
+        { href: '/ai-services/', label: 'All AI services' }
+      ]
+    },
+    {
+      label: 'Industries', href: '/industries/', shape: 'rows',
+      match: ['/industries/', '/industries/healthcare-dental/', '/industries/logistics-transport/',
+              '/industries/financial-services/', '/industries/professional-services/',
+              '/industries/recruitment/', '/industries/ecommerce-retail/', '/industries/smes/'],
+      rows: [
+        { href: '/industries/healthcare-dental/', icon: ICON.testi, title: 'Healthcare &amp; Dental', desc: 'Enquiries, bookings, recalls, letters' },
+        { href: '/industries/logistics-transport/', icon: ICON.growth, title: 'Logistics &amp; Transport', desc: 'Quotes, PODs, driver and customer comms' },
+        { href: '/industries/financial-services/', icon: ICON.data, title: 'Financial Services', desc: 'Onboarding, fact-finds, Consumer Duty' },
+        { href: '/industries/professional-services/', icon: ICON.news, title: 'Professional Services', desc: 'Documents, intake, proposals, knowledge' },
+        { href: '/industries/recruitment/', icon: ICON.why, title: 'Recruitment', desc: 'Screening, matching, candidate comms' },
+        { href: '/industries/ecommerce-retail/', icon: ICON.work, title: 'Ecommerce &amp; Retail', desc: 'Service, returns, content, flows' },
+        { href: '/industries/smes/', icon: ICON.consult, title: 'Owner-managed SMEs', desc: 'Missed enquiries, quoting, admin' },
+        { href: '/industries/', icon: ICON.audit, title: 'All industries', desc: 'The same method, applied to your sector' },
+        { href: '/ai-roi-calculator/', icon: ICON.growth, title: 'AI ROI calculator', desc: 'What it would return in your business' }
       ]
     },
     {
@@ -133,7 +165,7 @@
     },
     {
       label: 'Growth', href: '/services/', shape: 'cards',
-      match: ['/services/', '/lead-generation/', '/paid-search-social/'],
+      match: ['/services/', '/lead-generation/', '/paid-search-social/', '/ai-growth-systems/'],
       cards: [
         { href: '/ai-growth-systems/', icon: ICON.growth, title: 'AI Growth Systems',
           blurb: 'Finding the right people, chasing them until they answer, and making the assets that give them a reason to.',
@@ -155,17 +187,17 @@
     },
     {
       label: 'Company', href: '/about/', shape: 'rows',
-      match: ['/about/', '/work/', '/testimonials/', '/resources/'],
+      match: ['/about/', '/work/', '/testimonials/', '/resources/', '/knowledge-hub/', '/contact/'],
       rows: [
         { href: '/about/', icon: ICON.why, title: 'Why Revio', desc: 'Who we are and how we work' },
-        { href: '/work/', icon: ICON.work, title: 'Our Work', desc: 'Case studies and results' },
+        { href: '/work/', icon: ICON.work, title: 'Our Work', desc: 'Case studies, including the AI platform we built' },
         { href: '/testimonials/', icon: ICON.testi, title: 'Testimonials', desc: 'What clients actually say' },
+        { href: '/knowledge-hub/', icon: ICON.news, title: 'Knowledge Hub', desc: 'Guides on strategy, implementation and training' },
         { href: '/resources/', icon: ICON.news, title: 'Insights &amp; News', desc: 'Articles, guides and updates' },
-        { href: MEETING_URL, icon: ICON.book, title: 'Book a Meeting', desc: 'Talk to us before you commit' }
+        { href: '/contact/', icon: ICON.book, title: 'Contact', desc: 'A person replies within a working day' }
       ]
     },
-    { label: 'Pricing', href: '/pricing/', match: ['/pricing/'] },
-    { label: 'LeadSignal', href: '/lead-signal/', match: ['/lead-signal/'], live: true },
+    { label: 'Pricing', href: '/pricing/', match: ['/pricing/', '/ai-roi-calculator/'] },
     /* Clients only, so it is a plain menu label rather than a button competing
        with the calls to action. /login/ is the stable address: the portal
        itself can move without this link changing. */
@@ -237,7 +269,7 @@
       '<header class="topbar">' + brand('revioMarkNav') +
       '<span class="sp"></span>' +
       '<nav class="mainnav" aria-label="Main">' + items + '</nav>' +
-      '<a class="btn btn-mint navtalk" href="' + MEETING_URL + '">Talk to us</a>' +
+      '<a class="btn btn-mint navtalk" href="' + MEETING_URL + '">Book a meeting</a>' +
             '<a class="btn btn-primary" href="' + AUDIT_URL + '">Book an audit' +
       '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' +
       '<button class="themebtn" type="button" data-theme-toggle aria-label="Switch colour theme">' +
@@ -257,33 +289,46 @@
   /* ---------- footer ---------- */
   var FOOT_COLS = [
     { h: 'AI Services', links: [
-      ['/ai-opportunity-audit/', 'Opportunity Audit'],
+      ['/ai-opportunity-audit/', 'AI Opportunity Audit'],
+      ['/embedded-ai-lead/', 'Embedded AI Lead'],
+      ['/ai-implementation/', 'AI Build &amp; Implementation'],
       ['/ai-agents-automation/', 'Agents &amp; Automation'],
-      ['/ai-enablement/', 'Enablement &amp; Training'],
-      ['/ai-app-development/', 'Web &amp; App Development'],
-      ['/ai-growth-systems/', 'AI Growth Systems']
+      ['/ai-chatbot/', 'AI Chatbots'],
+      ['/voice-ai/', 'Voice AI'],
+      ['/ai-enablement/', 'Training &amp; Enablement'],
+      ['/ai-governance-compliance/', 'Governance &amp; Compliance'],
+      ['/ai-services/', 'All AI services']
     ] },
-    { h: 'HubSpot', links: [
-      ['/hubspot-agency/', 'Overview'],
-      ['/hubspot-consultancy/', 'Consultancy'],
-      ['/hubspot-sales-hub-implementation/', 'Implementation'],
-      ['/hubspot-audit/', 'Free Audit'],
+    { h: 'Industries', links: [
+      ['/industries/healthcare-dental/', 'Healthcare &amp; Dental'],
+      ['/industries/logistics-transport/', 'Logistics &amp; Transport'],
+      ['/industries/financial-services/', 'Financial Services'],
+      ['/industries/professional-services/', 'Professional Services'],
+      ['/industries/recruitment/', 'Recruitment'],
+      ['/industries/ecommerce-retail/', 'Ecommerce &amp; Retail'],
+      ['/industries/smes/', 'Owner-managed SMEs'],
+      ['/ai-consultancy-london/', 'AI Consultancy London']
+    ] },
+    { h: 'HubSpot &amp; Growth', links: [
+      ['/hubspot-agency/', 'HubSpot Overview'],
+      ['/hubspot-consultancy/', 'HubSpot Consultancy'],
+      ['/hubspot-sales-hub-implementation/', 'Hub Implementation'],
       ['/hubspot-support-packages/', 'Support Packages'],
-      ['/freelance-hubspot-consultant-london/', 'Freelance Consultant']
-    ] },
-    { h: 'Growth', links: [
+      ['/freelance-hubspot-consultant-london/', 'Freelance Consultant'],
       ['/ai-growth-systems/', 'AI Growth Systems'],
       ['/lead-generation/', 'Lead Generation'],
-      ['/paid-search-social/', 'Paid Search &amp; Social'],
-      ['/sales-enablement/', 'Sales Enablement'],
-      ['/pricing/', 'Pricing']
+      ['/paid-search-social/', 'Paid Search &amp; Social']
     ] },
     { h: 'Company', links: [
       ['/about/', 'About Revio'],
       ['/work/', 'Our Work'],
       ['/testimonials/', 'Testimonials'],
+      ['/knowledge-hub/', 'Knowledge Hub'],
       ['/resources/', 'Insights &amp; News'],
-      [MEETING_URL, 'Contact'],
+      ['/pricing/', 'Pricing'],
+      ['/ai-roi-calculator/', 'AI ROI Calculator'],
+      ['/contact/', 'Contact'],
+      [MEETING_URL, 'Book a Meeting'],
       ['/login/', 'Client login']
     ] }
   ];
@@ -307,8 +352,8 @@
 
     return '<footer class="foot"><div class="fwrap"><div class="fgrid">' +
       '<div class="fbrand">' + brand('revioMarkFoot') +
-      '<p class="fblurb">AI consultancy, build and enablement, on top of a decade of HubSpot ' +
-      'and RevOps work. We build and run our own AI product.</p>' +
+      '<p class="fblurb">AI audit, build and embedded AI leadership for UK businesses, on top of a decade ' +
+      'of HubSpot and RevOps work. Every price published.</p>' +
       '<div class="fcontact"><span>Imperial Place, 4 Maxwell Rd,</span>' +
       '<span>Borehamwood, WD6 1JN, United Kingdom</span>' +
       '</div>' +

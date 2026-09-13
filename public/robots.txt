@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /newaisite/
+Disallow: /admin/
+
+Sitemap: https://revio.agency/sitemap.xml
