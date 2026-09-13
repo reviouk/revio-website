@@ -87,11 +87,11 @@
   .center .lede{max-width:62ch}
 
   /* ---------- Hero ---------- */
-  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:48px;align-items:center}
-  .hero h1{font-size:clamp(38px,4.9vw,58px);line-height:1.06;letter-spacing:-2px;margin-top:20px;max-width:15ch}
-  .hero h1 .alt{color:var(--purple)}
-  .hero p.sub{color:var(--muted);font-size:17.5px;margin-top:20px;max-width:48ch;line-height:1.62}
-  .hero .actions{margin-top:28px}
+  .hp-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:48px;align-items:center}
+  .hp-hero h1{font-size:clamp(38px,4.9vw,58px);line-height:1.06;letter-spacing:-2px;margin-top:20px;max-width:15ch}
+  .hp-hero h1 .alt{color:var(--purple)}
+  .hp-hero p.sub{color:var(--muted);font-size:17.5px;margin-top:20px;max-width:48ch;line-height:1.62}
+  .hp-hero .actions{margin-top:28px}
   .herotrust{display:flex;align-items:center;gap:14px;margin-top:26px;flex-wrap:wrap}
   .hstack{display:flex}
   .hstack span{width:30px;height:30px;border-radius:50%;background:var(--chip);color:var(--purple);
@@ -100,7 +100,7 @@
   .hstack span:first-child{margin-left:0}
   .herotrust .txt{font-size:13.5px;color:var(--muted)}
   .herotrust .txt b{color:var(--ink)}
-  @media(max-width:900px){.hero{grid-template-columns:1fr;gap:34px}}
+  @media(max-width:900px){.hp-hero{grid-template-columns:1fr;gap:34px}}
 
   /* live card */
   .live{border:0;border-radius:20px;background:var(--panel);overflow:hidden;
@@ -223,7 +223,7 @@
 
   <!-- ── Hero ──────────────────────────────────────────────── -->
   <section class="panel grad">
-    <div class="hero">
+    <div class="hp-hero">
       <div>
         <span class="chip">AI consultancy &amp; enablement</span>
         <h1>Everyone is buying AI. <span class="alt">Almost nobody is using it.</span></h1>
