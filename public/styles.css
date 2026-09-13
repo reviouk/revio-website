@@ -1067,7 +1067,7 @@ a.card:focus-visible { outline-offset: 0; }
 .navitem { position: static; }
 .navtop {
   display: inline-flex; align-items: center; gap: 5px; font-family: var(--fh);
-  font-size: 15px; font-weight: 600; padding: 10px 16px; border-radius: 9px;
+  font-size: 16px; font-weight: 600; padding: 10px 15px; border-radius: 9px;
   color: var(--ink); transition: background-color .16s ease, color .16s ease;
 }
 .navitem:hover > .navtop, .navtop:focus-visible,
@@ -1082,7 +1082,7 @@ a.card:focus-visible { outline-offset: 0; }
    the two header actions read as a pair with the softer one on the left. The
    global .btn-mint lifts and glows on hover; in the header both buttons should
    behave the same way as each other, so it just deepens. */
-.topbar .navtalk { padding: 12px 20px; font-size: 14.5px; }
+.topbar .navtalk { padding: 12px 20px; font-size: 15.5px; }
 .topbar .navtalk:hover { transform: none; box-shadow: none; background: #0fb47c; }
 .themebtn {
   width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line);
