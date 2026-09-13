@@ -1128,7 +1128,10 @@ a.card:focus-visible { outline-offset: 0; }
   font-family: var(--fh); font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
   text-transform: uppercase; color: var(--muted); margin-top: 16px;
 }
-.mcard ul { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; list-style: none; }
+/* margin-top:auto on .more pushes the button to the bottom so the three cards
+   line up, but when a card is full it leaves the button touching the list.
+   The margin here is the floor; auto only adds to it. */
+.mcard ul { margin-top: 8px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 6px; list-style: none; }
 .mcard li { display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; }
 .mcard li svg { width: 15px; height: 15px; flex: none; margin-top: 3px; color: var(--mint); }
 .mcard .more {
