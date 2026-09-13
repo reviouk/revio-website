@@ -46,7 +46,6 @@
     why:     ic('<circle cx="12" cy="8" r="3.4"/><path d="M5 19a7 7 0 0 1 14 0"/>'),
     work:    ic('<rect x="3" y="7" width="18" height="13" rx="3"/><path d="M9 7V5h6v2"/>'),
     testi:   ic('<path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="m8 12 3 3 6-7"/>'),
-    guides:  ic('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/>'),
     news:    ic('<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7"/>'),
     book:    ic('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/>')
   };
@@ -156,12 +155,11 @@
     },
     {
       label: 'Company', href: '/about/', shape: 'rows',
-      match: ['/about/', '/work/', '/testimonials/', '/guides/', '/resources/'],
+      match: ['/about/', '/work/', '/testimonials/', '/resources/'],
       rows: [
         { href: '/about/', icon: ICON.why, title: 'Why Revio', desc: 'Who we are and how we work' },
         { href: '/work/', icon: ICON.work, title: 'Our Work', desc: 'Case studies and results' },
         { href: '/testimonials/', icon: ICON.testi, title: 'Testimonials', desc: 'What clients actually say' },
-        { href: '/guides/', icon: ICON.guides, title: 'Free Guides', desc: 'Playbooks and resources' },
         { href: '/resources/', icon: ICON.news, title: 'Insights &amp; News', desc: 'Articles, guides and updates' },
         { href: MEETING_URL, icon: ICON.book, title: 'Book a Meeting', desc: 'Talk to us before you commit' }
       ]
@@ -279,7 +277,6 @@
       ['/about/', 'About Revio'],
       ['/work/', 'Our Work'],
       ['/testimonials/', 'Testimonials'],
-      ['/guides/', 'Free Guides'],
       ['/resources/', 'Insights &amp; News'],
       [MEETING_URL, 'Contact']
     ] }
