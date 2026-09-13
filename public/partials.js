@@ -317,7 +317,7 @@
       'and RevOps work. We build and run our own AI product.</p>' +
       '<div class="fcontact"><span>Imperial Place, 4 Maxwell Rd,</span>' +
       '<span>Borehamwood, WD6 1JN, United Kingdom</span>' +
-      '<a href="tel:+447590977397">+44 7590 977397</a></div>' +
+      '</div>' +
       '<div class="flabel">Ask or email us</div>' +
       '<a class="fmail" href="mailto:grow@revio.agency">grow@revio.agency</a>' +
       '<div class="fsocial">' + social + '</div>' +
