@@ -1299,3 +1299,8 @@ a.card:focus-visible { outline-offset: 0; }
 .mega-grid.cols-4 .mrow b { font-size: 14px; }
 .mega-grid.cols-4 .mrow > span > span { font-size: 12.5px; }
 @media (max-width: 1240px) { .mega-grid.cols-4 { grid-template-columns: repeat(3, 1fr); } }
+
+.meeting-row { padding: 0 0 56px; margin-top: -24px; }
+.meeting-row .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 22px; }
+.meeting-row p { margin: 0; color: var(--muted); font-size: 15px; }
+.meeting-row .cta-row { margin: 0; }

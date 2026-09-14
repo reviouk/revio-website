@@ -4,12 +4,12 @@ const { art, icon } = require('../render');
 
 const heroHtml = `<div class="page-hero ai-hero"><div class="wrap hm-hero">
   <div class="ai-hero-copy">
-    <span class="badge">AI consultancy &middot; build &middot; embedded lead</span>
-    <h1>AI that is still running <em class="mint">in month twelve</em>.</h1>
+    <span class="badge">AI consultancy &middot; audit &middot; build &middot; run</span>
+    <h1>AI consultancy for systems still running <em class="mint">in month twelve</em>.</h1>
     <p class="sub">Most AI projects do not fail at launch. They fail quietly, later: a field changes, a sync stops, nobody notices for three weeks. Revio finds the one process where AI genuinely pays in your business, builds it into the CRM you already run, and stays until your team is using it.</p>
     <div class="cta-row">
       <a class="btn btn-mint" href="${S.AUDIT_URL}">Start with the audit &mdash; ${P.audit.toLowerCase()}</a>
-      <a class="btn btn-ghost" href="${S.CALC_URL}">Work out your return</a>
+      <a class="btn btn-ghost" href="${S.BOOK_URL}">Book a meeting</a>
     </div>
     <ul class="ai-hero-proof"><li>Every price published</li><li>Senior team, no hand-offs</li><li>We build and run our own AI product</li></ul>
   </div>
@@ -21,8 +21,8 @@ const ladder = `<section class="ai-sec"><div class="wrap">
   <p class="lede mt-md">Most people start on the left and work right. Nobody is asked to buy the right-hand one on a first call.</p></div>
   <div class="hm-ladder mt-lg">
     <a class="hm-rung reveal" href="${S.AUDIT_URL}" style="--d:0"><div class="no">1</div><span class="when">Find</span><h3>AI Opportunity Audit</h3><p>Two weeks. Where AI saves time or makes money in your business, in priority order, with the cost and payback of each, and an honest note on where AI is the wrong answer.</p><div class="fee">${P.audit}<small>fixed fee, credited against a build</small></div><span class="btn btn-mint hm-cta">Book the audit &rarr;</span></a>
-    <a class="hm-rung reveal" href="${S.LEAD_URL}" style="--d:1"><div class="no">2</div><span class="when">Embed</span><h3>Embedded AI Lead</h3><p>A senior AI lead inside your team one to three days a week. One prioritised backlog, the automations built, your people trained as each one lands.</p><div class="fee">${P.lead_1} a month<small>three-month term, then rolling</small></div><span class="btn btn-ghost hm-cta">See how it works &rarr;</span></a>
-    <a class="hm-rung reveal" href="/ai-implementation/" style="--d:2"><div class="no">3</div><span class="when">Build</span><h3>AI Build &amp; Implementation</h3><p>A defined system built to a fixed price against a fixed date, wired into your CRM, supervised before it acts alone, with monitoring that says when a seam comes apart.</p><div class="fee">${P.build_from}<small>fixed price, fixed date</small></div><span class="btn btn-ghost hm-cta">Scope a build &rarr;</span></a>
+    <a class="hm-rung reveal" href="/ai-implementation/" style="--d:1"><div class="no">2</div><span class="when">Build</span><h3>AI Build &amp; Implementation</h3><p>A defined system built to a fixed price against a fixed date, wired into your CRM, supervised before it acts alone, with monitoring that says when a seam comes apart.</p><div class="fee">${P.build_from}<small>fixed price, fixed date</small></div><span class="btn btn-ghost hm-cta">Scope a build &rarr;</span></a>
+    <a class="hm-rung reveal" href="${S.PRICING_URL}" style="--d:2"><div class="no">3</div><span class="when">Run</span><h3>Support &amp; Iteration</h3><p>Keeping what we built connected as the products underneath it change, watched, and improved with the numbers reviewed with you every month. Starts or stops monthly, never a condition of a build.</p><div class="fee">${P.run} a month<small>optional, monthly rolling</small></div><span class="btn btn-ghost hm-cta">Ask about Run &rarr;</span></a>
   </div>
 </div></section>`;
 
@@ -60,7 +60,7 @@ const services = `<section class="ai-sec section-wash"><div class="wrap">
 module.exports = {
   slug: 'home', path: '/',
   title: 'AI Consultancy UK: AI Audit, Build & Implementation | Revio',
-  description: 'Revio finds the one process where AI pays in your business, builds it into the CRM you run, and stays until your team uses it. Audit from £1,500.',
+  description: 'UK AI consultancy: a two-week AI audit from £1,500, fixed-price builds from £4,500 wired into the CRM you already run, support from £450 a month. Every price published.',
   keywords: ['ai consultancy uk', 'ai agency uk', 'ai implementation consultancy', 'embedded ai lead', 'ai audit uk'],
   noCrumbs: true,
   heroHtml,
@@ -128,7 +128,7 @@ module.exports = {
         { q: 'Do we have to replace our CRM?', a: 'No. The system is built around your process, not around a vendor. We know HubSpot best and will say so, but it has never been a condition of working with us.' },
         { q: 'How quickly does something actually run?', a: 'Two weeks for the audit, then typically two to six for the first working version, depending on what the data turns up. You see it running on your own records, supervised, before it is allowed to act on its own.' },
         { q: 'What happens to our data?', a: 'It stays yours, in your systems, and we write down what the AI is allowed to see and do before anything is switched on. That document is part of the build, not an afterthought.' },
-        { q: 'What does it cost?', a: 'Every price is on the pricing page. The audit is ' + P.audit + ', builds start at ' + P.build_from + ', and an Embedded AI Lead is ' + P.lead_1 + ' a month. Nothing is quoted from a menu you cannot see.' },
+        { q: 'What does it cost?', a: 'Every price is on the pricing page. The audit is ' + P.audit + ', builds start at ' + P.build_from + ', and Run, the optional support after a build, is ' + P.run + ' a month. Nothing is quoted from a menu you cannot see.' },
         { q: 'Can we stop?', a: 'Yes. The audit is a fixed piece of work with no obligation, and the monthly is reviewed quarterly rather than locked. The configuration is documented as we build it, so leaving is possible rather than theoretical.' },
       ],
     },

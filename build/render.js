@@ -382,6 +382,13 @@ function jsonld(p) {
     graph.push(Object.assign({ '@type': 'Service', '@id': url + '#service', name: plain(p.service.name || p.h1), serviceType: plain(p.service.type || p.service.name || p.h1), provider: { '@id': SITE.ORIGIN + '/#org' }, areaServed: 'GB', url, description: plain(p.description) },
       p.service.price != null ? { offers: { '@type': 'Offer', priceCurrency: 'GBP', price: p.service.price, priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'GBP', minPrice: p.service.price, valueAddedTaxIncluded: false }, url } } : {}));
   }
+  if (p.path === '/') {
+    graph.push({ '@type': 'ProfessionalService', '@id': SITE.ORIGIN + '/#service', name: 'Revio AI Consultancy', url: SITE.ORIGIN + '/', parentOrganization: { '@id': SITE.ORIGIN + '/#org' }, areaServed: { '@type': 'Country', name: 'United Kingdom' }, address: { '@type': 'PostalAddress', streetAddress: 'Imperial Place, 4 Maxwell Rd', addressLocality: 'Borehamwood', postalCode: 'WD6 1JN', addressCountry: 'GB' }, priceRange: '££', hasOfferCatalog: { '@type': 'OfferCatalog', name: 'AI consultancy services', itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Opportunity Audit', url: SITE.ORIGIN + SITE.AUDIT_URL }, priceCurrency: 'GBP', price: 1500 },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Build & Implementation', url: SITE.ORIGIN + '/ai-implementation/' }, priceCurrency: 'GBP', price: 4500 },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Run: support & iteration', url: SITE.ORIGIN + SITE.PRICING_URL }, priceCurrency: 'GBP', price: 450 },
+    ] } });
+  }
   const faq = (p.sections || []).find((s) => s.type === 'faq');
   if (faq && faq.items && faq.items.length) {
     graph.push({ '@type': 'FAQPage', '@id': url + '#faq', mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: plain(f.q), acceptedAnswer: { '@type': 'Answer', text: plain([].concat(f.a).join(' ')) } })) });
@@ -395,10 +402,21 @@ function render(p) {
   const url = SITE.ORIGIN + (p.canonical || p.path);
   const title = plain(p.title);
   const desc = plain(p.description);
-  const sections = (p.sections || []).map((s) => {
+  // A meeting ask after the sections that do the persuading (Rob 2026-09-14:
+  // "more CTAs throughout the site"). Not after every section: skipped when
+  // the section carries its own buttons, when the next section is a CTA band
+  // or a form, and on pages that opt out with meetingRows: false.
+  const MEETING_AFTER = new Set(['steps', 'compare', 'cases', 'checks']);
+  const list = p.sections || [];
+  const sections = list.map((s, i) => {
     const fn = SECTION[s.type];
     if (!fn) throw new Error(`${p.slug}: unknown section type "${s.type}"`);
-    return fn(s);
+    let out = fn(s);
+    const next = list[i + 1];
+    if (p.meetingRows !== false && MEETING_AFTER.has(s.type) && !(s.ctas && s.ctas.length) && !(next && ['cta', 'band', 'booking', 'form'].includes(next.type))) {
+      out += `<div class="meeting-row"><div class="wrap reveal"><p>${rich(s.meetingText || 'Not sure which of these fits? Twenty minutes on a call usually settles it.')}</p>${ctaRow([{ label: 'Book a meeting', href: SITE.BOOK_URL, style: 'mint' }])}</div></div>`;
+    }
+    return out;
   }).join('\n');
   const crumbs = `<nav class="ai-crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="/">Home</a>` +
     (p.crumbs || []).map((c) => ` <span>/</span> <a href="${esc(c.href)}">${rich(c.label)}</a>`).join('') +
