@@ -24,7 +24,7 @@ const ladder = `<section class="ai-sec"><div class="wrap">
     <a class="hm-rung reveal" href="/ai-implementation/" style="--d:1"><div class="no">2</div><span class="when">Phase 2 &middot; Prove</span><h3>Pilot</h3><p>One real process, live, with a number attached. Wired into the CRM you already run, supervised before it acts alone. Small enough to prove the case in weeks, real enough that it stays in use.</p><div class="fee">${P.build_from}<small>3 to 4 weeks &middot; fixed price, fixed date</small></div><span class="btn btn-ghost hm-cta">Scope a pilot &rarr;</span></a>
     <a class="hm-rung reveal" href="${S.PRICING_URL}" style="--d:2"><div class="no">3</div><span class="when">Phase 3 &middot; Build and embed</span><h3>The full system</h3><p>The connected app or platform: integrations, guardrails, handbacks, staff trained as each part lands, and monitoring that says when a seam comes apart. Handed over with a written runbook.</p><div class="fee">From ${P.build_mid}<small>6 to 12 weeks &middot; fixed price, fixed date</small></div><span class="btn btn-ghost hm-cta">See build pricing &rarr;</span></a>
   </div>
-  <p class="hm-ladder-note reveal mt-md">After any build, <a href="${S.PRICING_URL}">Run</a> keeps it connected and improving from ${P.run} a month, monthly rolling, never a condition of the build. HubSpot work, an embedded AI lead and advisory are available ad hoc, by the day.</p>
+  <p class="hm-ladder-note reveal mt-md">After any build, <a href="${S.PRICING_URL}">Run</a> keeps it connected and improving from ${P.run} a month, monthly rolling, never a condition of the build. HubSpot work, an embedded AI lead and advisory are also available ad hoc.</p>
 </div></section>`;
 
 const marquee = `<div class="hm-marquee" aria-hidden="true"><div class="track">${[
@@ -61,7 +61,7 @@ const services = `<section class="ai-sec section-wash"><div class="wrap">
 module.exports = {
   slug: 'home', path: '/',
   title: 'AI Consultancy UK: AI Audit, Build & Implementation | Revio',
-  description: 'UK AI consultancy: a two-week AI audit from £1,500, fixed-price builds from £4,500 wired into the CRM you already run, support from £450 a month. Every price published.',
+  description: 'UK AI consultancy: a two-week AI audit from £1,500, fixed-price builds from £4,500 wired into the CRM you run, support from £450 a month. Every price published.',
   keywords: ['ai consultancy uk', 'ai agency uk', 'ai implementation consultancy', 'embedded ai lead', 'ai audit uk'],
   noCrumbs: true,
   heroHtml,
