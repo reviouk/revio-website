@@ -8,7 +8,7 @@ module.exports = {
   /* The Microsoft Bookings page for rob@revio.agency. Empty until Rob pastes
      it (Bookings > Booking page > 'Copy link'); the booking block shows the
      enquiry route meanwhile. */
-  BOOKINGS_EMBED: 'https://outlook.office.com/owa/calendar/REVIO@revio.agency/bookings/',
+  BOOKINGS_EMBED: 'https://outlook.office.com/book/REVIO1@revio.agency/',
   AUDIT_URL: '/ai-opportunity-audit/',
   CONTACT_URL: '/contact/',
   CALC_URL: '/ai-roi-calculator/',
