@@ -39,7 +39,7 @@ module.exports = {
     {
       type: 'cases', kicker: 'Who we have already done this for', h2: 'London and Hertfordshire businesses we have worked with.',
       items: [
-        { href: '/work/', kicker: 'Higher education, London', title: 'London South Bank University', result: 'Paid campaigns at institutional scale', text: 'Marketing systems and paid campaign management run for a London university at real institutional volume.' },
+        { href: '/work/', kicker: 'Higher education, London', title: 'London South Bank University', result: 'HubSpot built around online tutoring', text: 'A custom HubSpot setup and configuration for a London university’s online tutoring provision.' },
         { href: '/work/', kicker: 'Architecture, London', title: 'Extension Architecture', result: 'SEO and paid working together', text: 'A London architecture practice with enquiry handling and marketing finally connected.' },
         { href: '/work/', kicker: 'Financial services, Hertfordshire', title: 'TLPI', result: 'HubSpot, AI properties and a connected inbox', text: 'A pensions and financial services firm with its CRM, AI-scored records and inbox wired together.' },
       ],

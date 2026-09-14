@@ -85,7 +85,7 @@ module.exports = {
       items: [
         { href: '/work/leadsignal/', kicker: 'AI platform', title: 'LeadSignal', result: '8 weeks to a live AI platform', text: 'A multi-tenant platform whose agents answer, qualify, score and book leads out of Instagram, Facebook, WhatsApp and SMS. Designed, built and run by us, with an approved Meta app, live payments and paying customers.' },
         { href: S.WORK_URL, kicker: 'Training provider', title: 'Intelligencia Training', result: 'A national pipeline on long cycles', text: 'Pipeline and CRM work for a national training provider where enquiries convert over months rather than days, and attribution has to survive the gap between first touch and enrolment.' },
-        { href: S.WORK_URL, kicker: 'Market intelligence', title: 'Mintec', result: 'Leads up 28%, £1.5M attributed in nine months', text: 'Demand generation and CRM discipline for a global commodity pricing business, with attribution good enough that the revenue could be traced back to the work that produced it.' },
+        { href: S.WORK_URL, kicker: 'Market intelligence', title: 'Mintec', result: 'Leads up 28%, £1.5M attributed in nine months', text: 'HubSpot consultancy and automation for a global commodity pricing business, with the Salesforce integration fixed and attribution good enough that the revenue could be traced back to the work that produced it.' },
       ],
     },
     {

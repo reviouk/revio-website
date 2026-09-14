@@ -104,12 +104,12 @@ module.exports = {
       items: [
         { href: '/work/leadsignal/', kicker: 'AI platform build', title: 'LeadSignal', result: '8 weeks to a live, paying platform', text: 'A multi-tenant AI setter for Instagram, Facebook, WhatsApp and SMS, with an approved Meta app, scoring, booking and billing. Built with the method we sell, and run every day.' },
         { href: S.WORK_URL, kicker: 'Financial services', title: 'TLPI', result: 'HubSpot, AI properties, one connected inbox', text: 'A pensions specialist with a long sales cycle. CRM rebuilt around how the team actually sells, with AI reading the inbox and filling the record.' },
-        { href: S.WORK_URL, kicker: 'B2B data', title: 'Mintec', result: 'Leads up 28%, £1.5M attributed', text: 'An inbound engine end to end: content, conversion paths and HubSpot automation aligned to how the sales team works.' },
+        { href: S.WORK_URL, kicker: 'B2B data', title: 'Mintec', result: 'Leads up 28%, £1.5M attributed', text: 'HubSpot consultancy and automation, with the Salesforce integration issues resolved so the sales team worked from one connected record.' },
       ],
     },
     {
       type: 'quote', tone: 'wash',
-      text: 'Revio built our inbound engine end to end, content, conversion paths and HubSpot automation, all aligned to how our sales team actually works. Leads are up 28% and we have attributed £1.5M in deals to the programme within nine months.',
+      text: 'Revio took on our HubSpot consultancy and automation and resolved the Salesforce integration issues that had been holding the sales team back. Leads are up 28% and we have attributed £1.5M in deals to the programme within nine months.',
       who: 'Mintec', role: 'Client',
     },
     {
