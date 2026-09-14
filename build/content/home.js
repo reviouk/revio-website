@@ -59,7 +59,7 @@ const services = `<section class="ai-sec section-wash"><div class="wrap">
 
 module.exports = {
   slug: 'home', path: '/',
-  title: 'AI Consultancy UK: Audit, Build and Embedded AI Lead | Revio',
+  title: 'AI Consultancy UK: AI Audit, Build & Implementation | Revio',
   description: 'Revio finds the one process where AI pays in your business, builds it into the CRM you run, and stays until your team uses it. Audit from £1,500.',
   keywords: ['ai consultancy uk', 'ai agency uk', 'ai implementation consultancy', 'embedded ai lead', 'ai audit uk'],
   noCrumbs: true,
