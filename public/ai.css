@@ -341,7 +341,9 @@ a.case-card { display: flex; }
 /* ============================================================
    home page extras
    ============================================================ */
-.hm-hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding: 84px 0 80px; }
+/* Top and bottom only: the shorthand used to zero the wrapper's 24px sides,
+   so the hero text ran edge to edge on phones (Rob 2026-09-14). */
+.hm-hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding-top: 84px; padding-bottom: 80px; }
 .hm-hero h1 { max-width: 16ch; }
 .hm-hero .sub { max-width: 50ch; }
 .hm-orbit { position: relative; aspect-ratio: 1 / 1; max-width: 520px; margin-left: auto; }

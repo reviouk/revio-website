@@ -271,16 +271,24 @@
         dot + item.label + CHEV + '</a>' + megaHTML(item) + '</div>';
     }).join('');
 
+    /* Grouped like lead-signal.ai's sheet: a small uppercase heading per
+       section, the section's own page first, then its children. Items with
+       no children (Pricing, Login) sit together at the end. */
     var drawerLinks = [];
+    var loose = [];
     NAV.forEach(function (item) {
-      drawerLinks.push('<a href="' + item.href + '">' + item.label + '</a>');
-      (item.cards || []).forEach(function (c) {
-        drawerLinks.push('<a class="sub" href="' + c.href + '">' + c.title + '</a>');
-      });
-      (item.rows || []).forEach(function (r) {
-        drawerLinks.push('<a class="sub" href="' + r.href + '">' + r.title + '</a>');
+      var kids = (item.cards || []).concat(item.rows || []);
+      if (!kids.length) { loose.push(item); return; }
+      drawerLinks.push('<div class="dhead">' + item.label + '</div>');
+      drawerLinks.push('<a href="' + item.href + '">' + item.label + ' overview</a>');
+      kids.forEach(function (k) {
+        drawerLinks.push('<a class="sub" href="' + k.href + '">' + k.title + '</a>');
       });
     });
+    if (loose.length) {
+      drawerLinks.push('<div class="dhead">More</div>');
+      loose.forEach(function (item) { drawerLinks.push('<a href="' + item.href + '">' + item.label + '</a>'); });
+    }
 
     return '<div class="topwrap">' +
       '<header class="topbar">' + brand('revioMarkNav') +
@@ -421,24 +429,21 @@
     var burger = document.getElementById('revio-burger');
     var drawer = document.getElementById('revio-drawer');
     if (burger && drawer) {
-      burger.addEventListener('click', function () {
-        var open = drawer.classList.toggle('open');
+      /* The sheet starts exactly under the header, whatever its height on
+         this screen, and the page behind it stops scrolling. */
+      var setOpen = function (open) {
+        if (open) { var top = burger.closest('.topwrap'); drawer.style.top = (top ? top.getBoundingClientRect().bottom : 72) + 'px'; }
+        drawer.classList.toggle('open', open);
+        document.body.classList.toggle('navopen', open);
         burger.setAttribute('aria-expanded', open ? 'true' : 'false');
         burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      });
-      drawer.addEventListener('click', function (e) {
-        if (e.target.closest('a')) {
-          drawer.classList.remove('open');
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
+      };
+      burger.addEventListener('click', function () { setOpen(!drawer.classList.contains('open')); });
+      drawer.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && drawer.classList.contains('open')) {
-          drawer.classList.remove('open');
-          burger.setAttribute('aria-expanded', 'false');
-          burger.focus();
-        }
+        if (e.key === 'Escape' && drawer.classList.contains('open')) { setOpen(false); burger.focus(); }
       });
+      window.addEventListener('resize', function () { if (drawer.classList.contains('open') && window.innerWidth > 1180) setOpen(false); });
     }
 
     /* Scheduled posts — cards carrying data-publish stay hidden until their
