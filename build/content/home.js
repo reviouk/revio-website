@@ -86,9 +86,9 @@ module.exports = {
     {
       type: 'cards', tone: 'wash', kicker: 'Why us', h2: 'Why businesses choose Revio.', cols: 3,
       items: [
-        { icon: 'rocket', title: 'We build and run our own AI product', text: 'LeadSignal is our own AI platform: multi-tenant, an approved Meta app, live payments and paying customers, built in eight weeks. We run it every day, so the advice you get comes from operating AI in production, not from a slide.', href: '/work/leadsignal/', meta: 'Read the case study' },
-        { icon: 'data', title: 'It lands in the CRM you already have', text: 'HubSpot, Salesforce, Pipedrive, Zoho, Dynamics, GoHighLevel or an in-house system with an API. Ten years of CRM implementation and data work is why that part is scoped and priced openly, not buried inside a build.', href: '/hubspot-agency/', meta: 'HubSpot services' },
-        { icon: 'pound', title: 'Every price is on the page', text: 'The audit, the pilot, the builds and the monthly support are all published, with what each includes. You can work out whether we fit your budget before a first call, not after a proposal.', href: S.PRICING_URL, meta: 'See pricing' },
+        { icon: 'rocket', title: 'Built by people who run AI in production', text: 'Our team designs, ships and operates AI systems daily, so what we recommend is what we have seen work under real load, real data and real users, and kept working after launch.', href: S.WORK_URL, meta: 'See our work' },
+        { icon: 'data', title: 'It lands in the CRM you already have', text: 'HubSpot, Salesforce, Pipedrive, Zoho, Dynamics, GoHighLevel or an in-house system with an API. Ten years of CRM implementation and data work means the integration is scoped and priced openly as part of every build.', href: '/hubspot-agency/', meta: 'HubSpot services' },
+        { icon: 'pound', title: 'Every price is on the page', text: 'The audit, the pilot, the builds and the monthly support are all published, with what each includes, so you can see whether we fit your budget before the first call.', href: S.PRICING_URL, meta: 'See pricing' },
       ],
     },
     {
