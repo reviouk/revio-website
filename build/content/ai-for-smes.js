@@ -70,7 +70,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'The businesses that get burned by AI are usually the ones that bought the tool before they found the process. We do it the other way round every time.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'cases', kicker: 'Proof, not promises', h2: 'Businesses this size we have already done this for.',

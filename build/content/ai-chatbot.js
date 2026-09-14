@@ -84,7 +84,7 @@ module.exports = {
     {
       type: 'quote',
       text: 'The hard part of a chatbot is not the answering. It is deciding what it is not allowed to say, and building the handover so that the moment it stops being useful, a person is already reading the conversation.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they build one.',

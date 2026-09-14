@@ -85,7 +85,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We built and run our own AI platform, and the reason it is still running a year on is not the model. It is the wiring, the monitoring, and somebody whose job it is to notice. That is what an Embedded AI Lead brings into your business.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they book.',
@@ -95,7 +95,7 @@ module.exports = {
         { q: 'What if our priorities change mid-engagement?', a: 'They will. The backlog is re-scored, the item in build is finished or parked with its notes, and the new priority goes to the top. Capacity is fixed per month; what fills it is yours to direct.' },
         { q: 'Does the monthly fee include building things?', a: 'Yes. The days are delivery days. What is not included is third-party tooling and any large fixed-scope build that would swamp the monthly capacity, which we would quote separately as an AI Build so you can see the number.' },
         { q: 'Can we cancel?', a: 'The initial term is three months, then it is rolling monthly with a review each quarter. Everything is documented as it is built and every licence is in your name, so stopping is a decision rather than a risk.' },
-        { q: 'Who is the lead?', a: 'Rob Wells leads engagements personally, with a named deputy for continuity on the two larger tiers. We do not run a bench of associates, which is why we take on a small number of these at a time.' },
+        { q: 'Who is the lead?', a: 'A senior consultant leads each engagement personally, with a named deputy for continuity on the two larger tiers. We do not run a bench of associates, which is why we take on a small number of these at a time.' },
         { q: 'How does this handle UK GDPR and the EU AI Act?', a: 'The first fortnight produces an AI register, a data-flow map and a written policy on what each system may see and do. Where a system talks to the public, disclosure rules are built in. If you sell into the EU, the AI Act obligations are mapped in the same document.' },
         { q: 'We already have a CTO or an IT provider.', a: 'Good. The lead works alongside them and never around them. Infrastructure, security and access stay with whoever owns them today; the lead owns the AI backlog and its delivery.' },
       ],

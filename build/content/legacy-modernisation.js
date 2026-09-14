@@ -69,7 +69,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'The businesses most at risk are not the ones with no systems. They are the ones with one system, understood by one person, that everything else quietly depends on.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'checks', kicker: 'What is included', h2: 'What comes with a modernisation build.',

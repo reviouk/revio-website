@@ -54,7 +54,7 @@ module.exports = function form(s, SITE, u) {
     ${s.kicker ? `<span class="kicker">${rich(s.kicker)}</span>` : ''}
     <h2>${rich(s.h2 || heading)}</h2>
     <p class="lede mt-md">${rich(s.lede || subline)}</p>
-    ${(s.points || ['A reply from Rob within one working day', 'No sales sequence, no call-booking bot', 'If we are the wrong fit, we will say who is not']).length ? `<ul class="checks mt-md">${(s.points || ['A reply from Rob within one working day', 'No sales sequence, no call-booking bot', 'If we are the wrong fit, we will say who is not']).map((p) => `<li>${rich(p)}</li>`).join('')}</ul>` : ''}
+    ${(s.points || ['A reply from a person within one working day', 'No sales sequence, no call-booking bot', 'If we are the wrong fit, we will say who is not']).length ? `<ul class="checks mt-md">${(s.points || ['A reply from a person within one working day', 'No sales sequence, no call-booking bot', 'If we are the wrong fit, we will say who is not']).map((p) => `<li>${rich(p)}</li>`).join('')}</ul>` : ''}
     <div class="contact-lines">
       <a href="mailto:${SITE.EMAIL}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 8 9 6 9-6"/></svg>${SITE.EMAIL}</a>
       <a href="${SITE.BOOK_URL}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>Rather talk? Pick a slot in the diary</a>

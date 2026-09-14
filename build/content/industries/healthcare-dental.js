@@ -68,7 +68,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We do not let an AI anywhere near a diagnosis, a treatment recommendation, or a clinical record without a clinician in the loop. The value in a clinic is in the hours around the appointment, not the appointment itself.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions clinics ask before they start.',

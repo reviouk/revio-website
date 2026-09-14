@@ -74,7 +74,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We build our own agents on Claude because it holds up over long documents and does not need constant correcting on tone. Rolling it out for a client is mostly the same job: decide what it can see, teach people to use it on real work, then build the bit that should not need a human at all.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they book.',

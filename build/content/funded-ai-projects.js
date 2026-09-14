@@ -65,7 +65,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We tell every client the same thing about grants: plan the project on the assumption none of it arrives, then treat anything that does as a bonus. R&D tax relief is the one route we have seen actually land, reliably, because it rewards work you would be doing anyway.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'checks', kicker: 'What is and is not included', h2: 'Where our work ends and your accountant\'s begins.',

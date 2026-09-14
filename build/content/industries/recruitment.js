@@ -68,7 +68,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'A matching tool that quietly narrows a shortlist in a way you cannot explain to a client, or a tribunal, is worse than no tool at all. We build the automation to surface candidates against the brief, and leave the decision with the consultant.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions agencies ask before they start.',

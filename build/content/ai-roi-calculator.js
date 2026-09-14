@@ -39,7 +39,7 @@ module.exports = {
     },
     {
       type: 'form', tone: 'wash', variant: 'contact', formId: 'calculator', carry: true, kicker: 'Send the numbers',
-      h2: 'Want Rob to sanity-check the result?', lede: 'The calculator figures come with the form. You get a reply within one working day saying whether the number looks right for your kind of business, and what we would do first.',
+      h2: 'Want us to sanity-check the result?', lede: 'The calculator figures come with the form. You get a reply within one working day saying whether the number looks right for your kind of business, and what we would do first.',
       points: ['Your slider values travel with the message', 'One reply from a person', 'No sequence, no follow-up bot'],
     },
     {

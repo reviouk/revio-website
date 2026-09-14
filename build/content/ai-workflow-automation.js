@@ -91,7 +91,7 @@ module.exports = {
     {
       type: 'quote',
       text: 'The automation that saves ten hours a week is worth nothing if it fails in April and nobody notices until June. Monitoring is not an extra on these builds, it is most of the reason they are still running a year later.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they start.',

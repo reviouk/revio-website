@@ -73,7 +73,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'Being on the edge of London rather than in the middle of it is a deliberate choice. It keeps the fee honest and it still gets us into a client\'s office inside forty minutes when that is what the work needs.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'checks', kicker: 'What to expect', h2: 'What is in person, what is not.',

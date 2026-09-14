@@ -127,14 +127,14 @@ module.exports = {
     {
       type: 'quote',
       text: 'A build is finished when somebody who does not work for us can run it, explain it and switch it off. Anything short of that is a demo with an invoice attached.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before commissioning a build.',
       items: [
         { q: 'What are the payment terms?', a: 'Thirty per cent on kick-off, forty per cent at the agreed mid-point, thirty per cent on delivery, each invoiced on fourteen-day terms. Prices exclude VAT. There is no day rate and no time-and-materials billing, so the number on the quote is the number on the invoices.' },
         { q: 'What happens if the scope changes half way through?', a: 'The current build finishes as specified and the new request is priced as its own fixed quote, usually within a day. That is deliberate. Absorbing changes mid-build is how fixed prices quietly become estimates and delivery dates slip past the quarter.' },
-        { q: 'Which CRM and systems do you integrate with?', a: 'HubSpot most often, as a HubSpot Solutions Partner with a decade of work behind it, and regularly Microsoft 365, Salesforce, Xero, Shopify, WooCommerce and bespoke internal systems with an API. If the system has no API we say so before quoting rather than after.' },
+        { q: 'Which CRM and systems do you integrate with?', a: 'HubSpot most often, with a decade of HubSpot work behind it, and regularly Microsoft 365, Salesforce, Xero, Shopify, WooCommerce and bespoke internal systems with an API. If the system has no API we say so before quoting rather than after.' },
         { q: 'Who owns what you build?', a: 'You do. Code, configuration and documentation are yours, and the accounts, API keys and model subscriptions are created in your business name from day one. There is no wrapper you have to keep renting from us in order to keep your own system running.' },
         { q: 'How long until it is actually live?', a: 'A single tool or agent is about a week to build and then two to four weeks running supervised, so roughly a month before it acts alone. A connected application is two to three weeks of build, a platform four to six. Dates are fixed at the scoping session, not estimated.' },
         { q: 'Do we have to take the support agreement?', a: 'No. Thirty days of defect fixes are included and a runbook comes with every build, so an internal team can take it. Support and iteration at ' + P.run + ' a month exists for businesses that would rather we kept watching it, and it can start or stop monthly.' },

@@ -64,7 +64,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We are a small senior team by design, not by accident. At this size a client gets the same two or three people from the first governance workshop to the automation that finally goes live. That continuity is the actual product.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'checks', kicker: 'What we are honest about', h2: 'What a boutique consultancy is, and is not.',

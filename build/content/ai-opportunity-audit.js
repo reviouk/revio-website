@@ -130,7 +130,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'The most useful page in an audit is usually the one that says do not build this. It costs a client nothing to hear it from us in week two, and a great deal to find it out in month five.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they book the audit.',
@@ -141,7 +141,7 @@ module.exports = {
         { q: 'Do we have to build it with you?', a: 'No, and the document is deliberately written to be portable. You own it. Plenty of clients take the top item to an internal team or an existing IT partner. If you do build with us the audit fee comes off the price, but nothing about the findings depends on that.' },
         { q: 'Is this the same as an AI readiness assessment?', a: 'It covers the same ground and then goes further. Readiness assessments usually score you against a maturity model and stop. This one names specific processes in your business, prices the work, and puts them in an order, because a score does not tell anybody what to do on Monday.' },
         { q: 'What if the answer is that AI is not worth it here?', a: 'Then that is what the document says, in a named section, with the reasoning. It happens. Low volumes, a process that needs a fixed rule rather than a model, or data that is not fit to be used yet. Finding that out for a fixed fee in two weeks is a good result, not a wasted one.' },
-        { q: 'Who runs it?', a: 'Rob Wells runs the interviews and writes the findings, with the same senior team that builds. Nobody hands your business to a junior analyst and a template, which is also why we only run a small number of these at a time.' },
+        { q: 'Who runs it?', a: 'The senior consultant who would build the work runs the interviews and writes the findings, with the same team that builds. Nobody hands your business to a junior analyst and a template, which is also why we only run a small number of these at a time.' },
         { q: 'How soon can you start?', a: 'Usually within two weeks of a signed order, sometimes sooner. The fortnight itself is fixed once it starts, so you know the date you will have the answer before you commit to anything.' },
       ],
     },

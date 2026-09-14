@@ -69,7 +69,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'Most founders can tell you what their app does. Very few can tell you what happens when it goes wrong. The audit answers that second question in writing, before it becomes an incident.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'checks', kicker: 'What this is not', h2: 'A short, honest report, not a long engagement.',

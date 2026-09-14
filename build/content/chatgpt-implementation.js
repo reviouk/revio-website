@@ -73,7 +73,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'The businesses that get value from ChatGPT are not the ones with the most seats. They are the ones where someone decided what it was for, built two or three GPTs on real material, and checked back in a month later.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they book.',

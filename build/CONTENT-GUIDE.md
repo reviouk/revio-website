@@ -6,8 +6,7 @@ object. The renderer (`build/render.js`) turns it into HTML. Copy the shape of
 
 ## Who Revio is (facts you may use)
 - Revio: UK agency, Borehamwood (Hertfordshire, London edge). Founder Rob Wells.
-  Small senior team. A decade of HubSpot / RevOps / CRM work. HubSpot Solutions
-  Partner. Since 2024 an AI consultancy: audit, build, embedded lead, training.
+  Small senior team. A decade of HubSpot / RevOps / CRM work. Since 2024 an AI consultancy: audit, build, embedded lead, training.
 - Proof: Revio designed, built and runs its own multi-tenant AI product,
   **LeadSignal** (AI setter for Instagram / Facebook / WhatsApp / SMS DMs:
   answers, qualifies, scores, books, attributes). Built in eight weeks, has an

@@ -69,7 +69,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We do not ask a client to trust a method we have not bet our own product on. LeadSignal runs on the same process, the same tests and the same standards as anything we build for someone else.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'checks', kicker: 'What is included', h2: 'What comes with every build.',

@@ -68,7 +68,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'In this sector the win is never the flashy agent, it is the hour a planner gets back because the quote is already half-drafted and the POD is already filed. That is where we start every time.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions transport operators ask before they start.',

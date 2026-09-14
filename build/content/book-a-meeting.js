@@ -2,14 +2,14 @@ const S = require('../site');
 
 module.exports = {
   slug: 'book-a-meeting',
-  title: 'Book a Meeting with Rob at Revio: 30 Minutes on Teams | Revio',
-  description: 'Pick a 30-minute slot with Rob Wells on Microsoft Teams. No pitch: an honest look at where AI would pay in your business, your CRM, and what to do first.',
+  title: 'Book a Meeting with Revio: 30 Minutes on Teams | Revio',
+  description: 'Pick a 30-minute slot with Revio on Microsoft Teams. No pitch: an honest look at where AI would pay in your business, your CRM, and what to do first.',
   keywords: ['book ai consultation uk', 'book a meeting ai consultant', 'free ai consultation uk', 'talk to an ai consultant'],
   crumbLabel: 'Book a meeting',
   utility: true,
   art: 'clock',
   badge: 'Book a meeting',
-  h1: 'Thirty minutes with Rob, <em class="mint">straight into the diary</em>.',
+  h1: 'Thirty minutes with us, <em class="mint">straight into the diary</em>.',
   sub: 'No pitch and no deck. Bring the job that eats the most time or the enquiry you keep missing, and leave knowing whether it is worth building, roughly what it costs, and what we would do first. If the honest answer is "not yet", you get that too.',
   ctas: [
     { label: 'Pick a time below', href: '#diary', style: 'mint' },
@@ -29,7 +29,7 @@ module.exports = {
     {
       type: 'faq', kicker: 'Practical', h2: 'About the meeting.',
       items: [
-        { q: 'Who will I be talking to?', a: 'Rob Wells, Revio’s founder, who leads every engagement. Not a sales development rep, and not somebody who hands you to somebody else afterwards.' },
+        { q: 'Who will I be talking to?', a: 'A senior Revio consultant who leads engagements, the same person who would do the work. Not a sales development rep, and not somebody who hands you to somebody else afterwards.' },
         { q: 'Is it really free?', a: 'Yes. Thirty minutes, no charge, no obligation. Paid work starts with the audit or a scoping session, and only if the call suggests it is worth it.' },
         { q: 'Can I bring colleagues?', a: 'Please do. Forward the invitation. The best calls have the person who owns the budget and the person who does the work both in the room.' },
         { q: 'What if I need to move it?', a: 'The confirmation email has a reschedule link. Use it as often as you need.' },

@@ -9,7 +9,7 @@ module.exports = {
   art: 'chat',
   badge: 'Contact',
   h1: 'Tell us what is going on. <em class="mint">A person replies</em>.',
-  sub: 'Two or three sentences about the job that eats the most time, or the enquiry you keep missing, is plenty. Rob reads every message and replies within one working day. If you would rather talk, the diary is open.',
+  sub: 'Two or three sentences about the job that eats the most time, or the enquiry you keep missing, is plenty. A person reads every message and replies within one working day. If you would rather talk, the diary is open.',
   ctas: [
     { label: 'Book a Teams meeting', href: S.BOOK_URL, style: 'mint' },
     { label: 'Write to us below', href: '#form', style: 'ghost' },
@@ -20,7 +20,7 @@ module.exports = {
     {
       type: 'cards', tone: 'wash', kicker: 'Other ways in', h2: 'Pick whichever suits.', cols: 3,
       items: [
-        { icon: 'calendar', title: 'Book a meeting', text: 'Thirty minutes on Microsoft Teams with Rob. Pick a slot and the invitation arrives with the link.', href: S.BOOK_URL, meta: 'Open the diary' },
+        { icon: 'calendar', title: 'Book a meeting', text: 'Thirty minutes on Microsoft Teams with a senior consultant. Pick a slot and the invitation arrives with the link.', href: S.BOOK_URL, meta: 'Open the diary' },
         { icon: 'mail', title: 'Email', text: S.EMAIL + '. Goes to a person, not a ticketing queue.', href: 'mailto:' + S.EMAIL, meta: 'Send an email' },
         { icon: 'pound', title: 'Work out the return first', text: 'Two minutes with the calculator and you arrive knowing roughly what the answer is worth.', href: S.CALC_URL, meta: 'AI ROI calculator' },
       ],
@@ -28,12 +28,12 @@ module.exports = {
     {
       type: 'split', art: 'network', kicker: 'Where we are', h2: 'Borehamwood, on the edge of London.',
       body: ['Imperial Place, 4 Maxwell Road, Borehamwood WD6 1JN. Twenty minutes from St Pancras on Thameslink to Elstree &amp; Borehamwood, and a mile from junction 23 of the M25. Most work is remote; on-site days are by arrangement across London and the Home Counties.'],
-      bullets: ['Registered in England and Wales', 'HubSpot Solutions Partner', 'Meeting invitations come from rob@revio.agency'],
+      bullets: ['Registered in England and Wales', 'A decade of HubSpot and RevOps work', 'Meeting invitations come from rob@revio.agency'],
     },
     {
       type: 'faq', kicker: 'Before you write', h2: 'Things people ask at this point.',
       items: [
-        { q: 'How quickly will I hear back?', a: 'Within one working day, from Rob, by email. If the message arrives on a Friday afternoon it is Monday morning.' },
+        { q: 'How quickly will I hear back?', a: 'Within one working day, from a person, by email. If the message arrives on a Friday afternoon it is Monday morning.' },
         { q: 'Do I need to know what I want yet?', a: 'No. "Our quoting takes forever and I do not know if AI helps" is a perfectly good message. Finding out is what the audit is for.' },
         { q: 'Will I be added to a mailing list?', a: 'No. The form goes into our delivery system, a reply comes from a person, and that is the extent of it.' },
         { q: 'Is the first call free?', a: 'Yes. Thirty minutes on Teams, no charge and no obligation. If there is nothing worth building, we say so on the call.' },

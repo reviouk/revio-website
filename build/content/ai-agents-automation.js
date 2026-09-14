@@ -123,7 +123,7 @@ module.exports = {
     {
       type: 'quote',
       text: 'The question we ask before building any agent is what happens on its worst day. If nobody can answer that, we are not ready to build it yet, whatever the demo looked like.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask about AI agents.',

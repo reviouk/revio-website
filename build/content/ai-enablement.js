@@ -77,7 +77,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'We measure our own AI features the same way we ask clients to measure training: not by whether the demo went well, but by whether anyone was still using it a quarter later. Training that is not checked at 30 days is a guess dressed up as a plan.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they book.',

@@ -16,7 +16,7 @@ module.exports = {
     { label: 'Start with the audit', href: S.AUDIT_URL, style: 'ghost' },
   ],
   heroProof: ['Published prices, no day rate', 'Tooling and licences in your own name', 'We built and run our own AI platform, so we have done this under load'],
-  heroNote: 'Borehamwood, on the London edge. HubSpot Solutions Partner. All prices exclude VAT.',
+  heroNote: 'Borehamwood, on the London edge. All prices exclude VAT.',
   service: { name: 'AI consultancy services', type: 'AI consultancy', price: P.audit_num },
   sections: [
     {
@@ -113,14 +113,14 @@ module.exports = {
     {
       type: 'quote',
       text: 'We publish every price because the thing clients are actually buying is certainty. If we cannot say what something costs before we start, we probably do not understand it well enough to build it.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before getting in touch.',
       items: [
         { q: 'Where should we start?', a: 'With the audit if you have several ideas and no agreed order: two weeks, ' + P.audit + ', and the fee comes off whatever you build. With a scoping session at ' + P.scoping + ' if you already know the one process. With an Embedded AI Lead from ' + P.lead_1 + ' a month if the work is ongoing and nobody internally owns it.' },
         { q: 'Do you publish your prices?', a: 'Yes, all of them, on this site and on the pricing page. Audit ' + P.audit + ', builds from ' + P.build_from + ', connected applications ' + P.build_mid + ', platforms ' + P.build_big + ', Embedded AI Lead from ' + P.lead_1 + ' a month. There is no day rate and no second price list for larger clients.' },
-        { q: 'Which CRMs and systems do you work with?', a: 'HubSpot most often, as a HubSpot Solutions Partner with a decade of CRM and RevOps work behind us, and regularly Microsoft 365, Salesforce, Xero, Shopify, WooCommerce and internal systems with an API. If a system has no API we say so before quoting rather than after.' },
+        { q: 'Which CRMs and systems do you work with?', a: 'HubSpot most often, with a decade of HubSpot, CRM and RevOps work behind us, and regularly Microsoft 365, Salesforce, Xero, Shopify, WooCommerce and internal systems with an API. If a system has no API we say so before quoting rather than after.' },
         { q: 'Who owns the tools and the accounts?', a: 'You do. Model subscriptions, API keys and third-party accounts are created in your business name from the start, and documentation comes with every build. Nothing we build depends on a wrapper you have to keep renting from us in order to keep using your own system.' },
         { q: 'How quickly can something be live?', a: 'A single tool or agent is about a week to build, then two to four weeks running supervised, so roughly a month before it acts alone. A connected application is two to three weeks of build, a platform four to six. Dates are fixed at scoping rather than estimated.' },
         { q: 'What makes you different from a general digital agency?', a: 'We build and run an AI product of our own, so the parts that decide whether a system survives its first year, monitoring, cost caps, handback rules, audit trails, are things we have had to get right under real load rather than read about. And we say out loud where AI is the wrong answer.' },

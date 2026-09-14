@@ -87,7 +87,7 @@ module.exports = {
     {
       type: 'quote',
       text: 'Every governance pack we write gets used for something commercial within three months. A tender, an insurance renewal, a customer contract. That is the argument for doing it, not the fear of a fine.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions boards ask.',

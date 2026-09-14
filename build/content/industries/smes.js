@@ -68,7 +68,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'The businesses that get the most out of AI are not the ones with the biggest budget, they are the ones who let us find the one process worth fixing first instead of buying a platform and hoping.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions small business owners ask before they start.',

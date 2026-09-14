@@ -103,7 +103,7 @@ module.exports = {
     {
       type: 'quote',
       text: 'If a strategy cannot be read in ten minutes and started in a week, it is not a strategy. It is a way of postponing the decision until somebody else is in the chair.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask about AI strategy work.',
@@ -115,7 +115,7 @@ module.exports = {
         { q: 'Can we use the strategy with a different supplier?', a: 'Yes, and it is written so you can. It names processes, costs and sequence rather than proprietary method, and every price in it is published on this site so another supplier can be measured against it. Plenty of clients take item one to an internal team.' },
         { q: 'How often should it be revisited?', a: 'Quarterly for the order of work, annually for the shape. Model capability and pricing move fast enough that an eighteen-month roadmap with fixed technology choices is fiction. What stays stable is the list of processes that cost you money, which is why we anchor the plan there.' },
         { q: 'We are a small business. Is this overkill?', a: 'Under about £1m of turnover it usually is. At that size the right spend is normally one small build on the single process that eats the most time. We will say so on the call rather than sell a planning exercise to a business with one obvious answer.' },
-        { q: 'Who writes it?', a: 'Rob Wells, with the same senior team that would build the work. That is the point: the person recommending the sequence has to live with it, quote it at a fixed price and deliver it on the date they gave you.' },
+        { q: 'Who writes it?', a: 'The senior consultant who would build the work, with the same team behind them. That is the point: the person recommending the sequence has to live with it, quote it at a fixed price and deliver it on the date they gave you.' },
       ],
     },
     {

@@ -69,7 +69,7 @@ module.exports = {
     {
       type: 'quote', tone: 'wash',
       text: 'The apps that fail are usually not badly written. They are unfinished in the ways a demo never tests: who can see what, what happens when the database gets busy, what happens when it breaks at 2am. That is the part we add.',
-      who: 'Rob Wells', role: 'Founder, Revio',
+      who: 'Revio', role: 'The team that builds and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they book.',

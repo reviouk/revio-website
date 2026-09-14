@@ -41,7 +41,7 @@ module.exports = function calculator(s, SITE, u) {
     </div>
     <div class="calc-fit"><b>Fit against the published prices</b><span id="o-fit-text"></span> <a id="o-fit-link" href="${SITE.AUDIT_URL}" style="color:var(--purple);font-weight:600">See that page</a></div>
     <p class="calc-note">Assumes 46 working weeks, 60% of missed enquiries recoverable with fast answers, and nothing for quality gains, staff churn or growth. Every figure comes from the sliders; nothing is stored until you choose to send it.</p>
-    <a class="btn btn-mint" href="#form">Send these numbers to Rob</a>
+    <a class="btn btn-mint" href="#form">Send these numbers to us</a>
   </div>
 </div></div></section>`;
 };

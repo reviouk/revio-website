@@ -143,7 +143,7 @@
               '/hubspot-integrations/', '/sales-enablement/'],
       cards: [
         { href: '/hubspot-consultancy/', icon: ICON.hubspot, title: 'Consultancy &amp; Audit',
-          blurb: 'Where the portal is costing you money, and what to do about it. From a Solutions Partner who has done this for a decade.',
+          blurb: 'Where the portal is costing you money, and what to do about it. From people who have done this for a decade.',
           label: 'Start here',
           items: ['Free portal health check', 'Strategy, not a feature tour'] },
         { href: '/hubspot-sales-hub-implementation/', icon: ICON.hubspot, title: 'Hub Implementation',
@@ -360,7 +360,7 @@
       '<div class="flabel">Ask or email us</div>' +
       '<a class="fmail" href="mailto:grow@revio.agency">grow@revio.agency</a>' +
       '<div class="fsocial">' + social + '</div>' +
-      '<div class="fbadges"><span class="fbadge"><i></i>HubSpot Solutions Partner</span>' +
+      '<div class="fbadges"><span class="fbadge"><i></i>A decade of HubSpot work</span>' +
       '<span class="fbadge"><i></i>Meta approved integration</span></div></div>' +
       cols + '</div></div>' +
       '<div class="fbot"><span>&copy; <span id="revio-yr">2026</span> Revio. All rights reserved.</span>' +
