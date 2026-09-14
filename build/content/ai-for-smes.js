@@ -89,7 +89,7 @@ module.exports = {
         { q: 'How fast will we see something working?', a: 'Two weeks for the audit, then typically two to six weeks for the first build to ship, depending on its size.' },
         { q: 'Do we need technical people on our side?', a: 'No. Most SME clients have no technical team at all. We work with whoever runs the process day to day and build for them.' },
         { q: 'What is the smallest useful engagement?', a: `The AI Opportunity Audit at ${P.audit} is the smallest, and the right starting point if you are not yet sure where the money is.` },
-        { q: 'Will you tell us if AI is the wrong answer?', a: 'Yes. A cheaper piece of off-the-shelf software or simply fixing a broken process is sometimes the real fix, and we say so rather than building something to justify the fee.' },
+        { q: 'Will you tell us if AI is the wrong answer?', a: 'Yes. A lower-cost piece of off-the-shelf software or simply fixing a broken process is sometimes the real fix, and we say so rather than building something to justify the fee.' },
       ],
     },
     {

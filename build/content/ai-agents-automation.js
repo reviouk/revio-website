@@ -30,7 +30,7 @@ module.exports = {
     },
     {
       type: 'cards', tone: 'wash', kicker: 'Three patterns', h2: 'The three shapes of agent we build.',
-      lede: 'In that order, usually. Internal first, customer-facing last, because trust has to be earned somewhere cheap.',
+      lede: 'In that order, usually. Internal first, customer-facing last, because trust has to be earned somewhere low-stakes.',
       items: [
         { icon: 'flow', title: 'Internal workflow agents', text: 'They sit in the middle of a process your team already runs: triaging the shared inbox into the CRM, routing a job to the right engineer, drafting the quote from precedent, keeping the pipeline honest. Low risk, high volume, and the fastest payback of the three.', meta: P.build_from },
         { icon: 'doc', title: 'Research and back-office agents', text: 'They read. Invoices, contracts, applications, specifications, tender packs, supplier emails. Fields are extracted with a confidence score, posted into the system that needs them, and anything borderline lands in a human queue rather than being guessed at.', meta: P.build_from },
@@ -113,7 +113,7 @@ module.exports = {
       no: {
         title: 'Use something simpler',
         items: [
-          'A fixed rule would do it, in which case a rule is cheaper and more reliable',
+          'A fixed rule would do it, in which case a rule costs less and is more reliable',
           'The volume is a handful of cases a month',
           'The decision is regulated to the point that a person must make it anyway',
           'Nobody can say what a correct outcome looks like, which makes it untestable',

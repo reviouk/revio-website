@@ -104,14 +104,14 @@ module.exports = {
     {
       type: 'related', kicker: 'Related services', h2: 'Where this leads.',
       items: [
-        { href: '/ai-governance-compliance/', icon: 'shield', title: 'AI Governance & Compliance', text: 'The register, the policy, the data-flow map and the audit trail. Often the cheaper answer, and always bought alongside.', meta: P.governance },
+        { href: '/ai-governance-compliance/', icon: 'shield', title: 'AI Governance & Compliance', text: 'The register, the policy, the data-flow map and the audit trail. Often the lighter answer, and always bought alongside.', meta: P.governance },
         { href: '/industries/professional-services/', icon: 'brief', title: 'Professional services', text: 'How this lands in solicitors, accountants and advisory firms, with the supervision question answered.', meta: 'Sector page' },
         { href: '/industries/financial-services/', icon: 'bank', title: 'Financial services', text: 'IFAs, wealth and pensions firms, where suitability files and consumer duty shape what AI may touch.', meta: 'Sector page' },
       ],
     },
     {
       type: 'cta', h2: 'Tell us which clause is driving this.',
-      text: 'Thirty minutes with the partner or director who owns the risk is usually enough to decide between a private deployment, an enterprise agreement, and a written policy. Two of those three are cheaper than this page.',
+      text: 'Thirty minutes with the partner or director who owns the risk is usually enough to decide between a private deployment, an enterprise agreement, and a written policy. Two of those three cost less than this page.',
       ctas: [{ label: 'Book a meeting', href: S.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: S.CONTACT_URL, style: 'ghost' }],
       note: 'Prices exclude VAT and exclude hosting, which is contracted in your own name.',
     },

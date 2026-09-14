@@ -139,7 +139,7 @@ module.exports = {
         { q: 'How long until it is actually live?', a: 'A single tool or agent is about a week to build and then two to four weeks running supervised, so roughly a month before it acts alone. A connected application is two to three weeks of build, a platform four to six. Dates are fixed at the scoping session, not estimated.' },
         { q: 'Do we have to take the support agreement?', a: 'No. Thirty days of defect fixes are included and a runbook comes with every build, so an internal team can take it. Support and iteration at ' + P.run + ' a month exists for businesses that would rather we kept watching it, and it can start or stop monthly.' },
         { q: 'How do you stop it doing something stupid or expensive?', a: 'Three ways, all built in. A written scope of the actions it is permitted to take, an approval queue for anything outside them, and hard cost caps with alerting on model usage. The supervised period exists to find the edge cases while a person is still checking every action.' },
-        { q: 'Can you take over something another supplier built?', a: 'Often, yes. That usually starts with the AI app diagnostic at ' + P.diagnostic + ', which tells you honestly whether the existing work is worth rescuing or whether it is cheaper to rebuild the part that matters.' },
+        { q: 'Can you take over something another supplier built?', a: 'Often, yes. That usually starts with the AI app diagnostic at ' + P.diagnostic + ', which tells you honestly whether the existing work is worth rescuing or whether it costs less to rebuild the part that matters.' },
       ],
     },
     {

@@ -25,7 +25,7 @@ module.exports = {
       h2: 'Everybody has a list of AI ideas. Almost nobody has them in the right order.',
       body: [
         'The usual position is not scepticism. It is noise. Three people have shown the board a different tool, one department has a subscription nobody is measuring, and a supplier has quoted for something that sounds expensive and looks vague. The question is no longer whether AI does anything useful. It is which of the forty things is worth doing first, in this business, with these systems and these people.',
-        'The AI Opportunity Audit answers that in two weeks for a fixed fee. We look at how work actually moves through your business, count where skilled time goes, and come back with a ranked list you can act on or hand to somebody else. It is deliberately small: cheap enough to be a sensible first step, short enough that the answer is still current when you get it.',
+        'The AI Opportunity Audit answers that in two weeks for a fixed fee. We look at how work actually moves through your business, count where skilled time goes, and come back with a ranked list you can act on or hand to somebody else. It is deliberately small: priced to be a sensible first step, short enough that the answer is still current when you get it.',
       ],
     },
     {

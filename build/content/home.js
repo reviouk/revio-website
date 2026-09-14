@@ -124,7 +124,7 @@ module.exports = {
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What people ask first.',
       items: [
-        { q: 'We are not sure AI is right for us at all.', a: 'Good. That is what the audit is for, and it is the cheapest way to find out. A fair number end with "automate two things and leave the rest alone", which is a real answer, and you get it in writing.' },
+        { q: 'We are not sure AI is right for us at all.', a: 'Good. That is what the audit is for, and it is the smallest, quickest way to find out. A fair number end with "automate two things and leave the rest alone", which is a real answer, and you get it in writing.' },
         { q: 'Do we have to replace our CRM?', a: 'No. The system is built around your process, not around a vendor. We know HubSpot best and will say so, but it has never been a condition of working with us.' },
         { q: 'How quickly does something actually run?', a: 'Two weeks for the audit, then typically two to six for the first working version, depending on what the data turns up. You see it running on your own records, supervised, before it is allowed to act on its own.' },
         { q: 'What happens to our data?', a: 'It stays yours, in your systems, and we write down what the AI is allowed to see and do before anything is switched on. That document is part of the build, not an afterthought.' },

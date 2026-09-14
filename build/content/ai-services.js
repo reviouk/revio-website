@@ -45,7 +45,7 @@ module.exports = {
         { icon: 'training', title: 'AI Enablement & Training', text: 'Training your people on the tools they actually have, by department, with a written playbook rather than a generic webinar.', meta: P.training_day + ' a day', href: '/ai-enablement/' },
         { icon: 'lock', title: 'Private AI', text: 'Models running in your own tenancy or on your own infrastructure, for firms whose data cannot leave the building.', meta: P.private_ai, href: '/private-ai/' },
         { icon: 'shield', title: 'AI Governance & Compliance', text: 'The AI register, the policy, the data-flow map and the audit trail, in a form your own team can maintain.', meta: P.governance, href: '/ai-governance-compliance/' },
-        { icon: 'repair', title: 'AI App Rescue', text: 'A build that stalled, broke, or lost its supplier. Diagnosed honestly, then either fixed or rebuilt where that is cheaper.', meta: P.diagnostic, href: '/ai-app-rescue/' },
+        { icon: 'repair', title: 'AI App Rescue', text: 'A build that stalled, broke, or lost its supplier. Diagnosed honestly, then either fixed or rebuilt where that costs less.', meta: P.diagnostic, href: '/ai-app-rescue/' },
         { icon: 'server', title: 'Legacy Modernisation', text: 'Old systems opened up so something modern can read and write to them, starting with a discovery that says whether it is worth it.', meta: P.legacy_discovery, href: '/legacy-modernisation/' },
         { icon: 'grant', title: 'Funded AI Projects', text: 'Grant and funding routes for UK AI projects, and what a funder actually needs to see before they will consider one.', meta: 'Eligibility first', href: '/funded-ai-projects/' },
       ],
@@ -125,7 +125,7 @@ module.exports = {
         { q: 'How quickly can something be live?', a: 'A single tool or agent is about a week to build, then two to four weeks running supervised, so roughly a month before it acts alone. A connected application is two to three weeks of build, a platform four to six. Dates are fixed at scoping rather than estimated.' },
         { q: 'What makes you different from a general digital agency?', a: 'We build and run an AI product of our own, so the parts that decide whether a system survives its first year, monitoring, cost caps, handback rules, audit trails, are things we have had to get right under real load rather than read about. And we say out loud where AI is the wrong answer.' },
         { q: 'Do you work outside the UK?', a: 'Most clients are UK-based and we are in Borehamwood on the London edge, but the work is delivered remotely with on-site days by agreement. If you sell into the EU we map the EU AI Act obligations alongside UK GDPR as part of the governance work.' },
-        { q: 'What if we already have something half-built?', a: 'That is common. The AI app diagnostic at ' + P.diagnostic + ' looks at what exists and tells you whether it is worth rescuing or whether rebuilding the part that matters is cheaper. Either way you get a straight answer and a price before any further work.' },
+        { q: 'What if we already have something half-built?', a: 'That is common. The AI app diagnostic at ' + P.diagnostic + ' looks at what exists and tells you whether it is worth rescuing or whether rebuilding the part that matters costs less. Either way you get a straight answer and a price before any further work.' },
       ],
     },
     {

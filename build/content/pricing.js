@@ -36,7 +36,7 @@ module.exports = {
         ['<a href="/ai-chatbot/">AI chatbot</a>', P.chatbot, '1 – 3 weeks', 'Configured on your own material, hands to a human, writes to the CRM. Custom and multi-channel tiers above.'],
         ['<a href="/voice-ai/">Voice AI</a>', P.voice, '2 – 4 weeks', 'Inbound answering, out-of-hours, booking and call notes into the CRM.'],
         ['<a href="/private-ai/">Private AI deployment</a>', P.private_ai, '2 – 4 weeks', 'Models in your own tenant or on your own hardware, for work that must not leave the building. Hosting in your name.'],
-        ['<a href="/ai-governance-compliance/">Governance & compliance pack</a>', P.governance, '2 weeks', 'AI register, policy, data-flow map, UK GDPR and EU AI Act readiness. Cheaper alongside a build.'],
+        ['<a href="/ai-governance-compliance/">Governance & compliance pack</a>', P.governance, '2 weeks', 'AI register, policy, data-flow map, UK GDPR and EU AI Act readiness. Lower cost alongside a build.'],
         ['<a href="/legacy-modernisation/">Legacy modernisation discovery</a>', P.legacy_discovery, '2 weeks', 'What replaces the Access database or the spreadsheet operation, and what it costs. Credited against the build.'],
         ['<a href="/hubspot-agency/">Data configuration</a>', P.data, 'Quoted after a look inside', 'Dedupe rules, field mapping, ownership and attribution. Fixed once we have seen your CRM, never before.'],
       ],
@@ -101,7 +101,7 @@ module.exports = {
       ],
     },
     {
-      type: 'cta', h2: 'Start with the cheapest thing on the page.',
+      type: 'cta', h2: 'Start with the smallest step on the page.',
       text: 'Two weeks, from £1,500, and a written answer on whether any of the rest is worth it.',
       ctas: [{ label: 'Book the audit', href: S.AUDIT_URL, style: 'mint' }, { label: 'Talk to us first', href: S.BOOK_URL, style: 'ghost' }],
     },
