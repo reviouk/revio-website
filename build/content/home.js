@@ -84,11 +84,11 @@ module.exports = {
       ctas: [{ label: 'See how builds are priced', href: '/ai-implementation/', style: 'dark' }],
     },
     {
-      type: 'cards', tone: 'wash', kicker: 'Why us', h2: 'Three things most AI consultancies cannot say.', cols: 3,
+      type: 'cards', tone: 'wash', kicker: 'Why us', h2: 'Why businesses choose Revio.', cols: 3,
       items: [
-        { icon: 'rocket', title: 'We build and run our own AI product', text: 'LeadSignal is a live multi-tenant platform with an approved Meta app, real payments and paying customers. We built it in eight weeks and we are the ones woken up when it breaks. Most firms selling AI have shipped a deck.', href: '/work/leadsignal/', meta: 'Read the case study' },
-        { icon: 'data', title: 'It lands in the CRM you already have', text: 'HubSpot, Salesforce, Pipedrive, Zoho, Dynamics, GoHighLevel or something in-house with an API. A decade of cleaning up CRMs is why the data work is priced in the open rather than hidden inside a build.', href: '/hubspot-agency/', meta: 'HubSpot services' },
-        { icon: 'pound', title: 'Every price is on the page', text: 'There is a whole industry whose first number arrives after a discovery call, a proposal and a chase. Ours are published, including the ones that make us look expensive.', href: S.PRICING_URL, meta: 'See pricing' },
+        { icon: 'rocket', title: 'We build and run our own AI product', text: 'LeadSignal is our own AI platform: multi-tenant, an approved Meta app, live payments and paying customers, built in eight weeks. We run it every day, so the advice you get comes from operating AI in production, not from a slide.', href: '/work/leadsignal/', meta: 'Read the case study' },
+        { icon: 'data', title: 'It lands in the CRM you already have', text: 'HubSpot, Salesforce, Pipedrive, Zoho, Dynamics, GoHighLevel or an in-house system with an API. Ten years of CRM implementation and data work is why that part is scoped and priced openly, not buried inside a build.', href: '/hubspot-agency/', meta: 'HubSpot services' },
+        { icon: 'pound', title: 'Every price is on the page', text: 'The audit, the pilot, the builds and the monthly support are all published, with what each includes. You can work out whether we fit your budget before a first call, not after a proposal.', href: S.PRICING_URL, meta: 'See pricing' },
       ],
     },
     {
