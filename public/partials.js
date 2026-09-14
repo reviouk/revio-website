@@ -47,7 +47,17 @@
     work:    ic('<rect x="3" y="7" width="18" height="13" rx="3"/><path d="M9 7V5h6v2"/>'),
     testi:   ic('<path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="m8 12 3 3 6-7"/>'),
     news:    ic('<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7"/>'),
-    book:    ic('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/>')
+    book:    ic('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/>'),
+    flow:    ic('<rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h4a3 3 0 0 1 3 3v4"/>'),
+    chat:    ic('<path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H9l-5 4z"/><path d="M8 8h8M8 12h5"/>'),
+    voice:   ic('<path d="M4 12h2M8 8v8M12 5v14M16 8v8M20 12h-2"/>'),
+    layers:  ic('<path d="M12 3 4 7l8 4 8-4z"/><path d="m4 12 8 4 8-4M4 17l8 4 8-4"/>'),
+    lock:    ic('<rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+    shield:  ic('<path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/>'),
+    repair:  ic('<path d="M14.8 4.6a4 4 0 0 0 5.1 5.2l-8.3 8.3a2.4 2.4 0 0 1-3.4-3.4z"/><path d="m6.5 17.5-1.7 1.7"/>'),
+    server:  ic('<rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/>'),
+    training: ic('<path d="M3 8l9-4 9 4-9 4z"/><path d="M7 10v5c0 1.7 2.2 3 5 3s5-1.3 5-3v-5M21 8v5"/>'),
+    grid:    ic('<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>')
   };
 
   /* ---------- the brand mark ----------
@@ -102,20 +112,24 @@
           label: 'Fixed price',
           items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] }
       ],
-      links: [
-        { href: '/ai-agents-automation/', label: 'Agents &amp; automation' },
-        { href: '/ai-workflow-automation/', label: 'Workflow automation' },
-        { href: '/ai-chatbot/', label: 'AI chatbots' },
-        { href: '/voice-ai/', label: 'Voice AI' },
-        { href: '/claude-implementation/', label: 'Claude' },
-        { href: '/chatgpt-implementation/', label: 'ChatGPT' },
-        { href: '/microsoft-copilot-implementation/', label: 'Copilot' },
-        { href: '/ai-enablement/', label: 'Training' },
-        { href: '/private-ai/', label: 'Private AI' },
-        { href: '/ai-governance-compliance/', label: 'Governance' },
-        { href: '/ai-app-rescue/', label: 'App rescue' },
-        { href: '/legacy-modernisation/', label: 'Legacy modernisation' },
-        { href: '/ai-services/', label: 'All AI services' }
+      rowsTitle: 'Every AI service',
+      rows: [
+        { href: '/ai-agents-automation/', icon: ICON.agents, title: 'Agents &amp; automation', desc: 'Answer, qualify, book, act in your systems' },
+        { href: '/ai-workflow-automation/', icon: ICON.flow, title: 'Workflow automation', desc: 'The copy-paste between systems, gone' },
+        { href: '/ai-chatbot/', icon: ICON.chat, title: 'AI chatbots', desc: 'Web, WhatsApp and DMs, on your material' },
+        { href: '/voice-ai/', icon: ICON.voice, title: 'Voice AI', desc: 'Calls answered, booked, noted' },
+        { href: '/claude-implementation/', icon: ICON.layers, title: 'Claude', desc: 'Rollout, projects, API builds' },
+        { href: '/chatgpt-implementation/', icon: ICON.chat, title: 'ChatGPT', desc: 'Team workspace, custom GPTs, controls' },
+        { href: '/microsoft-copilot-implementation/', icon: ICON.consult, title: 'Microsoft Copilot', desc: 'Permissions fixed, agents, adoption' },
+        { href: '/ai-enablement/', icon: ICON.training, title: 'Training &amp; enablement', desc: 'A programme, not a workshop' },
+        { href: '/private-ai/', icon: ICON.lock, title: 'Private AI', desc: 'Your tenant or your hardware' },
+        { href: '/ai-governance-compliance/', icon: ICON.shield, title: 'Governance &amp; compliance', desc: 'Register, policy, audit trail' },
+        { href: '/ai-app-rescue/', icon: ICON.repair, title: 'AI app rescue', desc: 'Lovable, Bolt, Replit, Cursor apps fixed' },
+        { href: '/legacy-modernisation/', icon: ICON.server, title: 'Legacy modernisation', desc: 'Access, spreadsheets, dying SaaS replaced' },
+        { href: '/ai-strategy/', icon: ICON.growth, title: 'AI strategy', desc: 'A one-page plan with the first three builds' },
+        { href: '/funded-ai-projects/', icon: ICON.data, title: 'Funded AI projects', desc: 'R&amp;D relief, KTP, grants' },
+        { href: '/ai-roi-calculator/', icon: ICON.growth, title: 'AI ROI calculator', desc: 'What it would return for you' },
+        { href: '/ai-services/', icon: ICON.grid, title: 'All AI services', desc: 'The whole list, with prices' }
       ]
     },
     {
@@ -232,8 +246,11 @@
 
   function megaHTML(item) {
     if (item.shape === 'cards') {
-      return '<div class="mega"><div class="mega-cards">' +
+      return '<div class="mega' + (item.rows ? ' mega-wide' : '') + '"><div class="mega-cards">' +
         item.cards.map(cardHTML).join('') + '</div>' +
+        (item.rows ? '<div class="mega-rows">' +
+          (item.rowsTitle ? '<div class="mega-rows-title">' + item.rowsTitle + '</div>' : '') +
+          '<div class="mega-grid cols-4">' + item.rows.map(rowHTML).join('') + '</div></div>' : '') +
         (item.links ? '<div class="mega-links">' + item.links.map(function (l) {
           return '<a href="' + l.href + '">' + l.label + '</a>';
         }).join('') + '</div>' : '') + '</div>';

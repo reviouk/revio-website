@@ -1290,3 +1290,12 @@ a.card:focus-visible { outline-offset: 0; }
   .fbrand { grid-column: 1 / -1; }
   .fbot { padding: 16px 20px 22px; }
 }
+
+/* ---------- AI Services mega menu: cards + every service as icon rows ---------- */
+.mega-rows { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.mega-rows-title { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin: 0 0 8px 12px; }
+.mega-grid.cols-4 { grid-template-columns: repeat(4, 1fr); gap: 2px 14px; }
+.mega-grid.cols-4 .mrow { padding: 9px 12px; }
+.mega-grid.cols-4 .mrow b { font-size: 14px; }
+.mega-grid.cols-4 .mrow > span > span { font-size: 12.5px; }
+@media (max-width: 1240px) { .mega-grid.cols-4 { grid-template-columns: repeat(3, 1fr); } }
