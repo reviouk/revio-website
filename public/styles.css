@@ -1044,7 +1044,7 @@ a.card:focus-visible { outline-offset: 0; }
   .form-grid { grid-template-columns: 1fr; }
   /* Sized to their text (Rob 2026-09-14: "buttons are too wide"). They wrap
      onto their own lines on a narrow phone rather than filling it. */
-  .cta-row .btn { flex: 0 1 auto; }
+  .cta-row .btn { flex: 0 1 auto; padding: 12px 18px; font-size: 14.5px; }
   .cta-band { padding: 52px 26px; border-radius: var(--r-lg); }
   .footer-main { grid-template-columns: 1fr; gap: 34px; padding: 52px 0 40px; }
   .page-hero .wrap, .page-hero .wrap-narrow { padding-top: 58px; padding-bottom: 62px; }
