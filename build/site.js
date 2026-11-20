@@ -59,6 +59,11 @@ module.exports = {
     assist_business_setup: 'From £4,500',
     assist_business_setup_num: 4500,
     assist_business_month: 'From £595',
+    assist_team_person: '£35',      // per extra person a month, Team (2 included)
+    assist_team_person_setup: '£95', // per extra person at setup, Team
+    assist_business_person: '£30',  // per extra person a month, Business (10 included)
+    assist_business_person_setup: '£75',
+    assist_overage: '15p',           // per call minute above the allowance (150/300/800)
     assist_check: '£295',             // 90-minute Health Check, credited
     assist_job: 'From £750',          // one extra automated job
   },

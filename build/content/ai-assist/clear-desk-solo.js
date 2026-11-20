@@ -67,7 +67,7 @@ module.exports = {
       items: [
         { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: S.BOOK_URL, cta: 'Book a call' },
       ],
-      note: `The monthly plan covers Flo's running costs, monitoring, fixes and one change a month. Call minutes beyond a normal sole trader's volume are charged at cost and shown on the plan page. Need more than one person on it? See Clear Desk Team.`,
+      note: `The monthly plan covers Flo's running costs, monitoring, fixes and one change a month. 150 answered call minutes a month are included; above that, 15p a minute, itemised on the invoice. Need more than one person on it? See Clear Desk Team.`,
     },
     {
       type: 'steps', kicker: 'How it works', h2: 'Live in a week, supervised for a fortnight.',
