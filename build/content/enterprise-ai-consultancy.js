@@ -4,7 +4,7 @@ const P = S.PRICE;
 module.exports = {
   slug: 'enterprise-ai-consultancy',
   title: 'Enterprise & Mid-Market AI Consultancy UK | Revio',
-  description: 'AI consultancy for £25m+ firms: governance, ERP/CRM/telephony integration, private deployment. Embedded Head of AI £9,500 a month. A senior boutique, not a bench.',
+  description: 'AI consultancy for £25m+ companies: governance, ERP/CRM/telephony integration, private deployment. Embedded Head of AI £9,500 a month. Senior boutique, not a bench.',
   keywords: ['enterprise ai consultancy uk', 'mid market ai consulting', 'ai transformation consultancy uk', 'ai governance for enterprise', 'private ai deployment uk'],
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }],
   crumbLabel: 'Enterprise AI',
@@ -57,9 +57,9 @@ module.exports = {
       note: 'Every price excludes VAT. Phases can run in sequence or, where capacity allows, in parallel across departments.',
     },
     {
-      type: 'compare', kicker: 'Fit', h2: 'Who this is for, and when a bigger firm is the right call.',
+      type: 'compare', kicker: 'Fit', h2: 'Who this is for, and when a bigger company is the right call.',
       yes: { title: 'A good fit', items: ['UK business turning over roughly £25m or more', 'Several departments each with their own AI experiments and no single owner', 'A board or regulator asking for governance in writing', 'A preference for a small senior team over a large rotating one'] },
-      no: { title: 'Better served by a large consultancy', items: ['You need a bench of forty consultants running in parallel across a global rollout', 'The requirement is a multi-year systems integration programme, not an AI one', 'Procurement rules require a firm above a certain headcount or turnover'] },
+      no: { title: 'Better served by a large consultancy', items: ['You need a bench of forty consultants running in parallel across a global rollout', 'The requirement is a multi-year systems integration programme, not an AI one', 'Procurement rules require a company above a certain headcount or turnover'] },
     },
     {
       type: 'quote', tone: 'wash',
@@ -70,7 +70,7 @@ module.exports = {
       type: 'checks', kicker: 'What we are honest about', h2: 'What a boutique consultancy is, and is not.',
       groups: [
         { title: 'What we bring', items: ['Senior people throughout, no juniors learning on your engagement', 'A method proven on our own production AI product, LeadSignal', 'Governance and integration built to survive scrutiny, not a slide deck'] },
-        { title: 'What we are not', items: ['A forty-person bench for a global, multi-region rollout', 'A systems integrator replacing your ERP or core telephony platform', 'A fit if procurement requires a firm above a certain size'] },
+        { title: 'What we are not', items: ['A forty-person bench for a global, multi-region rollout', 'A systems integrator replacing your ERP or core telephony platform', 'A fit if procurement requires a company above a certain size'] },
       ],
     },
     {
@@ -95,7 +95,7 @@ module.exports = {
     },
     {
       type: 'cta', h2: 'Find out whether a boutique or a bench is the right fit.',
-      text: 'A 30-minute call, and an honest answer either way, including a steer toward a larger firm if that is genuinely the better call.',
+      text: 'A 30-minute call, and an honest answer either way, including a steer toward a larger company if that is genuinely the better call.',
       ctas: [{ label: 'Book a call', href: S.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: S.CONTACT_URL, style: 'ghost' }],
     },
   ],

@@ -26,7 +26,7 @@ module.exports = {
       h2: 'One fee to set it up, one plan to keep it running, nothing else hidden.',
       body: [
         'Every Clear Desk package has two numbers. The setup fee pays for us to connect Flo to your phone, inbox, diary, invoicing and customer list, teach it your tone and your prices, write the rules for what it may do alone, train you or your team, and supervise the first fortnight. The monthly plan pays for Flo\'s running costs, monitoring so we know when something breaks before you do, fixes, and changes as your business shifts.',
-        'Prices are "from" because a ten-person firm on three sites is more work than a sole trader with one phone. We give you the exact figure on the first call and it does not move during the setup. There is no day rate, no minimum term on the plan, and every account, licence and line of code is in your name from day one.',
+        'Prices are "from" because a ten-person company on three sites is more work than a sole trader with one phone. We give you the exact figure on the first call and it does not move during the setup. There is no day rate, no minimum term on the plan, and every account, licence and line of code is in your name from day one.',
       ],
     },
     {
@@ -87,7 +87,7 @@ module.exports = {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions about the money.',
       items: [
         { q: 'Is the setup fee really the whole cost to get started?', a: 'Yes. The setup fee covers everything to go live: connections, training Flo, writing the rules, training you, and the supervised fortnight. The only other cost is the monthly plan, which starts when you go live. There is no day rate and no "discovery" fee. The Health Check is optional and is credited if you go ahead.' },
-        { q: 'Why is every price "from"?', a: 'Because a sole trader with one phone and a forty-person firm with three sites are not the same job, and we would rather say so than publish a single number and add surprises later. We give you the exact figure on the first call. That figure is fixed for the setup and does not move.' },
+        { q: 'Why is every price "from"?', a: 'Because a sole trader with one phone and a forty-person company with three sites are not the same job, and we would rather say so than publish a single number and add surprises later. We give you the exact figure on the first call. That figure is fixed for the setup and does not move.' },
         { q: 'Can I pay the setup fee monthly?', a: 'Solo is paid up front. Team and Business can be split in two: half to start, half on go-live. We do not offer longer finance; the point of these packages is that they are affordable without it.' },
         { q: 'What happens if I cancel the monthly plan?', a: 'You keep every account, the data, the written guide and the rules. Flo keeps working for as long as you keep paying the underlying tools yourself. What stops is our monitoring, fixes and changes. Most people who cancel do so because they have moved to the next package up.' },
         { q: 'Are there any usage charges?', a: 'Two, both published. Each plan includes a monthly allowance of answered call minutes: 150 on Solo, 300 on Team, 800 on Business. Above that, minutes are itemised at 15p each. And Team and Business are priced per person beyond the people included: £35 a month each on Team after the first two, £30 on Business after the first ten. Email, invoicing and diary work carry no usage charge, however busy you are.' },
@@ -99,7 +99,7 @@ module.exports = {
     {
       type: 'related', kicker: 'Bigger businesses', h2: 'If you are past forty staff.',
       items: [
-        { href: S.AUDIT_URL, icon: 'audit', title: 'AI Opportunity Audit', text: 'Two weeks to find where AI pays across departments. The right first step for larger firms.', meta: P.audit },
+        { href: S.AUDIT_URL, icon: 'audit', title: 'AI Opportunity Audit', text: 'Two weeks to find where AI pays across departments. The right first step for larger companies.', meta: P.audit },
         { href: '/ai-implementation/', icon: 'build', title: 'AI Build & Implementation', text: 'A defined system built to a fixed price and date, for jobs outside the packages.', meta: P.build_from },
         { href: S.PRICING_URL, icon: 'pound', title: 'All Revio pricing', text: 'Every consultancy, build and retained price on the site.', meta: P.audit },
       ],

@@ -10,7 +10,7 @@ module.exports = {
   art: 'calc',
   badge: 'Pricing',
   h1: 'Every number we charge, <em class="mint">on one page</em>.',
-  sub: 'Most firms in this market make you sit through a discovery call to learn whether you can afford them. Here is the whole ladder, including the numbers that make us look expensive. Prices exclude VAT. There is no second price list.',
+  sub: 'Most companies in this market make you sit through a discovery call to learn whether you can afford them. Here is the whole ladder, including the numbers that make us look expensive. Prices exclude VAT. There is no second price list.',
   ctas: [
     { label: 'Work out your return first', href: S.CALC_URL, style: 'mint' },
     { label: 'Start with the audit', href: S.AUDIT_URL, style: 'ghost' },
@@ -57,7 +57,7 @@ module.exports = {
       ],
     },
     {
-      type: 'table', kicker: 'Where this sits', h2: 'Three kinds of firm sell AI work in the UK.',
+      type: 'table', kicker: 'Where this sits', h2: 'Three kinds of company sell AI work in the UK.',
       head: ['', 'Revio', 'Tier-one consultancy', 'Freelancer'],
       rows: [
         ['Typical engagement', '£1,500 – £60,000, or £3,500 – £9,500 a month', '£150,000 minimum', '£5,000 – £30,000'],

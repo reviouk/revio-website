@@ -23,7 +23,7 @@ module.exports = {
       type: 'intro', kicker: 'Where this fits',
       h2: 'The paperwork moves as much as the freight.',
       body: [
-        'A haulage firm, courier or freight forwarder runs on documents as much as on trucks: a quote request that arrives as a scruffy email, a proof of delivery photographed on a driver\'s phone, a customer asking where their load is, and a stack of compliance paperwork that has to be right every time. None of that requires a person to decide anything clever, it requires someone to read, extract and reply fast, which is exactly what AI does well. Quoting from emails, POD and document extraction, driver and customer comms, and compliance paperwork are the four jobs we build first in this sector.',
+        'A haulage company, courier or freight forwarder runs on documents as much as on trucks: a quote request that arrives as a scruffy email, a proof of delivery photographed on a driver\'s phone, a customer asking where their load is, and a stack of compliance paperwork that has to be right every time. None of that requires a person to decide anything clever, it requires someone to read, extract and reply fast, which is exactly what AI does well. Quoting from emails, POD and document extraction, driver and customer comms, and compliance paperwork are the four jobs we build first in this sector.',
         'What we do not automate is the judgement calls: which carrier to use on a tight lane, whether to accept a load at a marginal rate, how to handle a damaged consignment. Those stay with your ops team. The AI\'s job is to get the paperwork off their desk fast enough that they have time to make those calls properly, rather than to make the calls for them.',
       ],
     },
@@ -50,7 +50,7 @@ module.exports = {
     },
     {
       type: 'compare', kicker: 'Fit', h2: 'Who this is for, and where we say wait.',
-      yes: { title: 'A good fit', items: ['Hauliers, couriers, removals firms and freight forwarders with steady volume', 'A TMS, spreadsheet or shared inbox already in use', 'Quotes or PODs that currently take a person real time each day', 'An ops team who will use what gets built, not just admire it'] },
+      yes: { title: 'A good fit', items: ['Hauliers, couriers, removals companies and freight forwarders with steady volume', 'A TMS, spreadsheet or shared inbox already in use', 'Quotes or PODs that currently take a person real time each day', 'An ops team who will use what gets built, not just admire it'] },
       no: { title: 'Not this, yet', items: ['You want AI to decide carrier or rate strategy on its own', 'There is no digital record of jobs at all, everything is on paper', 'Volume is low enough that manual handling is genuinely faster', 'You need this live in days rather than weeks'] },
     },
     {

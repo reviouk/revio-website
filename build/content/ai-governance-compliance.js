@@ -75,7 +75,7 @@ module.exports = {
         ['EU AI Act', 'Scope assessment and gap list', 'Full conformity work for a high-risk system'],
         ['DPIA', 'One, where a system warrants it', 'Additional DPIAs, £600 each'],
         ['Maintenance', 'Handover and a quarterly agenda you run', 'We run the quarterly review, from ' + P.run + ' a month'],
-        ['Training', 'One session for the owners', 'Firm-wide sessions at ' + P.training_half + ' a half day'],
+        ['Training', 'One session for the owners', 'Company-wide sessions at ' + P.training_half + ' a half day'],
       ],
       note: 'All prices exclude VAT. Where governance is bought alongside a build, it is scheduled to finish before the build goes live rather than after.',
     },
@@ -92,7 +92,7 @@ module.exports = {
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions boards ask.',
       items: [
-        { q: 'Does the EU AI Act apply to a UK business?', a: 'It can. The test is not where you are established but whether your system is placed on the EU market or its output is used in the EU. A UK firm with EU customers, an EU subsidiary or a product sold across Europe is usually in scope for at least the transparency obligations. The sprint tells you which of your systems are caught and at which tier, rather than leaving you to guess.' },
+        { q: 'Does the EU AI Act apply to a UK business?', a: 'It can. The test is not where you are established but whether your system is placed on the EU market or its output is used in the EU. A UK company with EU customers, an EU subsidiary or a product sold across Europe is usually in scope for at least the transparency obligations. The sprint tells you which of your systems are caught and at which tier, rather than leaving you to guess.' },
         { q: 'What does the UK actually require?', a: 'There is no single UK AI act. What applies is existing law: UK GDPR and the Data Protection Act for personal data, equality law where AI affects people, sector rules from the FCA, SRA, ICO and others, and consumer law for anything customer-facing. The pack maps your systems against those rather than inventing a framework.' },
         { q: 'Do we need a DPIA?', a: 'You need one where processing is likely to result in a high risk to people: systematic monitoring, large-scale special category data, automated decisions with legal or similarly significant effects, or innovative technology used on personal data. Several AI uses meet that test. One DPIA is included; we will tell you plainly if you need none.' },
         { q: 'Must we tell customers they are talking to AI?', a: 'Yes, and you should want to. Transparency obligations under the EU AI Act apply to systems interacting with people, UK consumer and advertising rules already frown on misleading impressions, and in our own products disclosure improves trust rather than damaging it. The pack includes wording for chat, phone and email.' },

@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       type: 'band', h2: 'Under forty staff? There is a smaller, cheaper way in.',
-      text: 'REVIO AI Assist gives sole traders and firms of up to forty people an assistant called Flo: phone answered, inbox sorted, invoices chased. Setup from £495, live in days.',
+      text: 'REVIO AI Assist gives sole traders and companies of up to forty people an assistant called Flo: phone answered, inbox sorted, invoices chased. Setup from £495, live in days.',
       ctas: [{ label: 'See REVIO AI Assist', href: '/ai-assist/', style: 'mint' }, { label: 'Small business pricing', href: '/small-business-ai-pricing/', style: 'ghost' }],
     },
     {

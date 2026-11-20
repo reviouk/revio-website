@@ -19,7 +19,7 @@ module.exports = {
     { label: 'See what it costs', href: '#price', style: 'ghost' },
   ],
   heroProof: [`${P.assist_team_setup} to set up, live in two to three weeks`, `${P.assist_team_month} a month, cancel any time`, 'A two-hour team session included'],
-  heroNote: 'For small practices, agencies, trades firms with office staff, lettings agents, clinics, salons and shops with a team.',
+  heroNote: 'For small practices, agencies, trades companies with office staff, lettings agents, clinics, salons and shops with a team.',
   service: { name: 'Clear Desk Team', type: 'Personal assistant setup for small teams', price: P.assist_team_setup_num },
   sections: [
     {
@@ -43,7 +43,7 @@ module.exports = {
       ],
     },
     {
-      type: 'table', kicker: 'Before and after', h2: 'A six-person firm, before and after.',
+      type: 'table', kicker: 'Before and after', h2: 'A six-person company, before and after.',
       head: ['', 'Before', 'After'],
       rows: [
         ['New enquiry', 'Sits in the shared inbox until someone notices. Average reply: 5 hours', 'Answered and qualified in 4 minutes, booked or assigned with details filled in'],
@@ -67,7 +67,7 @@ module.exports = {
       items: [
         { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Clear Desk Solo, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: S.BOOK_URL, cta: 'Book a call' },
       ],
-      note: `"From" because a ten-person firm with three sites is more work than a three-person practice. We quote the exact figure on the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes and up to three changes a month. Two people are included; each extra person is ${P.assist_team_person} a month, so a five-person team pays £350 and a ten-person team £525. Extra automated jobs ${P.assist_job} each.`,
+      note: `"From" because a ten-person company with three sites is more work than a three-person practice. We quote the exact figure on the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes and up to three changes a month. Two people are included; each extra person is ${P.assist_team_person} a month, so a five-person team pays £350 and a ten-person team £525. Extra automated jobs ${P.assist_job} each.`,
     },
     {
       type: 'steps', kicker: 'How it works', h2: 'Two to three weeks to set up, a fortnight supervised.',

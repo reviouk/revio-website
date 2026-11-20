@@ -60,7 +60,7 @@ module.exports = {
         ['Continuity', 'Named deputy, documented', 'Leaves when they leave', 'Team rotates', 'None'],
         ['Can stop', 'Quarterly', 'Notice period plus severance', 'Contracted phases', 'Immediately'],
       ],
-      note: 'Salary figures are 2026 UK market ranges for a Head of AI in a mid-sized business. The consultancy figure is the entry point quoted by tier-one firms for an AI programme.',
+      note: 'Salary figures are 2026 UK market ranges for a Head of AI in a mid-sized business. The consultancy figure is the entry point quoted by tier-one companies for an AI programme.',
     },
     {
       type: 'steps', kicker: 'How it starts', h2: 'Four weeks from first call to first thing running.',

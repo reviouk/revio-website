@@ -20,7 +20,7 @@ module.exports = {
     { label: 'See the three packages', href: '#packages', style: 'ghost' },
   ],
   heroProof: ['Set up for you in one to four weeks', 'Every price on this page', 'No lock-in, cancel the monthly plan any time'],
-  heroNote: 'For sole traders and businesses with up to 40 staff. Larger firms start with the AI Opportunity Audit.',
+  heroNote: 'For sole traders and businesses with up to 40 staff. Larger companies start with the AI Opportunity Audit.',
   service: { name: 'REVIO AI Assist', type: 'Personal assistant for small businesses', price: P.assist_solo_setup_num },
   sections: [
     {
@@ -28,7 +28,7 @@ module.exports = {
       h2: 'You did not start a business to spend Sunday night on admin.',
       body: [
         "Owners of small UK businesses lose around eight hours a week to admin. Most of it is the same five jobs: answering the phone while on another job, replying to enquiries, chasing invoices, writing quotes and keeping the diary straight. None of it is the work you are paid for, and all of it piles up the moment you are busy.",
-        "Half of small firms have tried AI. Most stopped at a chat window, because the hard part is not the typing. The hard part is connecting an assistant to your phone, your inbox, your diary, your invoicing and your customer list, and teaching it how you work. That is the job we do. You get Flo, already holding the keys.",
+        "Half of small companies have tried AI. Most stopped at a chat window, because the hard part is not the typing. The hard part is connecting an assistant to your phone, your inbox, your diary, your invoicing and your customer list, and teaching it how you work. That is the job we do. You get Flo, already holding the keys.",
       ],
     },
     {
@@ -47,8 +47,8 @@ module.exports = {
       type: 'tiers', kicker: 'Three packages', h2: 'Pick the size of business, not a list of features.',
       items: [
         { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/ai-assist/clear-desk-solo/', cta: 'See Solo' },
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades firms with office staff, lettings agents', href: '/ai-assist/clear-desk-team/', cta: 'See Team' },
-        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional firms', href: '/ai-assist/clear-desk-business/', cta: 'See Business' },
+        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/ai-assist/clear-desk-team/', cta: 'See Team' },
+        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/ai-assist/clear-desk-business/', cta: 'See Business' },
       ],
       note: `All prices exclude VAT and are shown as "from". The monthly plan covers Flo's running costs, monitoring, fixes and changes, with a call-minute allowance for each size. Team and Business are priced per person beyond the people included. Not sure which fits? Book a 90-minute Health Check for ${P.assist_check}, credited against any package.`,
     },
@@ -106,7 +106,7 @@ module.exports = {
       type: 'related', kicker: 'Related', h2: 'If this is not quite you.',
       items: [
         { href: S.AUDIT_URL, icon: 'audit', title: 'AI Opportunity Audit', text: 'For businesses past 40 staff: two weeks, one ranked list of where AI pays.', meta: P.audit },
-        { href: '/ai-for-smes/', icon: 'chart', title: 'AI Consulting for SMEs', text: 'For £1m to £25m turnover firms with several departments and a bigger first build.', meta: P.build_from },
+        { href: '/ai-for-smes/', icon: 'chart', title: 'AI Consulting for SMEs', text: 'For £1m to £25m turnover companies with several departments and a bigger first build.', meta: P.build_from },
         { href: '/small-business-ai-pricing/', icon: 'pound', title: 'Small business AI pricing', text: 'Every Clear Desk price, add-on and running cost on one page.', meta: P.assist_solo_setup },
       ],
     },

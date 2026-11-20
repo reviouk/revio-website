@@ -4,7 +4,7 @@ const P = S.PRICE;
 module.exports = {
   slug: 'ai-strategy',
   title: 'AI Strategy Consulting UK for SMEs & Mid-Market | Revio',
-  description: 'AI strategy consulting for UK SMEs and mid-market firms: a one-page plan naming the first three things to build, with costs. From £1,500 through the audit.',
+  description: 'AI strategy consulting for UK SMEs and mid-market companies: a one-page plan naming the first three things to build, with costs. From £1,500 through the audit.',
   keywords: ['ai strategy consulting uk', 'ai strategy for smes', 'ai roadmap consultancy', 'ai consultancy uk', 'ai strategy consultant'],
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }],
   crumbLabel: 'AI Strategy',
@@ -24,7 +24,7 @@ module.exports = {
       type: 'intro', kicker: 'The problem this solves',
       h2: 'Most AI strategies are long, expensive and impossible to act on.',
       body: [
-        'The pattern is familiar. A firm is engaged, six weeks pass, and a deck arrives with a maturity model, a landscape of vendors, three horizons and a change-management workstream. It is not wrong. It is just not actionable by a business of eighty people with a CRM, a busy operations team and no internal AI owner. Nobody can start anything on Monday from it, so nothing starts, and a year later the board asks the same question again.',
+        'The pattern is familiar. A company is engaged, six weeks pass, and a deck arrives with a maturity model, a landscape of vendors, three horizons and a change-management workstream. It is not wrong. It is just not actionable by a business of eighty people with a CRM, a busy operations team and no internal AI owner. Nobody can start anything on Monday from it, so nothing starts, and a year later the board asks the same question again.',
         'A strategy is only worth what it causes to happen. Ours is short on purpose: the first three things to build, in order, with a price and a payback against each, the data and governance work that has to happen alongside them, and the name of the person accountable for each one. If it runs past two pages we have usually failed to make a decision somewhere.',
       ],
     },
@@ -65,7 +65,7 @@ module.exports = {
         ['Can it be acted on next week', 'After a mobilisation phase', 'Yes, item one is already scoped', 'If somebody is given the time, which is the usual blocker'],
         ['Independence', 'Often tied to platform partnerships', 'Tooling chosen per job, licences in your name', 'Fully independent, less benchmarked'],
       ],
-      note: 'The consultancy figure is the entry point quoted by tier-one firms for an AI programme. We are not the right answer for a FTSE 250 transformation programme, and we say so when that is what is needed.',
+      note: 'The consultancy figure is the entry point quoted by tier-one companies for an AI programme. We are not the right answer for a FTSE 250 transformation programme, and we say so when that is what is needed.',
     },
     {
       type: 'steps', kicker: 'The order of operations', h2: 'What a sensible first year looks like.',

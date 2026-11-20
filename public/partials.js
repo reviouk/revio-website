@@ -114,7 +114,7 @@
           label: 'Fixed price',
           items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] },
         { href: '/ai-assist/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'REVIO AI Assist',
-          blurb: 'Flo, a personal assistant for sole traders and firms up to forty staff. Phone answered, inbox sorted, invoices chased.',
+          blurb: 'Flo, a personal assistant for sole traders and companies up to forty staff. Phone answered, inbox sorted, invoices chased.',
           label: 'Small businesses',
           items: ['Clear Desk packages from &pound;495', 'Live in days, cancel any time'] }
       ],

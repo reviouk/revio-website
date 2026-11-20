@@ -1,7 +1,7 @@
 const S = require('../../site');
 const P = S.PRICE;
 
-/* Clear Desk Business. DRAFT 2026-11-19. Audience: owner or MD of a 10–40 person firm. */
+/* Clear Desk Business. DRAFT 2026-11-19. Audience: owner or MD of a 10–40 person company. */
 module.exports = {
   slug: 'ai-assist/clear-desk-business',
   title: 'Clear Desk Business: AI Back Office, 10-40 Staff | REVIO AI Assist',
@@ -10,7 +10,7 @@ module.exports = {
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
   crumbLabel: 'Clear Desk Business',
   art: 'pipeline',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for firms up to forty staff', say: 'Your Monday page is ready. One thing needs you.' },
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for companies up to forty staff', say: 'Your Monday page is ready. One thing needs you.' },
   badge: 'Clear Desk Business',
   h1: 'The back office runs itself. <em class="mint">You run the business.</em>',
   sub: 'At ten to forty staff the admin has become roles: someone answers, someone quotes, someone invoices, someone chases, someone answers the same HR question for the fifth time. Clear Desk Business hands the whole chain to an assistant called Flo, from the first enquiry to the paid invoice, with your people approving at the points that matter and a monthly review with us.',
@@ -19,7 +19,7 @@ module.exports = {
     { label: 'See what it costs', href: '#price', style: 'ghost' },
   ],
   heroProof: [`${P.assist_business_setup} to set up, live in three to four weeks`, `${P.assist_business_month} a month with a monthly review`, 'Forty hours a week back, cash collected sooner'],
-  heroNote: 'For recruiters, multi-site trades firms, e-commerce businesses, clinics, agencies and professional firms with up to about forty staff. Larger than that, start with the AI Opportunity Audit.',
+  heroNote: 'For recruiters, multi-site trades companies, e-commerce businesses, clinics, agencies and professional companies with up to about forty staff. Larger than that, start with the AI Opportunity Audit.',
   service: { name: 'Clear Desk Business', type: 'Back-office assistant for 10 to 40 staff', price: P.assist_business_setup_num },
   sections: [
     {
@@ -43,7 +43,7 @@ module.exports = {
       ],
     },
     {
-      type: 'table', kicker: 'Before and after', h2: 'A twenty-person firm, before and after.',
+      type: 'table', kicker: 'Before and after', h2: 'A twenty-person company, before and after.',
       head: ['', 'Before', 'After'],
       rows: [
         ['Enquiries', 'Handled well on quiet days, lost on busy ones', 'Every one answered and qualified within minutes, around the clock'],
@@ -67,7 +67,7 @@ module.exports = {
       items: [
         { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_business_month} a month, cancel any time`, text: 'Everything on this page, set up in three to four weeks. Includes ten people; each extra person £30 a month and £75 at setup, up to forty.', includes: ['Everything in Clear Desk Team, for each person', '800 answered call minutes a month, then 15p a minute', 'Enquiry to quote to invoice chain, end to end', 'Customer answers 24/7 on web, message and phone', 'Staff answers from your handbook and policies', 'CRM connected and cleaned, or set up', 'Rules, access policy and audit trail', 'Half-day team training and a written guide', 'Monthly review and one-page roadmap'], featured: true, flag: 'Live in 3 to 4 weeks', best: 'a 10 to 40 person business where admin has become roles but is nobody\'s whole job', href: S.BOOK_URL, cta: 'Book a call' },
       ],
-      note: `"From" because a forty-person firm on three sites with a warehouse system is more work than a twelve-person practice. We quote the exact figure after the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes, up to six small changes a month and the monthly review. Ten people are included; each extra person is ${P.assist_business_person} a month, so a twenty-person firm pays £895 and a forty-person firm £1,495. Larger new jobs are scoped and priced separately, ${P.assist_job} upwards.`,
+      note: `"From" because a forty-person company on three sites with a warehouse system is more work than a twelve-person practice. We quote the exact figure after the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes, up to six small changes a month and the monthly review. Ten people are included; each extra person is ${P.assist_business_person} a month, so a twenty-person company pays £895 and a forty-person company £1,495. Larger new jobs are scoped and priced separately, ${P.assist_job} upwards.`,
     },
     {
       type: 'steps', kicker: 'How it works', h2: 'Three to four weeks to set up, then a review every month.',
@@ -86,11 +86,11 @@ module.exports = {
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What owners and MDs ask us.',
       items: [
-        { q: 'How is this different from the AI Opportunity Audit and a build?', a: `The audit and build route is for larger businesses where the first question is where AI pays at all, and the answer might be a bespoke system. Clear Desk Business is for a 10 to 40 person firm where we already know the answer: the enquiry-to-cash chain and the questions everyone asks. It is a fixed package, set up in weeks, at a fraction of the price. If on the first call it is clear you need the audit instead, we will say so.` },
+        { q: 'How is this different from the AI Opportunity Audit and a build?', a: `The audit and build route is for larger businesses where the first question is where AI pays at all, and the answer might be a bespoke system. Clear Desk Business is for a 10 to 40 person company where we already know the answer: the enquiry-to-cash chain and the questions everyone asks. It is a fixed package, set up in weeks, at a fraction of the price. If on the first call it is clear you need the audit instead, we will say so.` },
         { q: 'Which of our systems does Flo connect to?', a: 'The ones you have: phone, email, calendars, website, social channels, CRM, quoting, job management, invoicing and accounts. We name no software on these pages because the point is to fit around yours. If a system is genuinely closed we say so on the first call and suggest the workaround, which is usually a daily export.' },
         { q: 'Who is responsible if Flo gets something wrong?', a: 'For the first fortnight a person approves everything. After that you choose what Flo may do alone, and the list is written down. Quotes, invoices and anything to a customer in writing are approved by default. Flo logs every action. When it is unsure it asks rather than guesses. If it does make a mistake, the monthly review exists to find it and fix the rule.' },
         { q: 'How do staff questions work?', a: 'We load your handbook, policies, price lists and procedures once. Staff ask by message, in plain English, and get the answer with the source paragraph. Anything about an individual, a grievance or a decision is passed to the owner or manager, not answered. New policies are approved by you before Flo answers from them.' },
-        { q: 'Why is the price "from"?', a: `${P.assist_business_setup} covers a typical firm on one or two sites with the usual tools. More sites, a warehouse or stock system, several phone lines or a legacy database add work and we price it on the first call. The figure we quote is fixed for the setup.` },
+        { q: 'Why is the price "from"?', a: `${P.assist_business_setup} covers a typical company on one or two sites with the usual tools. More sites, a warehouse or stock system, several phone lines or a legacy database add work and we price it on the first call. The figure we quote is fixed for the setup.` },
         { q: 'What is in the monthly plan?', a: `${P.assist_business_month} a month, ex VAT: Flo's running costs for ten people, monitoring, fixes, up to six small changes a month, the Monday page and monthly numbers, and the monthly review with a one-page roadmap. Each person beyond ten is ${P.assist_business_person} a month. 800 answered call minutes are included; above that, 15p a minute, itemised. Cancel any time. Accounts and data are yours.` },
         { q: 'What about data protection?', a: 'Flo reads customer and staff data, so we treat it seriously. Every account is in your company\'s name, data stays in your tools, and the AI services behind it process it under business terms. You get a data note, a staff access policy, a record of what Flo may see, and a short data protection impact assessment template filled in for your setup. You can disconnect anything in a minute.' },
         { q: 'Can it grow with us past forty staff?', a: `Yes, to a point. Past forty staff or when departments start running their own systems, the right step is the AI Opportunity Audit and, usually, an Embedded AI Lead from ${P.lead_1} a month. Your Business setup fee is credited against the first build if you move within a year.` },
