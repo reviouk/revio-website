@@ -6,7 +6,7 @@ const P = S.PRICE;
 module.exports = {
   slug: 'ai-assist/clear-desk-solo',
   title: 'Clear Desk Solo: AI Assistant for Sole Traders | REVIO AI Assist',
-  description: 'Meet Flo, the assistant for a one-person business: answers your phone, clears your inbox, chases invoices, books jobs. Set up in a week from £495, then £75 a month.',
+  description: 'Meet Flo, the assistant for a one-person business: answers your phone, clears your inbox, chases invoices, books jobs. Set up in a week from £495, then £125 a month.',
   keywords: ['ai assistant for sole traders', 'ai receptionist for tradesmen uk', 'ai for self employed uk', 'missed calls tradesman', 'invoice chasing automation', 'ai personal assistant small business'],
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
   crumbLabel: 'Clear Desk Solo',

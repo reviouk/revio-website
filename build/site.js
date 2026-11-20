@@ -52,7 +52,7 @@ module.exports = {
     /* REVIO AI Assist (Clear Desk packages), confirmed by Rob 2026-11-19 */
     assist_solo_setup: 'From £495',
     assist_solo_setup_num: 495,
-    assist_solo_month: 'From £75',
+    assist_solo_month: 'From £125',
     assist_team_setup: 'From £1,950',
     assist_team_setup_num: 1950,
     assist_team_month: 'From £245',

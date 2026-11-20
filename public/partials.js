@@ -112,7 +112,11 @@
         { href: '/ai-implementation/', icon: ICON.build, title: 'AI Build &amp; Implementation',
           blurb: 'A defined system built to a fixed price and date, wired into the CRM you already run, supervised before it acts alone.',
           label: 'Fixed price',
-          items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] }
+          items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] },
+        { href: '/ai-assist/', icon: ICON.chat, title: 'REVIO AI Assist',
+          blurb: 'Flo, a personal assistant for sole traders and firms up to forty staff. Phone answered, inbox sorted, invoices chased.',
+          label: 'Small businesses',
+          items: ['Clear Desk packages from &pound;495', 'Live in days, cancel any time'] }
       ],
       rowsTitle: 'Every AI service',
       rows: [
@@ -131,7 +135,6 @@
         { href: '/ai-strategy/', icon: ICON.growth, title: 'AI strategy', desc: 'A one-page plan with the first three builds' },
         { href: '/funded-ai-projects/', icon: ICON.data, title: 'Funded AI projects', desc: 'R&amp;D relief, KTP, grants' },
         { href: '/ai-roi-calculator/', icon: ICON.growth, title: 'AI ROI calculator', desc: 'What it would return for you' },
-        { href: '/ai-assist/', icon: ICON.chat, title: 'REVIO AI Assist', desc: 'Flo, a personal assistant for your business, from &pound;495' },
         { href: '/small-business-ai-pricing/', icon: ICON.grid, title: 'Small business pricing', desc: 'Clear Desk Solo, Team and Business' },
         { href: '/ai-services/', icon: ICON.grid, title: 'All AI services', desc: 'The whole list, with prices' }
       ]

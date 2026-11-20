@@ -5,7 +5,7 @@ const P = S.PRICE;
 module.exports = {
   slug: 'small-business-ai-pricing',
   title: 'Small Business AI Pricing UK: Every Price Published | Revio',
-  description: 'Every REVIO AI Assist price on one page: Clear Desk Solo from £495 setup and £75 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
+  description: 'Every REVIO AI Assist price on one page: Clear Desk Solo from £495 setup and £125 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
   keywords: ['ai assistant pricing uk', 'small business ai cost', 'ai receptionist price uk', 'how much does ai automation cost small business', 'ai setup fee monthly plan'],
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
   crumbLabel: 'Pricing',
