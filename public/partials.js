@@ -97,7 +97,9 @@
               '/microsoft-copilot-implementation/', '/ai-enablement/', '/private-ai/',
               '/ai-governance-compliance/', '/ai-app-rescue/', '/ai-app-diagnostic-audit/',
               '/legacy-modernisation/', '/funded-ai-projects/', '/ai-for-smes/',
-              '/enterprise-ai-consultancy/', '/ai-consultancy-london/', '/ai-app-development/'],
+              '/enterprise-ai-consultancy/', '/ai-consultancy-london/', '/ai-app-development/',
+              '/ai-assist/', '/ai-assist/clear-desk-solo/', '/ai-assist/clear-desk-team/',
+              '/ai-assist/clear-desk-business/', '/small-business-ai-pricing/'],
       cards: [
         { href: '/ai-opportunity-audit/', icon: ICON.audit, title: 'AI Opportunity Audit',
           blurb: 'Two weeks to find where AI actually pays for itself in your business, before anyone builds a thing.',
@@ -129,6 +131,8 @@
         { href: '/ai-strategy/', icon: ICON.growth, title: 'AI strategy', desc: 'A one-page plan with the first three builds' },
         { href: '/funded-ai-projects/', icon: ICON.data, title: 'Funded AI projects', desc: 'R&amp;D relief, KTP, grants' },
         { href: '/ai-roi-calculator/', icon: ICON.growth, title: 'AI ROI calculator', desc: 'What it would return for you' },
+        { href: '/ai-assist/', icon: ICON.chat, title: 'REVIO AI Assist', desc: 'Flo, a personal assistant for your business, from &pound;495' },
+        { href: '/small-business-ai-pricing/', icon: ICON.grid, title: 'Small business pricing', desc: 'Clear Desk Solo, Team and Business' },
         { href: '/ai-services/', icon: ICON.grid, title: 'All AI services', desc: 'The whole list, with prices' }
       ]
     },
@@ -322,6 +326,7 @@
       ['/voice-ai/', 'Voice AI'],
       ['/ai-enablement/', 'Training &amp; Enablement'],
       ['/ai-governance-compliance/', 'Governance &amp; Compliance'],
+      ['/ai-assist/', 'REVIO AI Assist: Flo, for small businesses'],
       ['/ai-services/', 'All AI services']
     ] },
     { h: 'Industries', links: [

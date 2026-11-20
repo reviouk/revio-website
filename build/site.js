@@ -49,5 +49,17 @@ module.exports = {
     voice: 'From £6,000',            // proposal
     private_ai: 'From £4,500',       // proposal
     legacy_discovery: 'From £2,500', // proposal
+    /* REVIO AI Assist (Clear Desk packages), confirmed by Rob 2026-11-19 */
+    assist_solo_setup: 'From £495',
+    assist_solo_setup_num: 495,
+    assist_solo_month: 'From £75',
+    assist_team_setup: 'From £1,950',
+    assist_team_setup_num: 1950,
+    assist_team_month: 'From £245',
+    assist_business_setup: 'From £4,500',
+    assist_business_setup_num: 4500,
+    assist_business_month: 'From £595',
+    assist_check: '£295',             // 90-minute Health Check, credited
+    assist_job: 'From £750',          // one extra automated job
   },
 };
