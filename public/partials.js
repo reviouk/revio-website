@@ -423,16 +423,14 @@
      The contained subsite. Pages carry body.cd-page and get this slim header
      and footer instead of the corporate ones: four links, one button, and no
      route back to revio.agency except the legal pages in the small print. */
-  var CD_MARK = '<svg class="cd-mark" viewBox="0 0 40 40" role="img" aria-hidden="true">' +
-    '<rect x="2" y="2" width="36" height="36" rx="11" fill="#5862ff"/>' +
-    '<path d="M11 21.5 17 27.5 29 14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>' +
-    '<circle cx="31" cy="9" r="5.5" fill="#12c98b" stroke="#fff" stroke-width="2"/></svg>';
+  var CD_MARK = '<svg class="cd-mark" viewBox="0 0 48 48" role="img" aria-hidden="true">' +
+    '<defs><clipPath id="cdmclip"><rect x="3" y="3" width="42" height="42" rx="13"/></clipPath></defs><rect x="3" y="3" width="42" height="42" rx="13" fill="#5862ff"/><g clip-path="url(#cdmclip)"><g class="cdm-s3"><rect x="16" y="13" width="15" height="12" rx="1.5" fill="#fff" opacity=".5"/></g><g class="cdm-s2"><rect x="17" y="16" width="15" height="12" rx="1.5" fill="#fff" opacity=".75"/></g><g class="cdm-s1"><rect x="15.5" y="19" width="15" height="10" rx="1.5" fill="#fff"/></g><path d="M9 26 L13 26 a3 3 0 0 1 2.7 1.7 l.8 1.6 a3 3 0 0 0 2.7 1.7 h9.6 a3 3 0 0 0 2.7 -1.7 l.8 -1.6 A3 3 0 0 1 35 26 L39 26 V34 a4 4 0 0 1 -4 4 H13 a4 4 0 0 1 -4 -4 Z" fill="#fff"/></g><g class="cdm-red"><circle cx="37" cy="12" r="6.5" fill="#ff5a6e" stroke="#5862ff" stroke-width="2"/><text class="cdm-n3" x="37" y="15.2" text-anchor="middle" font-family="Satoshi, Inter, sans-serif" font-weight="800" font-size="9" fill="#fff">3</text><text class="cdm-n2" x="37" y="15.2" text-anchor="middle" font-family="Satoshi, Inter, sans-serif" font-weight="800" font-size="9" fill="#fff">2</text><text class="cdm-n1" x="37" y="15.2" text-anchor="middle" font-family="Satoshi, Inter, sans-serif" font-weight="800" font-size="9" fill="#fff">1</text></g><g class="cdm-ok"><circle cx="37" cy="12" r="6.5" fill="#12c98b" stroke="#5862ff" stroke-width="2"/><path d="M34 12.2 l2 2 4-4.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
   var CD_LINKS = [['/#how', 'How it works'], ['/#packages', 'Packages'], ['/pricing/', 'Pricing']];
   var CD_BOOK = '/book/';
 
   function cdLogo() {
     return '<a class="cd-logo" href="/" aria-label="Clear Desk, home">' + CD_MARK +
-      '<span class="cd-word"><b>Clear Desk<sup>&trade;</sup></b><small>by <em>REVIO</em></small></span></a>';
+      '<span class="cd-word"><span>Clear</span><span>Desk<sup>&trade;</sup></span></span></a>';
   }
 
   function cdHeaderHTML(page) {

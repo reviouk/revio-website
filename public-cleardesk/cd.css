@@ -3,13 +3,37 @@
    footer with no routes back to the corporate site. */
 
 /* ---------- logo ---------- */
-.cd-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
-.cd-logo .cd-mark { width: 38px; height: 38px; flex: none; }
-.cd-logo .cd-word { display: flex; flex-direction: column; line-height: 1; }
-.cd-logo .cd-word b { font-family: var(--fh); font-weight: 800; font-size: 21px; letter-spacing: -.5px; color: var(--ink); }
-.cd-logo .cd-word b sup { font-size: 9px; font-weight: 700; vertical-align: top; margin-left: 2px; letter-spacing: 0; opacity: .7; }
-.cd-logo .cd-word small { font-family: var(--fh); font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
-.cd-logo .cd-word small em { font-style: normal; color: var(--purple); }
+.cd-logo { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
+.cd-logo .cd-mark { width: 44px; height: 44px; flex: none; }
+.cd-logo .cd-word { display: flex; flex-direction: column; font-family: var(--fh); font-weight: 800; font-size: 17px; line-height: 1; letter-spacing: 3px; text-transform: uppercase; color: var(--ink); }
+.cd-logo .cd-word span + span { color: var(--purple); margin-top: 3px; }
+.cd-logo .cd-word sup { font-size: 8px; letter-spacing: 0; margin-left: 1px; vertical-align: top; position: relative; top: -1px; }
+
+/* ---------- Clear Desk mark: inbox to zero (Rob, 20 Nov 2026) ----------
+   Three sheets lift out of the tray, the red badge counts 3, 2, 1 and turns
+   into a mint tick. Five-second loop; still for reduced motion. */
+.cd-mark * { transform-box: fill-box; transform-origin: center; }
+.cd-mark .cdm-s1 { animation: cdmOut1 5s ease infinite; }
+.cd-mark .cdm-s2 { animation: cdmOut2 5s ease infinite; }
+.cd-mark .cdm-s3 { animation: cdmOut3 5s ease infinite; }
+.cd-mark .cdm-n3 { animation: cdmN3 5s steps(1) infinite; }
+.cd-mark .cdm-n2 { animation: cdmN2 5s steps(1) infinite; opacity: 0; }
+.cd-mark .cdm-n1 { animation: cdmN1 5s steps(1) infinite; opacity: 0; }
+.cd-mark .cdm-red { animation: cdmRed 5s ease infinite; }
+.cd-mark .cdm-ok { animation: cdmOk 5s cubic-bezier(.3,1.6,.5,1) infinite; opacity: 0; }
+@keyframes cdmOut1 { 0%,14% { opacity: 1; transform: none; } 22% { opacity: 0; transform: translateY(-12px) rotate(10deg); } 92% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
+@keyframes cdmOut2 { 0%,32% { opacity: 1; transform: none; } 40% { opacity: 0; transform: translateY(-12px) rotate(-10deg); } 94% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
+@keyframes cdmOut3 { 0%,50% { opacity: 1; transform: none; } 58% { opacity: 0; transform: translateY(-12px) rotate(8deg); } 96% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
+@keyframes cdmN3 { 0% { opacity: 1; } 20% { opacity: 0; } 98% { opacity: 1; } }
+@keyframes cdmN2 { 0% { opacity: 0; } 20% { opacity: 1; } 38% { opacity: 0; } }
+@keyframes cdmN1 { 0% { opacity: 0; } 38% { opacity: 1; } 56% { opacity: 0; } }
+@keyframes cdmRed { 0%,55% { opacity: 1; transform: scale(1); } 60%,94% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes cdmOk { 0%,58% { opacity: 0; transform: scale(.3); } 66% { opacity: 1; transform: scale(1); } 90% { opacity: 1; transform: scale(1); } 96%,100% { opacity: 0; transform: scale(.3); } }
+@media (prefers-reduced-motion: reduce) {
+  .cd-mark * { animation: none !important; }
+  .cd-mark .cdm-s1, .cd-mark .cdm-s2, .cd-mark .cdm-s3, .cd-mark .cdm-red { opacity: 0; }
+  .cd-mark .cdm-ok { opacity: 1; }
+}
 
 /* ---------- header ---------- */
 .cd-topbar { gap: 8px; }
@@ -21,7 +45,8 @@
 .cd-drawer a { font-size: 17px; }
 @media (max-width: 860px) {
   .cd-nav, .cd-topbar .navtalk { display: none; }
-  .cd-logo .cd-word b { font-size: 18px; }
+  .cd-logo .cd-word { font-size: 15px; letter-spacing: 2.4px; }
+  .cd-logo .cd-mark { width: 40px; height: 40px; }
 }
 @media (min-width: 861px) { .cd-burger { display: none; } }
 
