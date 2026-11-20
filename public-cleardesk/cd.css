@@ -1,0 +1,41 @@
+/* Clear Desk by REVIO: the contained subsite's own chrome on top of
+   styles.css + ai.css. Slim header, four links, no mega menus, a short
+   footer with no routes back to the corporate site. */
+
+/* ---------- logo ---------- */
+.cd-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.cd-logo .cd-mark { width: 38px; height: 38px; flex: none; }
+.cd-logo .cd-word { display: flex; flex-direction: column; line-height: 1; }
+.cd-logo .cd-word b { font-family: var(--fh); font-weight: 800; font-size: 21px; letter-spacing: -.5px; color: var(--ink); }
+.cd-logo .cd-word b sup { font-size: 9px; font-weight: 700; vertical-align: top; margin-left: 2px; letter-spacing: 0; opacity: .7; }
+.cd-logo .cd-word small { font-family: var(--fh); font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.cd-logo .cd-word small em { font-style: normal; color: var(--purple); }
+
+/* ---------- header ---------- */
+.cd-topbar { gap: 8px; }
+.cd-nav { display: flex; align-items: center; gap: 2px; }
+.cd-nav a { padding: 10px 14px; border-radius: 999px; font-family: var(--fh); font-weight: 600; font-size: 15px; color: var(--ink); }
+.cd-nav a:hover, .cd-nav a[aria-current="page"] { background: var(--tile); color: var(--purple); }
+.cd-drawer { display: none; }
+.cd-drawer.open { display: flex; }
+.cd-drawer a { font-size: 17px; }
+@media (max-width: 860px) {
+  .cd-nav, .cd-topbar .navtalk { display: none; }
+  .cd-logo .cd-word b { font-size: 18px; }
+}
+@media (min-width: 861px) { .cd-burger { display: none; } }
+
+/* ---------- footer ---------- */
+.cd-foot { margin-top: 60px; border-top: 1px solid var(--line); background: var(--panel); }
+.cd-foot .wrap { padding: 40px 0 28px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; }
+.cd-foot p { color: var(--muted); font-size: 14px; max-width: 42ch; margin-top: 12px; }
+.cd-foot h4 { font-family: var(--fh); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.cd-foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+.cd-foot li a { color: var(--ink); font-size: 14.5px; }
+.cd-foot li a:hover { color: var(--purple); }
+.cd-foot .cd-flo { display: flex; align-items: center; gap: 12px; margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+.cd-foot .cd-flo img { width: 44px; height: 44px; border-radius: 50%; background: rgba(88,98,255,.12); object-fit: cover; object-position: 50% 12%; }
+.cd-foot .cd-bot { border-top: 1px solid var(--line); padding: 14px 0 22px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 12.5px; color: var(--muted); }
+.cd-foot .cd-bot a { color: var(--muted); }
+.cd-foot .cd-bot .sp { flex: 1; }
+@media (max-width: 860px) { .cd-foot .wrap { grid-template-columns: 1fr; gap: 22px; } }

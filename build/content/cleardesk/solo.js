@@ -1,22 +1,21 @@
 const S = require('../../site');
 const P = S.PRICE;
+const C = S.CLEARDESK;
 
 /* Clear Desk Solo. DRAFT 2026-11-19. Audience: sole traders and owner-operators,
    not freelancers. Lead with the phone, then inbox, then invoices. */
 module.exports = {
-  slug: 'ai-assist/clear-desk-solo',
-  title: 'Clear Desk Solo: AI Assistant for Sole Traders | REVIO AI Assist',
+  slug: 'cleardesk/solo',
+  title: 'Clear Desk Solo: Flo, the AI Assistant for Sole Traders | by REVIO',
   description: 'Meet Flo, the assistant for a one-person business: answers your phone, clears your inbox, chases invoices, books jobs. Set up in a week from £495, then £125 a month.',
   keywords: ['ai assistant for sole traders', 'ai receptionist for tradesmen uk', 'ai for self employed uk', 'missed calls tradesman', 'invoice chasing automation', 'ai personal assistant small business'],
-  crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
-  crumbLabel: 'Clear Desk Solo',
   art: 'voice',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for sole traders', say: 'Hi, it&rsquo;s Flo, Dave&rsquo;s assistant. Thursday at two?' },
   badge: 'Clear Desk Solo',
   h1: 'Missed call, lost revenue. <em class="mint">Not any more.</em>',
   sub: "You are on the tools, in a treatment room or with a client. The phone rings, the inbox fills, and an invoice from three weeks ago still has not been paid. Clear Desk Solo gives a one-person business an assistant called Flo. Flo answers, replies, chases and books, in your voice, and shows you everything before it goes.",
   ctas: [
-    { label: 'Book a 20-minute call', href: S.BOOK_URL, style: 'mint' },
+    { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See what it costs', href: '#price', style: 'ghost' },
   ],
   heroProof: [`${P.assist_solo_setup} to set up, live in a week`, `${P.assist_solo_month} a month, cancel any time`, 'You approve everything for the first fortnight'],
@@ -66,7 +65,7 @@ module.exports = {
     {
       type: 'tiers', kicker: 'Price', h2: 'One price to set up, one small plan to keep it running.',
       items: [
-        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: S.BOOK_URL, cta: 'Book a call' },
+        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: C.BOOK_URL, cta: 'Book a call' },
       ],
       note: `The monthly plan covers Flo's running costs, monitoring, fixes and one change a month. 150 answered call minutes a month are included; above that, 15p a minute, itemised on the invoice. Need more than one person on it? See Clear Desk Team.`,
     },
@@ -100,15 +99,15 @@ module.exports = {
     {
       type: 'related', kicker: 'The other packages', h2: 'If you have staff, start here instead.',
       items: [
-        { href: '/ai-assist/clear-desk-team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. One assistant for everyone, with enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
-        { href: '/ai-assist/clear-desk-business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
-        { href: '/small-business-ai-pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_solo_setup },
+        { href: '/team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. One assistant for everyone, with enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
+        { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
+        { href: '/pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_solo_setup },
       ],
     },
     {
       type: 'cta', h2: 'Hear Flo answer a call before you decide.',
       text: 'Book a 20-minute call. We will give you a number to ring, talk through your week, and tell you honestly whether Solo is the right fit.',
-      ctas: [{ label: 'Book a call', href: S.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: S.CONTACT_URL, style: 'ghost' }],
+      ctas: [{ label: 'Book a call', href: C.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: C.CONTACT_URL, style: 'ghost' }],
       note: `${P.assist_solo_setup} setup, ${P.assist_solo_month} a month, ex VAT. Live in about a week.`,
     },
   ],

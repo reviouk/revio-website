@@ -1,27 +1,26 @@
-const S = require('../site');
+const S = require('../../site');
 const P = S.PRICE;
+const C = S.CLEARDESK;
 
 /* REVIO AI Assist hub. DRAFT 2026-11-19 for Rob's review. No vendor or tool is
    named anywhere on these pages: the assistant is the product. */
 module.exports = {
-  slug: 'ai-assist',
-  title: 'AI Assistant for Small Businesses UK | REVIO AI Assist',
-  description: 'Meet Flo, the assistant that answers your calls, clears the inbox, chases invoices and books jobs. Set up for you in days, from £495. Clear Desk packages.',
+  slug: 'cleardesk/index',
+  title: 'Clear Desk: Flo, the AI Assistant for Small Businesses | by REVIO',
+  description: 'Meet Flo, the assistant that answers your calls, clears the inbox, chases invoices and books jobs. Set up for you in days, from £495. Three Clear Desk packages.',
   keywords: ['ai assistant for small business uk', 'ai personal assistant small business', 'flo ai assistant', 'ai receptionist uk', 'automate admin small business', 'ai for sole traders', 'done for you ai setup'],
-  crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }],
-  crumbLabel: 'AI Assist',
   art: 'clock',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the REVIO AI Assist assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?' },
-  badge: 'REVIO AI Assist',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?' },
+  badge: 'Clear Desk by REVIO',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
   sub: "An assistant called Flo, set up for your business by us. Flo answers the phone when you can't, clears the inbox, chases the invoices, books the jobs and remembers every customer. You review and approve. Flo does the rest. From £495 to set up, then a small monthly plan.",
   ctas: [
-    { label: 'Book a 20-minute call', href: S.BOOK_URL, style: 'mint' },
+    { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See the three packages', href: '#packages', style: 'ghost' },
   ],
   heroProof: ['Set up for you in one to four weeks', 'Every price on this page', 'No lock-in, cancel the monthly plan any time'],
-  heroNote: 'For sole traders and businesses with up to 40 staff. Larger companies start with the AI Opportunity Audit.',
-  service: { name: 'REVIO AI Assist', type: 'Personal assistant for small businesses', price: P.assist_solo_setup_num },
+  heroNote: 'For UK sole traders and businesses with up to 40 staff.',
+  service: { name: 'Clear Desk', type: 'Personal assistant for small businesses', price: P.assist_solo_setup_num },
   sections: [
     {
       type: 'intro', kicker: 'The problem',
@@ -44,11 +43,11 @@ module.exports = {
       ],
     },
     {
-      type: 'tiers', kicker: 'Three packages', h2: 'Pick the size of business, not a list of features.',
+      type: 'tiers', id: 'packages', kicker: 'Three packages', h2: 'Pick the size of business, not a list of features.',
       items: [
-        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/ai-assist/clear-desk-solo/', cta: 'See Solo' },
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/ai-assist/clear-desk-team/', cta: 'See Team' },
-        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/ai-assist/clear-desk-business/', cta: 'See Business' },
+        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/solo/', cta: 'See Solo' },
+        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/team/', cta: 'See Team' },
+        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/business/', cta: 'See Business' },
       ],
       note: `All prices exclude VAT and are shown as "from". The monthly plan covers Flo's running costs, monitoring, fixes and changes, with a call-minute allowance for each size. Team and Business are priced per person beyond the people included. Not sure which fits? Book a 90-minute Health Check for ${P.assist_check}, credited against any package.`,
     },
@@ -70,7 +69,7 @@ module.exports = {
       note: 'Each package page lists which of these it includes. We name no software here on purpose: we connect to what you already use.',
     },
     {
-      type: 'steps', kicker: 'How it works', h2: 'From first call to a clear desk.',
+      type: 'steps', id: 'how', kicker: 'How it works', h2: 'From first call to a clear desk.',
       items: [
         { title: 'A 20-minute call', text: 'You tell us where the week goes. We tell you which package fits and what it will and will not do. No pitch deck.' },
         { title: 'Setup, done by us', text: 'We connect your phone, inbox, diary, invoicing and customer list, teach Flo your tone and your prices, and test it on real work.', meta: '1 to 4 weeks' },
@@ -81,7 +80,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Who this is for, and who it is not.',
       yes: { title: 'A good fit', items: ['A sole trader or a business with up to 40 staff', 'A phone that rings while you are working', 'Invoices that take longer to collect than they should', 'Enquiries that wait hours for a reply', 'An owner who can spend 20 minutes a week approving and correcting'] },
-      no: { title: 'Not this, yet', items: ['More than 40 staff or several departments: start with the AI Opportunity Audit', 'You want a chatbot on the website and nothing behind it', 'You want it fully automatic with no human check: we do not sell that', 'You want to build it yourself: a good idea if you have the time, and we will say so'] },
+      no: { title: 'Not this, yet', items: ['More than 40 staff or several departments: ask us on the call and we will point you to the right thing', 'You want a chatbot on the website and nothing behind it', 'You want it fully automatic with no human check: we do not sell that', 'You want to build it yourself: a good idea if you have the time, and we will say so'] },
     },
     {
       type: 'quote', tone: 'wash',
@@ -98,22 +97,22 @@ module.exports = {
         { q: 'Do I need to change my software?', a: 'Almost never. We connect to the phone, email, calendar, invoicing and customer tools you already use. If you have no customer list at all, we set up a simple one as part of the package. We name no software on these pages because the point is that we fit around yours.' },
         { q: 'Where does my data go?', a: 'Flo reads your email, calls and invoices, so this matters. Every account is in your name, data stays in your tools, and the AI services we use process it under business terms, not consumer ones. You get a plain-English one-page note on what it can see and where it goes, and you can disconnect anything at any time.' },
         { q: 'How quickly is it live?', a: 'Solo in about a week, Team in two to three weeks, Business in three to four. The first fortnight after that is supervised, so expect the full benefit about a month after you sign.' },
-        { q: 'What if I am bigger than 40 staff?', a: `Then the right first step is the AI Opportunity Audit at ${P.audit}: two weeks to find where AI pays across several departments, with governance and reporting built in. These packages are deliberately for smaller businesses.` },
+        { q: 'What if I am bigger than 40 staff?', a: 'Then these packages are probably too small for you, and we will say so on the call. REVIO works with larger companies separately; book the call anyway and we will point you to the right thing.' },
         { q: 'Could I set this up myself?', a: 'If you are comfortable with software and have a spare weekend, yes, and the result will be a useful chat tool. What you will probably not do is wire it into your phone line, your invoicing and your diary, write the rules for what it may do alone, and keep it running when something changes. That is what you are paying for.' },
       ],
     },
     {
-      type: 'related', kicker: 'Related', h2: 'If this is not quite you.',
+      type: 'related', kicker: 'Next', h2: 'Pick a package, or see every price.',
       items: [
-        { href: S.AUDIT_URL, icon: 'audit', title: 'AI Opportunity Audit', text: 'For businesses past 40 staff: two weeks, one ranked list of where AI pays.', meta: P.audit },
-        { href: '/ai-for-smes/', icon: 'chart', title: 'AI Consulting for SMEs', text: 'For £1m to £25m turnover companies with several departments and a bigger first build.', meta: P.build_from },
-        { href: '/small-business-ai-pricing/', icon: 'pound', title: 'Small business AI pricing', text: 'Every Clear Desk price, add-on and running cost on one page.', meta: P.assist_solo_setup },
+        { href: '/solo/', icon: 'phone', title: 'Clear Desk Solo', text: 'For anyone who is the whole business. Live in a week.', meta: P.assist_solo_setup },
+        { href: '/team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. One assistant for everyone.', meta: P.assist_team_setup },
+        { href: '/pricing/', icon: 'pound', title: 'Every price', text: 'All three packages, add-ons and running costs on one page.', meta: P.assist_business_setup },
       ],
     },
     {
       type: 'cta', h2: 'Find out what Flo would do first.',
       text: 'A 20-minute call. You describe your week, we tell you which three jobs to hand over first and what it will cost. If it is not for you, we will say so.',
-      ctas: [{ label: 'Book a call', href: S.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: S.CONTACT_URL, style: 'ghost' }],
+      ctas: [{ label: 'Book a call', href: C.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: C.CONTACT_URL, style: 'ghost' }],
       note: 'For sole traders and businesses up to 40 staff. UK only.',
     },
   ],

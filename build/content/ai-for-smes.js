@@ -29,8 +29,8 @@ module.exports = {
     },
     {
       type: 'band', h2: 'Under forty staff? There is a smaller, cheaper way in.',
-      text: 'REVIO AI Assist gives sole traders and companies of up to forty people an assistant called Flo: phone answered, inbox sorted, invoices chased. Setup from £495, live in days.',
-      ctas: [{ label: 'See REVIO AI Assist', href: '/ai-assist/', style: 'mint' }, { label: 'Small business pricing', href: '/small-business-ai-pricing/', style: 'ghost' }],
+      text: 'Clear Desk gives sole traders and companies of up to forty people an assistant called Flo: phone answered, inbox sorted, invoices chased. Setup from £495, live in days.',
+      ctas: [{ label: 'See Clear Desk', href: 'https://cleardesk.revio.agency/', style: 'mint' }, { label: 'Small business pricing', href: 'https://cleardesk.revio.agency/pricing/', style: 'ghost' }],
     },
     {
       type: 'cards', tone: 'wash', kicker: 'What actually pays at this size', h2: 'Four places the money usually is.',

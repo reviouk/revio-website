@@ -98,8 +98,7 @@
               '/ai-governance-compliance/', '/ai-app-rescue/', '/ai-app-diagnostic-audit/',
               '/legacy-modernisation/', '/funded-ai-projects/', '/ai-for-smes/',
               '/enterprise-ai-consultancy/', '/ai-consultancy-london/', '/ai-app-development/',
-              '/ai-assist/', '/ai-assist/clear-desk-solo/', '/ai-assist/clear-desk-team/',
-              '/ai-assist/clear-desk-business/', '/small-business-ai-pricing/'],
+              '/ai-for-smes/'],
       cards: [
         { href: '/ai-opportunity-audit/', icon: ICON.audit, title: 'AI Opportunity Audit',
           blurb: 'Two weeks to find where AI actually pays for itself in your business, before anyone builds a thing.',
@@ -113,7 +112,7 @@
           blurb: 'A defined system built to a fixed price and date, wired into the CRM you already run, supervised before it acts alone.',
           label: 'Fixed price',
           items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] },
-        { href: '/ai-assist/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'REVIO AI Assist',
+        { href: 'https://cleardesk.revio.agency/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'Clear Desk',
           blurb: 'Flo, a personal assistant for sole traders and companies up to forty staff. Phone answered, inbox sorted, invoices chased.',
           label: 'Small businesses',
           items: ['Clear Desk packages from &pound;495', 'Live in days, cancel any time'] }
@@ -135,7 +134,7 @@
         { href: '/ai-strategy/', icon: ICON.growth, title: 'AI strategy', desc: 'A one-page plan with the first three builds' },
         { href: '/funded-ai-projects/', icon: ICON.data, title: 'Funded AI projects', desc: 'R&amp;D relief, KTP, grants' },
         { href: '/ai-roi-calculator/', icon: ICON.growth, title: 'AI ROI calculator', desc: 'What it would return for you' },
-        { href: '/small-business-ai-pricing/', icon: ICON.grid, title: 'Small business pricing', desc: 'Clear Desk Solo, Team and Business' },
+        { href: 'https://cleardesk.revio.agency/pricing/', icon: ICON.grid, title: 'Small business pricing', desc: 'Clear Desk Solo, Team and Business' },
         { href: '/ai-services/', icon: ICON.grid, title: 'All AI services', desc: 'The whole list, with prices' }
       ]
     },
@@ -329,7 +328,7 @@
       ['/voice-ai/', 'Voice AI'],
       ['/ai-enablement/', 'Training &amp; Enablement'],
       ['/ai-governance-compliance/', 'Governance &amp; Compliance'],
-      ['/ai-assist/', 'REVIO AI Assist: Flo, for small businesses'],
+      ['https://cleardesk.revio.agency/', 'Clear Desk: Flo, for small businesses'],
       ['/ai-services/', 'All AI services']
     ] },
     { h: 'Industries', links: [
@@ -419,15 +418,72 @@
     });
   }
 
+
+  /* ---------- Clear Desk (cleardesk.revio.agency) ----------
+     The contained subsite. Pages carry body.cd-page and get this slim header
+     and footer instead of the corporate ones: four links, one button, and no
+     route back to revio.agency except the legal pages in the small print. */
+  var CD_MARK = '<svg class="cd-mark" viewBox="0 0 40 40" role="img" aria-hidden="true">' +
+    '<rect x="2" y="2" width="36" height="36" rx="11" fill="#5862ff"/>' +
+    '<path d="M11 21.5 17 27.5 29 14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<circle cx="31" cy="9" r="5.5" fill="#12c98b" stroke="#fff" stroke-width="2"/></svg>';
+  var CD_LINKS = [['/#how', 'How it works'], ['/#packages', 'Packages'], ['/pricing/', 'Pricing']];
+  var CD_BOOK = '/book/';
+
+  function cdLogo() {
+    return '<a class="cd-logo" href="/" aria-label="Clear Desk, home">' + CD_MARK +
+      '<span class="cd-word"><b>Clear Desk<sup>&trade;</sup></b><small>by <em>REVIO</em></small></span></a>';
+  }
+
+  function cdHeaderHTML(page) {
+    var links = CD_LINKS.map(function (l) {
+      var cur = l[0] === page ? ' aria-current="page"' : '';
+      return '<a href="' + l[0] + '"' + cur + '>' + l[1] + '</a>';
+    }).join('');
+    return '<div class="topwrap"><header class="topbar cd-topbar">' + cdLogo() +
+      '<span class="sp"></span><nav class="cd-nav" aria-label="Main">' + links + '</nav>' +
+      '<a class="btn btn-mint navtalk" href="' + CD_BOOK + '">Book a 20-minute call</a>' +
+      '<button class="themebtn" type="button" data-theme-toggle aria-label="Switch colour theme">' +
+      '<svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5"/></svg>' +
+      '<svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>' +
+      '</button>' +
+      '<button class="burger cd-burger" type="button" id="revio-burger" aria-label="Open menu" aria-expanded="false">' +
+      '<i></i><i></i><i></i></button></header>' +
+      '<nav class="drawer cd-drawer" id="revio-drawer" aria-label="Mobile">' +
+      CD_LINKS.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('') +
+      '<a href="' + CD_BOOK + '">Book a call</a>' +
+      '<a class="btn btn-mint" href="' + CD_BOOK + '">Book a 20-minute call</a>' +
+      '<button class="drawer-theme" type="button" data-theme-toggle>Switch light / dark</button>' +
+      '</nav></div>';
+  }
+
+  function cdFooterHTML() {
+    return '<footer class="cd-foot"><div class="wrap">' +
+      '<div>' + cdLogo() +
+      '<p>Flo, an assistant set up for your business by REVIO. Phone answered, inbox sorted, invoices chased, jobs booked. For UK sole traders and businesses with up to forty staff.</p>' +
+      '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Flo is automated and says so. Every price published, ex VAT.</span></div></div>' +
+      '<div><h4>Packages</h4><ul>' +
+      '<li><a href="/solo/">Clear Desk Solo</a></li><li><a href="/team/">Clear Desk Team</a></li>' +
+      '<li><a href="/business/">Clear Desk Business</a></li><li><a href="/pricing/">Every price</a></li></ul></div>' +
+      '<div><h4>Talk to us</h4><ul>' +
+      '<li><a href="' + CD_BOOK + '">Book a 20-minute call</a></li>' +
+      '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +
+      '<li><span class="muted">Imperial Place, 4 Maxwell Rd, Borehamwood WD6 1JN</span></li></ul></div>' +
+      '</div><div class="wrap cd-bot"><span>&copy; <span id="revio-yr">2026</span> REVIO. Clear Desk&trade; and Flo are REVIO products.</span>' +
+      '<span class="sp"></span><a href="https://revio.agency/privacy/" rel="noopener">Privacy</a><a href="https://revio.agency/terms/" rel="noopener">Terms</a></div></footer>';
+  }
+
   /* ---------- mount ---------- */
   function mount() {
     var page = currentPage();
 
+    var cd = document.body.classList.contains('cd-page');
+
     var h = document.getElementById('site-header');
-    if (h) h.innerHTML = headerHTML(page);
+    if (h) h.innerHTML = cd ? cdHeaderHTML(page) : headerHTML(page);
 
     var f = document.getElementById('site-footer');
-    if (f) f.innerHTML = footerHTML();
+    if (f) f.innerHTML = cd ? cdFooterHTML() : footerHTML();
 
     var yr = document.getElementById('revio-yr');
     if (yr) yr.textContent = new Date().getFullYear();

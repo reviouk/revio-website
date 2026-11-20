@@ -13,6 +13,10 @@ const SITE = require('./site');
 
 const ROOT = path.join(__dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
+/* Second site: build/content/cleardesk/* -> public-cleardesk/, published
+   as cleardesk.revio.agency by its own Render static site. */
+const PUBLIC_CD = path.join(ROOT, 'public-cleardesk');
+const CD_STATIC = ['styles.css', 'ai.css', 'ai.js', 'partials.js', 'cd.css', 'favicon.svg', 'img/flo', 'assets/og', 'assets/revio-logo-white.png', 'assets/revio-logo-dark.png', 'assets/fonts'];
 const CONTENT = path.join(__dirname, 'content');
 
 const args = process.argv.slice(2);
@@ -22,6 +26,11 @@ function loadPage(file) {
   delete require.cache[require.resolve(file)];
   const p = require(file);
   if (!p.slug) throw new Error(`${file}: missing slug`);
+  if (p.slug.startsWith('cleardesk/')) {
+    p.site = 'cleardesk';
+    const rest = p.slug.slice('cleardesk/'.length).replace(/^\/|\/$/g, '');
+    p.path = rest === 'index' ? '/' : '/' + rest + '/';
+  }
   if (!p.path) p.path = '/' + p.slug.replace(/^\/|\/$/g, '') + '/';
   return p;
 }
@@ -51,13 +60,13 @@ function lint(p) {
 
 function writePage(p) {
   const html = render(p);
-  const dir = path.join(PUBLIC, p.path.replace(/^\//, ''));
+  const dir = path.join(p.site === 'cleardesk' ? PUBLIC_CD : PUBLIC, p.path.replace(/^\//, ''));
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   return html.length;
 }
 
-function sitemap() {
+function sitemap(root = PUBLIC, origin = SITE.ORIGIN, extraDisallow = '\nDisallow: /newaisite/\nDisallow: /admin/') {
   const urls = [];
   const walk = (dir, rel) => {
     for (const name of fs.readdirSync(dir)) {
@@ -70,19 +79,19 @@ function sitemap() {
         const html = fs.readFileSync(full, 'utf8').slice(0, 6000);
         if (/name="robots"\s+content="[^"]*noindex/i.test(html)) continue;
         if (/http-equiv="refresh"/i.test(html)) continue;
-        const loc = SITE.ORIGIN + (rel === '' ? '/' : rel);
+        const loc = origin + (rel === '' ? '/' : rel);
         urls.push({ loc, lastmod: st.mtime.toISOString().slice(0, 10), priority: rel === '' ? '1.0' : rel.split('/').length > 2 ? '0.6' : '0.8' });
       }
     }
   };
-  walk(PUBLIC, '/');
+  walk(root, '/');
   urls.sort((a, b) => a.loc.localeCompare(b.loc));
   const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority}</priority></url>`).join('\n') +
     '\n</urlset>\n';
-  fs.writeFileSync(path.join(PUBLIC, 'sitemap.xml'), xml);
-  const robots = `User-agent: *\nAllow: /\nDisallow: /newaisite/\nDisallow: /admin/\n\nSitemap: ${SITE.ORIGIN}/sitemap.xml\n`;
-  fs.writeFileSync(path.join(PUBLIC, 'robots.txt'), robots);
+  fs.writeFileSync(path.join(root, 'sitemap.xml'), xml);
+  const robots = `User-agent: *\nAllow: /${extraDisallow}\n\nSitemap: ${origin}/sitemap.xml\n`;
+  fs.writeFileSync(path.join(root, 'robots.txt'), robots);
   return urls.length;
 }
 
@@ -115,5 +124,12 @@ function sitemap() {
     if (r.problems.length) bad++;
   }
   const n = sitemap();
-  console.log(`\n${files.length} pages built, ${bad} with lint notes, sitemap has ${n} urls`);
+  /* Clear Desk: shared static files are copied from public/ so the two sites
+     never drift, then its own sitemap and robots. */
+  for (const rel of CD_STATIC) {
+    const src = path.join(PUBLIC, rel);
+    if (fs.existsSync(src)) fs.cpSync(src, path.join(PUBLIC_CD, rel), { recursive: true });
+  }
+  const ncd = sitemap(PUBLIC_CD, SITE.CLEARDESK.ORIGIN, '');
+  console.log(`\n${files.length} pages built, ${bad} with lint notes, sitemap has ${n} urls, cleardesk ${ncd}`);
 })();

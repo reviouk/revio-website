@@ -1,21 +1,20 @@
 const S = require('../../site');
 const P = S.PRICE;
+const C = S.CLEARDESK;
 
 /* Clear Desk Team. DRAFT 2026-11-19. Audience: owner of a 2–10 person business. */
 module.exports = {
-  slug: 'ai-assist/clear-desk-team',
-  title: 'Clear Desk Team: AI Assistant for Small Teams | REVIO AI Assist',
+  slug: 'cleardesk/team',
+  title: 'Clear Desk Team: AI Assistant for Small Teams | by REVIO',
   description: 'Flo, one assistant for a team of two to ten: enquiries answered in minutes, invoices chased, numbers every Monday. From £1,950 setup, then £245 a month.',
   keywords: ['ai assistant for small team', 'ai for small business uk 10 staff', 'automate enquiries small business', 'ai admin assistant office', 'weekly business report automation', 'small business ai setup uk'],
-  crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
-  crumbLabel: 'Clear Desk Team',
   art: 'chat',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for small teams', say: 'Morning. Two enquiries booked, three invoices chased.' },
   badge: 'Clear Desk Team',
   h1: 'One assistant for the whole team. <em class="mint">Twenty hours a week back.</em>',
   sub: 'With two to ten people, the admin does not go away, it multiplies. Enquiries wait for whoever is free. Three people chase the same invoice. Nobody knows the numbers until the accountant does. Clear Desk Team gives everyone one assistant, called Flo, with one shared customer list, so the business answers in minutes and the owner sees the week on a Monday.',
   ctas: [
-    { label: 'Book a 20-minute call', href: S.BOOK_URL, style: 'mint' },
+    { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See what it costs', href: '#price', style: 'ghost' },
   ],
   heroProof: [`${P.assist_team_setup} to set up, live in two to three weeks`, `${P.assist_team_month} a month, cancel any time`, 'A two-hour team session included'],
@@ -65,7 +64,7 @@ module.exports = {
     {
       type: 'tiers', kicker: 'Price', h2: 'One setup fee, one plan for the whole team.',
       items: [
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Clear Desk Solo, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: S.BOOK_URL, cta: 'Book a call' },
+        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Clear Desk Solo, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: C.BOOK_URL, cta: 'Book a call' },
       ],
       note: `"From" because a ten-person company with three sites is more work than a three-person practice. We quote the exact figure on the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes and up to three changes a month. Two people are included; each extra person is ${P.assist_team_person} a month, so a five-person team pays £350 and a ten-person team £525. Extra automated jobs ${P.assist_job} each.`,
     },
@@ -99,15 +98,15 @@ module.exports = {
     {
       type: 'related', kicker: 'The other packages', h2: 'Smaller or bigger than this.',
       items: [
-        { href: '/ai-assist/clear-desk-solo/', icon: 'voice', title: 'Clear Desk Solo', text: 'For a one-person business. Phone, inbox, invoices and diary, live in a week.', meta: P.assist_solo_setup },
-        { href: '/ai-assist/clear-desk-business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
-        { href: '/small-business-ai-pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_team_setup },
+        { href: '/solo/', icon: 'voice', title: 'Clear Desk Solo', text: 'For a one-person business. Phone, inbox, invoices and diary, live in a week.', meta: P.assist_solo_setup },
+        { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
+        { href: '/pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_team_setup },
       ],
     },
     {
       type: 'cta', h2: 'Give the team Flo.',
       text: 'A 20-minute call. Tell us how enquiries, quotes and invoices move through the business today, and we will tell you what Flo takes off each person first, and the exact price.',
-      ctas: [{ label: 'Book a call', href: S.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: S.CONTACT_URL, style: 'ghost' }],
+      ctas: [{ label: 'Book a call', href: C.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: C.CONTACT_URL, style: 'ghost' }],
       note: `${P.assist_team_setup} setup, ${P.assist_team_month} a month, ex VAT. Live in two to three weeks.`,
     },
   ],

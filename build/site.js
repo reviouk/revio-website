@@ -18,6 +18,19 @@ module.exports = {
   WORK_URL: '/work/',
   LEAD_URL: '/embedded-ai-lead/',
   EMAIL: 'grow@revio.agency',
+  /* The contained Clear Desk site. Pages under build/content/cleardesk/
+     build into public-cleardesk/ with these overrides and no links back
+     to the corporate site (Rob, 20 Nov 2026). */
+  CLEARDESK: {
+    ORIGIN: 'https://cleardesk.revio.agency',
+    SITE_NAME: 'Clear Desk by REVIO',
+    BOOK_URL: '/book/',
+    CONTACT_URL: '/book/',
+    PRICING_URL: '/pricing/',
+    SERVICES_URL: '/',
+    AUDIT_URL: '/book/',
+    CALC_URL: '/pricing/',
+  },
   ADDRESS: 'Imperial Place, 4 Maxwell Rd, Borehamwood, WD6 1JN, United Kingdom',
 
   /* Published prices. Every page reads these, so a price change is one edit.

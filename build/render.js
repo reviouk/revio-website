@@ -14,7 +14,8 @@
  * quote, faq, related, cta, checks, timeline, prose, band, logos, calculator,
  * form, booking, cases, pillars.
  */
-const SITE = require('./site');
+const BASE_SITE = require('./site');
+let SITE = BASE_SITE;   /* swapped per page in render() for the Clear Desk site */
 
 const esc = (s) => String(s == null ? '' : s)
   .replace(/&(?!(amp|lt|gt|quot|#39|pound|mdash|ndash|middot|rsquo|lsquo|rarr|nbsp|hellip|times|#\d+);)/g, '&amp;')
@@ -204,7 +205,7 @@ const secCls = (s, extra = '') => {
 /* -------------------------------------------------------------- sections */
 const SECTION = {
   intro(s) {
-    return `<section class="${secCls(s)}"><div class="${wrapCls({ narrow: s.narrow !== false })}">` +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="${wrapCls({ narrow: s.narrow !== false })}">` +
       head2(s) + `<div class="ai-body reveal">${paras(s.body, 'mt-md')}</div>` +
       (s.ctas ? `<div class="mt-md reveal">${ctaRow(s.ctas)}</div>` : '') +
       '</div></section>';
@@ -221,7 +222,7 @@ const SECTION = {
         (it.meta ? `<span class="svc-more">${rich(it.meta)} <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>` : '') +
         `</${tag}>`;
     }).join('');
-    return `<section class="${secCls(s)}"><div class="wrap">` + head2(s, { center: s.center }) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s, { center: s.center }) +
       `<div class="grid-${cols} mt-lg">${items}</div>` +
       (s.note ? `<p class="micro mt-md">${rich(s.note)}</p>` : '') +
       (s.ctas ? `<div class="mt-lg reveal">${ctaRow(s.ctas)}</div>` : '') +
@@ -231,7 +232,7 @@ const SECTION = {
     const items = (s.items || []).map((it, i) =>
       `<li class="ai-step reveal" style="--d:${i}"><div class="ai-step-n"><span>${i + 1}</span></div>` +
       `<div><h3>${rich(it.title)}</h3><p>${rich(it.text)}</p>${it.meta ? `<span class="ai-step-meta">${rich(it.meta)}</span>` : ''}</div></li>`).join('');
-    return `<section class="${secCls(s)}"><div class="${wrapCls(s)}">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="${wrapCls(s)}">` + head2(s) +
       `<ol class="ai-steps mt-lg">${items}</ol>` +
       (s.note ? `<p class="micro mt-md">${rich(s.note)}</p>` : '') +
       '</div></section>';
@@ -249,7 +250,7 @@ const SECTION = {
       (t.best ? `<p class="ai-best"><b>Best for</b> ${rich(t.best)}</p>` : '') +
       btn({ label: t.cta || 'Talk to us', href: t.href || SITE.BOOK_URL, style: t.featured ? 'primary' : 'dark' }) +
       '</div>').join('');
-    return `<section class="${secCls(s)}"><div class="wrap">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s) +
       `<div class="price-grid${n === 4 ? ' cols-4' : n === 2 ? ' cols-2' : ''} mt-lg">${items}</div>` +
       (s.note ? `<p class="price-note">${rich(s.note)}</p>` : '') +
       '</div></section>';
@@ -257,7 +258,7 @@ const SECTION = {
   table(s) {
     const head = `<tr>${(s.head || []).map((h) => `<th>${rich(h)}</th>`).join('')}</tr>`;
     const rows = (s.rows || []).map((r) => `<tr>${r.map((c, i) => `<td${i === 0 ? ' class="k"' : ''}>${rich(c)}</td>`).join('')}</tr>`).join('');
-    return `<section class="${secCls(s)}"><div class="${wrapCls(s)}">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="${wrapCls(s)}">` + head2(s) +
       `<div class="ai-table-wrap mt-lg reveal"><table class="ai-table"><thead>${head}</thead><tbody>${rows}</tbody></table></div>` +
       (s.note ? `<p class="micro mt-md">${rich(s.note)}</p>` : '') +
       '</div></section>';
@@ -276,34 +277,34 @@ const SECTION = {
       paras(s.body, 'mt-md') +
       (s.bullets ? `<ul class="checks mt-md">${s.bullets.map((b) => `<li>${rich(b)}</li>`).join('')}</ul>` : '') +
       (s.ctas ? `<div class="mt-md">${ctaRow(s.ctas)}</div>` : '') + '</div>';
-    return `<section class="${secCls(s)}"><div class="wrap split${s.reverse ? ' rev' : ''}">` +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap split${s.reverse ? ' rev' : ''}">` +
       (s.reverse ? visual + copy : copy + visual) + '</div></section>';
   },
   compare(s) {
     const col = (c, cls) => `<div class="ai-cmp ${cls} reveal"><h3>${rich(c.title)}</h3><ul>${(c.items || []).map((b) => `<li>${rich(b)}</li>`).join('')}</ul></div>`;
-    return `<section class="${secCls(s)}"><div class="${wrapCls(s)}">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="${wrapCls(s)}">` + head2(s) +
       `<div class="ai-cmp-grid mt-lg">${col(s.yes, 'yes')}${col(s.no, 'no')}</div>` +
       (s.note ? `<p class="micro mt-md">${rich(s.note)}</p>` : '') + '</div></section>';
   },
   quote(s) {
-    return `<section class="${secCls(s)}"><div class="wrap wrap-narrow"><div class="testimonial reveal">` +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap wrap-narrow"><div class="testimonial reveal">` +
       `<blockquote>${rich(s.text)}</blockquote><div class="who"><strong>${rich(s.who)}</strong>${s.role ? ` &middot; ${rich(s.role)}` : ''}</div>` +
       '</div></div></section>';
   },
   faq(s) {
     const items = (s.items || []).map((f, i) =>
       `<details class="ai-faq reveal" style="--d:${i}"><summary><span>${rich(f.q)}</span><i></i></summary><div class="ai-faq-a">${paras([].concat(f.a))}</div></details>`).join('');
-    return `<section class="${secCls(s)}" id="faq"><div class="wrap wrap-narrow">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''} id="faq"><div class="wrap wrap-narrow">` + head2(s) +
       `<div class="ai-faqs mt-lg">${items}</div></div></section>`;
   },
   related(s) {
     const items = (s.items || []).map((it, i) =>
       `<a class="card reveal" href="${esc(it.href)}" style="--d:${i}">${it.icon ? `<div class="icon">${icon(it.icon)}</div>` : ''}<h3>${rich(it.title)}</h3><p>${rich(it.text)}</p><span class="arrow-link">${rich(it.meta || 'Read more')}</span></a>`).join('');
-    return `<section class="${secCls(s)}"><div class="wrap">` + head2({ kicker: s.kicker || 'Related', h2: s.h2 || 'Where this leads.' }) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2({ kicker: s.kicker || 'Related', h2: s.h2 || 'Where this leads.' }) +
       `<div class="grid-${s.cols || 3} mt-lg">${items}</div></div></section>`;
   },
   cta(s) {
-    return `<section class="${secCls(s)}"><div class="wrap reveal"><div class="cta-band">` +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap reveal"><div class="cta-band">` +
       `<h2>${rich(s.h2)}</h2><p>${rich(s.text)}</p>${ctaRow(s.ctas || [
         { label: 'Book a meeting', href: SITE.BOOK_URL, style: 'mint' },
         { label: 'Start with the audit', href: SITE.AUDIT_URL, style: 'ghost' }])}` +
@@ -311,19 +312,19 @@ const SECTION = {
       '</div></div></section>';
   },
   checks(s) {
-    return `<section class="${secCls(s)}"><div class="${wrapCls(s)}">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="${wrapCls(s)}">` + head2(s) +
       `<div class="ai-checks-grid mt-lg">${(s.groups || []).map((g, i) =>
         `<div class="ai-check-group reveal" style="--d:${i}"><h3>${rich(g.title)}</h3><ul class="checks">${(g.items || []).map((b) => `<li>${rich(b)}</li>`).join('')}</ul></div>`).join('')}</div>` +
       '</div></section>';
   },
   timeline(s) {
-    return `<section class="${secCls(s)}"><div class="${wrapCls(s)}">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="${wrapCls(s)}">` + head2(s) +
       `<div class="ai-timeline mt-lg">${(s.items || []).map((it, i) =>
         `<div class="ai-tl reveal" style="--d:${i}"><div class="ai-tl-when">${rich(it.when)}</div><div class="ai-tl-body"><h3>${rich(it.title)}</h3><p>${rich(it.text)}</p></div></div>`).join('')}</div>` +
       '</div></section>';
   },
   prose(s) {
-    return `<section class="${secCls(s)}"><div class="wrap wrap-narrow">` + head2(s) +
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap wrap-narrow">` + head2(s) +
       `<div class="prose mt-md reveal">${rich(s.html || '')}${paras(s.body)}</div></div></section>`;
   },
   band(s) {
@@ -340,12 +341,12 @@ const SECTION = {
   cases(s) {
     const items = (s.items || []).map((c, i) =>
       `<a class="case-card reveal" href="${esc(c.href)}" style="--d:${i}"><div class="case-top"><span class="kicker">${rich(c.kicker || 'Case study')}</span><h3>${rich(c.title)}</h3><p>${rich(c.result)}</p></div><div class="ai-case-body"><p>${rich(c.text)}</p><span class="arrow-link">Read the case study</span></div></a>`).join('');
-    return `<section class="${secCls(s)}"><div class="wrap">` + head2(s) + `<div class="grid-3 mt-lg">${items}</div></div></section>`;
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s) + `<div class="grid-3 mt-lg">${items}</div></div></section>`;
   },
   pillars(s) {
     const items = (s.items || []).map((p, i) =>
       `<div class="ai-pillar reveal" style="--d:${i}"><div class="icon">${icon(p.icon || 'book')}</div><h3>${rich(p.title)}</h3><p>${rich(p.text)}</p><ul class="ai-links">${(p.links || []).map((l) => `<li><a href="${esc(l.href)}">${rich(l.label)}</a></li>`).join('')}</ul></div>`).join('');
-    return `<section class="${secCls(s)}"><div class="wrap">` + head2(s) + `<div class="grid-2 mt-lg">${items}</div></div></section>`;
+    return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s) + `<div class="grid-2 mt-lg">${items}</div></div></section>`;
   },
   html(s) { return rich(s.html); },
   form(s) { return require('./blocks/form')(s, SITE, { rich, esc, head2, secCls }); },
@@ -401,6 +402,8 @@ function jsonld(p) {
 
 /* ------------------------------------------------------------- document */
 function render(p) {
+  SITE = p.site === 'cleardesk' ? Object.assign({}, BASE_SITE, BASE_SITE.CLEARDESK) : BASE_SITE;
+  const cd = p.site === 'cleardesk';
   if (!p.path) p.path = '/' + p.slug.replace(/^\/|\/$/g, '') + '/';
   const url = SITE.ORIGIN + (p.canonical || p.path);
   const title = plain(p.title);
@@ -434,7 +437,7 @@ function render(p) {
 <link rel="canonical" href="${url}">
 <meta name="robots" content="${p.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Revio">
+<meta property="og:site_name" content="${SITE.SITE_NAME || 'Revio'}">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
@@ -450,15 +453,16 @@ function render(p) {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/ai.css">
+${cd ? '<link rel="stylesheet" href="/cd.css">' : ''}
 <script>(function(){try{var t=localStorage.getItem("revio-theme-v2")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 ${jsonld(p)}
 ${p.headExtra || ''}
 </head>
-<body class="ai-page${p.bodyClass ? ' ' + p.bodyClass : ''}">
+<body class="ai-page${cd ? ' cd-page' : ''}${p.bodyClass ? ' ' + p.bodyClass : ''}">
 <div id="site-header"></div>
 <main>
 ${p.heroHtml || hero(p)}
-${p.noCrumbs ? '' : crumbs}
+${(p.noCrumbs || cd) ? '' : crumbs}
 ${sections}
 </main>
 <div id="site-footer"></div>

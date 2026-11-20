@@ -1,25 +1,24 @@
-const S = require('../site');
+const S = require('../../site');
 const P = S.PRICE;
+const C = S.CLEARDESK;
 
 /* Small business AI pricing. DRAFT 2026-11-19. One ladder, every price. */
 module.exports = {
-  slug: 'small-business-ai-pricing',
-  title: 'Small Business AI Pricing UK: Every Price Published | Revio',
-  description: 'Every REVIO AI Assist price on one page: Clear Desk Solo from £495 setup and £125 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
+  slug: 'cleardesk/pricing',
+  title: 'Clear Desk Pricing: Every Price Published | by REVIO',
+  description: 'Every Clear Desk price on one page: Clear Desk Solo from £495 setup and £125 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
   keywords: ['ai assistant pricing uk', 'small business ai cost', 'ai receptionist price uk', 'how much does ai automation cost small business', 'ai setup fee monthly plan'],
-  crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
-  crumbLabel: 'Pricing',
   art: 'layers',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the REVIO AI Assist assistant', say: 'Every price on one page. No surprises.' },
-  badge: 'REVIO AI Assist pricing',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Every price on one page. No surprises.' },
+  badge: 'Clear Desk pricing',
   h1: 'Every price, <em class="mint">on one page.</em>',
   sub: 'Flo, the assistant in every Clear Desk package, answers your phone, sorts your inbox and chases your invoices. Most UK agencies selling AI to small businesses hide their prices. Fewer than half publish any. We publish all of ours, including the running costs and the things that cost extra, because a business owner should be able to work out the sum before a sales call.',
   ctas: [
-    { label: 'Book a 20-minute call', href: S.BOOK_URL, style: 'mint' },
-    { label: 'Back to the packages', href: '/ai-assist/', style: 'ghost' },
+    { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
+    { label: 'Back to the packages', href: '/', style: 'ghost' },
   ],
   heroProof: ['Setup fee once, monthly plan after', 'All prices exclude VAT', 'Cancel the monthly plan any time'],
-  service: { name: 'REVIO AI Assist', type: 'Pricing', price: P.assist_solo_setup_num },
+  service: { name: 'Clear Desk', type: 'Pricing', price: P.assist_solo_setup_num },
   sections: [
     {
       type: 'intro', kicker: 'How the pricing works',
@@ -32,9 +31,9 @@ module.exports = {
     {
       type: 'tiers', kicker: 'The three packages', h2: 'Pick the size of business.',
       items: [
-        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'Sole traders and owner-operators. Live in about a week.', includes: ['Phone answered, jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Diary kept, reminders sent', 'Simple customer list', 'One hour training, one-page guide', 'Plan: 150 call minutes, monitoring, one change a month'], best: 'one person, perhaps an apprentice or a partner', href: '/ai-assist/clear-desk-solo/', cta: 'See Solo' },
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'Two to ten staff. Includes two people, then £35 a person a month. Live in two to three weeks.', includes: ['Everything in Solo, for each person', 'Shared enquiry inbox answered in minutes', 'Forms and social messages connected', 'CRM connected or set up', 'Monday numbers', 'Monthly marketing drafts', 'Two-hour team session', 'Plan: 300 call minutes, up to three changes a month, 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business', href: '/ai-assist/clear-desk-team/', cta: 'See Team' },
-        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'Ten to forty staff. Includes ten people, then £30 a person a month. Live in three to four weeks.', includes: ['Everything in Team, for each person', 'Enquiry to quote to invoice, end to end', 'Customer answers 24/7', 'Staff answers from your policies', 'Rules, access policy, audit trail', 'Half-day training', 'Plan: 800 call minutes, up to six small changes a month', 'Monthly review and roadmap'], best: 'a 10 to 40 person business', href: '/ai-assist/clear-desk-business/', cta: 'See Business' },
+        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'Sole traders and owner-operators. Live in about a week.', includes: ['Phone answered, jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Diary kept, reminders sent', 'Simple customer list', 'One hour training, one-page guide', 'Plan: 150 call minutes, monitoring, one change a month'], best: 'one person, perhaps an apprentice or a partner', href: '/solo/', cta: 'See Solo' },
+        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'Two to ten staff. Includes two people, then £35 a person a month. Live in two to three weeks.', includes: ['Everything in Solo, for each person', 'Shared enquiry inbox answered in minutes', 'Forms and social messages connected', 'CRM connected or set up', 'Monday numbers', 'Monthly marketing drafts', 'Two-hour team session', 'Plan: 300 call minutes, up to three changes a month, 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business', href: '/team/', cta: 'See Team' },
+        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'Ten to forty staff. Includes ten people, then £30 a person a month. Live in three to four weeks.', includes: ['Everything in Team, for each person', 'Enquiry to quote to invoice, end to end', 'Customer answers 24/7', 'Staff answers from your policies', 'Rules, access policy, audit trail', 'Half-day training', 'Plan: 800 call minutes, up to six small changes a month', 'Monthly review and roadmap'], best: 'a 10 to 40 person business', href: '/business/', cta: 'See Business' },
       ],
       note: 'All exclude VAT. Setup fees are credited against the next package up if you upgrade within a year. Solo is one person. Team includes two people and Business ten; each extra person is priced below.',
     },
@@ -97,17 +96,17 @@ module.exports = {
       ],
     },
     {
-      type: 'related', kicker: 'Bigger businesses', h2: 'If you are past forty staff.',
+      type: 'related', kicker: 'The packages', h2: 'Read the one that fits.',
       items: [
-        { href: S.AUDIT_URL, icon: 'audit', title: 'AI Opportunity Audit', text: 'Two weeks to find where AI pays across departments. The right first step for larger companies.', meta: P.audit },
-        { href: '/ai-implementation/', icon: 'build', title: 'AI Build & Implementation', text: 'A defined system built to a fixed price and date, for jobs outside the packages.', meta: P.build_from },
-        { href: S.PRICING_URL, icon: 'pound', title: 'All Revio pricing', text: 'Every consultancy, build and retained price on the site.', meta: P.audit },
+        { href: '/solo/', icon: 'phone', title: 'Clear Desk Solo', text: 'For anyone who is the whole business. Phone, inbox, invoices, quotes, diary.', meta: P.assist_solo_setup },
+        { href: '/team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. Enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
+        { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. Enquiry to cash, end to end, with a monthly review.', meta: P.assist_business_setup },
       ],
     },
     {
       type: 'cta', h2: 'Get the exact figure in 20 minutes.',
       text: 'Tell us the size of the business and how the phone, inbox and invoicing work today. We will tell you the package, the exact setup fee and the monthly plan on the call.',
-      ctas: [{ label: 'Book a call', href: S.BOOK_URL, style: 'mint' }, { label: 'See the packages', href: '/ai-assist/', style: 'ghost' }],
+      ctas: [{ label: 'Book a call', href: C.BOOK_URL, style: 'mint' }, { label: 'See the packages', href: '/', style: 'ghost' }],
       note: 'All prices exclude VAT. Cancel the monthly plan any time.',
     },
   ],
