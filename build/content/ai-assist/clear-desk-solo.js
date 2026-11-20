@@ -13,7 +13,7 @@ module.exports = {
   art: 'voice',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for sole traders', say: 'Hi, it&rsquo;s Flo, Dave&rsquo;s assistant. Thursday at two?' },
   badge: 'Clear Desk Solo',
-  h1: 'Missed call, lost job. <em class="mint">Not any more.</em>',
+  h1: 'Missed call, lost revenue. <em class="mint">Not any more.</em>',
   sub: "You are on the tools, in a treatment room or with a client. The phone rings, the inbox fills, and an invoice from three weeks ago still has not been paid. Clear Desk Solo gives a one-person business an assistant called Flo. Flo answers, replies, chases and books, in your voice, and shows you everything before it goes.",
   ctas: [
     { label: 'Book a 20-minute call', href: S.BOOK_URL, style: 'mint' },
