@@ -362,6 +362,9 @@ function hero(p) {
   const note = p.heroNote ? `<p class="micro">${rich(p.heroNote)}</p>` : '';
   const proof = p.heroProof ? `<ul class="ai-hero-proof">${p.heroProof.map((x) => `<li>${rich(x)}</li>`).join('')}</ul>` : '';
   const side = p.heroForm ? `<aside class="ai-hero-side ai-hero-form">${SECTION.form(Object.assign({ embedded: true }, p.heroForm))}</aside>` :
+    p.heroImage ? `<aside class="ai-hero-side ai-hero-flo"><figure class="flo-fig">` +
+      `<img src="${esc(p.heroImage.src)}" alt="${esc(p.heroImage.alt || '')}" width="560" height="560" decoding="async" fetchpriority="high">` +
+      (p.heroImage.say ? `<figcaption class="flo-say">${rich(p.heroImage.say)}</figcaption>` : '') + `</figure></aside>` :
     `<aside class="ai-hero-side ai-hero-art" aria-hidden="true">${art(p.art || 'network')}</aside>`;
   return `<div class="page-hero ai-hero"><div class="wrap ai-hero-grid"><div class="ai-hero-copy">${badge}<h1>${rich(p.h1)}</h1>` +
     `<p class="sub">${rich(p.sub)}</p>${ctas}${proof}${note}</div>${side}</div></div>`;

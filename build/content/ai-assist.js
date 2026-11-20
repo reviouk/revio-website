@@ -11,6 +11,7 @@ module.exports = {
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }],
   crumbLabel: 'AI Assist',
   art: 'clock',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the REVIO AI Assist assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?' },
   badge: 'REVIO AI Assist',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
   sub: "An assistant called Flo, set up for your business by us. Flo answers the phone when you can't, clears the inbox, chases the invoices, books the jobs and remembers every customer. You review and approve. Flo does the rest. From £495 to set up, then a small monthly plan.",

@@ -1137,6 +1137,8 @@ a.card:focus-visible { outline-offset: 0; }
   stroke-linecap: round; stroke-linejoin: round;
 }
 .mcard .mi svg { width: 19px; height: 19px; }
+.mcard .mi-img { width: 44px; height: 44px; overflow: hidden; background: rgba(88,98,255,.12); border-radius: 50%; }
+.mcard .mi-img img { width: 44px; height: 44px; object-fit: cover; object-position: 50% 12%; transform: scale(1.35); transform-origin: 50% 20%; }
 .mcard h4 { font-size: 16px; margin-top: 12px; }
 .mcard p { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin-top: 7px; }
 .mcard .flab {

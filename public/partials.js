@@ -113,7 +113,7 @@
           blurb: 'A defined system built to a fixed price and date, wired into the CRM you already run, supervised before it acts alone.',
           label: 'Fixed price',
           items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] },
-        { href: '/ai-assist/', icon: ICON.chat, title: 'REVIO AI Assist',
+        { href: '/ai-assist/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'REVIO AI Assist',
           blurb: 'Flo, a personal assistant for sole traders and firms up to forty staff. Phone answered, inbox sorted, invoices chased.',
           label: 'Small businesses',
           items: ['Clear Desk packages from &pound;495', 'Live in days, cancel any time'] }
@@ -239,7 +239,7 @@
 
   function cardHTML(c) {
     return '<a class="mcard" href="' + c.href + '">' +
-      '<span class="mi">' + c.icon + '</span>' +
+      (c.img ? '<span class="mi mi-img"><img src="' + c.img + '" alt="" width="44" height="44" loading="lazy"></span>' : '<span class="mi">' + c.icon + '</span>') +
       '<h4>' + c.title + '</h4><p>' + c.blurb + '</p>' +
       '<span class="flab">' + c.label + '</span><ul>' +
       c.items.map(function (i) { return '<li>' + TICK + i + '</li>'; }).join('') +

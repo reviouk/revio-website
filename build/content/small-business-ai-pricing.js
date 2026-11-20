@@ -10,6 +10,7 @@ module.exports = {
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
   crumbLabel: 'Pricing',
   art: 'layers',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the REVIO AI Assist assistant', say: 'Every price on one page. No surprises.' },
   badge: 'REVIO AI Assist pricing',
   h1: 'Every price, <em class="mint">on one page.</em>',
   sub: 'Flo, the assistant in every Clear Desk package, answers your phone, sorts your inbox and chases your invoices. Most UK agencies selling AI to small businesses hide their prices. Fewer than half publish any. We publish all of ours, including the running costs and the things that cost extra, because a business owner should be able to work out the sum before a sales call.',

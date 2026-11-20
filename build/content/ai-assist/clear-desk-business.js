@@ -10,6 +10,7 @@ module.exports = {
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
   crumbLabel: 'Clear Desk Business',
   art: 'pipeline',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for firms up to forty staff', say: 'Your Monday page is ready. One thing needs you.' },
   badge: 'Clear Desk Business',
   h1: 'The back office runs itself. <em class="mint">You run the business.</em>',
   sub: 'At ten to forty staff the admin has become roles: someone answers, someone quotes, someone invoices, someone chases, someone answers the same HR question for the fifth time. Clear Desk Business hands the whole chain to an assistant called Flo, from the first enquiry to the paid invoice, with your people approving at the points that matter and a monthly review with us.',

@@ -10,6 +10,7 @@ module.exports = {
   crumbs: [{ label: 'AI Services', href: S.SERVICES_URL }, { label: 'AI Assist', href: '/ai-assist/' }],
   crumbLabel: 'Clear Desk Team',
   art: 'chat',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for small teams', say: 'Morning. Two enquiries booked, three invoices chased.' },
   badge: 'Clear Desk Team',
   h1: 'One assistant for the whole team. <em class="mint">Twenty hours a week back.</em>',
   sub: 'With two to ten people, the admin does not go away, it multiplies. Enquiries wait for whoever is free. Three people chase the same invoice. Nobody knows the numbers until the accountant does. Clear Desk Team gives everyone one assistant, called Flo, with one shared customer list, so the business answers in minutes and the owner sees the week on a Monday.',

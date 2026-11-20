@@ -18,6 +18,15 @@
 .ai-hero-side { position: relative; }
 .ai-hero-art { display: grid; place-items: center; }
 .ai-hero-art .art { width: 100%; max-width: 480px; height: auto; }
+/* Flo, the AI Assist persona: transparent cut-out on a soft purple disc, with a speech line. */
+.ai-hero-flo { display: grid; place-items: center; }
+.flo-fig { position: relative; margin: 0; width: min(100%, 420px); aspect-ratio: 1; display: grid; place-items: center; }
+.flo-fig::before { content: ''; position: absolute; inset: 8% 8% 0; border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, rgba(88,98,255,.22), rgba(88,98,255,.06) 62%, transparent 72%); }
+.flo-fig img { position: relative; width: 100%; height: auto; filter: drop-shadow(0 18px 28px rgba(26,22,64,.18)); }
+.flo-say { position: absolute; left: 0; bottom: 6%; max-width: 62%; background: var(--canvas); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 14px; line-height: 1.4;
+  font-weight: 600; box-shadow: var(--shadow-soft); }
 .ai-hero-form { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 26px; box-shadow: var(--shadow-soft); }
 .ai-hero-form h2 { font-size: 20px; margin-bottom: 4px; }
 .ai-hero-form .ai-form-sub { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
@@ -397,6 +406,9 @@ a.case-card { display: flex; }
   .ai-hero-grid, .hm-hero, .hm-proof, .calc, .ai-form-grid, .ai-band { grid-template-columns: 1fr; }
   .ai-hero-art { order: -1; }
   .ai-hero-art .art { max-width: 340px; }
+  .ai-hero-flo { order: -1; }
+  .flo-fig { width: min(100%, 300px); }
+  .flo-say { font-size: 13px; max-width: 70%; }
   .hm-orbit { max-width: 380px; margin: 0 auto; }
   .ai-band .cta-row { justify-content: flex-start; }
   .calc-out { position: static; }
