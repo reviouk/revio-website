@@ -3,11 +3,14 @@
  * dashboard's `requests` table, so nothing is retyped at triage.
  *
  * Variants (s.variant): 'contact' (default), 'quote', 'audit', 'lead'. The
- * questions change a little; the payload shape does not. */
+ * questions change a little; the payload shape does not.
+ * 'cleardesk' is the short form for cleardesk.revio.agency: six questions, no
+ * CRM or budget, and the dashboard files it under Clear Desk by its origin. */
 module.exports = function form(s, SITE, u) {
   const { rich, esc, head2, secCls } = u;
   const v = s.variant || 'contact';
   const id = s.formId || v;
+  if (v === 'cleardesk') return cleardesk(s, SITE, u, id);
   const svc = (s.services || [
     ['Embedded AI Lead', 'embedded_ai_lead'], ['AI Opportunity Audit', 'ai_opportunity_audit'],
     ['AI Build & Implementation', 'ai_implementation'], ['Agents & automation', 'ai_agents_automation'],
@@ -63,3 +66,35 @@ module.exports = function form(s, SITE, u) {
   </div>`;
   return `<section class="${secCls(s)}" id="form"><div class="wrap ai-form-grid">${side}<div class="ai-form-wrap reveal">${inner}</div></div></section>`;
 };
+
+function cleardesk(s, SITE, u, id) {
+  const { rich, esc, secCls } = u;
+  const pkgs = [['Solo', 'Clear Desk Solo', 'Just me'], ['Team', 'Clear Desk Team', '2 to 10 people'], ['Business', 'Clear Desk Business', '10 or more'], ['Not sure yet', 'Clear Desk, not sure which', 'Help me choose']];
+  const radios = pkgs.map(([label, val, hint], i) =>
+    `<label><input type="radio" name="services[]" value="${esc(val)}"${i === 3 ? ' checked' : ''}><span>${esc(label)} <small>${esc(hint)}</small></span></label>`).join('');
+  const team = [['Just me', '1'], ['2', '2'], ['3 to 5', '3-5'], ['6 to 10', '6-10'], ['11 to 25', '11-25'], ['More than 25', '26+']];
+  const opts = team.map(([l, val]) => `<option value="${esc(val)}">${esc(l)}</option>`).join('');
+  const inner = `<form class="ai-form" data-form-id="${esc(id)}" data-book="${esc(SITE.BOOK_URL)}#diary" novalidate>
+  <div class="form-grid">
+    <div class="field"><label for="${id}-name">Your name</label><input id="${id}-name" name="contact_name" autocomplete="name" required></div>
+    <div class="field"><label for="${id}-company">Business name</label><input id="${id}-company" name="company_name" autocomplete="organization" required></div>
+    <div class="field"><label for="${id}-email">Email</label><input id="${id}-email" name="contact_email" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="${id}-phone">Phone <small>so we can call you back</small></label><input id="${id}-phone" name="phone" type="tel" autocomplete="tel"></div>
+    <div class="field full"><label>Which sounds like you?</label><div class="chips">${radios}</div></div>
+    <div class="field"><label for="${id}-team">How many of you?</label><select id="${id}-team" name="team_size"><option value="">Choose…</option>${opts}</select></div>
+    <div class="field full"><label for="${id}-problem">What eats your week?</label><textarea id="${id}-problem" name="main_problem" required placeholder="Missed calls, a full inbox, invoices nobody chases, quotes written at 10pm. A sentence or two is plenty."></textarea></div>
+    <div class="hp" aria-hidden="true"><label>Leave this empty<input name="website_url" tabindex="-1" autocomplete="off"></label></div>
+  </div>
+  <div class="ai-form-status" role="status" aria-live="polite"></div>
+  <button class="btn btn-purple" type="submit">${rich(s.button || 'Ask Flo&rsquo;s team to call me')}</button>
+  <p class="micro" style="margin-top:4px">By sending this you agree to our <a href="https://revio.agency/privacy/" rel="noopener" style="color:var(--purple)">privacy policy</a>. One reply from a person, no newsletters.</p>
+</form>`;
+  const points = s.points || ['A reply from a person within one working day', 'We tell you which package fits and what it costs', 'If Flo is not right for you, we will say so'];
+  const side = `<div class="ai-form-side reveal">
+    ${s.kicker ? `<span class="kicker">${rich(s.kicker)}</span>` : ''}
+    <h2>${rich(s.h2 || 'Rather we called you?')}</h2>
+    <p class="lede mt-md">${rich(s.lede || 'Tell us a little about the business and we will ring at a time that suits.')}</p>
+    <ul class="checks mt-md">${points.map((p) => `<li>${rich(p)}</li>`).join('')}</ul>
+  </div>`;
+  return `<section class="${secCls(s)}" id="form"><div class="wrap ai-form-grid">${side}<div class="ai-form-wrap reveal">${inner}</div></div></section>`;
+}

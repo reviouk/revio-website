@@ -64,3 +64,7 @@
 .cd-foot .cd-bot a { color: var(--muted); }
 .cd-foot .cd-bot .sp { flex: 1; }
 @media (max-width: 860px) { .cd-foot .wrap { grid-template-columns: 1fr; gap: 22px; } }
+
+/* enquiry form: the hint inside a picked option stays readable */
+.chips small{font-weight:500;opacity:.75;margin-left:3px}
+.chips input:checked + span small{color:#fff;opacity:.85}

@@ -17,14 +17,15 @@ module.exports = {
   sub: 'No pitch and no deck. Tell us how the phone, the inbox and the invoicing work today. You leave knowing which package fits, what it costs to the pound, and what Flo would take off you first. If it is not for you, we will say so.',
   ctas: [
     { label: 'Pick a time below', href: '#diary', style: 'mint' },
-    { label: 'See the prices first', href: C.PRICING_URL, style: 'ghost' },
+    { label: 'Or ask us to call you', href: '#form', style: 'ghost' },
   ],
   heroProof: ['Microsoft Teams or a phone call, your choice', 'Free, no obligation', 'With the person who sets Flo up'],
   meetingRows: false,
   sections: [
     { type: 'booking', kicker: 'The diary', h2: 'Choose a slot.', lede: 'Times are shown in your own time zone. The invitation arrives by email the moment you book.' },
+    { type: 'form', tone: 'wash', variant: 'cleardesk', formId: 'cleardesk-book', kicker: 'No time that suits?', h2: 'Rather we called you?', lede: 'Six quick questions. We ring back within one working day, at a time that suits, and you get the same 20 minutes.' },
     {
-      type: 'cards', tone: 'wash', kicker: 'Make the most of it', h2: 'Three things worth having to hand.', cols: 3,
+      type: 'cards', kicker: 'Make the most of it', h2: 'Three things worth having to hand.', cols: 3,
       items: [
         { icon: 'phone', title: 'How many calls you miss', text: 'A rough number for a normal week, and what happens to them. This is the number that decides whether Solo pays for itself.' },
         { icon: 'mail', title: 'What you use today', text: 'Your email, calendar, invoicing software and any customer list, however untidy. We connect to what you have.' },
