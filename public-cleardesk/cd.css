@@ -5,8 +5,8 @@
 /* ---------- logo ---------- */
 .cd-logo { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
 .cd-logo .cd-mark { width: 44px; height: 44px; flex: none; }
-.cd-logo .cd-word { display: flex; flex-direction: column; font-family: var(--fh); font-weight: 800; font-size: 17px; line-height: 1; letter-spacing: 3px; text-transform: uppercase; color: var(--ink); }
-.cd-logo .cd-word span + span { color: var(--purple); margin-top: 3px; }
+.cd-logo .cd-word { display: flex; align-items: baseline; white-space: nowrap; font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; font-weight: 900; font-size: 21px; line-height: 1; letter-spacing: .2px; text-transform: uppercase; color: var(--ink); }
+.cd-logo .cd-word span + span { color: var(--purple); margin-left: .28em; }
 .cd-logo .cd-word sup { font-size: 8px; letter-spacing: 0; margin-left: 1px; vertical-align: top; position: relative; top: -1px; }
 
 /* ---------- Clear Desk mark: inbox to zero (Rob, 20 Nov 2026) ----------
@@ -45,7 +45,7 @@
 .cd-drawer a { font-size: 17px; }
 @media (max-width: 860px) {
   .cd-nav, .cd-topbar .navtalk { display: none; }
-  .cd-logo .cd-word { font-size: 15px; letter-spacing: 2.4px; }
+  .cd-logo .cd-word { font-size: 17px; }
   .cd-logo .cd-mark { width: 40px; height: 40px; }
 }
 @media (min-width: 861px) { .cd-burger { display: none; } }
