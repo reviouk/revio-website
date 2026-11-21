@@ -468,7 +468,7 @@
       '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +
       '<li><span class="muted">Imperial Place, 4 Maxwell Rd, Borehamwood WD6 1JN</span></li></ul></div>' +
       '</div><div class="wrap cd-bot"><span>&copy; <span id="revio-yr">2026</span> REVIO. Clear Desk&trade; and Flo are REVIO products.</span>' +
-      '<span class="sp"></span><a href="https://revio.agency/privacy/" rel="noopener">Privacy</a><a href="https://revio.agency/terms/" rel="noopener">Terms</a></div></footer>';
+      '<span class="sp"></span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></footer>';
   }
 
   /* ---------- mount ---------- */
