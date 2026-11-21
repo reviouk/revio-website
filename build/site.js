@@ -63,9 +63,12 @@ module.exports = {
     private_ai: 'From £4,500',       // proposal
     legacy_discovery: 'From £2,500', // proposal
     /* REVIO AI Assist (Clear Desk packages), confirmed by Rob 2026-11-19 */
-    assist_solo_setup: 'From £495',
-    assist_solo_setup_num: 495,
-    assist_solo_month: 'From £125',
+    assist_solo_setup: 'From £295',
+    assist_solo_setup_num: 295,
+    assist_solo_month: 'From £99',
+    assist_solo_year: '£990',        // Solo yearly option, two months free
+    assist_solo_email: '£20',        // Solo email add-on, a month
+    assist_solo_pack: '£15',         // Solo extra call minutes, pack of 100 (no per-minute overage on Solo)
     assist_team_setup: 'From £1,950',
     assist_team_setup_num: 1950,
     assist_team_month: 'From £245',
@@ -76,8 +79,8 @@ module.exports = {
     assist_team_person_setup: '£95', // per extra person at setup, Team
     assist_business_person: '£30',  // per extra person a month, Business (10 included)
     assist_business_person_setup: '£75',
-    assist_overage: '15p',           // per call minute above the allowance (150/300/800)
-    assist_check: '£295',             // 90-minute Health Check, credited
+    assist_overage: '15p',           // per call minute above the allowance, Team (300) and Business (800) only. Solo has 250 and buys packs of 100
+    assist_check: '£295',             // 90-minute Health Check, credited against Team and Business only
     assist_job: 'From £750',          // one extra automated job
   },
 };

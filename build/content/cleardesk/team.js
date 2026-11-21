@@ -30,7 +30,7 @@ module.exports = {
       ],
     },
     {
-      type: 'cards', tone: 'wash', kicker: 'What it does for you', h2: 'Everything in Solo, for every person, plus four things a team needs.',
+      type: 'cards', tone: 'wash', kicker: 'What it does for you', h2: 'Everything in Solo, plus email, for every person, and four things a team needs.',
       cols: 2,
       items: [
         { icon: 'chat', title: 'Every enquiry answered in minutes', text: 'Website forms, email, social messages and calls all land in one place. Flo replies properly within minutes, asks the qualifying questions, books the appointment or passes it to the right person with the details already filled in. Nothing waits for whoever is free.' },
@@ -64,7 +64,7 @@ module.exports = {
     {
       type: 'tiers', kicker: 'Price', h2: 'One setup fee, one plan for the whole team.',
       items: [
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Clear Desk Solo, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: C.BOOK_URL, cta: 'Book a call' },
+        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Clear Desk Solo, plus email, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: C.BOOK_URL, cta: 'Book a call' },
       ],
       note: `"From" because a ten-person company with three sites is more work than a three-person practice. We quote the exact figure on the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes and up to three changes a month. Two people are included; each extra person is ${P.assist_team_person} a month, so a five-person team pays £350 and a ten-person team £525. Extra automated jobs ${P.assist_job} each.`,
     },
@@ -98,7 +98,7 @@ module.exports = {
     {
       type: 'related', kicker: 'The other packages', h2: 'Smaller or bigger than this.',
       items: [
-        { href: '/solo/', icon: 'voice', title: 'Clear Desk Solo', text: 'For a one-person business. Phone, inbox, invoices and diary, live in a week.', meta: P.assist_solo_setup },
+        { href: '/solo/', icon: 'voice', title: 'Clear Desk Solo', text: 'For a one-person business. Phone, invoices and diary, live in a week.', meta: P.assist_solo_setup },
         { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
         { href: '/pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_team_setup },
       ],

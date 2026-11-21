@@ -36,7 +36,7 @@ module.exports = {
       type: 'faq', kicker: 'Practical', h2: 'About the call.',
       items: [
         { q: 'Who will I be talking to?', a: 'The person who would set Flo up for you, not a salesperson. The same person runs the setup and the supervised fortnight.' },
-        { q: 'Is it really free?', a: `Yes. Twenty minutes, no charge, no obligation. If you want a firm price before committing to a package, the 90-minute Health Check is ${P.assist_check} and comes off any package booked within 60 days.` },
+        { q: 'Is it really free?', a: `Yes. Twenty minutes, no charge, no obligation. If you want a fixed price before committing to a package, the 90-minute Health Check is ${P.assist_check} and comes off Team or Business booked within 60 days.` },
         { q: 'Can I hear Flo first?', a: 'Yes. Ask on the call and we will give you a number to ring and send you a recording of Flo answering, booking and chasing.' },
         { q: 'What if I need to move it?', a: 'The confirmation email has a reschedule link. Use it as often as you need.' },
       ],
