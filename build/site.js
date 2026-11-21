@@ -67,7 +67,6 @@ module.exports = {
     assist_solo_setup_num: 295,
     assist_solo_month: 'From £99',
     assist_solo_year: '£990',        // Solo yearly option, two months free
-    assist_solo_email: '£20',        // Solo email add-on, a month
     assist_solo_pack: '£15',         // Solo extra call minutes, pack of 100 (no per-minute overage on Solo)
     assist_team_setup: 'From £1,950',
     assist_team_setup_num: 1950,
