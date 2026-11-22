@@ -1,4 +1,4 @@
-/* Clear Desk by REVIO: the contained subsite's own chrome on top of
+/* Over to Flo by REVIO: the contained subsite's own chrome on top of
    styles.css + ai.css. Slim header, four links, no mega menus, a short
    footer with no routes back to the corporate site. */
 
@@ -11,7 +11,7 @@
 .cd-logo .cd-strap { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; font-weight: 700; font-size: 8.5px; line-height: 1; letter-spacing: .21em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .cd-logo .cd-word sup { font-size: 8px; letter-spacing: 0; margin-left: 1px; vertical-align: top; position: relative; top: -1px; }
 
-/* ---------- Clear Desk mark: inbox to zero (Rob, 20 Nov 2026) ----------
+/* ---------- Over to Flo mark: inbox to zero (Rob, 20 Nov 2026) ----------
    Three sheets lift out of the tray, the red badge counts 3, 2, 1 and turns
    into a mint tick. Five-second loop; still for reduced motion. */
 .cd-mark * { transform-box: fill-box; transform-origin: center; }

@@ -15,7 +15,7 @@
  * form, booking, cases, pillars.
  */
 const BASE_SITE = require('./site');
-let SITE = BASE_SITE;   /* swapped per page in render() for the Clear Desk site */
+let SITE = BASE_SITE;   /* swapped per page in render() for the Over to Flo site */
 
 const esc = (s) => String(s == null ? '' : s)
   .replace(/&(?!(amp|lt|gt|quot|#39|pound|mdash|ndash|middot|rsquo|lsquo|rarr|nbsp|hellip|times|#\d+);)/g, '&amp;')

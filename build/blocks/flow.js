@@ -49,7 +49,7 @@ module.exports = function flow(s, SITE, u) {
     `<div class="ff mt-lg reveal" style="--hx:${pct(HUB.x, W)};--hy:${pct(HUB.y, H)};--hd:${pct(HUB.r * 2, W)};--ay:${pct(approveY, H)}">` +
     `<svg class="ff-lines" viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">${lines}` +
     `<circle class="ff-ring" cx="${HUB.x}" cy="${HUB.y}" r="${HUB.r + 10}"/></svg>` +
-    `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, the Clear Desk assistant" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>` +
+    `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, your AI assistant" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>` +
     `<p class="ff-cap ff-cap-in">${rich(s.inTitle || 'Comes in')}</p>` +
     `<ul class="ff-nodes ff-list-in">${(s.incoming || []).slice(0, 4).map(node).join('')}</ul>` +
     `<p class="ff-cap ff-cap-out">${rich(s.outTitle || 'Flo gets it done')}</p>` +

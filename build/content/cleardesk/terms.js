@@ -5,7 +5,7 @@ const html = `
 <p class="updated">Last updated: 21 November 2026</p>
 
 <h2 id="service">1. What the service is</h2>
-<p>Clear Desk is a done-for-you assistant service run by REVIO, of ${S.ADDRESS}. The assistant is called Flo. Flo is automated, and it says so.</p>
+<p>Over to Flo is a done-for-you assistant service run by REVIO, of ${S.ADDRESS}. The assistant is called Flo. Flo is automated, and it says so.</p>
 <p>With your permission, Flo connects to your phone line (missed calls are forwarded to a number we provide), your Google or Microsoft mailbox and calendar, and your invoicing software. It answers calls, sorts email, drafts replies for your approval, books diary slots, chases unpaid invoices and texts you summaries.</p>
 <p>In these terms, "we" and "us" mean REVIO, and "you" means the business that signs up.</p>
 
@@ -70,8 +70,8 @@ const html = `
 
 module.exports = {
   slug: 'cleardesk/terms',
-  title: 'Terms of Service | Clear Desk by REVIO',
-  description: 'The plain-English terms for Clear Desk by REVIO: fees, no minimum term, the supervised first fortnight, what Flo will not do, your data and liability.',
+  title: 'Terms of Service | Over to Flo by REVIO',
+  description: 'The plain-English terms for Over to Flo by REVIO: fees, no minimum term, the supervised first fortnight, what Flo will not do, your data and liability.',
   utility: true,
   art: 'doc',
   badge: 'Legal',

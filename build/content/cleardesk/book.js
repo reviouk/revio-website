@@ -2,16 +2,16 @@ const S = require('../../site');
 const P = S.PRICE;
 const C = S.CLEARDESK;
 
-/* The Clear Desk booking page: the 20-minute call. Same Microsoft Bookings
+/* The Over to Flo booking page: the 20-minute call. Same Microsoft Bookings
    diary as the main site, no links back to it. */
 module.exports = {
   slug: 'cleardesk/book',
-  title: 'Book a 20-Minute Call About Flo | Clear Desk by REVIO',
-  description: 'Pick a 20-minute slot. Tell us how your phone, inbox and invoicing work today and we will tell you which Clear Desk package fits and exactly what it costs. No pitch.',
-  keywords: ['book ai assistant call', 'clear desk call', 'ai receptionist demo uk'],
+  title: 'Book a 20-Minute Call About Flo | Over to Flo by REVIO',
+  description: 'Pick a 20-minute slot. Tell us how your phone, inbox and invoicing work today and we will tell you which Flo package fits and exactly what it costs. No pitch.',
+  keywords: ['book ai assistant call', 'over to flo call', 'ai receptionist demo uk'],
   utility: true,
   art: 'clock',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your Clear Desk assistant', say: 'Twenty minutes. I&rsquo;ll be listening in.' },
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Twenty minutes. I&rsquo;ll be listening in.' },
   badge: 'Book a call',
   h1: 'Twenty minutes, <em class="mint">straight into the diary.</em>',
   sub: 'No pitch and no deck. Tell us how the phone, the inbox and the invoicing work today. You leave knowing which package fits, what it costs to the pound, and what Flo would take off you first. If it is not for you, we will say so.',

@@ -124,7 +124,7 @@ function sitemap(root = PUBLIC, origin = SITE.ORIGIN, extraDisallow = '\nDisallo
     if (r.problems.length) bad++;
   }
   const n = sitemap();
-  /* Clear Desk: shared static files are copied from public/ so the two sites
+  /* Over to Flo: shared static files are copied from public/ so the two sites
      never drift, then its own sitemap and robots. */
   for (const rel of CD_STATIC) {
     const src = path.join(PUBLIC, rel);

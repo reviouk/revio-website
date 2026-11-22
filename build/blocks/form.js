@@ -5,7 +5,7 @@
  * Variants (s.variant): 'contact' (default), 'quote', 'audit', 'lead'. The
  * questions change a little; the payload shape does not.
  * 'cleardesk' is the short form for cleardesk.revio.agency: six questions, no
- * CRM or budget, and the dashboard files it under Clear Desk by its origin. */
+ * CRM or budget, and the dashboard files it under Over to Flo by its origin. */
 module.exports = function form(s, SITE, u) {
   const { rich, esc, head2, secCls } = u;
   const v = s.variant || 'contact';
@@ -67,13 +67,13 @@ module.exports = function form(s, SITE, u) {
   return `<section class="${secCls(s)}" id="form"><div class="wrap ai-form-grid">${side}<div class="ai-form-wrap reveal">${inner}</div></div></section>`;
 };
 
-/* Clear Desk enquiries go to the Clear Desk app (moved from the delivery
-   dashboard on 22 Nov 2026). The app only accepts posts from the Clear Desk site. */
+/* Over to Flo enquiries go to the Over to Flo app (moved from the delivery
+   dashboard on 22 Nov 2026). The app only accepts posts from the Over to Flo site. */
 const CD_INTAKE = 'https://app.cleardesk.revio.agency/enquiries';
 
 function cleardesk(s, SITE, u, id) {
   const { rich, esc, secCls } = u;
-  const pkgs = [['Solo', 'Clear Desk Solo', 'Just me'], ['Team', 'Clear Desk Team', '2 to 10 people'], ['Business', 'Clear Desk Business', '10 or more'], ['Not sure yet', 'Clear Desk, not sure which', 'Help me choose']];
+  const pkgs = [['Solo', 'Flo Solo', 'Just me'], ['Team', 'Flo Team', '2 to 10 people'], ['Business', 'Flo Business', '10 or more'], ['Not sure yet', 'Not sure which', 'Help me choose']];
   const radios = pkgs.map(([label, val, hint], i) =>
     `<label><input type="radio" name="services[]" value="${esc(val)}"${i === 3 ? ' checked' : ''}><span>${esc(label)} <small>${esc(hint)}</small></span></label>`).join('');
   const team = [['Just me', '1'], ['2', '2'], ['3 to 5', '3-5'], ['6 to 10', '6-10'], ['11 to 25', '11-25'], ['More than 25', '26+']];

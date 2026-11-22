@@ -6,14 +6,14 @@ const C = S.CLEARDESK;
    named anywhere on these pages: the assistant is the product. */
 module.exports = {
   slug: 'cleardesk/index',
-  title: 'Clear Desk: Flo, the AI Assistant for Small Businesses | by REVIO',
-  description: 'Meet Flo, the assistant that answers your calls, clears the inbox, chases invoices and books jobs. Set up for you in days, from £295. Three Clear Desk packages.',
+  title: 'Over to Flo: an AI Assistant for Small Businesses | by REVIO',
+  description: 'Over to Flo gives you an AI assistant that answers your calls, sorts the inbox, chases invoices and books jobs. Set up for you in days, from £295.',
   keywords: ['ai assistant for small business uk', 'ai personal assistant small business', 'flo ai assistant', 'ai receptionist uk', 'automate admin small business', 'ai for sole traders', 'done for you ai setup'],
   art: 'clock',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?',
-    audio: { src: '/audio/flo.mp3?v=2', label: 'Listen to Flo', seconds: 39,
-      transcript: "Hi, I'm Flo, the AI assistant from Clear Desk. I pick up the phone when you can't. While you're busy on a job, I answer your calls, take the details, and book the work into your diary. I keep your inbox clear and draft your replies. And I chase unpaid invoices, politely, until they're paid. You check and approve everything from your phone. That means fewer missed calls, fewer lost jobs, and your evenings back. The team sets everything up for you, so there's nothing to learn. Book a twenty-minute call, and let's clear your desk." } },
-  badge: 'Clear Desk by REVIO',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?',
+    audio: { src: '/audio/flo.mp3?v=3', label: 'Listen to Flo', seconds: 36,
+      transcript: "Hi, I'm Flo, your AI assistant. I pick up the phone when you can't. While you're busy on a job, I answer your calls, take the details, and book the work into your diary. I keep your inbox clear and draft your replies. And I chase unpaid invoices, politely, until they're paid. You check and approve everything from your phone. That means fewer missed calls, fewer lost jobs, and your evenings back. The team sets everything up for you, so there's nothing to learn. Book a twenty-minute call, and let's clear your desk." } },
+  badge: 'Over to Flo by REVIO',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
   sub: "Meet Flo, the assistant we set up for your business. Flo picks up the phone when you can't, keeps the inbox clear, chases unpaid invoices, books the jobs in and remembers every customer. You check and approve. Flo does the rest.",
   ctas: [
@@ -22,7 +22,7 @@ module.exports = {
   ],
   heroProof: ['Set up for you in one to four weeks', 'Every price on this page', 'No lock-in, cancel the monthly plan any time'],
   heroNote: 'For UK sole traders and businesses with up to 40 staff.',
-  service: { name: 'Clear Desk', type: 'Personal assistant for small businesses', price: P.assist_solo_setup_num },
+  service: { name: 'Over to Flo', type: 'Personal assistant for small businesses', price: P.assist_solo_setup_num },
   sections: [
     {
       type: 'intro', kicker: 'The problem',
@@ -47,9 +47,9 @@ module.exports = {
     {
       type: 'tiers', id: 'packages', kicker: 'Three packages', h2: 'Pick the size of business, not a list of features.',
       items: [
-        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices, with 250 call minutes included.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/solo/', cta: 'See Solo' },
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/team/', cta: 'See Team' },
-        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/business/', cta: 'See Business' },
+        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices, with 250 call minutes included.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/solo/', cta: 'See Solo' },
+        { name: 'Flo Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/team/', cta: 'See Team' },
+        { name: 'Flo Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/business/', cta: 'See Business' },
       ],
       note: `All prices exclude VAT and are shown as "from". The monthly plan covers Flo's running costs, monitoring, fixes and changes, with a call-minute allowance for each size. Team and Business are priced per person beyond the people included. Not sure which fits? Book a 90-minute Health Check for ${P.assist_check}, credited against Team or Business.`,
     },
@@ -87,7 +87,7 @@ module.exports = {
         { icon: 'people', title: 'Customer list', text: 'Every customer remembered' },
       ],
       approve: 'You check and approve on your phone',
-      note: 'Phone, inbox, diary, quotes, invoices and the customer list come with every package. Website enquiries and marketing start with Clear Desk Team. Website chat comes with Clear Desk Business.',
+      note: 'Phone, inbox, diary, quotes, invoices and the customer list come with every package. Website enquiries and marketing start with Flo Team. Website chat comes with Flo Business.',
     },
     {
       type: 'steps', kicker: 'Getting started', h2: 'From first call to a clear desk.',
@@ -125,8 +125,8 @@ module.exports = {
     {
       type: 'related', kicker: 'Next', h2: 'Pick a package, or see every price.',
       items: [
-        { href: '/solo/', icon: 'phone', title: 'Clear Desk Solo', text: 'For anyone who is the whole business. Live in a week.', meta: P.assist_solo_setup },
-        { href: '/team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. One assistant for everyone.', meta: P.assist_team_setup },
+        { href: '/solo/', icon: 'phone', title: 'Flo Solo', text: 'For anyone who is the whole business. Live in a week.', meta: P.assist_solo_setup },
+        { href: '/team/', icon: 'people', title: 'Flo Team', text: 'Two to ten staff. One assistant for everyone.', meta: P.assist_team_setup },
         { href: '/pricing/', icon: 'pound', title: 'Every price', text: 'All three packages, add-ons and running costs on one page.', meta: P.assist_business_setup },
       ],
     },

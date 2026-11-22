@@ -18,12 +18,12 @@ module.exports = {
   WORK_URL: '/work/',
   LEAD_URL: '/embedded-ai-lead/',
   EMAIL: 'grow@revio.agency',
-  /* The contained Clear Desk site. Pages under build/content/cleardesk/
+  /* The contained Over to Flo site (formerly Clear Desk). Pages under build/content/cleardesk/
      build into public-cleardesk/ with these overrides and no links back
      to the corporate site (Rob, 20 Nov 2026). */
   CLEARDESK: {
     ORIGIN: 'https://cleardesk.revio.agency',
-    SITE_NAME: 'Clear Desk by REVIO',
+    SITE_NAME: 'Over to Flo by REVIO',
     BOOK_URL: '/book/',
     CONTACT_URL: '/book/',
     PRICING_URL: '/pricing/',
@@ -62,7 +62,7 @@ module.exports = {
     voice: 'From £6,000',            // proposal
     private_ai: 'From £4,500',       // proposal
     legacy_discovery: 'From £2,500', // proposal
-    /* REVIO AI Assist (Clear Desk packages), confirmed by Rob 2026-11-19 */
+    /* REVIO AI Assist (Flo packages), confirmed by Rob 2026-11-19 */
     assist_solo_setup: 'From £295',
     assist_solo_setup_num: 295,
     assist_solo_month: 'From £99',

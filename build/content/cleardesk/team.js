@@ -2,31 +2,31 @@ const S = require('../../site');
 const P = S.PRICE;
 const C = S.CLEARDESK;
 
-/* Clear Desk Team. DRAFT 2026-11-19. Audience: owner of a 2–10 person business. */
+/* Flo Team. DRAFT 2026-11-19. Audience: owner of a 2–10 person business. */
 module.exports = {
   slug: 'cleardesk/team',
-  title: 'Clear Desk Team: AI Assistant for Small Teams | by REVIO',
+  title: 'Flo Team: AI Assistant for Small Teams | by REVIO',
   description: 'Flo, one assistant for a team of two to ten: enquiries answered in minutes, invoices chased, numbers every Monday. From £1,950 setup, then £245 a month.',
   keywords: ['ai assistant for small team', 'ai for small business uk 10 staff', 'automate enquiries small business', 'ai admin assistant office', 'weekly business report automation', 'small business ai setup uk'],
   art: 'chat',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for small teams', say: 'Morning. Two enquiries booked, three invoices chased.' },
-  badge: 'Clear Desk Team',
+  badge: 'Flo Team',
   h1: 'One assistant for the whole team. <em class="mint">Twenty hours a week back.</em>',
-  sub: 'With two to ten people, the admin does not go away, it multiplies. Enquiries wait for whoever is free. Three people chase the same invoice. Nobody knows the numbers until the accountant does. Clear Desk Team gives everyone one assistant, called Flo, with one shared customer list, so the business answers in minutes and the owner sees the week on a Monday.',
+  sub: 'With two to ten people, the admin does not go away, it multiplies. Enquiries wait for whoever is free. Three people chase the same invoice. Nobody knows the numbers until the accountant does. Flo Team gives everyone one assistant, with one shared customer list, so the business answers in minutes and the owner sees the week on a Monday.',
   ctas: [
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See what it costs', href: '#price', style: 'ghost' },
   ],
   heroProof: [`${P.assist_team_setup} to set up, live in two to three weeks`, `${P.assist_team_month} a month, cancel any time`, 'A two-hour team session included'],
   heroNote: 'For small practices, agencies, trades companies with office staff, lettings agents, clinics, salons and shops with a team.',
-  service: { name: 'Clear Desk Team', type: 'Personal assistant setup for small teams', price: P.assist_team_setup_num },
+  service: { name: 'Flo Team', type: 'Personal assistant setup for small teams', price: P.assist_team_setup_num },
   sections: [
     {
       type: 'intro', kicker: 'Your week today',
       h2: 'You hired people to do the work, and they spend half their day on the admin around it.',
       body: [
         'At two to ten staff the owner is still the switchboard. Enquiries land in a shared inbox and wait for whoever notices. A quote goes out late because the person who prices it was on site. The invoice reminder is sent twice by two people, or not at all. The Monday meeting runs on gut feel because the numbers live in four places. Everyone is busy and the business still feels slow to customers.',
-        'Clear Desk Team puts Flo in front of every person, connected to the shared inbox, the diary, the invoicing, the customer list and your marketing channels. Flo answers and logs enquiries, drafts the replies, chases the money, writes the Monday numbers and drafts the month\'s posts. Your team approves, corrects and gets on with the work they were hired for.',
+        'Flo Team puts Flo in front of every person, connected to the shared inbox, the diary, the invoicing, the customer list and your marketing channels. Flo answers and logs enquiries, drafts the replies, chases the money, writes the Monday numbers and drafts the month\'s posts. Your team approves, corrects and gets on with the work they were hired for.',
       ],
     },
     {
@@ -64,7 +64,7 @@ module.exports = {
     {
       type: 'tiers', kicker: 'Price', h2: 'One setup fee, one plan for the whole team.',
       items: [
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Clear Desk Solo, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: C.BOOK_URL, cta: 'Book a call' },
+        { name: 'Flo Team', price: P.assist_team_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_team_month} a month, cancel any time`, text: 'Everything on this page, set up in two to three weeks. Includes two people; each extra person £35 a month and £95 at setup, up to ten.', includes: ['Everything in Flo Solo, for each person', '300 answered call minutes a month, then 15p a minute', 'One shared enquiry inbox, answered in minutes', 'Website forms and social messages connected', 'CRM connected, or a simple one set up', 'Weekly numbers every Monday', 'Monthly marketing drafts and review requests', 'Two-hour team session and a written guide', '30-day check-in and a 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business where the owner is still the switchboard', href: C.BOOK_URL, cta: 'Book a call' },
       ],
       note: `"From" because a ten-person company with three sites is more work than a three-person practice. We quote the exact figure on the first call and it does not move. The plan covers Flo's running costs, monitoring, fixes and up to three changes a month. Two people are included; each extra person is ${P.assist_team_person} a month, so a five-person team pays £350 and a ten-person team £525. Extra automated jobs ${P.assist_job} each.`,
     },
@@ -80,7 +80,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Right for you if, and not if.',
       yes: { title: 'Right for you if', items: ['Two to ten people, one owner still handling too much', 'Enquiries wait hours for a reply', 'The numbers arrive from the accountant, late', 'Marketing happens in quiet weeks, so rarely', 'Someone can own the approvals for twenty minutes a day'] },
-      no: { title: 'Not this if', items: ['You are on your own: Clear Desk Solo is cheaper and faster', 'More than ten people or several departments: see Clear Desk Business', 'You want a chatbot on the website and nothing else', 'Nobody can own the approvals: it will stall'] },
+      no: { title: 'Not this if', items: ['You are on your own: Flo Solo is cheaper and faster', 'More than ten people or several departments: see Flo Business', 'You want a chatbot on the website and nothing else', 'Nobody can own the approvals: it will stall'] },
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What owners of small teams ask us.',
@@ -92,14 +92,14 @@ module.exports = {
         { q: 'Why is the price "from"?', a: `${P.assist_team_setup} covers a typical team on one site with the usual tools. Three sites, two phone lines or an awkward legacy system cost more to connect, and each person beyond the first two adds ${P.assist_team_person_setup} at setup. We say so on the first call. The figure we quote is fixed and does not move during the setup.` },
         { q: 'What does the monthly plan cover?', a: `${P.assist_team_month} a month, ex VAT: Flo's running costs for the whole team, monitoring, fixes, and up to three changes a month, for example a new service, a new person or a new reminder schedule. Two people are included and each extra person is ${P.assist_team_person} a month. 300 answered call minutes are included; above that, 15p a minute, itemised. Cancel any time.` },
         { q: 'Where does our data go?', a: 'Flo reads your team\'s email, calls, invoices and customer list, so this matters. Every account is in your company\'s name, data stays in your own tools, and the AI services behind it process it under business terms. You get a one-page data note and a short access policy for staff, and you can disconnect anything in a minute.' },
-        { q: 'What happens when we grow past ten?', a: 'Clear Desk Business adds end-to-end enquiry to quote to invoice handling, 24/7 customer answers, HR and policy answers from your documents, and a monthly review with us. Your Team setup fee is credited against Business if you upgrade within a year.' },
+        { q: 'What happens when we grow past ten?', a: 'Flo Business adds end-to-end enquiry to quote to invoice handling, 24/7 customer answers, HR and policy answers from your documents, and a monthly review with us. Your Team setup fee is credited against Business if you upgrade within a year.' },
       ],
     },
     {
       type: 'related', kicker: 'The other packages', h2: 'Smaller or bigger than this.',
       items: [
-        { href: '/solo/', icon: 'voice', title: 'Clear Desk Solo', text: 'For a one-person business. Phone, inbox, invoices and diary, live in a week.', meta: P.assist_solo_setup },
-        { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
+        { href: '/solo/', icon: 'voice', title: 'Flo Solo', text: 'For a one-person business. Phone, inbox, invoices and diary, live in a week.', meta: P.assist_solo_setup },
+        { href: '/business/', icon: 'layers', title: 'Flo Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
         { href: '/pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_team_setup },
       ],
     },

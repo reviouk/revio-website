@@ -5,35 +5,35 @@ const C = S.CLEARDESK;
 /* Small business AI pricing. DRAFT 2026-11-19. One ladder, every price. */
 module.exports = {
   slug: 'cleardesk/pricing',
-  title: 'Clear Desk Pricing: Every Price Published | by REVIO',
-  description: 'Every Clear Desk price on one page: Clear Desk Solo from £295 setup and £99 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
+  title: 'Over to Flo Pricing: Every Price Published | by REVIO',
+  description: 'Every Over to Flo price on one page: Flo Solo from £295 setup and £99 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
   keywords: ['ai assistant pricing uk', 'small business ai cost', 'ai receptionist price uk', 'how much does ai automation cost small business', 'ai setup fee monthly plan'],
   art: 'layers',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Every price on one page. No surprises.' },
-  badge: 'Clear Desk pricing',
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Every price on one page. No surprises.' },
+  badge: 'Over to Flo pricing',
   h1: 'Every price, <em class="mint">on one page.</em>',
-  sub: 'Flo, the assistant in every Clear Desk package, answers your phone, sorts your inbox and chases your invoices. Most UK agencies selling AI to small businesses hide their prices. Fewer than half publish any. We publish all of ours, including the running costs and the things that cost extra, because a business owner should be able to work out the sum before a sales call.',
+  sub: 'Flo, the assistant in every package, answers your phone, sorts your inbox and chases your invoices. Most UK agencies selling AI to small businesses hide their prices. Fewer than half publish any. We publish all of ours, including the running costs and the things that cost extra, because a business owner should be able to work out the sum before a sales call.',
   ctas: [
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'Back to the packages', href: '/', style: 'ghost' },
   ],
   heroProof: ['Setup fee once, monthly plan after', 'All prices exclude VAT', 'Cancel the monthly plan any time'],
-  service: { name: 'Clear Desk', type: 'Pricing', price: P.assist_solo_setup_num },
+  service: { name: 'Over to Flo', type: 'Pricing', price: P.assist_solo_setup_num },
   sections: [
     {
       type: 'intro', kicker: 'How the pricing works',
       h2: 'One fee to set it up, one plan to keep it running, nothing else hidden.',
       body: [
-        'Every Clear Desk package has two numbers. The setup fee pays for us to connect Flo to your phone, diary, invoicing, customer list and inbox, teach it your tone and your prices, write the rules for what it may do alone, train you or your team, and supervise the first fortnight. The monthly plan pays for Flo\'s running costs, monitoring so we know when something breaks before you do, fixes, and changes as your business shifts.',
+        'Every package has two numbers. The setup fee pays for us to connect Flo to your phone, diary, invoicing, customer list and inbox, teach it your tone and your prices, write the rules for what it may do alone, train you or your team, and supervise the first fortnight. The monthly plan pays for Flo\'s running costs, monitoring so we know when something breaks before you do, fixes, and changes as your business shifts.',
         'Prices are "from" because a ten-person company on three sites is more work than a sole trader with one phone. We give you the exact figure on the first call and it does not move during the setup. There is no day rate, no minimum term on the plan, and every account, licence and line of code is in your name from day one.',
       ],
     },
     {
       type: 'tiers', kicker: 'The three packages', h2: 'Pick the size of business.',
       items: [
-        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'Sole traders and owner-operators. Live in about a week.', includes: ['Phone answered, jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Diary kept, reminders sent', 'Simple customer list', 'One hour training, one-page guide', 'Plan: 250 call minutes, monitoring, one change a month'], best: 'one person, perhaps an apprentice or a partner', href: '/solo/', cta: 'See Solo' },
-        { name: 'Clear Desk Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'Two to ten staff. Includes two people, then £35 a person a month. Live in two to three weeks.', includes: ['Everything in Solo, plus email, for each person', 'Shared enquiry inbox answered in minutes', 'Forms and social messages connected', 'CRM connected or set up', 'Monday numbers', 'Monthly marketing drafts', 'Two-hour team session', 'Plan: 300 call minutes, up to three changes a month, 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business', href: '/team/', cta: 'See Team' },
-        { name: 'Clear Desk Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'Ten to forty staff. Includes ten people, then £30 a person a month. Live in three to four weeks.', includes: ['Everything in Team, for each person', 'Enquiry to quote to invoice, end to end', 'Customer answers 24/7', 'Staff answers from your policies', 'Rules, access policy, audit trail', 'Half-day training', 'Plan: 800 call minutes, up to six small changes a month', 'Monthly review and roadmap'], best: 'a 10 to 40 person business', href: '/business/', cta: 'See Business' },
+        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'Sole traders and owner-operators. Live in about a week.', includes: ['Phone answered, jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Diary kept, reminders sent', 'Simple customer list', 'One hour training, one-page guide', 'Plan: 250 call minutes, monitoring, one change a month'], best: 'one person, perhaps an apprentice or a partner', href: '/solo/', cta: 'See Solo' },
+        { name: 'Flo Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'Two to ten staff. Includes two people, then £35 a person a month. Live in two to three weeks.', includes: ['Everything in Solo, plus email, for each person', 'Shared enquiry inbox answered in minutes', 'Forms and social messages connected', 'CRM connected or set up', 'Monday numbers', 'Monthly marketing drafts', 'Two-hour team session', 'Plan: 300 call minutes, up to three changes a month, 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business', href: '/team/', cta: 'See Team' },
+        { name: 'Flo Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'Ten to forty staff. Includes ten people, then £30 a person a month. Live in three to four weeks.', includes: ['Everything in Team, for each person', 'Enquiry to quote to invoice, end to end', 'Customer answers 24/7', 'Staff answers from your policies', 'Rules, access policy, audit trail', 'Half-day training', 'Plan: 800 call minutes, up to six small changes a month', 'Monthly review and roadmap'], best: 'a 10 to 40 person business', href: '/business/', cta: 'See Business' },
       ],
       note: 'All exclude VAT. Setup fees are credited against the next package up if you upgrade within a year. Solo is one person, and can be paid yearly: £990 a year, two months free. Team includes two people and Business ten; each extra person is priced below.',
     },
@@ -76,7 +76,7 @@ module.exports = {
       type: 'table', kicker: 'Compared', h2: 'What this costs against the alternatives.',
       head: ['Option', 'Typical cost', 'What you get'],
       rows: [
-        ['Clear Desk Solo', `${P.assist_solo_setup} then ${P.assist_solo_month.replace('From', 'from')} a month`, 'Phone, inbox, invoices, quotes and diary handled, you approve'],
+        ['Flo Solo', `${P.assist_solo_setup} then ${P.assist_solo_month.replace('From', 'from')} a month`, 'Phone, inbox, invoices, quotes and diary handled, you approve'],
         ['Part-time administrator, two days a week', 'About £1,000 to £1,400 a month', 'Two days of cover, holidays and sickness, no evenings or weekends'],
         ['Call answering service', '£50 to £250 a month', 'Messages taken, nothing booked, no inbox or invoices'],
         ['Typical UK AI agency monthly plan', 'About £250 a month, setup rarely published', 'Varies. Fewer than half publish a price at all'],
@@ -100,9 +100,9 @@ module.exports = {
     {
       type: 'related', kicker: 'The packages', h2: 'Read the one that fits.',
       items: [
-        { href: '/solo/', icon: 'phone', title: 'Clear Desk Solo', text: 'For anyone who is the whole business. Phone, inbox, invoices, quotes, diary.', meta: P.assist_solo_setup },
-        { href: '/team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. Enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
-        { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. Enquiry to cash, end to end, with a monthly review.', meta: P.assist_business_setup },
+        { href: '/solo/', icon: 'phone', title: 'Flo Solo', text: 'For anyone who is the whole business. Phone, inbox, invoices, quotes, diary.', meta: P.assist_solo_setup },
+        { href: '/team/', icon: 'people', title: 'Flo Team', text: 'Two to ten staff. Enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
+        { href: '/business/', icon: 'layers', title: 'Flo Business', text: 'Ten to forty staff. Enquiry to cash, end to end, with a monthly review.', meta: P.assist_business_setup },
       ],
     },
     {

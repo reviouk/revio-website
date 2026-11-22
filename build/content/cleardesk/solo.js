@@ -2,25 +2,25 @@ const S = require('../../site');
 const P = S.PRICE;
 const C = S.CLEARDESK;
 
-/* Clear Desk Solo. DRAFT 2026-11-19. Audience: sole traders and owner-operators,
+/* Flo Solo. DRAFT 2026-11-19. Audience: sole traders and owner-operators,
    not freelancers. Lead with the phone, then inbox, then invoices. */
 module.exports = {
   slug: 'cleardesk/solo',
-  title: 'Clear Desk Solo: Flo, the AI Assistant for Sole Traders | by REVIO',
+  title: 'Flo Solo: AI Assistant for Sole Traders | by REVIO',
   description: 'Flo answers missed calls, books the job, texts back callers, sorts your inbox and chases invoices. A named person, no contract. From £295, then £99 a month.',
   keywords: ['ai assistant for sole traders', 'ai receptionist for tradesmen uk', 'ai for self employed uk', 'missed calls tradesman', 'invoice chasing automation', 'ai personal assistant small business'],
   art: 'voice',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the assistant for sole traders', say: 'Hi, it&rsquo;s Flo, Dave&rsquo;s assistant. Thursday at two?' },
-  badge: 'Clear Desk Solo',
+  badge: 'Flo Solo',
   h1: 'Missed call, lost revenue. <em class="mint">Not any more.</em>',
-  sub: "You are on the tools, in a treatment room or with a client. The phone rings, the inbox fills, and an invoice from three weeks ago still has not been paid. Clear Desk Solo gives a one-person business an assistant called Flo. Flo answers your missed calls, books the job, texts back callers it could not help, sorts your inbox and chases unpaid invoices. You get a named person looking after it, a supervised first fortnight and no contract.",
+  sub: "You are on the tools, in a treatment room or with a client. The phone rings, the inbox fills, and an invoice from three weeks ago still has not been paid. Flo Solo is the package for a one-person business. Flo answers your missed calls, books the job, texts back callers it could not help, sorts your inbox and chases unpaid invoices. You get a named person looking after it, a supervised first fortnight and no contract.",
   ctas: [
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See what it costs', href: '#price', style: 'ghost' },
   ],
   heroProof: [`${P.assist_solo_setup} to set up, live in a week`, `${P.assist_solo_month} a month, cancel any time`, 'You approve everything for the first fortnight'],
   heroNote: 'For electricians, plumbers, heating engineers, therapists, garages, sole-practitioner accountants, consultants and anyone else who is the whole business.',
-  service: { name: 'Clear Desk Solo', type: 'Personal assistant setup for sole traders', price: P.assist_solo_setup_num },
+  service: { name: 'Flo Solo', type: 'Personal assistant setup for sole traders', price: P.assist_solo_setup_num },
   sections: [
     {
       type: 'intro', kicker: 'Your week today',
@@ -65,9 +65,9 @@ module.exports = {
     {
       type: 'tiers', kicker: 'Price', h2: 'One price to set up, one small plan to keep it running.',
       items: [
-        { name: 'Clear Desk Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Texts back callers Flo could not help', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: C.BOOK_URL, cta: 'Book a call' },
+        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Texts back callers Flo could not help', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: C.BOOK_URL, cta: 'Book a call' },
       ],
-      note: `The monthly plan covers Flo's running costs, monitoring, fixes and one change a month. 250 answered call minutes a month are included. There is no per-minute charge on Solo: if you need more, extra minutes come in packs of 100 for ${P.assist_solo_pack}. Prefer to pay yearly? It is ${P.assist_solo_year} a year, two months free. Need more than one person on it? See Clear Desk Team.`,
+      note: `The monthly plan covers Flo's running costs, monitoring, fixes and one change a month. 250 answered call minutes a month are included. There is no per-minute charge on Solo: if you need more, extra minutes come in packs of 100 for ${P.assist_solo_pack}. Prefer to pay yearly? It is ${P.assist_solo_year} a year, two months free. Need more than one person on it? See Flo Team.`,
     },
     {
       type: 'steps', kicker: 'How it works', h2: 'Live in a week, supervised for a fortnight.',
@@ -81,7 +81,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Right for you if, and not if.',
       yes: { title: 'Right for you if', items: ['You are the business, perhaps with a partner or an apprentice', 'You miss calls because you are working', 'Quotes and invoices happen in the evening', 'You use a phone, email, a calendar and some invoicing software, however untidy', 'You can spend ten minutes a day approving for the first fortnight'] },
-      no: { title: 'Not this if', items: ['You have office staff who already handle the phone: see Clear Desk Team', 'You want to build it yourself and have the weekend to do it', 'You want no human check at all: we do not set it up that way', 'You take payments over the phone and want Flo to do that: it will not'] },
+      no: { title: 'Not this if', items: ['You have office staff who already handle the phone: see Flo Team', 'You want to build it yourself and have the weekend to do it', 'You want no human check at all: we do not set it up that way', 'You take payments over the phone and want Flo to do that: it will not'] },
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What sole traders ask us.',
@@ -93,14 +93,14 @@ module.exports = {
         { q: 'I do not have a customer list or a CRM.', a: 'Most sole traders do not. A simple one is part of the package: name, number, job, quote, status, last contact. It lives on your phone and Flo keeps it up to date. If you already use something, we connect to that instead.' },
         { q: 'What does the monthly plan actually cover?', a: `${P.assist_solo_month} a month, excluding VAT, covers Flo's running costs, 250 call minutes, monitoring so we know when something breaks, fixes, and one change a month, for example a new price list or a new service. You can pay yearly for ${P.assist_solo_year} instead, two months free. Cancel any time. The accounts and the data are yours.` },
         { q: 'Where does my data go?', a: 'Flo reads your calls, email and invoices, so this matters. Every account is in your name, your data stays in your own tools, and the AI services behind it process it under business terms. You get a one-page note in plain English on what it can see, and you can disconnect anything in a minute.' },
-        { q: 'Can I grow into the bigger packages?', a: 'Yes. When you take on staff, Clear Desk Team adds everyone to Flo and shares the customer list. Whatever you have paid for Solo setup is credited against Team if you upgrade within a year.' },
+        { q: 'Can I grow into the bigger packages?', a: 'Yes. When you take on staff, Flo Team adds everyone to Flo and shares the customer list. Whatever you have paid for Solo setup is credited against Team if you upgrade within a year.' },
       ],
     },
     {
       type: 'related', kicker: 'The other packages', h2: 'If you have staff, start here instead.',
       items: [
-        { href: '/team/', icon: 'people', title: 'Clear Desk Team', text: 'Two to ten staff. One assistant for everyone, with enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
-        { href: '/business/', icon: 'layers', title: 'Clear Desk Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
+        { href: '/team/', icon: 'people', title: 'Flo Team', text: 'Two to ten staff. One assistant for everyone, with enquiries, numbers and marketing handled.', meta: P.assist_team_setup },
+        { href: '/business/', icon: 'layers', title: 'Flo Business', text: 'Ten to forty staff. The back office runs itself, with a monthly review.', meta: P.assist_business_setup },
         { href: '/pricing/', icon: 'pound', title: 'All prices', text: 'Every package, add-on and running cost on one page.', meta: P.assist_solo_setup },
       ],
     },

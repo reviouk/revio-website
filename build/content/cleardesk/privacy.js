@@ -1,6 +1,6 @@
 const S = require('../../site');
 
-/* Clear Desk privacy policy. Footer link only, not in the main nav.
+/* Over to Flo privacy policy. Footer link only, not in the main nav.
    Legal details reused from the main site's public/privacy page: trading name,
    Borehamwood address, grow@revio.agency, ICO complaints route. The main site
    publishes no company number or ICO registration number, so none is given. */
@@ -8,9 +8,9 @@ const html = `
 <p class="updated">Last updated: 21 November 2026</p>
 
 <h2 id="who">1. Who we are</h2>
-<p>Clear Desk is a service run by REVIO, a business registered in England and Wales. Our address is ${S.ADDRESS}.</p>
+<p>Over to Flo is a service run by REVIO, a business registered in England and Wales. Our address is ${S.ADDRESS}.</p>
 <p>To ask a question about this policy or your data, email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>. It goes to a person.</p>
-<p>Clear Desk gives small businesses a done-for-you assistant called Flo. Flo is an automated assistant, not a person. It answers calls, sorts email, drafts replies, books diary slots and chases unpaid invoices for the business that signs up. We call that business <strong>the client</strong>.</p>
+<p>Over to Flo gives small businesses a done-for-you AI assistant, Flo. Flo is an automated assistant, not a person. It answers calls, sorts email, drafts replies, books diary slots and chases unpaid invoices for the business that signs up. We call that business <strong>the client</strong>.</p>
 
 <h2 id="roles">2. Our two roles</h2>
 <p>We act in two different roles, and the rules differ for each.</p>
@@ -72,7 +72,7 @@ const html = `
 </ul>
 
 <h2 id="google">7. Google user data</h2>
-<p>This section applies when the client connects a Google account to Clear Desk.</p>
+<p>This section applies when the client connects a Google account to Over to Flo.</p>
 <h3>What we access</h3>
 <p>Gmail messages and drafts, and Google Calendar events. We access them only for the accounts the client chooses to connect.</p>
 <h3>How we use it</h3>
@@ -91,18 +91,18 @@ const html = `
 <li>Our staff do not read it unless the user gives permission for a specific support request, it is needed for security purposes such as investigating abuse, or the law requires it.</li>
 </ul>
 <h3>Compliance statement</h3>
-<p>Clear Desk's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<p>Over to Flo's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 <h3>Disconnecting</h3>
 <p>The client can disconnect Google at any time by asking us. We do it the same working day and delete the stored sign-in. The client can also remove our access at <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>. To have previously stored Google data deleted, email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>.</p>
 
 <h2 id="microsoft">8. Microsoft account data</h2>
 <p>When the client connects a Microsoft mailbox and calendar, we access the messages, drafts and calendar events in that account only. We use them only for the same user-facing features: sorting the inbox, drafting and sending replies the client approves, finding free time and booking.</p>
-<p>We do not sell this data, use it for advertising or use it to train generalised AI or machine learning models. Our staff do not read it unless the user gives permission for support, it is needed for security, or the law requires it. The client can disconnect at any time from the Clear Desk app, and we then delete the stored sign-in. They can also remove access from their Microsoft account's app permissions page.</p>
+<p>We do not sell this data, use it for advertising or use it to train generalised AI or machine learning models. Our staff do not read it unless the user gives permission for support, it is needed for security, or the law requires it. The client can disconnect at any time from the Over to Flo app, and we then delete the stored sign-in. They can also remove access from their Microsoft account's app permissions page.</p>
 
 <h2 id="sharing">9. Who we share data with</h2>
 <p>We do not sell personal data. We share it only with the following categories of provider, under written terms, so that the service works.</p>
 <ul>
-<li><strong>Hosting and storage</strong> for the Clear Desk app and its data.</li>
+<li><strong>Hosting and storage</strong> for the Over to Flo app and its data.</li>
 <li><strong>Telephony</strong>, to carry calls and send text messages.</li>
 <li><strong>Voice</strong>, to turn speech into text and text into speech.</li>
 <li><strong>AI model providers</strong>, to sort, summarise and draft.</li>
@@ -158,8 +158,8 @@ const html = `
 
 module.exports = {
   slug: 'cleardesk/privacy',
-  title: 'Privacy Policy | Clear Desk by REVIO',
-  description: 'How Clear Desk by REVIO handles calls, email, calendar and invoice data, including Google user data, AI use, retention and your rights under UK GDPR.',
+  title: 'Privacy Policy | Over to Flo by REVIO',
+  description: 'How Over to Flo by REVIO handles calls, email, calendar and invoice data, including Google user data, AI use, retention and your rights under UK GDPR.',
   utility: true,
   art: 'shield',
   badge: 'Legal',
@@ -181,7 +181,7 @@ module.exports = {
     {
       type: 'cta', h2: 'A question we have not answered?',
       text: 'Email us and a person will reply.',
-      ctas: [{ label: 'Email ' + S.EMAIL, href: 'mailto:' + S.EMAIL, style: 'mint' }, { label: 'Back to Clear Desk', href: '/', style: 'ghost' }],
+      ctas: [{ label: 'Email ' + S.EMAIL, href: 'mailto:' + S.EMAIL, style: 'mint' }, { label: 'Back to Over to Flo', href: '/', style: 'ghost' }],
     },
   ],
 };

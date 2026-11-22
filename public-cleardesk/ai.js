@@ -78,8 +78,8 @@
       } catch (err) { /* ignore */ }
       var btn = form.querySelector('button[type=submit]');
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Sending…'; }
-      /* A form can name its own destination: Clear Desk enquiries go to the
-         Clear Desk app, everything else to the delivery dashboard. Only an
+      /* A form can name its own destination: Over to Flo enquiries go to the
+         Over to Flo app, everything else to the delivery dashboard. Only an
          https address written into the page by the build is used. */
       var dest = form.getAttribute('data-intake');
       if (!dest || !/^https:\/\//.test(dest)) dest = INTAKE_URL;
