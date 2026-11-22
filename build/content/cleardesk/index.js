@@ -25,53 +25,7 @@ module.exports = {
   service: { name: 'Over to Flo', type: 'Personal assistant for small businesses', price: P.assist_solo_setup_num },
   sections: [
     {
-      type: 'intro', kicker: 'The problem',
-      h2: 'You did not start a business to spend Sunday night on admin.',
-      body: [
-        "Owners of small UK businesses lose around eight hours a week to admin. Most of it is the same five jobs: answering the phone while on another job, replying to enquiries, chasing invoices, writing quotes and keeping the diary straight. None of it is the work you are paid for, and all of it piles up the moment you are busy.",
-        "Half of small companies have tried AI. Most stopped at a chat window, because the hard part is not the typing. The hard part is connecting an assistant to your phone, your inbox, your diary, your invoicing and your customer list, and teaching it how you work. That is the job we do. You get Flo, already holding the keys.",
-      ],
-    },
-    {
-      type: 'cards', tone: 'wash', kicker: 'What Flo does', h2: 'Five jobs Flo takes off you in the first month.',
-      cols: 3,
-      items: [
-        { icon: 'phone', title: 'Answers the phone', text: "When you can't pick up, Flo does. Flo takes the details, answers the usual questions and books the job in your diary. You get a summary by text." },
-        { icon: 'mail', title: 'Clears the inbox', text: 'Sorts what matters from what does not, writes the replies in your voice, and chases the people who have gone quiet.' },
-        { icon: 'pound', title: 'Chases the money', text: 'Watches your invoices and sends polite reminders at 7, 14 and 21 days, in your tone, until they are paid.' },
-        { icon: 'calendar', title: 'Keeps the diary', text: 'Books, moves and confirms appointments, writes up meeting notes and sends the follow-up you would have forgotten.' },
-        { icon: 'doc', title: 'Drafts the quote', text: 'Turns a phone call or an email into a quote in your format in minutes, priced from your own list and ready to send.' },
-        { icon: 'people', title: 'Remembers every customer', text: 'Who they are, what they asked for, what you quoted and when you last spoke. One place, on your phone, so nothing goes cold.' },
-      ],
-    },
-    {
-      type: 'tiers', id: 'packages', kicker: 'Three packages', h2: 'Pick the size of business, not a list of features.',
-      items: [
-        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices, with 250 call minutes included.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/solo/', cta: 'See Solo' },
-        { name: 'Flo Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/team/', cta: 'See Team' },
-        { name: 'Flo Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/business/', cta: 'See Business' },
-      ],
-      note: `All prices exclude VAT and are shown as "from". The monthly plan covers Flo's running costs, monitoring, support and changes, with a call-minute allowance for each size. Team and Business are priced per person beyond the people included. Not sure which fits? Book a 90-minute Health Check for ${P.assist_check}, credited against Team or Business.`,
-    },
-    {
-      type: 'table', tone: 'wash', kicker: 'What we typically do for you', h2: 'The connections we make, and why they matter.',
-      head: ['We will', 'So that'],
-      rows: [
-        ['Connect Flo to your phone line', 'Calls are answered when you are busy, details taken and jobs booked'],
-        ['Connect it to your email and calendar', 'Replies are drafted in your voice and meetings land in the right slot'],
-        ['Integrate with your CRM, or set one up if you have none', 'Every enquiry is logged, followed up and visible, so nothing goes cold'],
-        ['Connect your website forms and enquiry channels', 'A new lead gets a proper reply in minutes, not the next morning'],
-        ['Link your accounting and invoicing software', 'Overdue invoices are chased politely until they are paid'],
-        ['Connect your quoting or job-management tool', 'A quote is drafted from a call or an email in minutes'],
-        ['Load your documents, price lists and policies', 'Staff and customers get accurate answers from your own material'],
-        ['Pull your sales, cash and marketing numbers together', 'A one-page summary arrives every Monday, no spreadsheets'],
-        ['Train you and your team, and write the guide', 'People use Flo from week one and know what still needs a human'],
-        ['Hand over every account and line of code', 'You own it all. We are optional afterwards'],
-      ],
-      note: 'Each package page lists which of these it includes. We name no software here on purpose: we connect to what you already use.',
-    },
-    {
-      type: 'flow', id: 'how', tone: 'wash', kicker: 'How it works', h2: 'Everything runs through Flo.',
+      type: 'flow', id: 'how', kicker: 'How it works', h2: 'Everything runs through Flo.',
       lede: 'Calls, emails and enquiries come in. Flo deals with them and keeps your diary, invoices and customers up to date. It runs by itself, and you can look in from your phone.',
       inTitle: 'Comes in', outTitle: 'Flo gets it done',
       incoming: [
@@ -90,7 +44,53 @@ module.exports = {
       note: 'Phone, inbox, diary, quotes, invoices and the customer list come with every package. Website enquiries and marketing start with Flo Team. Website chat comes with Flo Business.',
     },
     {
-      type: 'steps', kicker: 'Getting started', h2: 'From first call to a clear desk.',
+      type: 'intro', tone: 'wash', kicker: 'The problem',
+      h2: 'You did not start a business to spend Sunday night on admin.',
+      body: [
+        "Owners of small UK businesses lose around eight hours a week to admin. Most of it is the same five jobs: answering the phone while on another job, replying to enquiries, chasing invoices, writing quotes and keeping the diary straight. None of it is the work you are paid for, and all of it piles up the moment you are busy.",
+        "Half of small companies have tried AI. Most stopped at a chat window, because the hard part is not the typing. The hard part is connecting an assistant to your phone, your inbox, your diary, your invoicing and your customer list, and teaching it how you work. That is the job we do. You get Flo, already holding the keys.",
+      ],
+    },
+    {
+      type: 'cards', kicker: 'What Flo does', h2: 'Five jobs Flo takes off you in the first month.',
+      cols: 3,
+      items: [
+        { icon: 'phone', title: 'Answers the phone', text: "When you can't pick up, Flo does. Flo takes the details, answers the usual questions and books the job in your diary. You get a summary by text." },
+        { icon: 'mail', title: 'Clears the inbox', text: 'Sorts what matters from what does not, writes the replies in your voice, and chases the people who have gone quiet.' },
+        { icon: 'pound', title: 'Chases the money', text: 'Watches your invoices and sends polite reminders at 7, 14 and 21 days, in your tone, until they are paid.' },
+        { icon: 'calendar', title: 'Keeps the diary', text: 'Books, moves and confirms appointments, writes up meeting notes and sends the follow-up you would have forgotten.' },
+        { icon: 'doc', title: 'Drafts the quote', text: 'Turns a phone call or an email into a quote in your format in minutes, priced from your own list and ready to send.' },
+        { icon: 'people', title: 'Remembers every customer', text: 'Who they are, what they asked for, what you quoted and when you last spoke. One place, on your phone, so nothing goes cold.' },
+      ],
+    },
+    {
+      type: 'tiers', id: 'packages', tone: 'wash', kicker: 'Three packages', h2: 'Pick the size of business, not a list of features.',
+      items: [
+        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'For sole traders and owner-operators. Flo on your phone, inbox, diary and invoices, with 250 call minutes included.', includes: ['Phone answered and jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Every customer remembered', 'Live in one week'], best: 'electricians, plumbers, therapists, garages, sole-practitioner accountants and consultants', href: '/solo/', cta: 'See Solo' },
+        { name: 'Flo Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'For two to ten staff. Two people included, then £35 a person. Flo works for the whole team, with the enquiries, numbers and marketing handled.', includes: ['Everything in Solo, for every person', 'Enquiries answered in minutes and logged', 'Weekly numbers every Monday', "A month's marketing drafted in a morning", 'Shared customer list for the team', 'Live in two to three weeks'], featured: true, flag: 'Most popular', best: 'small practices, agencies, trades companies with office staff, lettings agents', href: '/team/', cta: 'See Team' },
+        { name: 'Flo Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'For ten to forty staff. Ten people included, then £30 a person. The back office runs itself, with a monthly review and roadmap from us.', includes: ['Everything in Team', 'Enquiry to quote to invoice, end to end', 'Customer questions answered 24/7', 'HR and policy questions answered from your documents', 'Monthly review and roadmap', 'Live in three to four weeks'], best: 'recruiters, multi-site trades, e-commerce, professional companies', href: '/business/', cta: 'See Business' },
+      ],
+      note: `All prices exclude VAT and are shown as "from". The monthly plan covers Flo's running costs, monitoring, support and changes, with a call-minute allowance for each size. Team and Business are priced per person beyond the people included. Not sure which fits? Book a 90-minute Health Check for ${P.assist_check}, credited against Team or Business.`,
+    },
+    {
+      type: 'table', kicker: 'What we typically do for you', h2: 'The connections we make, and why they matter.',
+      head: ['We will', 'So that'],
+      rows: [
+        ['Connect Flo to your phone line', 'Calls are answered when you are busy, details taken and jobs booked'],
+        ['Connect it to your email and calendar', 'Replies are drafted in your voice and meetings land in the right slot'],
+        ['Integrate with your CRM, or set one up if you have none', 'Every enquiry is logged, followed up and visible, so nothing goes cold'],
+        ['Connect your website forms and enquiry channels', 'A new lead gets a proper reply in minutes, not the next morning'],
+        ['Link your accounting and invoicing software', 'Overdue invoices are chased politely until they are paid'],
+        ['Connect your quoting or job-management tool', 'A quote is drafted from a call or an email in minutes'],
+        ['Load your documents, price lists and policies', 'Staff and customers get accurate answers from your own material'],
+        ['Pull your sales, cash and marketing numbers together', 'A one-page summary arrives every Monday, no spreadsheets'],
+        ['Train you and your team, and write the guide', 'People use Flo from week one and know what still needs a human'],
+        ['Hand over every account and line of code', 'You own it all. We are optional afterwards'],
+      ],
+      note: 'Each package page lists which of these it includes. We name no software here on purpose: we connect to what you already use.',
+    },
+    {
+      type: 'steps', tone: 'wash', kicker: 'Getting started', h2: 'From first call to a clear desk.',
       items: [
         { title: 'A 20-minute call', text: 'You tell us where the week goes. We tell you which package fits and what it will and will not do. No pitch deck.' },
         { title: 'Setup, done by us', text: 'We connect your phone, inbox, diary, invoicing and customer list, teach Flo your tone and your prices, and test it on real work.', meta: '1 to 4 weeks' },

@@ -63,9 +63,9 @@
 /* ---------- a brighter product site (Rob, 22 Nov 2026) ----------
    Each card carries one of six colours in turn: blue, orange, yellow, green,
    pink, violet. The colour fills the icon tile and, in the light theme, runs
-   along the top edge of a white card. The light theme also swaps the lilac
-   section wash and hero for a warm cream, so the colours have something
-   bright to sit on. The dark theme keeps its own surfaces. */
+   along the top edge of a white card. Sections and the hero sit on a soft
+   purple (the warm cream tried first read as pale yellow, and Rob preferred
+   purple). The dark theme keeps its own surfaces. */
 .cd-page .card, .cd-page .ai-pillar { --tile: #2f8fff; --tile-glow: rgba(47,143,255,.3); --tile-ink: #fff; }
 .cd-page .card:nth-child(6n+2), .cd-page .ai-pillar:nth-child(6n+2) { --tile: #ff8a3d; --tile-glow: rgba(255,138,61,.3); }
 .cd-page .card:nth-child(6n+3), .cd-page .ai-pillar:nth-child(6n+3) { --tile: #ffc93c; --tile-glow: rgba(255,201,60,.38); --tile-ink: #3d2c00; }
@@ -75,10 +75,10 @@
 .cd-page .card .icon, .cd-page .ai-pillar .icon { background: var(--tile); color: var(--tile-ink); box-shadow: 0 6px 14px var(--tile-glow); }
 
 :root:not([data-theme="dark"]) body.cd-page {
-  --wash: #fff6e3;
-  --hero-grad: linear-gradient(160deg, #ffffff 0%, #fff5dc 55%, #ffe9d6 100%);
+  --wash: #f1edff;
+  --hero-grad: linear-gradient(160deg, #ffffff 0%, #f0ebff 55%, #e6defe 100%);
 }
-:root:not([data-theme="dark"]) .cd-page .page-hero::before { background: rgba(255,201,60,.36); }
-:root:not([data-theme="dark"]) .cd-page .page-hero::after { background: rgba(47,143,255,.16); }
+:root:not([data-theme="dark"]) .cd-page .page-hero::before { background: rgba(124,92,255,.22); }
+:root:not([data-theme="dark"]) .cd-page .page-hero::after { background: rgba(47,143,255,.14); }
 :root:not([data-theme="dark"]) .cd-page .card { background: #fff; border-color: #ececf4; box-shadow: inset 0 4px 0 var(--tile), 0 8px 24px rgba(20,16,60,.06); }
 :root:not([data-theme="dark"]) .cd-page .card:hover { border-color: #ececf4; box-shadow: inset 0 4px 0 var(--tile), 0 16px 32px rgba(20,16,60,.11); }
