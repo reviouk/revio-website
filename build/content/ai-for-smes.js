@@ -30,7 +30,7 @@ module.exports = {
     {
       type: 'band', h2: 'Under forty staff? There is a smaller, cheaper way in.',
       text: 'Over to Flo gives sole traders and companies of up to forty people their own AI assistant: phone answered, inbox sorted, invoices chased. Setup from £295, live in days.',
-      ctas: [{ label: 'See Over to Flo', href: 'https://cleardesk.revio.agency/', style: 'mint' }, { label: 'Small business pricing', href: 'https://cleardesk.revio.agency/pricing/', style: 'ghost' }],
+      ctas: [{ label: 'See Over to Flo', href: 'https://overtoflo.ai/', style: 'mint' }, { label: 'Small business pricing', href: 'https://overtoflo.ai/pricing/', style: 'ghost' }],
     },
     {
       type: 'cards', tone: 'wash', kicker: 'What actually pays at this size', h2: 'Four places the money usually is.',

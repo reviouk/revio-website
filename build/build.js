@@ -14,7 +14,7 @@ const SITE = require('./site');
 const ROOT = path.join(__dirname, '..');
 const PUBLIC = path.join(ROOT, 'public');
 /* Second site: build/content/cleardesk/* -> public-cleardesk/, published
-   as cleardesk.revio.agency by its own Render static site. */
+   as overtoflo.ai by its own Render static site. */
 const PUBLIC_CD = path.join(ROOT, 'public-cleardesk');
 const CD_STATIC = ['styles.css', 'ai.css', 'ai.js', 'partials.js', 'cd.css', 'favicon.svg', 'img/flo', 'img/cleardesk', 'audio', 'assets/og', 'assets/revio-logo-white.png', 'assets/revio-logo-dark.png', 'assets/fonts'];
 const CONTENT = path.join(__dirname, 'content');

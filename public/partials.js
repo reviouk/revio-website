@@ -16,6 +16,14 @@
 (function () {
   'use strict';
 
+  /* Over to Flo moved from cleardesk.revio.agency to overtoflo.ai on
+     22 Nov 2026. Anyone arriving on the old address is sent to the same page
+     on the new one. */
+  if (location.hostname === 'cleardesk.revio.agency') {
+    location.replace('https://overtoflo.ai' + location.pathname + location.search + location.hash);
+    return;
+  }
+
   var MEETING_URL = '/book-a-meeting/';   /* Microsoft Bookings, rob@revio.agency (Teams) */
   var AUDIT_URL = '/ai-opportunity-audit/';
   var LOGO = '/assets/revio-logo-white.png';
@@ -112,7 +120,7 @@
           blurb: 'A defined system built to a fixed price and date, wired into the CRM you already run, supervised before it acts alone.',
           label: 'Fixed price',
           items: ['Agents, automations, apps from &pound;4,500', 'Code and accounts in your name'] },
-        { href: 'https://cleardesk.revio.agency/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'Over to Flo',
+        { href: 'https://overtoflo.ai/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'Over to Flo',
           blurb: 'Flo, a personal assistant for sole traders and companies up to forty staff. Phone answered, inbox sorted, invoices chased.',
           label: 'Small businesses',
           items: ['Over to Flo packages from &pound;295', 'Live in days, cancel any time'] }
@@ -134,7 +142,7 @@
         { href: '/ai-strategy/', icon: ICON.growth, title: 'AI strategy', desc: 'A one-page plan with the first three builds' },
         { href: '/funded-ai-projects/', icon: ICON.data, title: 'Funded AI projects', desc: 'R&amp;D relief, KTP, grants' },
         { href: '/ai-roi-calculator/', icon: ICON.growth, title: 'AI ROI calculator', desc: 'What it would return for you' },
-        { href: 'https://cleardesk.revio.agency/pricing/', icon: ICON.grid, title: 'Small business pricing', desc: 'Flo Solo, Team and Business' },
+        { href: 'https://overtoflo.ai/pricing/', icon: ICON.grid, title: 'Small business pricing', desc: 'Flo Solo, Team and Business' },
         { href: '/ai-services/', icon: ICON.grid, title: 'All AI services', desc: 'The whole list, with prices' }
       ]
     },
@@ -328,7 +336,7 @@
       ['/voice-ai/', 'Voice AI'],
       ['/ai-enablement/', 'Training &amp; Enablement'],
       ['/ai-governance-compliance/', 'Governance &amp; Compliance'],
-      ['https://cleardesk.revio.agency/', 'Over to Flo: an AI assistant for small businesses'],
+      ['https://overtoflo.ai/', 'Over to Flo: an AI assistant for small businesses'],
       ['/ai-services/', 'All AI services']
     ] },
     { h: 'Industries', links: [
@@ -419,7 +427,7 @@
   }
 
 
-  /* ---------- Over to Flo (cleardesk.revio.agency) ----------
+  /* ---------- Over to Flo (overtoflo.ai) ----------
      The contained subsite. Pages carry body.cd-page and get this slim header
      and footer instead of the corporate ones: four links, one button, and no
      route back to revio.agency except the legal pages in the small print. */

@@ -4,7 +4,7 @@
  *
  * Variants (s.variant): 'contact' (default), 'quote', 'audit', 'lead'. The
  * questions change a little; the payload shape does not.
- * 'cleardesk' is the short form for cleardesk.revio.agency: six questions, no
+ * 'cleardesk' is the short form for overtoflo.ai: six questions, no
  * CRM or budget, and the dashboard files it under Over to Flo by its origin. */
 module.exports = function form(s, SITE, u) {
   const { rich, esc, head2, secCls } = u;
@@ -69,7 +69,7 @@ module.exports = function form(s, SITE, u) {
 
 /* Over to Flo enquiries go to the Over to Flo app (moved from the delivery
    dashboard on 22 Nov 2026). The app only accepts posts from the Over to Flo site. */
-const CD_INTAKE = 'https://app.cleardesk.revio.agency/enquiries';
+const CD_INTAKE = 'https://app.overtoflo.ai/enquiries';
 
 function cleardesk(s, SITE, u, id) {
   const { rich, esc, secCls } = u;

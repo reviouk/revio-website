@@ -22,7 +22,7 @@ module.exports = {
      build into public-cleardesk/ with these overrides and no links back
      to the corporate site (Rob, 20 Nov 2026). */
   CLEARDESK: {
-    ORIGIN: 'https://cleardesk.revio.agency',
+    ORIGIN: 'https://overtoflo.ai',
     SITE_NAME: 'Over to Flo by REVIO',
     BOOK_URL: '/book/',
     CONTACT_URL: '/book/',

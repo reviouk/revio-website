@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cleardesk.revio.agency/sitemap.xml
+Sitemap: https://overtoflo.ai/sitemap.xml
