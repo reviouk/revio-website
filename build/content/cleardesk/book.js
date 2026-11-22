@@ -23,7 +23,7 @@ module.exports = {
   meetingRows: false,
   sections: [
     { type: 'booking', kicker: 'The diary', h2: 'Choose a slot.', lede: 'Times are shown in your own time zone. The invitation arrives by email the moment you book.' },
-    { type: 'form', tone: 'wash', variant: 'cleardesk', formId: 'cleardesk-book', kicker: 'No time that suits?', h2: 'Rather we called you?', lede: 'Six quick questions. We ring back within one working day, at a time that suits, and you get the same 20 minutes.' },
+    { type: 'form', tone: 'wash', variant: 'cleardesk', formId: 'cleardesk-book', kicker: 'No time that suits?', h2: 'Rather we called you?', lede: 'Seven quick questions. We ring back within one working day, at a time that suits, and you get the same 20 minutes.' },
     {
       type: 'cards', kicker: 'Make the most of it', h2: 'Three things worth having to hand.', cols: 3,
       items: [

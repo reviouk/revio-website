@@ -74,6 +74,11 @@ function cleardesk(s, SITE, u, id) {
     `<label><input type="radio" name="services[]" value="${esc(val)}"${i === 3 ? ' checked' : ''}><span>${esc(label)} <small>${esc(hint)}</small></span></label>`).join('');
   const team = [['Just me', '1'], ['2', '2'], ['3 to 5', '3-5'], ['6 to 10', '6-10'], ['11 to 25', '11-25'], ['More than 25', '26+']];
   const opts = team.map(([l, val]) => `<option value="${esc(val)}">${esc(l)}</option>`).join('');
+  /* Flo connects to Google and Microsoft mailboxes today (a free Gmail address
+     counts). Anything else needs a different kind of connection, so we want to
+     know before the call. The values are what the staff console shows. */
+  const mail = [['Gmail or Google', 'google'], ['Outlook, Hotmail or Microsoft 365', 'microsoft'], ['It came with my website or domain name', 'domain'], ['Another provider', 'other'], ['Not sure', 'unsure']];
+  const mailOpts = mail.map(([l, val]) => `<option value="${esc(val)}">${esc(l)}</option>`).join('');
   const inner = `<form class="ai-form" data-form-id="${esc(id)}" data-book="${esc(SITE.BOOK_URL)}#diary" novalidate>
   <div class="form-grid">
     <div class="field"><label for="${id}-name">Your name</label><input id="${id}-name" name="contact_name" autocomplete="name" required></div>
@@ -82,12 +87,13 @@ function cleardesk(s, SITE, u, id) {
     <div class="field"><label for="${id}-phone">Phone <small>so we can call you back</small></label><input id="${id}-phone" name="phone" type="tel" autocomplete="tel"></div>
     <div class="field full"><label>Which sounds like you?</label><div class="chips">${radios}</div></div>
     <div class="field"><label for="${id}-team">How many of you?</label><select id="${id}-team" name="team_size"><option value="">Choose…</option>${opts}</select></div>
+    <div class="field"><label for="${id}-mail">Who is your email with?</label><select id="${id}-mail" name="email_provider"><option value="">Choose…</option>${mailOpts}</select></div>
     <div class="field full"><label for="${id}-problem">What eats your week?</label><textarea id="${id}-problem" name="main_problem" required placeholder="Missed calls, a full inbox, invoices nobody chases, quotes written at 10pm. A sentence or two is plenty."></textarea></div>
     <div class="hp" aria-hidden="true"><label>Leave this empty<input name="website_url" tabindex="-1" autocomplete="off"></label></div>
   </div>
   <div class="ai-form-status" role="status" aria-live="polite"></div>
   <button class="btn btn-purple" type="submit">${rich(s.button || 'Ask Flo&rsquo;s team to call me')}</button>
-  <p class="micro" style="margin-top:4px">By sending this you agree to our <a href="https://revio.agency/privacy/" rel="noopener" style="color:var(--purple)">privacy policy</a>. One reply from a person, no newsletters.</p>
+  <p class="micro" style="margin-top:4px">By sending this you agree to our <a href="/privacy/" style="color:var(--purple)">privacy policy</a>. One reply from a person, no newsletters.</p>
 </form>`;
   const points = s.points || ['A reply from a person within one working day', 'We tell you which package fits and what it costs', 'If Flo is not right for you, we will say so'];
   const side = `<div class="ai-form-side reveal">
