@@ -80,6 +80,6 @@ module.exports = {
     assist_business_person_setup: '£75',
     assist_overage: '15p',           // per call minute above the allowance, Team (300) and Business (800) only. Solo has 250 and buys packs of 100
     assist_check: '£295',             // 90-minute Health Check, credited against Team and Business only
-    assist_job: 'From £750',          // one extra automated job
+    assist_job: 'From £250',          // one extra automated job
   },
 };

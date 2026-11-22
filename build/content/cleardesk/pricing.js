@@ -9,10 +9,10 @@ module.exports = {
   description: 'Every Over to Flo price on one page: Flo Solo from £295 setup and £99 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
   keywords: ['ai assistant pricing uk', 'small business ai cost', 'ai receptionist price uk', 'how much does ai automation cost small business', 'ai setup fee monthly plan'],
   art: 'layers',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Every price on one page. No surprises.' },
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Every price is on this page.' },
   badge: 'Over to Flo pricing',
-  h1: 'Every price, <em class="mint">on one page.</em>',
-  sub: 'Flo, the assistant in every package, answers your phone, sorts your inbox and chases your invoices. Most UK agencies selling AI to small businesses hide their prices. Fewer than half publish any. We publish all of ours, including the running costs and the things that cost extra, because a business owner should be able to work out the sum before a sales call.',
+  h1: 'Simple, <em class="mint">clear pricing.</em>',
+  sub: 'One fee to set Flo up, then a monthly plan to keep it running. Every price is on this page.',
   ctas: [
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'Back to the packages', href: '/', style: 'ghost' },
@@ -51,7 +51,6 @@ module.exports = {
         ['Extra call minutes on Solo', `${P.assist_solo_pack} for 100`, 'Solo includes 250 answered call minutes a month. If you need more, you buy packs of 100 for £15. There is no per-minute charge on Solo.'],
         ['Extra call minutes on Team and Business', `${P.assist_overage} a minute`, 'Team includes 300 answered call minutes a month and Business 800. Above that, minutes are itemised on the invoice at a flat 15p. Most clients never reach the allowance.'],
       ],
-      note: 'If something is not on this page, it is not something we charge for.',
     },
     {
       type: 'table', kicker: 'Running costs', h2: 'What you pay other people, shown honestly.',
