@@ -101,7 +101,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Who this is for, and who it is not.',
       yes: { title: 'A good fit', items: ['A sole trader or a business with up to 40 staff', 'A phone that rings while you are working', 'Invoices that take longer to collect than they should', 'Enquiries that wait hours for a reply', 'An owner who can spend 20 minutes a week approving and correcting'] },
-      no: { title: 'Not this, yet', items: ['More than 40 staff or several departments: ask us on the call and we will point you to the right thing', 'You want a chatbot on the website and nothing behind it', 'You want it fully automatic with no human check: we do not sell that', 'You want to build it yourself: a good idea if you have the time, and we will say so'] },
+      no: { title: 'Not this, yet', items: ['More than 40 staff or several departments: that is a job for <a href="https://revio.agency/" target="_blank" rel="noopener">REVIO</a>, the team behind Flo', 'You want a chatbot on the website and nothing behind it', 'You want it fully automatic with no human check: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries', 'You want to build it yourself: a good idea if you have the time, and we will say so'] },
     },
     {
       type: 'quote', tone: 'wash',

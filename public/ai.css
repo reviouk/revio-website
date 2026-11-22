@@ -190,6 +190,7 @@ a.card:hover .svc-more svg { transform: translateX(4px); }
 .ai-cmp li { position: relative; padding-left: 24px; font-size: 15px; color: var(--prose-ink, var(--ink)); }
 .ai-cmp.yes li::before { content: '✓'; position: absolute; left: 0; color: #0e8a68; font-weight: 800; }
 .ai-cmp.no li::before { content: '–'; position: absolute; left: 2px; color: var(--muted); font-weight: 800; }
+.ai-cmp li a { color: var(--purple); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---------- faq ---------- */
 .ai-faqs { display: grid; gap: 10px; }

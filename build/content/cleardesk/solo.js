@@ -81,7 +81,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Right for you if, and not if.',
       yes: { title: 'Right for you if', items: ['You are the business, perhaps with a partner or an apprentice', 'You miss calls because you are working', 'Quotes and invoices happen in the evening', 'You use a phone, email, a calendar and some invoicing software, however untidy', 'You can spend ten minutes a day approving for the first fortnight'] },
-      no: { title: 'Not this if', items: ['You have office staff who already handle the phone: see Flo Team', 'You want to build it yourself and have the weekend to do it', 'You want no human check at all: we do not set it up that way', 'You take payments over the phone and want Flo to do that: it will not'] },
+      no: { title: 'Not this if', items: ['You have office staff who already handle the phone: see Flo Team', 'You want to build it yourself and have the weekend to do it', 'You want no human check at all: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries', 'You take payments over the phone and want Flo to do that: it will not'] },
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What sole traders ask us.',

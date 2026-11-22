@@ -80,7 +80,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Right for you if, and not if.',
       yes: { title: 'Right for you if', items: ['Ten to forty people, one owner or MD who still gets the exceptions', 'Enquiries, quotes and invoices pass through several hands and systems', 'Customers and staff ask the same questions every week', 'Cash takes longer to collect than the terms say', 'A manager can own the approvals and the monthly review'] },
-      no: { title: 'Not this if', items: ['More than about forty staff or several departments with their own systems: tell us on the call and we will point you to the right thing', 'You want a chatbot and nothing behind it', 'Nobody can own approvals: it will stall at the first quote', 'You need it fully unattended with no human check: we do not set it up that way'] },
+      no: { title: 'Not this if', items: ['More than about forty staff or several departments with their own systems: that is a job for <a href="https://revio.agency/" target="_blank" rel="noopener">REVIO</a>, the team behind Flo', 'You want a chatbot and nothing behind it', 'Nobody can own approvals: it will stall at the first quote', 'You need it fully unattended with no human check: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries'] },
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What owners and MDs ask us.',
