@@ -243,8 +243,9 @@ const SECTION = {
       `<div class="price-card reveal${t.featured ? ' featured' : ''}" style="--d:${i}">` +
       (t.flag ? `<span class="flag">${rich(t.flag)}</span>` : '') +
       `<span class="tier-name">${rich(t.name)}</span>` +
-      `<div class="amount">${rich(t.price)}${t.per ? `<small> ${rich(t.per)}</small>` : ''}</div>` +
-      (t.cadence ? `<p class="setup">${rich(t.cadence)}</p>` : '') +
+      /* "From" sits small beside the figure, and is lower case mid-sentence. */
+      `<div class="amount">${rich(t.price).replace(/^From\s+/, '<small class="from">From </small>')}${t.per ? `<small> ${rich(t.per)}</small>` : ''}</div>` +
+      (t.cadence ? `<p class="setup">${rich(t.cadence).replace(/(\S) From (£|&pound;)/g, '$1 from $2')}</p>` : '') +
       `<p class="desc">${rich(t.text)}</p>` +
       `<ul class="checks">${(t.includes || []).map((b) => `<li>${rich(b)}</li>`).join('')}</ul>` +
       (t.best ? `<p class="ai-best"><b>Best for</b> ${rich(t.best)}</p>` : '') +

@@ -13,7 +13,7 @@ module.exports = {
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?' },
   badge: 'Clear Desk by REVIO',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
-  sub: "An assistant called Flo, set up for your business by us. Flo answers the phone when you can't, clears the inbox, chases the invoices, books the jobs and remembers every customer. You review and approve. Flo does the rest. From £295 to set up, then a small monthly plan.",
+  sub: "Meet Flo, the assistant we set up for your business. Flo picks up the phone when you can't, keeps the inbox clear, chases unpaid invoices, books the jobs in and remembers every customer. You check and approve. Flo does the rest.",
   ctas: [
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See the three packages', href: '#packages', style: 'ghost' },

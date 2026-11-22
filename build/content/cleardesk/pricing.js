@@ -76,7 +76,7 @@ module.exports = {
       type: 'table', kicker: 'Compared', h2: 'What this costs against the alternatives.',
       head: ['Option', 'Typical cost', 'What you get'],
       rows: [
-        ['Clear Desk Solo', `${P.assist_solo_setup} then ${P.assist_solo_month} a month`, 'Phone, inbox, invoices, quotes and diary handled, you approve'],
+        ['Clear Desk Solo', `${P.assist_solo_setup} then ${P.assist_solo_month.replace('From', 'from')} a month`, 'Phone, inbox, invoices, quotes and diary handled, you approve'],
         ['Part-time administrator, two days a week', 'About £1,000 to £1,400 a month', 'Two days of cover, holidays and sickness, no evenings or weekends'],
         ['Call answering service', '£50 to £250 a month', 'Messages taken, nothing booked, no inbox or invoices'],
         ['Typical UK AI agency monthly plan', 'About £250 a month, setup rarely published', 'Varies. Fewer than half publish a price at all'],
