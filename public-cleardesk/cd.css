@@ -59,3 +59,13 @@
 /* enquiry form: the hint inside a picked option stays readable */
 .chips small{font-weight:500;opacity:.75;margin-left:3px}
 .chips input:checked + span small{color:#fff;opacity:.85}
+
+/* ---------- bright icon tiles (Rob, 22 Nov 2026) ----------
+   Each card's icon gets its own solid colour, six in turn, so a row of cards
+   reads blue, orange, yellow, then green, pink, violet. Product site only. */
+.cd-page .card .icon, .cd-page .ai-pillar .icon { background: #2f8fff; color: #fff; box-shadow: 0 6px 14px rgba(47,143,255,.3); }
+.cd-page .card:nth-child(6n+2) .icon, .cd-page .ai-pillar:nth-child(6n+2) .icon { background: #ff8a3d; box-shadow: 0 6px 14px rgba(255,138,61,.3); }
+.cd-page .card:nth-child(6n+3) .icon, .cd-page .ai-pillar:nth-child(6n+3) .icon { background: #ffc93c; color: #3d2c00; box-shadow: 0 6px 14px rgba(255,201,60,.38); }
+.cd-page .card:nth-child(6n+4) .icon, .cd-page .ai-pillar:nth-child(6n+4) .icon { background: #12c98b; box-shadow: 0 6px 14px rgba(18,201,139,.3); }
+.cd-page .card:nth-child(6n+5) .icon, .cd-page .ai-pillar:nth-child(6n+5) .icon { background: #ff5a8a; box-shadow: 0 6px 14px rgba(255,90,138,.3); }
+.cd-page .card:nth-child(6n+6) .icon, .cd-page .ai-pillar:nth-child(6n+6) .icon { background: #7c5cff; box-shadow: 0 6px 14px rgba(124,92,255,.3); }
