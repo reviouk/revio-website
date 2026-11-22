@@ -23,6 +23,9 @@ module.exports = {
      to the corporate site (Rob, 20 Nov 2026). */
   CLEARDESK: {
     ORIGIN: 'https://overtoflo.ai',
+    /* The website chat, served by the app. It draws nothing until chat is
+       switched on in the staff console (Website chat). */
+    CHAT_EMBED: 'https://app.overtoflo.ai/chat/embed.js',
     SITE_NAME: 'Over to Flo by REVIO',
     BOOK_URL: '/book/',
     CONTACT_URL: '/book/',

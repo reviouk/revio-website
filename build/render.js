@@ -486,7 +486,7 @@ ${sections}
 <div id="site-footer"></div>
 <script src="/partials.js" defer></script>
 <script src="/ai.js?v=20261122" defer></script>
-${p.bodyExtra || ''}
+${cd && SITE.CHAT_EMBED ? `<script src="${SITE.CHAT_EMBED}" async></script>\n` : ''}${p.bodyExtra || ''}
 </body>
 </html>
 `;
