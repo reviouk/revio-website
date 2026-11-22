@@ -10,7 +10,10 @@ module.exports = {
   description: 'Meet Flo, the assistant that answers your calls, clears the inbox, chases invoices and books jobs. Set up for you in days, from £295. Three Clear Desk packages.',
   keywords: ['ai assistant for small business uk', 'ai personal assistant small business', 'flo ai assistant', 'ai receptionist uk', 'automate admin small business', 'ai for sole traders', 'done for you ai setup'],
   art: 'clock',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?' },
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the Clear Desk assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?',
+    /* hold: true keeps the button off the page until Rob has chosen the voice */
+    audio: { hold: true, src: '/audio/flo.mp3', label: 'Listen to Flo', seconds: 48,
+      transcript: "Hi, I'm Flo, the AI assistant from Clear Desk. I pick up the phone when you can't. While you're busy on a job, I answer your calls, take the details, and book the work into your diary. I keep your inbox clear and draft your replies. And I chase unpaid invoices, politely, until they're paid. You check and approve everything from your phone. That means fewer missed calls, fewer lost jobs, and your evenings back. The team sets everything up for you, so there's nothing to learn. Book a twenty-minute call, and let's clear your desk." } },
   badge: 'Clear Desk by REVIO',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
   sub: "Meet Flo, the assistant we set up for your business. Flo picks up the phone when you can't, keeps the inbox clear, chases unpaid invoices, books the jobs in and remembers every customer. You check and approve. Flo does the rest.",
@@ -69,7 +72,26 @@ module.exports = {
       note: 'Each package page lists which of these it includes. We name no software here on purpose: we connect to what you already use.',
     },
     {
-      type: 'steps', id: 'how', kicker: 'How it works', h2: 'From first call to a clear desk.',
+      type: 'flow', id: 'how', tone: 'wash', kicker: 'How it works', h2: 'Everything runs through Flo.',
+      lede: 'Calls, emails and enquiries come in. Flo deals with them and keeps your diary, invoices and customers up to date. You check and approve.',
+      inTitle: 'Comes in', outTitle: 'Flo gets it done',
+      incoming: [
+        { icon: 'phone', title: 'Phone calls', text: "Answered when you can't pick up" },
+        { icon: 'mail', title: 'Inbox', text: 'Emails sorted, replies drafted' },
+        { icon: 'globe', title: 'Website', text: 'Enquiry forms answered in minutes' },
+        { icon: 'chat', title: 'Website chat', text: 'Customer questions answered 24/7' },
+      ],
+      outgoing: [
+        { icon: 'calendar', title: 'Diary', text: 'Jobs booked, reminders sent' },
+        { icon: 'pound', title: 'Quotes and invoices', text: 'Drafted, sent and chased' },
+        { icon: 'megaphone', title: 'Marketing', text: 'Emails and texts drafted for you' },
+        { icon: 'people', title: 'Customer list', text: 'Every customer remembered' },
+      ],
+      approve: 'You check and approve on your phone',
+      note: 'Phone, inbox, diary, quotes, invoices and the customer list come with every package. Website enquiries and marketing start with Clear Desk Team. Website chat comes with Clear Desk Business.',
+    },
+    {
+      type: 'steps', kicker: 'Getting started', h2: 'From first call to a clear desk.',
       items: [
         { title: 'A 20-minute call', text: 'You tell us where the week goes. We tell you which package fits and what it will and will not do. No pitch deck.' },
         { title: 'Setup, done by us', text: 'We connect your phone, inbox, diary, invoicing and customer list, teach Flo your tone and your prices, and test it on real work.', meta: '1 to 4 weeks' },

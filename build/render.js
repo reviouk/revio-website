@@ -353,6 +353,7 @@ const SECTION = {
   form(s) { return require('./blocks/form')(s, SITE, { rich, esc, head2, secCls }); },
   calculator(s) { return require('./blocks/calculator')(s, SITE, { rich, esc, head2, secCls }); },
   booking(s) { return require('./blocks/booking')(s, SITE, { rich, esc, head2, secCls }); },
+  flow(s) { return require('./blocks/flow')(s, SITE, { rich, esc, head2, secCls, icon }); },
 };
 
 /* ------------------------------------------------------------------ hero */
@@ -366,10 +367,26 @@ function hero(p) {
   const side = p.heroForm ? `<aside class="ai-hero-side ai-hero-form">${SECTION.form(Object.assign({ embedded: true }, p.heroForm))}</aside>` :
     p.heroImage ? `<aside class="ai-hero-side ai-hero-flo"><figure class="flo-fig">` +
       `<img src="${esc(p.heroImage.src)}" alt="${esc(p.heroImage.alt || '')}" width="560" height="560" decoding="async" fetchpriority="high">` +
-      (p.heroImage.say ? `<figcaption class="flo-say">${rich(p.heroImage.say)}</figcaption>` : '') + `</figure></aside>` :
+      (p.heroImage.say ? `<figcaption class="flo-say">${rich(p.heroImage.say)}</figcaption>` : '') + `</figure>` +
+      (p.heroImage.audio && !p.heroImage.audio.hold ? floListen(p.heroImage.audio) : '') + `</aside>` :
     `<aside class="ai-hero-side ai-hero-art" aria-hidden="true">${art(p.art || 'network')}</aside>`;
   return `<div class="page-hero ai-hero"><div class="wrap ai-hero-grid"><div class="ai-hero-copy">${badge}<h1>${rich(p.h1)}</h1>` +
     `<p class="sub">${rich(p.sub)}</p>${ctas}${proof}${note}</div>${side}</div></div>`;
+}
+
+/* "Listen to Flo": a play button under the avatar. The words are also on the
+   page, for anyone who cannot or would rather not listen. */
+function floListen(a) {
+  const mm = (n) => Math.floor(n / 60) + ':' + String(Math.round(n % 60)).padStart(2, '0');
+  return `<div class="flo-listen">` +
+    `<button type="button" class="flo-play" data-flo-audio="${esc(a.src)}" aria-pressed="false">` +
+    `<span class="flo-play-ic" aria-hidden="true"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>` +
+    `<svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></span>` +
+    `<span class="flo-play-label" data-play="${esc(a.label || 'Listen to Flo')}" data-pause="Pause">${esc(a.label || 'Listen to Flo')}</span>` +
+    (a.seconds ? `<span class="flo-play-time">${mm(a.seconds)}</span>` : '') +
+    `<span class="flo-play-bar" aria-hidden="true"><i></i></span></button>` +
+    (a.transcript ? `<details class="flo-words"><summary>Read what Flo says</summary><p>${rich(a.transcript)}</p></details>` : '') +
+    `</div>`;
 }
 
 /* ------------------------------------------------------------- schema.org */

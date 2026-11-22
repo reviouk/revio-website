@@ -170,6 +170,40 @@
     run();
   }
 
+  /* ---------- Listen to Flo ---------- */
+  /* One play/pause button under the avatar. The file is only fetched when
+     someone presses play. */
+  Array.prototype.forEach.call(document.querySelectorAll('.flo-play[data-flo-audio]'), function (btn) {
+    var audio = null;
+    var label = btn.querySelector('.flo-play-label');
+    var time = btn.querySelector('.flo-play-time');
+    var bar = btn.querySelector('.flo-play-bar i');
+    var total = time ? time.textContent : '';
+    function mmss(n) { n = Math.max(0, Math.floor(n)); return Math.floor(n / 60) + ':' + ('0' + (n % 60)).slice(-2); }
+    function show(playing) {
+      btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      if (label) label.textContent = label.getAttribute(playing ? 'data-pause' : 'data-play');
+    }
+    function reset() { show(false); if (bar) bar.style.width = '0'; if (time) time.textContent = total; }
+    btn.addEventListener('click', function () {
+      if (!audio) {
+        audio = new Audio(btn.getAttribute('data-flo-audio'));
+        audio.preload = 'auto';
+        audio.addEventListener('timeupdate', function () {
+          if (!audio.duration) return;
+          if (bar) bar.style.width = (100 * audio.currentTime / audio.duration) + '%';
+          if (time) time.textContent = mmss(audio.duration - audio.currentTime);
+        });
+        audio.addEventListener('ended', function () { audio.currentTime = 0; reset(); });
+        audio.addEventListener('pause', function () { show(false); });
+        audio.addEventListener('play', function () { show(true); });
+        audio.addEventListener('error', function () { reset(); if (label) label.textContent = 'Audio unavailable'; });
+      }
+      if (audio.paused) { var p = audio.play(); if (p && p.catch) p.catch(function () { reset(); }); }
+      else audio.pause();
+    });
+  });
+
   /* ---------- booking embed ---------- */
   var book = document.querySelector('.ai-book[data-src]');
   if (book) {
