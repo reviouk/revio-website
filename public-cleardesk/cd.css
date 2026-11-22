@@ -11,31 +11,18 @@
 .cd-logo .cd-strap { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; font-weight: 700; font-size: 8.5px; line-height: 1; letter-spacing: .21em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .cd-logo .cd-word sup { font-size: 8px; letter-spacing: 0; margin-left: 1px; vertical-align: top; position: relative; top: -1px; }
 
-/* ---------- Over to Flo mark: inbox to zero (Rob, 20 Nov 2026) ----------
-   Three sheets lift out of the tray, the red badge counts 3, 2, 1 and turns
-   into a mint tick. Five-second loop; still for reduced motion. */
+/* ---------- Over to Flo mark: the switch (Rob, 22 Nov 2026) ----------
+   The switch is flicked over to Flo: it starts off, slides across and turns
+   mint with a tick. Six-second loop. The markup itself is the switched-on
+   state, which is how it rests and how it sits for reduced motion. */
 .cd-mark * { transform-box: fill-box; transform-origin: center; }
-.cd-mark .cdm-s1 { animation: cdmOut1 5s ease infinite; }
-.cd-mark .cdm-s2 { animation: cdmOut2 5s ease infinite; }
-.cd-mark .cdm-s3 { animation: cdmOut3 5s ease infinite; }
-.cd-mark .cdm-n3 { animation: cdmN3 5s steps(1) infinite; }
-.cd-mark .cdm-n2 { animation: cdmN2 5s steps(1) infinite; opacity: 0; }
-.cd-mark .cdm-n1 { animation: cdmN1 5s steps(1) infinite; opacity: 0; }
-.cd-mark .cdm-red { animation: cdmRed 5s ease infinite; }
-.cd-mark .cdm-ok { animation: cdmOk 5s cubic-bezier(.3,1.6,.5,1) infinite; opacity: 0; }
-@keyframes cdmOut1 { 0%,14% { opacity: 1; transform: none; } 22% { opacity: 0; transform: translateY(-12px) rotate(10deg); } 92% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
-@keyframes cdmOut2 { 0%,32% { opacity: 1; transform: none; } 40% { opacity: 0; transform: translateY(-12px) rotate(-10deg); } 94% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
-@keyframes cdmOut3 { 0%,50% { opacity: 1; transform: none; } 58% { opacity: 0; transform: translateY(-12px) rotate(8deg); } 96% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
-@keyframes cdmN3 { 0% { opacity: 1; } 20% { opacity: 0; } 98% { opacity: 1; } }
-@keyframes cdmN2 { 0% { opacity: 0; } 20% { opacity: 1; } 38% { opacity: 0; } }
-@keyframes cdmN1 { 0% { opacity: 0; } 38% { opacity: 1; } 56% { opacity: 0; } }
-@keyframes cdmRed { 0%,55% { opacity: 1; transform: scale(1); } 60%,94% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: scale(1); } }
-@keyframes cdmOk { 0%,58% { opacity: 0; transform: scale(.3); } 66% { opacity: 1; transform: scale(1); } 90% { opacity: 1; transform: scale(1); } 96%,100% { opacity: 0; transform: scale(.3); } }
-@media (prefers-reduced-motion: reduce) {
-  .cd-mark * { animation: none !important; }
-  .cd-mark .cdm-s1, .cd-mark .cdm-s2, .cd-mark .cdm-s3, .cd-mark .cdm-red { opacity: 0; }
-  .cd-mark .cdm-ok { opacity: 1; }
-}
+.cd-mark .cdm-track { animation: cdmTrack 6s ease infinite; }
+.cd-mark .cdm-knob { animation: cdmKnob 6s cubic-bezier(.5,0,.2,1.25) infinite; }
+.cd-mark .cdm-tick { animation: cdmTick 6s ease infinite; }
+@keyframes cdmTrack { 0%,3% { fill: #12c98b; fill-opacity: 1; } 9%,24% { fill: #fff; fill-opacity: .3; } 33%,100% { fill: #12c98b; fill-opacity: 1; } }
+@keyframes cdmKnob { 0%,3% { transform: none; } 9%,24% { transform: translateX(-14px); } 33%,100% { transform: none; } }
+@keyframes cdmTick { 0%,2% { opacity: 1; transform: scale(1); } 6%,31% { opacity: 0; transform: scale(.4); } 39%,100% { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .cd-mark * { animation: none !important; } }
 
 /* ---------- header ---------- */
 .cd-topbar { gap: 8px; }
