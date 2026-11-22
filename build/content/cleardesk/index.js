@@ -37,10 +37,10 @@ module.exports = {
       cols: 3,
       items: [
         { icon: 'phone', title: 'Answers the phone', text: "When you can't pick up, Flo does. Flo takes the details, answers the usual questions and books the job in your diary. You get a summary by text." },
-        { icon: 'mail', title: 'Clears the inbox', text: 'Sorts what matters from what does not, drafts replies in your voice for you to approve, and chases the people who have gone quiet.' },
-        { icon: 'pound', title: 'Chases the money', text: 'Watches your invoices and sends polite reminders at 7, 14 and 21 days, in your tone, until they are paid. You see every one before it goes.' },
+        { icon: 'mail', title: 'Clears the inbox', text: 'Sorts what matters from what does not, writes the replies in your voice, and chases the people who have gone quiet.' },
+        { icon: 'pound', title: 'Chases the money', text: 'Watches your invoices and sends polite reminders at 7, 14 and 21 days, in your tone, until they are paid.' },
         { icon: 'calendar', title: 'Keeps the diary', text: 'Books, moves and confirms appointments, writes up meeting notes and sends the follow-up you would have forgotten.' },
-        { icon: 'doc', title: 'Drafts the quote', text: 'Turns a phone call or an email into a quote in your format in minutes, priced from your own list, ready for you to check and send.' },
+        { icon: 'doc', title: 'Drafts the quote', text: 'Turns a phone call or an email into a quote in your format in minutes, priced from your own list and ready to send.' },
         { icon: 'people', title: 'Remembers every customer', text: 'Who they are, what they asked for, what you quoted and when you last spoke. One place, on your phone, so nothing goes cold.' },
       ],
     },
