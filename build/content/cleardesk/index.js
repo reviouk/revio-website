@@ -11,7 +11,7 @@ module.exports = {
   keywords: ['ai assistant for small business uk', 'ai personal assistant small business', 'flo ai assistant', 'ai receptionist uk', 'automate admin small business', 'ai for sole traders', 'done for you ai setup'],
   art: 'clock',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?',
-    audio: { src: '/audio/flo.mp3?v=3', label: 'Listen to Flo', seconds: 36,
+    audio: { src: '/audio/flo.mp3?v=4', label: 'Listen to Flo', seconds: 39,
       transcript: "Hi, I'm Flo, your AI assistant. I pick up the phone when you can't. While you're busy on a job, I answer your calls, take the details, and book the work into your diary. I keep your inbox clear and draft your replies. And I chase unpaid invoices, politely, until they're paid. You check and approve everything from your phone. That means fewer missed calls, fewer lost jobs, and your evenings back. The team sets everything up for you, so there's nothing to learn. Book a twenty-minute call, and let's clear your desk." } },
   badge: 'Over to Flo by REVIO',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
