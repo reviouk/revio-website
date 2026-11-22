@@ -67,7 +67,7 @@ module.exports = {
       items: [
         { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Texts back callers Flo could not help', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: C.BOOK_URL, cta: 'Book a call' },
       ],
-      note: `The monthly plan covers Flo's running costs, monitoring, fixes and one change a month. 250 answered call minutes a month are included. There is no per-minute charge on Solo: if you need more, extra minutes come in packs of 100 for ${P.assist_solo_pack}. Prefer to pay yearly? It is ${P.assist_solo_year} a year, two months free. Need more than one person on it? See Flo Team.`,
+      note: `The monthly plan covers Flo's running costs, monitoring, support and one change a month. 250 answered call minutes a month are included. There is no per-minute charge on Solo: if you need more, extra minutes come in packs of 100 for ${P.assist_solo_pack}. Prefer to pay yearly? It is ${P.assist_solo_year} a year, two months free. Need more than one person on it? See Flo Team.`,
     },
     {
       type: 'steps', kicker: 'How it works', h2: 'Live in a week, supervised for a fortnight.',
@@ -75,7 +75,7 @@ module.exports = {
         { title: 'A 20-minute call', text: 'You tell us how the phone, email, diary and invoicing work today. We confirm Solo fits and book the setup.' },
         { title: 'Setup, three to five days', text: 'We connect your number, inbox, calendar, invoicing and customer list, load your prices and your usual answers, and teach Flo your tone from your own messages.' },
         { title: 'Supervised fortnight', text: 'Everything goes past you first. You correct it on your phone in a few words. By the end of two weeks Flo sounds like you.' },
-        { title: 'Running', text: 'Flo keeps going. We watch it, fix what breaks and make one change a month. You pay the plan and get on with the work.', meta: P.assist_solo_month },
+        { title: 'Running', text: 'Flo keeps going. We look after it and make one change a month. You pay the plan and get on with the work.', meta: P.assist_solo_month },
       ],
     },
     {
@@ -91,7 +91,7 @@ module.exports = {
         { q: 'What if a customer asks something Flo does not know?', a: 'Flo takes the details, says you will call back, and sends you a summary straight away. It is set up to say "I will check with him" rather than guess. You decide what it may answer alone, usually prices, areas, opening hours and availability.' },
         { q: 'Will it annoy my customers about invoices?', a: 'The reminders are written in your words, go at 7, 14 and 21 days by default, and stop the moment the invoice is marked paid. You see every one before it goes for the first fortnight, and you can exclude any customer. Most owners find they get paid faster and nobody complains.' },
         { q: 'I do not have a customer list or a CRM.', a: 'Most sole traders do not. A simple one is part of the package: name, number, job, quote, status, last contact. It lives on your phone and Flo keeps it up to date. If you already use something, we connect to that instead.' },
-        { q: 'What does the monthly plan actually cover?', a: `${P.assist_solo_month} a month, excluding VAT, covers Flo's running costs, 250 call minutes, monitoring so we know when something breaks, fixes, and one change a month, for example a new price list or a new service. You can pay yearly for ${P.assist_solo_year} instead, two months free. Cancel any time. The accounts and the data are yours.` },
+        { q: 'What does the monthly plan actually cover?', a: `${P.assist_solo_month} a month, excluding VAT, covers Flo's running costs, 250 call minutes, monitoring, support, and one change a month, for example a new price list or a new service. You can pay yearly for ${P.assist_solo_year} instead, two months free. Cancel any time. The accounts and the data are yours.` },
         { q: 'Where does my data go?', a: 'Flo reads your calls, email and invoices, so this matters. Every account is in your name, your data stays in your own tools, and the AI services behind it process it under business terms. You get a one-page note in plain English on what it can see, and you can disconnect anything in a minute.' },
         { q: 'Can I grow into the bigger packages?', a: 'Yes. When you take on staff, Flo Team adds everyone to Flo and shares the customer list. Whatever you have paid for Solo setup is credited against Team if you upgrade within a year.' },
       ],
