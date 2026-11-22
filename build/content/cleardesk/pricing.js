@@ -41,7 +41,6 @@ module.exports = {
       type: 'table', tone: 'wash', kicker: 'Add-ons', h2: 'Things that cost extra, priced in advance.',
       head: ['Add-on', 'Price', 'What it is'],
       rows: [
-        ['Health Check', P.assist_check, '90 minutes with you, a list of the ten jobs to hand over first and which package fits. Credited against Team or Business booked within 60 days.'],
         ['Extra automated job', P.assist_job, 'A new job Flo takes on outside the package, for example stock reordering or a tender tracker. Scoped and fixed before we start.'],
         ['Team training, half day', P.training_half, 'For teams that want more than the session included, or a refresher when new people join.'],
         ['Team training, full day', P.training_day, 'A full day on site, usually for Business clients rolling out to several sites.'],
@@ -86,7 +85,7 @@ module.exports = {
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions about the money.',
       items: [
-        { q: 'Is the setup fee really the whole cost to get started?', a: 'Yes. The setup fee covers everything to go live: connections, training Flo, writing the rules, training you, and the supervised fortnight. The only other cost is the monthly plan, which starts when you go live. There is no day rate and no "discovery" fee. The Health Check is optional and is credited against Team or Business if you go ahead.' },
+        { q: 'Is the setup fee really the whole cost to get started?', a: 'Yes. The setup fee covers everything to go live: connections, training Flo, writing the rules, training you, and the supervised fortnight. The only other cost is the monthly plan, which starts when you go live. There is no day rate and no "discovery" fee.' },
         { q: 'Why is every price "from"?', a: 'Because a sole trader with one phone and a forty-person company with three sites are not the same job, and we would rather say so than publish a single number and add surprises later. We give you the exact figure on the first call. That figure is fixed for the setup and does not move.' },
         { q: 'Can I pay the setup fee monthly?', a: 'Solo is paid up front. Team and Business can be split in two: half to start, half on go-live. We do not offer longer finance; the point of these packages is that they are affordable without it.' },
         { q: 'What happens if I cancel the monthly plan?', a: 'You keep every account, the data, the written guide and the rules. Flo keeps working for as long as you keep paying the underlying tools yourself. What stops is our monitoring, support and changes. Most people who cancel do so because they have moved to the next package up.' },
