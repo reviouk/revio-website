@@ -485,7 +485,7 @@ ${sections}
 </main>
 <div id="site-footer"></div>
 <script src="/partials.js" defer></script>
-<script src="/ai.js" defer></script>
+<script src="/ai.js?v=20261122" defer></script>
 ${p.bodyExtra || ''}
 </body>
 </html>

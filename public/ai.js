@@ -78,7 +78,12 @@
       } catch (err) { /* ignore */ }
       var btn = form.querySelector('button[type=submit]');
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Sending…'; }
-      fetch(INTAKE_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) })
+      /* A form can name its own destination: Clear Desk enquiries go to the
+         Clear Desk app, everything else to the delivery dashboard. Only an
+         https address written into the page by the build is used. */
+      var dest = form.getAttribute('data-intake');
+      if (!dest || !/^https:\/\//.test(dest)) dest = INTAKE_URL;
+      fetch(dest, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function () {
           var done = document.createElement('div');

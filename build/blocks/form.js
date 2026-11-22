@@ -67,6 +67,10 @@ module.exports = function form(s, SITE, u) {
   return `<section class="${secCls(s)}" id="form"><div class="wrap ai-form-grid">${side}<div class="ai-form-wrap reveal">${inner}</div></div></section>`;
 };
 
+/* Clear Desk enquiries go to the Clear Desk app (moved from the delivery
+   dashboard on 22 Nov 2026). The app only accepts posts from the Clear Desk site. */
+const CD_INTAKE = 'https://app.cleardesk.revio.agency/enquiries';
+
 function cleardesk(s, SITE, u, id) {
   const { rich, esc, secCls } = u;
   const pkgs = [['Solo', 'Clear Desk Solo', 'Just me'], ['Team', 'Clear Desk Team', '2 to 10 people'], ['Business', 'Clear Desk Business', '10 or more'], ['Not sure yet', 'Clear Desk, not sure which', 'Help me choose']];
@@ -79,7 +83,7 @@ function cleardesk(s, SITE, u, id) {
      know before the call. The values are what the staff console shows. */
   const mail = [['Gmail or Google', 'google'], ['Outlook, Hotmail or Microsoft 365', 'microsoft'], ['It came with my website or domain name', 'domain'], ['Another provider', 'other'], ['Not sure', 'unsure']];
   const mailOpts = mail.map(([l, val]) => `<option value="${esc(val)}">${esc(l)}</option>`).join('');
-  const inner = `<form class="ai-form" data-form-id="${esc(id)}" data-book="${esc(SITE.BOOK_URL)}#diary" novalidate>
+  const inner = `<form class="ai-form" data-form-id="${esc(id)}" data-intake="${esc(CD_INTAKE)}" data-book="${esc(SITE.BOOK_URL)}#diary" novalidate>
   <div class="form-grid">
     <div class="field"><label for="${id}-name">Your name</label><input id="${id}-name" name="contact_name" autocomplete="name" required></div>
     <div class="field"><label for="${id}-company">Business name</label><input id="${id}-company" name="company_name" autocomplete="organization" required></div>
