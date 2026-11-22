@@ -115,7 +115,7 @@
         { href: 'https://cleardesk.revio.agency/', icon: ICON.chat, img: '/img/flo/flo.webp', title: 'Clear Desk',
           blurb: 'Flo, a personal assistant for sole traders and companies up to forty staff. Phone answered, inbox sorted, invoices chased.',
           label: 'Small businesses',
-          items: ['Clear Desk packages from &pound;495', 'Live in days, cancel any time'] }
+          items: ['Clear Desk packages from &pound;295', 'Live in days, cancel any time'] }
       ],
       rowsTitle: 'Every AI service',
       rows: [
@@ -430,7 +430,8 @@
 
   function cdLogo() {
     return '<a class="cd-logo" href="/" aria-label="Clear Desk, home">' + CD_MARK +
-      '<span class="cd-word"><span>Clear</span><span>Desk<sup>&trade;</sup></span></span></a>';
+      '<span class="cd-text"><span class="cd-word"><span>Clear</span><span>Desk<sup>&trade;</sup></span></span>' +
+      '<span class="cd-strap">Your AI assistant</span></span></a>';
   }
 
   function cdHeaderHTML(page) {
