@@ -36,7 +36,7 @@ module.exports = {
       items: [
         { icon: 'phone', title: 'Answers the phone when you cannot', text: "Picks up on your existing number with \"Hi, it's Flo, Dave's assistant\", takes the name, the job and the address, answers the usual questions about prices and areas, and books a slot in your diary. You get a text summary within a minute. If Flo could not help a caller, it texts them back so nobody is left hanging." },
         { icon: 'mail', title: 'Sorts the inbox', text: 'Reads what came in, flags the two things that need you, drafts replies to the rest in your words, and chases the enquiries that went quiet last week.' },
-        { icon: 'pound', title: 'Chases unpaid invoices', text: 'Watches your invoicing software. Sends a polite reminder at 7, 14 and 21 days, in your tone. You see each one before it goes. Most people get paid faster in the first month.' },
+        { icon: 'pound', title: 'Gets you paid', text: 'Texts the invoice the moment the job is done, so most customers pay before you leave. Anything still unpaid gets a polite reminder at 7, 14 and 21 days.' },
         { icon: 'doc', title: 'Drafts the quote', text: 'Turns a voicemail, a call summary or an email into a quote in your format, priced from your own list, ready to check and send from your phone.' },
         { icon: 'calendar', title: 'Keeps the diary straight', text: 'Books, moves and confirms appointments, sends the reminder the day before, and tells you when two things are about to clash.' },
         { icon: 'people', title: 'Remembers every customer', text: 'Who rang, what they wanted, what you quoted, when the job was done. One simple list on your phone, so the follow-up and the repeat work do not slip.' },
