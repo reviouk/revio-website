@@ -15,7 +15,7 @@ module.exports = {
       transcript: "Hi, I'm Flo, your AI assistant. I pick up the phone when you can't. While you're busy on a job, I answer your calls, take the details, and book the work into your diary. I keep your inbox clear and draft your replies. And I chase unpaid invoices, politely, until they're paid. That means fewer missed calls, fewer lost jobs, and your evenings back. The team sets everything up for you, so there's nothing to learn." } },
   badge: 'Over to Flo by REVIO',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
-  sub: "Meet Flo, the assistant we set up for your business. Flo picks up the phone when you can't, keeps the inbox clear, chases unpaid invoices, books the jobs in and remembers every customer. You check and approve. Flo does the rest.",
+  sub: "Meet Flo, the assistant we set up for your business. Flo picks up the phone when you can't, keeps the inbox clear, chases unpaid invoices, books the jobs in and remembers every customer. It runs by itself, and you stay in control from your phone.",
   ctas: [
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'See the three packages', href: '#packages', style: 'ghost' },
@@ -72,7 +72,7 @@ module.exports = {
     },
     {
       type: 'flow', id: 'how', tone: 'wash', kicker: 'How it works', h2: 'Everything runs through Flo.',
-      lede: 'Calls, emails and enquiries come in. Flo deals with them and keeps your diary, invoices and customers up to date. You check and approve.',
+      lede: 'Calls, emails and enquiries come in. Flo deals with them and keeps your diary, invoices and customers up to date. It runs by itself, and you can look in from your phone.',
       inTitle: 'Comes in', outTitle: 'Flo gets it done',
       incoming: [
         { icon: 'phone', title: 'Phone calls', text: "Answered when you can't pick up" },
@@ -86,7 +86,7 @@ module.exports = {
         { icon: 'megaphone', title: 'Marketing', text: 'Emails and texts drafted for you' },
         { icon: 'people', title: 'Customer list', text: 'Every customer remembered' },
       ],
-      approve: 'You check and approve on your phone',
+      approve: 'You stay in control from your phone',
       note: 'Phone, inbox, diary, quotes, invoices and the customer list come with every package. Website enquiries and marketing start with Flo Team. Website chat comes with Flo Business.',
     },
     {
