@@ -82,3 +82,20 @@
 :root:not([data-theme="dark"]) .cd-page .page-hero::after { background: rgba(47,143,255,.14); }
 :root:not([data-theme="dark"]) .cd-page .card { background: #fff; border-color: #ececf4; box-shadow: inset 0 4px 0 var(--tile), 0 8px 24px rgba(20,16,60,.06); }
 :root:not([data-theme="dark"]) .cd-page .card:hover { border-color: #ececf4; box-shadow: inset 0 4px 0 var(--tile), 0 16px 32px rgba(20,16,60,.11); }
+
+/* ---------- the Agents menu ---------- */
+.cd-menu { position: relative; }
+.cd-menu-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 14px; border: 0; background: none; border-radius: 999px; font-family: var(--fh); font-weight: 600; font-size: 15px; color: var(--ink); cursor: pointer; }
+.cd-menu-btn:hover, .cd-menu-btn[aria-expanded="true"], .cd-menu-btn.on { background: var(--tile); color: var(--purple); }
+.cd-menu-btn:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
+.cd-menu-btn svg { width: 11px; height: 7px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
+.cd-menu-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.cd-menu-panel { position: absolute; top: calc(100% + 12px); left: 0; z-index: 60; width: 310px; padding: 8px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(20, 18, 50, .18); display: grid; gap: 2px; }
+.cd-menu-panel[hidden] { display: none; }
+.cd-nav .cd-menu-panel a { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 10px 12px; border-radius: 10px; }
+.cd-menu-panel a strong { font-family: var(--fh); font-size: 15px; font-weight: 600; }
+.cd-menu-panel a span { font-family: var(--fb, inherit); font-size: 13.5px; font-weight: 500; color: var(--muted); text-align: right; }
+.cd-drawer-h { font-family: var(--fh); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); padding: 14px 4px 2px; }
+.cd-drawer .cd-drawer-agent { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cd-drawer .cd-drawer-agent span { font-size: 14px; font-weight: 500; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .cd-menu-btn svg { transition: none; } }
