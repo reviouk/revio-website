@@ -21,14 +21,6 @@ module.exports = {
   service: { name: 'Over to Flo', type: 'Pricing', price: P.assist_solo_setup_num },
   sections: [
     {
-      type: 'intro', kicker: 'How the pricing works',
-      h2: 'One fee to set it up, one plan to keep it running, nothing else hidden.',
-      body: [
-        'Every package has two numbers. The setup fee pays for us to connect Flo to your phone, diary, invoicing, customer list and inbox, teach it your tone and your prices, write the rules for what it may do alone, train you or your team, and supervise the first fortnight. The monthly plan pays for Flo\'s running costs, monitoring, support, and changes as your business shifts.',
-        'Prices are "from" because a ten-person company on three sites is more work than a sole trader with one phone. We give you the exact figure on the first call and it does not move during the setup. There is no day rate, no minimum term on the plan, and every account, licence and line of code is in your name from day one.',
-      ],
-    },
-    {
       type: 'tiers', kicker: 'The three packages', h2: 'Pick the size of business.',
       items: [
         { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month`, text: 'Sole traders and owner-operators. Live in about a week.', includes: ['Phone answered, jobs booked', 'Inbox sorted, replies drafted', 'Invoices chased until paid', 'Quotes drafted from calls', 'Diary kept, reminders sent', 'Simple customer list', 'One hour training, one-page guide', 'Plan: 250 call minutes, monitoring, one change a month'], best: 'one person, perhaps an apprentice or a partner', href: '/solo/', cta: 'See Solo' },
