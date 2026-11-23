@@ -65,7 +65,7 @@ module.exports = {
     {
       type: 'tiers', kicker: 'Price', h2: 'One price to set up, one small plan to keep it running.',
       items: [
-        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup, ex VAT', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Texts back callers Flo could not help', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: C.BOOK_URL, cta: 'Book a call' },
+        { name: 'Flo Solo', price: P.assist_solo_setup, per: 'setup', cadence: `then ${P.assist_solo_month} a month, cancel any time`, text: 'Everything on this page, set up for you in about a week.', includes: ['Phone answering on your existing number', 'Texts back callers Flo could not help', 'Inbox sorting and drafted replies', 'Invoice reminders from your invoicing software', 'Quotes drafted from calls and emails', 'Diary booking and reminders', 'A simple customer list on your phone', 'One hour of training and a one-page guide', '30-day check-in call'], featured: true, flag: 'Live in a week', best: 'anyone who is the whole business and loses jobs to a missed call', href: C.BOOK_URL, cta: 'Book a call' },
       ],
       note: `The monthly plan covers Flo's running costs, monitoring, support and one change a month. 250 answered call minutes a month are included. There is no per-minute charge on Solo: if you need more, extra minutes come in packs of 100 for ${P.assist_solo_pack}. Prefer to pay yearly? It is ${P.assist_solo_year} a year, two months free. Need more than one person on it? See Flo Team.`,
     },
@@ -91,7 +91,7 @@ module.exports = {
         { q: 'What if a customer asks something Flo does not know?', a: 'Flo takes the details, says you will call back, and sends you a summary straight away. It is set up to say "I will check with him" rather than guess. You decide what it may answer alone, usually prices, areas, opening hours and availability.' },
         { q: 'Will it annoy my customers about invoices?', a: 'The reminders are written in your words, go at 7, 14 and 21 days by default, and stop the moment the invoice is marked paid. You see every one before it goes for the first fortnight, and you can exclude any customer. Most owners find they get paid faster and nobody complains.' },
         { q: 'I do not have a customer list or a CRM.', a: 'Most sole traders do not. A simple one is part of the package: name, number, job, quote, status, last contact. It lives on your phone and Flo keeps it up to date. If you already use something, we connect to that instead.' },
-        { q: 'What does the monthly plan actually cover?', a: `${P.assist_solo_month} a month, excluding VAT, covers Flo's running costs, 250 call minutes, monitoring, support, and one change a month, for example a new price list or a new service. You can pay yearly for ${P.assist_solo_year} instead, two months free. Cancel any time. The accounts and the data are yours.` },
+        { q: 'What does the monthly plan actually cover?', a: `${P.assist_solo_month} a month covers Flo's running costs, 250 call minutes, monitoring, support, and one change a month, for example a new price list or a new service. You can pay yearly for ${P.assist_solo_year} instead, two months free. Cancel any time. The accounts and the data are yours.` },
         { q: 'Where does my data go?', a: 'Flo reads your calls, email and invoices, so this matters. Every account is in your name, your data stays in your own tools, and the AI services behind it process it under business terms. You get a one-page note in plain English on what it can see, and you can disconnect anything in a minute.' },
         { q: 'Can I grow into the bigger packages?', a: 'Yes. When you take on staff, Flo Team adds everyone to Flo and shares the customer list. Whatever you have paid for Solo setup is credited against Team if you upgrade within a year.' },
       ],
@@ -108,7 +108,7 @@ module.exports = {
       type: 'cta', h2: 'Hear Flo answer a call before you decide.',
       text: 'Book a 20-minute call. We will give you a number to ring, talk through your week, and tell you honestly whether Solo is the right fit.',
       ctas: [{ label: 'Book a call', href: C.BOOK_URL, style: 'mint' }, { label: 'Ask a question first', href: C.CONTACT_URL, style: 'ghost' }],
-      note: `${P.assist_solo_setup} setup, ${P.assist_solo_month} a month, ex VAT. Live in about a week.`,
+      note: `${P.assist_solo_setup} setup, ${P.assist_solo_month} a month. Live in about a week.`,
     },
   ],
 };

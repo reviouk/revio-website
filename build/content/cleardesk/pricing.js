@@ -17,7 +17,7 @@ module.exports = {
     { label: 'Book a 20-minute call', href: C.BOOK_URL, style: 'mint' },
     { label: 'Back to the packages', href: '/', style: 'ghost' },
   ],
-  heroProof: ['Setup fee once, monthly plan after', 'All prices exclude VAT', 'Cancel the monthly plan any time'],
+  heroProof: ['Setup fee once, monthly plan after', 'Every extra priced in advance', 'Cancel the monthly plan any time'],
   service: { name: 'Over to Flo', type: 'Pricing', price: P.assist_solo_setup_num },
   sections: [
     {
@@ -35,7 +35,7 @@ module.exports = {
         { name: 'Flo Team', price: P.assist_team_setup, per: 'setup', cadence: `then ${P.assist_team_month} a month`, text: 'Two to ten staff. Includes two people, then £35 a person a month. Live in two to three weeks.', includes: ['Everything in Solo, plus email, for each person', 'Shared enquiry inbox answered in minutes', 'Forms and social messages connected', 'CRM connected or set up', 'Monday numbers', 'Monthly marketing drafts', 'Two-hour team session', 'Plan: 300 call minutes, up to three changes a month, 90-day review'], featured: true, flag: 'Most popular', best: 'a 2 to 10 person business', href: '/team/', cta: 'See Team' },
         { name: 'Flo Business', price: P.assist_business_setup, per: 'setup', cadence: `then ${P.assist_business_month} a month`, text: 'Ten to forty staff. Includes ten people, then £30 a person a month. Live in three to four weeks.', includes: ['Everything in Team, for each person', 'Enquiry to quote to invoice, end to end', 'Customer answers 24/7', 'Staff answers from your policies', 'Rules, access policy, audit trail', 'Half-day training', 'Plan: 800 call minutes, up to six small changes a month', 'Monthly review and roadmap'], best: 'a 10 to 40 person business', href: '/business/', cta: 'See Business' },
       ],
-      note: 'All exclude VAT. Setup fees are credited against the next package up if you upgrade within a year. Solo is one person, and can be paid yearly: £990 a year, two months free. Team includes two people and Business ten; each extra person is priced below.',
+      note: 'Setup fees are credited against the next package up if you upgrade within a year. Solo is one person, and can be paid yearly: £990 a year, two months free. Team includes two people and Business ten; each extra person is priced below.',
     },
     {
       type: 'table', tone: 'wash', kicker: 'Add-ons', h2: 'Things that cost extra, priced in advance.',
@@ -91,7 +91,6 @@ module.exports = {
         { q: 'What happens if I cancel the monthly plan?', a: 'You keep every account, the data, the written guide and the rules. Flo keeps working for as long as you keep paying the underlying tools yourself. What stops is our monitoring, support and changes. Most people who cancel do so because they have moved to the next package up.' },
         { q: 'Are there any usage charges?', a: 'Two, both published. Each plan includes a monthly allowance of answered call minutes: 250 on Solo, 300 on Team, 800 on Business. On Solo, extra minutes come in packs of 100 for £15; on Team and Business they are itemised at 15p each. And Team and Business are priced per person beyond the people included: £35 a month each on Team after the first two, £30 on Business after the first ten. Email, invoicing and diary work carry no usage charge, however busy you are.' },
         { q: 'Why per person on Team and Business, but not Solo?', a: 'Because the running cost follows the people. Every extra person is another inbox sorted, another set of replies drafted and another share of the phone. Solo is one person and one phone, and a sole trader with an apprentice is still one phone. The moment there are two inboxes to sort, that is Team.' },
-        { q: 'Do you charge VAT?', a: 'Yes. Every price on this page excludes VAT, which is added at the standard rate. If you are VAT registered you reclaim it as usual.' },
         { q: 'Is there a guarantee?', a: 'The supervised fortnight is the guarantee that matters: nothing goes to a customer that you have not seen until you are happy. If during setup it becomes clear the package will not do what we said on the first call, we stop and refund the balance. We do not promise a number of hours saved, because that depends on your week, but we show you the before and after in the 30-day check-in.' },
       ],
     },
@@ -107,7 +106,7 @@ module.exports = {
       type: 'cta', h2: 'Get the exact figure in 20 minutes.',
       text: 'Tell us the size of the business and how the phone, inbox and invoicing work today. We will tell you the package, the exact setup fee and the monthly plan on the call.',
       ctas: [{ label: 'Book a call', href: C.BOOK_URL, style: 'mint' }, { label: 'See the packages', href: '/', style: 'ghost' }],
-      note: 'All prices exclude VAT. Cancel the monthly plan any time.',
+      note: 'Cancel the monthly plan any time.',
     },
   ],
 };

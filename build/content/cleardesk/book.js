@@ -45,7 +45,7 @@ module.exports = {
       type: 'cta', h2: 'Rather read the prices first?',
       text: 'Every package, add-on and running cost is on one page. No form to fill in to see it.',
       ctas: [{ label: 'See every price', href: C.PRICING_URL, style: 'mint' }, { label: 'Back to the packages', href: '/', style: 'ghost' }],
-      note: 'All prices exclude VAT. Cancel the monthly plan any time.',
+      note: 'Cancel the monthly plan any time.',
     },
   ],
 };

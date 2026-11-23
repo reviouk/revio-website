@@ -467,7 +467,7 @@
     return '<footer class="cd-foot"><div class="wrap">' +
       '<div>' + cdLogo() +
       '<p>Flo, an assistant set up for your business by LeadSignal. Phone answered, inbox sorted, invoices chased, jobs booked. For UK sole traders and businesses with up to forty staff.</p>' +
-      '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Flo is automated and says so. Every price published, ex VAT.</span></div></div>' +
+      '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Flo is automated and says so. Every price published.</span></div></div>' +
       '<div><h4>Packages</h4><ul>' +
       '<li><a href="/solo/">Flo Solo</a></li><li><a href="/team/">Flo Team</a></li>' +
       '<li><a href="/business/">Flo Business</a></li><li><a href="/pricing/">Every price</a></li></ul></div>' +

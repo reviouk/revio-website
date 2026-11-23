@@ -404,7 +404,7 @@ function jsonld(p) {
   ];
   if (p.service) {
     graph.push(Object.assign({ '@type': 'Service', '@id': url + '#service', name: plain(p.service.name || p.h1), serviceType: plain(p.service.type || p.service.name || p.h1), provider: { '@id': SITE.ORIGIN + '/#org' }, areaServed: 'GB', url, description: plain(p.description) },
-      p.service.price != null ? { offers: { '@type': 'Offer', priceCurrency: 'GBP', price: p.service.price, priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'GBP', minPrice: p.service.price, valueAddedTaxIncluded: false }, url } } : {}));
+      p.service.price != null ? { offers: { '@type': 'Offer', priceCurrency: 'GBP', price: p.service.price, priceSpecification: Object.assign({ '@type': 'PriceSpecification', priceCurrency: 'GBP', minPrice: p.service.price }, p.site === 'cleardesk' ? {} : { valueAddedTaxIncluded: false }), url } } : {}));
   }
   if (p.path === '/' && p.site !== 'cleardesk') {
     graph.push({ '@type': 'ProfessionalService', '@id': SITE.ORIGIN + '/#service', name: 'Revio AI Consultancy', url: SITE.ORIGIN + '/', parentOrganization: { '@id': SITE.ORIGIN + '/#org' }, areaServed: { '@type': 'Country', name: 'United Kingdom' }, address: { '@type': 'PostalAddress', streetAddress: 'Imperial Place, 4 Maxwell Rd', addressLocality: 'Borehamwood', postalCode: 'WD6 1JN', addressCountry: 'GB' }, priceRange: '££', hasOfferCatalog: { '@type': 'OfferCatalog', name: 'AI consultancy services', itemListElement: [
