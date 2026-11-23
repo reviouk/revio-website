@@ -178,7 +178,14 @@ const ART = {
       '</svg>';
   },
 };
-const art = (k) => (ART[k] || ART.network)();
+/* Over to Flo pages show the pictures without their captions: the captions are REVIO's own
+   figures (hours saved, bookings up) and say nothing true about an agent. */
+let PLAIN_ART = false;
+const art = (k) => {
+  const svg = (ART[k] || ART.network)();
+  if (!PLAIN_ART) return svg;
+  return svg.replace(/<g[^>]*>(?:(?!<\/?g[\s>])[\s\S])*?<text[\s\S]*?<\/g>/g, '').replace(/<text[\s\S]*?<\/text>/g, '');
+};
 
 /* --------------------------------------------------------------- helpers */
 const btn = (c) => {
@@ -353,6 +360,7 @@ const SECTION = {
   form(s) { return require('./blocks/form')(s, SITE, { rich, esc, head2, secCls }); },
   calculator(s) { return require('./blocks/calculator')(s, SITE, { rich, esc, head2, secCls }); },
   booking(s) { return require('./blocks/booking')(s, SITE, { rich, esc, head2, secCls }); },
+  prices(s) { return require('./blocks/prices')(s, SITE, { rich, esc, head2, secCls }); },
   flow(s) { return require('./blocks/flow')(s, SITE, { rich, esc, head2, secCls, icon }); },
 };
 
@@ -424,6 +432,7 @@ function jsonld(p) {
 function render(p) {
   SITE = p.site === 'cleardesk' ? Object.assign({}, BASE_SITE, BASE_SITE.CLEARDESK) : BASE_SITE;
   const cd = p.site === 'cleardesk';
+  PLAIN_ART = cd;
   if (!p.path) p.path = '/' + p.slug.replace(/^\/|\/$/g, '') + '/';
   const url = SITE.ORIGIN + (p.canonical || p.path);
   const title = plain(p.title);
@@ -487,7 +496,7 @@ ${sections}
 </main>
 <div id="site-footer"></div>
 <script src="/partials.js" defer></script>
-<script src="/ai.js?v=20261122" defer></script>
+<script src="/ai.js?v=20261123" defer></script>
 ${cd && SITE.CHAT_EMBED ? `<script src="${SITE.CHAT_EMBED}" async></script>\n` : ''}${p.bodyExtra || ''}
 </body>
 </html>
