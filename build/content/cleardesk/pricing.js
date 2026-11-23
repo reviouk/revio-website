@@ -5,7 +5,7 @@ const C = S.CLEARDESK;
 /* Small business AI pricing. DRAFT 2026-11-19. One ladder, every price. */
 module.exports = {
   slug: 'cleardesk/pricing',
-  title: 'Over to Flo Pricing: Every Price Published | by REVIO',
+  title: 'Over to Flo Pricing: Every Price Published | by LeadSignal',
   description: 'Every Over to Flo price on one page: Flo Solo from £295 setup and £99 a month, Team from £1,950, Business from £4,500. Add-ons and running costs too.',
   keywords: ['ai assistant pricing uk', 'small business ai cost', 'ai receptionist price uk', 'how much does ai automation cost small business', 'ai setup fee monthly plan'],
   art: 'layers',

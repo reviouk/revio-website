@@ -2,12 +2,13 @@ const S = require('../../site');
 const C = S.CLEARDESK;
 
 const html = `
-<p class="updated">Last updated: 21 November 2026</p>
+<p class="updated">Last updated: 23 November 2026</p>
 
 <h2 id="service">1. What the service is</h2>
-<p>Over to Flo is a done-for-you assistant service run by REVIO, of ${S.ADDRESS}. The assistant is called Flo. Flo is automated, and it says so.</p>
+<p>Over to Flo is a done-for-you assistant service run by Lead Signal AI Technologies Limited, a company registered in England and Wales, company number 17361862. Our registered office is 22 The Ridgeway, Flitwick, Bedford, MK45 1DH. Our main office is ${S.ADDRESS}.</p>
+<p>The assistant is called Flo. Flo is automated, and it says so.</p>
 <p>With your permission, Flo connects to your phone line (missed calls are forwarded to a number we provide), your Google or Microsoft mailbox and calendar, and your invoicing software. It answers calls, sorts email, drafts replies for your approval, books diary slots, chases unpaid invoices and texts you summaries.</p>
-<p>In these terms, "we" and "us" mean REVIO, and "you" means the business that signs up.</p>
+<p>In these terms, "we" and "us" mean Lead Signal AI Technologies Limited, and "you" means the business that signs up.</p>
 
 <h2 id="price">2. Fees and payment</h2>
 <p>There is a one-off setup fee and a monthly plan. Prices are as published on our <a href="/pricing/">pricing page</a> when you sign up, and they exclude VAT.</p>
@@ -65,13 +66,13 @@ const html = `
 <p>These terms are governed by the law of England and Wales. The courts of England and Wales have exclusive jurisdiction over any dispute arising from them.</p>
 
 <h2 id="contact">14. Contact</h2>
-<p>Email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a> or write to REVIO, ${S.ADDRESS}.</p>
+<p>Email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a> or write to Lead Signal AI Technologies Limited, ${S.ADDRESS}.</p>
 `;
 
 module.exports = {
   slug: 'cleardesk/terms',
-  title: 'Terms of Service | Over to Flo by REVIO',
-  description: 'The plain-English terms for Over to Flo by REVIO: fees, no minimum term, the supervised first fortnight, what Flo will not do, your data and liability.',
+  title: 'Terms of Service | Over to Flo by LeadSignal',
+  description: 'The plain-English terms for Over to Flo by LeadSignal: fees, no minimum term, the supervised first fortnight, what Flo will not do, your data and liability.',
   utility: true,
   art: 'doc',
   badge: 'Legal',

@@ -6,7 +6,7 @@ const C = S.CLEARDESK;
    diary as the main site, no links back to it. */
 module.exports = {
   slug: 'cleardesk/book',
-  title: 'Book a 20-Minute Call About Flo | Over to Flo by REVIO',
+  title: 'Book a 20-Minute Call About Flo | Over to Flo by LeadSignal',
   description: 'Pick a 20-minute slot. Tell us how your phone, inbox and invoicing work today and we will tell you which Flo package fits and exactly what it costs. No pitch.',
   keywords: ['book ai assistant call', 'over to flo call', 'ai receptionist demo uk'],
   utility: true,

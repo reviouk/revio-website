@@ -6,7 +6,7 @@ const C = S.CLEARDESK;
    not freelancers. Lead with the phone, then inbox, then invoices. */
 module.exports = {
   slug: 'cleardesk/solo',
-  title: 'Flo Solo: AI Assistant for Sole Traders | by REVIO',
+  title: 'Flo Solo: AI Assistant for Sole Traders | by LeadSignal',
   description: 'Flo answers missed calls, books the job, texts back callers, sorts your inbox and chases invoices. A named person, no contract. From £295, then £99 a month.',
   keywords: ['ai assistant for sole traders', 'ai receptionist for tradesmen uk', 'ai for self employed uk', 'missed calls tradesman', 'invoice chasing automation', 'ai personal assistant small business'],
   art: 'voice',

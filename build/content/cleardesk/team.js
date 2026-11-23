@@ -5,7 +5,7 @@ const C = S.CLEARDESK;
 /* Flo Team. DRAFT 2026-11-19. Audience: owner of a 2–10 person business. */
 module.exports = {
   slug: 'cleardesk/team',
-  title: 'Flo Team: AI Assistant for Small Teams | by REVIO',
+  title: 'Flo Team: AI Assistant for Small Teams | by LeadSignal',
   description: 'Flo, one assistant for a team of two to ten: enquiries answered in minutes, invoices chased, numbers every Monday. From £1,950 setup, then £245 a month.',
   keywords: ['ai assistant for small team', 'ai for small business uk 10 staff', 'automate enquiries small business', 'ai admin assistant office', 'weekly business report automation', 'small business ai setup uk'],
   art: 'chat',

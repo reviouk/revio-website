@@ -6,14 +6,14 @@ const C = S.CLEARDESK;
    named anywhere on these pages: the assistant is the product. */
 module.exports = {
   slug: 'cleardesk/index',
-  title: 'Over to Flo: an AI Assistant for Small Businesses | by REVIO',
+  title: 'Over to Flo: an AI Assistant for Small Businesses | by LeadSignal',
   description: 'Over to Flo gives you an AI assistant that answers your calls, sorts the inbox, chases invoices and books jobs. Set up for you in days, from £295.',
   keywords: ['ai assistant for small business uk', 'ai personal assistant small business', 'flo ai assistant', 'ai receptionist uk', 'automate admin small business', 'ai for sole traders', 'done for you ai setup'],
   art: 'clock',
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Hi, it&rsquo;s Flo. Shall I take that call?',
     audio: { src: '/audio/flo.mp3?v=7', label: 'Listen to Flo', seconds: 28,
       transcript: "Hi, I'm Flo, your AI assistant. I pick up the phone when you can't. While you're busy on a job, I answer your calls, take the details, and book the work into your diary. I keep your inbox clear and draft your replies. And I chase unpaid invoices, politely, until they're paid. That means fewer missed calls, fewer lost jobs, and your evenings back. The team sets everything up for you, so there's nothing to learn." } },
-  badge: 'Over to Flo by REVIO',
+  badge: 'Over to Flo by LeadSignal',
   h1: 'Get your week back. <em class="mint">Flo starts Monday.</em>',
   sub: "Meet Flo, the assistant we set up for your business. Flo picks up the phone when you can't, keeps the inbox clear, chases unpaid invoices, books the jobs in and remembers every customer. It runs by itself, and you stay in control from your phone.",
   ctas: [
@@ -101,12 +101,12 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Who this is for, and who it is not.',
       yes: { title: 'A good fit', items: ['A sole trader or a business with up to 40 staff', 'A phone that rings while you are working', 'Invoices that take longer to collect than they should', 'Enquiries that wait hours for a reply', 'An owner who can spend 20 minutes a week approving and correcting'] },
-      no: { title: 'Not this, yet', items: ['More than 40 staff or several departments: that is a job for <a href="https://revio.agency/" target="_blank" rel="noopener">REVIO</a>, the team behind Flo', 'You want a chatbot on the website and nothing behind it', 'You want it fully automatic with no human check: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries', 'You want to build it yourself: a good idea if you have the time, and we will say so'] },
+      no: { title: 'Not this, yet', items: ['More than 40 staff or several departments: that is a job for <a href="https://revio.agency/" target="_blank" rel="noopener">REVIO</a>', 'You want a chatbot on the website and nothing behind it', 'You want it fully automatic with no human check: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries', 'You want to build it yourself: a good idea if you have the time, and we will say so'] },
     },
     {
       type: 'quote', tone: 'wash',
       text: 'The owners who get the most from this are not the technical ones. They are the ones who were drowning in Sunday-night admin and wanted it gone.',
-      who: 'Revio', role: 'The team that sets up and runs the work',
+      who: 'LeadSignal', role: 'The team that sets up and runs the work',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions owners ask before they book.',
@@ -118,7 +118,7 @@ module.exports = {
         { q: 'Do I need to change my software?', a: 'Almost never. We connect to the phone, email, calendar, invoicing and customer tools you already use. If you have no customer list at all, we set up a simple one as part of the package. We name no software on these pages because the point is that we fit around yours.' },
         { q: 'Where does my data go?', a: 'Flo reads your email, calls and invoices, so this matters. Every account is in your name, data stays in your tools, and the AI services we use process it under business terms, not consumer ones. You get a plain-English one-page note on what it can see and where it goes, and you can disconnect anything at any time.' },
         { q: 'How quickly is it live?', a: 'Solo in about a week, Team in two to three weeks, Business in three to four. The first fortnight after that is supervised, so expect the full benefit about a month after you sign.' },
-        { q: 'What if I am bigger than 40 staff?', a: 'Then these packages are probably too small for you. REVIO, the team behind Flo, works with larger companies: see <a href="https://revio.agency/" target="_blank" rel="noopener">revio.agency</a>.' },
+        { q: 'What if I am bigger than 40 staff?', a: 'Then these packages are probably too small for you. For larger companies, see REVIO at <a href="https://revio.agency/" target="_blank" rel="noopener">revio.agency</a>.' },
       ],
     },
     {

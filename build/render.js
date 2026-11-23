@@ -398,13 +398,15 @@ function jsonld(p) {
   const graph = [
     { '@type': 'WebPage', '@id': url, url, name: plain(p.title), description: plain(p.description), isPartOf: { '@id': SITE.ORIGIN + '/#website' }, breadcrumb: { '@id': url + '#breadcrumb' } },
     { '@type': 'BreadcrumbList', '@id': url + '#breadcrumb', itemListElement: crumbs },
-    { '@type': 'Organization', '@id': SITE.ORIGIN + '/#org', name: 'Revio', url: SITE.ORIGIN + '/', email: SITE.EMAIL, logo: SITE.ORIGIN + '/assets/revio-logo-white.png', address: { '@type': 'PostalAddress', streetAddress: 'Imperial Place, 4 Maxwell Rd', addressLocality: 'Borehamwood', postalCode: 'WD6 1JN', addressCountry: 'GB' }, sameAs: ['https://www.linkedin.com/company/revio-agency/'] },
+    p.site === 'cleardesk'
+      ? { '@type': 'Organization', '@id': SITE.ORIGIN + '/#org', name: 'Over to Flo', legalName: 'Lead Signal AI Technologies Limited', url: SITE.ORIGIN + '/', email: SITE.EMAIL, logo: SITE.ORIGIN + '/img/flo/flo.webp', address: { '@type': 'PostalAddress', streetAddress: 'Imperial Place, 4 Maxwell Rd', addressLocality: 'Borehamwood', postalCode: 'WD6 1JN', addressCountry: 'GB' } }
+      : { '@type': 'Organization', '@id': SITE.ORIGIN + '/#org', name: 'Revio', url: SITE.ORIGIN + '/', email: SITE.EMAIL, logo: SITE.ORIGIN + '/assets/revio-logo-white.png', address: { '@type': 'PostalAddress', streetAddress: 'Imperial Place, 4 Maxwell Rd', addressLocality: 'Borehamwood', postalCode: 'WD6 1JN', addressCountry: 'GB' }, sameAs: ['https://www.linkedin.com/company/revio-agency/'] },
   ];
   if (p.service) {
     graph.push(Object.assign({ '@type': 'Service', '@id': url + '#service', name: plain(p.service.name || p.h1), serviceType: plain(p.service.type || p.service.name || p.h1), provider: { '@id': SITE.ORIGIN + '/#org' }, areaServed: 'GB', url, description: plain(p.description) },
       p.service.price != null ? { offers: { '@type': 'Offer', priceCurrency: 'GBP', price: p.service.price, priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'GBP', minPrice: p.service.price, valueAddedTaxIncluded: false }, url } } : {}));
   }
-  if (p.path === '/') {
+  if (p.path === '/' && p.site !== 'cleardesk') {
     graph.push({ '@type': 'ProfessionalService', '@id': SITE.ORIGIN + '/#service', name: 'Revio AI Consultancy', url: SITE.ORIGIN + '/', parentOrganization: { '@id': SITE.ORIGIN + '/#org' }, areaServed: { '@type': 'Country', name: 'United Kingdom' }, address: { '@type': 'PostalAddress', streetAddress: 'Imperial Place, 4 Maxwell Rd', addressLocality: 'Borehamwood', postalCode: 'WD6 1JN', addressCountry: 'GB' }, priceRange: '££', hasOfferCatalog: { '@type': 'OfferCatalog', name: 'AI consultancy services', itemListElement: [
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Opportunity Audit', url: SITE.ORIGIN + SITE.AUDIT_URL }, priceCurrency: 'GBP', price: 1500 },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Build & Implementation', url: SITE.ORIGIN + '/ai-implementation/' }, priceCurrency: 'GBP', price: 4500 },

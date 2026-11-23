@@ -1,14 +1,15 @@
 const S = require('../../site');
 
 /* Over to Flo privacy policy. Footer link only, not in the main nav.
-   Legal details reused from the main site's public/privacy page: trading name,
-   Borehamwood address, grow@revio.agency, ICO complaints route. The main site
-   publishes no company number or ICO registration number, so none is given. */
+   The service is sold by Lead Signal AI Technologies Limited (Rob, 23 Nov 2026),
+   the same company that runs LeadSignal. Company details match LeadSignal's own
+   published privacy page. No ICO registration number is published, so none is given. */
 const html = `
-<p class="updated">Last updated: 21 November 2026</p>
+<p class="updated">Last updated: 23 November 2026</p>
 
 <h2 id="who">1. Who we are</h2>
-<p>Over to Flo is a service run by REVIO, a business registered in England and Wales. Our address is ${S.ADDRESS}.</p>
+<p>Over to Flo is a service run by Lead Signal AI Technologies Limited, a company registered in England and Wales, company number 17361862. Our registered office is 22 The Ridgeway, Flitwick, Bedford, MK45 1DH. Our main office is ${S.ADDRESS}.</p>
+<p>We also run LeadSignal.</p>
 <p>To ask a question about this policy or your data, email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>. It goes to a person.</p>
 <p>Over to Flo gives small businesses a done-for-you AI assistant, Flo. Flo is an automated assistant, not a person. It answers calls, sorts email, drafts replies, books diary slots and chases unpaid invoices for the business that signs up. We call that business <strong>the client</strong>.</p>
 
@@ -159,8 +160,8 @@ const html = `
 
 module.exports = {
   slug: 'cleardesk/privacy',
-  title: 'Privacy Policy | Over to Flo by REVIO',
-  description: 'How Over to Flo by REVIO handles calls, email, calendar and invoice data, including Google user data, AI use, retention and your rights under UK GDPR.',
+  title: 'Privacy Policy | Over to Flo by LeadSignal',
+  description: 'How Over to Flo by LeadSignal handles calls, email, calendar and invoice data, including Google user data, AI use, retention and your rights under UK GDPR.',
   utility: true,
   art: 'shield',
   badge: 'Legal',

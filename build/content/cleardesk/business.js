@@ -5,7 +5,7 @@ const C = S.CLEARDESK;
 /* Flo Business. DRAFT 2026-11-19. Audience: owner or MD of a 10–40 person company. */
 module.exports = {
   slug: 'cleardesk/business',
-  title: 'Flo Business: AI Back Office, 10-40 Staff | by REVIO',
+  title: 'Flo Business: AI Back Office, 10-40 Staff | by LeadSignal',
   description: 'Flo, an AI assistant, runs your back office: enquiry to quote to invoice, customer and staff questions answered 24/7, monthly review. From £4,500, then £595 a month.',
   keywords: ['ai back office small business', 'ai for business 10-40 staff uk', 'automate quote to invoice', 'ai customer service small business uk', 'ai hr assistant small business', 'business automation uk fixed price'],
   art: 'pipeline',
@@ -80,7 +80,7 @@ module.exports = {
     {
       type: 'compare', kicker: 'Fit', h2: 'Right for you if, and not if.',
       yes: { title: 'Right for you if', items: ['Ten to forty people, one owner or MD who still gets the exceptions', 'Enquiries, quotes and invoices pass through several hands and systems', 'Customers and staff ask the same questions every week', 'Cash takes longer to collect than the terms say', 'A manager can own the approvals and the monthly review'] },
-      no: { title: 'Not this if', items: ['More than about forty staff or several departments with their own systems: that is a job for <a href="https://revio.agency/" target="_blank" rel="noopener">REVIO</a>, the team behind Flo', 'You want a chatbot and nothing behind it', 'Nobody can own approvals: it will stall at the first quote', 'You need it fully unattended with no human check: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries'] },
+      no: { title: 'Not this if', items: ['More than about forty staff or several departments with their own systems: that is a job for <a href="https://revio.agency/" target="_blank" rel="noopener">REVIO</a>', 'You want a chatbot and nothing behind it', 'Nobody can own approvals: it will stall at the first quote', 'You need it fully unattended with no human check: see <a href="https://lead-signal.ai/" target="_blank" rel="noopener">LeadSignal</a>, our fully automatic assistant for enquiries'] },
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'What owners and MDs ask us.',

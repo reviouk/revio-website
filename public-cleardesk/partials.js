@@ -466,7 +466,7 @@
   function cdFooterHTML() {
     return '<footer class="cd-foot"><div class="wrap">' +
       '<div>' + cdLogo() +
-      '<p>Flo, an assistant set up for your business by REVIO. Phone answered, inbox sorted, invoices chased, jobs booked. For UK sole traders and businesses with up to forty staff.</p>' +
+      '<p>Flo, an assistant set up for your business by LeadSignal. Phone answered, inbox sorted, invoices chased, jobs booked. For UK sole traders and businesses with up to forty staff.</p>' +
       '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Flo is automated and says so. Every price published, ex VAT.</span></div></div>' +
       '<div><h4>Packages</h4><ul>' +
       '<li><a href="/solo/">Flo Solo</a></li><li><a href="/team/">Flo Team</a></li>' +
@@ -475,7 +475,7 @@
       '<li><a href="' + CD_BOOK + '">Book a 20-minute call</a></li>' +
       '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +
       '<li><span class="muted">Imperial Place, 4 Maxwell Rd, Borehamwood WD6 1JN</span></li></ul></div>' +
-      '</div><div class="wrap cd-bot"><span>&copy; <span id="revio-yr">2026</span> REVIO. Over to Flo is a REVIO product.</span>' +
+      '</div><div class="wrap cd-bot"><span>&copy; <span id="revio-yr">2026</span> Lead Signal AI Technologies Limited. Over to Flo is a LeadSignal product. Registered in England and Wales, company number 17361862. Registered office: 22 The Ridgeway, Flitwick, Bedford, MK45 1DH.</span>' +
       '<span class="sp"></span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></footer>';
   }
 
