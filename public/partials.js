@@ -432,15 +432,16 @@
      and footer instead of the corporate ones: four links, one button, and no
      route back to revio.agency except the legal pages in the small print. */
   var CD_MARK = '<svg class="cd-mark" viewBox="0 0 48 48" role="img" aria-hidden="true"><rect x="3" y="3" width="42" height="42" rx="13" fill="#5862ff"/><rect class="cdm-track" x="8" y="15" width="32" height="18" rx="9" fill="#12c98b"/><g class="cdm-knob"><circle cx="31" cy="24" r="6.5" fill="#fff"/><path class="cdm-tick" d="M28 24.2l2.2 2.2 3.9-4.3" fill="none" stroke="#12c98b" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
-  /* The agents, in the order the app lists them: address, name, job. */
+  /* The agents, in the order the app lists them: address, name, job, face. */
+  function cdFace(a) { return '<img class="cd-face" src="/img/agents/' + a[3] + '-s.webp" alt="" width="36" height="36" loading="lazy" decoding="async">'; }
   var CD_AGENTS = [
-    ['/agents/phone-answering/', 'Flo', 'Phone answering'],
-    ['/agents/assistant/', 'Flo', 'Assistant'],
-    ['/agents/marketing/', 'Poppy', 'Marketing'],
-    ['/agents/accounts/', 'Bill', 'Accounts'],
-    ['/agents/website/', 'Paige', 'Website'],
-    ['/agents/search/', 'Finn', 'Search and AI answers'],
-    ['/agents/legal/', 'Lex', 'Legal']
+    ['/agents/phone-answering/', 'Flo', 'Phone answering', 'flo'],
+    ['/agents/assistant/', 'Flo', 'Assistant', 'flo'],
+    ['/agents/marketing/', 'Poppy', 'Marketing', 'poppy'],
+    ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],
+    ['/agents/website/', 'Paige', 'Website', 'paige'],
+    ['/agents/search/', 'Finn', 'Search and AI answers', 'finn'],
+    ['/agents/legal/', 'Lex', 'Legal', 'lex']
   ];
   /* A demo is a plain link, never the main button: people start by themselves. */
   var CD_LINKS = [['/pricing/', 'Pricing'], ['/integrations/', 'Integrations'], ['/book/', 'Book a demo']];
@@ -461,7 +462,7 @@
     var onAgent = page.indexOf('/agents/') === 0;
     var agents = CD_AGENTS.map(function (a) {
       var cur = a[0] === page ? ' aria-current="page"' : '';
-      return '<a href="' + a[0] + '"' + cur + '><strong>' + a[1] + '</strong><span>' + a[2] + '</span></a>';
+      return '<a href="' + a[0] + '"' + cur + '>' + cdFace(a) + '<strong>' + a[1] + '</strong><span>' + a[2] + '</span></a>';
     }).join('');
     var menu = '<div class="cd-menu"><button type="button" class="cd-menu-btn' + (onAgent ? ' on' : '') + '" id="cd-agents-btn" aria-expanded="false" aria-controls="cd-agents-panel">Agents' +
       '<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>' +
@@ -478,7 +479,7 @@
       '<i></i><i></i><i></i></button></header>' +
       '<nav class="drawer cd-drawer" id="revio-drawer" aria-label="Mobile">' +
       '<span class="cd-drawer-h">Agents</span>' +
-      CD_AGENTS.map(function (a) { return '<a class="cd-drawer-agent" href="' + a[0] + '">' + a[1] + '<span>' + a[2] + '</span></a>'; }).join('') +
+      CD_AGENTS.map(function (a) { return '<a class="cd-drawer-agent" href="' + a[0] + '">' + cdFace(a) + a[1] + '<span>' + a[2] + '</span></a>'; }).join('') +
       '<span class="cd-drawer-h">More</span>' +
       CD_LINKS.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('') +
       '<a href="' + CD_APP + '">Log in</a>' +

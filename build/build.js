@@ -16,7 +16,7 @@ const PUBLIC = path.join(ROOT, 'public');
 /* Second site: build/content/cleardesk/* -> public-cleardesk/, published
    as overtoflo.ai by its own Render static site. */
 const PUBLIC_CD = path.join(ROOT, 'public-cleardesk');
-const CD_STATIC = ['styles.css', 'ai.css', 'ai.js', 'partials.js', 'cd.css', 'favicon.svg', 'img/flo', 'img/cleardesk', 'audio', 'assets/og', 'assets/revio-logo-white.png', 'assets/revio-logo-dark.png', 'assets/fonts'];
+const CD_STATIC = ['styles.css', 'ai.css', 'ai.js', 'partials.js', 'cd.css', 'favicon.svg', 'img/flo', 'img/agents', 'img/cleardesk', 'audio', 'assets/og', 'assets/revio-logo-white.png', 'assets/revio-logo-dark.png', 'assets/fonts'];
 const CONTENT = path.join(__dirname, 'content');
 
 const args = process.argv.slice(2);

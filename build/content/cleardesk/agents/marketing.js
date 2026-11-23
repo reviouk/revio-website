@@ -12,6 +12,7 @@ module.exports = {
     "ai marketing for small business"
   ],
   "art": "clock",
+  "heroImage": { "src": "/img/agents/poppy.webp", "alt": "Poppy, the marketing agent", "say": "Hi, I&rsquo;m Poppy. This week&rsquo;s posts are ready." },
   "crumbs": [
     {
       "label": "The agents",
