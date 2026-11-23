@@ -10,10 +10,11 @@ module.exports = {
   description: 'Over to Flo prices for every agent, in pounds, dollars or euros. Pay monthly, every three months or yearly. No setup fee, and you can cancel any time.',
   keywords: ['over to flo pricing', 'ai agents pricing uk', 'ai phone answering price', 'ai social media posts price', 'ai assistant small business cost'],
   art: 'calc',
+  heroCompact: true,
   crumbLabel: 'Pricing',
   badge: 'Over to Flo pricing',
   h1: 'Simple prices. <em class="mint">Pick your agents.</em>',
-  sub: 'Every agent has its own price. Choose how you pay and your currency, and every price on the page changes with you. There is no setup fee.',
+  sub: 'Take a bundle, or one agent on its own. Choose how you pay and your currency, and every price on the page changes with you.',
   ctas: [
     { label: 'Get started', href: START, style: 'mint' },
     { label: 'Meet the agents', href: '/#agents', style: 'ghost' },
@@ -21,8 +22,7 @@ module.exports = {
   heroProof: ['No setup fee', 'Pay monthly, every three months or yearly', 'Cancel any time'],
   sections: [
     {
-      type: 'prices', kicker: 'The prices', h2: 'One price for each agent.',
-      lede: 'Two agents are working today. The others are coming soon, and each row says which is which. Pick how you pay and your currency below.',
+      type: 'prices', tight: true,
       note: 'Every price is what you pay each time. A renewal costs the same as the first payment.',
       data: {
         startUrl: START,
@@ -47,10 +47,21 @@ module.exports = {
         ],
         bundlesTitle: 'Bundles, for a lower price together',
         bundlesText: 'Each bundle opens when all of its agents are working.',
+        includedTitle: 'Included with every agent',
+        included: [
+          { icon: 'rocket', title: 'Set up by yourself', text: 'In a few minutes, with no call.' },
+          { icon: 'shield', title: 'Asks before it acts', text: 'You choose how much each agent does alone.' },
+          { icon: 'people', title: 'Add or remove agents', text: 'Change your team whenever you like.' },
+          { icon: 'calendar', title: 'Three ways to pay', text: 'Monthly, every three months or yearly.' },
+          { icon: 'pound', title: 'Three currencies', text: 'Pounds, dollars or euros.' },
+          { icon: 'chat', title: 'Help chat', text: 'Ask a question any time.' },
+        ],
+        singleTitle: 'Or take one agent on its own.',
+        singleText: 'Two agents are working today. The others are coming soon, and each row says which is which.',
         bundles: [
-          { key: 'solo', name: 'Solo', text: 'The everyday basics, in one bundle.', includes: ['Flo, phone answering', 'Flo, assistant', 'Bill, accounts', '100 minutes of calls a month'], note: 'Opens when its agents are working.', price: { gbp: 59, usd: 79, eur: 69 } },
-          { key: 'team', name: 'Team', text: 'Solo, plus your marketing and your search.', includes: ['Everything in Solo', 'Poppy, marketing', 'Finn, search and AI answers', '200 minutes of calls a month'], note: 'Opens when its agents are working.', price: { gbp: 89, usd: 119, eur: 105 } },
-          { key: 'business', name: 'Business', text: 'The whole team of agents.', includes: ['All seven agents', 'Paige, website', 'Lex, legal', '300 minutes of calls a month'], note: 'Opens when its agents are working.', price: { gbp: 119, usd: 155, eur: 139 } },
+          { key: 'solo', name: 'Solo', faces: ['flo', 'bill'], text: 'The everyday basics, in one bundle.', includes: ['Flo, phone answering', 'Flo, assistant', 'Bill, accounts', '100 minutes of calls a month'], note: 'Opens when its agents are working.', price: { gbp: 59, usd: 79, eur: 69 } },
+          { key: 'team', name: 'Team', featured: true, faces: ['flo', 'bill', 'poppy', 'finn'], text: 'Solo, plus your marketing and your search.', includes: ['Everything in Solo', 'Poppy, marketing', 'Finn, search and AI answers', '200 minutes of calls a month'], note: 'Opens when its agents are working.', price: { gbp: 89, usd: 119, eur: 105 } },
+          { key: 'business', name: 'Business', faces: ['flo', 'bill', 'poppy', 'finn', 'paige', 'lex'], text: 'The whole team of agents.', includes: ['All seven agents', 'Paige, website', 'Lex, legal', '300 minutes of calls a month'], note: 'Opens when its agents are working.', price: { gbp: 119, usd: 155, eur: 139 } },
         ],
         extraLabel: 'Extra phone minutes',
         extraPer: 'for each extra 100 minutes',
@@ -58,12 +69,28 @@ module.exports = {
       },
     },
     {
-      type: 'cards', tone: 'wash', kicker: 'With every agent', h2: 'What you get with every price.', cols: 3,
+      /* Reviews from real customers go here, each with the person's name and their
+         permission: { text, who, role, lead }. The section is not drawn while this is empty. */
+      type: 'reviews', kicker: 'In their own words', h2: 'What customers say about Flo.',
+      items: [],
+    },
+    {
+      type: 'promise',
+      stepsTitle: 'Up and running by yourself, in a few minutes.',
+      steps: [
+        { title: 'Sign up', text: 'Create your login. Nobody needs to call you.' },
+        { title: 'Tell Flo about your business', text: 'What you do, where you work and how you like to sound.' },
+        { title: 'Switch on an agent', text: 'Pick the agent you want and pay for it by card.' },
+        { title: 'Say yes', text: 'The agent shows you its work, and it goes out when you say yes.' },
+      ],
+      image: { src: '/img/flo/flo.webp', alt: 'Flo' },
+      h2: 'Everything stays in your hands.',
       items: [
-        { icon: 'tick', title: 'No setup fee', text: 'You set everything up yourself, in a few minutes. There is nothing to pay before you start.' },
-        { icon: 'shield', title: 'You stay in charge', text: 'Every agent asks before it acts, until you choose otherwise. You decide how much each one does alone.' },
+        { icon: 'shield', title: 'You stay in charge', text: 'Every agent asks before it acts, until you choose otherwise.' },
+        { icon: 'tick', title: 'No setup fee', text: 'There is nothing to pay before you start.' },
         { icon: 'people', title: 'Change your team any time', text: 'Add an agent or remove one whenever you like. Cancel any time.' },
       ],
+      ctas: [{ label: 'Get started', href: START, style: 'mint' }],
     },
     {
       type: 'table', kicker: 'Three ways to pay', h2: 'Pay monthly, every three months or yearly.',

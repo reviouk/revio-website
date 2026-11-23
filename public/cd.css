@@ -147,3 +147,109 @@
   .pr-btn { flex: 1 1 auto; padding: 8px 10px; font-size: 14px; white-space: normal; line-height: 1.2; }
 }
 @media (prefers-reduced-motion: reduce) { .pr-btn { transition: none; } }
+/* ---------- pricing, packages first (23 Nov 2026) ----------
+   A short centred top, then the three bundles, then what every agent includes,
+   then each agent on its own. The top and the prices share one soft background. */
+.cd-page .ai-hero-compact { background: var(--wash); }
+.cd-page .ai-hero-compact::before, .cd-page .ai-hero-compact::after { display: none; }
+.cd-page .ai-hero-compact .wrap { max-width: 860px; text-align: center; padding-top: 54px; padding-bottom: 6px; }
+.ai-hero-compact .ai-hero-copy h1 { max-width: none; }
+.ai-hero-compact .ai-hero-copy .sub { max-width: 58ch; margin-left: auto; margin-right: auto; }
+.ai-hero-compact .ai-hero-proof { justify-content: center; }
+.cd-pr-sec { background: var(--wash); padding-top: 8px; }
+.cd-pr-sec .pr-controls { justify-content: center; text-align: center; }
+.cd-pr-sec .pr-group { justify-items: center; }
+.pr-packs { max-width: 1100px; margin: 30px auto 0; align-items: stretch; }
+.pr-bundle { text-align: left; }
+.pr-b-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pr-bundle .pr-b-top .pr-badge { margin: 0; align-self: center; }
+.pr-faces { display: flex; margin: 14px 0 2px; padding-left: 8px; }
+.pr-faces .cd-face { width: 40px; height: 40px; margin-left: -8px; border: 2px solid var(--panel); }
+.pr-center { text-align: center; margin-top: 16px; }
+.pr-inc { max-width: 1100px; margin: 26px auto 0; padding: 18px 22px 22px; border-radius: 20px; background: var(--panel); border: 1px solid var(--card-hover-border); box-shadow: 0 8px 24px rgba(20,16,60,.06); }
+.pr-inc h3 { margin: 0 0 16px; text-align: center; font-size: 15px; }
+.pr-inc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 26px; }
+.pr-inc li { --tone: #2f8fff; display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 12px; align-items: center; }
+.pr-inc li:nth-child(6n+2) { --tone: #f2792b; }
+.pr-inc li:nth-child(6n+3) { --tone: #c98a00; }
+.pr-inc li:nth-child(6n+4) { --tone: #0fa873; }
+.pr-inc li:nth-child(6n+5) { --tone: #f0457a; }
+.pr-inc li:nth-child(6n+6) { --tone: #7c5cff; }
+.pr-inc .ic { grid-row: 1 / span 2; width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; color: var(--tone); background: color-mix(in srgb, var(--tone) 16%, transparent); }
+.pr-inc .ic svg { width: 20px; height: 20px; }
+.pr-inc strong { font-family: var(--font-head); font-size: 15px; line-height: 1.3; }
+.pr-inc .t { font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+.pr-single { margin-top: 60px; text-align: center; }
+.pr-single .lede { margin-left: auto; margin-right: auto; }
+.cd-pr-sec .pr-list, .cd-pr-sec .pr-extra, .cd-pr-sec .price-note { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.pr-main { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.pr-main > div { min-width: 0; }
+.pr-main .cd-face { width: 48px; height: 48px; }
+:root[data-theme="dark"] .pr-row { background: var(--panel); border-color: var(--line); }
+@media (max-width: 900px) { .pr-inc ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .pr-inc ul { grid-template-columns: 1fr; } .pr-main { align-items: flex-start; } }
+
+/* ---------- the dotted cloud behind a face (23 Nov 2026) ----------
+   Dots in the colour of the agent, thick in the middle and thinning to nothing,
+   with the picture fading out at the bottom. --tone is set on the figure. */
+.cd-page .flo-fig { --tone: #7c5cff; }
+.cd-page .flo-fig::before, .cd-page .flo-fig::after { content: ''; position: absolute; border-radius: 0; pointer-events: none; z-index: 0; }
+.cd-page .flo-fig::before { inset: -6% -16% 2%;
+  background: radial-gradient(circle, var(--tone) 0 1.5px, transparent 1.9px) 0 0 / 9px 9px; opacity: .62;
+  -webkit-mask-image: radial-gradient(ellipse 36% 30% at 28% 44%, #000 30%, transparent 100%), radial-gradient(ellipse 38% 34% at 70% 56%, #000 30%, transparent 100%), radial-gradient(ellipse 30% 24% at 54% 22%, #000 20%, transparent 100%), radial-gradient(ellipse 22% 16% at 88% 30%, #000 0, transparent 100%);
+  mask-image: radial-gradient(ellipse 36% 30% at 28% 44%, #000 30%, transparent 100%), radial-gradient(ellipse 38% 34% at 70% 56%, #000 30%, transparent 100%), radial-gradient(ellipse 30% 24% at 54% 22%, #000 20%, transparent 100%), radial-gradient(ellipse 22% 16% at 88% 30%, #000 0, transparent 100%); }
+.cd-page .flo-fig::after { inset: 6% 0 10%;
+  background: radial-gradient(circle, var(--tone) 0 2.6px, transparent 3px) 0 0 / 9px 9px; opacity: .78;
+  -webkit-mask-image: radial-gradient(ellipse 44% 40% at 50% 50%, #000 0, transparent 100%);
+  mask-image: radial-gradient(ellipse 44% 40% at 50% 50%, #000 0, transparent 100%); }
+.cd-page .flo-fig img { z-index: 1; -webkit-mask-image: linear-gradient(#000 80%, transparent 99%); mask-image: linear-gradient(#000 80%, transparent 99%); }
+.cd-page .flo-fig .flo-say { z-index: 2; }
+
+/* ---------- the coloured band (23 Nov 2026) ----------
+   The page runs into a deep purple that darkens to the bottom, with rounded
+   lower corners. A white card of steps sits across the top edge. */
+.cd-promise { position: relative; overflow: hidden; padding: 84px 0 92px; text-align: center; color: #fff; border-radius: 0 0 44px 44px;
+  background:
+    radial-gradient(46% 38% at 20% 82%, rgba(18,8,74,.6), transparent 72%),
+    radial-gradient(44% 34% at 82% 58%, rgba(150,120,255,.45), transparent 72%),
+    linear-gradient(180deg, var(--bg) 0, var(--bg) 150px, #d5c9ff 300px, #8a72ff 440px, #5a43e0 58%, #3a2aa8 78%, #1d1463 100%); }
+.cd-promise .pm-top { max-width: 22ch; margin: 0 auto 30px; color: var(--ink); }
+.pm-steps { list-style: none; position: relative; max-width: 1000px; margin: 0 auto; padding: 30px 34px 32px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; text-align: left; color: var(--ink); background: var(--panel); border: 1px solid var(--card-hover-border); border-radius: 22px; box-shadow: 0 26px 60px rgba(30,20,110,.26); }
+.pm-steps li { position: relative; padding-top: 52px; }
+.pm-steps li::before { content: ''; position: absolute; top: 38px; left: 0; right: -26px; height: 3px; border-radius: 2px; background: var(--wash); }
+.pm-steps li:last-child::before { right: 0; }
+.pm-steps li::after { content: ''; position: absolute; top: 34px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 0 3px var(--panel); }
+.pm-n { position: absolute; top: 0; left: 0; font-family: var(--font-head); font-weight: 700; font-size: 22px; line-height: 1; color: var(--muted); }
+.pm-steps h3 { margin: 0 0 6px; font-size: 16px; }
+.pm-steps p { margin: 0; font-size: 14px; color: var(--muted); }
+.cd-page .pm-fig { --tone: #fff; width: 230px; margin: 52px auto 4px; }
+.cd-page .pm-fig::before { opacity: .34; }
+.cd-page .pm-fig::after { opacity: .3; }
+.cd-promise .pm-h { max-width: 18ch; margin: 0 auto; color: #fff; }
+.pm-items { list-style: none; max-width: 920px; margin: 32px auto 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.pm-ic { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); }
+.pm-ic svg { width: 22px; height: 22px; }
+.pm-items h3 { margin: 12px 0 6px; font-size: 17px; color: #fff; }
+.pm-items p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,.84); }
+.pm-cta { margin-top: 32px; }
+.pm-cta .cta-row { justify-content: center; margin: 0; }
+.cd-promise .btn { background: #fff; color: #1d1463; border-color: #fff; border-radius: 999px; }
+.cd-promise .btn:hover { background: #ece8ff; border-color: #ece8ff; color: #1d1463; }
+@media (max-width: 860px) {
+  .pm-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 24px 22px; }
+  .pm-steps li::before { right: 0; }
+  .pm-items { grid-template-columns: 1fr; max-width: 420px; }
+  .cd-promise { border-radius: 0 0 28px 28px; padding: 64px 0 72px; }
+}
+@media (max-width: 480px) { .pm-steps { grid-template-columns: 1fr; } }
+
+/* ---------- reviews (drawn only when real ones are entered) ---------- */
+.cd-reviews .rv { margin: 0; }
+.rv-stars { color: #f5a623; font-size: 20px; letter-spacing: 2px; }
+.rv-main { max-width: 860px; margin: 34px auto 0; padding: 26px 30px; display: grid; gap: 10px; background: var(--panel); border: 1px solid var(--card-hover-border); border-radius: 20px; box-shadow: 0 8px 24px rgba(20,16,60,.06); }
+.rv-lead { margin: 0; font-family: var(--font-head); font-weight: 700; font-size: 21px; line-height: 1.3; }
+.rv blockquote { margin: 0; font-size: 15px; line-height: 1.55; }
+.rv figcaption { font-size: 13.5px; color: var(--muted); }
+.rv-grid { max-width: 980px; margin: 30px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; text-align: center; }
+.rv-small { display: grid; gap: 8px; justify-items: center; }
+@media (max-width: 760px) { .rv-grid { grid-template-columns: 1fr; } }

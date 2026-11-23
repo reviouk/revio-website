@@ -12,7 +12,7 @@ module.exports = {
     "ask customers for reviews"
   ],
   "art": "chart",
-  "heroImage": { "src": "/img/agents/finn.webp", "alt": "Finn, the search agent", "say": "Hi, I&rsquo;m Finn. Getting you found is my job." },
+  "heroImage": { "src": "/img/agents/finn.webp", "tone": "#ff8a3d", "alt": "Finn, the search agent", "say": "Hi, I&rsquo;m Finn. Getting you found is my job." },
   "crumbs": [
     {
       "label": "The agents",

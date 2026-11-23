@@ -23,22 +23,31 @@ module.exports = function prices(s, SITE, u) {
     return `<div class="${cls}" data-k="${esc(key)}"><div class="pr-amt-line"><span class="pr-amt">${cur.sym}${fmt(pay(m, term))}</span> <span class="pr-per">${term.per}</span></div><div class="pr-eq">${eq(m, term)}</div></div>`;
   };
 
+  /* A small round face. Both Flo agents share Flo's face. */
+  const FACE = { flo_phone: 'flo', flo_assistant: 'flo' };
+  const face = (k, size) => `<img class="cd-face" src="/img/agents/${esc(FACE[k] || k)}-s.webp" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">`;
+
   const rows = d.agents.map((a, i) => {
     const live = a.status === 'live';
-    return `<li class="pr-row reveal" style="--d:${i}"><div class="pr-main">` +
+    return `<li class="pr-row reveal" style="--d:${i}"><div class="pr-main">${face(a.key, 48)}<div>` +
       `<div class="pr-title"><a href="${esc(a.href)}">${rich(a.name)}</a><span class="pr-badge ${live ? 'live' : 'soon'}">${live ? 'Working today' : 'Coming soon'}</span></div>` +
-      `<p>${rich(a.text)}</p></div>` +
+      `<p>${rich(a.text)}</p></div></div>` +
       priceBlock(a.key, a.price, 'pr-price') +
       `<div class="pr-act">${live ? `<a class="btn btn-mint btn-sm" href="${esc(d.startUrl)}">Get started</a>` : `<a class="pr-more" href="${esc(a.href)}">See the plan</a>`}</div></li>`;
   }).join('');
 
+  /* The packages come first on the page. Each shows the faces of the agents in it. */
   const bundles = d.bundles.map((b, i) =>
-    `<div class="price-card pr-bundle reveal" style="--d:${i}"><span class="tier-name">${rich(b.name)}</span>` +
-    `<span class="pr-badge soon">Coming soon</span>` +
-    priceBlock(b.key, b.price, 'pr-price pr-price-b') +
+    `<div class="price-card pr-bundle${b.featured ? ' featured' : ''} reveal" style="--d:${i}">` +
+    `<div class="pr-b-top"><span class="tier-name">${rich(b.name)}</span><span class="pr-badge soon">Coming soon</span></div>` +
+    `<div class="pr-faces">${(b.faces || []).map((k) => face(k, 40)).join('')}</div>` +
     `<p class="desc">${rich(b.text)}</p>` +
+    priceBlock(b.key, b.price, 'pr-price pr-price-b') +
     `<ul class="checks">${b.includes.map((x) => `<li>${rich(x)}</li>`).join('')}</ul>` +
     `<p class="setup">${rich(b.note)}</p></div>`).join('');
+
+  const included = (d.included || []).map((x) =>
+    `<li><span class="ic">${u.icon(x.icon || 'tick')}</span><strong>${rich(x.title)}</strong><span class="t">${rich(x.text)}</span></li>`).join('');
 
   const seg = (label, attr, list, active) =>
     `<div class="pr-group" role="group" aria-label="${esc(label)}"><span class="pr-label">${esc(label)}</span><div class="pr-seg">` +
@@ -46,15 +55,17 @@ module.exports = function prices(s, SITE, u) {
     '</div></div>';
 
   const json = JSON.stringify(d).replace(/</g, '\u003c');
-  return `<section class="${secCls(s)}" id="prices"><div class="wrap">${head2(s)}
+  return `<section class="${secCls(s, 'cd-pr-sec')}" id="prices"><div class="wrap">
 <div class="pr" id="pr-root">
   <p class="pr-nojs">Prices are shown in &pound; and paid monthly.</p>
   <div class="pr-controls reveal">${seg('How you pay', 'term', d.terms, term)}${seg('Currency', 'cur', d.currencies, cur)}</div>
   <p class="pr-sr" role="status" aria-live="polite" id="pr-status"></p>
+  <h2 class="pr-sr">${rich(d.bundlesTitle)}</h2>
+  <div class="price-grid pr-packs">${bundles}</div>
+  <p class="pr-sub pr-center reveal">${rich(d.bundlesText)}</p>
+  ${included ? `<div class="pr-inc reveal"><h3>${rich(d.includedTitle || 'Included with every agent')}</h3><ul>${included}</ul></div>` : ''}
+  <div class="pr-single reveal"><h2>${rich(d.singleTitle)}</h2><p class="lede mt-md">${rich(d.singleText)}</p></div>
   <ul class="pr-list mt-md">${rows}</ul>
-  <h3 class="pr-h3 reveal">${rich(d.bundlesTitle)}</h3>
-  <p class="pr-sub reveal">${rich(d.bundlesText)}</p>
-  <div class="price-grid mt-md">${bundles}</div>
   <p class="pr-extra reveal">${rich(d.extraLabel)}: <b data-extra>${cur.sym}${fmt(d.extra[cur.id])}</b> ${rich(d.extraPer)}</p>
   ${s.note ? `<p class="price-note">${rich(s.note)}</p>` : ''}
 </div>

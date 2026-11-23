@@ -356,11 +356,40 @@ const SECTION = {
       `<div class="ai-pillar reveal" style="--d:${i}"><div class="icon">${icon(p.icon || 'book')}</div><h3>${rich(p.title)}</h3><p>${rich(p.text)}</p><ul class="ai-links">${(p.links || []).map((l) => `<li><a href="${esc(l.href)}">${rich(l.label)}</a></li>`).join('')}</ul></div>`).join('');
     return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s) + `<div class="grid-2 mt-lg">${items}</div></div></section>`;
   },
+  /* A coloured band: a white card of numbered steps, an agent's face on its dotted
+     cloud, a few short promises and one button. Over to Flo pricing. */
+  promise(s) {
+    const steps = (s.steps || []).map((it, i) =>
+      `<li><span class="pm-n">${i + 1}</span><h3>${rich(it.title)}</h3><p>${rich(it.text)}</p></li>`).join('');
+    const items = (s.items || []).map((it) =>
+      `<li><span class="pm-ic">${icon(it.icon || 'tick')}</span><h3>${rich(it.title)}</h3><p>${rich(it.text)}</p></li>`).join('');
+    return `<section class="cd-promise"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` +
+      (s.stepsTitle ? `<h2 class="pm-top reveal">${rich(s.stepsTitle)}</h2>` : '') +
+      (steps ? `<ol class="pm-steps reveal">${steps}</ol>` : '') +
+      (s.image ? `<figure class="flo-fig pm-fig reveal"><img src="${esc(s.image.src)}" alt="${esc(s.image.alt || '')}" width="280" height="280" loading="lazy" decoding="async"></figure>` : '') +
+      `<h2 class="pm-h reveal">${rich(s.h2)}</h2>` +
+      (items ? `<ul class="pm-items reveal">${items}</ul>` : '') +
+      (s.ctas ? `<div class="pm-cta reveal">${ctaRow(s.ctas)}</div>` : '') +
+      '</div></section>';
+  },
+  /* What customers say. Real reviews only, each with the person's name and their
+     permission. With none entered, the section is not drawn at all. */
+  reviews(s) {
+    const list = (s.items || []).filter((x) => x && x.text && x.who);
+    if (!list.length) return '';
+    const stars = '<span class="rv-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>';
+    const one = (x, cls) => `<figure class="rv ${cls} reveal">${x.stars === false ? '' : stars}` +
+      (x.lead ? `<p class="rv-lead">${rich(x.lead)}</p>` : '') +
+      `<blockquote>${rich(x.text)}</blockquote><figcaption>${rich(x.who)}${x.role ? `, ${rich(x.role)}` : ''}</figcaption></figure>`;
+    return `<section class="${secCls(s, 'cd-reviews')}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s, { center: true }) +
+      one(list[0], 'rv-main') + (list.length > 1 ? `<div class="rv-grid">${list.slice(1).map((x) => one(x, 'rv-small')).join('')}</div>` : '') +
+      '</div></section>';
+  },
   html(s) { return rich(s.html); },
   form(s) { return require('./blocks/form')(s, SITE, { rich, esc, head2, secCls }); },
   calculator(s) { return require('./blocks/calculator')(s, SITE, { rich, esc, head2, secCls }); },
   booking(s) { return require('./blocks/booking')(s, SITE, { rich, esc, head2, secCls }); },
-  prices(s) { return require('./blocks/prices')(s, SITE, { rich, esc, head2, secCls }); },
+  prices(s) { return require('./blocks/prices')(s, SITE, { rich, esc, head2, secCls, icon }); },
   flow(s) { return require('./blocks/flow')(s, SITE, { rich, esc, head2, secCls, icon }); },
 };
 
@@ -373,11 +402,13 @@ function hero(p) {
   const note = p.heroNote ? `<p class="micro">${rich(p.heroNote)}</p>` : '';
   const proof = p.heroProof ? `<ul class="ai-hero-proof">${p.heroProof.map((x) => `<li>${rich(x)}</li>`).join('')}</ul>` : '';
   const side = p.heroForm ? `<aside class="ai-hero-side ai-hero-form">${SECTION.form(Object.assign({ embedded: true }, p.heroForm))}</aside>` :
-    p.heroImage ? `<aside class="ai-hero-side ai-hero-flo"><figure class="flo-fig">` +
+    p.heroImage ? `<aside class="ai-hero-side ai-hero-flo"><figure class="flo-fig"${p.heroImage.tone ? ` style="--tone:${esc(p.heroImage.tone)}"` : ''}>` +
       `<img src="${esc(p.heroImage.src)}" alt="${esc(p.heroImage.alt || '')}" width="560" height="560" decoding="async" fetchpriority="high">` +
       (p.heroImage.say ? `<figcaption class="flo-say">${rich(p.heroImage.say)}</figcaption>` : '') + `</figure>` +
       (p.heroImage.audio && !p.heroImage.audio.hold ? floListen(p.heroImage.audio) : '') + `</aside>` :
     `<aside class="ai-hero-side ai-hero-art" aria-hidden="true">${art(p.art || 'network')}</aside>`;
+  /* A short, centred top for a page whose content should start straight away (pricing). */
+  if (p.heroCompact) return `<div class="page-hero ai-hero ai-hero-compact"><div class="wrap"><div class="ai-hero-copy">${badge}<h1>${rich(p.h1)}</h1><p class="sub">${rich(p.sub)}</p>${proof}</div></div></div>`;
   return `<div class="page-hero ai-hero"><div class="wrap ai-hero-grid"><div class="ai-hero-copy">${badge}<h1>${rich(p.h1)}</h1>` +
     `<p class="sub">${rich(p.sub)}</p>${ctas}${proof}${note}</div>${side}</div></div>`;
 }

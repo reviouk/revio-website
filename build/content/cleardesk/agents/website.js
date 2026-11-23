@@ -12,7 +12,7 @@ module.exports = {
     "small business website own domain"
   ],
   "art": "network",
-  "heroImage": { "src": "/img/agents/paige.webp", "alt": "Paige, the website agent", "say": "Hi, I&rsquo;m Paige. Websites are my job." },
+  "heroImage": { "src": "/img/agents/paige.webp", "tone": "#2fb5b8", "alt": "Paige, the website agent", "say": "Hi, I&rsquo;m Paige. Websites are my job." },
   "crumbs": [
     {
       "label": "The agents",

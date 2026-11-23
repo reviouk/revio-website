@@ -12,7 +12,7 @@ module.exports = {
     "monthly business summary"
   ],
   "art": "calc",
-  "heroImage": { "src": "/img/agents/bill.webp", "alt": "Bill, the accounts agent", "say": "Hi, I&rsquo;m Bill. Accounts is my job." },
+  "heroImage": { "src": "/img/agents/bill.webp", "tone": "#1fa971", "alt": "Bill, the accounts agent", "say": "Hi, I&rsquo;m Bill. Accounts is my job." },
   "crumbs": [
     {
       "label": "The agents",

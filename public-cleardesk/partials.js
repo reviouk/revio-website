@@ -445,6 +445,8 @@
   ];
   /* A demo is a plain link, never the main button: people start by themselves. */
   var CD_LINKS = [['/pricing/', 'Pricing'], ['/integrations/', 'Integrations'], ['/book/', 'Book a demo']];
+  /* Resources: address, name, a few words. Case studies join when there is a real one. */
+  var CD_RES = [['/resources/help/', 'Help and guides', 'How to use My Flo'], ['/resources/blog/', 'Blog', 'Ideas for your business']];
   var CD_BOOK = '/book/';
   var CD_APP = 'https://app.overtoflo.ai/my/';
 
@@ -467,6 +469,16 @@
     var menu = '<div class="cd-menu"><button type="button" class="cd-menu-btn' + (onAgent ? ' on' : '') + '" id="cd-agents-btn" aria-expanded="false" aria-controls="cd-agents-panel">Agents' +
       '<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>' +
       '<div class="cd-menu-panel" id="cd-agents-panel" hidden>' + agents + '</div></div>';
+    var onRes = page.indexOf('/resources/') === 0;
+    var res = CD_RES.map(function (r) {
+      var cur = r[0] === page ? ' aria-current="page"' : '';
+      return '<a href="' + r[0] + '"' + cur + '><strong>' + r[1] + '</strong><span>' + r[2] + '</span></a>';
+    }).join('');
+    var resMenu = '<div class="cd-menu"><button type="button" class="cd-menu-btn' + (onRes ? ' on' : '') + '" id="cd-res-btn" aria-expanded="false" aria-controls="cd-res-panel">Resources' +
+      '<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>' +
+      '<div class="cd-menu-panel" id="cd-res-panel" hidden>' + res + '</div></div>';
+    /* Resources sits before the demo link. */
+    links = links.replace('<a href="' + CD_BOOK + '"', resMenu + '<a href="' + CD_BOOK + '"');
     return '<div class="topwrap"><header class="topbar cd-topbar">' + cdLogo() +
       '<span class="sp"></span><nav class="cd-nav" aria-label="Main">' + menu + links +
       '<a href="' + CD_APP + '">Log in</a></nav>' +
@@ -482,6 +494,8 @@
       CD_AGENTS.map(function (a) { return '<a class="cd-drawer-agent" href="' + a[0] + '">' + cdFace(a) + a[1] + '<span>' + a[2] + '</span></a>'; }).join('') +
       '<span class="cd-drawer-h">More</span>' +
       CD_LINKS.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('') +
+      '<span class="cd-drawer-h">Resources</span>' +
+      CD_RES.map(function (r) { return '<a href="' + r[0] + '">' + r[1] + '</a>'; }).join('') +
       '<a href="' + CD_APP + '">Log in</a>' +
       '<a class="btn btn-mint" href="' + CD_APP + '">Get started</a>' +
       '<button class="drawer-theme" type="button" data-theme-toggle>Switch light / dark</button>' +
@@ -498,6 +512,7 @@
       '</ul></div>' +
       '<div><h4>Talk to us</h4><ul>' +
       '<li><a href="/pricing/">Pricing</a></li><li><a href="/integrations/">Integrations</a></li>' +
+      CD_RES.map(function (r) { return '<li><a href="' + r[0] + '">' + r[1] + '</a></li>'; }).join('') +
       '<li><a href="' + CD_BOOK + '">Book a demo</a></li>' +
       '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +
       '<li><span class="muted">Imperial Place, 4 Maxwell Rd, Borehamwood WD6 1JN</span></li></ul></div>' +
@@ -542,20 +557,27 @@
       window.addEventListener('resize', function () { if (drawer.classList.contains('open') && window.innerWidth > 1180) setOpen(false); });
     }
 
-    /* The Agents menu: opens on a click, closes on a click away, on Escape and
-       when a link in it is followed. */
-    var menuBtn = document.getElementById('cd-agents-btn');
-    var menuPanel = document.getElementById('cd-agents-panel');
-    if (menuBtn && menuPanel) {
-      var setMenu = function (open) {
-        menuPanel.hidden = !open;
-        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      };
-      menuBtn.addEventListener('click', function (e) { e.stopPropagation(); setMenu(menuPanel.hidden); });
-      menuPanel.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
-      document.addEventListener('click', function (e) { if (!menuPanel.hidden && !e.target.closest('.cd-menu')) setMenu(false); });
+    /* The drop-down menus (Agents, Resources): each opens on a click and closes on
+       a click away, on Escape, when another opens and when a link in it is followed. */
+    var menus = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.cd-menu'), function (box) {
+      var btn = box.querySelector('.cd-menu-btn'), panel = box.querySelector('.cd-menu-panel');
+      if (!btn || !panel) return;
+      var set = function (open) { panel.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+      menus.push({ btn: btn, panel: panel, set: set });
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = panel.hidden;
+        menus.forEach(function (m) { if (m.panel !== panel) m.set(false); });
+        set(open);
+      });
+      panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    });
+    if (menus.length) {
+      document.addEventListener('click', function (e) { if (!e.target.closest('.cd-menu')) menus.forEach(function (m) { if (!m.panel.hidden) m.set(false); }); });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !menuPanel.hidden) { setMenu(false); menuBtn.focus(); }
+        if (e.key !== 'Escape') return;
+        menus.forEach(function (m) { if (!m.panel.hidden) { m.set(false); m.btn.focus(); } });
       });
     }
 

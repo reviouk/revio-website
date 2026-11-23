@@ -12,7 +12,7 @@ module.exports = {
     "read a contract ai"
   ],
   "art": "shield",
-  "heroImage": { "src": "/img/agents/lex.webp", "alt": "Lex, the legal agent", "say": "Hi, I&rsquo;m Lex. Contracts are my job." },
+  "heroImage": { "src": "/img/agents/lex.webp", "tone": "#2f4a8a", "alt": "Lex, the legal agent", "say": "Hi, I&rsquo;m Lex. Contracts are my job." },
   "crumbs": [
     {
       "label": "The agents",
