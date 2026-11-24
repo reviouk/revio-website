@@ -11,7 +11,7 @@ module.exports = {
   h1: 'What Flo works with, <em class="mint">today and next.</em>',
   sub: 'Here is the honest list. Some connections are working now. Others are coming, and we switch each one on as the platform approves it. Nothing on this page is claimed before it works.',
   ctas: [
-    { label: 'Get started', href: 'https://app.overtoflo.ai/my/', style: 'mint' },
+    { label: 'Get started', href: '/book/', style: 'mint' },
     { label: 'Meet the agents', href: '/#agents', style: 'ghost' },
   ],
   heroProof: ['Working today: phone, social networks, website', 'Coming next: email, calendars, accounting', 'Each connection built and checked by us'],
@@ -64,7 +64,7 @@ module.exports = {
     {
       type: 'cta', h2: 'Start with what works today.',
       text: 'Sign up, tell Flo about your business and pick an agent. Or book a short demo with a person and ask about a connection.',
-      ctas: [{ label: 'Get started', href: 'https://app.overtoflo.ai/my/', style: 'mint' }, { label: 'Book a demo', href: '/book/', style: 'ghost' }],
+      ctas: [{ label: 'Get started', href: '/book/', style: 'mint' }, { label: 'Book a demo', href: '/book/', style: 'ghost' }],
       note: 'Cancel any time.',
     },
   ],

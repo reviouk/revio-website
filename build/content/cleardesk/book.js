@@ -14,10 +14,9 @@ module.exports = {
   heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Come and have a look. I&rsquo;ll be listening in.' },
   badge: 'Book a demo',
   h1: 'A friendly look at Flo, <em class="mint">with a person.</em>',
-  sub: 'Would you like to see it before you sign up? Pick a time and we will show you the agents working today, answer your questions and tell you what is coming. You can also sign up yourself, any time, without a call.',
+  sub: 'Would you like to see it before you sign up? Pick a time and we will show you the agents working today, answer your questions and tell you what is coming.',
   ctas: [
     { label: 'Pick a time below', href: '#diary', style: 'mint' },
-    { label: 'Or get started yourself', href: 'https://app.overtoflo.ai/my/', style: 'ghost' },
   ],
   heroProof: ['Microsoft Teams or a phone call, your choice', 'Free, no obligation', 'With a real person'],
   meetingRows: false,
@@ -44,7 +43,6 @@ module.exports = {
       items: [
         { q: 'Who will I be talking to?', a: 'A real person from the Over to Flo team, who can answer your questions about what the agents do today.' },
         { q: 'Is it really free?', a: 'Yes. No charge and no obligation.' },
-        { q: 'Do I need a demo before I sign up?', a: 'No. You can sign up and set everything up yourself in a few minutes. The demo is for anyone who would like to see it first.' },
         { q: 'Can I ask about an agent that is coming soon?', a: 'Yes. Say which one when you book and we will tell you what we can, and let you know when it is ready.' },
         { q: 'What if I need to move it?', a: 'The booking email has a reschedule link. Use it as often as you need.' },
       ],

@@ -449,6 +449,9 @@
   var CD_RES = [['/resources/help/', 'Help and guides', 'How to use My Flo'], ['/resources/blog/', 'Blog', 'Ideas for your business']];
   var CD_BOOK = '/book/';
   var CD_APP = 'https://app.overtoflo.ai/my/';
+  /* Sign-up is switched off for now, so Get started leads to the demo page.
+     Set this to CD_APP when sign-up opens. */
+  var CD_START = CD_BOOK;
 
   function cdLogo() {
     return '<a class="cd-logo" href="/" aria-label="Over to Flo, home">' + CD_MARK +
@@ -482,7 +485,7 @@
     return '<div class="topwrap"><header class="topbar cd-topbar">' + cdLogo() +
       '<span class="sp"></span><nav class="cd-nav" aria-label="Main">' + menu + links +
       '<a href="' + CD_APP + '">Log in</a></nav>' +
-      '<a class="btn btn-mint navtalk" href="' + CD_APP + '">Get started</a>' +
+      '<a class="btn btn-mint navtalk" href="' + CD_START + '">Get started</a>' +
       '<button class="themebtn" type="button" data-theme-toggle aria-label="Switch colour theme">' +
       '<svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5"/></svg>' +
       '<svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>' +
@@ -497,7 +500,7 @@
       '<span class="cd-drawer-h">Resources</span>' +
       CD_RES.map(function (r) { return '<a href="' + r[0] + '">' + r[1] + '</a>'; }).join('') +
       '<a href="' + CD_APP + '">Log in</a>' +
-      '<a class="btn btn-mint" href="' + CD_APP + '">Get started</a>' +
+      '<a class="btn btn-mint" href="' + CD_START + '">Get started</a>' +
       '<button class="drawer-theme" type="button" data-theme-toggle>Switch light / dark</button>' +
       '</nav></div>';
   }

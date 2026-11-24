@@ -26,7 +26,7 @@ module.exports = {
   "ctas": [
     {
       "label": "Get started",
-      "href": "https://app.overtoflo.ai/my/",
+      "href": "/book/",
       "style": "mint"
     },
     {
@@ -211,7 +211,7 @@ module.exports = {
       "ctas": [
         {
           "label": "Get started",
-          "href": "https://app.overtoflo.ai/my/",
+          "href": "/book/",
           "style": "mint"
         },
         {

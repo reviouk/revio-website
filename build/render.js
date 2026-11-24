@@ -192,7 +192,11 @@ const btn = (c) => {
   const cls = { primary: 'btn btn-purple', mint: 'btn btn-mint', ghost: 'btn btn-ghost', dark: 'btn btn-ghost-dark' }[c.style || 'primary'];
   return `<a class="${cls}" href="${esc(c.href)}">${rich(c.label)}</a>`;
 };
-const ctaRow = (ctas) => ctas && ctas.length ? `<div class="cta-row">${ctas.map(btn).join('')}</div>` : '';
+/* A second button to the same address as an earlier one in the row is dropped. */
+const ctaRow = (ctas) => {
+  const list = (ctas || []).filter((c, i, all) => all.findIndex((x) => x.href === c.href) === i);
+  return list.length ? `<div class="cta-row">${list.map(btn).join('')}</div>` : '';
+};
 const head2 = (s, opts = {}) => {
   const center = opts.center ? ' center' : '';
   let out = `<div class="reveal${center}">`;

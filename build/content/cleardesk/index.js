@@ -12,7 +12,7 @@ module.exports = {
   h1: 'Hand it over. <em class="mint">Over to Flo.</em>',
   sub: 'Over to Flo is a team of AI agents that take work off your hands. Pick the agents you need, set them up yourself in a few minutes, and stay in charge from your phone.',
   ctas: [
-    { label: 'Get started', href: 'https://app.overtoflo.ai/my/', style: 'mint' },
+    { label: 'Get started', href: '/book/', style: 'mint' },
     { label: 'Meet the agents', href: '#agents', style: 'ghost' },
   ],
   heroProof: ['Set up by you, in minutes', 'Every agent asks before it acts, until you say otherwise', 'Cancel any time'],
@@ -76,7 +76,7 @@ module.exports = {
         'You see all of it before you are asked for your contact details. Look first, then decide.',
       ],
       bullets: ['See your team', 'Read a real post written for you', 'No contact details asked until you have seen it'],
-      ctas: [{ label: 'Get started', href: 'https://app.overtoflo.ai/my/', style: 'mint' }],
+      ctas: [{ label: 'Get started', href: '/book/', style: 'mint' }],
       art: 'network',
     },
     {
@@ -103,7 +103,7 @@ module.exports = {
     {
       type: 'cta', h2: 'Ready to hand something over?',
       text: 'Start with one agent. Set it up yourself in a few minutes, and add the others when you are ready.',
-      ctas: [{ label: 'Get started', href: 'https://app.overtoflo.ai/my/', style: 'mint' }, { label: 'Book a demo', href: '/book/', style: 'ghost' }],
+      ctas: [{ label: 'Get started', href: '/book/', style: 'mint' }, { label: 'Book a demo', href: '/book/', style: 'ghost' }],
     },
   ],
 };

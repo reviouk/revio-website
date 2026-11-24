@@ -2,7 +2,9 @@
    Prices agreed 23 Nov 2026. ONE table of prices lives in `data` below: the page, the
    switches and the script all read from it. Monthly list price in each currency.
    Three months: Math.floor(m * 27 / 10), which is 10% less, rounded down. Yearly: m * 10. */
-const START = 'https://app.overtoflo.ai/my/';
+/* Sign-up is switched off for now, so Get started leads to the demo page.
+   Put the My Flo address (https://app.overtoflo.ai/my/) back when sign-up opens. */
+const START = '/book/';
 module.exports = {
   slug: 'cleardesk/pricing',
   meetingRows: false,
