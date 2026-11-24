@@ -184,7 +184,7 @@ module.exports = {
           "href": "/agents/website/",
           "icon": "globe",
           "title": "Paige: Website",
-          "text": "Builds a one-page website on your own domain. Coming soon.",
+          "text": "Builds a website of up to five pages on your own domain. Coming soon.",
           "meta": "See the agent"
         },
         {

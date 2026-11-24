@@ -44,7 +44,7 @@ module.exports = {
           { key: 'poppy_video', name: 'Poppy, marketing with video', href: '/agents/marketing/', status: 'soon', text: 'Everything Poppy does, and it will make 8 short videos a month for your posts.', price: { gbp: 49, usd: 65, eur: 57 } },
           { key: 'bill', name: 'Bill, accounts', href: '/agents/accounts/', status: 'soon', text: 'Will send an invoice when you text it, then remind the customer.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'finn', name: 'Finn, search and AI answers', href: '/agents/search/', status: 'soon', text: 'Will lay the groundwork so people can find you in local search and in AI answers.', price: { gbp: 19, usd: 25, eur: 22 } },
-          { key: 'paige', name: 'Paige, website', href: '/agents/website/', status: 'soon', text: 'Will build you a one-page website on your own domain.', price: { gbp: 15, usd: 19, eur: 18 } },
+          { key: 'paige', name: 'Paige, website', href: '/agents/website/', status: 'soon', text: 'Will build you a website of up to five pages on your own domain.', price: { gbp: 15, usd: 19, eur: 18 } },
           { key: 'lex', name: 'Lex, legal', href: '/agents/legal/', status: 'soon', text: 'Will draft simple agreements and explain contracts in plain English.', price: { gbp: 15, usd: 19, eur: 18 } },
         ],
         bundlesTitle: 'Bundles, for a lower price together',

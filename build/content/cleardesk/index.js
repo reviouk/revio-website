@@ -31,7 +31,7 @@ module.exports = {
       outgoing: [
         { face: 'poppy', title: 'Poppy, marketing', text: 'A week of posts every Monday' },
         { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
-        { face: 'paige', title: 'Paige, website', text: 'A one-page website. Coming soon' },
+        { face: 'paige', title: 'Paige, website', text: 'A website of up to five pages. Coming soon' },
         { face: 'finn', title: 'Finn, search', text: 'Found in search and AI answers. Coming soon' },
         { face: 'lex', title: 'Lex, legal', text: 'Simple agreements drafted. Coming soon' },
       ],
@@ -45,7 +45,7 @@ module.exports = {
         { icon: 'phone', when: 'Working today', title: 'Flo, assistant', text: 'Answers your missed calls on the number you already have, takes the name, the job and the address, and texts you a summary. Soon it will look after your inbox and your diary too.', href: '/agents/flo/', meta: 'See Flo' },
         { icon: 'spark', when: 'Working today', title: 'Poppy, marketing', text: 'Writes a week of social posts every Monday in your voice. Each one waits for your yes, then you copy it and post it.', href: '/agents/marketing/', meta: 'See Poppy' },
         { icon: 'pound', when: 'Coming soon', title: 'Bill, accounts', text: 'Will send an invoice when you text it, then remind the customer at 7, 14 and 21 days.', href: '/agents/accounts/', meta: 'See the plan' },
-        { icon: 'globe', when: 'Coming soon', title: 'Paige, website', text: 'Will build you a one-page website on your own domain.', href: '/agents/website/', meta: 'See the plan' },
+        { icon: 'globe', when: 'Coming soon', title: 'Paige, website', text: 'Will build you a website of up to five pages on your own domain.', href: '/agents/website/', meta: 'See the plan' },
         { icon: 'search', when: 'Coming soon', title: 'Finn, search and AI answers', text: 'Will lay the groundwork so people can find you in local search and in AI answers. It promises no rankings.', href: '/agents/search/', meta: 'See the plan' },
         { icon: 'doc', when: 'Coming soon', title: 'Lex, legal', text: 'Will draft simple agreements and explain contracts in plain English. Lex is not a solicitor.', href: '/agents/legal/', meta: 'See the plan' },
       ],

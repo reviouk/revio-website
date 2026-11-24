@@ -3,10 +3,10 @@ module.exports = {
   "slug": "cleardesk/agents/website",
   "meetingRows": false,
   "title": "Paige: AI Website Builder for Small Business | Over to Flo",
-  "description": "Coming soon: Paige builds a one-page website with an enquiry form and a chat, on your own domain, and changes it when you ask. Tell us to let you know.",
+  "description": "Coming soon: Paige builds a website of up to five pages, with an enquiry form and a chat, on your own domain, and changes it when you ask.",
   "keywords": [
     "ai website builder small business",
-    "one page website uk",
+    "small business website uk",
     "website with enquiry form",
     "ai website chat",
     "small business website own domain"
@@ -22,7 +22,7 @@ module.exports = {
   "crumbLabel": "Paige: Website",
   "badge": "Coming soon: Paige, Website",
   "h1": "A website that is just there. <em class=\"mint\">Paige builds it.</em>",
-  "sub": "Paige is getting ready to build a one-page website with an enquiry form and a chat, on your own domain. Ask for a change and Paige makes it. Tell us you are interested and we will let you know when it is ready.",
+  "sub": "Paige is getting ready to build a website of up to five pages, with an enquiry form and a chat, on your own domain. Ask for a change and Paige makes it. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
     {
       "label": "Tell me when it is ready",
@@ -36,8 +36,8 @@ module.exports = {
     }
   ],
   "heroProof": [
-    "A one-page website with an enquiry form",
-    "A chat on the page",
+    "Up to five pages, with an enquiry form",
+    "A chat on the website",
     "On your own domain"
   ],
   "sections": [
@@ -49,8 +49,8 @@ module.exports = {
       "items": [
         {
           "icon": "globe",
-          "title": "Builds a one-page website",
-          "text": "Will build a clear page about your business, using what you told Flo."
+          "title": "Builds a website of up to five pages",
+          "text": "Will build clear pages about your business, using what you told Flo."
         },
         {
           "icon": "mail",
@@ -65,7 +65,7 @@ module.exports = {
         {
           "icon": "code",
           "title": "Changes it when asked",
-          "text": "Will update the page when you ask, such as new opening hours."
+          "text": "Will update the website when you ask, such as new opening hours."
         }
       ]
     },
@@ -80,8 +80,8 @@ module.exports = {
           "text": "You set it up yourself. Flo can read an existing website."
         },
         {
-          "title": "Paige builds the page",
-          "text": "It builds a one-page website with an enquiry form and a chat. You look at it first."
+          "title": "Paige builds the website",
+          "text": "It builds a website of up to five pages, with an enquiry form and a chat. You look at it first."
         },
         {
           "title": "Use your own domain",
@@ -97,7 +97,7 @@ module.exports = {
       "type": "cards",
       "kicker": "You stay in charge",
       "h2": "You decide how much Paige does alone.",
-      "lede": "Paige will show you the page and any change before it goes live, unless you choose to let it act on its own. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
+      "lede": "Paige will show you the website and any change before it goes live, unless you choose to let it act on its own. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
       "cols": 3,
       "items": [
         {
@@ -128,7 +128,7 @@ module.exports = {
           "title": "A good fit",
           "items": [
             "A business with no website yet",
-            "A business whose website is out of date and needs one simple page"
+            "A business whose website is out of date and needs a simple new one"
           ]
         }
       ]
@@ -181,7 +181,7 @@ module.exports = {
         },
         {
           "q": "How big will the website be?",
-          "a": "One page. It is a simple page about your business, with an enquiry form and a chat."
+          "a": "Up to five pages. For example a home page, what you do, about you, your prices and how to reach you, with an enquiry form and a chat."
         },
         {
           "q": "Can I stop it?",
