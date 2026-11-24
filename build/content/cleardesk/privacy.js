@@ -10,7 +10,7 @@ const html = `
 <h2 id="who">1. Who we are</h2>
 <p>Over to Flo is a service run by Lead Signal AI Technologies Limited, a company registered in England and Wales, company number 17361862. Our registered office is 22 The Ridgeway, Flitwick, Bedford, MK45 1DH. Our main office is ${S.ADDRESS}.</p>
 <p>We also run LeadSignal.</p>
-<p>To ask a question about this policy or your data, email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>. It goes to a person.</p>
+<p>To ask a question about this policy or your data, email <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a>. It goes to a person.</p>
 <p>Over to Flo gives small businesses a done-for-you AI assistant, Flo. Flo is an automated assistant, not a person. It answers calls, sorts email, drafts replies, books diary slots and chases unpaid invoices for the business that signs up. We call that business <strong>the client</strong>.</p>
 
 <h2 id="roles">2. Our two roles</h2>
@@ -95,7 +95,7 @@ const html = `
 <h3>Compliance statement</h3>
 <p>Over to Flo's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 <h3>Disconnecting</h3>
-<p>The client can disconnect Google at any time by asking us. We do it the same working day and delete the stored sign-in. The client can also remove our access at <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>. To have previously stored Google data deleted, email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>.</p>
+<p>The client can disconnect Google at any time by asking us. We do it the same working day and delete the stored sign-in. The client can also remove our access at <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>. To have previously stored Google data deleted, email <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a>.</p>
 
 <h2 id="microsoft">8. Microsoft account data</h2>
 <p>When the client connects a Microsoft mailbox and calendar, we access the messages, drafts and calendar events in that account only. We use them only for the same user-facing features: sorting the inbox, drafting and sending replies the client approves, finding free time and booking.</p>
@@ -110,7 +110,7 @@ const html = `
 <li><strong>AI model providers</strong>, to sort, summarise and draft.</li>
 <li><strong>Email and calendar providers the client connects</strong>, which are Google and Microsoft.</li>
 </ul>
-<p>The current list of named providers is available on request. Email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>.</p>
+<p>The current list of named providers is available on request. Email <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a>.</p>
 <p>We may also disclose data where the law requires it, or to protect our rights, and to professional advisers under confidentiality.</p>
 
 <h2 id="transfers">10. International transfers</h2>
@@ -149,7 +149,7 @@ const html = `
 <li>receive it in a portable form;</li>
 <li>withdraw consent, where we rely on it.</li>
 </ul>
-<p>Clients can exercise these rights over their own account data by emailing <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>. Callers and customers of a client should contact that business. If you contact us instead, we will pass your request to them without delay. We reply within one month.</p>
+<p>Clients can exercise these rights over their own account data by emailing <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a>. Callers and customers of a client should contact that business. If you contact us instead, we will pass your request to them without delay. We reply within one month.</p>
 
 <h2 id="complaints">14. Complaints</h2>
 <p>Tell us first and we will try to put it right. You can also complain to the Information Commissioner's Office at <a href="https://ico.org.uk" rel="noopener">ico.org.uk</a>.</p>
@@ -167,7 +167,7 @@ module.exports = {
   badge: 'Legal',
   h1: 'Privacy policy.',
   sub: 'What Flo does with calls, email, calendars and invoices, who sees them, how long we keep them and how to use your rights. Plain English, no small print.',
-  ctas: [{ label: 'Email us a question', href: 'mailto:' + S.EMAIL, style: 'mint' }, { label: 'Read the terms', href: '/terms/', style: 'ghost' }],
+  ctas: [{ label: 'Email us a question', href: 'mailto:' + S.CLEARDESK.EMAIL, style: 'mint' }, { label: 'Read the terms', href: '/terms/', style: 'ghost' }],
   meetingRows: false,
   sections: [
     { type: 'prose', html },
@@ -177,13 +177,13 @@ module.exports = {
         { q: 'Do you sell my data?', a: 'No. We never sell data and we do not use it for advertising.' },
         { q: 'Is my data used to train AI?', a: 'No. AI model providers process content only to sort, summarise and draft for you, under business terms. It is not used to train their models.' },
         { q: 'Does Flo send things without asking?', a: 'Not in the supervised first fortnight. After that it sends alone only what you have approved.' },
-        { q: 'How do I ask for my data to be deleted?', a: `Email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>. If you are a customer of one of our clients, ask that business and we will help them act on it.` },
+        { q: 'How do I ask for my data to be deleted?', a: `Email <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a>. If you are a customer of one of our clients, ask that business and we will help them act on it.` },
       ],
     },
     {
       type: 'cta', h2: 'A question we have not answered?',
       text: 'Email us and a person will reply.',
-      ctas: [{ label: 'Email ' + S.EMAIL, href: 'mailto:' + S.EMAIL, style: 'mint' }, { label: 'Back to Over to Flo', href: '/', style: 'ghost' }],
+      ctas: [{ label: 'Email ' + S.CLEARDESK.EMAIL, href: 'mailto:' + S.CLEARDESK.EMAIL, style: 'mint' }, { label: 'Back to Over to Flo', href: '/', style: 'ghost' }],
     },
   ],
 };

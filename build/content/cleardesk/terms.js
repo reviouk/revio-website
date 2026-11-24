@@ -16,7 +16,7 @@ const html = `
 <p>We invoice the monthly plan in advance. If we change a price, existing clients get at least 30 days' notice by email before it applies to them.</p>
 
 <h2 id="cancel">3. No minimum term</h2>
-<p>There is no minimum term. You can cancel at any time by emailing <a href="mailto:${S.EMAIL}">${S.EMAIL}</a>. Cancellation takes effect at the end of the month you have already paid for. The setup fee is not refundable once setup work has started.</p>
+<p>There is no minimum term. You can cancel at any time by emailing <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a>. Cancellation takes effect at the end of the month you have already paid for. The setup fee is not refundable once setup work has started.</p>
 
 <h2 id="supervised">4. The supervised first fortnight</h2>
 <p>For the first two weeks, Flo sends nothing to anyone without your approval. Afterwards, you decide which kinds of message Flo may send on its own, such as appointment confirmations or invoice reminders. You can change or withdraw that at any time.</p>
@@ -66,7 +66,7 @@ const html = `
 <p>These terms are governed by the law of England and Wales. The courts of England and Wales have exclusive jurisdiction over any dispute arising from them.</p>
 
 <h2 id="contact">14. Contact</h2>
-<p>Email <a href="mailto:${S.EMAIL}">${S.EMAIL}</a> or write to Lead Signal AI Technologies Limited, ${S.ADDRESS}.</p>
+<p>Email <a href="mailto:${S.CLEARDESK.EMAIL}">${S.CLEARDESK.EMAIL}</a> or write to Lead Signal AI Technologies Limited, ${S.ADDRESS}.</p>
 `;
 
 module.exports = {
@@ -94,7 +94,7 @@ module.exports = {
     {
       type: 'cta', h2: 'Questions about the terms?',
       text: 'Email us and a person will reply.',
-      ctas: [{ label: 'Email ' + S.EMAIL, href: 'mailto:' + S.EMAIL, style: 'mint' }, { label: 'See every price', href: C.PRICING_URL, style: 'ghost' }],
+      ctas: [{ label: 'Email ' + S.CLEARDESK.EMAIL, href: 'mailto:' + S.CLEARDESK.EMAIL, style: 'mint' }, { label: 'See every price', href: C.PRICING_URL, style: 'ghost' }],
     },
   ],
 };

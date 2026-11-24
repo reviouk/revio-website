@@ -23,6 +23,9 @@ module.exports = {
      to the corporate site (Rob, 20 Nov 2026). */
   CLEARDESK: {
     ORIGIN: 'https://overtoflo.ai',
+    /* Replies and questions for Over to Flo. An extra address on Rob's main
+       mailbox, added 24 Nov 2026. Never a revio.agency or LeadSignal address. */
+    EMAIL: 'hello@overtoflo.ai',
     /* The website chat, served by the app. It draws nothing until chat is
        switched on in the staff console (Website chat). */
     CHAT_EMBED: 'https://app.overtoflo.ai/chat/embed.js',

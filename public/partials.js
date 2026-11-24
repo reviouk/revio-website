@@ -516,7 +516,7 @@
       '<li><a href="/pricing/">Pricing</a></li><li><a href="/#integrations">Works with</a></li>' +
       CD_RES.map(function (r) { return '<li><a href="' + r[0] + '">' + r[1] + '</a></li>'; }).join('') +
       '<li><a href="' + CD_BOOK + '">Book a demo</a></li>' +
-      '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +
+      '<li><a href="mailto:hello@overtoflo.ai">hello@overtoflo.ai</a></li>' +
       '<li><span class="muted">Imperial Place, 4 Maxwell Rd, Borehamwood WD6 1JN</span></li></ul></div>' +
       '</div><div class="wrap cd-bot"><span>&copy; <span id="revio-yr">2026</span> Lead Signal AI Technologies Limited. Over to Flo is a LeadSignal product. Registered in England and Wales, company number 17361862. Registered office: 22 The Ridgeway, Flitwick, Bedford, MK45 1DH.</span>' +
       '<span class="sp"></span><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></footer>';

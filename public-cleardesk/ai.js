@@ -100,7 +100,8 @@
           if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; }
           if (status) {
             status.className = 'ai-form-status err';
-            status.innerHTML = 'That did not send. Email us at <a href="mailto:grow@revio.agency" style="font-weight:600">grow@revio.agency</a> and we will pick it up.';
+            var mailTo = document.body.classList.contains('cd-page') ? 'hello@overtoflo.ai' : 'grow@revio.agency';   /* Over to Flo pages never show a revio.agency address */
+            status.innerHTML = 'That did not send. Email us at <a href="mailto:' + mailTo + '" style="font-weight:600">' + mailTo + '</a> and we will pick it up.';
           }
         });
     });
