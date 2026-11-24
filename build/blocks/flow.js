@@ -7,7 +7,7 @@
  * Under 900px the lines are dropped and the cards stack under Flo.
  * All motion is CSS (ai.css) and stops under prefers-reduced-motion. */
 const W = 1000, H = 560;
-const HUB = { x: 500, y: 235, r: 90 };
+const HUB0 = { x: 500, y: 235, r: 90 };
 const ROWS = [95, 205, 315, 425];      // card centres, top to bottom
 const CARD = 262;                       // card width on the grid
 const EDGE = [-36, -12, 12, 36];        // where each line meets the hub, around its middle
@@ -22,6 +22,9 @@ const EXTRA = {
 
 module.exports = function flow(s, SITE, u) {
   const { rich, esc, head2, secCls, icon } = u;
+  /* A brain hub sits level with the middle of five rows. */
+  const HUB = s.hub ? { ...HUB0, y: 270 } : HUB0;
+  const outward = !!s.outward;     /* dots travel from the hub out to both sides */
   const ico = (k) => EXTRA[k] || icon(k);
   const f = (n) => Math.round(n * 10) / 10;
 
@@ -46,27 +49,38 @@ module.exports = function flow(s, SITE, u) {
   const meet = (dy) => { const dx = Math.sqrt(HUB.r * HUB.r - dy * dy); return { lx: HUB.x - dx, rx: HUB.x + dx, hy: HUB.y + dy }; };
   rowsIn.forEach((y, i) => {
     const { lx, hy } = meet(edgeFor(rowsIn.length)[i]);
-    curves.push({ cls: 'in', i, d: `M${CARD},${y} C${f(CARD + 95)},${y} ${f(lx - 85)},${f(hy)} ${f(lx)},${f(hy)}` });
+    curves.push({ cls: 'in', i, d: outward
+      ? `M${f(lx)},${f(hy)} C${f(lx - 85)},${f(hy)} ${f(CARD + 95)},${y} ${CARD},${y}`
+      : `M${CARD},${y} C${f(CARD + 95)},${y} ${f(lx - 85)},${f(hy)} ${f(lx)},${f(hy)}` });
   });
   rowsOut.forEach((y, i) => {
     const { rx, hy } = meet(edgeFor(rowsOut.length)[i]);
     curves.push({ cls: 'out', i, d: `M${f(rx)},${f(hy)} C${f(rx + 85)},${f(hy)} ${f(W - CARD - 95)},${y} ${W - CARD},${y}` });
   });
   const approveY = 492;
-  curves.push({ cls: 'ok', i: 4, d: `M${HUB.x},${HUB.y + HUB.r + 22} L${HUB.x},${approveY - 30}` });
+  if (s.approve) curves.push({ cls: 'ok', i: 4, d: `M${HUB.x},${HUB.y + HUB.r + 22} L${HUB.x},${approveY - 30}` });
   const lines = curves.map((c) =>
     `<path class="ff-dots ff-${c.cls}" d="${c.d}"/>` +
     `<path class="ff-pulse ff-${c.cls}" style="--i:${c.i}" pathLength="100" d="${c.d}"/>`).join('');
 
+  const cap = (v, dflt, side) => (v === '' ? '' : `<p class="ff-cap ff-cap-${side}">${rich(v || dflt)}</p>`);
+  const BRAIN = '<svg class="ff-brain" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+    '<path d="M50 24C44 16 30 16 26 26C16 27 12 38 18 45C12 52 15 64 25 66C27 76 40 80 50 74C60 80 73 76 75 66C85 64 88 52 82 45C88 38 84 27 74 26C70 16 56 16 50 24Z"/>' +
+    '<path d="M50 24V74"/><path d="M26 26C32 30 34 36 30 42M18 45C26 45 32 48 34 54M25 66C30 62 36 62 40 66"/>' +
+    '<path d="M74 26C68 30 66 36 70 42M82 45C74 45 68 48 66 54M75 66C70 62 64 62 60 66"/></svg>';
+  const hubHtml = () => (s.hub
+    ? `<div class="ff-hub ff-hub-brain" role="img" aria-label="${esc(s.hub.alt || (s.hub.name + ', the brain behind your team'))}">${BRAIN}<b>${rich(s.hub.name)}</b>` +
+      (s.hub.caption ? `<small class="ff-sub">${rich(s.hub.caption)}</small>` : '') + `</div>`
+    : `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, who leads your team" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>`);
   const pct = (n, of) => f(100 * n / of) + '%';
   return `<section class="${secCls(s)}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s, { center: true }) +
     `<div class="ff mt-lg reveal" style="--hx:${pct(HUB.x, W)};--hy:${pct(HUB.y, H)};--hd:${pct(HUB.r * 2, W)};--ay:${pct(approveY, H)}">` +
     `<svg class="ff-lines" viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">${lines}` +
     `<circle class="ff-ring" cx="${HUB.x}" cy="${HUB.y}" r="${HUB.r + 10}"/></svg>` +
-    `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, who leads your team" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>` +
-    `<p class="ff-cap ff-cap-in">${rich(s.inTitle || 'Comes in')}</p>` +
+    hubHtml() +
+    cap(s.inTitle, 'Comes in', 'in') +
     `<ul class="ff-nodes ff-list-in">${incoming.map(node(rowsIn)).join('')}</ul>` +
-    `<p class="ff-cap ff-cap-out">${rich(s.outTitle || 'Flo gets it done')}</p>` +
+    cap(s.outTitle, 'Flo gets it done', 'out') +
     `<ul class="ff-nodes ff-list-out">${outgoing.map(node(rowsOut)).join('')}</ul>` +
     (s.approve ? `<p class="ff-approve"><span class="ff-ic">${ico('phoneTick')}</span>${rich(s.approve)}</p>` : '') +
     `</div>` +

@@ -54,9 +54,10 @@ module.exports = {
           { key: 'lex', name: 'Lex, legal', href: '/agents/legal/', status: 'soon', text: 'Will draft simple agreements and explain contracts in plain English.', price: { gbp: 15, usd: 19, eur: 18 } },
         ],
         bundlesTitle: 'Bundles: the whole team in every one',
-        bundlesText: 'Every bundle includes all nine agents. They differ by how much you use: the minutes of calls Flo answers and the texts your agents send to your customers. Each bundle opens when all of its agents are working.',
+        bundlesText: 'Every bundle includes all nine agents. They differ by how much you use: the minutes of calls Flo answers and the texts your agents send to your customers. Each bundle opens when all of its agents are working. Elon, the brain behind the team, is built in to every bundle.',
         includedTitle: 'Included with every agent',
         included: [
+          { icon: 'spark', title: 'Elon, the brain, built in', text: 'It comes with every employee and every bundle.' },
           { icon: 'rocket', title: 'Set up by yourself', text: 'In a few minutes, on your phone or computer.' },
           { icon: 'shield', title: 'Asks before it acts', text: 'You choose how much each agent does alone.' },
           { icon: 'people', title: 'Add or remove agents', text: 'Change your team whenever you like.' },

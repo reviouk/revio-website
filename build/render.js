@@ -226,6 +226,7 @@ const SECTION = {
     const items = (s.items || []).map((it, i) => {
       const tag = it.href ? 'a' : 'div';
       return `<${tag} class="card reveal" ${it.href ? `href="${esc(it.href)}"` : ''} style="--d:${i}">` +
+        (it.letter ? `<div class="letter" aria-hidden="true">${esc(it.letter)}</div>` : '') +
         (it.icon ? `<div class="icon">${icon(it.icon)}</div>` : '') +
         (it.when ? `<div class="svc-when">${rich(it.when)}</div>` : '') +
         `<h3>${rich(it.title)}</h3><p>${rich(it.text)}</p>` +

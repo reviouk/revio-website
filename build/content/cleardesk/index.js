@@ -18,25 +18,35 @@ module.exports = {
   heroProof: ['Set up by you, in minutes', 'Every agent asks before it acts, until you say otherwise', 'Cancel any time'],
   sections: [
     {
-      /* The animated picture: what comes in on the left, Flo in the middle, the team on the right. */
-      type: 'flow', id: 'team', kicker: 'One team', h2: 'Everything runs through Flo.',
-      lede: 'Tell Flo about your business once. Every agent uses what Flo knows, and each one asks before it acts.',
-      inTitle: 'Comes in', outTitle: 'Your team gets it done',
+      /* The animated picture: nine employees round Elon, the built-in brain in the middle. */
+      type: 'flow', id: 'team', kicker: 'One team', h2: 'One brain. Nine employees.',
+      lede: 'Elon is the brain behind the team. It learns your business once and briefs every employee.',
+      hub: { mark: 'brain', name: 'Elon', caption: 'The brain', alt: 'Elon, the brain behind your team' },
+      outward: true, inTitle: '', outTitle: '',
       incoming: [
-        { icon: 'phone', title: 'Phone calls', text: 'Answered when you cannot pick up' },
-        { icon: 'chat', title: 'What you tell Flo', text: 'About your business, once' },
-        { icon: 'globe', title: 'Your website', text: 'Flo reads it to learn about you' },
-        { icon: 'mail', title: 'Your inbox and diary', text: 'Coming soon' },
+        { face: 'flo', title: 'Flo, assistant', text: 'Answers your calls' },
+        { face: 'poppy', title: 'Poppy, marketing manager', text: 'A week of posts every Monday' },
+        { face: 'skye', title: 'Skye, sales manager', text: 'Quotes and follow-ups. Coming soon' },
+        { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
+        { face: 'rev', title: 'Rev, revenue operations', text: 'Every enquiry tracked. Coming soon' },
       ],
       outgoing: [
-        { face: 'poppy', title: 'Poppy, marketing manager', text: 'A week of posts every Monday' },
-        { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
         { face: 'paige', title: 'Paige, website', text: 'A website of up to five pages. Coming soon' },
         { face: 'finn', title: 'Finn, SEO specialist', text: 'Found in search and AI answers. Coming soon' },
+        { face: 'tally', title: 'Tally, data analyst', text: 'A plain report every Monday. Coming soon' },
         { face: 'lex', title: 'Lex, legal', text: 'Simple agreements drafted. Coming soon' },
       ],
-      approve: 'You say yes from your phone',
       note: 'Flo and Poppy are working today. The others are coming soon.',
+    },
+    {
+      type: 'cards', id: 'elon', kicker: 'Built in', h2: 'Meet Elon, the brain behind your team.', cols: 4,
+      lede: 'Elon is not an employee you buy. It is built in to every employee and every bundle.',
+      items: [
+        { letter: 'E', title: 'Explains', text: 'Elon briefs every employee. Each one starts with what Elon knows about your business, so you never explain it twice.' },
+        { letter: 'L', title: 'Learns', text: 'You tell Elon about your business once. It can read your website too.' },
+        { letter: 'O', title: 'Oversees', text: 'Elon keeps watch over the team. Anything that needs you waits in one place, under "Waiting for your yes".' },
+        { letter: 'N', title: 'Notifies', text: 'Elon tells you when something needs you, with one text or email, not a stream of them.' },
+      ],
     },
     {
       type: 'cards', id: 'agents', kicker: 'The agents', h2: 'Meet the team. Pick one, or pick several.', cols: 3,
