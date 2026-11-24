@@ -437,7 +437,7 @@
   var CD_AGENTS = [
     ['/agents/flo/', 'Flo', 'Assistant', 'flo'],
     ['/agents/marketing/', 'Poppy', 'Marketing manager', 'poppy'],
-    ['/agents/sales/', 'Sal', 'Sales manager', 'sal'],
+    ['/agents/sales/', 'Skye', 'Sales manager', 'skye'],
     ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],
     ['/agents/revops/', 'Rev', 'Revenue operations', 'rev'],
     ['/agents/website/', 'Paige', 'Website', 'paige'],

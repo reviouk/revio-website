@@ -141,7 +141,7 @@ module.exports = {
         {
           "href": "/agents/sales/",
           "icon": "handshake",
-          "title": "Sal: Sales manager",
+          "title": "Skye: Sales manager",
           "text": "Writes quotes and follow-ups to win the job. Coming soon.",
           "meta": "See the agent"
         },

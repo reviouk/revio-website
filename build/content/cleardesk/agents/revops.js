@@ -95,11 +95,11 @@ module.exports = {
         },
         {
           "title": "Rev reports each week",
-          "text": "You see where the money is. It hands the follow-up to Sal and the unpaid invoice to Bill."
+          "text": "You see where the money is. It hands the follow-up to Skye and the unpaid invoice to Bill."
         },
         {
           "title": "Rev reads from the team",
-          "text": "After that, it reads from the rest of the team: the calls Flo answers, the quotes Sal writes and the invoices Bill sends."
+          "text": "After that, it reads from the rest of the team: the calls Flo answers, the quotes Skye writes and the invoices Bill sends."
         }
       ]
     },
@@ -107,7 +107,7 @@ module.exports = {
       "type": "cards",
       "kicker": "You stay in charge",
       "h2": "You decide how much Rev does alone.",
-      "lede": "Rev reports to you and never writes to your customers. When it hands a follow-up to Sal or an unpaid invoice to Bill, that agent prepares the message and waits. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
+      "lede": "Rev reports to you and never writes to your customers. When it hands a follow-up to Skye or an unpaid invoice to Bill, that agent prepares the message and waits. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
       "cols": 3,
       "items": [
         {
@@ -152,7 +152,7 @@ module.exports = {
         {
           "href": "/agents/sales/",
           "icon": "handshake",
-          "title": "Sal: Sales manager",
+          "title": "Skye: Sales manager",
           "text": "Writes quotes and follow-ups to win the job. Coming soon.",
           "meta": "See the agent"
         },

@@ -2,8 +2,8 @@
 module.exports = {
   "slug": "cleardesk/agents/sales",
   "meetingRows": false,
-  "title": "Sal: AI Sales Manager for Small Business | Over to Flo",
-  "description": "Coming soon: Sal writes your quotes and follow-ups, replies when a customer says the price is too high, and briefs you on a customer before you call.",
+  "title": "Skye: AI Sales Manager for Small Business | Over to Flo",
+  "description": "Coming soon: Skye writes your quotes and follow-ups, replies when a customer says the price is too high, and briefs you on a customer before you call.",
   "keywords": [
     "ai sales manager",
     "ai quote writer small business",
@@ -12,17 +12,17 @@ module.exports = {
     "ai sales assistant for small business"
   ],
   "art": "chart",
-  "heroImage": { "src": "/img/agents/sal.webp", "tone": "#d99a00", "alt": "Sal, the sales agent", "say": "Hi, I&rsquo;m Sal. Winning the work is my job." },
+  "heroImage": { "src": "/img/agents/skye.webp", "tone": "#d99a00", "alt": "Skye, the sales agent", "say": "Hi, I&rsquo;m Skye. Winning the work is my job." },
   "crumbs": [
     {
       "label": "The agents",
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Sal: Sales manager",
-  "badge": "Coming soon: Sal, Sales manager",
-  "h1": "Win the job. <em class=\"mint\">Sal writes the quote and the follow-up.</em>",
-  "sub": "Sal is getting ready to write your quotes, follow up when a quote has gone quiet, and help you answer a customer who says the price is too high. Tell us you are interested and we will let you know when it is ready.",
+  "crumbLabel": "Skye: Sales manager",
+  "badge": "Coming soon: Skye, Sales manager",
+  "h1": "Win the job. <em class=\"mint\">Skye writes the quote and the follow-up.</em>",
+  "sub": "Skye is getting ready to write your quotes, follow up when a quote has gone quiet, and help you answer a customer who says the price is too high. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
     {
       "label": "Tell me when it is ready",
@@ -44,7 +44,7 @@ module.exports = {
     {
       "type": "cards",
       "kicker": "What it will do for you",
-      "h2": "What Sal will do for you.",
+      "h2": "What Skye will do for you.",
       "cols": 2,
       "items": [
         {
@@ -90,11 +90,11 @@ module.exports = {
           "text": "You set it up yourself. Flo can read your website."
         },
         {
-          "title": "Tell Sal about the job",
+          "title": "Tell Skye about the job",
           "text": "Type in the job details, or the kind of customer you want to reach."
         },
         {
-          "title": "Sal writes it",
+          "title": "Skye writes it",
           "text": "A quote, a follow-up, a reply or a call brief. It waits for your yes."
         },
         {
@@ -106,8 +106,8 @@ module.exports = {
     {
       "type": "cards",
       "kicker": "You stay in charge",
-      "h2": "You decide how much Sal does alone.",
-      "lede": "Sal will show you what it wants to publish or send, unless you choose to let it act on its own. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
+      "h2": "You decide how much Skye does alone.",
+      "lede": "Skye will show you what it wants to publish or send, unless you choose to let it act on its own. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
       "cols": 3,
       "items": [
         {
@@ -131,8 +131,8 @@ module.exports = {
       "type": "checks",
       "tone": "wash",
       "kicker": "Who it is for",
-      "h2": "Who Sal is for.",
-      "lede": "Sal suits a business that sends quotes. It also suits a person in a sales job.",
+      "h2": "Who Skye is for.",
+      "lede": "Skye suits a business that sends quotes. It also suits a person in a sales job.",
       "groups": [
         {
           "title": "A good fit",
@@ -176,7 +176,7 @@ module.exports = {
       "type": "faq",
       "tone": "wash",
       "kicker": "Straight answers",
-      "h2": "Questions about Sal.",
+      "h2": "Questions about Skye.",
       "items": [
         {
           "q": "When will it be ready?",
@@ -184,23 +184,23 @@ module.exports = {
         },
         {
           "q": "Does it send things without asking?",
-          "a": "No. Sal prepares each quote and follow-up and waits for your yes, unless you choose to let it act on its own."
+          "a": "No. Skye prepares each quote and follow-up and waits for your yes, unless you choose to let it act on its own."
         },
         {
           "q": "Does it cold call?",
-          "a": "No. Sal writes the first message and a short script. You make the call."
+          "a": "No. Skye writes the first message and a short script. You make the call."
         },
         {
           "q": "Do I need any other software?",
-          "a": "No. You tell Sal about the job. Later it can read your inbox as well."
+          "a": "No. You tell Skye about the job. Later it can read your inbox as well."
         },
         {
           "q": "How is it different from Bill?",
-          "a": "Sal wins the job. Bill sends the invoice and chases payment once the job is done."
+          "a": "Skye wins the job. Bill sends the invoice and chases payment once the job is done."
         },
         {
           "q": "Will it win me the work?",
-          "a": "Nobody can promise a sale, and Sal does not. It writes the quotes and follow-ups so that none of them are left waiting."
+          "a": "Nobody can promise a sale, and Skye does not. It writes the quotes and follow-ups so that none of them are left waiting."
         }
       ]
     },
@@ -208,7 +208,7 @@ module.exports = {
       "type": "cta",
       "id": "notify",
       "h2": "Want help winning work? Ask to be told.",
-      "text": "Leave your details and we will let you know when Sal is ready. The agents working today are ready to start now.",
+      "text": "Leave your details and we will let you know when Skye is ready. The agents working today are ready to start now.",
       "ctas": [
         {
           "label": "Book a demo",
@@ -221,7 +221,7 @@ module.exports = {
           "style": "ghost"
         }
       ],
-      "note": "Mention Sal when you book and we will tell you when it is ready."
+      "note": "Mention Skye when you book and we will tell you when it is ready."
     }
   ]
 };

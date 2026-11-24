@@ -6,8 +6,8 @@
    Put the My Flo address (https://app.overtoflo.ai/my/) back when sign-up opens. */
 const START = '/book/';
 /* Every bundle holds every agent (Rob, 24 Nov 2026). They differ by use.
-   Nine since Sal, Rev and Tally were added; bundle prices were agreed for six. */
-const ALL_FACES = ['flo', 'poppy', 'sal', 'bill', 'rev', 'paige', 'finn', 'tally', 'lex'];
+   Nine since Skye, Rev and Tally were added; bundle prices were agreed for six. */
+const ALL_FACES = ['flo', 'poppy', 'skye', 'bill', 'rev', 'paige', 'finn', 'tally', 'lex'];
 module.exports = {
   slug: 'cleardesk/pricing',
   meetingRows: false,
@@ -45,7 +45,7 @@ module.exports = {
           { key: 'flo', name: 'Flo, assistant', href: '/agents/flo/', status: 'live', text: 'Answers your missed calls and texts you a summary, with 100 minutes of calls a month. Soon it will look after your inbox and your diary too, at the same price.', price: { gbp: 49, usd: 65, eur: 57 } },
           { key: 'poppy', name: 'Poppy, marketing manager', href: '/agents/marketing/', status: 'live', text: 'Writes a week of social posts every Monday in your voice.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'poppy_video', name: 'Poppy, marketing manager with video', href: '/agents/marketing/', status: 'soon', text: 'Everything Poppy does, and it will make 8 short videos a month for your posts.', price: { gbp: 49, usd: 65, eur: 57 } },
-          { key: 'sal', name: 'Sal, sales manager', href: '/agents/sales/', status: 'soon', text: 'Will write your quotes and follow-ups, and help you win the job.', price: { gbp: 19, usd: 25, eur: 22 } },
+          { key: 'skye', name: 'Skye, sales manager', href: '/agents/sales/', status: 'soon', text: 'Will write your quotes and follow-ups, and help you win the job.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'bill', name: 'Bill, accounts', href: '/agents/accounts/', status: 'soon', text: 'Will send an invoice when you text it, then remind the customer.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'rev', name: 'Rev, revenue operations', href: '/agents/revops/', status: 'soon', text: 'Will keep track of every enquiry and quote so you can see where the money is.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'paige', name: 'Paige, website', href: '/agents/website/', status: 'soon', text: 'Will build you a website of up to five pages on your own domain.', price: { gbp: 15, usd: 19, eur: 18 } },
