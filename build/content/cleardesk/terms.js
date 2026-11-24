@@ -25,6 +25,7 @@ const html = `
 <p>Your payments renew by themselves until you switch the agent off.</p>
 <p>Card payments are handled by our payment provider. We do not see or keep your full card number.</p>
 <p>Phone answering includes a number of call minutes each month, shown on the pricing page. If you need more, you can add minutes in blocks of 100 at the price shown there.</p>
+<p>A bundle includes every agent. It also includes a number of call minutes and a number of texts that your agents send to your customers each month. Both are shown on the pricing page for each bundle.</p>
 <p>If a payment fails, we tell you, and you can change your card in My Flo. We may pause an agent until the payment is made.</p>
 <p>If we change a price, we email you at least 30 days before it applies to you. The new price applies from your next renewal after that.</p>
 
