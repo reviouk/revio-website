@@ -18,6 +18,27 @@ module.exports = {
   heroProof: ['Set up by you, in minutes', 'Every agent asks before it acts, until you say otherwise', 'Cancel any time'],
   sections: [
     {
+      /* The animated picture: what comes in on the left, Flo in the middle, the team on the right. */
+      type: 'flow', id: 'team', kicker: 'One team', h2: 'Everything runs through Flo.',
+      lede: 'Tell Flo about your business once. Every agent uses what Flo knows, and each one asks before it acts.',
+      inTitle: 'Comes in', outTitle: 'Your team gets it done',
+      incoming: [
+        { icon: 'phone', title: 'Phone calls', text: 'Answered when you cannot pick up' },
+        { icon: 'chat', title: 'What you tell Flo', text: 'About your business, once' },
+        { icon: 'globe', title: 'Your website', text: 'Flo reads it to learn about you' },
+        { icon: 'mail', title: 'Your inbox and diary', text: 'Coming soon' },
+      ],
+      outgoing: [
+        { face: 'poppy', title: 'Poppy, marketing', text: 'A week of posts every Monday' },
+        { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
+        { face: 'paige', title: 'Paige, website', text: 'A one-page website. Coming soon' },
+        { face: 'finn', title: 'Finn, search', text: 'Found in search and AI answers. Coming soon' },
+        { face: 'lex', title: 'Lex, legal', text: 'Simple agreements drafted. Coming soon' },
+      ],
+      approve: 'You say yes from your phone',
+      note: 'Flo and Poppy are working today. The others are coming soon.',
+    },
+    {
       type: 'cards', id: 'agents', kicker: 'The agents', h2: 'Meet the team. Pick one, or pick several.', cols: 3,
       lede: 'Two agents are working today. The others are coming soon, and each card says which is which.',
       items: [
@@ -56,7 +77,7 @@ module.exports = {
         'Read it, say yes, or ask for a change. If you would rather an agent did not ask, change its setting. If you have a question, there is a help chat, and a real person can be asked.',
       ],
       bullets: ['One list, on your phone', 'Say yes, or ask for a change', 'A help chat, and a real person if you need one'],
-      art: 'shield',
+      image: { src: '/img/agents/poppy.webp', tone: '#f04e6e', alt: 'Poppy, the marketing agent', say: 'This week&rsquo;s posts are ready. Shall I go ahead?' },
     },
     {
       type: 'cards', tone: 'wash', kicker: 'Who it is for', h2: 'For your business, your job or your home.', cols: 3,

@@ -282,7 +282,11 @@ const SECTION = {
       `<div class="stats${(s.items || []).length === 4 ? ' cols-4' : ''}${s.h2 ? ' mt-lg' : ''}">${items}</div></div></section>`;
   },
   split(s) {
-    const visual = s.art ? `<div class="ai-art-panel reveal">${art(s.art)}</div>` :
+    /* An agent's face on its dotted cloud, when the section names one. */
+    const visual = s.image ? `<div class="sp-fig reveal"><figure class="flo-fig"${s.image.tone ? ` style="--tone:${esc(s.image.tone)}"` : ''}>` +
+      `<img src="${esc(s.image.src)}" alt="${esc(s.image.alt || '')}" width="420" height="420" loading="lazy" decoding="async">` +
+      (s.image.say ? `<figcaption class="flo-say">${rich(s.image.say)}</figcaption>` : '') + '</figure></div>' :
+      s.art ? `<div class="ai-art-panel reveal">${art(s.art)}</div>` :
       s.mock ? `<div class="panel-visual reveal">${rich(s.mock)}</div>` : '';
     const copy = `<div class="reveal">` + (s.kicker ? `<span class="kicker">${rich(s.kicker)}</span>` : '') +
       (s.h2 ? `<h2>${rich(s.h2)}</h2>` : '') + (s.lede ? `<p class="lede mt-md">${rich(s.lede)}</p>` : '') +

@@ -272,3 +272,15 @@
   .cd-works .wk-item { font-size: 13.5px; padding: 8px 12px; }
 }
 :root[data-theme="dark"] .cd-works .wk-group, :root[data-theme="dark"] .cd-works .wk-item { border-color: var(--line); }
+
+/* ---------- the team picture: agents' faces on the cards ---------- */
+.ff-face { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--chip); }
+@media (max-width: 1100px) { .ff-face { width: 36px; height: 36px; } }
+/* An agent's face beside a block of text, on its dotted cloud. */
+.sp-fig { display: grid; place-items: center; }
+
+/* ---------- the header stays at the top of the screen on a desktop ---------- */
+/* The header sits in its own holder, so the holder is what has to stick. */
+@media (min-width: 901px) {
+  .cd-page #site-header { position: sticky; top: 0; z-index: 60; }
+}

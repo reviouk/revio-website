@@ -25,17 +25,31 @@ module.exports = function flow(s, SITE, u) {
   const ico = (k) => EXTRA[k] || icon(k);
   const f = (n) => Math.round(n * 10) / 10;
 
-  const node = (it, i) =>
-    `<li style="--y:${ROWS[i]};--i:${i}"><span class="ff-ic">${ico(it.icon)}</span>` +
+  /* Up to four cards sit on the fixed rows. A side with five spreads them evenly. */
+  const spread = (n, from, to) => Array.from({ length: n }, (_, i) => f(from + i * (to - from) / (n - 1)));
+  const rowsFor = (n) => (n <= 4 ? ROWS.slice(0, n) : spread(n, 70, 470));
+  const edgeFor = (n) => (n <= 4 ? EDGE.slice(0, n) : spread(n, -40, 40));
+  const incoming = (s.incoming || []).slice(0, 5), outgoing = (s.outgoing || []).slice(0, 5);
+  const rowsIn = rowsFor(incoming.length), rowsOut = rowsFor(outgoing.length);
+
+  /* A card shows an agent's small round face when it names one, else an icon. */
+  const pic = (it) => (it.face
+    ? `<img class="ff-face" src="/img/agents/${esc(it.face)}-s.webp" alt="" width="44" height="44" loading="lazy" decoding="async">`
+    : `<span class="ff-ic">${ico(it.icon)}</span>`);
+  const node = (rows) => (it, i) =>
+    `<li style="--y:${rows[i]};--i:${i}">${pic(it)}` +
     `<span class="ff-tx"><b>${rich(it.title)}</b><small>${rich(it.text)}</small></span></li>`;
 
   /* One curve per card. Left curves run card -> Flo, right curves Flo -> card,
      so the dots always travel in the direction the work does. */
   const curves = [];
-  ROWS.forEach((y, i) => {
-    const dy = EDGE[i], dx = Math.sqrt(HUB.r * HUB.r - dy * dy);
-    const lx = HUB.x - dx, rx = HUB.x + dx, hy = HUB.y + dy;
+  const meet = (dy) => { const dx = Math.sqrt(HUB.r * HUB.r - dy * dy); return { lx: HUB.x - dx, rx: HUB.x + dx, hy: HUB.y + dy }; };
+  rowsIn.forEach((y, i) => {
+    const { lx, hy } = meet(edgeFor(rowsIn.length)[i]);
     curves.push({ cls: 'in', i, d: `M${CARD},${y} C${f(CARD + 95)},${y} ${f(lx - 85)},${f(hy)} ${f(lx)},${f(hy)}` });
+  });
+  rowsOut.forEach((y, i) => {
+    const { rx, hy } = meet(edgeFor(rowsOut.length)[i]);
     curves.push({ cls: 'out', i, d: `M${f(rx)},${f(hy)} C${f(rx + 85)},${f(hy)} ${f(W - CARD - 95)},${y} ${W - CARD},${y}` });
   });
   const approveY = 492;
@@ -49,11 +63,11 @@ module.exports = function flow(s, SITE, u) {
     `<div class="ff mt-lg reveal" style="--hx:${pct(HUB.x, W)};--hy:${pct(HUB.y, H)};--hd:${pct(HUB.r * 2, W)};--ay:${pct(approveY, H)}">` +
     `<svg class="ff-lines" viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">${lines}` +
     `<circle class="ff-ring" cx="${HUB.x}" cy="${HUB.y}" r="${HUB.r + 10}"/></svg>` +
-    `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, your AI assistant" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>` +
+    `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, who leads your team" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>` +
     `<p class="ff-cap ff-cap-in">${rich(s.inTitle || 'Comes in')}</p>` +
-    `<ul class="ff-nodes ff-list-in">${(s.incoming || []).slice(0, 4).map(node).join('')}</ul>` +
+    `<ul class="ff-nodes ff-list-in">${incoming.map(node(rowsIn)).join('')}</ul>` +
     `<p class="ff-cap ff-cap-out">${rich(s.outTitle || 'Flo gets it done')}</p>` +
-    `<ul class="ff-nodes ff-list-out">${(s.outgoing || []).slice(0, 4).map(node).join('')}</ul>` +
+    `<ul class="ff-nodes ff-list-out">${outgoing.map(node(rowsOut)).join('')}</ul>` +
     (s.approve ? `<p class="ff-approve"><span class="ff-ic">${ico('phoneTick')}</span>${rich(s.approve)}</p>` : '') +
     `</div>` +
     (s.note ? `<p class="micro mt-md" style="text-align:center">${rich(s.note)}</p>` : '') +
