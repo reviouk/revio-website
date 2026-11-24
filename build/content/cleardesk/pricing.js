@@ -51,7 +51,7 @@ module.exports = {
         bundlesText: 'Each bundle opens when all of its agents are working.',
         includedTitle: 'Included with every agent',
         included: [
-          { icon: 'rocket', title: 'Set up by yourself', text: 'In a few minutes, with no call.' },
+          { icon: 'rocket', title: 'Set up by yourself', text: 'In a few minutes, on your phone or computer.' },
           { icon: 'shield', title: 'Asks before it acts', text: 'You choose how much each agent does alone.' },
           { icon: 'people', title: 'Add or remove agents', text: 'Change your team whenever you like.' },
           { icon: 'calendar', title: 'Three ways to pay', text: 'Monthly, every three months or yearly.' },
@@ -80,7 +80,7 @@ module.exports = {
       type: 'promise',
       stepsTitle: 'Up and running by yourself, in a few minutes.',
       steps: [
-        { title: 'Sign up', text: 'Create your login. Nobody needs to call you.' },
+        { title: 'Sign up', text: 'Create your login with your mobile number or email.' },
         { title: 'Tell Flo about your business', text: 'What you do, where you work and how you like to sound.' },
         { title: 'Switch on an agent', text: 'Pick the agent you want and pay for it by card.' },
         { title: 'Say yes', text: 'The agent shows you its work, and it goes out when you say yes.' },

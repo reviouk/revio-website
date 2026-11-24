@@ -32,7 +32,7 @@ module.exports = {
       "type": "intro",
       "narrow": true,
       "body": [
-        "There is no call and no setup fee. You pick an agent, pay by card and it appears on your page. Only the account owner can switch an agent on."
+        "There is no setup fee. You pick an agent, pay by card and it appears on your page. Only the account owner can switch an agent on."
       ]
     },
     {
