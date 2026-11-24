@@ -149,7 +149,7 @@ module.exports = {
         {
           "href": "/agents/marketing/",
           "icon": "spark",
-          "title": "Poppy: Marketing",
+          "title": "Poppy: Marketing manager",
           "text": "Plans and writes a week of social posts in your voice.",
           "meta": "See the agent"
         },

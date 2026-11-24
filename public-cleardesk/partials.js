@@ -436,7 +436,7 @@
   function cdFace(a) { return '<img class="cd-face" src="/img/agents/' + a[3] + '-s.webp" alt="" width="36" height="36" loading="lazy" decoding="async">'; }
   var CD_AGENTS = [
     ['/agents/flo/', 'Flo', 'Assistant', 'flo'],
-    ['/agents/marketing/', 'Poppy', 'Marketing', 'poppy'],
+    ['/agents/marketing/', 'Poppy', 'Marketing manager', 'poppy'],
     ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],
     ['/agents/website/', 'Paige', 'Website', 'paige'],
     ['/agents/search/', 'Finn', 'Search and AI answers', 'finn'],

@@ -29,7 +29,7 @@ module.exports = {
         { icon: 'mail', title: 'Your inbox and diary', text: 'Coming soon' },
       ],
       outgoing: [
-        { face: 'poppy', title: 'Poppy, marketing', text: 'A week of posts every Monday' },
+        { face: 'poppy', title: 'Poppy, marketing manager', text: 'A week of posts every Monday' },
         { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
         { face: 'paige', title: 'Paige, website', text: 'A website of up to five pages. Coming soon' },
         { face: 'finn', title: 'Finn, search', text: 'Found in search and AI answers. Coming soon' },
@@ -43,7 +43,7 @@ module.exports = {
       lede: 'Two agents are working today. The others are coming soon, and each card says which is which.',
       items: [
         { icon: 'phone', when: 'Working today', title: 'Flo, assistant', text: 'Answers your missed calls on the number you already have, takes the name, the job and the address, and texts you a summary. Soon it will look after your inbox and your diary too.', href: '/agents/flo/', meta: 'See Flo' },
-        { icon: 'spark', when: 'Working today', title: 'Poppy, marketing', text: 'Writes a week of social posts every Monday in your voice. Each one waits for your yes, then you copy it and post it.', href: '/agents/marketing/', meta: 'See Poppy' },
+        { icon: 'spark', when: 'Working today', title: 'Poppy, marketing manager', text: 'Writes a week of social posts every Monday in your voice. Each one waits for your yes, then you copy it and post it.', href: '/agents/marketing/', meta: 'See Poppy' },
         { icon: 'pound', when: 'Coming soon', title: 'Bill, accounts', text: 'Will send an invoice when you text it, then remind the customer at 7, 14 and 21 days.', href: '/agents/accounts/', meta: 'See the plan' },
         { icon: 'globe', when: 'Coming soon', title: 'Paige, website', text: 'Will build you a website of up to five pages on your own domain.', href: '/agents/website/', meta: 'See the plan' },
         { icon: 'search', when: 'Coming soon', title: 'Finn, search and AI answers', text: 'Will lay the groundwork so people can find you in local search and in AI answers. It promises no rankings.', href: '/agents/search/', meta: 'See the plan' },
@@ -77,13 +77,13 @@ module.exports = {
         'Read it, say yes, or ask for a change. If you would rather an agent did not ask, change its setting. If you have a question, there is a help chat, and a real person can be asked.',
       ],
       bullets: ['One list, on your phone', 'Say yes, or ask for a change', 'A help chat, and a real person if you need one'],
-      image: { src: '/img/agents/poppy.webp', tone: '#f04e6e', alt: 'Poppy, the marketing agent', say: 'This week&rsquo;s posts are ready. Shall I go ahead?' },
+      image: { src: '/img/agents/poppy.webp', tone: '#f04e6e', alt: 'Poppy, the marketing manager', say: 'This week&rsquo;s posts are ready. Shall I go ahead?' },
     },
     {
       type: 'cards', tone: 'wash', kicker: 'Who it is for', h2: 'For your business, your job or your home.', cols: 3,
       items: [
-        { icon: 'brief', title: 'For your business', text: 'All six agents suit a business: the phone, the posts, the invoices, the website and the paperwork.', bullets: ['Flo, assistant', 'Poppy, marketing', 'Bill, accounts', 'Paige, website', 'Finn, search and AI answers', 'Lex, legal'] },
-        { icon: 'people', title: 'For your job', text: 'Working for yourself or building a name in a job? These agents suit you.', bullets: ['Flo, assistant', 'Poppy, marketing', 'Lex, legal'] },
+        { icon: 'brief', title: 'For your business', text: 'All six agents suit a business: the phone, the posts, the invoices, the website and the paperwork.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Bill, accounts', 'Paige, website', 'Finn, search and AI answers', 'Lex, legal'] },
+        { icon: 'people', title: 'For your job', text: 'Working for yourself or building a name in a job? These agents suit you.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Lex, legal'] },
         { icon: 'book', title: 'For your home', text: 'Home life has admin too. Two agents suit it.', bullets: ['Flo, assistant', 'Lex, legal'] },
       ],
     },

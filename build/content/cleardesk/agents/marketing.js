@@ -12,15 +12,15 @@ module.exports = {
     "ai marketing for small business"
   ],
   "art": "clock",
-  "heroImage": { "src": "/img/agents/poppy.webp", "tone": "#f04e6e", "alt": "Poppy, the marketing agent", "say": "Hi, I&rsquo;m Poppy. This week&rsquo;s posts are ready." },
+  "heroImage": { "src": "/img/agents/poppy.webp", "tone": "#f04e6e", "alt": "Poppy, the marketing manager", "say": "Hi, I&rsquo;m Poppy. This week&rsquo;s posts are ready." },
   "crumbs": [
     {
       "label": "The agents",
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Poppy: Marketing",
-  "badge": "Poppy: Marketing",
+  "crumbLabel": "Poppy: Marketing manager",
+  "badge": "Poppy: Marketing manager",
   "h1": "A week of posts every Monday. <em class=\"mint\">Poppy writes them.</em>",
   "sub": "Poppy plans a week of social posts for you and writes them in your own voice, each with an idea for a photo. Every post waits for your yes. You can change the words or say no. Then you copy it and post. Short videos, and adverts for Facebook and Instagram, are coming soon.",
   "ctas": [
