@@ -132,7 +132,7 @@ function sitemap(root = PUBLIC, origin = SITE.ORIGIN, extraDisallow = '\nDisallo
   }
   /* Pages that have moved on the Over to Flo site: the old address sends the
      visitor on, and is left out of the sitemap. */
-  const CD_MOVED = { '/agents/phone-answering/': '/agents/flo/', '/agents/assistant/': '/agents/flo/' };
+  const CD_MOVED = { '/agents/phone-answering/': '/agents/flo/', '/agents/assistant/': '/agents/flo/', '/integrations/': '/#integrations' };
   for (const [from, to] of Object.entries(CD_MOVED)) {
     const dir = path.join(PUBLIC_CD, from.replace(/^\//, ''));
     fs.mkdirSync(dir, { recursive: true });

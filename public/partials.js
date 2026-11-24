@@ -443,7 +443,7 @@
     ['/agents/legal/', 'Lex', 'Legal', 'lex']
   ];
   /* A demo is a plain link, never the main button: people start by themselves. */
-  var CD_LINKS = [['/pricing/', 'Pricing'], ['/integrations/', 'Integrations'], ['/book/', 'Book a demo']];
+  var CD_LINKS = [['/pricing/', 'Pricing'], ['/book/', 'Book a demo']];
   /* Resources: address, name, a few words. Case studies join when there is a real one. */
   var CD_RES = [['/resources/help/', 'Help and guides', 'How to use My Flo'], ['/resources/blog/', 'Blog', 'Ideas for your business']];
   var CD_BOOK = '/book/';
@@ -508,12 +508,12 @@
     return '<footer class="cd-foot"><div class="wrap">' +
       '<div>' + cdLogo() +
       '<p>A team of AI agents you set up yourself, by LeadSignal. Pick the ones you need: calls answered, posts written, and more on the way. For your business, your job or your home.</p>' +
-      '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Every agent is automated and says so. Every price published.</span></div></div>' +
+      '</div>' +
       '<div><h4>Agents</h4><ul>' +
-      CD_AGENTS.map(function (a) { return '<li><a href="' + a[0] + '">' + a[1] + ', ' + a[2].toLowerCase() + '</a></li>'; }).join('') +
+      CD_AGENTS.map(function (a) { return '<li><a href="' + a[0] + '">' + a[1] + ', ' + a[2].charAt(0).toLowerCase() + a[2].slice(1) + '</a></li>'; }).join('') +
       '</ul></div>' +
       '<div><h4>Talk to us</h4><ul>' +
-      '<li><a href="/pricing/">Pricing</a></li><li><a href="/integrations/">Integrations</a></li>' +
+      '<li><a href="/pricing/">Pricing</a></li><li><a href="/#integrations">Works with</a></li>' +
       CD_RES.map(function (r) { return '<li><a href="' + r[0] + '">' + r[1] + '</a></li>'; }).join('') +
       '<li><a href="' + CD_BOOK + '">Book a demo</a></li>' +
       '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +

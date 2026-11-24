@@ -345,6 +345,21 @@ const SECTION = {
       `<div class="reveal">${ctaRow(s.ctas || [{ label: 'Book a meeting', href: SITE.BOOK_URL, style: 'mint' }])}</div>` +
       '</div></section>';
   },
+  /* What Over to Flo works with: rows of marks, each row under its own label. */
+  works(s) {
+    const MARKS = require('./blocks/marks');
+    const item = (it) => {
+      const pic = it.mark && MARKS[it.mark] ? `<svg class="wk-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="${MARKS[it.mark]}"/></svg>`
+        : it.icon ? `<span class="wk-ic">${icon(it.icon)}</span>` : '';
+      return `<li class="wk-item">${pic}<span>${rich(it.name)}</span></li>`;
+    };
+    const groups = (s.groups || []).map((g, i) =>
+      `<div class="wk-group reveal" style="--d:${i}"><span class="pr-badge ${g.live ? 'live' : 'soon'}">${rich(g.label)}</span>` +
+      `<ul class="wk-list">${(g.items || []).map(item).join('')}</ul></div>`).join('');
+    return `<section class="${secCls(s, 'cd-works')}"${s.id ? ` id="${s.id}"` : ''}><div class="wrap">` + head2(s, { center: true }) +
+      `<div class="wk-groups mt-lg">${groups}</div>` +
+      (s.note ? `<p class="micro mt-md center">${rich(s.note)}</p>` : '') + '</div></section>';
+  },
   logos(s) {
     const imgs = (s.items || []).map((l) => `<img src="${esc(l.src)}" alt="${esc(l.alt)}" loading="lazy" onerror="this.remove()">`).join('');
     return `<section class="ai-sec tight ai-logos"><div class="wrap"><span class="ai-logos-lab">${rich(s.label || 'Worked with')}</span>` +

@@ -256,3 +256,19 @@
 .rv-grid { max-width: 980px; margin: 30px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; text-align: center; }
 .rv-small { display: grid; gap: 8px; justify-items: center; }
 @media (max-width: 760px) { .rv-grid { grid-template-columns: 1fr; } }
+
+/* ---------- works with: rows of marks on the home page ---------- */
+.cd-works .wk-groups { display: grid; gap: 22px; max-width: 980px; margin-left: auto; margin-right: auto; }
+.cd-works .wk-group { background: var(--panel); border: 1px solid #ececf4; border-radius: 20px; padding: 22px 24px 24px; text-align: center; }
+.cd-works .wk-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; }
+.cd-works .wk-item { display: inline-flex; align-items: center; gap: 9px; padding: 9px 15px; border: 1px solid #ececf4; border-radius: 999px; background: var(--bg, #fff); font-family: var(--font-head); font-weight: 700; font-size: 14.5px; line-height: 1.2; color: var(--ink); }
+.cd-works .wk-mark { width: 20px; height: 20px; flex: none; fill: currentColor; }
+.cd-works .wk-ic { display: inline-flex; width: 20px; height: 20px; flex: none; color: var(--purple); }
+.cd-works .wk-ic svg { width: 20px; height: 20px; }
+/* Working today reads at full strength. Coming next sits back a little. */
+.cd-works .wk-group:not(:first-child) .wk-item { color: var(--muted); }
+@media (max-width: 640px) {
+  .cd-works .wk-group { padding: 18px 14px 20px; }
+  .cd-works .wk-item { font-size: 13.5px; padding: 8px 12px; }
+}
+:root[data-theme="dark"] .cd-works .wk-group, :root[data-theme="dark"] .cd-works .wk-item { border-color: var(--line); }

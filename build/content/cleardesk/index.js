@@ -79,12 +79,32 @@ module.exports = {
       art: 'network',
     },
     {
-      type: 'intro', tone: 'wash', kicker: 'Works with what you use', h2: 'Built to fit around what you already have.',
-      body: [
-        'Flo answers on the phone number you already have. Poppy writes posts for the social networks you use, and Flo can read your website to learn about you. More connections are on the way, and each is switched on when it is ready.',
-        'The integrations page lists what works today and what is coming next.',
+      type: 'works', id: 'integrations', tone: 'wash', kicker: 'Works with what you use', h2: 'Built to fit around what you already have.',
+      lede: 'Some connections work now. Others are coming, and each is switched on when it is ready.',
+      groups: [
+        { label: 'Working today', live: true, items: [
+          { icon: 'phone', name: 'Your phone number' },
+          { mark: 'facebook', name: 'Facebook' },
+          { mark: 'instagram', name: 'Instagram' },
+          { name: 'LinkedIn' },
+          { mark: 'google', name: 'Google Business Profile' },
+          { icon: 'globe', name: 'Your website' },
+        ] },
+        { label: 'Coming next', items: [
+          { mark: 'gmail', name: 'Gmail' },
+          { mark: 'googlecalendar', name: 'Google Calendar' },
+          { name: 'Microsoft email and calendar' },
+          { mark: 'xero', name: 'Xero' },
+          { mark: 'quickbooks', name: 'QuickBooks' },
+          { name: 'FreeAgent' },
+          { name: 'Sage' },
+          { mark: 'wordpress', name: 'WordPress' },
+          { name: 'Wix' },
+          { mark: 'squarespace', name: 'Squarespace' },
+          { mark: 'shopify', name: 'Shopify' },
+        ] },
       ],
-      ctas: [{ label: 'See the integrations', href: '/integrations/', style: 'ghost' }],
+      note: 'Today Poppy writes your posts and you copy them to your social pages. Posting by itself is coming, one network at a time.',
     },
     {
       type: 'faq', kicker: 'Straight answers', h2: 'Questions people ask before they start.',
