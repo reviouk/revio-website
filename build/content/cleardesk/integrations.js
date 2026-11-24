@@ -47,7 +47,7 @@ module.exports = {
         { title: 'Sign up', text: 'You create your account and set it up yourself.' },
         { title: 'Tell Flo about you, once', text: 'Flo can read your website. Every agent uses what it learns.' },
         { title: 'Pick an agent', text: 'Choose one at a time. Each agent uses the connections it needs.' },
-        { title: 'Connect what it needs', text: 'For phone answering, that is forwarding your missed calls. Other connections will be added here as they are ready.' },
+        { title: 'Connect what it needs', text: 'For Flo, that is forwarding your missed calls. Other connections will be added here as they are ready.' },
       ],
     },
     {

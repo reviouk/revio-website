@@ -90,7 +90,7 @@ module.exports = {
       "kicker": "Where Over to Flo fits",
       "h2": "When you cannot pick up.",
       "body": [
-        "<a href=\"/agents/phone-answering/\">Flo</a> is the Over to Flo agent for missed calls. It answers the calls you cannot take, and then texts you a summary so you can ring back with everything you need."
+        "<a href=\"/agents/flo/\">Flo</a> is the Over to Flo agent for missed calls. It answers the calls you cannot take, and then texts you a summary so you can ring back with everything you need."
       ]
     },
     {
@@ -113,10 +113,10 @@ module.exports = {
           "meta": "Read the post"
         },
         {
-          "href": "/agents/phone-answering/",
+          "href": "/agents/flo/",
           "icon": "phone",
-          "title": "Flo: phone answering",
-          "text": "Answers calls you cannot take and texts you a summary.",
+          "title": "Flo: Assistant",
+          "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }
       ]

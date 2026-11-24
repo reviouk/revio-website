@@ -153,10 +153,10 @@ module.exports = {
           "meta": "See the agent"
         },
         {
-          "href": "/agents/phone-answering/",
+          "href": "/agents/flo/",
           "icon": "phone",
-          "title": "Flo: Phone answering",
-          "text": "Answers calls you cannot take and texts you a summary.",
+          "title": "Flo: Assistant",
+          "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }
       ]

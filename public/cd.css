@@ -6,7 +6,10 @@
 .cd-logo { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
 .cd-logo .cd-mark { width: 44px; height: 44px; flex: none; }
 .cd-logo .cd-word { display: flex; align-items: baseline; white-space: nowrap; font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; font-weight: 900; font-size: 21px; line-height: 1; letter-spacing: .2px; text-transform: uppercase; color: var(--ink); }
-.cd-logo .cd-word span + span { color: var(--purple); margin-left: .28em; }
+/* OVER and FLO carry the name in purple. TO sits between them, lighter and in ink. */
+.cd-logo .cd-word span { color: var(--purple); }
+.cd-logo .cd-word span + span { margin-left: .28em; }
+.cd-logo .cd-word .cd-to { color: var(--ink); font-weight: 500; }
 .cd-logo .cd-text { display: flex; flex-direction: column; gap: 5px; }
 .cd-logo .cd-strap { font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; font-weight: 700; font-size: 8.5px; line-height: 1; letter-spacing: .21em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .cd-logo .cd-word sup { font-size: 8px; letter-spacing: 0; margin-left: 1px; vertical-align: top; position: relative; top: -1px; }

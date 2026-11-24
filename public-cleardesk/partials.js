@@ -435,8 +435,7 @@
   /* The agents, in the order the app lists them: address, name, job, face. */
   function cdFace(a) { return '<img class="cd-face" src="/img/agents/' + a[3] + '-s.webp" alt="" width="36" height="36" loading="lazy" decoding="async">'; }
   var CD_AGENTS = [
-    ['/agents/phone-answering/', 'Flo', 'Phone answering', 'flo'],
-    ['/agents/assistant/', 'Flo', 'Assistant', 'flo'],
+    ['/agents/flo/', 'Flo', 'Assistant', 'flo'],
     ['/agents/marketing/', 'Poppy', 'Marketing', 'poppy'],
     ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],
     ['/agents/website/', 'Paige', 'Website', 'paige'],
@@ -455,7 +454,7 @@
 
   function cdLogo() {
     return '<a class="cd-logo" href="/" aria-label="Over to Flo, home">' + CD_MARK +
-      '<span class="cd-text"><span class="cd-word"><span>Over to</span><span>Flo</span></span>' +
+      '<span class="cd-text"><span class="cd-word"><span>Over</span><span class="cd-to">to</span><span>Flo</span></span>' +
       '<span class="cd-strap">Your AI employees</span></span></a>';
   }
 

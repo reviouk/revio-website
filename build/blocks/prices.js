@@ -23,8 +23,8 @@ module.exports = function prices(s, SITE, u) {
     return `<div class="${cls}" data-k="${esc(key)}"><div class="pr-amt-line"><span class="pr-amt">${cur.sym}${fmt(pay(m, term))}</span> <span class="pr-per">${term.per}</span></div><div class="pr-eq">${eq(m, term)}</div></div>`;
   };
 
-  /* A small round face. Both Flo agents share Flo's face. */
-  const FACE = { flo_phone: 'flo', flo_assistant: 'flo' };
+  /* A small round face. Poppy with video shares Poppy's face. */
+  const FACE = { poppy_video: 'poppy' };
   const face = (k, size) => `<img class="cd-face" src="/img/agents/${esc(FACE[k] || k)}-s.webp" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">`;
 
   const rows = d.agents.map((a, i) => {

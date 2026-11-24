@@ -147,17 +147,17 @@ module.exports = {
           "meta": "See the agent"
         },
         {
-          "href": "/agents/assistant/",
-          "icon": "mail",
-          "title": "Flo: Assistant",
-          "text": "Sorts the inbox, drafts replies and keeps the diary. Coming soon.",
+          "href": "/agents/marketing/",
+          "icon": "spark",
+          "title": "Poppy: Marketing",
+          "text": "Plans and writes a week of social posts in your voice.",
           "meta": "See the agent"
         },
         {
-          "href": "/agents/phone-answering/",
+          "href": "/agents/flo/",
           "icon": "phone",
-          "title": "Flo: Phone answering",
-          "text": "Answers calls you cannot take and texts you a summary.",
+          "title": "Flo: Assistant",
+          "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }
       ]

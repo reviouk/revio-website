@@ -130,6 +130,17 @@ function sitemap(root = PUBLIC, origin = SITE.ORIGIN, extraDisallow = '\nDisallo
     const src = path.join(PUBLIC, rel);
     if (fs.existsSync(src)) fs.cpSync(src, path.join(PUBLIC_CD, rel), { recursive: true });
   }
+  /* Pages that have moved on the Over to Flo site: the old address sends the
+     visitor on, and is left out of the sitemap. */
+  const CD_MOVED = { '/agents/phone-answering/': '/agents/flo/', '/agents/assistant/': '/agents/flo/' };
+  for (const [from, to] of Object.entries(CD_MOVED)) {
+    const dir = path.join(PUBLIC_CD, from.replace(/^\//, ''));
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), '<!doctype html><html lang="en-GB"><head><meta charset="utf-8">' +
+      '<title>This page has moved | Over to Flo</title><meta name="robots" content="noindex">' +
+      '<link rel="canonical" href="' + SITE.CLEARDESK.ORIGIN + to + '"><meta http-equiv="refresh" content="0; url=' + to + '">' +
+      '</head><body><p><a href="' + to + '">This page has moved. Carry on to the new page.</a></p></body></html>\n');
+  }
   const ncd = sitemap(PUBLIC_CD, SITE.CLEARDESK.ORIGIN, '');
   console.log(`\n${files.length} pages built, ${bad} with lint notes, sitemap has ${n} urls, cleardesk ${ncd}`);
 })();

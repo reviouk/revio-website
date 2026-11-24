@@ -22,7 +22,7 @@ module.exports = {
   "crumbLabel": "Poppy: Marketing",
   "badge": "Poppy: Marketing",
   "h1": "A week of posts every Monday. <em class=\"mint\">Poppy writes them.</em>",
-  "sub": "Poppy plans a week of social posts for you and writes them in your own voice, each with an idea for a photo. Every post waits for your yes. You can change the words or say no. Then you copy it and post.",
+  "sub": "Poppy plans a week of social posts for you and writes them in your own voice, each with an idea for a photo. Every post waits for your yes. You can change the words or say no. Then you copy it and post. Short videos, and adverts for Facebook and Instagram, are coming soon.",
   "ctas": [
     {
       "label": "Get started",
@@ -76,6 +76,30 @@ module.exports = {
           "icon": "shield",
           "title": "Keeps to the facts",
           "text": "Poppy never invents prices, offers, reviews or facts. It uses what you have told it."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "kicker": "Coming soon",
+      "h2": "Coming soon to Poppy.",
+      "lede": "Poppy is getting ready to do more of your marketing. Each of these will wait for your yes, like every post.",
+      "cols": 3,
+      "items": [
+        {
+          "icon": "rocket",
+          "title": "Short videos",
+          "text": "Poppy will make short videos to go with your posts. Poppy with video will include 8 videos a month."
+        },
+        {
+          "icon": "spark",
+          "title": "Adverts for Facebook and Instagram",
+          "text": "Poppy will write the words for an advert and suggest the picture. You place it in your own advert account."
+        },
+        {
+          "icon": "globe",
+          "title": "Posting for you",
+          "text": "Poppy will post an approved post by itself, one network at a time."
         }
       ]
     },
@@ -164,10 +188,10 @@ module.exports = {
           "meta": "See the agent"
         },
         {
-          "href": "/agents/phone-answering/",
+          "href": "/agents/flo/",
           "icon": "phone",
-          "title": "Flo: Phone answering",
-          "text": "Answers calls you cannot take and texts you a summary.",
+          "title": "Flo: Assistant",
+          "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }
       ]
@@ -185,6 +209,10 @@ module.exports = {
         {
           "q": "Will Poppy post for me?",
           "a": "Not yet. Today approved posts are ready to copy and post to Facebook, Instagram, LinkedIn or Google Business Profile. Posting by itself is coming later, one network at a time."
+        },
+        {
+          "q": "Does Poppy make videos or adverts?",
+          "a": "Not yet. Short videos are coming soon with Poppy with video, which will include 8 videos a month. Poppy will also write adverts for Facebook and Instagram, for you to place in your own advert account."
         },
         {
           "q": "Will it make things up?",
