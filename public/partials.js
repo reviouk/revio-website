@@ -456,7 +456,7 @@
   function cdLogo() {
     return '<a class="cd-logo" href="/" aria-label="Over to Flo, home">' + CD_MARK +
       '<span class="cd-text"><span class="cd-word"><span>Over to</span><span>Flo</span></span>' +
-      '<span class="cd-strap">Your AI assistant</span></span></a>';
+      '<span class="cd-strap">Your AI employees</span></span></a>';
   }
 
   function cdHeaderHTML(page) {
