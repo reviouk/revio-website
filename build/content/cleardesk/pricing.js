@@ -5,8 +5,9 @@
 /* Sign-up is switched off for now, so Get started leads to the demo page.
    Put the My Flo address (https://app.overtoflo.ai/my/) back when sign-up opens. */
 const START = '/book/';
-/* Every bundle holds all six agents (Rob, 24 Nov 2026). They differ by use. */
-const ALL_FACES = ['flo', 'poppy', 'bill', 'paige', 'finn', 'lex'];
+/* Every bundle holds every agent (Rob, 24 Nov 2026). They differ by use.
+   Nine since Sal, Rev and Dot were added; bundle prices were agreed for six. */
+const ALL_FACES = ['flo', 'poppy', 'sal', 'bill', 'rev', 'paige', 'finn', 'dot', 'lex'];
 module.exports = {
   slug: 'cleardesk/pricing',
   meetingRows: false,
@@ -44,13 +45,16 @@ module.exports = {
           { key: 'flo', name: 'Flo, assistant', href: '/agents/flo/', status: 'live', text: 'Answers your missed calls and texts you a summary, with 100 minutes of calls a month. Soon it will look after your inbox and your diary too, at the same price.', price: { gbp: 49, usd: 65, eur: 57 } },
           { key: 'poppy', name: 'Poppy, marketing manager', href: '/agents/marketing/', status: 'live', text: 'Writes a week of social posts every Monday in your voice.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'poppy_video', name: 'Poppy, marketing manager with video', href: '/agents/marketing/', status: 'soon', text: 'Everything Poppy does, and it will make 8 short videos a month for your posts.', price: { gbp: 49, usd: 65, eur: 57 } },
+          { key: 'sal', name: 'Sal, sales manager', href: '/agents/sales/', status: 'soon', text: 'Will write your quotes and follow-ups, and help you win the job.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'bill', name: 'Bill, accounts', href: '/agents/accounts/', status: 'soon', text: 'Will send an invoice when you text it, then remind the customer.', price: { gbp: 19, usd: 25, eur: 22 } },
-          { key: 'finn', name: 'Finn, search and AI answers', href: '/agents/search/', status: 'soon', text: 'Will lay the groundwork so people can find you in local search and in AI answers.', price: { gbp: 19, usd: 25, eur: 22 } },
+          { key: 'rev', name: 'Rev, revenue operations', href: '/agents/revops/', status: 'soon', text: 'Will keep track of every enquiry and quote so you can see where the money is.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'paige', name: 'Paige, website', href: '/agents/website/', status: 'soon', text: 'Will build you a website of up to five pages on your own domain.', price: { gbp: 15, usd: 19, eur: 18 } },
+          { key: 'finn', name: 'Finn, SEO specialist', href: '/agents/search/', status: 'soon', text: 'Will check your website every week, fix what it finds and show which searches bring people to you.', price: { gbp: 19, usd: 25, eur: 22 } },
+          { key: 'dot', name: 'Dot, data analyst', href: '/agents/data/', status: 'soon', text: 'Will tell you what visitors do on your website, with a plain report every Monday.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'lex', name: 'Lex, legal', href: '/agents/legal/', status: 'soon', text: 'Will draft simple agreements and explain contracts in plain English.', price: { gbp: 15, usd: 19, eur: 18 } },
         ],
         bundlesTitle: 'Bundles: the whole team in every one',
-        bundlesText: 'Every bundle includes all six agents. They differ by how much you use: the minutes of calls Flo answers and the texts your agents send to your customers. Each bundle opens when all of its agents are working.',
+        bundlesText: 'Every bundle includes all nine agents. They differ by how much you use: the minutes of calls Flo answers and the texts your agents send to your customers. Each bundle opens when all of its agents are working.',
         includedTitle: 'Included with every agent',
         included: [
           { icon: 'rocket', title: 'Set up by yourself', text: 'In a few minutes, on your phone or computer.' },
@@ -63,9 +67,9 @@ module.exports = {
         singleTitle: 'Or take one agent on its own.',
         singleText: 'Two agents are working today. The others are coming soon, and each row says which is which.',
         bundles: [
-          { key: 'solo', name: 'Solo', faces: ALL_FACES, text: 'The whole team, for lighter use.', includes: ['All six agents', '100 minutes of calls a month', '50 texts to your customers a month'], note: 'Opens when its agents are working.', price: { gbp: 59, usd: 79, eur: 69 } },
-          { key: 'team', name: 'Team', featured: true, faces: ALL_FACES, text: 'The whole team, with more calls and texts.', includes: ['All six agents', '200 minutes of calls a month', '150 texts to your customers a month', 'Poppy&rsquo;s videos can be added'], note: 'Opens when its agents are working.', price: { gbp: 89, usd: 119, eur: 105 } },
-          { key: 'business', name: 'Business', faces: ALL_FACES, text: 'The whole team, for a busy business.', includes: ['All six agents', '300 minutes of calls a month', '400 texts to your customers a month', 'Poppy&rsquo;s videos can be added'], note: 'Opens when its agents are working.', price: { gbp: 119, usd: 155, eur: 139 } },
+          { key: 'solo', name: 'Solo', faces: ALL_FACES, text: 'The whole team, for lighter use.', includes: ['All nine agents', '100 minutes of calls a month', '50 texts to your customers a month'], note: 'Opens when its agents are working.', price: { gbp: 59, usd: 79, eur: 69 } },
+          { key: 'team', name: 'Team', featured: true, faces: ALL_FACES, text: 'The whole team, with more calls and texts.', includes: ['All nine agents', '200 minutes of calls a month', '150 texts to your customers a month', 'Poppy&rsquo;s videos can be added'], note: 'Opens when its agents are working.', price: { gbp: 89, usd: 119, eur: 105 } },
+          { key: 'business', name: 'Business', faces: ALL_FACES, text: 'The whole team, for a busy business.', includes: ['All nine agents', '300 minutes of calls a month', '400 texts to your customers a month', 'Poppy&rsquo;s videos can be added'], note: 'Opens when its agents are working.', price: { gbp: 119, usd: 155, eur: 139 } },
         ],
         extraLabel: 'Extra phone minutes',
         extraPer: 'for each extra 100 minutes',
@@ -113,7 +117,7 @@ module.exports = {
         { q: 'How do the three ways to pay work?', a: 'Monthly is the listed price, paid each month. Every three months is one payment that is 10% less than three monthly payments. Yearly is one payment for ten months, and you use all twelve. Use the switch at the top of the prices to see every amount.' },
         { q: 'What happens at renewal?', a: 'A renewal costs the same as your first payment, whichever way you pay.' },
         { q: 'What are the phone minutes?', a: 'They are the minutes of calls that Flo answers for you each month. Flo includes 100 minutes a month. If you need more, you can add extra minutes in blocks of 100. The price for each block is shown under the bundles.' },
-        { q: 'What is the difference between the bundles?', a: 'Every bundle includes all six agents. They differ by use: the minutes of calls Flo answers each month, and the texts your agents send to your customers, such as an invoice reminder from Bill. Poppy&rsquo;s videos can be added to Team and Business.' },
+        { q: 'What is the difference between the bundles?', a: 'Every bundle includes all nine agents. They differ by use: the minutes of calls Flo answers each month, and the texts your agents send to your customers, such as an invoice reminder from Bill. Poppy&rsquo;s videos can be added to Team and Business.' },
         { q: 'Can I change my agents later?', a: 'Yes. You can add an agent or remove one whenever you like. Agents marked "Coming soon" open when they are working, and the bundles open when all of their agents are working.' },
         { q: 'Can I cancel?', a: 'Yes. You can cancel any time.' },
       ],

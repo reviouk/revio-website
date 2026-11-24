@@ -139,24 +139,24 @@ module.exports = {
       "h2": "Every agent uses what Flo knows about you.",
       "items": [
         {
+          "href": "/agents/sales/",
+          "icon": "handshake",
+          "title": "Sal: Sales manager",
+          "text": "Writes quotes and follow-ups to win the job. Coming soon.",
+          "meta": "See the agent"
+        },
+        {
+          "href": "/agents/revops/",
+          "icon": "chart",
+          "title": "Rev: Revenue operations",
+          "text": "Shows where your money is and what is likely next. Coming soon.",
+          "meta": "See the agent"
+        },
+        {
           "href": "/agents/flo/",
           "icon": "phone",
           "title": "Flo: Assistant",
           "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
-          "meta": "See the agent"
-        },
-        {
-          "href": "/agents/marketing/",
-          "icon": "spark",
-          "title": "Poppy: Marketing manager",
-          "text": "Plans and writes a week of social posts in your voice.",
-          "meta": "See the agent"
-        },
-        {
-          "href": "/agents/legal/",
-          "icon": "doc",
-          "title": "Lex: Legal",
-          "text": "Drafts simple agreements and explains contracts. Coming soon.",
           "meta": "See the agent"
         }
       ]

@@ -437,9 +437,12 @@
   var CD_AGENTS = [
     ['/agents/flo/', 'Flo', 'Assistant', 'flo'],
     ['/agents/marketing/', 'Poppy', 'Marketing manager', 'poppy'],
+    ['/agents/sales/', 'Sal', 'Sales manager', 'sal'],
     ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],
+    ['/agents/revops/', 'Rev', 'Revenue operations', 'rev'],
     ['/agents/website/', 'Paige', 'Website', 'paige'],
-    ['/agents/search/', 'Finn', 'Search and AI answers', 'finn'],
+    ['/agents/search/', 'Finn', 'SEO specialist', 'finn'],
+    ['/agents/data/', 'Dot', 'Data analyst', 'dot'],
     ['/agents/legal/', 'Lex', 'Legal', 'lex']
   ];
   /* A demo is a plain link, never the main button: people start by themselves. */

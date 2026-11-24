@@ -176,8 +176,8 @@ module.exports = {
         {
           "href": "/agents/search/",
           "icon": "search",
-          "title": "Finn: Search and AI answers",
-          "text": "Helps local customers find you. Coming soon.",
+          "title": "Finn: SEO specialist",
+          "text": "Checks your website each week and helps people find you. Coming soon.",
           "meta": "See the agent"
         },
         {

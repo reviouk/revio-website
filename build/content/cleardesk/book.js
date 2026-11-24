@@ -26,7 +26,7 @@ module.exports = {
       type: 'cards', kicker: 'In the demo', h2: 'What we will show you.', cols: 3,
       items: [
         { icon: 'phone', title: 'The agents working today', text: 'Flo answering a call, and Poppy writing a week of posts in your own voice.' },
-        { icon: 'clock', title: 'What is coming', text: 'Bill, Paige, Finn and Lex, and what is next for Flo and Poppy.' },
+        { icon: 'clock', title: 'What is coming', text: 'Sal, Bill, Rev, Paige, Finn, Dot and Lex, and what is next for Flo and Poppy.' },
         { icon: 'tick', title: 'You stay in charge', text: 'How "How much it does alone" and "Waiting for your yes" work on your phone.' },
       ],
     },

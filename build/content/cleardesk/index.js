@@ -32,7 +32,7 @@ module.exports = {
         { face: 'poppy', title: 'Poppy, marketing manager', text: 'A week of posts every Monday' },
         { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
         { face: 'paige', title: 'Paige, website', text: 'A website of up to five pages. Coming soon' },
-        { face: 'finn', title: 'Finn, search', text: 'Found in search and AI answers. Coming soon' },
+        { face: 'finn', title: 'Finn, SEO specialist', text: 'Found in search and AI answers. Coming soon' },
         { face: 'lex', title: 'Lex, legal', text: 'Simple agreements drafted. Coming soon' },
       ],
       approve: 'You say yes from your phone',
@@ -44,9 +44,12 @@ module.exports = {
       items: [
         { icon: 'phone', when: 'Working today', title: 'Flo, assistant', text: 'Answers your missed calls on the number you already have, takes the name, the job and the address, and texts you a summary. Soon it will look after your inbox and your diary too.', href: '/agents/flo/', meta: 'See Flo' },
         { icon: 'spark', when: 'Working today', title: 'Poppy, marketing manager', text: 'Writes a week of social posts every Monday in your voice. Each one waits for your yes, then you copy it and post it.', href: '/agents/marketing/', meta: 'See Poppy' },
+        { icon: 'handshake', when: 'Coming soon', title: 'Sal, sales manager', text: 'Will write your quotes and follow-ups, and help you win the job.', href: '/agents/sales/', meta: 'See the plan' },
         { icon: 'pound', when: 'Coming soon', title: 'Bill, accounts', text: 'Will send an invoice when you text it, then remind the customer at 7, 14 and 21 days.', href: '/agents/accounts/', meta: 'See the plan' },
+        { icon: 'chart', when: 'Coming soon', title: 'Rev, revenue operations', text: 'Will keep track of every enquiry and quote so you can see where the money is.', href: '/agents/revops/', meta: 'See the plan' },
         { icon: 'globe', when: 'Coming soon', title: 'Paige, website', text: 'Will build you a website of up to five pages on your own domain.', href: '/agents/website/', meta: 'See the plan' },
-        { icon: 'search', when: 'Coming soon', title: 'Finn, search and AI answers', text: 'Will lay the groundwork so people can find you in local search and in AI answers. It promises no rankings.', href: '/agents/search/', meta: 'See the plan' },
+        { icon: 'search', when: 'Coming soon', title: 'Finn, SEO specialist', text: 'Will check your website every week, fix what it finds and show which searches bring people to you. It promises no rankings.', href: '/agents/search/', meta: 'See the plan' },
+        { icon: 'data', when: 'Coming soon', title: 'Dot, data analyst', text: 'Will tell you what visitors do on your website, with a plain report every Monday.', href: '/agents/data/', meta: 'See the plan' },
         { icon: 'doc', when: 'Coming soon', title: 'Lex, legal', text: 'Will draft simple agreements and explain contracts in plain English. Lex is not a solicitor.', href: '/agents/legal/', meta: 'See the plan' },
       ],
     },
@@ -82,8 +85,8 @@ module.exports = {
     {
       type: 'cards', tone: 'wash', kicker: 'Who it is for', h2: 'For your business, your job or your home.', cols: 3,
       items: [
-        { icon: 'brief', title: 'For your business', text: 'All six agents suit a business: the phone, the posts, the invoices, the website and the paperwork.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Bill, accounts', 'Paige, website', 'Finn, search and AI answers', 'Lex, legal'] },
-        { icon: 'people', title: 'For your job', text: 'Working for yourself or building a name in a job? These agents suit you.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Lex, legal'] },
+        { icon: 'brief', title: 'For your business', text: 'All nine agents suit a business: the phone, the posts, the quotes, the invoices, the money, the website, the search, the visitors and the paperwork.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Sal, sales manager', 'Bill, accounts', 'Rev, revenue operations', 'Paige, website', 'Finn, SEO specialist', 'Dot, data analyst', 'Lex, legal'] },
+        { icon: 'people', title: 'For your job', text: 'Working for yourself or building a name in a job? These agents suit you.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Sal, sales manager', 'Lex, legal'] },
         { icon: 'book', title: 'For your home', text: 'Home life has admin too. Two agents suit it.', bullets: ['Flo, assistant', 'Lex, legal'] },
       ],
     },
@@ -132,7 +135,7 @@ module.exports = {
       items: [
         { q: 'What is Over to Flo?', a: 'Over to Flo is a team of AI agents. Each one takes a job off your hands, such as answering your missed calls or writing your social posts. You pick the agents you want, set them up yourself in a few minutes, and stay in charge from your phone.' },
         { q: 'Do I need to be technical?', a: 'No. You sign up, tell Flo about yourself once, and pick an agent. Flo can read your website so you do not have to type it all out. If you get stuck, there is a help chat, and a real person can be asked.' },
-        { q: 'Which agents work today?', a: 'Two work today. Flo answers your missed calls on your existing number and texts you a summary. Poppy writes a week of social posts every Monday in your voice. Bill, Paige, Finn and Lex are coming soon, and so is inbox and diary work for Flo.' },
+        { q: 'Which agents work today?', a: 'Two work today. Flo answers your missed calls on your existing number and texts you a summary. Poppy writes a week of social posts every Monday in your voice. Sal, Bill, Rev, Paige, Finn, Dot and Lex are coming soon, and so is inbox and diary work for Flo.' },
         { q: 'What does it cost?', a: 'Prices are on the <a href="/pricing/">pricing page</a>. There is no setup fee. You set it up yourself in a few minutes, and you can book a demo if you would like to talk to us first.' },
         { q: 'Can I stop whenever I want?', a: 'Yes. You can cancel any time. You can also switch an agent to "Asks me first" whenever you like, so it waits for your yes before it does anything.' },
         { q: 'Will an agent ever act without asking me?', a: 'Only if you choose that. Every agent has a setting called "How much it does alone", with three choices: "Asks me first", "Acts within my limits" and "Acts on its own". Anything that needs a yes waits under "Waiting for your yes" on your phone.' },

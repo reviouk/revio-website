@@ -141,15 +141,15 @@ module.exports = {
         {
           "href": "/agents/search/",
           "icon": "search",
-          "title": "Finn: Search and AI answers",
-          "text": "Helps local customers find you. Coming soon.",
+          "title": "Finn: SEO specialist",
+          "text": "Checks your website each week and helps people find you. Coming soon.",
           "meta": "See the agent"
         },
         {
-          "href": "/agents/marketing/",
-          "icon": "spark",
-          "title": "Poppy: Marketing manager",
-          "text": "Plans and writes a week of social posts in your voice.",
+          "href": "/agents/data/",
+          "icon": "data",
+          "title": "Dot: Data analyst",
+          "text": "Tells you what visitors do on your website. Coming soon.",
           "meta": "See the agent"
         },
         {

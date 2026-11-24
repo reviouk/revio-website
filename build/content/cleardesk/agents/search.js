@@ -1,28 +1,28 @@
-/* Over to Flo agent page. Draft 2026-11-23. */
+/* Over to Flo agent page. Draft 2026-11-24. */
 module.exports = {
   "slug": "cleardesk/agents/search",
   "meetingRows": false,
-  "title": "Finn: AI for Local Search and AI Answers | Over to Flo",
-  "description": "Coming soon: Finn checks your website and Google listing, finds what local customers search for, writes a monthly article and asks happy customers for a review.",
+  "title": "Finn: AI SEO Specialist for Small Business | Over to Flo",
+  "description": "Coming soon: Finn connects to your Google account, checks your website every week for problems, fixes what it finds and shows which searches bring people to you.",
   "keywords": [
+    "ai seo specialist small business",
+    "website seo check weekly",
+    "google search console setup help",
     "local seo small business",
-    "ai search visibility",
-    "google business profile help",
-    "ai answers for local business",
     "ask customers for reviews"
   ],
   "art": "chart",
-  "heroImage": { "src": "/img/agents/finn.webp", "tone": "#ff8a3d", "alt": "Finn, the search agent", "say": "Hi, I&rsquo;m Finn. Getting you found is my job." },
+  "heroImage": { "src": "/img/agents/finn.webp", "tone": "#ff8a3d", "alt": "Finn, the SEO agent", "say": "Hi, I&rsquo;m Finn. Getting you found is my job." },
   "crumbs": [
     {
       "label": "The agents",
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Finn: Search and AI answers",
-  "badge": "Coming soon: Finn, Search and AI answers",
-  "h1": "Easier to find. <em class=\"mint\">Finn does the groundwork.</em>",
-  "sub": "Finn is getting ready to check your website and your Google listing, find what local customers search for, write a monthly article and ask happy customers for a review. Tell us you are interested and we will let you know when it is ready.",
+  "crumbLabel": "Finn: SEO specialist",
+  "badge": "Coming soon: Finn, SEO specialist",
+  "h1": "Easier to find. <em class=\"mint\">Finn is your SEO specialist.</em>",
+  "sub": "Finn is getting ready to connect to your own Google account, check your website every week for problems and fix what it finds. It will also find what local customers search for, write a monthly article and ask happy customers for a review. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
     {
       "label": "Tell me when it is ready",
@@ -36,8 +36,8 @@ module.exports = {
     }
   ],
   "heroProof": [
-    "Checks your website and Google listing",
-    "Writes a monthly article",
+    "Checks your website every week",
+    "Shows which searches bring people to you",
     "Asks happy customers for a review"
   ],
   "sections": [
@@ -48,9 +48,29 @@ module.exports = {
       "cols": 2,
       "items": [
         {
-          "icon": "search",
-          "title": "Checks your website and listing",
-          "text": "Will check your website and your Google listing for what is missing or out of date."
+          "icon": "lock",
+          "title": "Connects to your Google account",
+          "text": "Will connect to your own Google account. You sign in with Google once. If you do not have one, Finn shows you how to make one with your own email address. Google asks you to make it yourself."
+        },
+        {
+          "icon": "globe",
+          "title": "Tells Google about your website",
+          "text": "Will send your sitemap to Google and prove to Google that the website is yours."
+        },
+        {
+          "icon": "audit",
+          "title": "Checks your website every week",
+          "text": "Will look for missing page titles and descriptions, pictures with no description, broken links and slow pictures."
+        },
+        {
+          "icon": "repair",
+          "title": "Fixes what it finds",
+          "text": "On a website Paige built, Finn will fix it for you. On any other website, Finn will give you the exact fix to make."
+        },
+        {
+          "icon": "chart",
+          "title": "Shows which searches bring people to you",
+          "text": "Will show the searches that bring people to you, from Google's own figures."
         },
         {
           "icon": "target",
@@ -65,7 +85,7 @@ module.exports = {
         {
           "icon": "handshake",
           "title": "Asks for reviews",
-          "text": "Will ask happy customers for a review after a job."
+          "text": "Will ask happy customers for a review after a job. It will also check your Google listing and help you be found in AI answers."
         }
       ]
     },
@@ -80,8 +100,12 @@ module.exports = {
           "text": "You set it up yourself. Flo can read your website."
         },
         {
-          "title": "Finn checks the basics",
-          "text": "It looks at your website and your Google listing."
+          "title": "Finn connects to Google",
+          "text": "You sign in with Google once. Finn sends your sitemap and proves the website is yours."
+        },
+        {
+          "title": "Finn checks your website each week",
+          "text": "It looks for problems and fixes them. On a website that Paige did not build, it gives you the exact fix to make."
         },
         {
           "title": "Finn does the work each month",
@@ -128,7 +152,8 @@ module.exports = {
           "title": "A good fit",
           "items": [
             "A business that serves a local area",
-            "A business with a website or Google listing that has been left alone"
+            "A business with a website or Google listing that has been left alone",
+            "A business that wants to see which searches bring people to it"
           ]
         }
       ]
@@ -146,17 +171,17 @@ module.exports = {
           "meta": "See the agent"
         },
         {
+          "href": "/agents/data/",
+          "icon": "data",
+          "title": "Dot: Data analyst",
+          "text": "Tells you what visitors do on your website. Coming soon.",
+          "meta": "See the agent"
+        },
+        {
           "href": "/agents/marketing/",
           "icon": "spark",
           "title": "Poppy: Marketing manager",
           "text": "Plans and writes a week of social posts in your voice.",
-          "meta": "See the agent"
-        },
-        {
-          "href": "/agents/flo/",
-          "icon": "phone",
-          "title": "Flo: Assistant",
-          "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }
       ]
@@ -173,15 +198,27 @@ module.exports = {
         },
         {
           "q": "Do I need to set anything up?",
-          "a": "When it is ready, yes, a few minutes of it, and you do it yourself. You sign up and tell Flo about your business once."
+          "a": "When it is ready, yes, a few minutes of it, and you do it yourself. You sign up, tell Flo about your business once and sign in with Google."
+        },
+        {
+          "q": "Do I need a Google account?",
+          "a": "Yes. If you do not have one, Finn shows you how to make one with your own email address. Google asks you to make it yourself."
+        },
+        {
+          "q": "Will it fix my website?",
+          "a": "On a website Paige built, Finn fixes what it finds. On any other website, Finn gives you the exact fix to make."
         },
         {
           "q": "Will it get me to the top of Google?",
-          "a": "Nobody can promise a ranking, and Finn does not. It does the work: checks, articles and review requests."
+          "a": "Nobody can promise a ranking, and Finn does not. It does the work: weekly checks, articles and review requests."
         },
         {
           "q": "Will an AI assistant recommend my business?",
           "a": "Nobody can promise that either. Finn does the work that helps your business be clear and easy to find."
+        },
+        {
+          "q": "How is it different from Dot?",
+          "a": "Finn looks at how Google ranks you and fixes the site. Dot shows what visitors do once they arrive."
         },
         {
           "q": "Can I stop it?",
