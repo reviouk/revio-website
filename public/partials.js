@@ -432,8 +432,26 @@
      and footer instead of the corporate ones: four links, one button, and no
      route back to revio.agency except the legal pages in the small print. */
   var CD_MARK = '<svg class="cd-mark" viewBox="0 0 48 48" role="img" aria-hidden="true"><rect x="3" y="3" width="42" height="42" rx="13" fill="#5862ff"/><rect class="cdm-track" x="8" y="15" width="32" height="18" rx="9" fill="#12c98b"/><g class="cdm-knob"><circle cx="31" cy="24" r="6.5" fill="#fff"/><path class="cdm-tick" d="M28 24.2l2.2 2.2 3.9-4.3" fill="none" stroke="#12c98b" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
-  var CD_LINKS = [['/#how', 'How it works'], ['/#packages', 'Packages'], ['/pricing/', 'Pricing']];
+  /* The agents, in the order the app lists them: address, name, job, face. */
+  function cdFace(a) { return '<img class="cd-face" src="/img/agents/' + a[3] + '-s.webp" alt="" width="36" height="36" loading="lazy" decoding="async">'; }
+  var CD_AGENTS = [
+    ['/agents/phone-answering/', 'Flo', 'Phone answering', 'flo'],
+    ['/agents/assistant/', 'Flo', 'Assistant', 'flo'],
+    ['/agents/marketing/', 'Poppy', 'Marketing', 'poppy'],
+    ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],
+    ['/agents/website/', 'Paige', 'Website', 'paige'],
+    ['/agents/search/', 'Finn', 'Search and AI answers', 'finn'],
+    ['/agents/legal/', 'Lex', 'Legal', 'lex']
+  ];
+  /* A demo is a plain link, never the main button: people start by themselves. */
+  var CD_LINKS = [['/pricing/', 'Pricing'], ['/integrations/', 'Integrations'], ['/book/', 'Book a demo']];
+  /* Resources: address, name, a few words. Case studies join when there is a real one. */
+  var CD_RES = [['/resources/help/', 'Help and guides', 'How to use My Flo'], ['/resources/blog/', 'Blog', 'Ideas for your business']];
   var CD_BOOK = '/book/';
+  var CD_APP = 'https://app.overtoflo.ai/my/';
+  /* Sign-up is switched off for now, so Get started leads to the demo page.
+     Set this to CD_APP when sign-up opens. */
+  var CD_START = CD_BOOK;
 
   function cdLogo() {
     return '<a class="cd-logo" href="/" aria-label="Over to Flo, home">' + CD_MARK +
@@ -446,9 +464,28 @@
       var cur = l[0] === page ? ' aria-current="page"' : '';
       return '<a href="' + l[0] + '"' + cur + '>' + l[1] + '</a>';
     }).join('');
+    var onAgent = page.indexOf('/agents/') === 0;
+    var agents = CD_AGENTS.map(function (a) {
+      var cur = a[0] === page ? ' aria-current="page"' : '';
+      return '<a href="' + a[0] + '"' + cur + '>' + cdFace(a) + '<strong>' + a[1] + '</strong><span>' + a[2] + '</span></a>';
+    }).join('');
+    var menu = '<div class="cd-menu"><button type="button" class="cd-menu-btn' + (onAgent ? ' on' : '') + '" id="cd-agents-btn" aria-expanded="false" aria-controls="cd-agents-panel">Agents' +
+      '<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>' +
+      '<div class="cd-menu-panel" id="cd-agents-panel" hidden>' + agents + '</div></div>';
+    var onRes = page.indexOf('/resources/') === 0;
+    var res = CD_RES.map(function (r) {
+      var cur = r[0] === page ? ' aria-current="page"' : '';
+      return '<a href="' + r[0] + '"' + cur + '><strong>' + r[1] + '</strong><span>' + r[2] + '</span></a>';
+    }).join('');
+    var resMenu = '<div class="cd-menu"><button type="button" class="cd-menu-btn' + (onRes ? ' on' : '') + '" id="cd-res-btn" aria-expanded="false" aria-controls="cd-res-panel">Resources' +
+      '<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg></button>' +
+      '<div class="cd-menu-panel" id="cd-res-panel" hidden>' + res + '</div></div>';
+    /* Resources sits before the demo link. */
+    links = links.replace('<a href="' + CD_BOOK + '"', resMenu + '<a href="' + CD_BOOK + '"');
     return '<div class="topwrap"><header class="topbar cd-topbar">' + cdLogo() +
-      '<span class="sp"></span><nav class="cd-nav" aria-label="Main">' + links + '</nav>' +
-      '<a class="btn btn-mint navtalk" href="' + CD_BOOK + '">Book a 20-minute call</a>' +
+      '<span class="sp"></span><nav class="cd-nav" aria-label="Main">' + menu + links +
+      '<a href="' + CD_APP + '">Log in</a></nav>' +
+      '<a class="btn btn-mint navtalk" href="' + CD_START + '">Get started</a>' +
       '<button class="themebtn" type="button" data-theme-toggle aria-label="Switch colour theme">' +
       '<svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5"/></svg>' +
       '<svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>' +
@@ -456,9 +493,14 @@
       '<button class="burger cd-burger" type="button" id="revio-burger" aria-label="Open menu" aria-expanded="false">' +
       '<i></i><i></i><i></i></button></header>' +
       '<nav class="drawer cd-drawer" id="revio-drawer" aria-label="Mobile">' +
+      '<span class="cd-drawer-h">Agents</span>' +
+      CD_AGENTS.map(function (a) { return '<a class="cd-drawer-agent" href="' + a[0] + '">' + cdFace(a) + a[1] + '<span>' + a[2] + '</span></a>'; }).join('') +
+      '<span class="cd-drawer-h">More</span>' +
       CD_LINKS.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('') +
-      '<a href="' + CD_BOOK + '">Book a call</a>' +
-      '<a class="btn btn-mint" href="' + CD_BOOK + '">Book a 20-minute call</a>' +
+      '<span class="cd-drawer-h">Resources</span>' +
+      CD_RES.map(function (r) { return '<a href="' + r[0] + '">' + r[1] + '</a>'; }).join('') +
+      '<a href="' + CD_APP + '">Log in</a>' +
+      '<a class="btn btn-mint" href="' + CD_START + '">Get started</a>' +
       '<button class="drawer-theme" type="button" data-theme-toggle>Switch light / dark</button>' +
       '</nav></div>';
   }
@@ -466,13 +508,15 @@
   function cdFooterHTML() {
     return '<footer class="cd-foot"><div class="wrap">' +
       '<div>' + cdLogo() +
-      '<p>Flo, an assistant set up for your business by LeadSignal. Phone answered, inbox sorted, invoices chased, jobs booked. For UK sole traders and businesses with up to forty staff.</p>' +
-      '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Flo is automated and says so. Every price published.</span></div></div>' +
-      '<div><h4>Packages</h4><ul>' +
-      '<li><a href="/solo/">Flo Solo</a></li><li><a href="/team/">Flo Team</a></li>' +
-      '<li><a href="/business/">Flo Business</a></li><li><a href="/pricing/">Every price</a></li></ul></div>' +
+      '<p>A team of AI agents you set up yourself, by LeadSignal. Pick the ones you need: calls answered, posts written, and more on the way. For your business, your job or your home.</p>' +
+      '<div class="cd-flo"><img src="/img/flo/flo.webp" alt="" width="44" height="44" loading="lazy"><span>Every agent is automated and says so. Every price published.</span></div></div>' +
+      '<div><h4>Agents</h4><ul>' +
+      CD_AGENTS.map(function (a) { return '<li><a href="' + a[0] + '">' + a[1] + ', ' + a[2].toLowerCase() + '</a></li>'; }).join('') +
+      '</ul></div>' +
       '<div><h4>Talk to us</h4><ul>' +
-      '<li><a href="' + CD_BOOK + '">Book a 20-minute call</a></li>' +
+      '<li><a href="/pricing/">Pricing</a></li><li><a href="/integrations/">Integrations</a></li>' +
+      CD_RES.map(function (r) { return '<li><a href="' + r[0] + '">' + r[1] + '</a></li>'; }).join('') +
+      '<li><a href="' + CD_BOOK + '">Book a demo</a></li>' +
       '<li><a href="mailto:grow@revio.agency">grow@revio.agency</a></li>' +
       '<li><span class="muted">Imperial Place, 4 Maxwell Rd, Borehamwood WD6 1JN</span></li></ul></div>' +
       '</div><div class="wrap cd-bot"><span>&copy; <span id="revio-yr">2026</span> Lead Signal AI Technologies Limited. Over to Flo is a LeadSignal product. Registered in England and Wales, company number 17361862. Registered office: 22 The Ridgeway, Flitwick, Bedford, MK45 1DH.</span>' +
@@ -514,6 +558,30 @@
         if (e.key === 'Escape' && drawer.classList.contains('open')) { setOpen(false); burger.focus(); }
       });
       window.addEventListener('resize', function () { if (drawer.classList.contains('open') && window.innerWidth > 1180) setOpen(false); });
+    }
+
+    /* The drop-down menus (Agents, Resources): each opens on a click and closes on
+       a click away, on Escape, when another opens and when a link in it is followed. */
+    var menus = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.cd-menu'), function (box) {
+      var btn = box.querySelector('.cd-menu-btn'), panel = box.querySelector('.cd-menu-panel');
+      if (!btn || !panel) return;
+      var set = function (open) { panel.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+      menus.push({ btn: btn, panel: panel, set: set });
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = panel.hidden;
+        menus.forEach(function (m) { if (m.panel !== panel) m.set(false); });
+        set(open);
+      });
+      panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    });
+    if (menus.length) {
+      document.addEventListener('click', function (e) { if (!e.target.closest('.cd-menu')) menus.forEach(function (m) { if (!m.panel.hidden) m.set(false); }); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        menus.forEach(function (m) { if (!m.panel.hidden) { m.set(false); m.btn.focus(); } });
+      });
     }
 
     /* Scheduled posts — cards carrying data-publish stay hidden until their

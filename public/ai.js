@@ -209,6 +209,61 @@
     });
   });
 
+  /* ---------- Over to Flo pricing: how you pay + currency ---------- */
+  var prRoot = document.getElementById('pr-root');
+  var prDataEl = document.getElementById('pr-data');
+  if (prRoot && prDataEl) {
+    var prData = null;
+    try { prData = JSON.parse(prDataEl.textContent); } catch (e) { prData = null; }
+    if (prData) {
+      var prFmt = function (n) {
+        var str = n % 1 === 0 ? String(n) : n.toFixed(2);
+        var parts = str.split('.');
+        return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',') + (parts[1] ? '.' + parts[1] : '');
+      };
+      var prPay = function (m, t) { return t === 'quarter' ? Math.floor(m * 27 / 10) : t === 'year' ? m * 10 : m; };
+      var prMonths = function (t) { return t === 'quarter' ? 3 : t === 'year' ? 12 : 1; };
+      var prById = function (list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; };
+      var prItems = {};
+      prData.agents.concat(prData.bundles).forEach(function (x) { prItems[x.key] = x; });
+      var prState = { term: prData.terms[0].id, cur: prData.currencies[0].id };
+      try {
+        var prT = localStorage.getItem('otf-pay'), prC = localStorage.getItem('otf-cur');
+        if (prT && prById(prData.terms, prT)) prState.term = prT;
+        if (prC && prById(prData.currencies, prC)) prState.cur = prC;
+      } catch (e) { /* storage blocked: keep the defaults */ }
+      var prRender = function (announce) {
+        var cur = prById(prData.currencies, prState.cur), term = prById(prData.terms, prState.term);
+        Array.prototype.forEach.call(prRoot.querySelectorAll('[data-k]'), function (el) {
+          var it = prItems[el.getAttribute('data-k')];
+          if (!it) return;
+          var p = prPay(it.price[cur.id], term.id);
+          el.querySelector('.pr-amt').textContent = cur.sym + prFmt(p);
+          el.querySelector('.pr-per').textContent = term.per;
+          el.querySelector('.pr-eq').textContent = term.id === 'month' ? '' : 'That is ' + cur.sym + prFmt(Math.round(p / prMonths(term.id) * 100) / 100) + ' a month.';
+        });
+        var ex = prRoot.querySelector('[data-extra]');
+        if (ex) ex.textContent = cur.sym + prFmt(prData.extra[cur.id]);
+        Array.prototype.forEach.call(prRoot.querySelectorAll('.pr-btn'), function (b) {
+          var on = b.getAttribute('data-term') ? b.getAttribute('data-term') === term.id : b.getAttribute('data-cur') === cur.id;
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        var status = document.getElementById('pr-status');
+        if (status) status.textContent = announce ? 'Showing prices in ' + cur.sym + ', paid ' + term.label.toLowerCase() + '.' : '';
+      };
+      prRoot.classList.add('pr-js');
+      prRoot.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('.pr-btn') : null;
+        if (!b) return;
+        if (b.getAttribute('data-term')) prState.term = b.getAttribute('data-term');
+        else if (b.getAttribute('data-cur')) prState.cur = b.getAttribute('data-cur');
+        try { localStorage.setItem('otf-pay', prState.term); localStorage.setItem('otf-cur', prState.cur); } catch (err) { /* storage blocked */ }
+        prRender(true);
+      });
+      prRender(false);
+    }
+  }
+
   /* ---------- booking embed ---------- */
   var book = document.querySelector('.ai-book[data-src]');
   if (book) {
