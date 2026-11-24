@@ -6,8 +6,8 @@
    Put the My Flo address (https://app.overtoflo.ai/my/) back when sign-up opens. */
 const START = '/book/';
 /* Every bundle holds every agent (Rob, 24 Nov 2026). They differ by use.
-   Nine since Sal, Rev and Dot were added; bundle prices were agreed for six. */
-const ALL_FACES = ['flo', 'poppy', 'sal', 'bill', 'rev', 'paige', 'finn', 'dot', 'lex'];
+   Nine since Sal, Rev and Tally were added; bundle prices were agreed for six. */
+const ALL_FACES = ['flo', 'poppy', 'sal', 'bill', 'rev', 'paige', 'finn', 'tally', 'lex'];
 module.exports = {
   slug: 'cleardesk/pricing',
   meetingRows: false,
@@ -50,7 +50,7 @@ module.exports = {
           { key: 'rev', name: 'Rev, revenue operations', href: '/agents/revops/', status: 'soon', text: 'Will keep track of every enquiry and quote so you can see where the money is.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'paige', name: 'Paige, website', href: '/agents/website/', status: 'soon', text: 'Will build you a website of up to five pages on your own domain.', price: { gbp: 15, usd: 19, eur: 18 } },
           { key: 'finn', name: 'Finn, SEO specialist', href: '/agents/search/', status: 'soon', text: 'Will check your website every week, fix what it finds and show which searches bring people to you.', price: { gbp: 19, usd: 25, eur: 22 } },
-          { key: 'dot', name: 'Dot, data analyst', href: '/agents/data/', status: 'soon', text: 'Will tell you what visitors do on your website, with a plain report every Monday.', price: { gbp: 19, usd: 25, eur: 22 } },
+          { key: 'tally', name: 'Tally, data analyst', href: '/agents/data/', status: 'soon', text: 'Will tell you what visitors do on your website, with a plain report every Monday.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'lex', name: 'Lex, legal', href: '/agents/legal/', status: 'soon', text: 'Will draft simple agreements and explain contracts in plain English.', price: { gbp: 15, usd: 19, eur: 18 } },
         ],
         bundlesTitle: 'Bundles: the whole team in every one',

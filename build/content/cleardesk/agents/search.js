@@ -173,7 +173,7 @@ module.exports = {
         {
           "href": "/agents/data/",
           "icon": "data",
-          "title": "Dot: Data analyst",
+          "title": "Tally: Data analyst",
           "text": "Tells you what visitors do on your website. Coming soon.",
           "meta": "See the agent"
         },
@@ -217,8 +217,8 @@ module.exports = {
           "a": "Nobody can promise that either. Finn does the work that helps your business be clear and easy to find."
         },
         {
-          "q": "How is it different from Dot?",
-          "a": "Finn looks at how Google ranks you and fixes the site. Dot shows what visitors do once they arrive."
+          "q": "How is it different from Tally?",
+          "a": "Finn looks at how Google ranks you and fixes the site. Tally shows what visitors do once they arrive."
         },
         {
           "q": "Can I stop it?",

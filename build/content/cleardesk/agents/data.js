@@ -2,8 +2,8 @@
 module.exports = {
   "slug": "cleardesk/agents/data",
   "meetingRows": false,
-  "title": "Dot: AI Data Analyst for Small Business | Over to Flo",
-  "description": "Coming soon: Dot sets up Google Analytics, then sends a plain report every Monday on who visits your website, where they come from and what they look at.",
+  "title": "Tally: AI Data Analyst for Small Business | Over to Flo",
+  "description": "Coming soon: Tally sets up Google Analytics, then sends a plain report every Monday on who visits your website, where they come from and what they look at.",
   "keywords": [
     "ai data analyst small business",
     "google analytics setup help",
@@ -12,17 +12,17 @@ module.exports = {
     "which pages lead to enquiries"
   ],
   "art": "chart",
-  "heroImage": { "src": "/img/agents/dot.webp", "tone": "#3a86d9", "alt": "Dot, the data agent", "say": "Hi, I&rsquo;m Dot. Knowing your visitors is my job." },
+  "heroImage": { "src": "/img/agents/tally.webp", "tone": "#3a86d9", "alt": "Tally, the data agent", "say": "Hi, I&rsquo;m Tally. Knowing your visitors is my job." },
   "crumbs": [
     {
       "label": "The agents",
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Dot: Data analyst",
-  "badge": "Coming soon: Dot, Data analyst",
-  "h1": "Know your visitors. <em class=\"mint\">Dot reports every Monday.</em>",
-  "sub": "Dot is getting ready to tell you what visitors do on your website: who comes, where they come from and what they look at. Tell us you are interested and we will let you know when it is ready.",
+  "crumbLabel": "Tally: Data analyst",
+  "badge": "Coming soon: Tally, Data analyst",
+  "h1": "Know your visitors. <em class=\"mint\">Tally reports every Monday.</em>",
+  "sub": "Tally is getting ready to tell you what visitors do on your website: who comes, where they come from and what they look at. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
     {
       "label": "Tell me when it is ready",
@@ -44,13 +44,13 @@ module.exports = {
     {
       "type": "cards",
       "kicker": "What it will do for you",
-      "h2": "What Dot will do for you.",
+      "h2": "What Tally will do for you.",
       "cols": 2,
       "items": [
         {
           "icon": "data",
           "title": "Sets up Google Analytics",
-          "text": "Will set it up for you. You sign in with Google once and agree to Google's terms. Dot sets up the rest."
+          "text": "Will set it up for you. You sign in with Google once and agree to Google's terms. Tally sets up the rest."
         },
         {
           "icon": "code",
@@ -90,12 +90,12 @@ module.exports = {
           "text": "You set it up yourself. Flo can read your website."
         },
         {
-          "title": "Dot sets up Google Analytics",
-          "text": "You sign in with Google once. Dot does the rest."
+          "title": "Tally sets up Google Analytics",
+          "text": "You sign in with Google once. Tally does the rest."
         },
         {
-          "title": "Dot adds the tracking code",
-          "text": "On a website Paige built, Dot adds it. On any other website, Dot shows you where to paste one short code."
+          "title": "Tally adds the tracking code",
+          "text": "On a website Paige built, Tally adds it. On any other website, Tally shows you where to paste one short code."
         },
         {
           "title": "You get a report every Monday",
@@ -106,8 +106,8 @@ module.exports = {
     {
       "type": "cards",
       "kicker": "You stay in charge",
-      "h2": "You decide how much Dot does alone.",
-      "lede": "Dot reports and does not change anything else on your website. Anything it wants to add or send waits for your yes, unless you choose to let it act on its own. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
+      "h2": "You decide how much Tally does alone.",
+      "lede": "Tally reports and does not change anything else on your website. Anything it wants to add or send waits for your yes, unless you choose to let it act on its own. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
       "cols": 3,
       "items": [
         {
@@ -131,8 +131,8 @@ module.exports = {
       "type": "checks",
       "tone": "wash",
       "kicker": "Who it is for",
-      "h2": "Who Dot is for.",
-      "lede": "Dot suits a business with a website that wants to know if it is working.",
+      "h2": "Who Tally is for.",
+      "lede": "Tally suits a business with a website that wants to know if it is working.",
       "groups": [
         {
           "title": "A good fit",
@@ -176,7 +176,7 @@ module.exports = {
       "type": "faq",
       "tone": "wash",
       "kicker": "Straight answers",
-      "h2": "Questions about Dot.",
+      "h2": "Questions about Tally.",
       "items": [
         {
           "q": "When will it be ready?",
@@ -184,19 +184,19 @@ module.exports = {
         },
         {
           "q": "Do I need a Google account?",
-          "a": "Yes. If you do not have one, Dot shows you how to make one with your own email address. Google asks you to make it yourself."
+          "a": "Yes. If you do not have one, Tally shows you how to make one with your own email address. Google asks you to make it yourself."
         },
         {
           "q": "Does my website need a cookie notice?",
-          "a": "Yes. UK rules ask for one when you measure visitors this way. On a website Paige built, Dot adds it. On another website, Dot tells you what to add."
+          "a": "Yes. UK rules ask for one when you measure visitors this way. On a website Paige built, Tally adds it. On another website, Tally tells you what to add."
         },
         {
-          "q": "Does Dot change my website?",
-          "a": "Only to add the tracking code. Dot reports. It does not change anything else."
+          "q": "Does Tally change my website?",
+          "a": "Only to add the tracking code. Tally reports. It does not change anything else."
         },
         {
           "q": "How is it different from Finn?",
-          "a": "Finn looks at how Google ranks you and fixes the site. Dot shows what visitors do once they arrive."
+          "a": "Finn looks at how Google ranks you and fixes the site. Tally shows what visitors do once they arrive."
         }
       ]
     },
@@ -204,7 +204,7 @@ module.exports = {
       "type": "cta",
       "id": "notify",
       "h2": "Want to know your visitors? Ask to be told.",
-      "text": "Leave your details and we will let you know when Dot is ready. The agents working today are ready to start now.",
+      "text": "Leave your details and we will let you know when Tally is ready. The agents working today are ready to start now.",
       "ctas": [
         {
           "label": "Book a demo",
@@ -217,7 +217,7 @@ module.exports = {
           "style": "ghost"
         }
       ],
-      "note": "Mention Dot when you book and we will tell you when it is ready."
+      "note": "Mention Tally when you book and we will tell you when it is ready."
     }
   ]
 };

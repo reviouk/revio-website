@@ -148,7 +148,7 @@ module.exports = {
         {
           "href": "/agents/data/",
           "icon": "data",
-          "title": "Dot: Data analyst",
+          "title": "Tally: Data analyst",
           "text": "Tells you what visitors do on your website. Coming soon.",
           "meta": "See the agent"
         },

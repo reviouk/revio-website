@@ -442,7 +442,7 @@
     ['/agents/revops/', 'Rev', 'Revenue operations', 'rev'],
     ['/agents/website/', 'Paige', 'Website', 'paige'],
     ['/agents/search/', 'Finn', 'SEO specialist', 'finn'],
-    ['/agents/data/', 'Dot', 'Data analyst', 'dot'],
+    ['/agents/data/', 'Tally', 'Data analyst', 'tally'],
     ['/agents/legal/', 'Lex', 'Legal', 'lex']
   ];
   /* A demo is a plain link, never the main button: people start by themselves. */
