@@ -227,7 +227,11 @@ const SECTION = {
       const tag = it.href ? 'a' : 'div';
       return `<${tag} class="card reveal" ${it.href ? `href="${esc(it.href)}"` : ''} style="--d:${i}">` +
         (it.letter ? `<div class="letter" aria-hidden="true">${esc(it.letter)}</div>` : '') +
-        (it.icon ? `<div class="icon">${icon(it.icon)}</div>` : '') +
+        /* A card that names an agent's face shows it top left, with the icon top right. */
+        (it.face
+          ? `<div class="card-top"><img class="card-face" src="/img/agents/${esc(it.face)}-s.webp" alt="" width="56" height="56" loading="lazy" decoding="async">` +
+            (it.icon ? `<div class="icon">${icon(it.icon)}</div>` : '') + '</div>'
+          : (it.icon ? `<div class="icon">${icon(it.icon)}</div>` : '')) +
         (it.when ? `<div class="svc-when">${rich(it.when)}</div>` : '') +
         `<h3>${rich(it.title)}</h3><p>${rich(it.text)}</p>` +
         (it.bullets ? `<ul class="checks small">${it.bullets.map((b) => `<li>${rich(b)}</li>`).join('')}</ul>` : '') +

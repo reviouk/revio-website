@@ -276,6 +276,10 @@
 /* ---------- the team picture: agents' faces on the cards ---------- */
 .ff-face { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--chip); }
 @media (max-width: 1100px) { .ff-face { width: 36px; height: 36px; } }
+/* A team card: the agent's face top left, its icon top right. */
+.card .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.card .card-top .icon { margin-bottom: 0; }
+.card-face { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; background: var(--chip); }
 /* An agent's face beside a block of text, on its dotted cloud. */
 .sp-fig { display: grid; place-items: center; }
 
