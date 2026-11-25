@@ -14,7 +14,7 @@ module.exports = {
     "ai inbox and diary assistant"
   ],
   "art": "voice",
-  "heroImage": { "src": "/img/agents/bella.webp", "tone": "#7cb518", "alt": "Bella, the assistant who answers the phone", "say": "Hi, I&rsquo;m Bella. Shall I take that call?" },
+  "heroImage": { "src": "/img/agents/bella.webp", "tone": "#93c23a", "alt": "Bella, the assistant who answers the phone", "say": "Hi, I&rsquo;m Bella. Shall I take that call?" },
   "crumbs": [
     {
       "label": "The agents",
