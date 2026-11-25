@@ -62,7 +62,6 @@ module.exports = {
           { icon: 'shield', title: 'Asks before it acts', text: 'You choose how much each agent does alone.' },
           { icon: 'people', title: 'Add or remove agents', text: 'Change your team whenever you like.' },
           { icon: 'calendar', title: 'Three ways to pay', text: 'Monthly, every three months or yearly.' },
-          { icon: 'pound', title: 'Three currencies', text: 'Pounds, dollars or euros.' },
           { icon: 'chat', title: 'Help chat', text: 'Ask a question any time.' },
         ],
         singleTitle: 'Or take one agent on its own.',
