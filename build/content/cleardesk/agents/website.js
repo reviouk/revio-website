@@ -153,9 +153,9 @@ module.exports = {
           "meta": "See the agent"
         },
         {
-          "href": "/agents/flo/",
+          "href": "/agents/assistant/",
           "icon": "phone",
-          "title": "Flo: Assistant",
+          "title": "Bella: Assistant",
           "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }

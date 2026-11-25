@@ -1,6 +1,7 @@
-/* "Everything runs through Flo": a hub-and-spoke picture for the How it works
- * section. What comes in sits on the left, what Flo gets done on the right,
- * and animated dotted lines carry the flow through Flo in the middle.
+/* "Everything runs through Flo": a hub-and-spoke picture. Flo, the built-in brain,
+ * sits in the middle with a ring of neurons; the employees sit either side, and
+ * animated dotted lines carry the flow between them. (The older use, with what
+ * comes in on the left and what gets done on the right, still works.)
  *
  * The picture is drawn on a 1000 x 560 grid. The lines are one SVG behind the
  * cards; the cards are placed with the same numbers, so they always meet.
@@ -68,7 +69,42 @@ module.exports = function flow(s, SITE, u) {
     '<path d="M50 24C44 16 30 16 26 26C16 27 12 38 18 45C12 52 15 64 25 66C27 76 40 80 50 74C60 80 73 76 75 66C85 64 88 52 82 45C88 38 84 27 74 26C70 16 56 16 50 24Z"/>' +
     '<path d="M50 24V74"/><path d="M26 26C32 30 34 36 30 42M18 45C26 45 32 48 34 54M25 66C30 62 36 62 40 66"/>' +
     '<path d="M74 26C68 30 66 36 70 42M82 45C74 45 68 48 66 54M75 66C70 62 64 62 60 66"/></svg>';
-  const hubHtml = () => (s.hub
+  /* Neurons: small glowing dots joined by fine lines, drawn round the hub (which is
+     90 units across its radius here). They sit inside the hub element, so they
+     show on a phone too, where the long lines to the cards are dropped. */
+  const neurons = () => {
+    const at = (deg, r) => [f(r * Math.cos(deg * Math.PI / 180)), f(r * Math.sin(deg * Math.PI / 180))];
+    /* angle (0 = right, -90 = up), distance from the middle, dot size */
+    const N = [[-140, 128, 4.6], [-122, 154, 3.4], [-106, 124, 4.2], [-90, 156, 3.8], [-74, 124, 4.6], [-58, 154, 3.4], [-40, 128, 4.2],
+      [140, 130, 3.8], [124, 156, 3.2], [56, 156, 3.2], [40, 130, 3.8]];
+    const LINKS = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [0, 2], [2, 4], [4, 6], [7, 8], [9, 10]];
+    const FIRE = [1, 4, 7, 9];           /* links that carry a travelling spark */
+    const p = N.map(([a, r]) => at(a, r));
+    let out = '';
+    LINKS.forEach(([a, b], k) => {
+      const d = `M${p[a][0]},${p[a][1]} L${p[b][0]},${p[b][1]}`;
+      out += `<path class="nl" d="${d}"/>`;
+      if (FIRE.includes(k)) out += `<path class="nf" style="--i:${k}" pathLength="100" d="${d}"/>`;
+    });
+    N.forEach(([a, r, size], k) => {
+      if (r < 135) {                      /* inner dots reach in to the hub */
+        const e = at(a, 97);
+        out += `<path class="nl" d="M${e[0]},${e[1]} L${p[k][0]},${p[k][1]}"/>`;
+      } else {                            /* outer dots grow a short branch with a bud */
+        const e = at(a + (k % 2 ? 9 : -9), r + 19);
+        out += `<path class="nl" d="M${p[k][0]},${p[k][1]} L${e[0]},${e[1]}"/><circle class="nb" cx="${e[0]}" cy="${e[1]}" r="1.9"/>`;
+      }
+      out += `<circle class="ng" cx="${p[k][0]}" cy="${p[k][1]}" r="${f(size * 2.5)}"/>` +
+        `<circle class="nn" style="--i:${k}" cx="${p[k][0]}" cy="${p[k][1]}" r="${size}"/>`;
+    });
+    return `<svg class="ff-neurons" viewBox="-180 -180 360 360" aria-hidden="true" focusable="false">${out}</svg>`;
+  };
+  const sub = () => (s.hub && s.hub.caption ? `<small class="ff-sub">${rich(s.hub.caption)}</small>` : '');
+  const hubHtml = () => (s.hub && s.hub.face
+    ? `<div class="ff-hub ff-hub-face${s.hub.neurons ? ' ff-hub-neurons' : ''}" role="img" aria-label="${esc(s.hub.alt || (s.hub.name + ', the brain behind your team'))}">` +
+      (s.hub.neurons ? neurons() : '') +
+      `<img src="${esc(s.hub.face)}" alt="" width="180" height="180" loading="lazy" decoding="async"><b>${rich(s.hub.name)}</b>` + sub() + `</div>`
+    : s.hub
     ? `<div class="ff-hub ff-hub-brain" role="img" aria-label="${esc(s.hub.alt || (s.hub.name + ', the brain behind your team'))}">${BRAIN}<b>${rich(s.hub.name)}</b>` +
       (s.hub.caption ? `<small class="ff-sub">${rich(s.hub.caption)}</small>` : '') + `</div>`
     : `<div class="ff-hub"><img src="${esc(s.image || '/img/flo/flo.webp')}" alt="Flo, who leads your team" width="180" height="180" loading="lazy" decoding="async"><b>Flo</b></div>`);

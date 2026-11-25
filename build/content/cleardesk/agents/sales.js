@@ -75,7 +75,7 @@ module.exports = {
         {
           "icon": "calendar",
           "title": "Then reads your enquiries",
-          "text": "After that, it will read enquiries from your inbox and from the calls Flo answers, and book calls in your diary."
+          "text": "After that, it will read enquiries from your inbox and from the calls Bella answers, and book calls in your diary."
         }
       ]
     },
@@ -164,9 +164,9 @@ module.exports = {
           "meta": "See the agent"
         },
         {
-          "href": "/agents/flo/",
+          "href": "/agents/assistant/",
           "icon": "phone",
-          "title": "Flo: Assistant",
+          "title": "Bella: Assistant",
           "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }

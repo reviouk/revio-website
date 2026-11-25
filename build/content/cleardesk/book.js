@@ -11,7 +11,7 @@ module.exports = {
   keywords: ['book over to flo demo', 'ai assistant demo uk', 'ai agents for small business demo'],
   utility: true,
   art: 'clock',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, your AI assistant', say: 'Come and have a look. I&rsquo;ll be listening in.' },
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the brain behind your team', say: 'Come and have a look. I&rsquo;ll be listening in.' },
   badge: 'Book a demo',
   h1: 'A friendly look at Flo, <em class="mint">with a person.</em>',
   sub: 'Would you like to see it before you sign up? Pick a time and we will show you the agents working today, answer your questions and tell you what is coming.',
@@ -25,8 +25,8 @@ module.exports = {
     {
       type: 'cards', kicker: 'In the demo', h2: 'What we will show you.', cols: 3,
       items: [
-        { icon: 'phone', title: 'The agents working today', text: 'Flo answering a call, and Poppy writing a week of posts in your own voice.' },
-        { icon: 'clock', title: 'What is coming', text: 'Skye, Bill, Rev, Paige, Finn, Tally and Lex, and what is next for Flo and Poppy.' },
+        { icon: 'phone', title: 'The agents working today', text: 'Bella answering a call, and Poppy writing a week of posts in your own voice.' },
+        { icon: 'clock', title: 'What is coming', text: 'Skye, Bill, Rev, Paige, Finn, Tally and Lex, and what is next for Bella and Poppy.' },
         { icon: 'tick', title: 'You stay in charge', text: 'How "How much it does alone" and "Waiting for your yes" work on your phone.' },
       ],
     },

@@ -285,6 +285,6 @@
   .cd-page #site-header { position: sticky; top: 0; z-index: 60; }
 }
 
-/* Lettered cards (E, L, O, N for Elon): a big purple letter in place of an icon. */
+/* Lettered cards (F, L, O for Flo, the brain): a big purple letter in place of an icon. */
 .card .letter { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 14px; border-radius: 16px;
   background: linear-gradient(145deg, #9a82ff, #6a48f0); color: #fff; font-size: 34px; font-weight: 800; line-height: 1; letter-spacing: 0; box-shadow: 0 8px 18px rgba(88,98,255,.28); }

@@ -1,5 +1,5 @@
 /* Over to Flo pricing. Rewritten 2026-11-23 for the agents model.
-   Prices agreed 23 Nov 2026. One Flo at 49 / 65 / 57 and Poppy with video agreed 24 Nov 2026. ONE table of prices lives in `data` below: the page, the
+   Prices agreed 23 Nov 2026. One assistant (Bella since 25 Nov 2026, Flo before) at 49 / 65 / 57 and Poppy with video agreed 24 Nov 2026. ONE table of prices lives in `data` below: the page, the
    switches and the script all read from it. Monthly list price in each currency.
    Three months: Math.floor(m * 27 / 10), which is 10% less, rounded down. Yearly: m * 10. */
 /* Sign-up is switched off for now, so Get started leads to the demo page.
@@ -7,7 +7,7 @@
 const START = '/book/';
 /* Every bundle holds every agent (Rob, 24 Nov 2026). They differ by use.
    Nine since Skye, Rev and Tally were added; bundle prices were agreed for six. */
-const ALL_FACES = ['flo', 'poppy', 'skye', 'bill', 'rev', 'paige', 'finn', 'tally', 'lex'];
+const ALL_FACES = ['bella', 'poppy', 'skye', 'bill', 'rev', 'paige', 'finn', 'tally', 'lex'];
 module.exports = {
   slug: 'cleardesk/pricing',
   meetingRows: false,
@@ -42,7 +42,7 @@ module.exports = {
           { id: 'year', label: 'Yearly', per: 'a year' },
         ],
         agents: [
-          { key: 'flo', name: 'Flo, assistant', href: '/agents/flo/', status: 'live', text: 'Answers your missed calls and texts you a summary, with 100 minutes of calls a month. Soon it will look after your inbox and your diary too, at the same price.', price: { gbp: 49, usd: 65, eur: 57 } },
+          { key: 'bella', name: 'Bella, assistant', href: '/agents/assistant/', status: 'live', text: 'Answers your missed calls and texts you a summary, with 100 minutes of calls a month. Soon it will look after your inbox and your diary too, at the same price.', price: { gbp: 49, usd: 65, eur: 57 } },
           { key: 'poppy', name: 'Poppy, marketing manager', href: '/agents/marketing/', status: 'live', text: 'Writes a week of social posts every Monday in your voice.', price: { gbp: 19, usd: 25, eur: 22 } },
           { key: 'poppy_video', name: 'Poppy, marketing manager with video', href: '/agents/marketing/', status: 'soon', text: 'Everything Poppy does, and it will make 8 short videos a month for your posts.', price: { gbp: 49, usd: 65, eur: 57 } },
           { key: 'skye', name: 'Skye, sales manager', href: '/agents/sales/', status: 'soon', text: 'Will write your quotes and follow-ups, and help you win the job.', price: { gbp: 19, usd: 25, eur: 22 } },
@@ -54,10 +54,10 @@ module.exports = {
           { key: 'lex', name: 'Lex, legal', href: '/agents/legal/', status: 'soon', text: 'Will draft simple agreements and explain contracts in plain English.', price: { gbp: 15, usd: 19, eur: 18 } },
         ],
         bundlesTitle: 'Bundles: the whole team in every one',
-        bundlesText: 'Every bundle includes all nine agents. They differ by how much you use: the minutes of calls Flo answers and the texts your agents send to your customers. Each bundle opens when all of its agents are working. Elon, the brain behind the team, is built in to every bundle.',
+        bundlesText: 'Every bundle includes all nine agents. They differ by how much you use: the minutes of calls Bella answers and the texts your agents send to your customers. Each bundle opens when all of its agents are working. Flo, the brain behind the team, is built in to every bundle.',
         includedTitle: 'Included with every agent',
         included: [
-          { icon: 'spark', title: 'Elon, the brain, built in', text: 'It comes with every employee and every bundle.' },
+          { icon: 'spark', title: 'Flo, the brain, built in', text: 'It comes with every employee and every bundle.' },
           { icon: 'rocket', title: 'Set up by yourself', text: 'In a few minutes, on your phone or computer.' },
           { icon: 'shield', title: 'Asks before it acts', text: 'You choose how much each agent does alone.' },
           { icon: 'people', title: 'Add or remove agents', text: 'Change your team whenever you like.' },
@@ -117,8 +117,8 @@ module.exports = {
         { q: 'What is included in the price?', a: 'Each price covers one agent, ready to use. There is no setup fee, because you set it up yourself in a few minutes. Every agent asks before it acts, until you choose otherwise.' },
         { q: 'How do the three ways to pay work?', a: 'Monthly is the listed price, paid each month. Every three months is one payment that is 10% less than three monthly payments. Yearly is one payment for ten months, and you use all twelve. Use the switch at the top of the prices to see every amount.' },
         { q: 'What happens at renewal?', a: 'A renewal costs the same as your first payment, whichever way you pay.' },
-        { q: 'What are the phone minutes?', a: 'They are the minutes of calls that Flo answers for you each month. Flo includes 100 minutes a month. If you need more, you can add extra minutes in blocks of 100. The price for each block is shown under the bundles.' },
-        { q: 'What is the difference between the bundles?', a: 'Every bundle includes all nine agents. They differ by use: the minutes of calls Flo answers each month, and the texts your agents send to your customers, such as an invoice reminder from Bill. Poppy&rsquo;s videos can be added to Team and Business.' },
+        { q: 'What are the phone minutes?', a: 'They are the minutes of calls that Bella answers for you each month. Bella includes 100 minutes a month. If you need more, you can add extra minutes in blocks of 100. The price for each block is shown under the bundles.' },
+        { q: 'What is the difference between the bundles?', a: 'Every bundle includes all nine agents. They differ by use: the minutes of calls Bella answers each month, and the texts your agents send to your customers, such as an invoice reminder from Bill. Poppy&rsquo;s videos can be added to Team and Business.' },
         { q: 'Can I change my agents later?', a: 'Yes. You can add an agent or remove one whenever you like. Agents marked "Coming soon" open when they are working, and the bundles open when all of their agents are working.' },
         { q: 'Can I cancel?', a: 'Yes. You can cancel any time.' },
       ],

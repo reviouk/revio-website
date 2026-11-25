@@ -435,7 +435,7 @@
   /* The agents, in the order the app lists them: address, name, job, face. */
   function cdFace(a) { return '<img class="cd-face" src="/img/agents/' + a[3] + '-s.webp" alt="" width="36" height="36" loading="lazy" decoding="async">'; }
   var CD_AGENTS = [
-    ['/agents/flo/', 'Flo', 'Assistant', 'flo'],
+    ['/agents/assistant/', 'Bella', 'Assistant', 'bella'],
     ['/agents/marketing/', 'Poppy', 'Marketing manager', 'poppy'],
     ['/agents/sales/', 'Skye', 'Sales manager', 'skye'],
     ['/agents/accounts/', 'Bill', 'Accounts', 'bill'],

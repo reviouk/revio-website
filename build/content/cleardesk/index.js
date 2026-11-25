@@ -7,7 +7,7 @@ module.exports = {
   description: 'Over to Flo is a team of AI agents for your business, your job or your home. Pick the ones you need, set them up yourself and stay in charge from your phone.',
   keywords: ['ai agents for small business uk', 'ai assistant you set up yourself', 'over to flo', 'ai phone answering', 'ai social media posts small business', 'ai agents for sole traders', 'leadsignal'],
   art: 'clock',
-  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, who leads your team of AI agents', say: 'Hi, it&rsquo;s Flo. Shall I take that call?' },
+  heroImage: { src: '/img/flo/flo.webp', alt: 'Flo, the brain behind your team of AI agents', say: 'Hi, I&rsquo;m Flo. Hand it over to me.' },
   badge: 'Over to Flo by LeadSignal',
   h1: 'Hand it over. <em class="mint">Over to Flo.</em>',
   sub: 'Over to Flo is a team of AI agents that take work off your hands. Pick the agents you need, set them up yourself in a few minutes, and stay in charge from your phone.',
@@ -18,13 +18,13 @@ module.exports = {
   heroProof: ['Set up by you, in minutes', 'Every agent asks before it acts, until you say otherwise', 'Cancel any time'],
   sections: [
     {
-      /* The animated picture: nine employees round Elon, the built-in brain in the middle. */
+      /* The animated picture: nine employees round Flo, the built-in brain in the middle. */
       type: 'flow', id: 'team', kicker: 'One team', h2: 'One brain. Nine employees.',
-      lede: 'Elon is the brain behind the team. It learns your business once and briefs every employee.',
-      hub: { mark: 'brain', name: 'Elon', caption: 'The brain', alt: 'Elon, the brain behind your team' },
+      lede: 'Flo is the brain behind the team. It learns your business once and briefs every employee.',
+      hub: { face: '/img/flo/flo.webp', neurons: true, name: 'Flo', caption: 'The brain', alt: 'Flo, the brain behind your team' },
       outward: true, inTitle: '', outTitle: '',
       incoming: [
-        { face: 'flo', title: 'Flo, assistant', text: 'Answers your calls' },
+        { face: 'bella', title: 'Bella, assistant', text: 'Answers your calls' },
         { face: 'poppy', title: 'Poppy, marketing manager', text: 'A week of posts every Monday' },
         { face: 'skye', title: 'Skye, sales manager', text: 'Quotes and follow-ups. Coming soon' },
         { face: 'bill', title: 'Bill, accounts', text: 'Invoices sent and chased. Coming soon' },
@@ -36,23 +36,22 @@ module.exports = {
         { face: 'tally', title: 'Tally, data analyst', text: 'A plain report every Monday. Coming soon' },
         { face: 'lex', title: 'Lex, legal', text: 'Simple agreements drafted. Coming soon' },
       ],
-      note: 'Flo and Poppy are working today. The others are coming soon.',
+      note: 'Bella and Poppy are working today. The others are coming soon.',
     },
     {
-      type: 'cards', id: 'elon', kicker: 'Built in', h2: 'Meet Elon, the brain behind your team.', cols: 4,
-      lede: 'Elon is not an employee you buy. It is built in to every employee and every bundle.',
+      type: 'cards', id: 'brain', kicker: 'Built in', h2: 'Meet Flo, the brain behind your team.', cols: 3,
+      lede: 'Flo is not an employee you buy. It is built in to every employee and every bundle.',
       items: [
-        { letter: 'E', title: 'Explains', text: 'Elon briefs every employee. Each one starts with what Elon knows about your business, so you never explain it twice.' },
-        { letter: 'L', title: 'Learns', text: 'You tell Elon about your business once. It can read your website too.' },
-        { letter: 'O', title: 'Oversees', text: 'Elon keeps watch over the team. Anything that needs you waits in one place, under "Waiting for your yes".' },
-        { letter: 'N', title: 'Notifies', text: 'Elon tells you when something needs you, with one text or email, not a stream of them.' },
+        { letter: 'F', title: 'Finds out', text: 'You tell Flo about your business once. It can read your website too.' },
+        { letter: 'L', title: 'Leads', text: 'Flo briefs every employee. Each one starts with what Flo knows about your business, so you never explain it twice.' },
+        { letter: 'O', title: 'Oversees', text: 'Flo keeps watch over the team. Anything that needs you waits in one place, under "Waiting for your yes", and Flo tells you with one text or email.' },
       ],
     },
     {
       type: 'cards', id: 'agents', kicker: 'The agents', h2: 'Meet the team. Pick one, or pick several.', cols: 3,
       lede: 'Two agents are working today. The others are coming soon, and each card says which is which.',
       items: [
-        { icon: 'phone', when: 'Working today', title: 'Flo, assistant', text: 'Answers your missed calls on the number you already have, takes the name, the job and the address, and texts you a summary. Soon it will look after your inbox and your diary too.', href: '/agents/flo/', meta: 'See Flo' },
+        { icon: 'phone', when: 'Working today', title: 'Bella, assistant', text: 'Answers your missed calls on the number you already have, takes the name, the job and the address, and texts you a summary. Soon it will look after your inbox and your diary too.', href: '/agents/assistant/', meta: 'See Bella' },
         { icon: 'spark', when: 'Working today', title: 'Poppy, marketing manager', text: 'Writes a week of social posts every Monday in your voice. Each one waits for your yes, then you copy it and post it.', href: '/agents/marketing/', meta: 'See Poppy' },
         { icon: 'handshake', when: 'Coming soon', title: 'Skye, sales manager', text: 'Will write your quotes and follow-ups, and help you win the job.', href: '/agents/sales/', meta: 'See the plan' },
         { icon: 'pound', when: 'Coming soon', title: 'Bill, accounts', text: 'Will send an invoice when you text it, then remind the customer at 7, 14 and 21 days.', href: '/agents/accounts/', meta: 'See the plan' },
@@ -95,9 +94,9 @@ module.exports = {
     {
       type: 'cards', tone: 'wash', kicker: 'Who it is for', h2: 'For your business, your job or your home.', cols: 3,
       items: [
-        { icon: 'brief', title: 'For your business', text: 'All nine agents suit a business: the phone, the posts, the quotes, the invoices, the money, the website, the search, the visitors and the paperwork.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Skye, sales manager', 'Bill, accounts', 'Rev, revenue operations', 'Paige, website', 'Finn, SEO specialist', 'Tally, data analyst', 'Lex, legal'] },
-        { icon: 'people', title: 'For your job', text: 'Working for yourself or building a name in a job? These agents suit you.', bullets: ['Flo, assistant', 'Poppy, marketing manager', 'Skye, sales manager', 'Lex, legal'] },
-        { icon: 'book', title: 'For your home', text: 'Home life has admin too. Two agents suit it.', bullets: ['Flo, assistant', 'Lex, legal'] },
+        { icon: 'brief', title: 'For your business', text: 'All nine agents suit a business: the phone, the posts, the quotes, the invoices, the money, the website, the search, the visitors and the paperwork.', bullets: ['Bella, assistant', 'Poppy, marketing manager', 'Skye, sales manager', 'Bill, accounts', 'Rev, revenue operations', 'Paige, website', 'Finn, SEO specialist', 'Tally, data analyst', 'Lex, legal'] },
+        { icon: 'people', title: 'For your job', text: 'Working for yourself or building a name in a job? These agents suit you.', bullets: ['Bella, assistant', 'Poppy, marketing manager', 'Skye, sales manager', 'Lex, legal'] },
+        { icon: 'book', title: 'For your home', text: 'Home life has admin too. Two agents suit it.', bullets: ['Bella, assistant', 'Lex, legal'] },
       ],
     },
     {
@@ -145,7 +144,7 @@ module.exports = {
       items: [
         { q: 'What is Over to Flo?', a: 'Over to Flo is a team of AI agents. Each one takes a job off your hands, such as answering your missed calls or writing your social posts. You pick the agents you want, set them up yourself in a few minutes, and stay in charge from your phone.' },
         { q: 'Do I need to be technical?', a: 'No. You sign up, tell Flo about yourself once, and pick an agent. Flo can read your website so you do not have to type it all out. If you get stuck, there is a help chat, and a real person can be asked.' },
-        { q: 'Which agents work today?', a: 'Two work today. Flo answers your missed calls on your existing number and texts you a summary. Poppy writes a week of social posts every Monday in your voice. Skye, Bill, Rev, Paige, Finn, Tally and Lex are coming soon, and so is inbox and diary work for Flo.' },
+        { q: 'Which agents work today?', a: 'Two work today. Bella answers your missed calls on your existing number and texts you a summary. Poppy writes a week of social posts every Monday in your voice. Skye, Bill, Rev, Paige, Finn, Tally and Lex are coming soon, and so is inbox and diary work for Bella.' },
         { q: 'What does it cost?', a: 'Prices are on the <a href="/pricing/">pricing page</a>. There is no setup fee. You set it up yourself in a few minutes, and you can book a demo if you would like to talk to us first.' },
         { q: 'Can I stop whenever I want?', a: 'Yes. You can cancel any time. You can also switch an agent to "Asks me first" whenever you like, so it waits for your yes before it does anything.' },
         { q: 'Will an agent ever act without asking me?', a: 'Only if you choose that. Every agent has a setting called "How much it does alone", with three choices: "Asks me first", "Acts within my limits" and "Acts on its own". Anything that needs a yes waits under "Waiting for your yes" on your phone.' },

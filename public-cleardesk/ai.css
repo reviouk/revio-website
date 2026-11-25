@@ -84,19 +84,33 @@
   .ff-nodes { display: grid; grid-template-columns: 1fr; gap: 10px; }
   .ff-nodes li { position: static; transform: none; width: auto; }
   .ff-approve { position: static; transform: none; justify-self: center; margin-top: 8px; white-space: normal; }
-  .ff-hub.ff-hub-brain { margin-bottom: 64px; }
-  .ff-hub-brain::after { top: calc(100% + 44px); }
+  .ff-hub.ff-hub-brain, .ff-hub.ff-hub-face { margin-bottom: 64px; }
+  .ff-hub-brain::after, .ff-hub-face::after { top: calc(100% + 44px); }
+  .ff-hub.ff-hub-neurons { margin-top: 64px; }
 }
-/* Brain hub (Elon): white line brain on a glossy purple disc. No face, no figure. */
+/* Brain hub drawn as a mark (no longer used on the home page): white line brain on a glossy purple disc. No face, no figure. */
 .ff-hub.ff-hub-brain { background: radial-gradient(circle at 34% 24%, #b9a6ff 0, #8f74ff 30%, #6a48f0 70%, #4b2fc4 100%);
   border-color: rgba(255,255,255,.55); box-shadow: 0 14px 34px rgba(88,98,255,.38), inset 0 -10px 22px rgba(40,20,140,.28), inset 0 8px 16px rgba(255,255,255,.28); }
 :root[data-theme="dark"] .ff-hub.ff-hub-brain { background: radial-gradient(circle at 34% 24%, #a590ff 0, #7c5cff 32%, #5a3bd8 72%, #3b24a8 100%); border-color: rgba(255,255,255,.4); }
 .ff-hub-brain .ff-brain { width: 66%; height: 66%; filter: drop-shadow(0 1px 2px rgba(30,10,110,.35)); }
-.ff-hub-brain .ff-sub { position: absolute; left: 50%; top: calc(100% + 24px); transform: translateX(-50%); white-space: nowrap;
+.ff-hub .ff-sub { position: absolute; left: 50%; top: calc(100% + 24px); transform: translateX(-50%); white-space: nowrap;
   font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+/* Neurons round the hub: fine lines, glowing dots that brighten in turn, and a
+   spark that runs along some of the lines. Twice the hub's width, centred on it. */
+.ff-neurons { position: absolute; left: 50%; top: 50%; width: 200%; height: 200%; max-width: none; transform: translate(-50%, -50%); z-index: -1; overflow: visible; pointer-events: none; }
+.ff-neurons .nl { fill: none; stroke: var(--purple); stroke-width: 1.3; stroke-linecap: round; opacity: .38; }
+.ff-neurons .nb { fill: var(--purple); opacity: .5; }
+.ff-neurons .ng { fill: var(--purple); opacity: .13; }
+.ff-neurons .nn { fill: var(--purple); transform-box: fill-box; transform-origin: center; animation: ffNode 3s ease-in-out infinite; animation-delay: calc(var(--i) * .29s); }
+.ff-neurons .nf { fill: none; stroke: #a590ff; stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 16 100; stroke-dashoffset: 16; opacity: 0; animation: ffFire 3s linear infinite; animation-delay: calc(var(--i) * .37s); }
+:root[data-theme="dark"] .ff-neurons .nl { opacity: .55; }
+:root[data-theme="dark"] .ff-neurons .ng { opacity: .22; }
+@keyframes ffNode { 0%, 100% { opacity: .5; transform: scale(.82); } 40% { opacity: 1; transform: scale(1.22); } }
+@keyframes ffFire { 0% { stroke-dashoffset: 16; opacity: 0; } 10% { opacity: 1; } 55% { stroke-dashoffset: -100; opacity: 1; } 65%, 100% { stroke-dashoffset: -100; opacity: 0; } }
 @keyframes ffDrop { to { background-position: 0 8px; } }
 @media (prefers-reduced-motion: reduce) {
-  .ff-dots, .ff-ring, .ff-hub::after { animation: none; }
+  .ff-dots, .ff-ring, .ff-hub::after, .ff-neurons .nn { animation: none; }
+  .ff-neurons .nf { display: none; }
   .ff-pulse { display: none; }
 }
 

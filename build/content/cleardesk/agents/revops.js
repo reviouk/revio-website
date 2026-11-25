@@ -99,7 +99,7 @@ module.exports = {
         },
         {
           "title": "Rev reads from the team",
-          "text": "After that, it reads from the rest of the team: the calls Flo answers, the quotes Skye writes and the invoices Bill sends."
+          "text": "After that, it reads from the rest of the team: the calls Bella answers, the quotes Skye writes and the invoices Bill sends."
         }
       ]
     },

@@ -64,7 +64,7 @@ module.exports = {
       "type": "prose",
       "kicker": "Good to know",
       "h2": "Good to know.",
-      "html": "<ul><li>A paused agent is still paid for. My Flo says so: \"Paused. You are still paying for it until you switch it off.\"</li><li>A switched off agent keeps working until the end of the period you paid for.</li><li>The setting called <strong>How much it does alone</strong> is not a way to stop an agent. It sets whether an agent asks first. Poppy asks before every post for now.</li><li>If you have phone answering, <strong>Pause Flo</strong> and <strong>I'm away</strong> are separate settings for that agent.</li><li>Choose <strong>Change card</strong> to update your card.</li></ul>"
+      "html": "<ul><li>A paused agent is still paid for. My Flo says so: \"Paused. You are still paying for it until you switch it off.\"</li><li>A switched off agent keeps working until the end of the period you paid for.</li><li>The setting called <strong>How much it does alone</strong> is not a way to stop an agent. It sets whether an agent asks first. Poppy asks before every post for now.</li><li>If you have phone answering, <strong>Pause Bella</strong> and <strong>I'm away</strong> are separate settings for that agent.</li><li>Choose <strong>Change card</strong> to update your card.</li></ul>"
     },
     {
       "type": "faq",

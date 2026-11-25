@@ -1,11 +1,11 @@
-/* Over to Flo agent page. One Flo: it answers the phone today, and the inbox
-   and diary work is coming to the same agent (Rob, 24 Nov 2026). This page
-   replaces the two older pages, phone-answering and assistant. */
+/* Over to Flo agent page for Bella, the assistant: it answers the phone today, and the
+   inbox and diary work is coming to the same agent. Until 25 Nov 2026 this agent was
+   called Flo; Flo is now the built-in brain (Rob, 25 Nov 2026). */
 module.exports = {
-  "slug": "cleardesk/agents/flo",
+  "slug": "cleardesk/agents/assistant",
   "meetingRows": false,
-  "title": "Flo: AI Assistant That Answers Your Missed Calls | Over to Flo",
-  "description": "Flo answers your missed calls on the number you already have, takes the details and texts you a summary. Inbox and diary are coming soon. Set up by you.",
+  "title": "Bella: AI Assistant That Answers Your Missed Calls | Over to Flo",
+  "description": "Bella answers your missed calls on the number you already have, takes the details and texts you a summary. Inbox and diary are coming soon. Set up by you.",
   "keywords": [
     "ai phone answering small business",
     "ai receptionist uk",
@@ -14,17 +14,17 @@ module.exports = {
     "ai inbox and diary assistant"
   ],
   "art": "voice",
-  "heroImage": { "src": "/img/flo/flo.webp", "alt": "Flo, the assistant who answers the phone", "say": "Hi, it&rsquo;s Flo. Shall I take that call?" },
+  "heroImage": { "src": "/img/agents/bella.webp", "tone": "#7cb518", "alt": "Bella, the assistant who answers the phone", "say": "Hi, I&rsquo;m Bella. Shall I take that call?" },
   "crumbs": [
     {
       "label": "The agents",
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Flo: Assistant",
-  "badge": "Flo: Assistant",
-  "h1": "Missed calls, answered. <em class=\"mint\">Flo picks up.</em>",
-  "sub": "When you cannot get to the phone, Flo answers on your existing number. It takes the name, the job and the address, answers the usual questions from what you have told it, then texts you a summary. Soon it will look after your inbox and your diary too.",
+  "crumbLabel": "Bella: Assistant",
+  "badge": "Bella: Assistant",
+  "h1": "Missed calls, answered. <em class=\"mint\">Bella picks up.</em>",
+  "sub": "When you cannot get to the phone, Bella answers on your existing number. It takes the name, the job and the address, answers the usual questions from what you have told it, then texts you a summary. Soon it will look after your inbox and your diary too.",
   "ctas": [
     {
       "label": "Get started",
@@ -46,13 +46,13 @@ module.exports = {
     {
       "type": "cards",
       "kicker": "Working today",
-      "h2": "What Flo does for you today.",
+      "h2": "What Bella does for you today.",
       "cols": 3,
       "items": [
         {
           "icon": "phone",
           "title": "Answers when you cannot",
-          "text": "Forward your missed calls and Flo picks up. Callers get an answer instead of a ringing tone."
+          "text": "Forward your missed calls and Bella picks up. Callers get an answer instead of a ringing tone."
         },
         {
           "icon": "doc",
@@ -77,7 +77,7 @@ module.exports = {
         {
           "icon": "shield",
           "title": "Honest about being automated",
-          "text": "Flo says it is automated. Callers know where they stand."
+          "text": "Bella says it is automated. Callers know where they stand."
         }
       ]
     },
@@ -85,8 +85,8 @@ module.exports = {
       "type": "cards",
       "tone": "wash",
       "kicker": "Coming soon",
-      "h2": "Coming soon to Flo: your inbox and your diary.",
-      "lede": "Flo is getting ready to look after your email and your calendar as well. It will work with Google and Microsoft email and calendars. It arrives in the same Flo, at the same price.",
+      "h2": "Coming soon to Bella: your inbox and your diary.",
+      "lede": "Bella is getting ready to look after your email and your calendar as well. It will work with Google and Microsoft email and calendars. It arrives in the same Bella, at the same price.",
       "cols": 2,
       "items": [
         {
@@ -138,8 +138,8 @@ module.exports = {
       "type": "cards",
       "tone": "wash",
       "kicker": "You stay in charge",
-      "h2": "You decide how much Flo does alone.",
-      "lede": "Flo answers calls and passes on what it hears. You can tell it you are away, pause it, or change your hours and areas whenever you like. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
+      "h2": "You decide how much Bella does alone.",
+      "lede": "Bella answers calls and passes on what it hears. You can tell it you are away, pause it, or change your hours and areas whenever you like. The setting is called \"How much it does alone\". Anything that needs a yes appears under \"Waiting for your yes\" on your phone.",
       "cols": 3,
       "items": [
         {
@@ -162,8 +162,8 @@ module.exports = {
     {
       "type": "checks",
       "kicker": "Who it is for",
-      "h2": "Who Flo is for.",
-      "lede": "Flo suits a business that misses calls because the work comes first, and anyone with an inbox and a diary to keep.",
+      "h2": "Who Bella is for.",
+      "lede": "Bella suits a business that misses calls because the work comes first, and anyone with an inbox and a diary to keep.",
       "groups": [
         {
           "title": "A good fit",
@@ -207,7 +207,7 @@ module.exports = {
     {
       "type": "faq",
       "kicker": "Straight answers",
-      "h2": "Questions about Flo.",
+      "h2": "Questions about Bella.",
       "items": [
         {
           "q": "Do I need to set anything up?",
@@ -215,11 +215,11 @@ module.exports = {
         },
         {
           "q": "Do I need a new phone number?",
-          "a": "No. Flo answers on the number you already have. You forward the calls you miss, and callers ring the same number they always have."
+          "a": "No. Bella answers on the number you already have. You forward the calls you miss, and callers ring the same number they always have."
         },
         {
           "q": "Does it say it is automated?",
-          "a": "Yes. Flo tells callers it is automated. It does not pretend to be a person."
+          "a": "Yes. Bella tells callers it is automated. It does not pretend to be a person."
         },
         {
           "q": "What if it does not know the answer?",
@@ -227,7 +227,7 @@ module.exports = {
         },
         {
           "q": "Does it look after my inbox and diary?",
-          "a": "Not yet. Today Flo answers calls, takes the details and texts you a summary. Inbox and diary work is coming soon, in the same Flo and at the same price. We do not have a date to give you yet."
+          "a": "Not yet. Today Bella answers calls, takes the details and texts you a summary. Inbox and diary work is coming soon, in the same Bella and at the same price. We do not have a date to give you yet."
         },
         {
           "q": "Which email and calendars will it work with?",
@@ -245,7 +245,7 @@ module.exports = {
     },
     {
       "type": "cta",
-      "h2": "Let Flo take the next missed call.",
+      "h2": "Let Bella take the next missed call.",
       "text": "Sign up, tell Flo about your business and forward your missed calls. You can be answering calls in minutes.",
       "ctas": [
         {
