@@ -84,8 +84,8 @@
   .ff-nodes { display: grid; grid-template-columns: 1fr; gap: 10px; }
   .ff-nodes li { position: static; transform: none; width: auto; }
   .ff-approve { position: static; transform: none; justify-self: center; margin-top: 8px; white-space: normal; }
-  .ff-hub.ff-hub-brain, .ff-hub.ff-hub-face { margin-bottom: 64px; }
-  .ff-hub-brain::after, .ff-hub-face::after { top: calc(100% + 44px); }
+  .ff-hub.ff-hub-brain, .ff-hub.ff-hub-capped { margin-bottom: 64px; }
+  .ff-hub-brain::after, .ff-hub-capped::after { top: calc(100% + 44px); }
   .ff-hub.ff-hub-neurons { margin-top: 64px; }
 }
 /* Brain hub drawn as a mark (no longer used on the home page): white line brain on a glossy purple disc. No face, no figure. */

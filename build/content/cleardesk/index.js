@@ -21,7 +21,7 @@ module.exports = {
       /* The animated picture: nine employees round Flo, the built-in brain in the middle. */
       type: 'flow', id: 'team', kicker: 'One team', h2: 'One brain. Nine employees.',
       lede: 'Flo is the brain behind the team. It learns your business once and briefs every employee.',
-      hub: { face: '/img/flo/flo.webp', neurons: true, name: 'Flo', caption: 'The brain', alt: 'Flo, the brain behind your team' },
+      hub: { face: '/img/flo/flo.webp', name: 'Flo', alt: 'Flo, the brain behind your team' },
       outward: true, inTitle: '', outTitle: '',
       incoming: [
         { face: 'bella', title: 'Bella, assistant', text: 'Answers your calls' },

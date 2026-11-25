@@ -101,7 +101,7 @@ module.exports = function flow(s, SITE, u) {
   };
   const sub = () => (s.hub && s.hub.caption ? `<small class="ff-sub">${rich(s.hub.caption)}</small>` : '');
   const hubHtml = () => (s.hub && s.hub.face
-    ? `<div class="ff-hub ff-hub-face${s.hub.neurons ? ' ff-hub-neurons' : ''}" role="img" aria-label="${esc(s.hub.alt || (s.hub.name + ', the brain behind your team'))}">` +
+    ? `<div class="ff-hub ff-hub-face${s.hub.neurons ? ' ff-hub-neurons' : ''}${s.hub.caption ? ' ff-hub-capped' : ''}" role="img" aria-label="${esc(s.hub.alt || (s.hub.name + ', the brain behind your team'))}">` +
       (s.hub.neurons ? neurons() : '') +
       `<img src="${esc(s.hub.face)}" alt="" width="180" height="180" loading="lazy" decoding="async"><b>${rich(s.hub.name)}</b>` + sub() + `</div>`
     : s.hub
