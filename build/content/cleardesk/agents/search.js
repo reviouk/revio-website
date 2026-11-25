@@ -19,8 +19,8 @@ module.exports = {
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Finn: SEO specialist",
-  "badge": "Coming soon: Finn, SEO specialist",
+  "crumbLabel": "Finn (SEO specialist)",
+  "badge": "Coming soon: Finn (SEO specialist)",
   "h1": "Easier to find. <em class=\"mint\">Finn is your SEO specialist.</em>",
   "sub": "Finn is getting ready to connect to your own Google account, check your website every week for problems and fix what it finds. It will also find what local customers search for, write a monthly article and ask happy customers for a review. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
@@ -166,21 +166,21 @@ module.exports = {
         {
           "href": "/agents/website/",
           "icon": "globe",
-          "title": "Paige: Website",
+          "title": "Paige (Website)",
           "text": "Builds a website of up to five pages on your own domain. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/data/",
           "icon": "data",
-          "title": "Tally: Data analyst",
+          "title": "Tally (Data analyst)",
           "text": "Tells you what visitors do on your website. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/marketing/",
           "icon": "spark",
-          "title": "Poppy: Marketing manager",
+          "title": "Poppy (Marketing manager)",
           "text": "Plans and writes a week of social posts in your voice.",
           "meta": "See the agent"
         }

@@ -21,8 +21,8 @@ module.exports = {
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Bella: Assistant",
-  "badge": "Bella: Assistant",
+  "crumbLabel": "Bella (Assistant)",
+  "badge": "Bella (Assistant)",
   "h1": "Missed calls, answered. <em class=\"mint\">Bella picks up.</em>",
   "sub": "When you cannot get to the phone, Bella answers on your existing number. It takes the name, the job and the address, answers the usual questions from what you have told it, then texts you a summary. Soon it will look after your inbox and your diary too.",
   "ctas": [
@@ -184,21 +184,21 @@ module.exports = {
         {
           "href": "/agents/marketing/",
           "icon": "spark",
-          "title": "Poppy: Marketing manager",
+          "title": "Poppy (Marketing manager)",
           "text": "Plans and writes a week of social posts in your voice.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/accounts/",
           "icon": "pound",
-          "title": "Bill: Accounts",
+          "title": "Bill (Accounts)",
           "text": "Texts the invoice and sends polite reminders. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/search/",
           "icon": "search",
-          "title": "Finn: SEO specialist",
+          "title": "Finn (SEO specialist)",
           "text": "Checks your website each week and helps people find you. Coming soon.",
           "meta": "See the agent"
         }

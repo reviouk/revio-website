@@ -19,8 +19,8 @@ module.exports = {
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Lex: Legal",
-  "badge": "Coming soon: Lex, Legal",
+  "crumbLabel": "Lex (Legal)",
+  "badge": "Coming soon: Lex (Legal)",
   "h1": "Contracts in plain English. <em class=\"mint\">Lex reads them.</em>",
   "sub": "Lex is getting ready to draft simple agreements and letters, and to read a contract and explain the risky parts in plain English. It is not a solicitor and does not give legal advice. Tell us you are interested and we will let you know.",
   "ctas": [
@@ -142,21 +142,21 @@ module.exports = {
         {
           "href": "/agents/accounts/",
           "icon": "pound",
-          "title": "Bill: Accounts",
+          "title": "Bill (Accounts)",
           "text": "Texts the invoice and sends polite reminders. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/marketing/",
           "icon": "spark",
-          "title": "Poppy: Marketing manager",
+          "title": "Poppy (Marketing manager)",
           "text": "Plans and writes a week of social posts in your voice.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/assistant/",
           "icon": "phone",
-          "title": "Bella: Assistant",
+          "title": "Bella (Assistant)",
           "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }

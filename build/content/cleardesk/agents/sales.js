@@ -19,8 +19,8 @@ module.exports = {
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Skye: Sales manager",
-  "badge": "Coming soon: Skye, Sales manager",
+  "crumbLabel": "Skye (Sales manager)",
+  "badge": "Coming soon: Skye (Sales manager)",
   "h1": "Win the job. <em class=\"mint\">Skye writes the quote and the follow-up.</em>",
   "sub": "Skye is getting ready to write your quotes, follow up when a quote has gone quiet, and help you answer a customer who says the price is too high. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
@@ -152,21 +152,21 @@ module.exports = {
         {
           "href": "/agents/revops/",
           "icon": "chart",
-          "title": "Rev: Revenue operations",
+          "title": "Rev (Revenue operations)",
           "text": "Shows where your money is and what is likely next. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/accounts/",
           "icon": "pound",
-          "title": "Bill: Accounts",
+          "title": "Bill (Accounts)",
           "text": "Texts the invoice and sends polite reminders. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/assistant/",
           "icon": "phone",
-          "title": "Bella: Assistant",
+          "title": "Bella (Assistant)",
           "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }

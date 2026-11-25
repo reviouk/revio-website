@@ -115,7 +115,7 @@ module.exports = {
         {
           "href": "/agents/assistant/",
           "icon": "phone",
-          "title": "Bella: Assistant",
+          "title": "Bella (Assistant)",
           "text": "Answers calls you cannot take and texts you a summary. Inbox and diary coming soon.",
           "meta": "See the agent"
         }

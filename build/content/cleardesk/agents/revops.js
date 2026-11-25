@@ -19,8 +19,8 @@ module.exports = {
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Rev: Revenue operations",
-  "badge": "Coming soon: Rev, Revenue operations",
+  "crumbLabel": "Rev (Revenue operations)",
+  "badge": "Coming soon: Rev (Revenue operations)",
   "h1": "See where the money is. <em class=\"mint\">Rev keeps track.</em>",
   "sub": "Revenue operations means keeping track of every enquiry and quote, so you can see where the money is. Rev is getting ready to do that for you. It reports to you and never writes to your customers. Tell us you are interested and we will let you know.",
   "ctas": [
@@ -152,21 +152,21 @@ module.exports = {
         {
           "href": "/agents/sales/",
           "icon": "handshake",
-          "title": "Skye: Sales manager",
+          "title": "Skye (Sales manager)",
           "text": "Writes quotes and follow-ups to win the job. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/accounts/",
           "icon": "pound",
-          "title": "Bill: Accounts",
+          "title": "Bill (Accounts)",
           "text": "Texts the invoice and sends polite reminders. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/data/",
           "icon": "data",
-          "title": "Tally: Data analyst",
+          "title": "Tally (Data analyst)",
           "text": "Tells you what visitors do on your website. Coming soon.",
           "meta": "See the agent"
         }

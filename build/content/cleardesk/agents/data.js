@@ -19,8 +19,8 @@ module.exports = {
       "href": "/#agents"
     }
   ],
-  "crumbLabel": "Tally: Data analyst",
-  "badge": "Coming soon: Tally, Data analyst",
+  "crumbLabel": "Tally (Data analyst)",
+  "badge": "Coming soon: Tally (Data analyst)",
   "h1": "Know your visitors. <em class=\"mint\">Tally reports every Monday.</em>",
   "sub": "Tally is getting ready to tell you what visitors do on your website: who comes, where they come from and what they look at. Tell us you are interested and we will let you know when it is ready.",
   "ctas": [
@@ -152,21 +152,21 @@ module.exports = {
         {
           "href": "/agents/search/",
           "icon": "search",
-          "title": "Finn: SEO specialist",
+          "title": "Finn (SEO specialist)",
           "text": "Checks your website each week and helps people find you. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/website/",
           "icon": "globe",
-          "title": "Paige: Website",
+          "title": "Paige (Website)",
           "text": "Builds a website of up to five pages on your own domain. Coming soon.",
           "meta": "See the agent"
         },
         {
           "href": "/agents/marketing/",
           "icon": "spark",
-          "title": "Poppy: Marketing manager",
+          "title": "Poppy (Marketing manager)",
           "text": "Plans and writes a week of social posts in your voice.",
           "meta": "See the agent"
         }

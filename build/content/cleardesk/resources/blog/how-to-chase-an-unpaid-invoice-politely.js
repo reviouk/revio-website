@@ -104,7 +104,7 @@ module.exports = {
         {
           "href": "/agents/accounts/",
           "icon": "pound",
-          "title": "Bill: accounts",
+          "title": "Bill (Accounts)",
           "text": "Coming soon. Invoices and reminders.",
           "meta": "See the agent"
         }
